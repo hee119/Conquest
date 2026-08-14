@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Teracore
+  - BackGround
+  - Nav
   layers:
   - Default
   - TransparentFX
