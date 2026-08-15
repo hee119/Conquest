@@ -5,7 +5,7 @@ public class PlayerMove : MonoBehaviour
     private Vector2 moveDir;
     private Rigidbody2D playerRb;
     private Animator animator;
-    private float speed = 3;
+    public float speed = 3;
 
     public void Awake()
     {

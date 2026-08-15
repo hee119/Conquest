@@ -2,7 +2,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class GetStageData : MonoBehaviour
+public class GetData : MonoBehaviour
 {
     [SerializeField]
     private string stageDataLink =
@@ -14,7 +14,7 @@ public class GetStageData : MonoBehaviour
     [SerializeField]
     private string saveFileName = "StageData.csv";
 
-    [ContextMenu("Stage Data Download")]
+    [ContextMenu("Data Download")]
     public void DownloadStageData()
     {
         UnityWebRequest request = UnityWebRequest.Get(stageDataLink);

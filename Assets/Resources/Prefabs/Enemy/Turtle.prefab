@@ -196,10 +196,13 @@ GameObject:
   - component: {fileID: 847625967453741184}
   - component: {fileID: 361232566743844801}
   - component: {fileID: 1709460857798424000}
+  - component: {fileID: -1254291076513392406}
   - component: {fileID: 8656832799027099916}
   - component: {fileID: 215120192029415479}
   - component: {fileID: -385199289950270092}
   - component: {fileID: -222689960180229339}
+  - component: {fileID: 2917960114813309756}
+  - component: {fileID: 7020431969537428486}
   m_Layer: 0
   m_Name: Turtle
   m_TagString: Untagged
@@ -343,6 +346,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-1254291076513392406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8351161018489360483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3faa7af64e2d9be419f35587af21c46e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyCombat
+  maxHp: 5
+  hp: 0
 --- !u!114 &8656832799027099916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +424,46 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!50 &2917960114813309756
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8351161018489360483}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &7020431969537428486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8351161018489360483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6634a5299f24849bcad405a415aa9362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitInfo
+  id: 0
 --- !u!1 &8515233909604476509
 GameObject:
   m_ObjectHideFlags: 0

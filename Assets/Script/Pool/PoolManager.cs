@@ -11,7 +11,7 @@ public class PoolManager : MonoBehaviour
 
     [SerializeField] private int maxSize = 50;
 
-    public GameObject[] prefabs;
+    public List<GameObject> prefabs = new List<GameObject>();
 
     public bool prefabIsLoaded = false;
 
@@ -29,14 +29,12 @@ public class PoolManager : MonoBehaviour
             return;
         }
 
-        prefabs = Resources.LoadAll<GameObject>("Prefabs/Enemy");
+        prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/Enemy"));
+        prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/SkillEffect"));
 
-        foreach (var enemy in prefabs)
-        {
-            Debug.Log(enemy.name);
-        }
+        
 
-        for (int i = 0; i < prefabs.Length; i++)
+        for (int i = 0; i < prefabs.Count; i++)
         {
             SetPool(i);
         }
@@ -53,14 +51,18 @@ public class PoolManager : MonoBehaviour
         GameObject prefab = prefabs[i];
 
         var unitInfo = prefab.GetComponent<UnitInfo>();
+        var skillInfo = prefab.GetComponent<SkillInfo>();
 
         int id;
 
         if (unitInfo != null)
             id = unitInfo.id;
+        else if (skillInfo != null)
+            id = skillInfo.skillId;
         else
             return;
 
+        Debug.Log(id);
         if (_pools.ContainsKey(id))
             return;
 

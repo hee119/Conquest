@@ -200,9 +200,11 @@ GameObject:
   - component: {fileID: 1671595431367410965}
   - component: {fileID: 7058819936553798055}
   - component: {fileID: 4689823722373760585}
+  - component: {fileID: 4778733916759559906}
+  - component: {fileID: 3405139427750937997}
   m_Layer: 0
   m_Name: Swordman
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -416,9 +418,25 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 814daad4-a5b3-40c9-bc4a-462c02f90b48
     m_ActionName: 'Move/Move[/Keyboard/w,/Keyboard/a,/Keyboard/s,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4778733916759559906}
+        m_TargetAssemblyTypeName: SkillSpawner, Assembly-CSharp
+        m_MethodName: PlayerInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d07a1546-236f-4540-b404-f9fca7fcf842
+    m_ActionName: 'Player/PlayerInput[/Mouse/leftButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Move
+  m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &7058819936553798055
@@ -433,6 +451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1583d4126f613497fa77bc4ab81a40f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
+  speed: 3
 --- !u!95 &4689823722373760585
 Animator:
   serializedVersion: 7
@@ -455,6 +474,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4778733916759559906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5121868815476299701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8ff50d1a5c6cdf4ebeea08cc7223f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkillSpawner
+  skillId1: 200
+  skillId2: 201
+  skillId3: 202
+  skillId4: 203
+--- !u!114 &3405139427750937997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5121868815476299701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18dc974726e53ed4096ef2d3e76a3aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
 --- !u!1 &5208387008691712987
 GameObject:
   m_ObjectHideFlags: 0

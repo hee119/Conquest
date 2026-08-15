@@ -380,10 +380,13 @@ GameObject:
   - component: {fileID: 4511472191499410436}
   - component: {fileID: 6839273057009805502}
   - component: {fileID: 2108498982311189303}
+  - component: {fileID: -1418664590154070681}
   - component: {fileID: -1484454570177552468}
   - component: {fileID: 2210541941392045012}
   - component: {fileID: 3617475037612200455}
   - component: {fileID: 6826015629366012844}
+  - component: {fileID: 3217690283206078485}
+  - component: {fileID: 7653352585993055450}
   m_Layer: 0
   m_Name: Eagle
   m_TagString: Untagged
@@ -531,6 +534,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1142626, y: 1.1387479}
   m_EdgeRadius: 0
+--- !u!114 &-1418664590154070681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695257265632678611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3faa7af64e2d9be419f35587af21c46e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyCombat
+  maxHp: 5
+  hp: 0
 --- !u!114 &-1484454570177552468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,6 +612,46 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!50 &3217690283206078485
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695257265632678611}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &7653352585993055450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695257265632678611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6634a5299f24849bcad405a415aa9362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitInfo
+  id: 0
 --- !u!1 &5716578981780477455
 GameObject:
   m_ObjectHideFlags: 0

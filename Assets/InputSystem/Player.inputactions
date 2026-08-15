@@ -3,7 +3,7 @@
     "name": "Player",
     "maps": [
         {
-            "name": "Move",
+            "name": "Player",
             "id": "51d5ed76-61b7-453a-a09e-bff53c786d61",
             "actions": [
                 {
@@ -14,6 +14,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "PlayerInput",
+                    "type": "Button",
+                    "id": "d07a1546-236f-4540-b404-f9fca7fcf842",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -71,6 +80,61 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "2ea33a7e-4de1-4d48-a5f0-8f8e2cd62853",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayerInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e143c4a8-b9e7-470c-b038-cf520568db5c",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayerInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9a5df5d5-ff2b-42b8-9e0a-eb771333c9c5",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayerInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ad9c59c9-a4c4-416e-a0a2-8ee7e42e48e2",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayerInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "29a4e905-1b2a-475b-a079-b005b8d28661",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayerInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
