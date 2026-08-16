@@ -4,9 +4,11 @@ public class SkillInfo : MonoBehaviour
 {
     public int skillId;
     public string skillName;
-    public string skillDesc;
-    public int skillLevel;
+    public int skillHp;
+    public float skillCoolTime;
     public int skillDamage;
     public int skillCritDamage;
-    public float skillCoolTime;
+    public int skillLevel;
+    public string skillDesc;
+
 }

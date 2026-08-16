@@ -10,9 +10,11 @@ public class DataManager : MonoBehaviour
     public static DataManager Instance;
     public string stageDataText;
     public string playerAndEnemyDataText;
+    public string skillDataText;
 
     public StageInfo[] stageInfos;
     public Dictionary<int, PlayerAndEnemyInfos> playerAndEnemyInfos = new();
+    public Dictionary<int, SkillData> skillDatas = new();
     
 
     
@@ -37,6 +39,7 @@ public class DataManager : MonoBehaviour
     {
         GetStageDatas();
         GetPlayerAndEnemyDatas();
+        GetSkillDatas();
     }
     
 
@@ -92,6 +95,119 @@ public class DataManager : MonoBehaviour
             playerAndEnemyInfos.Add(playerAndEnemyInfosTemp.id, playerAndEnemyInfosTemp);
         }
         
+        
+        GameObject[] enemyPrefabs =
+            Resources.LoadAll<GameObject>("Prefabs/Enemy");
+
+        foreach (GameObject prefab in enemyPrefabs)
+        {
+            UnitInfo unitInfo = prefab.GetComponent<UnitInfo>();
+
+            if (unitInfo == null)
+                continue;
+
+            if (playerAndEnemyInfos.TryGetValue(unitInfo.id, out PlayerAndEnemyInfos data))
+            {
+                unitInfo.hp = data.hp;
+                unitInfo.hpRegenRate = data.hpRegenRate;
+                unitInfo.speed = data.speed;
+                unitInfo.damage = data.damage;
+                unitInfo.defense = data.defense;
+                unitInfo.criticalDamage = data.criticalDamage;
+                unitInfo.criticalChance = data.criticalChance;
+            }
+            else
+            {
+                Debug.LogWarning(
+                    $"ID {unitInfo.id}에 해당하는 데이터를 찾을 수 없습니다."
+                );
+            }
+        }
+        
+        GameObject[] agentPrefabs =
+            Resources.LoadAll<GameObject>("Prefabs/Agent");
+
+        foreach (GameObject prefab in agentPrefabs)
+        {
+            UnitInfo unitInfo = prefab.GetComponent<UnitInfo>();
+
+            if (unitInfo == null)
+                continue;
+
+            if (playerAndEnemyInfos.TryGetValue(unitInfo.id, out PlayerAndEnemyInfos data))
+            {
+                unitInfo.hp = data.hp;
+                unitInfo.hpRegenRate = data.hpRegenRate;
+                unitInfo.speed = data.speed;
+                unitInfo.damage = data.damage;
+                unitInfo.defense = data.defense;
+                unitInfo.criticalDamage = data.criticalDamage;
+                unitInfo.criticalChance = data.criticalChance;
+            }
+            else
+            {
+                Debug.LogWarning(
+                    $"ID {unitInfo.id}에 해당하는 데이터를 찾을 수 없습니다."
+                );
+            }
+        }
+
+
+        Debug.Log("<color=green>GetPlayerAndEnemy Data Download Complete</color>");
+    }
+    
+    public void GetSkillDatas()
+    {
+        skillDataText = Resources.Load<TextAsset>("TextData/SkillData").text;
+
+        string[] lines = skillDataText.Split('\n');
+        
+        
+        for (int i = 1; i < lines.Length; i++)
+        {
+            string[] skillData = lines[i].Split(",");
+            SkillData skillDataTemp = new SkillData();
+            
+            skillDataTemp.skillId = int.Parse(skillData[0]);
+            skillDataTemp.skillName = skillData[1];
+            skillDataTemp.skillHp = int.Parse(skillData[2]);
+            skillDataTemp.skillCoolTime = float.Parse(skillData[3]);
+            skillDataTemp.skillDamage = int.Parse(skillData[4]);
+            skillDataTemp.skillCritDamage = int.Parse(skillData[5]);
+            skillDatas.Add(skillDataTemp.skillId, skillDataTemp);
+        }
+        
+        GameObject[] skillPrefabs =
+            Resources.LoadAll<GameObject>("Prefabs/SkillEffect");
+
+        // 프리팹에 데이터 넣기
+        foreach (GameObject prefab in skillPrefabs)
+        {
+            SkillInfo skillInfo = prefab.GetComponent<SkillInfo>();
+
+            if (skillInfo == null)
+                continue;
+
+            if (!skillDatas.TryGetValue(
+                    skillInfo.skillId,
+                    out SkillData data))
+            {
+                Debug.LogWarning(
+                    $"Skill ID {skillInfo.skillId}에 해당하는 데이터를 찾을 수 없습니다."
+                );
+
+                continue;
+            }
+
+            skillInfo.skillName = data.skillName;
+            skillInfo.skillHp = data.skillHp;
+            skillInfo.skillCoolTime = data.skillCoolTime;
+            skillInfo.skillDamage = data.skillDamage;
+            skillInfo.skillCritDamage = data.skillCritDamage;
+        }
+
+        
+        
         Debug.Log("<color=green>GetPlayerAndEnemy Data Download Complete</color>");
     }
 }
@@ -114,4 +230,14 @@ public class PlayerAndEnemyInfos
     public int defense;
     public float criticalDamage;
     public int criticalChance;
+}
+
+public class SkillData
+{
+    public int skillId;
+    public string skillName;
+    public int skillHp;
+    public float skillCoolTime;
+    public int skillDamage;
+    public int skillCritDamage;
 }
