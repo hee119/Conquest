@@ -202,7 +202,6 @@ GameObject:
   - component: {fileID: -385199289950270092}
   - component: {fileID: -222689960180229339}
   - component: {fileID: 2917960114813309756}
-  - component: {fileID: 7020431969537428486}
   m_Layer: 0
   m_Name: Turtle
   m_TagString: Untagged
@@ -358,8 +357,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3faa7af64e2d9be419f35587af21c46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCombat
-  maxHp: 5
+  maxHp: 30
   hp: 0
+  isDead: 0
+  attckCoolTime: 1
 --- !u!114 &8656832799027099916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +386,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitInfo
   id: 105
+  name: 
+  hp: 30
+  hpRegenRate: 0
+  speed: 0.5
+  damage: 1
+  defense: 5
+  criticalDamage: 0
+  criticalChance: 0
 --- !u!114 &-385199289950270092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,19 +460,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7020431969537428486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8351161018489360483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6634a5299f24849bcad405a415aa9362, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnitInfo
-  id: 0
 --- !u!1 &8515233909604476509
 GameObject:
   m_ObjectHideFlags: 0

@@ -372,7 +372,6 @@ GameObject:
   - component: {fileID: 2780113336406822799}
   - component: {fileID: 4910932022406525948}
   - component: {fileID: 1237843580358021774}
-  - component: {fileID: -3888696427652940849}
   m_Layer: 0
   m_Name: Bull
   m_TagString: Untagged
@@ -531,8 +530,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3faa7af64e2d9be419f35587af21c46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCombat
-  maxHp: 5
+  maxHp: 15
   hp: 0
+  isDead: 0
+  attckCoolTime: 1
 --- !u!114 &-2849081368564883683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,6 +559,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitInfo
   id: 100
+  name: 
+  hp: 15
+  hpRegenRate: 0
+  speed: 2
+  damage: 2
+  defense: 5
+  criticalDamage: 0
+  criticalChance: 0
 --- !u!114 &2780113336406822799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -624,19 +633,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-3888696427652940849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6788774473257447906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6634a5299f24849bcad405a415aa9362, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnitInfo
-  id: 0
 --- !u!1 &8495673703242429125
 GameObject:
   m_ObjectHideFlags: 0

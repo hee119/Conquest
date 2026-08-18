@@ -556,7 +556,6 @@ GameObject:
   - component: {fileID: -7365325777423472445}
   - component: {fileID: -7025415670022067272}
   - component: {fileID: 8731979598457492878}
-  - component: {fileID: -4809231490496841729}
   m_Layer: 0
   m_Name: Goat
   m_TagString: Untagged
@@ -715,8 +714,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3faa7af64e2d9be419f35587af21c46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCombat
-  maxHp: 5
+  maxHp: 20
   hp: 0
+  isDead: 0
+  attckCoolTime: 1
 --- !u!114 &-3406920516593856519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,6 +743,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitInfo
   id: 103
+  name: 
+  hp: 20
+  hpRegenRate: 0
+  speed: 2
+  damage: 5
+  defense: 5
+  criticalDamage: 0
+  criticalChance: 0
 --- !u!114 &-7365325777423472445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -808,16 +817,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-4809231490496841729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9072985828772862859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6634a5299f24849bcad405a415aa9362, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnitInfo
-  id: 0

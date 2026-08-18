@@ -1,7 +1,7 @@
 Id,Name,Hp,HpRegenRate,Speed,Damage,Defense,Critical Damage,Critical Chance
-1,swordMan,100,5,5,5,5,1.5,10
+1,swordMan,100,5,5,1,5,1.5,10
 100,Bull,15,0,2,2,5,0,0
-101,Crap,5,0,3,1,5,0,0
+101,Crap,6,0,3,1,5,0,0
 102,Eagle,10,0,6,2,5,0,0
 103,Goat,20,0,2,5,5,0,0
 104,Pufferfish,10,0,3,7,5,0,0

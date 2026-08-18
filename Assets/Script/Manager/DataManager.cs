@@ -102,6 +102,7 @@ public class DataManager : MonoBehaviour
         foreach (GameObject prefab in enemyPrefabs)
         {
             UnitInfo unitInfo = prefab.GetComponent<UnitInfo>();
+            EnemyCombat enemyCombat = prefab.GetComponent<EnemyCombat>();
 
             if (unitInfo == null)
                 continue;
@@ -115,6 +116,7 @@ public class DataManager : MonoBehaviour
                 unitInfo.defense = data.defense;
                 unitInfo.criticalDamage = data.criticalDamage;
                 unitInfo.criticalChance = data.criticalChance;
+                if(enemyCombat !=null) enemyCombat.maxHp = unitInfo.hp;
             }
             else
             {

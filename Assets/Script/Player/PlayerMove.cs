@@ -4,12 +4,13 @@ public class PlayerMove : MonoBehaviour
 {
     private Vector2 moveDir;
     private Rigidbody2D playerRb;
-    private Animator animator;
+    private AnimationController animationController;
     public float speed = 3;
 
     public void Awake()
     {
         playerRb = GetComponent<Rigidbody2D>();
+        animationController = GetComponent<AnimationController>();
     }
     
     public void Move(InputAction.CallbackContext context)
@@ -18,10 +19,19 @@ public class PlayerMove : MonoBehaviour
         {
             moveDir = context.ReadValue<Vector2>();
             playerRb.linearVelocity = moveDir * speed;
+
+            if (moveDir.x != 0)
+                transform.localScale = new Vector3(
+                    Mathf.Sign(moveDir.x) * Mathf.Abs(transform.localScale.x),
+                    transform.localScale.y,
+                    transform.localScale.z
+                );
+            animationController.Move(true);
         }
         else
         {
             playerRb.linearVelocity = Vector2.zero;
+            animationController.Move(false);
         }
     }
 }

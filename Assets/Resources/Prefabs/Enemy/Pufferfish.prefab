@@ -1289,7 +1289,6 @@ GameObject:
   - component: {fileID: -8013149867778647090}
   - component: {fileID: -145323525295889302}
   - component: {fileID: 5599895842755911517}
-  - component: {fileID: 2495377532053031929}
   m_Layer: 0
   m_Name: Pufferfish
   m_TagString: Untagged
@@ -1458,8 +1457,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3faa7af64e2d9be419f35587af21c46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCombat
-  maxHp: 5
+  maxHp: 10
   hp: 0
+  isDead: 0
+  attckCoolTime: 1
 --- !u!114 &8216867592352881795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1485,6 +1486,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitInfo
   id: 104
+  name: 
+  hp: 10
+  hpRegenRate: 0
+  speed: 3
+  damage: 7
+  defense: 5
+  criticalDamage: 0
+  criticalChance: 0
 --- !u!114 &-8013149867778647090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1551,19 +1560,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2495377532053031929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7899335511454826260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6634a5299f24849bcad405a415aa9362, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnitInfo
-  id: 0
 --- !u!1 &8073434890724470034
 GameObject:
   m_ObjectHideFlags: 0

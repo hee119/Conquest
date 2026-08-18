@@ -12,9 +12,4 @@ public class UnitInfo : MonoBehaviour
     public int defense;
     public float criticalDamage;
     public int criticalChance;
-
-    public void OnEnable()
-    {
-        
-    }
 }

@@ -386,7 +386,6 @@ GameObject:
   - component: {fileID: 3617475037612200455}
   - component: {fileID: 6826015629366012844}
   - component: {fileID: 3217690283206078485}
-  - component: {fileID: 7653352585993055450}
   m_Layer: 0
   m_Name: Eagle
   m_TagString: Untagged
@@ -546,8 +545,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3faa7af64e2d9be419f35587af21c46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCombat
-  maxHp: 5
+  maxHp: 10
   hp: 0
+  isDead: 0
+  attckCoolTime: 1
 --- !u!114 &-1484454570177552468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,6 +574,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitInfo
   id: 102
+  name: 
+  hp: 10
+  hpRegenRate: 0
+  speed: 6
+  damage: 2
+  defense: 5
+  criticalDamage: 0
+  criticalChance: 0
 --- !u!114 &3617475037612200455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,19 +648,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7653352585993055450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5695257265632678611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6634a5299f24849bcad405a415aa9362, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnitInfo
-  id: 0
 --- !u!1 &5716578981780477455
 GameObject:
   m_ObjectHideFlags: 0

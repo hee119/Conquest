@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DataManager
   stageDataText: 
   playerAndEnemyDataText: 
+  skillDataText: 
 --- !u!4 &15442097
 Transform:
   m_ObjectHideFlags: 0
@@ -194,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b877539a40c05481d9ad28d588fad1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GetData
-  stageDataLink: https://docs.google.com/spreadsheets/d/e/2PACX-1vRtpyp_AjAfKr1vNuo8x0sTesxeq8sT0swE5pwGWJq1AwNeItDCQNuCIpr700rMOteZ0lzfa_FrCVB4/pubhtml?gid=970065474&single=true
+  stageDataLink: https://docs.google.com/spreadsheets/d/e/2PACX-1vRtpyp_AjAfKr1vNuo8x0sTesxeq8sT0swE5pwGWJq1AwNeItDCQNuCIpr700rMOteZ0lzfa_FrCVB4/pub?gid=970065474&single=true&output=csv
   folderName: TextData
   saveFileName: PlayerAndEnemyData.csv
 --- !u!4 &162551602
@@ -841,11 +842,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1671595431367410965, guid: 69755839bdfc14c6cab7911c7329bfcb,
-        type: 3}
-      propertyPath: m_DefaultActionMap
-      value: 51d5ed76-61b7-453a-a09e-bff53c786d61
-      objectReference: {fileID: 0}
     - target: {fileID: 5121868815476299701, guid: 69755839bdfc14c6cab7911c7329bfcb,
         type: 3}
       propertyPath: m_Name
@@ -904,7 +900,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5121868815476299701, guid: 69755839bdfc14c6cab7911c7329bfcb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1564379093}
   m_SourcePrefab: {fileID: 100100000, guid: 69755839bdfc14c6cab7911c7329bfcb, type: 3}
 --- !u!1001 &1074527332
 PrefabInstance:
@@ -1041,6 +1041,12 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.15625, y: 0.7768797}
   m_EdgeRadius: 0
+--- !u!1 &1122905519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5121868815476299701, guid: 69755839bdfc14c6cab7911c7329bfcb,
+    type: 3}
+  m_PrefabInstance: {fileID: 991925696}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1467119215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,6 +1133,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 991925696}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1564379093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122905519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42856c4e9e291495e81216298537b791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCombat
+  maxHp: 0
+  hp: 0
+  isDead: 0
 --- !u!1 &1643930255
 GameObject:
   m_ObjectHideFlags: 0

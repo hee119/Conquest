@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public class SkillSpawner : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class SkillSpawner : MonoBehaviour
     public int skillId4;
 
     Dictionary<string, int> skillActions = new Dictionary<string, int>();
+    
+    AnimationController animationController;
 
     public void Awake()
     {
@@ -19,11 +22,32 @@ public class SkillSpawner : MonoBehaviour
         skillActions.Add("/Keyboard/1", skillId2);
         skillActions.Add("/Keyboard/2", skillId3);
         skillActions.Add("/Keyboard/3", skillId4);
+        
+        animationController = GetComponent<AnimationController>();
     }
 
     public void SkillUse(int skillId)
     {
-        PoolManager.Instance.Spawn(skillId, transform.position);
+        if (animationController.canSkillUse)
+        {
+            PoolManager.Instance.Spawn(skillId, transform.position);
+            if (skillId == skillId1)
+            {
+                animationController.Skill1();
+            }
+            else if (skillId == skillId2)
+            {
+                animationController.Skill2();
+            }
+            else if (skillId == skillId3)
+            {
+                animationController.Skill3();
+            }
+            else
+            {
+                animationController.Skill4();
+            }
+        }
     }
     
     
