@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0938301f103bf49b39a270793038b6bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExpInfo
-  id: 0
+  id: 300
   name: 
   exp: 0
 --- !u!114 &6911475216402954597
