@@ -11,10 +11,14 @@ public class DataManager : MonoBehaviour
     public string stageDataText;
     public string playerAndEnemyDataText;
     public string skillDataText;
+    public string levelDataText;
+    public string expDataText;
 
     public StageInfo[] stageInfos;
     public Dictionary<int, PlayerAndEnemyInfos> playerAndEnemyInfos = new();
     public Dictionary<int, SkillData> skillDatas = new();
+    public int[] levelDatas;
+    public Dictionary<int, ExpData> expDatas = new();
     
 
     
@@ -40,6 +44,8 @@ public class DataManager : MonoBehaviour
         GetStageDatas();
         GetPlayerAndEnemyDatas();
         GetSkillDatas();
+        GetLevelDatas();
+        GetExpDatas();
     }
     
 
@@ -92,6 +98,7 @@ public class DataManager : MonoBehaviour
                 playerAndEnemyInfosTemp.defense = int.Parse(playerAndEnemyData[6]);
                 playerAndEnemyInfosTemp.criticalDamage = float.Parse(playerAndEnemyData[7]);
                 playerAndEnemyInfosTemp.criticalChance = int.Parse(playerAndEnemyData[8]);
+                playerAndEnemyInfosTemp.dropExpOrbId = int.Parse(playerAndEnemyData[9]);
             playerAndEnemyInfos.Add(playerAndEnemyInfosTemp.id, playerAndEnemyInfosTemp);
         }
         
@@ -116,6 +123,7 @@ public class DataManager : MonoBehaviour
                 unitInfo.defense = data.defense;
                 unitInfo.criticalDamage = data.criticalDamage;
                 unitInfo.criticalChance = data.criticalChance;
+                unitInfo.dropExpOrbId = data.dropExpOrbId;
                 if(enemyCombat !=null) enemyCombat.maxHp = unitInfo.hp;
             }
             else
@@ -145,6 +153,7 @@ public class DataManager : MonoBehaviour
                 unitInfo.defense = data.defense;
                 unitInfo.criticalDamage = data.criticalDamage;
                 unitInfo.criticalChance = data.criticalChance;
+                unitInfo.dropExpOrbId = data.dropExpOrbId;
             }
             else
             {
@@ -212,6 +221,39 @@ public class DataManager : MonoBehaviour
         
         Debug.Log("<color=green>GetPlayerAndEnemy Data Download Complete</color>");
     }
+
+    public void GetLevelDatas()
+    {
+        levelDataText = Resources.Load<TextAsset>("TextData/LevelData").text;
+        
+        int[] result = levelDataText
+            .Split('\n')
+            .Where(x => int.TryParse(x.Trim(), out _))
+            .Select(x => int.Parse(x.Trim()))
+            .ToArray();
+        
+        levelDatas = result;
+    }
+
+    public void GetExpDatas()
+    {
+        expDataText = Resources.Load<TextAsset>("TextData/ExpData").text;
+        
+        string[] lines = expDataText.Split('\n');
+
+        for (int i = 1; i < lines.Length; i++)
+        {
+            string[] expData = lines[i].Split(",");
+            
+            ExpData expDataTemp = new ExpData();
+            
+            expDataTemp.id = int.Parse(expData[0]);
+            expDataTemp.name = expData[1];
+            expDataTemp.exp = int.Parse(expData[2]);
+            
+            expDatas.Add(expDataTemp.id, expDataTemp);
+        }
+    }
 }
 
 public class StageInfo
@@ -232,6 +274,7 @@ public class PlayerAndEnemyInfos
     public int defense;
     public float criticalDamage;
     public int criticalChance;
+    public int dropExpOrbId;
 }
 
 public class SkillData
@@ -242,4 +285,11 @@ public class SkillData
     public float skillCoolTime;
     public int skillDamage;
     public int skillCritDamage;
+}
+
+public class ExpData
+{
+    public int id;
+    public string name;
+    public int exp;
 }

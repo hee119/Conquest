@@ -31,6 +31,7 @@ public class PoolManager : MonoBehaviour
 
         prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/Enemy"));
         prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/SkillEffect"));
+        prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/Exp"));
 
         
 
@@ -52,6 +53,7 @@ public class PoolManager : MonoBehaviour
 
         var unitInfo = prefab.GetComponent<UnitInfo>();
         var skillInfo = prefab.GetComponent<SkillInfo>();
+        var expInfo = prefab.GetComponent<ExpInfo>();
 
         int id;
 
@@ -59,6 +61,8 @@ public class PoolManager : MonoBehaviour
             id = unitInfo.id;
         else if (skillInfo != null)
             id = skillInfo.skillId;
+        else if (expInfo != null)
+            id = expInfo.id;
         else
             return;
 

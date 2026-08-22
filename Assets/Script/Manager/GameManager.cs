@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitUntil(() => StageManager.Instance != null);        
         StageManager.Instance.StageInit();
     }
+
+    
 }
 
 public class Tiles

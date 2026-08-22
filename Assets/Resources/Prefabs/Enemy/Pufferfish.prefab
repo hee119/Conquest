@@ -1494,6 +1494,7 @@ MonoBehaviour:
   defense: 5
   criticalDamage: 0
   criticalChance: 0
+  dropExpOrbId: 300
 --- !u!114 &-8013149867778647090
 MonoBehaviour:
   m_ObjectHideFlags: 0

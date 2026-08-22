@@ -41,6 +41,7 @@ public class AnimationController : MonoBehaviour
     }
     
     public void CanUseSkill()
+    
     {
         canSkillUse = true;
     }

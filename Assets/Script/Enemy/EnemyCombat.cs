@@ -54,6 +54,7 @@ public class EnemyCombat : MonoBehaviour
     public void Die()
     {
         isDead = true;
+        PoolManager.Instance.Spawn(unitInfo.dropExpOrbId, transform.position);
         pooledObject.DestroyObj();
     }
 
