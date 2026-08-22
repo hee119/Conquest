@@ -863,7 +863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b877539a40c05481d9ad28d588fad1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GetData
-  stageDataLink: https://docs.google.com/spreadsheets/d/e/2PACX-1vQaS9y6VM9ujX1zNK4FMAEQBZ8x65XOFiXPfoEy_8aJPQy5Phok1yD3S0r5pM-TGfXv9wMKINPbEoRg/pub?gid=0&single=true&output=csv
+  stageDataLink: https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5PR_kSWX0gJ-Ial9Dmq3Mf35h75fI3DhykloAOoRu69wcPTJChYqLq2H9HQ67643Es_x6VY4FGsjq/pub?gid=0&single=true&output=csv
   folderName: TextData
   saveFileName: ExpData.csv
 --- !u!4 &672507428
@@ -939,66 +939,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1405166045347888034, guid: 69755839bdfc14c6cab7911c7329bfcb,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.89890295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1405166045347888034, guid: 69755839bdfc14c6cab7911c7329bfcb,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.053797
-      objectReference: {fileID: 0}
-    - target: {fileID: 1405166045347888034, guid: 69755839bdfc14c6cab7911c7329bfcb,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.17272994
-      objectReference: {fileID: 0}
-    - target: {fileID: 1405166045347888034, guid: 69755839bdfc14c6cab7911c7329bfcb,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.05117929
-      objectReference: {fileID: 0}
-    - target: {fileID: 1405166045347888034, guid: 69755839bdfc14c6cab7911c7329bfcb,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1405166045347888034, guid: 69755839bdfc14c6cab7911c7329bfcb,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1405166045347888034, guid: 69755839bdfc14c6cab7911c7329bfcb,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1405166045347888034, guid: 69755839bdfc14c6cab7911c7329bfcb,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 2.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1405166045347888034, guid: 69755839bdfc14c6cab7911c7329bfcb,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 1.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 1405166045347888034, guid: 69755839bdfc14c6cab7911c7329bfcb,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1405166045347888034, guid: 69755839bdfc14c6cab7911c7329bfcb,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 1405166045347888034, guid: 69755839bdfc14c6cab7911c7329bfcb,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5121868815476299701, guid: 69755839bdfc14c6cab7911c7329bfcb,
         type: 3}
       propertyPath: m_Name
@@ -1054,42 +994,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7899240055226037027, guid: 69755839bdfc14c6cab7911c7329bfcb,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 7899240055226037027, guid: 69755839bdfc14c6cab7911c7329bfcb,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 7899240055226037027, guid: 69755839bdfc14c6cab7911c7329bfcb,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1643334125280247968, guid: e15b92666314e4cd29e243007f3857ae,
-        type: 3}
-    - target: {fileID: 7899240055226037027, guid: 69755839bdfc14c6cab7911c7329bfcb,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 6047611866840930784, guid: 69755839bdfc14c6cab7911c7329bfcb, type: 3}
-    - {fileID: 744786948468582812, guid: 69755839bdfc14c6cab7911c7329bfcb, type: 3}
-    - {fileID: 5208387008691712987, guid: 69755839bdfc14c6cab7911c7329bfcb, type: 3}
-    - {fileID: 3755285886066485972, guid: 69755839bdfc14c6cab7911c7329bfcb, type: 3}
-    - {fileID: 9181755692536768392, guid: 69755839bdfc14c6cab7911c7329bfcb, type: 3}
-    - {fileID: 6309182268472002529, guid: 69755839bdfc14c6cab7911c7329bfcb, type: 3}
-    - {fileID: 8951917196159381818, guid: 69755839bdfc14c6cab7911c7329bfcb, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5121868815476299701, guid: 69755839bdfc14c6cab7911c7329bfcb,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1564379093}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69755839bdfc14c6cab7911c7329bfcb, type: 3}
 --- !u!1001 &1074527332
 PrefabInstance:
@@ -1226,12 +1134,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.15625, y: 0.7768797}
   m_EdgeRadius: 0
---- !u!1 &1122905519 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5121868815476299701, guid: 69755839bdfc14c6cab7911c7329bfcb,
-    type: 3}
-  m_PrefabInstance: {fileID: 991925696}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1467119215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,21 +1220,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 991925696}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1564379093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122905519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42856c4e9e291495e81216298537b791, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerCombat
-  maxHp: 0
-  hp: 0
-  isDead: 0
 --- !u!1 &1643930255
 GameObject:
   m_ObjectHideFlags: 0
