@@ -31,6 +31,7 @@ public class EnemyCombat : MonoBehaviour
     {
         StartCoroutine(InvincibleCor());
         hp -= damage;
+        anim.SetTrigger("Hit");
         HitFlash();
         if (hp <= 0)
         {
