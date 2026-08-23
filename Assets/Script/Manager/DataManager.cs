@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Linq;
 using UnityEditor.SceneManagement;
@@ -226,11 +227,7 @@ public class DataManager : MonoBehaviour
     {
         levelDataText = Resources.Load<TextAsset>("TextData/LevelData").text;
         
-        int[] result = levelDataText
-            .Split('\n')
-            .Where(x => int.TryParse(x.Trim(), out _))
-            .Select(x => int.Parse(x.Trim()))
-            .ToArray();
+        int[] result = Array.ConvertAll(levelDataText.Split('\n').Skip(1).ToArray(), int.Parse);
         
         levelDatas = result;
     }
@@ -252,6 +249,18 @@ public class DataManager : MonoBehaviour
             expDataTemp.exp = int.Parse(expData[2]);
             
             expDatas.Add(expDataTemp.id, expDataTemp);
+        }
+        
+        GameObject[] expPrefabs = Resources.LoadAll<GameObject>("Prefabs/Exp");
+
+        foreach (GameObject prefab in expPrefabs)
+        {
+            ExpInfo expData = prefab.GetComponent<ExpInfo>();
+            if (expData != null)
+            {
+                expData.name = expDatas[expData.id].name;
+                expData.exp = expDatas[expData.id].exp;
+            }
         }
     }
 }

@@ -1,25 +1,22 @@
 fileFormatVersion: 2
-guid: 95dd132ecdddf474b9f41f7e642b25e1
+guid: bfcec2f64f503c440a9cc5c3cedba8b7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6867757744863099905
-    second: Swordman_0
+      213: 9131165897213285675
+    second: "ChatGPT Image 2026\uB144 8\uC6D4 22\uC77C \uC624\uD6C4 08_30_32_0"
   - first:
-      213: 335342155735223133
-    second: Swordman_1
+      213: -4908866059388709255
+    second: "ChatGPT Image 2026\uB144 8\uC6D4 22\uC77C \uC624\uD6C4 08_30_32_1"
   - first:
-      213: 3465103836319019880
-    second: Swordman_2
+      213: 2853156188071439670
+    second: "ChatGPT Image 2026\uB144 8\uC6D4 22\uC77C \uC624\uD6C4 08_30_32_2"
   - first:
-      213: 6624301536466032985
-    second: Swordman_3
+      213: 2222196299667692924
+    second: "ChatGPT Image 2026\uB144 8\uC6D4 22\uC77C \uC624\uD6C4 08_30_32_3"
   - first:
-      213: 3334155787003184178
-    second: Swordman_4
-  - first:
-      213: -1298038668157555853
-    second: Swordman_5
+      213: -8798446884291431732
+    second: "ChatGPT Image 2026\uB144 8\uC6D4 22\uC77C \uC624\uD6C4 08_30_32_4"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -61,12 +58,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 400
+  spritePixelsToUnits: 1600
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -111,150 +108,115 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Swordman_0
+      name: "ChatGPT Image 2026\uB144 8\uC6D4 22\uC77C \uC624\uD6C4 08_30_32_0"
       rect:
         serializedVersion: 2
-        x: 9
-        y: 940
-        width: 366
-        height: 249
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 64
+        y: 15
+        width: 1277
+        height: 990
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ff34ffdc7b2d0b0a0800000000000000
-      internalID: -6867757744863099905
+      spriteID: b251f88210b68be70800000000000000
+      internalID: 9131165897213285675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Swordman_1
+      name: "ChatGPT Image 2026\uB144 8\uC6D4 22\uC77C \uC624\uD6C4 08_30_32_1"
       rect:
         serializedVersion: 2
-        x: 414
-        y: 915
-        width: 262
-        height: 269
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1248
+        y: 528
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d5bcfc6f9ef57a400800000000000000
-      internalID: 335342155735223133
+      spriteID: 9761a28c35430ebb0800000000000000
+      internalID: -4908866059388709255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Swordman_2
+      name: "ChatGPT Image 2026\uB144 8\uC6D4 22\uC77C \uC624\uD6C4 08_30_32_2"
       rect:
         serializedVersion: 2
-        x: 22
-        y: 399
-        width: 352
-        height: 391
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 350
+        y: 257
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 86373a98495861030800000000000000
-      internalID: 3465103836319019880
+      spriteID: 63da4b6bf62789720800000000000000
+      internalID: 2853156188071439670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Swordman_3
+      name: "ChatGPT Image 2026\uB144 8\uC6D4 22\uC77C \uC624\uD6C4 08_30_32_3"
       rect:
         serializedVersion: 2
-        x: 423
-        y: 640
-        width: 106
-        height: 149
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 384
+        y: 223
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 959d12e762f3eeb50800000000000000
-      internalID: 6624301536466032985
+      spriteID: c7d51e6c2c3d6de10800000000000000
+      internalID: 2222196299667692924
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Swordman_4
+      name: "ChatGPT Image 2026\uB144 8\uC6D4 22\uC77C \uC624\uD6C4 08_30_32_4"
       rect:
         serializedVersion: 2
-        x: 21
-        y: 282
-        width: 126
-        height: 91
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 390
+        y: 215
+        width: 7
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 234432ee50d454e20800000000000000
-      internalID: 3334155787003184178
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Swordman_5
-      rect:
-        serializedVersion: 2
-        x: 410
-        y: 288
-        width: 101
-        height: 90
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 37b6fb765b07cfde0800000000000000
-      internalID: -1298038668157555853
+      spriteID: cc2baa6cc23a5e580800000000000000
+      internalID: -8798446884291431732
       vertices: []
       indices: 
       edges: []
@@ -263,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 756c4832ca3d04f769d359c11893c502
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -273,12 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Swordman_0: -6867757744863099905
-      Swordman_1: 335342155735223133
-      Swordman_2: 3465103836319019880
-      Swordman_3: 6624301536466032985
-      Swordman_4: 3334155787003184178
-      Swordman_5: -1298038668157555853
+      "ChatGPT Image 2026\uB144 8\uC6D4 22\uC77C \uC624\uD6C4 08_30_32_0": 9131165897213285675
+      "ChatGPT Image 2026\uB144 8\uC6D4 22\uC77C \uC624\uD6C4 08_30_32_1": -4908866059388709255
+      "ChatGPT Image 2026\uB144 8\uC6D4 22\uC77C \uC624\uD6C4 08_30_32_2": 2853156188071439670
+      "ChatGPT Image 2026\uB144 8\uC6D4 22\uC77C \uC624\uD6C4 08_30_32_3": 2222196299667692924
+      "ChatGPT Image 2026\uB144 8\uC6D4 22\uC77C \uC624\uD6C4 08_30_32_4": -8798446884291431732
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

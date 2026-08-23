@@ -19,6 +19,7 @@ public class PlayerMove : MonoBehaviour
         {
             moveDir = context.ReadValue<Vector2>();
             playerRb.linearVelocity = moveDir * speed;
+            animationController.Move(true);
 
             if (moveDir.x != 0)
                 transform.localScale = new Vector3(
@@ -26,7 +27,6 @@ public class PlayerMove : MonoBehaviour
                     transform.localScale.y,
                     transform.localScale.z
                 );
-            animationController.Move(true);
         }
         else
         {

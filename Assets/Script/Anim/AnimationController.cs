@@ -4,7 +4,10 @@ using UnityEngine;
 public class AnimationController : MonoBehaviour
 {
     Animator animator;
-    public bool canSkillUse = true;
+    public bool canSkillUse1 = true;
+    public bool canSkillUse2 = true;
+    public bool canSkillUse3 = true;
+    public bool canSkillUse4 = true;
 
     public void Awake()
     {
@@ -14,35 +17,52 @@ public class AnimationController : MonoBehaviour
     public void Skill1()
     {
         animator.SetTrigger("Skill1");
-        canSkillUse = false;
+        canSkillUse1 = false;
     }
     
     public void Skill2()
     {
         animator.SetTrigger("Skill2");
-        canSkillUse = false;
+        canSkillUse2 = false;
     }
     
     public void Skill3()
     {
         animator.SetTrigger("Skill3");
-        canSkillUse = false;
+        canSkillUse3 = false;
     }
     
     public void Skill4()
     {
         animator.SetTrigger("Skill4");
-        canSkillUse = false;
+        canSkillUse4 = false;
     }
 
     public void Move(bool isMove)
     {
-        animator.SetBool("Move", isMove);
+        if (canSkillUse1 && canSkillUse2 && canSkillUse3 && canSkillUse4)
+        {
+            animator.SetBool("Move", isMove); 
+        }
     }
     
-    public void CanUseSkill()
-    
+    public void CanUseSkill1()
     {
-        canSkillUse = true;
+        canSkillUse1 = true;
+    }
+    
+    public void CanUseSkill2()
+    {
+        canSkillUse2 = true;
+    }
+    
+    public void CanUseSkill3()
+    {
+        canSkillUse3 = true;
+    }
+    
+    public void CanUseSkill4()
+    {
+        canSkillUse4 = true;
     }
 }

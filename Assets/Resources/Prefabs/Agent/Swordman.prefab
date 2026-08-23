@@ -146,7 +146,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -275,7 +275,7 @@ Animator:
   m_GameObject: {fileID: 5121868815476299701}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3fcc42022c0c343288d8d07adb96902a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6007e0a7e98e5024ca29a40156c46387, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -342,13 +342,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UnitInfo
   id: 1
   name: 
-  hp: 0
-  hpRegenRate: 0
-  speed: 0
-  damage: 0
-  defense: 0
-  criticalDamage: 0
-  criticalChance: 0
+  hp: 100
+  hpRegenRate: 5
+  speed: 5
+  damage: 1
+  defense: 5
+  criticalDamage: 1.5
+  criticalChance: 10
   dropExpOrbId: 0
 --- !u!114 &7201235708750216182
 MonoBehaviour:

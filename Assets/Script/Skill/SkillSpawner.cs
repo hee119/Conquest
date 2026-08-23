@@ -28,26 +28,24 @@ public class SkillSpawner : MonoBehaviour
 
     public void SkillUse(int skillId)
     {
-        if (animationController.canSkillUse)
-        {
+        
             PoolManager.Instance.Spawn(skillId, transform.position);
-            if (skillId == skillId1)
+            if (animationController.canSkillUse1 && skillId == skillId1)
             {
                 animationController.Skill1();
             }
-            else if (skillId == skillId2)
+            else if (animationController.canSkillUse2 && skillId == skillId2)
             {
                 animationController.Skill2();
             }
-            else if (skillId == skillId3)
+            else if (animationController.canSkillUse3 && skillId == skillId3)
             {
                 animationController.Skill3();
             }
-            else
+            else if(animationController.canSkillUse4 && skillId == skillId4)
             {
                 animationController.Skill4();
             }
-        }
     }
     
     

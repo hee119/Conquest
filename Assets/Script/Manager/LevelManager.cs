@@ -5,8 +5,8 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
-    private int[] levelDatas;
-    private int currentLevel;
+    public int[] levelDatas;
+    public int currentLevel;
     private int currentExp;
     public void Awake()
     {
@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour
     public void AddExp(int exp)
     {
         currentExp += exp;
-        if (currentExp >= levelDatas[currentLevel])
+        if (currentLevel < levelDatas.Length && currentExp >= levelDatas[currentLevel])
         {
             LevelUp();
         }
@@ -39,6 +39,7 @@ public class LevelManager : MonoBehaviour
 
     public void LevelUp()
     {
+        Debug.Log("Level Up");   
         currentLevel++;
         currentExp = 0;
     }
