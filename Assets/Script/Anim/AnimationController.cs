@@ -40,10 +40,7 @@ public class AnimationController : MonoBehaviour
 
     public void Move(bool isMove)
     {
-        if (canSkillUse1 && canSkillUse2 && canSkillUse3 && canSkillUse4)
-        {
-            animator.SetBool("Move", isMove); 
-        }
+        animator.SetBool("Move", isMove); 
     }
     
     public void CanUseSkill1()

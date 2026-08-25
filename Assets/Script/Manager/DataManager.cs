@@ -47,6 +47,7 @@ public class DataManager : MonoBehaviour
         GetSkillDatas();
         GetLevelDatas();
         GetExpDatas();
+        Debug.Log(skillDatas[200].skillHp);
     }
     
 
@@ -186,6 +187,8 @@ public class DataManager : MonoBehaviour
             skillDataTemp.skillCoolTime = float.Parse(skillData[3]);
             skillDataTemp.skillDamage = int.Parse(skillData[4]);
             skillDataTemp.skillCritDamage = int.Parse(skillData[5]);
+            skillDataTemp.lifetime = float.Parse(skillData[6]);
+            skillDataTemp.movementLockTime = float.Parse(skillData[7]);
             skillDatas.Add(skillDataTemp.skillId, skillDataTemp);
         }
         
@@ -216,11 +219,13 @@ public class DataManager : MonoBehaviour
             skillInfo.skillCoolTime = data.skillCoolTime;
             skillInfo.skillDamage = data.skillDamage;
             skillInfo.skillCritDamage = data.skillCritDamage;
+            skillInfo.lifetime = data.lifetime;
+            skillInfo.movementLockTime = data.movementLockTime;
         }
 
         
         
-        Debug.Log("<color=green>GetPlayerAndEnemy Data Download Complete</color>");
+        Debug.Log("<color=green>Skill Data Download Complete</color>");
     }
 
     public void GetLevelDatas()
@@ -294,6 +299,8 @@ public class SkillData
     public float skillCoolTime;
     public int skillDamage;
     public int skillCritDamage;
+    public float lifetime;
+    public float movementLockTime;
 }
 
 public class ExpData

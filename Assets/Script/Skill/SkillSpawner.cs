@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ public class SkillSpawner : MonoBehaviour
     Dictionary<string, int> skillActions = new Dictionary<string, int>();
     
     AnimationController animationController;
+    
+    PlayerMove playerMove;
 
     public void Awake()
     {
@@ -24,12 +27,11 @@ public class SkillSpawner : MonoBehaviour
         skillActions.Add("/Keyboard/3", skillId4);
         
         animationController = GetComponent<AnimationController>();
+        playerMove = GetComponent<PlayerMove>();
     }
 
     public void SkillUse(int skillId)
     {
-        
-            PoolManager.Instance.Spawn(skillId, transform.position);
             if (animationController.canSkillUse1 && skillId == skillId1)
             {
                 animationController.Skill1();
@@ -55,5 +57,25 @@ public class SkillSpawner : MonoBehaviour
         {
             SkillUse(skillActions[context.control.path]);
         }
+    }
+
+    public IEnumerator LifeTime(int skillId, GameObject obj)
+    {
+        yield return new WaitForSeconds(DataManager.Instance.skillDatas[skillId].lifetime);
+        
+        obj.GetComponent<PooledObject>().DestroyObj();
+    }
+
+    public void MovementLock(int canMove)
+    {
+        if(canMove > 0)
+            playerMove.StopMove(1);
+        else
+            playerMove.StopMove(0);
+    }
+
+    public void SkillSpawn(int skillId)
+    {
+        StartCoroutine(LifeTime(skillId ,PoolManager.Instance.Spawn(skillId, transform.position)));
     }
 }

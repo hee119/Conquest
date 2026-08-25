@@ -941,28 +941,38 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1405166045347888034, guid: 69755839bdfc14c6cab7911c7329bfcb,
         type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405166045347888034, guid: 69755839bdfc14c6cab7911c7329bfcb,
+        type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 2.56
+      value: 4.266667
       objectReference: {fileID: 0}
     - target: {fileID: 1405166045347888034, guid: 69755839bdfc14c6cab7911c7329bfcb,
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 1.71
+      value: 4.266667
       objectReference: {fileID: 0}
     - target: {fileID: 1405166045347888034, guid: 69755839bdfc14c6cab7911c7329bfcb,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.56
+      value: 3.4133334
       objectReference: {fileID: 0}
     - target: {fileID: 1405166045347888034, guid: 69755839bdfc14c6cab7911c7329bfcb,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.71
+      value: 3.4133334
       objectReference: {fileID: 0}
     - target: {fileID: 5121868815476299701, guid: 69755839bdfc14c6cab7911c7329bfcb,
         type: 3}
       propertyPath: m_Name
       value: Swordman
+      objectReference: {fileID: 0}
+    - target: {fileID: 7058819936553798055, guid: 69755839bdfc14c6cab7911c7329bfcb,
+        type: 3}
+      propertyPath: idleDelay
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 7812463728018489341, guid: 69755839bdfc14c6cab7911c7329bfcb,
         type: 3}
@@ -1017,24 +1027,29 @@ PrefabInstance:
     - target: {fileID: 7899240055226037027, guid: 69755839bdfc14c6cab7911c7329bfcb,
         type: 3}
       propertyPath: m_FlipX
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7899240055226037027, guid: 69755839bdfc14c6cab7911c7329bfcb,
         type: 3}
       propertyPath: m_Size.x
-      value: 2.56
+      value: 4.266667
       objectReference: {fileID: 0}
     - target: {fileID: 7899240055226037027, guid: 69755839bdfc14c6cab7911c7329bfcb,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.71
+      value: 4.266667
       objectReference: {fileID: 0}
     - target: {fileID: 7899240055226037027, guid: 69755839bdfc14c6cab7911c7329bfcb,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e15b92666314e4cd29e243007f3857ae,
+      objectReference: {fileID: -7604060356387697401, guid: 5e2a0e947b8244995bfca997830049c0,
         type: 3}
+    - target: {fileID: 7899240055226037027, guid: 69755839bdfc14c6cab7911c7329bfcb,
+        type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7899240055226037027, guid: 69755839bdfc14c6cab7911c7329bfcb,
         type: 3}
       propertyPath: m_WasSpriteAssigned

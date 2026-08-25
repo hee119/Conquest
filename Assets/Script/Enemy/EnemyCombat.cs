@@ -92,10 +92,14 @@ public class EnemyCombat : MonoBehaviour
         isInvincible = false;
     }
 
+    public void Attack()
+    {
+        playerCombat.TakeDamage(unitInfo.damage);
+    }
+
     private IEnumerator AttackCoolTimeCor()
     {
         anim.SetTrigger("Attack");
-        playerCombat.TakeDamage(unitInfo.damage);
 
         yield return new WaitForSeconds(attckCoolTime);
 
