@@ -109,7 +109,7 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4125709159630829647}
   m_Enabled: 1
-  m_SortingLayerID: -1869315837
+  m_SortingLayerID: -172119849
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_SortAtRoot: 0
@@ -241,7 +241,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1.5
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

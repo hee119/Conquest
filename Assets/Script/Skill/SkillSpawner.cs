@@ -76,7 +76,12 @@ public class SkillSpawner : MonoBehaviour
 
     public void SkillSpawn(int skillId)
     {
-        GameObject skillPrefab = PoolManager.Instance.Spawn(skillId, transform.position + Vector3.forward * 1.5f);
+        float offset = 1f;
+
+        Vector3 spawnPos = transform.position;
+        spawnPos.x += transform.localScale.x > 0 ? offset : -offset;
+        
+        GameObject skillPrefab = PoolManager.Instance.Spawn(skillId, spawnPos);
         
         ParticleSystemRenderer[] particleRenderers =
             skillPrefab.GetComponentsInChildren<ParticleSystemRenderer>();
