@@ -7,7 +7,8 @@ public class LevelManager : MonoBehaviour
     public static LevelManager Instance;
     public int[] levelDatas;
     public int currentLevel;
-    private int currentExp;
+    public int currentExp;
+    public GameObject upgradeUI;
     public void Awake()
     {
         if (Instance == null)
@@ -41,6 +42,8 @@ public class LevelManager : MonoBehaviour
     {
         Debug.Log("Level Up");   
         currentLevel++;
+        upgradeUI.SetActive(true);
+        Time.timeScale = 0f;
         currentExp = 0;
     }
 }
