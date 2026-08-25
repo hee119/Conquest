@@ -76,6 +76,20 @@ public class SkillSpawner : MonoBehaviour
 
     public void SkillSpawn(int skillId)
     {
-        StartCoroutine(LifeTime(skillId ,PoolManager.Instance.Spawn(skillId, transform.position)));
+        GameObject skillPrefab = PoolManager.Instance.Spawn(skillId, transform.position + Vector3.forward * 1.5f);
+        
+        ParticleSystemRenderer[] particleRenderers =
+            skillPrefab.GetComponentsInChildren<ParticleSystemRenderer>();
+
+        foreach (var particleRenderer in particleRenderers)
+        {
+            particleRenderer.flip = new Vector3(
+                playerMove.transform.localScale.x < 0 ? 1 : 0,
+                particleRenderer.flip.y,
+                particleRenderer.flip.z
+            );
+        }
+        
+        StartCoroutine(LifeTime(skillId, skillPrefab));
     }
 }

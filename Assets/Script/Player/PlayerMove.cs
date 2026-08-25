@@ -34,13 +34,15 @@ public class PlayerMove : MonoBehaviour
                     transform.localScale.z
                 );
         }
-        else if (!canMove)
+        
+        if (!canMove)
         {
             Debug.Log("canMove");
             animationController.Move(true);
             playerRb.linearVelocity = Vector2.zero;
         }
-        else if(context.canceled)
+        
+        if(context.canceled)
         {
             Debug.Log("cancel");
             SetIdleDelayed();
