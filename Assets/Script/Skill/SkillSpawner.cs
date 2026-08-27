@@ -61,7 +61,7 @@ public class SkillSpawner : MonoBehaviour
 
     public IEnumerator LifeTime(int skillId, GameObject obj)
     {
-        yield return new WaitForSeconds(DataManager.Instance.skillDatas[skillId].lifetime);
+        yield return new WaitForSeconds(DataManager.Instance.skillDatasDic[skillId].lifetime);
         
         obj.GetComponent<PooledObject>().DestroyObj();
     }

@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 using System.Collections.Generic;
+using UnityEngine.UI;
+
 public class DataManager : MonoBehaviour
 {
     public static DataManager Instance;
@@ -14,13 +16,15 @@ public class DataManager : MonoBehaviour
     public string skillDataText;
     public string levelDataText;
     public string expDataText;
+    public string upgradeDataText;
 
     public StageInfo[] stageInfos;
-    public Dictionary<int, PlayerAndEnemyInfos> playerAndEnemyInfos = new();
-    public Dictionary<int, SkillData> skillDatas = new();
+    public Dictionary<int, PlayerAndEnemyInfos> playerAndEnemyInfosDic = new();
+    public Dictionary<int, SkillData> skillDatasDic = new();
     public int[] levelDatas;
-    public Dictionary<int, ExpData> expDatas = new();
-    
+    public Dictionary<int, ExpData> expDatasDic = new();
+    public Dictionary<int, UpgradeData> UpgradeDatasDic = new();
+    public Dictionary <int, Image> upgradeImagesDic = new();
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -47,7 +51,7 @@ public class DataManager : MonoBehaviour
         GetSkillDatas();
         GetLevelDatas();
         GetExpDatas();
-        Debug.Log(skillDatas[200].skillHp);
+        GetUpgradeDatas();
     }
     
 
@@ -101,7 +105,7 @@ public class DataManager : MonoBehaviour
                 playerAndEnemyInfosTemp.criticalDamage = float.Parse(playerAndEnemyData[7]);
                 playerAndEnemyInfosTemp.criticalChance = int.Parse(playerAndEnemyData[8]);
                 playerAndEnemyInfosTemp.dropExpOrbId = int.Parse(playerAndEnemyData[9]);
-            playerAndEnemyInfos.Add(playerAndEnemyInfosTemp.id, playerAndEnemyInfosTemp);
+            playerAndEnemyInfosDic.Add(playerAndEnemyInfosTemp.id, playerAndEnemyInfosTemp);
         }
         
         
@@ -116,7 +120,7 @@ public class DataManager : MonoBehaviour
             if (unitInfo == null)
                 continue;
 
-            if (playerAndEnemyInfos.TryGetValue(unitInfo.id, out PlayerAndEnemyInfos data))
+            if (playerAndEnemyInfosDic.TryGetValue(unitInfo.id, out PlayerAndEnemyInfos data))
             {
                 unitInfo.hp = data.hp;
                 unitInfo.hpRegenRate = data.hpRegenRate;
@@ -146,7 +150,7 @@ public class DataManager : MonoBehaviour
             if (unitInfo == null)
                 continue;
 
-            if (playerAndEnemyInfos.TryGetValue(unitInfo.id, out PlayerAndEnemyInfos data))
+            if (playerAndEnemyInfosDic.TryGetValue(unitInfo.id, out PlayerAndEnemyInfos data))
             {
                 unitInfo.hp = data.hp;
                 unitInfo.hpRegenRate = data.hpRegenRate;
@@ -189,7 +193,7 @@ public class DataManager : MonoBehaviour
             skillDataTemp.skillCritDamage = int.Parse(skillData[5]);
             skillDataTemp.lifetime = float.Parse(skillData[6]);
             skillDataTemp.movementLockTime = float.Parse(skillData[7]);
-            skillDatas.Add(skillDataTemp.skillId, skillDataTemp);
+            skillDatasDic.Add(skillDataTemp.skillId, skillDataTemp);
         }
         
         GameObject[] skillPrefabs =
@@ -203,7 +207,7 @@ public class DataManager : MonoBehaviour
             if (skillInfo == null)
                 continue;
 
-            if (!skillDatas.TryGetValue(
+            if (!skillDatasDic.TryGetValue(
                     skillInfo.skillId,
                     out SkillData data))
             {
@@ -253,7 +257,7 @@ public class DataManager : MonoBehaviour
             expDataTemp.name = expData[1];
             expDataTemp.exp = int.Parse(expData[2]);
             
-            expDatas.Add(expDataTemp.id, expDataTemp);
+            expDatasDic.Add(expDataTemp.id, expDataTemp);
         }
         
         GameObject[] expPrefabs = Resources.LoadAll<GameObject>("Prefabs/Exp");
@@ -263,11 +267,224 @@ public class DataManager : MonoBehaviour
             ExpInfo expData = prefab.GetComponent<ExpInfo>();
             if (expData != null)
             {
-                expData.name = expDatas[expData.id].name;
-                expData.exp = expDatas[expData.id].exp;
+                expData.name = expDatasDic[expData.id].name;
+                expData.exp = expDatasDic[expData.id].exp;
             }
         }
     }
+
+    public void GetUpgradeDatas()
+    {
+        StartCoroutine(GetUpgradeDatasCor());
+    }
+    
+    public IEnumerator GetUpgradeDatasCor()
+{
+    yield return new WaitUntil(() => UpgradeManager.Instance != null);
+
+    // UpgradeData CSV 불러오기
+    TextAsset textAsset = Resources.Load<TextAsset>("TextData/UpgradeData");
+
+    if (textAsset == null)
+    {
+        Debug.LogError("UpgradeData.csv를 찾을 수 없습니다.");
+        yield break;
+    }
+
+    upgradeDataText = textAsset.text;
+
+    // 이미지 데이터 불러오기
+    ImageInfo[] upgradeImages = Resources.LoadAll<ImageInfo>("Image");
+
+    foreach (ImageInfo imageInfo in upgradeImages)
+    {
+        if (!upgradeImagesDic.ContainsKey(imageInfo.id))
+        {
+            upgradeImagesDic.Add(imageInfo.id, imageInfo.image);
+        }
+    }
+
+    // 줄 단위로 분리
+    string[] lines = upgradeDataText.Split(
+        new[] { '\r', '\n' },
+        System.StringSplitOptions.RemoveEmptyEntries
+    );
+
+    for (int i = 1; i < lines.Length; i++)
+{
+    if (string.IsNullOrWhiteSpace(lines[i]))
+        continue;
+
+    string[] upgradeData = ParseCsvLine(lines[i]);
+
+    if (upgradeData.Length < 12)
+    {
+        Debug.LogError(
+            $"CSV 데이터 부족\n" +
+            $"Line: {i + 1}\n" +
+            $"내용: {lines[i]}"
+        );
+        continue;
+    }
+
+    Debug.Log($"CSV Line {i + 1} ID = [{upgradeData[0]}]");
+
+    if (!int.TryParse(upgradeData[0].Trim(), out int id))
+    {
+        Debug.LogError(
+            $"ID 파싱 실패!\n" +
+            $"Line: {i + 1}\n" +
+            $"ID 값: [{upgradeData[0]}]\n" +
+            $"전체 줄: {lines[i]}"
+        );
+
+        continue;
+    }
+
+    UpgradeData upgradeDataTemp = new UpgradeData();
+
+    // ID
+    upgradeDataTemp.id = id;
+
+    // 이름
+    upgradeDataTemp.name =
+        upgradeData[1].Trim();
+
+    // 타입
+    upgradeDataTemp.type =
+        upgradeData[2].Trim();
+
+    // 함수
+    upgradeDataTemp.function =
+        upgradeData[3].Trim();
+
+    // CoolTime
+    upgradeDataTemp.coolTime =
+        upgradeData[4]
+            .Split(',')
+            .Select(x => float.Parse(x.Trim()))
+            .ToArray();
+
+    // Count
+    upgradeDataTemp.count =
+        upgradeData[5]
+            .Split(',')
+            .Select(x => int.Parse(x.Trim()))
+            .ToArray();
+
+    // Detection Range
+    upgradeDataTemp.detectionRange =
+        upgradeData[6]
+            .Split(',')
+            .Select(x => float.Parse(x.Trim()))
+            .ToArray();
+
+    // Damage
+    upgradeDataTemp.damage =
+        upgradeData[7]
+            .Split(',')
+            .Select(x => int.Parse(x.Trim()))
+            .ToArray();
+
+    // Speed
+    upgradeDataTemp.speed =
+        float.Parse(upgradeData[8].Trim());
+
+    // Dot Damage
+    upgradeDataTemp.dotDamage =
+        upgradeData[9]
+            .Split(',')
+            .Select(x => int.Parse(x.Trim()))
+            .ToArray();
+
+    // Dot Duration
+    upgradeDataTemp.dotDuration =
+        upgradeData[10]
+            .Split(',')
+            .Select(x => int.Parse(x.Trim()))
+            .ToArray();
+
+    // Dot Interval
+    upgradeDataTemp.dotInterval =
+        int.Parse(upgradeData[11].Trim());
+
+    upgradeDataTemp.hp =
+        int.Parse(upgradeData[12].Trim());
+    
+    // 이미지
+    if (upgradeImagesDic.TryGetValue(
+        upgradeDataTemp.id,
+        out Image sprite))
+    {
+        upgradeDataTemp.sprite = sprite;
+    }
+
+    UpgradeManager.Instance.upgrades.Add(
+        upgradeDataTemp.id
+    );
+
+    UpgradeDatasDic.Add(
+        upgradeDataTemp.id,
+        upgradeDataTemp
+    );
+}
+
+    // 업그레이드 함수 연결
+    UpgradeManager.Instance.UpgradesInit();
+}
+
+
+/// <summary>
+/// CSV 한 줄을 파싱한다.
+/// "5, 4.5, 4, 3.5, 3"처럼
+/// 따옴표 안에 있는 쉼표는 무시한다.
+/// </summary>
+private string[] ParseCsvLine(string line)
+{
+    List<string> result = new List<string>();
+
+    bool insideQuotes = false;
+    string current = "";
+
+    for (int i = 0; i < line.Length; i++)
+    {
+        char c = line[i];
+
+        // 따옴표
+        if (c == '"')
+        {
+            // CSV에서 ""는 따옴표 문자 하나
+            if (insideQuotes &&
+                i + 1 < line.Length &&
+                line[i + 1] == '"')
+            {
+                current += '"';
+                i++;
+            }
+            else
+            {
+                insideQuotes = !insideQuotes;
+            }
+
+            continue;
+        }
+
+        // 따옴표 밖의 쉼표 = 컬럼 구분
+        if (c == ',' && !insideQuotes)
+        {
+            result.Add(current);
+            current = "";
+            continue;
+        }
+
+        current += c;
+    }
+
+    // 마지막 데이터
+    result.Add(current);
+
+    return result.ToArray();
+}
 }
 
 public class StageInfo
@@ -308,4 +525,26 @@ public class ExpData
     public int id;
     public string name;
     public int exp;
+}
+
+[System.Serializable]
+public class UpgradeData
+{
+    public int id;
+    public string name;
+    public string type;
+    public string function;
+    public float[] coolTime;
+    public int[] count;
+    public float[] detectionRange;
+    public float speed;
+    public int[] damage;
+    public int[] dotDamage;
+    public int[] dotDuration;
+    public int dotInterval;
+    public int hp;
+    public Image sprite;
+    public int upgradeLevel;
+    public string description;
+    
 }

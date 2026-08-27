@@ -19,9 +19,9 @@ GameObject:
   - component: {fileID: 7115658254923622402}
   - component: {fileID: 79239086328230691}
   - component: {fileID: 5149760970550755715}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Crap
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,7 +110,7 @@ SortingGroup:
   m_GameObject: {fileID: 4125709159630829647}
   m_Enabled: 1
   m_SortingLayerID: -172119849
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_SortAtRoot: 0
   m_Sort3DAs2D: 0

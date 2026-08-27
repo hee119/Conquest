@@ -8,6 +8,9 @@ TagManager:
   - BackGround
   - Nav
   - Skill
+  - Upgrade
+  - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - UI
   - Teracore
   - Player
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -59,6 +62,9 @@ TagManager:
     locked: 0
   - name: SkillEffect
     uniqueID: 4189426099
+    locked: 0
+  - name: Upgrade
+    uniqueID: 803587905
     locked: 0
   m_RenderingLayers:
   - Default

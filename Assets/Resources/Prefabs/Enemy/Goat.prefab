@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1294205165923571000}
   - component: {fileID: 5091353093320912968}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7735653865780716318}
   - component: {fileID: 4407274520131212711}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7920711347848221185}
   - component: {fileID: 6740025436853674670}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ' feet col'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3426731500224507758}
   - component: {fileID: 4309939638116035653}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8079017301614684629}
   - component: {fileID: 4436484724115615120}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5085609754010792568}
   - component: {fileID: 6809317288362731324}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -556,9 +556,9 @@ GameObject:
   - component: {fileID: -7365325777423472445}
   - component: {fileID: -7025415670022067272}
   - component: {fileID: 8731979598457492878}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Goat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -652,7 +652,7 @@ SortingGroup:
   m_GameObject: {fileID: 9072985828772862859}
   m_Enabled: 1
   m_SortingLayerID: -1869315837
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_SortAtRoot: 0
   m_Sort3DAs2D: 0

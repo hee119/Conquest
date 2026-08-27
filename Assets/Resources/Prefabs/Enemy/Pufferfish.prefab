@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7261870631223786992}
   - component: {fileID: 992883635558187289}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5161550033968127289}
   - component: {fileID: 3263785459859703340}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3895528781460729669}
   - component: {fileID: 6274400426410320164}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pufferfish_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5860626658566977605}
   - component: {fileID: 5906373794993861183}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8057888326573755062}
   - component: {fileID: 5742714075053228251}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8006034057693925192}
   - component: {fileID: 4024776333779845276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ' feet col'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,7 +547,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7048572763071581850}
   - component: {fileID: 7132148341496174450}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4626950243379692478}
   - component: {fileID: 2983331697642933110}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pufferfish_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -729,7 +729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7042495993077315528}
   - component: {fileID: 5419429761743781559}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -821,7 +821,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5848549149134871811}
   - component: {fileID: 8263511467522893524}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,7 +913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8138019564204093319}
   - component: {fileID: 3503871263366550451}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1005,7 +1005,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6716014713413380536}
   - component: {fileID: 1606155610298864198}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1097,7 +1097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3241294602851417576}
   - component: {fileID: 6748987314432207292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1189,7 +1189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7913907011147772819}
   - component: {fileID: 3325864650926582718}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1289,9 +1289,9 @@ GameObject:
   - component: {fileID: -8013149867778647090}
   - component: {fileID: -145323525295889302}
   - component: {fileID: 5599895842755911517}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pufferfish
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1395,7 +1395,7 @@ SortingGroup:
   m_GameObject: {fileID: 7899335511454826260}
   m_Enabled: 1
   m_SortingLayerID: -1869315837
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_SortAtRoot: 0
   m_Sort3DAs2D: 0
@@ -1571,7 +1571,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6727676750990779603}
   - component: {fileID: 2164526445577672571}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1663,7 +1663,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8433267947173567901}
   - component: {fileID: 7690962642706880457}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

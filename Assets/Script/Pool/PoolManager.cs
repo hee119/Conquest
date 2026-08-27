@@ -32,6 +32,7 @@ public class PoolManager : MonoBehaviour
         prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/Enemy"));
         prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/SkillEffect"));
         prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/Exp"));
+        prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/Upgrade"));
 
         
 
@@ -54,6 +55,8 @@ public class PoolManager : MonoBehaviour
         var unitInfo = prefab.GetComponent<UnitInfo>();
         var skillInfo = prefab.GetComponent<SkillInfo>();
         var expInfo = prefab.GetComponent<ExpInfo>();
+        var homingProjectile = prefab.GetComponent<HomingProjectile>();
+        
 
         int id;
 
@@ -63,6 +66,8 @@ public class PoolManager : MonoBehaviour
             id = skillInfo.skillId;
         else if (expInfo != null)
             id = expInfo.id;
+        else if (homingProjectile != null)
+            id = homingProjectile.id;
         else
             return;
 
@@ -114,7 +119,11 @@ public class PoolManager : MonoBehaviour
 
     public GameObject Spawn(int id, Vector2 targetPos)
     {
-        if (!_pools.ContainsKey(id)) return null;
+        if (!_pools.ContainsKey(id))
+        {
+            Debug.LogWarning("Pool id not found");
+            return null;
+        }
 
         PooledObject obj = _pools[id].Get();
 

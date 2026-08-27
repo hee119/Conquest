@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5446352024540151542}
   - component: {fileID: 532677130240797116}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1966439181582825688}
   - component: {fileID: 2784767132686795959}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,9 +202,9 @@ GameObject:
   - component: {fileID: -385199289950270092}
   - component: {fileID: -222689960180229339}
   - component: {fileID: 2917960114813309756}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Turtle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -295,7 +295,7 @@ SortingGroup:
   m_GameObject: {fileID: 8351161018489360483}
   m_Enabled: 1
   m_SortingLayerID: -1869315837
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_SortAtRoot: 0
   m_Sort3DAs2D: 0
@@ -471,7 +471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3282367921715424255}
   - component: {fileID: 8991062344713358683}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ' feet col'
   m_TagString: Untagged
   m_Icon: {fileID: 0}

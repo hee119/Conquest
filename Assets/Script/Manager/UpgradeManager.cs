@@ -1,0 +1,183 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Linq;
+using System.Reflection;
+using Random = UnityEngine.Random;
+public class UpgradeManager : MonoBehaviour
+{
+    public static UpgradeManager Instance;
+    public List<int> skillUpgrades = new List<int>();
+    public List<int> statUpgrades = new List<int>();
+    public List<int> upgrades = new List<int>();
+    public List<UpgradeUiInfo> upgradesInfo = new List<UpgradeUiInfo>();
+    Dictionary<int, Action<int>> upgradeActions = new Dictionary<int, Action<int>>();
+    Dictionary<int, Coroutine> upgradeCor = new Dictionary<int, Coroutine>();
+    [SerializeField]
+    private DetectUpgrade detectUpgrade;
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        
+        upgradesInfo = FindObjectsByType<UpgradeUiInfo>(FindObjectsInactive.Include, FindObjectsSortMode.None).ToList();        
+    }
+
+    public void UpgradesInit()
+    {
+        
+        // 함수 이름을 액션타입으로 변환
+        foreach (int upgrade in upgrades)
+        {
+            string functionName = DataManager.Instance.UpgradeDatasDic[upgrade].function;
+
+            MethodInfo method = GetType().GetMethod(
+                functionName,
+                BindingFlags.Instance | BindingFlags.Public
+            );
+
+            Action<int> action = (Action<int>)Delegate.CreateDelegate(typeof(Action<int>), this, method);
+
+            upgradeActions.Add(upgrade, action);
+        }
+    }
+
+    public void UpgradeListRenewal()
+    {
+        upgrades = upgrades.OrderBy(x => Random.value).ToList();        
+        
+            
+            
+            if (skillUpgrades.Count >= 5)
+            {
+                upgrades.RemoveAll(id =>
+                    DataManager.Instance.UpgradeDatasDic[id].type == "skill"
+                );
+            }
+
+            if (statUpgrades.Count >= 5)
+            {
+                upgrades.RemoveAll(id =>
+                    DataManager.Instance.UpgradeDatasDic[id].type == "stat"
+                );
+            }
+    
+        for (int i = 0; i < 3; i++)
+        {
+            upgradesInfo[i].upgradeData.id = DataManager.Instance.UpgradeDatasDic[upgrades[i]].id;
+            upgradesInfo[i].name = DataManager.Instance.UpgradeDatasDic[upgrades[i]].name;
+            upgradesInfo[i].upgradeName.text = DataManager.Instance.UpgradeDatasDic[upgrades[i]].name;
+            if(upgradesInfo[i].upgradeData.sprite != null)
+                upgradesInfo[i].upgradeData.sprite = DataManager.Instance.UpgradeDatasDic[upgrades[i]].sprite;
+            upgradesInfo[i].upgradeData.type = DataManager.Instance.UpgradeDatasDic[upgrades[i]].type;
+            upgradesInfo[i].upgradeData.upgradeLevel = DataManager.Instance.UpgradeDatasDic[upgrades[i]].upgradeLevel;
+            upgradesInfo[i].upgradeData.description = DataManager.Instance.UpgradeDatasDic[upgrades[i]].description;
+        }
+    }
+
+    public void SkillUpgradesAdd(int id)
+    {
+        skillUpgrades.Add(id);
+        if (DataManager.Instance.UpgradeDatasDic[id].upgradeLevel >= 5)
+        {
+            upgrades.Remove(id);
+        }
+
+        upgradeActions[id](id);
+    }
+
+    public void StatUpgradesAdd(int id)
+    {
+        statUpgrades.Add(id);
+        if (DataManager.Instance.UpgradeDatasDic[id].upgradeLevel >= 5)
+        {
+            upgrades.Remove(id);
+        }
+        
+        upgradeActions[id](id);
+    }
+    
+    public void StartSkillCoroutine(int id, IEnumerator coroutine)
+    {
+        // 이미 실행 중인 코루틴이 있으면 중지
+        if (upgradeCor.TryGetValue(id, out Coroutine oldCoroutine))
+        {
+            StopCoroutine(oldCoroutine);
+        }
+
+        // 새로운 코루틴 시작
+        Coroutine newCoroutine = StartCoroutine(coroutine);
+
+        upgradeCor[id] = newCoroutine;
+    }
+    
+    public void Lightning(int id)
+    {
+        StartSkillCoroutine(id, detectUpgrade.DetectUpgradeCor(id));
+    }
+
+    public void Fireball(int id)
+    {
+        StartSkillCoroutine(id, detectUpgrade.DetectUpgradeCor(id));
+    }
+
+    public void Burn(int id)
+    {
+        StartSkillCoroutine(id, BurnCor(id));
+    }
+
+    public void Poison(int id)
+    {
+        StartSkillCoroutine(id, detectUpgrade.DetectUpgradeCor(id));
+    }
+
+    public void Snail(int id)
+    {
+        StartSkillCoroutine(id, SnailCor(id));
+    }
+
+    public void Shuriken(int id)
+    {
+        StartSkillCoroutine(id, ShurikenCor(id));
+    }
+
+    public void Missile(int id)
+    {
+        StartSkillCoroutine(id, detectUpgrade.DetectUpgradeCor(id));
+    }
+
+    public void Mushroom(int id)
+    {
+        StartSkillCoroutine(id, MushroomCor(id));
+    }
+    
+
+    private IEnumerator BurnCor(int id)
+    {
+        yield return null;
+    }
+    
+
+    private IEnumerator SnailCor(int id)
+    {
+        yield return null;
+    }
+
+    private IEnumerator ShurikenCor(int id)
+    {
+        yield return null;
+    }
+    
+    private IEnumerator MushroomCor(int id)
+    {
+        yield return null;
+    }
+}

@@ -43,6 +43,7 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Level Up");   
         currentLevel++;
         upgradeUI.SetActive(true);
+        UpgradeManager.Instance.UpgradeListRenewal();
         Time.timeScale = 0f;
         currentExp = 0;
     }

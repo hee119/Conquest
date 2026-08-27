@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3303131538062400739}
   - component: {fileID: 7722060241718227097}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2613540509337892977}
   - component: {fileID: 6793414653879214298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2748466866243416514}
   - component: {fileID: 8823953868409248226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ' feet col'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4869490611849348199}
   - component: {fileID: 274475165290132081}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -372,9 +372,9 @@ GameObject:
   - component: {fileID: 2780113336406822799}
   - component: {fileID: 4910932022406525948}
   - component: {fileID: 1237843580358021774}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bull
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -468,7 +468,7 @@ SortingGroup:
   m_GameObject: {fileID: 6788774473257447906}
   m_Enabled: 1
   m_SortingLayerID: -1869315837
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_SortAtRoot: 0
   m_Sort3DAs2D: 0
@@ -644,7 +644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9164910272321848281}
   - component: {fileID: 8981744537398228506}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,7 +736,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1998230241094374599}
   - component: {fileID: 3832034151176419470}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

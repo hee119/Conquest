@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2285044741882562765}
   - component: {fileID: 1452652157896715314}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5457849851429027211}
   - component: {fileID: 2168413860979906428}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1706753340519177535}
   - component: {fileID: 7367549026183299340}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5851307603983872427}
   - component: {fileID: 3572987402203352009}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,9 +386,9 @@ GameObject:
   - component: {fileID: 3617475037612200455}
   - component: {fileID: 6826015629366012844}
   - component: {fileID: 3217690283206078485}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Eagle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -483,7 +483,7 @@ SortingGroup:
   m_GameObject: {fileID: 5695257265632678611}
   m_Enabled: 1
   m_SortingLayerID: -1869315837
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_SortAtRoot: 0
   m_Sort3DAs2D: 0
@@ -659,7 +659,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8308521303540933496}
   - component: {fileID: 1121430940596628908}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ' feet col'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -737,7 +737,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7292880196414662071}
   - component: {fileID: 7284497399981550402}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -829,7 +829,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6296308572142795503}
   - component: {fileID: 6810327097174346915}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

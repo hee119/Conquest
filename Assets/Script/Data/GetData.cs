@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 public class GetData : MonoBehaviour
 {
     [SerializeField]
-    private string stageDataLink =
+    private string dataLink =
         "https://docs.google.com/spreadsheets/d/e/2PACX-1vQEZhIo1VT7czDDgYnBXL_gBZ746-6LIXT1KlKfehY4lBLxO0-2ge94_1b7AVREicu6y2gWqSh-xebh/pub?gid=0&single=true&output=csv";
 
     [SerializeField]
@@ -17,7 +17,7 @@ public class GetData : MonoBehaviour
     [ContextMenu("Data Download")]
     public void DownloadStageData()
     {
-        UnityWebRequest request = UnityWebRequest.Get(stageDataLink);
+        UnityWebRequest request = UnityWebRequest.Get(dataLink);
 
         var operation = request.SendWebRequest();
 
