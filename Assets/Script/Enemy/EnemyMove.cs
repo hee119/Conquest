@@ -11,6 +11,8 @@ public class EnemyMove : MonoBehaviour
     public NavMeshAgent agent;
     public float moveSpeed;
     public float stoppingDistance;
+    public bool isSlowDown;
+    public int slowCount;
     [SerializeField] private float pathUpdateInterval = 0.2f;    
     public Coroutine moveCoroutine;
     void Awake()

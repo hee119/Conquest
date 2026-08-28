@@ -51,6 +51,9 @@ TagManager:
   - name: ExpOrb
     uniqueID: 1032376735
     locked: 0
+  - name: Flooring
+    uniqueID: 1130933271
+    locked: 0
   - name: Player
     uniqueID: 2425651459
     locked: 0

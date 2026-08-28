@@ -411,6 +411,12 @@ public class DataManager : MonoBehaviour
     upgradeDataTemp.hp =
         int.Parse(upgradeData[12].Trim());
     
+    upgradeDataTemp.slow =
+        upgradeData[13]
+            .Split(',')
+            .Select(x => float.Parse(x.Trim()))
+            .ToArray();
+    
     // 이미지
     if (upgradeImagesDic.TryGetValue(
         upgradeDataTemp.id,
@@ -543,6 +549,7 @@ public class UpgradeData
     public int[] dotDuration;
     public int dotInterval;
     public int hp;
+    public float[] slow;
     public Image sprite;
     public int upgradeLevel;
     public string description;

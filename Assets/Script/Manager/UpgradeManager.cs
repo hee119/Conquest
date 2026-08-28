@@ -14,6 +14,8 @@ public class UpgradeManager : MonoBehaviour
     public List<UpgradeUiInfo> upgradesInfo = new List<UpgradeUiInfo>();
     Dictionary<int, Action<int>> upgradeActions = new Dictionary<int, Action<int>>();
     Dictionary<int, Coroutine> upgradeCor = new Dictionary<int, Coroutine>();
+    private GameObject player;
+    BoxCollider2D playerCollider;
     [SerializeField]
     private DetectUpgrade detectUpgrade;
     public void Awake()
@@ -28,6 +30,8 @@ public class UpgradeManager : MonoBehaviour
             Destroy(gameObject);
         }
         
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerCollider = player.GetComponent<BoxCollider2D>();
         upgradesInfo = FindObjectsByType<UpgradeUiInfo>(FindObjectsInactive.Include, FindObjectsSortMode.None).ToList();        
     }
 
@@ -168,7 +172,11 @@ public class UpgradeManager : MonoBehaviour
 
     private IEnumerator SnailCor(int id)
     {
-        yield return null;
+        while (true)
+        {
+            PoolManager.Instance.Spawn(id, playerCollider.bounds.center);
+            yield return DataManager.Instance.UpgradeDatasDic[id].coolTime[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel];
+        }
     }
 
     private IEnumerator ShurikenCor(int id)

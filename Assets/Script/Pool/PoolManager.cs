@@ -56,6 +56,7 @@ public class PoolManager : MonoBehaviour
         var skillInfo = prefab.GetComponent<SkillInfo>();
         var expInfo = prefab.GetComponent<ExpInfo>();
         var homingProjectile = prefab.GetComponent<HomingProjectile>();
+        var flooring = prefab.GetComponent<Flooring>();
         
 
         int id;
@@ -68,6 +69,8 @@ public class PoolManager : MonoBehaviour
             id = expInfo.id;
         else if (homingProjectile != null)
             id = homingProjectile.id;
+        else if (flooring != null)
+            id = flooring.id;
         else
             return;
 
