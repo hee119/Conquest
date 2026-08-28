@@ -17,9 +17,22 @@ public class Poison : HomingProjectile
 
     protected override void OnDisable()
     {
-        animator.SetBool("Poison", false);
-        StopCoroutine(stopAfterSeconds);
-        StopCoroutine(dotDamage);
+        if (stopAfterSeconds != null)
+            StopCoroutine(stopAfterSeconds);
+
+        if (dotDamage != null)
+            StopCoroutine(dotDamage);
+
+        stopAfterSeconds = null;
+        dotDamage = null;
+
+        if (rb != null)
+            rb.linearVelocity = Vector2.zero;
+    }
+    
+    private void OnEnable()
+    {
+        animator.SetBool("Idle", true);
     }
     
     protected override void OnTriggerEnter2D(Collider2D other)
@@ -33,7 +46,8 @@ public class Poison : HomingProjectile
                 enemyCombat.TakeDamage(GetDamage());
             }
 
-            dotDamage = StartCoroutine(PoisonDamage());
+            if(gameObject.activeInHierarchy)
+                dotDamage = StartCoroutine(PoisonDamage(other.gameObject));
             return;
         }
 
@@ -43,16 +57,40 @@ public class Poison : HomingProjectile
         }
     }
 
-    IEnumerator PoisonDamage()
+    IEnumerator PoisonDamage(GameObject target = null)
     {
-        animator.SetBool("Poison", true);
-        stopAfterSeconds = StartCoroutine(StopAfterSeconds(DataManager.Instance.UpgradeDatasDic[id].dotDuration[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel], dotDamage));
-        
-        while (true)
+        if (target != null)
         {
+            gameObject.transform.SetParent(target.transform);
+            rb.linearVelocity = Vector3.zero;
+            transform.position = target.transform.position;
+        }
+        
+        if(gameObject.activeInHierarchy)
+            stopAfterSeconds = StartCoroutine(StopAfterSeconds(DataManager.Instance.UpgradeDatasDic[id].dotDuration[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel], dotDamage));
+        
+        animator.SetBool("Idle", false);
+
+        while (gameObject.activeInHierarchy)
+        {
+            animator.SetTrigger("Dot");
+
             enemyCombat.TakeDamage(
                 DataManager.Instance.UpgradeDatasDic[id].dotDamage[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel]
             );
+            
+            if (enemyCombat.isDead)
+            {
+                gameObject.transform.SetParent(null);
+
+                // Dot 애니메이션 끝날 때까지 대기
+                yield return new WaitUntil(() =>
+                    animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f
+                );
+                
+                pooledObject.DestroyObj();
+                yield break;
+            }
 
             yield return new WaitForSeconds(
                 DataManager.Instance.UpgradeDatasDic[id].dotInterval
@@ -63,7 +101,7 @@ public class Poison : HomingProjectile
     private IEnumerator StopAfterSeconds(float time, Coroutine coroutine)
     {
         yield return new WaitForSeconds(time);
-        StopCoroutine(coroutine);
+        if(coroutine != null) StopCoroutine(coroutine);
         stopAfterSeconds = null;
         dotDamage = null;
         pooledObject.DestroyObj();

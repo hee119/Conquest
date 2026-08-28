@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public abstract class HomingProjectile : MonoBehaviour
 {
@@ -11,8 +12,35 @@ public abstract class HomingProjectile : MonoBehaviour
 
     protected virtual void Awake()
     {
+        // Rigidbody2D가 없으면 추가
         rb = GetComponent<Rigidbody2D>();
+
+        if (rb == null)
+            rb = gameObject.AddComponent<Rigidbody2D>();
+
+        rb.gravityScale = 0f;
+
+        // PooledObject가 없으면 추가
         pooledObject = GetComponent<PooledObject>();
+
+        if (pooledObject == null)
+            pooledObject = gameObject.AddComponent<PooledObject>();
+
+        // Collider2D가 하나도 없으면 추가
+        Collider2D collider = GetComponent<Collider2D>();
+
+        if (collider == null)
+            collider = gameObject.AddComponent<BoxCollider2D>();
+        
+        SortingGroup sortingGroup = GetComponent<SortingGroup>();
+
+        if (sortingGroup == null)
+            sortingGroup = gameObject.AddComponent<SortingGroup>();
+
+        sortingGroup.sortingLayerName = "Upgrade";
+
+        // 트리거 활성화
+        collider.isTrigger = true;
     }
 
     public void SetTarget(Transform target)

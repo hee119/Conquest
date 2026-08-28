@@ -22,6 +22,7 @@ public class PoolManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -76,7 +77,10 @@ public class PoolManager : MonoBehaviour
 
         Debug.Log(id);
         if (_pools.ContainsKey(id))
+        {
+            Debug.LogWarning("pool already contains id: " + id);
             return;
+        }
 
         ObjectPool<PooledObject> pool = null;
 
@@ -124,11 +128,19 @@ public class PoolManager : MonoBehaviour
     {
         if (!_pools.ContainsKey(id))
         {
+            Debug.LogWarning(id + "is not found");
             Debug.LogWarning("Pool id not found");
             return null;
         }
 
         PooledObject obj = _pools[id].Get();
+        
+        obj.transform.SetParent(null);
+
+        if (obj == null)
+        {
+            Debug.LogWarning("obj is null");
+        }
 
         obj.transform.position = targetPos;
 

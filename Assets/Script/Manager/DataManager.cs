@@ -69,14 +69,18 @@ public class DataManager : MonoBehaviour
         
         for (int i = 1; i < lines.Length; i++)
         {
-            int[] stageData = lines[i].Split(",").Select(int.Parse).ToArray();
+            string[] stageData = lines[i].Split(",");
+            int stage = int.Parse(stageData[0]);
+            int enemyId = int.Parse(stageData[1]);
+            int enemySpawnCount = int.Parse(stageData[2]);
+            float spawnInterval = float.Parse(stageData[3]);
             for (int j = 0; j < stageData.Length; j++)
             {
-                if (i == stageData[0])
+                if (i == stage)
                 {
-                    stageInfos[i].enemyId.Add(stageData[1]);
-                    stageInfos[i].enemySpawnCount.Add(stageData[2]);
-                    stageInfos[i].spawnInterval.Add(stageData[3]);
+                    stageInfos[i].enemyId.Add(enemyId);
+                    stageInfos[i].enemySpawnCount.Add(enemySpawnCount);
+                    stageInfos[i].spawnInterval.Add(spawnInterval);
                 }
             }
         }
