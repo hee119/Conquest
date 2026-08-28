@@ -29,15 +29,17 @@ public class EnemyCombat : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        StartCoroutine(InvincibleCor());
-        hp -= damage;
-        anim.SetTrigger("Hit");
-        HitFlash();
-        if (hp <= 0)
+        if (!isDead)
         {
-            Die();
+            StartCoroutine(InvincibleCor());
+            hp -= damage;
+            anim.SetTrigger("Hit");
+            HitFlash();
+            if (hp <= 0)
+            {
+                Die();
+            }
         }
-        Debug.Log(hp);
     }
 
     public void OnEnable()
@@ -54,9 +56,12 @@ public class EnemyCombat : MonoBehaviour
 
     public void Die()
     {
-        isDead = true;
-        PoolManager.Instance.Spawn(unitInfo.dropExpOrbId, transform.position);
-        pooledObject.DestroyObj();
+        if (!isDead)
+        {
+            isDead = true;
+            PoolManager.Instance.Spawn(unitInfo.dropExpOrbId, transform.position);
+            pooledObject.DestroyObj();
+        }
     }
 
     public void HitFlash()
@@ -69,18 +74,20 @@ public class EnemyCombat : MonoBehaviour
 
     public IEnumerator HitFlashCor()
     {
+        if (!isDead)
+        {
             foreach (SpriteRenderer spriteRenderer in spriteRenderers)
             {
                 spriteRenderer.color = Color.red;
             }
-        
+
             yield return new WaitForSeconds(0.1f);
 
             foreach (SpriteRenderer spriteRenderer in spriteRenderers)
             {
                 spriteRenderer.color = Color.white;
             }
-            
+        }
     }
     
     private IEnumerator InvincibleCor()

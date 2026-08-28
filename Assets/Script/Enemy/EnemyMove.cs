@@ -22,6 +22,7 @@ public class EnemyMove : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateUpAxis = false;
         agent.updateRotation = false;
+        agent.speed = moveSpeed;
     }
 
     void OnEnable()
@@ -36,6 +37,11 @@ public class EnemyMove : MonoBehaviour
             agent.SetDestination(target.transform.position);
             yield return new WaitForSeconds(pathUpdateInterval);
         }
+    }
+
+    public void MoveSpeedRenewal()
+    {
+        agent.speed = moveSpeed;
     }
 
     public void OnDisable()

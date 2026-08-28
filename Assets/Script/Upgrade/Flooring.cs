@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -8,6 +10,19 @@ public abstract class Flooring : MonoBehaviour
     public int id;
     
     protected List<EnemyMove> enemies = new List<EnemyMove>();
+    protected SpriteRenderer spriteRenderer;
+    protected PooledObject pooledObject;
+
+    public void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        pooledObject = GetComponent<PooledObject>();
+    }
+
+    protected void OnEnable()
+    {
+        StartCoroutine(DestoryFlooring());
+    }
 
     protected virtual void OnDisable()
     {
@@ -20,6 +35,7 @@ public abstract class Flooring : MonoBehaviour
             {
                 enemies[i].isSlowDown = false;
                 enemies[i].moveSpeed = DataManager.Instance.playerAndEnemyInfosDic[unitInfo.id].speed;
+                enemies[i].MoveSpeedRenewal();
             }
         }
         enemies.Clear();
@@ -32,6 +48,7 @@ public abstract class Flooring : MonoBehaviour
         enemyMove.isSlowDown = true;
         enemies.Add(enemyMove);
         enemyMove.moveSpeed = DataManager.Instance.playerAndEnemyInfosDic[unitInfo.id].speed * DataManager.Instance.UpgradeDatasDic[id].slow[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel];
+        enemyMove.MoveSpeedRenewal();
     }
 
     protected void SlowDownClear(EnemyMove enemy)
@@ -44,6 +61,7 @@ public abstract class Flooring : MonoBehaviour
         {
             enemy.isSlowDown = false;
             enemy.moveSpeed = DataManager.Instance.playerAndEnemyInfosDic[unitInfo.id].speed;
+            enemy.MoveSpeedRenewal();
         }
     }
 
@@ -60,6 +78,26 @@ public abstract class Flooring : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             SlowDownClear(other.gameObject.GetComponent<EnemyMove>());
+        }
+    }
+
+    protected virtual IEnumerator DestoryFlooring()
+    {
+        Vector3 startScale = transform.localScale;
+        Vector3 endScale = new Vector3(0,0,0);
+        float timer = 0;
+        float duration = DataManager.Instance.UpgradeDatasDic[id].lifetime;
+        float alpha = 1;
+        Color color = spriteRenderer.color;
+        
+        while (timer < duration)
+        {
+            float t = timer / duration;
+            timer += Time.deltaTime;
+            
+            transform.localScale = Vector3.Lerp(startScale,endScale , t);
+            spriteRenderer.color = new Color(color.r ,color.g,color.b, Mathf.Lerp(alpha, 0, t));
+            yield return null;
         }
     }
 }

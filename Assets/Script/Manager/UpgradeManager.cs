@@ -89,8 +89,15 @@ public class UpgradeManager : MonoBehaviour
 
     public void SkillUpgradesAdd(int id)
     {
-        skillUpgrades.Add(id);
-        if (DataManager.Instance.UpgradeDatasDic[id].upgradeLevel >= 5)
+        if (!upgradeActions.ContainsKey(id))
+        {
+            skillUpgrades.Add(id);
+        }
+        else
+        {
+            DataManager.Instance.UpgradeDatasDic[id].upgradeLevel++;
+        }
+        if (DataManager.Instance.UpgradeDatasDic[id].upgradeLevel >= 4)
         {
             upgrades.Remove(id);
         }
@@ -175,7 +182,8 @@ public class UpgradeManager : MonoBehaviour
         while (true)
         {
             PoolManager.Instance.Spawn(id, playerCollider.bounds.center);
-            yield return DataManager.Instance.UpgradeDatasDic[id].coolTime[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel];
+            Debug.Log(DataManager.Instance.UpgradeDatasDic[id].coolTime[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel]);
+            yield return new WaitForSeconds(DataManager.Instance.UpgradeDatasDic[id].coolTime[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel]);
         }
     }
 

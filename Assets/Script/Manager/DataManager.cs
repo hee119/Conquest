@@ -116,6 +116,7 @@ public class DataManager : MonoBehaviour
         {
             UnitInfo unitInfo = prefab.GetComponent<UnitInfo>();
             EnemyCombat enemyCombat = prefab.GetComponent<EnemyCombat>();
+            EnemyMove enemyMove = prefab.GetComponent<EnemyMove>();
 
             if (unitInfo == null)
                 continue;
@@ -131,6 +132,8 @@ public class DataManager : MonoBehaviour
                 unitInfo.criticalChance = data.criticalChance;
                 unitInfo.dropExpOrbId = data.dropExpOrbId;
                 if(enemyCombat !=null) enemyCombat.maxHp = unitInfo.hp;
+                if(enemyMove !=null) enemyMove.moveSpeed = unitInfo.speed;
+                
             }
             else
             {
@@ -417,6 +420,10 @@ public class DataManager : MonoBehaviour
             .Select(x => float.Parse(x.Trim()))
             .ToArray();
     
+    upgradeDataTemp.lifetime =         
+        int.Parse(upgradeData[14].Trim());
+
+    
     // 이미지
     if (upgradeImagesDic.TryGetValue(
         upgradeDataTemp.id,
@@ -550,6 +557,7 @@ public class UpgradeData
     public int dotInterval;
     public int hp;
     public float[] slow;
+    public float lifetime;
     public Image sprite;
     public int upgradeLevel;
     public string description;
