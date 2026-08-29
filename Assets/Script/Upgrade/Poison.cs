@@ -8,11 +8,14 @@ public class Poison : HomingProjectile
     private Coroutine dotDamage;
     private Coroutine stopAfterSeconds;
     private EnemyCombat enemyCombat;
+    private Collider2D col;
     protected override void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         pooledObject = GetComponent<PooledObject>();
         animator = GetComponent<Animator>();
+        col = GetComponent<Collider2D>();
+        
     }
 
     protected override void OnDisable()
@@ -28,10 +31,13 @@ public class Poison : HomingProjectile
 
         if (rb != null)
             rb.linearVelocity = Vector2.zero;
+        
+        col.enabled = true;
     }
     
     private void OnEnable()
     {
+        col.enabled = true;
         animator.SetBool("Idle", true);
     }
     
@@ -39,11 +45,16 @@ public class Poison : HomingProjectile
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
+            col.enabled = false;
             enemyCombat = other.GetComponent<EnemyCombat>();
 
             if (enemyCombat != null)
             {
                 enemyCombat.TakeDamage(GetDamage());
+                if (enemyCombat.isDead)
+                {
+                    pooledObject.DestroyObj();
+                }
             }
 
             if(gameObject.activeInHierarchy)
@@ -81,8 +92,6 @@ public class Poison : HomingProjectile
             
             if (enemyCombat.isDead)
             {
-                gameObject.transform.SetParent(null);
-
                 // Dot 애니메이션 끝날 때까지 대기
                 yield return new WaitUntil(() =>
                     animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f

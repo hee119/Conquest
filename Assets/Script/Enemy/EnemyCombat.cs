@@ -60,6 +60,10 @@ public class EnemyCombat : MonoBehaviour
         {
             isDead = true;
             PoolManager.Instance.Spawn(unitInfo.dropExpOrbId, transform.position);
+            foreach (Transform child in transform)
+            {
+                child.SetParent(null);
+            }
             pooledObject.DestroyObj();
         }
     }

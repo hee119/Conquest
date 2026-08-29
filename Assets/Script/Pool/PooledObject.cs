@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
 public class PooledObject : MonoBehaviour
@@ -11,9 +12,12 @@ public class PooledObject : MonoBehaviour
 
     public void DestroyObj()
     {
-        if(_ManagedPool != null)
+        if (_ManagedPool != null)
+        {
             _ManagedPool.Release(this);
+        }
     }
+    
 
     public void EnableObj()
     {

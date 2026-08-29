@@ -135,8 +135,6 @@ public class PoolManager : MonoBehaviour
 
         PooledObject obj = _pools[id].Get();
         
-        obj.transform.SetParent(null);
-
         if (obj == null)
         {
             Debug.LogWarning("obj is null");

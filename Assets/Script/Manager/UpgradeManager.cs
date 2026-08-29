@@ -89,7 +89,7 @@ public class UpgradeManager : MonoBehaviour
 
     public void SkillUpgradesAdd(int id)
     {
-        if (!upgradeActions.ContainsKey(id))
+        if (!skillUpgrades.Contains(id))
         {
             skillUpgrades.Add(id);
         }
@@ -107,8 +107,11 @@ public class UpgradeManager : MonoBehaviour
 
     public void StatUpgradesAdd(int id)
     {
-        statUpgrades.Add(id);
-        if (DataManager.Instance.UpgradeDatasDic[id].upgradeLevel >= 5)
+        if (!statUpgrades.Contains(id))
+        {
+            statUpgrades.Add(id);
+        }
+        if (DataManager.Instance.UpgradeDatasDic[id].upgradeLevel >= 4)
         {
             upgrades.Remove(id);
         }

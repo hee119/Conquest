@@ -146,11 +146,11 @@ public class StageManager : MonoBehaviour
         {
             int monsterCount = 0;
 
-            for (int j = 0; j < monsterSpawnPoints.Count; j++)
+            for (int j = 0; j < DataManager.Instance.stageInfos[currentStage].enemySpawnCount[i]; j++)
             {
                 PoolManager.Instance.Spawn(
                     DataManager.Instance.stageInfos[currentStage].enemyId[i],
-                    monsterSpawnPoints[j].position
+                    monsterSpawnPoints[Random.Range(0, monsterSpawnPoints.Count)].position
                 );
 
                 monsterCount++;

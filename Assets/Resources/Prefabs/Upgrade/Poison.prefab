@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 6558015087319970998}
   - component: {fileID: 718831670234193037}
   - component: {fileID: 4851609820938826183}
-  - component: {fileID: -4285801433710851432}
   - component: {fileID: -5093952413886592473}
+  - component: {fileID: 5129588452120222671}
   m_Layer: 0
   m_Name: Poison
   m_TagString: Untagged
@@ -172,7 +172,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &-4285801433710851432
+--- !u!210 &-5093952413886592473
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5089522904655786087}
+  m_Enabled: 1
+  m_SortingLayerID: 803587905
+  m_SortingLayer: 8
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
+  m_Sort3DAs2D: 0
+--- !u!61 &5129588452120222671
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,11 +215,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.21133333}
+  m_Offset: {x: 0.005432129, y: 0.03605607}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.28866667}
@@ -216,18 +229,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.7540283, y: 0.6494455}
   m_EdgeRadius: 0
---- !u!210 &-5093952413886592473
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089522904655786087}
-  m_Enabled: 1
-  m_SortingLayerID: 803587905
-  m_SortingLayer: 8
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
-  m_Sort3DAs2D: 0
