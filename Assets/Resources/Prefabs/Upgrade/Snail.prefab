@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -3779387684774448675}
   - component: {fileID: -373297750853753420}
   - component: {fileID: -1671886800219482700}
+  - component: {fileID: -3105820041375505985}
   m_Layer: 0
   m_Name: Snail
   m_TagString: Untagged
@@ -167,7 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b76e65075f614801b5caa75a14b800a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snail
-  id: 404
 --- !u!114 &-1671886800219482700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,3 +180,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0050a2139b24ea295a2647d5984370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PooledObject
+--- !u!114 &-3105820041375505985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206114430016736175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d690d7b943f2549b1930e812453246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeInfo
+  id: 404

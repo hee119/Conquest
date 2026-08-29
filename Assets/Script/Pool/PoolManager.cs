@@ -13,6 +13,8 @@ public class PoolManager : MonoBehaviour
 
     public List<GameObject> prefabs = new List<GameObject>();
 
+    public Dictionary<int, GameObject> prefabsDic = new Dictionary<int, GameObject>();
+
     public bool prefabIsLoaded = false;
 
     private GameObject player;
@@ -56,8 +58,7 @@ public class PoolManager : MonoBehaviour
         var unitInfo = prefab.GetComponent<UnitInfo>();
         var skillInfo = prefab.GetComponent<SkillInfo>();
         var expInfo = prefab.GetComponent<ExpInfo>();
-        var homingProjectile = prefab.GetComponent<HomingProjectile>();
-        var flooring = prefab.GetComponent<Flooring>();
+        var upgradeInfo = prefab.GetComponent<UpgradeInfo>();
         
 
         int id;
@@ -68,10 +69,8 @@ public class PoolManager : MonoBehaviour
             id = skillInfo.skillId;
         else if (expInfo != null)
             id = expInfo.id;
-        else if (homingProjectile != null)
-            id = homingProjectile.id;
-        else if (flooring != null)
-            id = flooring.id;
+        else if (upgradeInfo != null)
+            id = upgradeInfo.id;
         else
             return;
 
@@ -81,7 +80,8 @@ public class PoolManager : MonoBehaviour
             Debug.LogWarning("pool already contains id: " + id);
             return;
         }
-
+        
+        prefabsDic.Add(id, prefab);
         ObjectPool<PooledObject> pool = null;
 
         pool = new ObjectPool<PooledObject>(

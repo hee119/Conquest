@@ -3,8 +3,10 @@ using UnityEngine.Rendering;
 
 public abstract class HomingProjectile : MonoBehaviour
 {
-    public int id;
+    private int id;
 
+    protected UpgradeInfo upgradeInfo;
+    
     protected Rigidbody2D rb;
     protected PooledObject pooledObject;
 
@@ -12,6 +14,9 @@ public abstract class HomingProjectile : MonoBehaviour
 
     protected virtual void Awake()
     {
+        
+        upgradeInfo = GetComponent<UpgradeInfo>();
+        id = upgradeInfo.id;
         // Rigidbody2D가 없으면 추가
         rb = GetComponent<Rigidbody2D>();
 

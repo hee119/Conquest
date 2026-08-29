@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DetectUpgrade : MonoBehaviour
@@ -32,55 +33,60 @@ public class DetectUpgrade : MonoBehaviour
         while (true)
         {
             // 주변 Enemy 전부 탐지
-            Collider2D[] enemies = Physics2D.OverlapCircleAll(
+            List<Collider2D> enemies = new (Physics2D.OverlapCircleAll(
                 player.transform.position,
                 detectionRange,
                 enemyLayer
-            );
+            ));
 
             // 적이 없으면 쿨타임 진행 X
-            if (enemies.Length == 0)
+            if (enemies.Count == 0)
             {
                 yield return null;
                 continue;
             }
 
-            // 가장 가까운 적 찾기
-            Transform closestEnemy = null;
-            float closestDistance = Mathf.Infinity;
-
-            foreach (Collider2D enemy in enemies)
-            {
-                float distance =
-                    (enemy.transform.position - player.transform.position)
-                    .sqrMagnitude;
-
-                if (distance < closestDistance)
-                {
-                    closestDistance = distance;
-                    closestEnemy = enemy.transform;
-                }
-            }
-
-            // 투사체 생성
             for (int i = 0; i < count; i++)
             {
-                GameObject obj = PoolManager.Instance.Spawn(
-                    id,
-                    player.transform.position
-                );
-                
-                Debug.Log(obj);
+                // 가장 가까운 적 찾기
+                Transform closestEnemy = null;
+                float closestDistance = Mathf.Infinity;
 
-                // 생성된 투사체에 타겟 전달
-                HomingProjectile projectile =
-                    obj.GetComponent<HomingProjectile>();
-                
-                Debug.Log(DataManager.Instance.UpgradeDatasDic[id].speed);
-
-                if (projectile != null)
+                foreach (Collider2D enemy in enemies)
                 {
-                    projectile.SetTarget(closestEnemy);
+                    float distance =
+                        (enemy.transform.position - player.transform.position)
+                        .sqrMagnitude;
+
+                    if (distance < closestDistance)
+                    {
+                        closestDistance = distance;
+                        closestEnemy = enemy.transform;
+                    }
+                }
+
+                // 투사체 생성
+                if (closestEnemy != null)
+                {
+                    GameObject obj = PoolManager.Instance.Spawn(
+                        id,
+                        player.transform.position
+                    );
+
+
+                    Debug.Log(obj);
+
+                    // 생성된 투사체에 타겟 전달
+                    HomingProjectile projectile =
+                        obj.GetComponent<HomingProjectile>();
+
+                    Debug.Log(DataManager.Instance.UpgradeDatasDic[id].speed);
+
+                    if (projectile != null)
+                    {
+                        projectile.SetTarget(closestEnemy);
+                        enemies.Remove(closestEnemy.GetComponent<Collider2D>());
+                    }
                 }
             }
 

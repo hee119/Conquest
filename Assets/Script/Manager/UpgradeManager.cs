@@ -176,6 +176,8 @@ public class UpgradeManager : MonoBehaviour
 
     private IEnumerator BurnCor(int id)
     {
+        GameManager.Instance.burnPrefabId = id;
+        GameManager.Instance.burnChance = DataManager.Instance.UpgradeDatasDic[id].debuffChance[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel];
         yield return null;
     }
     

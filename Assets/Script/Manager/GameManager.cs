@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     public TileBase[] tileBases;
     public Tiles[] tiles = new Tiles[6];
     StageInfo[] stageInfos;
-    
+    public int burnChance;
+    public int burnPrefabId;
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created

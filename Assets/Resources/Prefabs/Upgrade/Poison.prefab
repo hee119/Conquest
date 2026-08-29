@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 4851609820938826183}
   - component: {fileID: -5093952413886592473}
   - component: {fileID: 5129588452120222671}
+  - component: {fileID: -6037534600853384747}
+  - component: {fileID: -4532686378326033626}
   m_Layer: 0
   m_Name: Poison
   m_TagString: Untagged
@@ -110,7 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e25a80cca416749de930dbfe99593b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Poison
-  id: 403
 --- !u!114 &6558015087319970998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,3 +232,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7540283, y: 0.6494455}
   m_EdgeRadius: 0
+--- !u!114 &-6037534600853384747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5089522904655786087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff2699c9c360764290c58953d1057ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DotDamage
+--- !u!114 &-4532686378326033626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5089522904655786087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d690d7b943f2549b1930e812453246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeInfo
+  id: 403

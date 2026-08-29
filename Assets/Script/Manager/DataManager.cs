@@ -426,6 +426,12 @@ public class DataManager : MonoBehaviour
     
     upgradeDataTemp.lifetime =         
         int.Parse(upgradeData[14].Trim());
+    
+    upgradeDataTemp.debuffChance =
+        upgradeData[15]
+            .Split(',')
+            .Select(x => int.Parse(x.Trim()))
+            .ToArray();
 
     
     // 이미지
@@ -562,6 +568,7 @@ public class UpgradeData
     public int hp;
     public float[] slow;
     public float lifetime;
+    public int[] debuffChance;
     public Image sprite;
     public int upgradeLevel;
     public string description;

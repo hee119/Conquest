@@ -6,17 +6,19 @@ using UnityEngine;
 
 public abstract class Flooring : MonoBehaviour
 {
-    [SerializeField]
-    public int id;
+    private int id;
     
+    protected UpgradeInfo upgradeInfo;
     protected List<EnemyMove> enemies = new List<EnemyMove>();
     protected SpriteRenderer spriteRenderer;
     protected PooledObject pooledObject;
 
     public void Awake()
     {
+        upgradeInfo = GetComponent<UpgradeInfo>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         pooledObject = GetComponent<PooledObject>();
+        id = upgradeInfo.id;
     }
 
     protected void OnEnable()

@@ -1,7 +1,9 @@
  using System;
  using System.Collections;
+ using System.Collections.Generic;
  using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyCombat : MonoBehaviour
 {
@@ -39,6 +41,14 @@ public class EnemyCombat : MonoBehaviour
             {
                 Die();
             }
+            else if(GameManager.Instance.burnChance > 0)
+            {
+                int ran = Random.Range(0, 100);
+                if (ran <= GameManager.Instance.burnChance)
+                {
+                    PoolManager.Instance.Spawn(GameManager.Instance.burnPrefabId, transform.position);
+                }
+            }
         }
     }
 
@@ -62,7 +72,10 @@ public class EnemyCombat : MonoBehaviour
             PoolManager.Instance.Spawn(unitInfo.dropExpOrbId, transform.position);
             foreach (Transform child in transform)
             {
-                child.SetParent(null);
+                if (child.TryGetComponent<DotDamage>(out var dot))
+                {
+                    child.SetParent(null, true);
+                }
             }
             pooledObject.DestroyObj();
         }
