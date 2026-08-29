@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class DotDamage : MonoBehaviour
 {
-    private int id;
-    UpgradeInfo upgradeInfo;
-    Animator animator;
-    private Coroutine dotDamage;
-    private Coroutine stopAfterSeconds;
-    private EnemyCombat enemyCombat;
-    private Collider2D col;
-    private PooledObject pooledObject;
-    Rigidbody2D rb;
+    protected int id;
+    protected UpgradeInfo upgradeInfo;
+    protected Animator animator;
+    protected Coroutine dotDamage;
+    protected Coroutine stopAfterSeconds;
+    protected EnemyCombat enemyCombat;
+    protected Collider2D col;
+    protected PooledObject pooledObject;
+    protected Rigidbody2D rb;
+
     protected void Awake()
     {
         upgradeInfo = GetComponent<UpgradeInfo>();
         animator = GetComponent<Animator>();
         col = GetComponent<Collider2D>();
         pooledObject = GetComponent<PooledObject>();
-        rb =  GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         id = upgradeInfo.id;
-        
     }
 
-    protected void OnDisable()
+    protected virtual void OnDisable()
     {
         if (stopAfterSeconds != null)
             StopCoroutine(stopAfterSeconds);
@@ -37,17 +37,17 @@ public class DotDamage : MonoBehaviour
 
         if (rb != null)
             rb.linearVelocity = Vector2.zero;
-        
+
         col.enabled = true;
     }
-    
-    private void OnEnable()
+
+    protected void OnEnable()
     {
         col.enabled = true;
         animator.SetBool("Idle", true);
     }
-    
-    protected void OnTriggerEnter2D(Collider2D other)
+
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
@@ -57,14 +57,16 @@ public class DotDamage : MonoBehaviour
             if (enemyCombat != null)
             {
                 enemyCombat.TakeDamage(GetDamage());
+
                 if (enemyCombat.isDead)
                 {
                     pooledObject.DestroyObj();
                 }
             }
 
-            if(gameObject.activeInHierarchy)
+            if (gameObject.activeInHierarchy)
                 dotDamage = StartCoroutine(PoisonDamage(other.gameObject));
+
             return;
         }
 
@@ -73,7 +75,7 @@ public class DotDamage : MonoBehaviour
             pooledObject.DestroyObj();
         }
     }
-    
+
     protected int GetDamage()
     {
         int level =
@@ -82,7 +84,7 @@ public class DotDamage : MonoBehaviour
         return DataManager.Instance.UpgradeDatasDic[id].damage[level];
     }
 
-    IEnumerator PoisonDamage(GameObject target = null)
+    protected IEnumerator PoisonDamage(GameObject target = null)
     {
         if (target != null)
         {
@@ -90,10 +92,18 @@ public class DotDamage : MonoBehaviour
             rb.linearVelocity = Vector3.zero;
             transform.position = target.transform.position;
         }
-        
-        if(gameObject.activeInHierarchy)
-            stopAfterSeconds = StartCoroutine(StopAfterSeconds(DataManager.Instance.UpgradeDatasDic[id].dotDuration[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel], dotDamage));
-        
+
+        if (gameObject.activeInHierarchy)
+            stopAfterSeconds = StartCoroutine(
+                StopAfterSeconds(
+                    DataManager.Instance.UpgradeDatasDic[id]
+                        .dotDuration[
+                            DataManager.Instance.UpgradeDatasDic[id].upgradeLevel
+                        ],
+                    dotDamage
+                )
+            );
+
         animator.SetBool("Idle", false);
 
         while (gameObject.activeInHierarchy)
@@ -101,16 +111,19 @@ public class DotDamage : MonoBehaviour
             animator.SetTrigger("Dot");
 
             enemyCombat.TakeDamage(
-                DataManager.Instance.UpgradeDatasDic[id].dotDamage[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel]
+                DataManager.Instance.UpgradeDatasDic[id]
+                    .dotDamage[
+                        DataManager.Instance.UpgradeDatasDic[id].upgradeLevel
+                    ]
             );
-            
+
             if (enemyCombat.isDead)
             {
                 // Dot 애니메이션 끝날 때까지 대기
                 yield return new WaitUntil(() =>
                     animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f
                 );
-                
+
                 pooledObject.DestroyObj();
                 yield break;
             }
@@ -120,11 +133,14 @@ public class DotDamage : MonoBehaviour
             );
         }
     }
-    
-    private IEnumerator StopAfterSeconds(float time, Coroutine coroutine)
+
+    protected IEnumerator StopAfterSeconds(float time, Coroutine coroutine)
     {
         yield return new WaitForSeconds(time);
-        if(coroutine != null) StopCoroutine(coroutine);
+
+        if (coroutine != null)
+            StopCoroutine(coroutine);
+
         stopAfterSeconds = null;
         dotDamage = null;
         pooledObject.DestroyObj();

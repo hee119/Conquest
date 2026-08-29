@@ -110,7 +110,7 @@ SortingGroup:
   m_GameObject: {fileID: 4125709159630829647}
   m_Enabled: 1
   m_SortingLayerID: -172119849
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_SortAtRoot: 0
   m_Sort3DAs2D: 0
@@ -144,11 +144,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.08, y: 0.67}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -158,7 +158,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.1, y: 0.8}
+  m_Size: {x: 1.03125, y: 0.84375}
   m_EdgeRadius: 0
 --- !u!114 &-8184704702133321677
 MonoBehaviour:
@@ -175,6 +175,7 @@ MonoBehaviour:
   maxHp: 6
   hp: 0
   isDead: 0
+  isBurn: 0
   attckCoolTime: 1
 --- !u!114 &-5811335577426929627
 MonoBehaviour:
@@ -226,6 +227,8 @@ MonoBehaviour:
   agent: {fileID: 0}
   moveSpeed: 0
   stoppingDistance: 0
+  isSlowDown: 0
+  slowCount: 0
   pathUpdateInterval: 0.2
 --- !u!195 &7115658254923622402
 NavMeshAgent:

@@ -11,6 +11,7 @@ public class EnemyCombat : MonoBehaviour
     public int maxHp = 0;
     public int hp;
     public bool isDead = false;
+    public bool isBurn = false;
     private bool isInvincible = false;
     private bool canAttack = true;
     public float attckCoolTime = 1;
@@ -41,12 +42,13 @@ public class EnemyCombat : MonoBehaviour
             {
                 Die();
             }
-            else if(GameManager.Instance.burnChance > 0)
+            else if(GameManager.Instance.burnChance > 0 && !isBurn)
             {
                 int ran = Random.Range(0, 100);
                 if (ran <= GameManager.Instance.burnChance)
                 {
-                    PoolManager.Instance.Spawn(GameManager.Instance.burnPrefabId, transform.position);
+                     GameObject obj = PoolManager.Instance.Spawn(GameManager.Instance.burnPrefabId, transform.position);
+                     obj.GetComponent<Burn>().TargetBurn(gameObject);
                 }
             }
         }

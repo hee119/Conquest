@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5129588452120222671}
   - component: {fileID: -6037534600853384747}
   - component: {fileID: -4532686378326033626}
+  - component: {fileID: -6974081924709732742}
   m_Layer: 0
   m_Name: burn
   m_TagString: Untagged
@@ -243,3 +244,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeInfo
   id: 402
+--- !u!114 &-6974081924709732742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5089522904655786087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11233c97909e5de4da07bd6f323fa1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Burn
