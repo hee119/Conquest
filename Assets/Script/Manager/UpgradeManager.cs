@@ -18,6 +18,9 @@ public class UpgradeManager : MonoBehaviour
     BoxCollider2D playerCollider;
     [SerializeField]
     private DetectUpgrade detectUpgrade;
+    
+    [SerializeField]
+    private Orbit orbit;
     public void Awake()
     {
         if (Instance == null)
@@ -160,6 +163,13 @@ public class UpgradeManager : MonoBehaviour
 
     public void Shuriken(int id)
     {
+        // 이미 수리검 코루틴이 돌고 있다면 다시 시작하지 않음
+        if (upgradeCor.ContainsKey(id))
+        {
+            
+            return;
+        }
+
         StartSkillCoroutine(id, ShurikenCor(id));
     }
 
@@ -194,7 +204,24 @@ public class UpgradeManager : MonoBehaviour
 
     private IEnumerator ShurikenCor(int id)
     {
-        yield return null;
+        while (true)
+        {
+            int count = DataManager.Instance.UpgradeDatasDic[id]
+                .count[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel];
+
+            for (int i = 0; i < count; i++)
+            {
+                if (orbit.orbitList.Count < count)
+                {
+                    orbit.AddOrbit(id);
+                }
+            }
+
+            yield return StartCoroutine(orbit.RotateOrbits(id));
+            
+            yield return new WaitForSeconds(DataManager.Instance.UpgradeDatasDic[id].coolTime[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel]);
+        }
+        
     }
     
     private IEnumerator MushroomCor(int id)

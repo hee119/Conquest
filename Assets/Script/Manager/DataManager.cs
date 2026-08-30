@@ -432,7 +432,14 @@ public class DataManager : MonoBehaviour
             .Split(',')
             .Select(x => int.Parse(x.Trim()))
             .ToArray();
+    
+    upgradeDataTemp.orbitTime =
+        upgradeData[16]
+            .Split(',')
+            .Select(x => int.Parse(x.Trim()))
+            .ToArray();
 
+    
     
     // 이미지
     if (upgradeImagesDic.TryGetValue(
@@ -569,6 +576,7 @@ public class UpgradeData
     public float[] slow;
     public float lifetime;
     public int[] debuffChance;
+    public int[] orbitTime;
     public Image sprite;
     public int upgradeLevel;
     public string description;
