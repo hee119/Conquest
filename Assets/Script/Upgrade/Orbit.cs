@@ -7,13 +7,22 @@ public class Orbit : MonoBehaviour
     public List<GameObject> orbitList = new();
 
     public float radius = 2f;
-    public float rotateSpeed = 180f;
+
+    // 공전 속도
+    public float orbitSpeed = 180f;
+
+    // 표창 자체 회전 속도
+    public float selfRotateSpeed = 360f;
+
     public float spawnTime = 0.5f;
     public float returnTime = 0.5f;
 
     private float currentAngle = 0f;
 
+    // =====================================
     // 표창 추가
+    // =====================================
+
     public void AddOrbit(int id)
     {
         GameObject orbit = PoolManager.Instance.Spawn(
@@ -27,15 +36,17 @@ public class Orbit : MonoBehaviour
         SetAlpha(orbit, 0f);
     }
 
+    // =====================================
     // 표창 전체 동작
+    // =====================================
+
     public IEnumerator RotateOrbits(int id)
     {
         if (orbitList.Count == 0)
             yield break;
 
         // =====================================
-        // 1. 플레이어 위치에서 생성
-        // → 바깥으로 이동하면서 서서히 나타남
+        // 1. 플레이어 → 반지름
         // =====================================
 
         float spawnT = 0f;
@@ -77,21 +88,19 @@ public class Orbit : MonoBehaviour
                 // 서서히 나타남
                 SetAlpha(orbitList[i], t);
 
-                // 표창 자체 회전
+                // 자전
                 orbitList[i].transform.Rotate(
                     0f,
                     0f,
-                    rotateSpeed * Time.deltaTime
+                    selfRotateSpeed * Time.deltaTime
                 );
             }
 
             yield return null;
         }
 
-        // 정확하게 반지름 위치
         ArrangeOrbits();
 
-        // 완전히 보이게
         foreach (GameObject orbit in orbitList)
         {
             if (orbit != null)
@@ -100,7 +109,7 @@ public class Orbit : MonoBehaviour
 
 
         // =====================================
-        // 2. 일정 시간 동안 공전
+        // 2. 공전 + 자전
         // =====================================
 
         float orbitT = 0f;
@@ -117,9 +126,31 @@ public class Orbit : MonoBehaviour
 
             if (orbitList.Count > 0)
             {
-                currentAngle += rotateSpeed * Time.deltaTime;
+                // -----------------------------
+                // 공전
+                // -----------------------------
+
+                currentAngle +=
+                    orbitSpeed * Time.deltaTime;
 
                 ArrangeOrbits();
+
+
+                // -----------------------------
+                // 자전
+                // -----------------------------
+
+                foreach (GameObject orbit in orbitList)
+                {
+                    if (orbit == null)
+                        continue;
+
+                    orbit.transform.Rotate(
+                        0f,
+                        0f,
+                        selfRotateSpeed * Time.deltaTime
+                    );
+                }
             }
 
             yield return null;
@@ -127,8 +158,7 @@ public class Orbit : MonoBehaviour
 
 
         // =====================================
-        // 3. 플레이어 위치로 돌아오면서
-        //    서서히 투명해짐
+        // 3. 플레이어로 돌아오기
         // =====================================
 
         float returnT = 0f;
@@ -162,17 +192,17 @@ public class Orbit : MonoBehaviour
                         t
                     );
 
-                // 1 → 0 으로 투명해짐
+                // 서서히 사라짐
                 SetAlpha(
                     orbitList[i],
                     1f - t
                 );
 
-                // 이동하면서 자체 회전
+                // 이동하면서 자전
                 orbitList[i].transform.Rotate(
                     0f,
                     0f,
-                    rotateSpeed * Time.deltaTime
+                    selfRotateSpeed * Time.deltaTime
                 );
             }
 
@@ -181,14 +211,16 @@ public class Orbit : MonoBehaviour
 
 
         // =====================================
-        // 4. 플레이어 위치에 도착
+        // 4. 플레이어 위치
         // =====================================
 
         foreach (GameObject orbit in orbitList)
         {
             if (orbit != null)
             {
-                orbit.transform.position = transform.position;
+                orbit.transform.position =
+                    transform.position;
+
                 SetAlpha(orbit, 0f);
             }
         }
@@ -196,7 +228,7 @@ public class Orbit : MonoBehaviour
 
 
     // =====================================
-    // 표창들을 플레이어 주변에 균등하게 배치
+    // 공전 배치
     // =====================================
 
     private void ArrangeOrbits()
@@ -213,8 +245,12 @@ public class Orbit : MonoBehaviour
             if (orbitList[i] == null)
                 continue;
 
-            float angle = currentAngle + angleStep * i;
-            float rad = angle * Mathf.Deg2Rad;
+            float angle =
+                currentAngle +
+                angleStep * i;
+
+            float rad =
+                angle * Mathf.Deg2Rad;
 
             Vector3 offset = new Vector3(
                 Mathf.Cos(rad),
@@ -232,7 +268,9 @@ public class Orbit : MonoBehaviour
     // 알파값 변경
     // =====================================
 
-    private void SetAlpha(GameObject obj, float alpha)
+    private void SetAlpha(
+        GameObject obj,
+        float alpha)
     {
         SpriteRenderer spriteRenderer =
             obj.GetComponent<SpriteRenderer>();
@@ -240,8 +278,11 @@ public class Orbit : MonoBehaviour
         if (spriteRenderer == null)
             return;
 
-        Color color = spriteRenderer.color;
+        Color color =
+            spriteRenderer.color;
+
         color.a = alpha;
+
         spriteRenderer.color = color;
     }
 }

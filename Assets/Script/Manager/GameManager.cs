@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
     StageInfo[] stageInfos;
     public int burnChance;
     public int burnPrefabId;
-
+    public int mushroomChance;
+    public int mushroomPrefabId;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()

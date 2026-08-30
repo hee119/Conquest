@@ -31,7 +31,7 @@ public class Lightning : DetectUpgrade
         StartCoroutine(DetectUpgradeCor(id));
     }
     
-    protected override void Attack(Transform target)
+    public override void Attack(Transform target)
     {
         StartCoroutine(Strike(target));
     }
@@ -76,9 +76,14 @@ public class Lightning : DetectUpgrade
                 EnemyCombat enemy =
                     target.GetComponent<EnemyCombat>();
 
+                Collider2D targetCollider = enemy.GetComponent<Collider2D>();
+                Vector2 hitPoint = targetCollider.ClosestPoint(transform.position);
+                
+                int damage = DataManager.Instance.UpgradeDatasDic[id].damage[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel];
+                
                 if (enemy != null)
                 {
-                    enemy.TakeDamage(10);
+                    enemy.TakeDamage(damage, hitPoint);
                 }
             }
 
@@ -94,10 +99,16 @@ public class Lightning : DetectUpgrade
         {
             EnemyCombat enemy =
                 target.GetComponent<EnemyCombat>();
+            
+            Collider2D targetCollider = enemy.GetComponent<Collider2D>();
+            Vector2 hitPoint = targetCollider.ClosestPoint(transform.position);
+                
+            int damage = DataManager.Instance.UpgradeDatasDic[id].damage[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel];
+
 
             if (enemy != null)
             {
-                enemy.TakeDamage(10);
+                enemy.TakeDamage(damage, hitPoint);
             }
         }
 

@@ -30,7 +30,7 @@ public class EnemyCombat : MonoBehaviour
         unitInfo = GetComponent<UnitInfo>();
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, Vector2 hitPoint)
     {
         if (!isDead)
         {
@@ -42,7 +42,7 @@ public class EnemyCombat : MonoBehaviour
             {
                 Die();
             }
-            else if(GameManager.Instance.burnChance > 0 && !isBurn)
+            if(GameManager.Instance.burnChance > 0 && !isBurn)
             {
                 int ran = Random.Range(0, 100);
                 if (ran <= GameManager.Instance.burnChance)
@@ -50,6 +50,17 @@ public class EnemyCombat : MonoBehaviour
                      GameObject obj = PoolManager.Instance.Spawn(GameManager.Instance.burnPrefabId, transform.position);
                      obj.GetComponent<Burn>().TargetBurn(gameObject);
                 }
+            }
+
+            if (GameManager.Instance.mushroomChance > 0)
+            {
+                int ran = Random.Range(0, 100);
+                if (ran <= GameManager.Instance.mushroomChance)
+                {
+                    GameObject obj = PoolManager.Instance.Spawn(GameManager.Instance.mushroomPrefabId, hitPoint);
+                    obj.GetComponent<Mushroom>().TargetMushroom(gameObject);
+                    obj.transform.SetParent(transform);
+                } 
             }
         }
     }
@@ -77,6 +88,12 @@ public class EnemyCombat : MonoBehaviour
                 if (child.TryGetComponent<DotDamage>(out var dot))
                 {
                     child.SetParent(null, true);
+                }
+                if (child.TryGetComponent<Mushroom>(out var mus))
+                {
+                    child.SetParent(null, true);
+                    mus.animator.enabled = true;
+                    mus.animator.SetTrigger("Boom");
                 }
             }
             pooledObject.DestroyObj();
@@ -134,9 +151,18 @@ public class EnemyCombat : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Skill") && isInvincible == false)
+        if (other.CompareTag("Skill") && !isInvincible)
         {
-            TakeDamage(other.gameObject.GetComponent<SkillInfo>().skillDamage);
+            Collider2D myCollider = GetComponent<Collider2D>();
+
+            Vector2 hitPoint = myCollider.ClosestPoint(
+                other.transform.position
+            );
+
+            TakeDamage(
+                other.gameObject.GetComponent<SkillInfo>().skillDamage,
+                hitPoint
+            );
         }
     }
 

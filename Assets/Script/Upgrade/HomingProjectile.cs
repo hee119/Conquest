@@ -3,7 +3,7 @@ using UnityEngine.Rendering;
 
 public abstract class HomingProjectile : MonoBehaviour
 {
-    private int id;
+    protected int id;
 
     protected UpgradeInfo upgradeInfo;
     
@@ -11,6 +11,7 @@ public abstract class HomingProjectile : MonoBehaviour
     protected PooledObject pooledObject;
 
     protected Vector2 moveDirection;
+    protected int hp;
 
     protected virtual void Awake()
     {
@@ -43,26 +44,25 @@ public abstract class HomingProjectile : MonoBehaviour
             sortingGroup = gameObject.AddComponent<SortingGroup>();
 
         sortingGroup.sortingLayerName = "Upgrade";
-
+        
         // 트리거 활성화
         collider.isTrigger = true;
     }
 
-    public void SetTarget(Transform target)
+    public void OnEnable()
     {
-        if (target == null)
-        {
-            MoveToDirection(transform.right);
-            return;
-        }
-
+        hp = DataManager.Instance.UpgradeDatasDic[id].hp;
+    }
+    
+    public virtual void SetTarget(Vector3 target)
+    {
         Vector2 direction =
-            (target.position - transform.position).normalized;
+            (target - (Vector3)transform.position).normalized;
 
         MoveToDirection(direction);
     }
 
-    protected void MoveToDirection(Vector2 direction)
+    protected virtual void MoveToDirection(Vector2 direction)
     {
         moveDirection = direction.normalized;
 
@@ -100,13 +100,18 @@ public abstract class HomingProjectile : MonoBehaviour
         {
             EnemyCombat enemyCombat =
                 other.GetComponent<EnemyCombat>();
+            
+            Collider2D targetCollider = other.GetComponent<Collider2D>();
+            Vector2 hitPoint = targetCollider.ClosestPoint(transform.position);
 
             if (enemyCombat != null)
             {
-                enemyCombat.TakeDamage(GetDamage());
+                enemyCombat.TakeDamage(GetDamage(), hitPoint);
             }
-
-            if(DataManager.Instance.UpgradeDatasDic[id].hp <= 0)
+            
+            
+            
+            if(hp <= 0)
                 pooledObject.DestroyObj();
         }
 

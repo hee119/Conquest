@@ -20,7 +20,10 @@ public class Burn : DotDamage
 
             enemyCombatList.Add(enemyCombat);
 
-            enemyCombat.TakeDamage(GetDamage());
+            Collider2D targetCol = target.GetComponent<Collider2D>();
+            Vector2 hitPoint = targetCol.ClosestPoint(transform.position);
+
+            enemyCombat.TakeDamage(GetDamage(), hitPoint);
             enemyCombat.isBurn = true;
 
             if (enemyCombat.isDead)

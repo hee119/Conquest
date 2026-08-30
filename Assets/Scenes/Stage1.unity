@@ -2564,6 +2564,8 @@ MonoBehaviour:
   tileBases: []
   burnChance: 0
   burnPrefabId: 0
+  mushroomChance: 0
+  mushroomPrefabId: 0
 --- !u!4 &1666363468
 Transform:
   m_ObjectHideFlags: 0

@@ -128,19 +128,21 @@ public class PoolManager : MonoBehaviour
     {
         if (!_pools.ContainsKey(id))
         {
-            Debug.LogWarning(id + "is not found");
-            Debug.LogWarning("Pool id not found");
+            Debug.LogWarning(id + " is not found");
             return null;
         }
 
         PooledObject obj = _pools[id].Get();
-        
+
         if (obj == null)
         {
             Debug.LogWarning("obj is null");
+            return null;
         }
 
+        obj.gameObject.SetActive(false);
         obj.transform.position = targetPos;
+        obj.gameObject.SetActive(true);
 
         return obj.gameObject;
     }

@@ -10,7 +10,7 @@ public class DetectUpgrade : MonoBehaviour
     protected int id;
     protected int count;
     protected float coolTime;
-    protected float detectionRange;
+    public float detectionRange;
 
     protected virtual void Awake()
     {
@@ -28,7 +28,7 @@ public class DetectUpgrade : MonoBehaviour
         {
             SetUpgradeData();
 
-            List<Collider2D> enemies = DetectEnemies();
+            List<Collider2D> enemies = DetectEnemies(detectionRange);
 
             // 적이 없으면 쿨타임 진행 X
             if (enemies.Count == 0)
@@ -77,7 +77,7 @@ public class DetectUpgrade : MonoBehaviour
             DataManager.Instance.UpgradeDatasDic[id].detectionRange[level];
     }
 
-    protected virtual List<Collider2D> DetectEnemies()
+    public virtual List<Collider2D> DetectEnemies(float detectionRange)
     {
         int enemyLayer = LayerMask.GetMask("Enemy");
 
@@ -90,7 +90,7 @@ public class DetectUpgrade : MonoBehaviour
         );
     }
 
-    protected virtual Transform FindClosestEnemy(
+    public virtual Transform FindClosestEnemy(
         List<Collider2D> enemies)
     {
         Transform closestEnemy = null;
@@ -116,7 +116,7 @@ public class DetectUpgrade : MonoBehaviour
     }
 
     // 실제 공격
-    protected virtual void Attack(Transform target)
+    public virtual void Attack(Transform target)
     {
         GameObject obj = PoolManager.Instance.Spawn(
             id,
@@ -128,7 +128,7 @@ public class DetectUpgrade : MonoBehaviour
 
         if (projectile != null)
         {
-            projectile.SetTarget(target);
+            projectile.SetTarget(target.position);
         }
     }
 
@@ -141,5 +141,10 @@ public class DetectUpgrade : MonoBehaviour
             player.transform.position,
             detectionRange
         );
+    }
+    
+    public virtual bool HasEnemyInRange(float detectionRange)
+    {
+        return DetectEnemies(detectionRange).Count > 0;
     }
 }

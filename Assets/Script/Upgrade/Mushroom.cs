@@ -1,0 +1,92 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Mushroom : MonoBehaviour
+{
+    public Animator animator;
+    [SerializeField]
+    public List<Sprite> sprites = new List<Sprite>();
+    
+    public SpriteRenderer spriteRenderer;
+    public UpgradeInfo upgradeInfo;
+    private int id;
+    Coroutine targetMushroomCor;
+    public void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        upgradeInfo = GetComponent<UpgradeInfo>();
+        id = upgradeInfo.id;
+    }
+
+    public void TargetMushroom(GameObject target)
+    {
+        targetMushroomCor = StartCoroutine(TargetMushroomCor());
+    }
+
+    public IEnumerator TargetMushroomCor()
+    {
+        animator.enabled = false;
+        int i = 1;
+
+        Debug.Log("Mushroom 시작 / Sprite 개수 : " + sprites.Count);
+
+        while (i < sprites.Count)
+        {
+            yield return new WaitForSeconds(3f);
+
+            Debug.Log(
+                $"변경 전 : {spriteRenderer.sprite?.name} → 변경 : {sprites[i]?.name}"
+            );
+
+            spriteRenderer.sprite = sprites[i];
+
+            Debug.Log(
+                $"변경 후 : {spriteRenderer.sprite?.name}"
+            );
+
+            i++;
+        }
+
+        Debug.Log("Boom!");
+        animator.enabled = true;
+        animator.SetTrigger("Boom");
+    }
+
+    public void Boom()
+    {
+        Collider2D col = GetComponent<Collider2D>();
+
+        if (col == null)
+            return;
+
+        ContactFilter2D filter = new ContactFilter2D();
+        filter.SetLayerMask(LayerMask.GetMask("Enemy"));
+        filter.useTriggers = true;
+
+        Collider2D[] enemies = new Collider2D[50];
+
+        int count = col.Overlap(filter, enemies);
+
+        for (int i = 0; i < count; i++)
+        {
+            EnemyCombat enemy = enemies[i].GetComponent<EnemyCombat>();
+
+            if (enemy == null)
+                continue;
+
+            enemy.TakeDamage(DataManager.Instance.UpgradeDatasDic[id].damage[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel], enemies[i].ClosestPoint(transform.position));
+        }
+        
+        gameObject.SetActive(false);
+    }
+
+    public void OnDisable()
+    {
+        StopCoroutine(targetMushroomCor);
+        targetMushroomCor = null;
+        spriteRenderer.sprite = sprites[0];
+    }
+}

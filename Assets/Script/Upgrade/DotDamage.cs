@@ -13,6 +13,7 @@ public class DotDamage : MonoBehaviour
     protected Collider2D col;
     protected PooledObject pooledObject;
     protected Rigidbody2D rb;
+    protected Collider2D collider2D;
 
     protected void Awake()
     {
@@ -21,6 +22,7 @@ public class DotDamage : MonoBehaviour
         col = GetComponent<Collider2D>();
         pooledObject = GetComponent<PooledObject>();
         rb = GetComponent<Rigidbody2D>();
+        collider2D = GetComponent<Collider2D>();
         id = upgradeInfo.id;
     }
 
@@ -53,10 +55,11 @@ public class DotDamage : MonoBehaviour
         {
             col.enabled = false;
             enemyCombat = other.GetComponent<EnemyCombat>();
-
+            Collider2D targetCollider = other.GetComponent<Collider2D>();
+            Vector2 hitPoint = targetCollider.ClosestPoint(transform.position);
             if (enemyCombat != null)
             {
-                enemyCombat.TakeDamage(GetDamage());
+                enemyCombat.TakeDamage(GetDamage(), hitPoint);
 
                 if (enemyCombat.isDead)
                 {
@@ -90,7 +93,7 @@ public class DotDamage : MonoBehaviour
         {
             gameObject.transform.SetParent(target.transform);
             rb.linearVelocity = Vector3.zero;
-            transform.position = target.transform.position;
+            gameObject.transform.localPosition = Vector3.zero;
         }
 
         if (gameObject.activeInHierarchy)
@@ -109,12 +112,13 @@ public class DotDamage : MonoBehaviour
         while (gameObject.activeInHierarchy)
         {
             animator.SetTrigger("Dot");
-
+            Vector2 hitPoint = target.GetComponent<Collider2D>().ClosestPoint(transform.position);
+            
             enemyCombat.TakeDamage(
                 DataManager.Instance.UpgradeDatasDic[id]
                     .dotDamage[
                         DataManager.Instance.UpgradeDatasDic[id].upgradeLevel
-                    ]
+                    ], hitPoint
             );
 
             if (enemyCombat.isDead)

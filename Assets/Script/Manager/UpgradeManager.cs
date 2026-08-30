@@ -178,7 +178,11 @@ public class UpgradeManager : MonoBehaviour
 
     public void Missile(int id)
     {
-        StartSkillCoroutine(id, detectUpgrade.DetectUpgradeCor(id));
+        if (upgradeCor.ContainsKey(id))
+        {
+            return;
+        }
+        StartSkillCoroutine(id, MissileCor(id));
     }
 
     public void Mushroom(int id)
@@ -193,8 +197,8 @@ public class UpgradeManager : MonoBehaviour
             for (int i = 0; i < DataManager.Instance.UpgradeDatasDic[id].count[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel]; i++)
             {
                 PoolManager.Instance.Spawn(id, playerCollider.bounds.center);
-                yield return new WaitForSeconds(DataManager.Instance.UpgradeDatasDic[id].coolTime[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel]);
             }
+            yield return new WaitForSeconds(DataManager.Instance.UpgradeDatasDic[id].coolTime[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel]);
         }    
     }
 
@@ -238,8 +242,71 @@ public class UpgradeManager : MonoBehaviour
         
     }
     
+    private IEnumerator MissileCor(int id)
+    {
+        while (true)
+        {
+            int level =
+                DataManager.Instance.UpgradeDatasDic[id].upgradeLevel;
+
+            int count =
+                DataManager.Instance.UpgradeDatasDic[id]
+                    .count[level];
+
+            float detectionRange =
+                DataManager.Instance.UpgradeDatasDic[id]
+                    .detectionRange[level];
+
+            // 적이 나타날 때까지 대기
+            yield return new WaitUntil(() =>
+                detectUpgrade.HasEnemyInRange(detectionRange)
+            );
+
+            // 한 번만 적을 선택
+            List<Collider2D> enemies =
+                detectUpgrade.DetectEnemies(detectionRange);
+
+            Transform target =
+                detectUpgrade.FindClosestEnemy(enemies);
+
+            if (target == null)
+                continue;
+
+            // 모든 미사일이 같은 타겟을 사용
+            for (int i = 0; i < count; i++)
+            {
+                GameObject missile =
+                    PoolManager.Instance.Spawn(
+                        id,
+                        player.transform.position
+                    );
+
+                if (missile != null)
+                {
+                    Missle missle =
+                        missile.GetComponent<Missle>();
+
+                    if (missle != null)
+                    {
+                        missle.Attack(target);
+                    }
+                }
+
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            float coolTime =
+                DataManager.Instance.UpgradeDatasDic[id]
+                    .coolTime[level];
+
+            yield return new WaitForSeconds(coolTime);
+        }
+    }
+    
     private IEnumerator MushroomCor(int id)
     {
+        GameManager.Instance.mushroomPrefabId = id;
+        GameManager.Instance.mushroomChance = DataManager.Instance.UpgradeDatasDic[id].debuffChance[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel];
         yield return null;
     }
 }

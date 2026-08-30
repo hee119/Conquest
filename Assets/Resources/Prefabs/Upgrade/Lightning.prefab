@@ -160,8 +160,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Lightning
   player: {fileID: 0}
   lineRenderer: {fileID: 0}
-  height: 4
-  strikeDuration: 0.2
+  height: 6
+  strikeDuration: 0.15
   damageDistance: 0.1
 --- !u!114 &-3578118022077628351
 MonoBehaviour:
