@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: LightningLine
-  m_Shader: {fileID: 4800000, guid: 15df0d09def7e6d41aed896099efa195, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0a27cf35ae78ae742b0828a39341aafd, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -103,6 +103,7 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _CoreWidth: 0.001
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -111,17 +112,21 @@ Material:
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _Flicker: 0.956
-    - _FlickerSpeed: 10.6
+    - _FlickerSpeed: 11.2
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Glow: 1.46
+    - _Glow: 1.98
+    - _GlowWidth: 0.01
     - _Intensity: 10
+    - _Jaggedness: 0.058
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
+    - _RandomSeed: 0
     - _ReceiveShadows: 1
+    - _Segments: 11.9
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

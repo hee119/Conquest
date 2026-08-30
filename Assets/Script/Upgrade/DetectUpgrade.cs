@@ -7,7 +7,12 @@ public class DetectUpgrade : MonoBehaviour
     [SerializeField]
     protected GameObject player;
 
-    public void Awake()
+    protected int id;
+    protected int count;
+    protected float coolTime;
+    protected float detectionRange;
+
+    protected virtual void Awake()
     {
         if (player == null)
         {
@@ -15,29 +20,15 @@ public class DetectUpgrade : MonoBehaviour
         }
     }
 
-    public IEnumerator DetectUpgradeCor(int id)
+    public virtual IEnumerator DetectUpgradeCor(int id)
     {
-        int level = DataManager.Instance.UpgradeDatasDic[id].upgradeLevel;
-
-        int count =
-            DataManager.Instance.UpgradeDatasDic[id].count[level];
-
-        float coolTime =
-            DataManager.Instance.UpgradeDatasDic[id].coolTime[level];
-
-        float detectionRange =
-            DataManager.Instance.UpgradeDatasDic[id].detectionRange[level];
-
-        int enemyLayer = LayerMask.GetMask("Enemy");
+        this.id = id;
 
         while (true)
         {
-            // 주변 Enemy 전부 탐지
-            List<Collider2D> enemies = new (Physics2D.OverlapCircleAll(
-                player.transform.position,
-                detectionRange,
-                enemyLayer
-            ));
+            SetUpgradeData();
+
+            List<Collider2D> enemies = DetectEnemies();
 
             // 적이 없으면 쿨타임 진행 X
             if (enemies.Count == 0)
@@ -46,52 +37,98 @@ public class DetectUpgrade : MonoBehaviour
                 continue;
             }
 
+            // count만큼 공격
             for (int i = 0; i < count; i++)
             {
-                // 가장 가까운 적 찾기
-                Transform closestEnemy = null;
-                float closestDistance = Mathf.Infinity;
+                Transform closestEnemy = FindClosestEnemy(enemies);
 
-                foreach (Collider2D enemy in enemies)
+                if (closestEnemy == null)
+                    break;
+
+                Attack(closestEnemy);
+
+                // 같은 적을 다시 선택하지 않도록 제거
+                Collider2D collider =
+                    closestEnemy.GetComponent<Collider2D>();
+
+                if (collider != null)
                 {
-                    float distance =
-                        (enemy.transform.position - player.transform.position)
-                        .sqrMagnitude;
-
-                    if (distance < closestDistance)
-                    {
-                        closestDistance = distance;
-                        closestEnemy = enemy.transform;
-                    }
-                }
-
-                // 투사체 생성
-                if (closestEnemy != null)
-                {
-                    GameObject obj = PoolManager.Instance.Spawn(
-                        id,
-                        player.transform.position
-                    );
-
-
-                    Debug.Log(obj);
-
-                    // 생성된 투사체에 타겟 전달
-                    HomingProjectile projectile =
-                        obj.GetComponent<HomingProjectile>();
-
-                    Debug.Log(DataManager.Instance.UpgradeDatasDic[id].speed);
-
-                    if (projectile != null)
-                    {
-                        projectile.SetTarget(closestEnemy);
-                        enemies.Remove(closestEnemy.GetComponent<Collider2D>());
-                    }
+                    enemies.Remove(collider);
                 }
             }
 
-            // 발사했을 때만 쿨타임
+            // 공격했을 때만 쿨타임
             yield return new WaitForSeconds(coolTime);
+        }
+    }
+
+    protected virtual void SetUpgradeData()
+    {
+        int level =
+            DataManager.Instance.UpgradeDatasDic[id].upgradeLevel;
+
+        count =
+            DataManager.Instance.UpgradeDatasDic[id].count[level];
+
+        coolTime =
+            DataManager.Instance.UpgradeDatasDic[id].coolTime[level];
+
+        detectionRange =
+            DataManager.Instance.UpgradeDatasDic[id].detectionRange[level];
+    }
+
+    protected virtual List<Collider2D> DetectEnemies()
+    {
+        int enemyLayer = LayerMask.GetMask("Enemy");
+
+        return new List<Collider2D>(
+            Physics2D.OverlapCircleAll(
+                player.transform.position,
+                detectionRange,
+                enemyLayer
+            )
+        );
+    }
+
+    protected virtual Transform FindClosestEnemy(
+        List<Collider2D> enemies)
+    {
+        Transform closestEnemy = null;
+        float closestDistance = Mathf.Infinity;
+
+        foreach (Collider2D enemy in enemies)
+        {
+            if (enemy == null)
+                continue;
+
+            float distance =
+                (enemy.transform.position - player.transform.position)
+                .sqrMagnitude;
+
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestEnemy = enemy.transform;
+            }
+        }
+
+        return closestEnemy;
+    }
+
+    // 실제 공격
+    protected virtual void Attack(Transform target)
+    {
+        GameObject obj = PoolManager.Instance.Spawn(
+            id,
+            player.transform.position
+        );
+
+        HomingProjectile projectile =
+            obj.GetComponent<HomingProjectile>();
+
+        if (projectile != null)
+        {
+            projectile.SetTarget(target);
         }
     }
 
@@ -102,7 +139,7 @@ public class DetectUpgrade : MonoBehaviour
 
         Gizmos.DrawWireSphere(
             player.transform.position,
-            1f
+            detectionRange
         );
     }
 }

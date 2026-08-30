@@ -138,7 +138,11 @@ public class UpgradeManager : MonoBehaviour
     
     public void Lightning(int id)
     {
-        StartSkillCoroutine(id, detectUpgrade.DetectUpgradeCor(id));
+        if (upgradeCor.ContainsKey(id))
+        {
+            return;
+        }
+        StartSkillCoroutine(id, LightningCor(id));
     }
 
     public void Fireball(int id)
@@ -166,7 +170,6 @@ public class UpgradeManager : MonoBehaviour
         // 이미 수리검 코루틴이 돌고 있다면 다시 시작하지 않음
         if (upgradeCor.ContainsKey(id))
         {
-            
             return;
         }
 
@@ -183,6 +186,17 @@ public class UpgradeManager : MonoBehaviour
         StartSkillCoroutine(id, MushroomCor(id));
     }
     
+    private IEnumerator LightningCor(int id)
+    {
+        while (true)
+        {
+            for (int i = 0; i < DataManager.Instance.UpgradeDatasDic[id].count[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel]; i++)
+            {
+                PoolManager.Instance.Spawn(id, playerCollider.bounds.center);
+                yield return new WaitForSeconds(DataManager.Instance.UpgradeDatasDic[id].coolTime[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel]);
+            }
+        }    
+    }
 
     private IEnumerator BurnCor(int id)
     {
