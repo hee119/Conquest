@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 6879226697360169899}
   - component: {fileID: 4477625147278368161}
   - component: {fileID: 7201235708750216182}
+  - component: {fileID: 6014975631671674939}
   m_Layer: 0
   m_Name: Swordman
   m_TagString: Player
@@ -52,7 +53,7 @@ SortingGroup:
   m_GameObject: {fileID: 5121868815476299701}
   m_Enabled: 1
   m_SortingLayerID: -1869315837
-  m_SortingLayer: 1
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_SortAtRoot: 0
   m_Sort3DAs2D: 0
@@ -105,17 +106,17 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1643334125280247968, guid: e15b92666314e4cd29e243007f3857ae,
+  m_Sprite: {fileID: -7604060356387697401, guid: 5e2a0e947b8244995bfca997830049c0,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.14, y: 1.54}
+  m_Size: {x: 4.266667, y: 4.266667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &1405166045347888034
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -150,17 +151,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.17272994, y: -0.05117929}
+  m_Offset: {x: -0.027489275, y: -0.5194889}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.14, y: 1.54}
-    newSize: {x: 2.14, y: 1.54}
+    oldSize: {x: 3.4133334, y: 3.4133334}
+    newSize: {x: 4.266667, y: 4.266667}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.89890295, y: 1.053797}
+  m_Size: {x: 0.49846452, y: 0.45653236}
   m_EdgeRadius: 0
 --- !u!50 &8094363392080683461
 Rigidbody2D:
@@ -264,6 +265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1583d4126f613497fa77bc4ab81a40f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
+  idleDelay: 0.03
+  canMove: 1
   speed: 3
 --- !u!95 &4689823722373760585
 Animator:
@@ -327,7 +330,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ae402c8490c40368e2f05a9ccd80e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimationController
-  canSkillUse: 1
+  canSkillUse1: 1
+  canSkillUse2: 1
+  canSkillUse3: 1
+  canSkillUse4: 1
 --- !u!114 &4477625147278368161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,3 +371,20 @@ MonoBehaviour:
   maxHp: 0
   hp: 0
   isDead: 0
+--- !u!114 &6014975631671674939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5121868815476299701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1826af4b763604395767348ea48c33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Orbit
+  orbitList: []
+  radius: 2
+  rotateSpeed: 180
+  spawnTime: 0.5
+  returnTime: 0.5

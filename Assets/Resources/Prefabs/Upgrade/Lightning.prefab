@@ -29,9 +29,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1335533296811855934}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.6121, y: 1.15317, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,7 +86,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Positions:
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 6, z: 0}
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
@@ -96,7 +96,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.10294117
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -160,8 +160,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Lightning
   player: {fileID: 0}
   lineRenderer: {fileID: 0}
-  height: 1
-  strikeDuration: 0.07
+  height: 4
+  strikeDuration: 0.2
   damageDistance: 0.1
 --- !u!114 &-3578118022077628351
 MonoBehaviour:

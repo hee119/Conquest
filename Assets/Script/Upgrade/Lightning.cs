@@ -7,10 +7,10 @@ public class Lightning : DetectUpgrade
     private LineRenderer lineRenderer;
 
     [SerializeField]
-    private float height = 1f;
+    private float height = 4f;
 
     [SerializeField]
-    private float strikeDuration = 0.07f;
+    private float strikeDuration = 0.2f;
 
     [SerializeField]
     private float damageDistance = 0.1f;

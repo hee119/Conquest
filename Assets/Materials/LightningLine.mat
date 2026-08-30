@@ -103,7 +103,7 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _CoreWidth: 0.001
+    - _CoreWidth: 0.017
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -112,21 +112,21 @@ Material:
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _Flicker: 0.956
-    - _FlickerSpeed: 11.2
+    - _FlickerSpeed: 9.84
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Glow: 1.98
+    - _Glow: 2
     - _GlowWidth: 0.01
     - _Intensity: 10
-    - _Jaggedness: 0.058
+    - _Jaggedness: 0.318
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
-    - _RandomSeed: 0
+    - _RandomSeed: 120
     - _ReceiveShadows: 1
-    - _Segments: 11.9
+    - _Segments: 20
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
