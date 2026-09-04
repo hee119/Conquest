@@ -41,6 +41,7 @@ public class EnemyCombat : MonoBehaviour
             if (hp <= 0)
             {
                 Die();
+                return;
             }
             if(GameManager.Instance.burnChance > 0 && !isBurn)
             {
@@ -83,8 +84,10 @@ public class EnemyCombat : MonoBehaviour
         {
             isDead = true;
             PoolManager.Instance.Spawn(unitInfo.dropExpOrbId, transform.position);
-            foreach (Transform child in transform)
+            for (int i = transform.childCount - 1; i >= 0; i--)
             {
+                Transform child = transform.GetChild(i);
+
                 if (child.TryGetComponent<DotDamage>(out var dot))
                 {
                     child.SetParent(null, true);
@@ -92,10 +95,14 @@ public class EnemyCombat : MonoBehaviour
                 if (child.TryGetComponent<Mushroom>(out var mus))
                 {
                     child.SetParent(null, true);
-                    mus.animator.enabled = true;
-                    mus.animator.SetTrigger("Boom");
+                    if (mus.gameObject.activeInHierarchy)
+                    {
+                        mus.animator.enabled = true;
+                        mus.animator.SetTrigger("Boom");
+                    }
                 }
             }
+
             pooledObject.DestroyObj();
         }
     }
@@ -168,7 +175,7 @@ public class EnemyCombat : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && canAttack)
+        if (other.CompareTag("Player") && canAttack && isDead == false)
         {
             canAttack = false;
             StartCoroutine(AttackCoolTimeCor());

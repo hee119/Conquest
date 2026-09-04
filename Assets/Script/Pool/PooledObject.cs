@@ -17,11 +17,4 @@ public class PooledObject : MonoBehaviour
             _ManagedPool.Release(this);
         }
     }
-    
-
-    public void EnableObj()
-    {
-        _ManagedPool.Get();
-    }
-    
 }

@@ -21,7 +21,7 @@ TagManager:
   - Teracore
   - Player
   - Enemy
-  - 
+  - Exp
   - 
   - 
   - 
@@ -71,6 +71,9 @@ TagManager:
     locked: 0
   - name: Upgrade
     uniqueID: 803587905
+    locked: 0
+  - name: UI
+    uniqueID: 1418487415
     locked: 0
   m_RenderingLayers:
   - Default

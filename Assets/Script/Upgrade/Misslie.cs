@@ -29,19 +29,20 @@ public class Missle : DetectUpgrade
             yield break;
 
         Transform closestEnemy = FindClosestEnemy(enemies);
-
+        
         if (closestEnemy != null)
         {
-            Attack(closestEnemy);
+            Vector3 targetPos = closestEnemy.position;
+            Attack(targetPos, closestEnemy.gameObject);
         }
 
         yield return null;
-    }
-    public override void Attack(Transform target)
-    {
-       
 
-        Vector3 randomTarget = target.position;
+        yield return null;
+    }
+    public override void Attack(Vector3 targetPos, GameObject target = null)
+    {
+        Vector3 randomTarget = targetPos;
         randomTarget.y += Random.Range(-1f, 1f);
 
         projectile.SetTarget(randomTarget);

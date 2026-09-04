@@ -12,7 +12,7 @@ public class Orbit : MonoBehaviour
     public float orbitSpeed = 180f;
 
     // 표창 자체 회전 속도
-    public float selfRotateSpeed = 360f;
+    public float selfRotateSpeed = 1500;
 
     public float spawnTime = 0.5f;
     public float returnTime = 0.5f;

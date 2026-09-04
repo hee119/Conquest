@@ -15,6 +15,8 @@ public class Lightning : DetectUpgrade
     [SerializeField]
     private float damageDistance = 0.1f;
 
+    private PooledObject pooledObject;
+
     protected override void Awake()
     {
         if (player == null)
@@ -24,25 +26,23 @@ public class Lightning : DetectUpgrade
 
         id = GetComponent<UpgradeInfo>().id;
         lineRenderer = GetComponent<LineRenderer>();
+        pooledObject = GetComponent<PooledObject>();
     }
 
     protected void OnEnable()
     {
         StartCoroutine(DetectUpgradeCor(id));
     }
-    
-    public override void Attack(Transform target)
+
+    public override void Attack(Vector3 targetPos, GameObject target)
     {
-        StartCoroutine(Strike(target));
+        StartCoroutine(Strike(targetPos, target));
     }
 
-    private IEnumerator Strike(Transform target)
+    private IEnumerator Strike(Vector3 targetPos, GameObject target)
     {
-        if (target == null)
-            yield break;
-
         // 타겟 위치
-        Vector3 endPos = target.position;
+        Vector3 endPos = targetPos;
 
         // 타겟 기준 위쪽
         Vector3 startPos = endPos + Vector3.up * height;
@@ -73,18 +73,40 @@ public class Lightning : DetectUpgrade
             {
                 damaged = true;
 
-                EnemyCombat enemy =
-                    target.GetComponent<EnemyCombat>();
-
-                Collider2D targetCollider = enemy.GetComponent<Collider2D>();
-                Vector2 hitPoint = targetCollider.ClosestPoint(transform.position);
-                
-                int damage = DataManager.Instance.UpgradeDatasDic[id].damage[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel];
-                
-                if (enemy != null)
+                if (target == null)
                 {
-                    enemy.TakeDamage(damage, hitPoint);
+                    lineRenderer.enabled = false;
+                    pooledObject.DestroyObj();
+                    yield break;
                 }
+
+                EnemyCombat enemy = target.GetComponent<EnemyCombat>();
+
+                if (enemy == null ||
+                    enemy.isDead ||
+                    !enemy.gameObject.activeInHierarchy)
+                {
+                    lineRenderer.enabled = false;
+                    pooledObject.DestroyObj();
+                    yield break;
+                }
+
+                Collider2D targetCollider =
+                    enemy.GetComponent<Collider2D>();
+
+                Vector2 hitPoint =
+                    targetCollider.ClosestPoint(transform.position);
+
+                int damage =
+                    DataManager.Instance
+                    .UpgradeDatasDic[id]
+                    .damage[
+                        DataManager.Instance
+                        .UpgradeDatasDic[id]
+                        .upgradeLevel
+                    ];
+
+                enemy.TakeDamage(damage, hitPoint);
             }
 
             yield return null;
@@ -99,19 +121,39 @@ public class Lightning : DetectUpgrade
         {
             EnemyCombat enemy =
                 target.GetComponent<EnemyCombat>();
-            
-            Collider2D targetCollider = enemy.GetComponent<Collider2D>();
-            Vector2 hitPoint = targetCollider.ClosestPoint(transform.position);
-                
-            int damage = DataManager.Instance.UpgradeDatasDic[id].damage[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel];
 
-
-            if (enemy != null)
+            // 타겟이 죽었거나 비활성화됐으면 종료
+            if (enemy == null ||
+                enemy.isDead ||
+                !enemy.gameObject.activeInHierarchy)
             {
-                enemy.TakeDamage(damage, hitPoint);
+                lineRenderer.enabled = false;
+                pooledObject.DestroyObj();
+                yield break;
             }
+
+            Collider2D targetCollider =
+                enemy.GetComponent<Collider2D>();
+
+            Vector2 hitPoint =
+                targetCollider.ClosestPoint(transform.position);
+
+            int damage =
+                DataManager.Instance
+                .UpgradeDatasDic[id]
+                .damage[
+                    DataManager.Instance
+                    .UpgradeDatasDic[id]
+                    .upgradeLevel
+                ];
+
+            enemy.TakeDamage(damage, hitPoint);
         }
 
+        // 번개 끄기
         lineRenderer.enabled = false;
+
+        // 풀 반환
+        pooledObject.DestroyObj();
     }
 }

@@ -117,7 +117,8 @@ public class PoolManager : MonoBehaviour
 
     private void OnDestroyPool(PooledObject pooledObject)
     {
-        Destroy(pooledObject.gameObject);
+        if(pooledObject != null)
+            Destroy(pooledObject.gameObject);
     }
 
     // =========================

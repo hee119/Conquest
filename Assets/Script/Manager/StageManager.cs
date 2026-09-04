@@ -13,6 +13,7 @@ public class StageManager : MonoBehaviour
     private List<Transform> monsterSpawnPoints = new List<Transform>();
     public int currentStage;
     public NavMeshSurface navMeshSurface;
+    public int monsterCount = 0;
     private Camera camera;
 
     void Awake()
@@ -64,7 +65,7 @@ public class StageManager : MonoBehaviour
             new Vector3(1, 1, -cam.transform.position.z)
         );
 
-        int padding = 5;
+        int padding = 3;
 
         Vector3Int minCell = backgroundTilemap.WorldToCell(bottomLeft) - new Vector3Int(padding, padding, 0);
         Vector3Int maxCell = backgroundTilemap.WorldToCell(topRight) + new Vector3Int(padding, padding, 0);
@@ -144,25 +145,33 @@ public class StageManager : MonoBehaviour
         Debug.Log(DataManager.Instance.stageInfos[currentStage].enemyId.Count);
         for (int i = 0; i < DataManager.Instance.stageInfos[currentStage].enemyId.Count; i++)
         {
-            int monsterCount = 0;
 
             for (int j = 0; j < DataManager.Instance.stageInfos[currentStage].enemySpawnCount[i]; j++)
             {
-                PoolManager.Instance.Spawn(
-                    DataManager.Instance.stageInfos[currentStage].enemyId[i],
-                    monsterSpawnPoints[Random.Range(0, monsterSpawnPoints.Count)].position
-                );
-
-                monsterCount++;
-
-                if (monsterCount >= DataManager.Instance.stageInfos[currentStage].enemySpawnCount[i])
+                for (int k = 0; k < DataManager.Instance.stageInfos[currentStage].enemysPerSpawn[i]; k++)
                 {
-                    break;
-                }
+                    PoolManager.Instance.Spawn(
+                        DataManager.Instance.stageInfos[currentStage].enemyId[i],
+                        monsterSpawnPoints[k % monsterSpawnPoints.Count].position
+                    );
 
+                    monsterCount++;
+
+                    if (monsterCount >= DataManager.Instance.stageInfos[currentStage].enemySpawnCount[i])
+                    {
+                        break;
+                    }
+
+                }
                 yield return new WaitForSeconds(
                     DataManager.Instance.stageInfos[currentStage].spawnInterval[i]
                 );
+                
+                if (monsterCount >= DataManager.Instance.stageInfos[currentStage].enemySpawnCount[i])
+                {
+                    monsterCount = 0;
+                    break;
+                }
             }
         }
     }

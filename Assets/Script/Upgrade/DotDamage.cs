@@ -1,152 +1,377 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class DotDamage : MonoBehaviour
 {
     protected int id;
+
     protected UpgradeInfo upgradeInfo;
     protected Animator animator;
     protected Coroutine dotDamage;
-    protected Coroutine stopAfterSeconds;
+
     protected EnemyCombat enemyCombat;
+
     protected Collider2D col;
     protected PooledObject pooledObject;
     protected Rigidbody2D rb;
-    protected Collider2D collider2D;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         upgradeInfo = GetComponent<UpgradeInfo>();
         animator = GetComponent<Animator>();
         col = GetComponent<Collider2D>();
         pooledObject = GetComponent<PooledObject>();
         rb = GetComponent<Rigidbody2D>();
-        collider2D = GetComponent<Collider2D>();
+
         id = upgradeInfo.id;
     }
+    
+    
 
-    protected virtual void OnDisable()
+    protected virtual void OnEnable()
     {
-        if (stopAfterSeconds != null)
-            StopCoroutine(stopAfterSeconds);
+        if (col != null)
+            col.enabled = true;
 
-        if (dotDamage != null)
-            StopCoroutine(dotDamage);
+        if (animator != null)
+        {
+            animator.ResetTrigger("Dot");
+            animator.SetBool("Idle", true);
+        }
 
-        stopAfterSeconds = null;
+        enemyCombat = null;
         dotDamage = null;
 
         if (rb != null)
-            rb.linearVelocity = Vector2.zero;
-
-        col.enabled = true;
-    }
-
-    protected void OnEnable()
-    {
-        col.enabled = true;
-        animator.SetBool("Idle", true);
-    }
-
-    protected virtual void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
+            rb.linearVelocity = Vector2.zero;
+            rb.bodyType = RigidbodyType2D.Dynamic;
+        }
+    }
+
+    /// <summary>
+    /// Poison에서 타겟을 전달받음.
+    /// 거리 검사는 Poison에서 담당.
+    /// 여기서는 실제 DOT만 시작한다.
+    /// </summary>
+    public virtual void SetTarget(GameObject target)
+    {
+        if (target == null)
+            return;
+
+        if (target.layer != LayerMask.NameToLayer("Enemy"))
+            return;
+
+        EnemyCombat enemy =
+            target.GetComponent<EnemyCombat>();
+
+        if (enemy == null)
+            return;
+
+        enemyCombat = enemy;
+
+        // =========================================
+        // 이동 정지
+        // =========================================
+
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.bodyType = RigidbodyType2D.Kinematic;
+        }
+
+        // =========================================
+        // Collider 비활성화
+        // =========================================
+
+        if (col != null)
             col.enabled = false;
-            enemyCombat = other.GetComponent<EnemyCombat>();
-            Collider2D targetCollider = other.GetComponent<Collider2D>();
-            Vector2 hitPoint = targetCollider.ClosestPoint(transform.position);
-            if (enemyCombat != null)
-            {
-                enemyCombat.TakeDamage(GetDamage(), hitPoint);
 
-                if (enemyCombat.isDead)
-                {
-                    pooledObject.DestroyObj();
-                }
-            }
+        // =========================================
+        // 적이 이미 죽어있음
+        //
+        // Dot 1회만 재생하고 종료
+        // =========================================
 
+        if (enemyCombat.isDead)
+        {
             if (gameObject.activeInHierarchy)
-                dotDamage = StartCoroutine(PoisonDamage(other.gameObject));
+            {
+                dotDamage =
+                    StartCoroutine(
+                        PlayDeadTargetDot()
+                    );
+            }
 
             return;
         }
+        
+        if (gameObject.activeInHierarchy)
+        {
+            dotDamage =
+                StartCoroutine(
+                    PoisonDamage()
+                );
+        }
+        
+        transform.SetParent(
+            enemy.transform
+        );
 
+        transform.localPosition =
+            Vector3.zero;
+    }
+
+    /// <summary>
+    /// 실제 DOT 처리
+    /// </summary>
+    protected IEnumerator PoisonDamage()
+    {
+        if (enemyCombat == null)
+        {
+            pooledObject.DestroyObj();
+            yield break;
+        }
+
+        int level =
+            DataManager.Instance
+                .UpgradeDatasDic[id]
+                .upgradeLevel;
+
+        int dotCount =
+            DataManager.Instance
+                .UpgradeDatasDic[id]
+                .dotCount[level];
+
+        int dotDamageValue =
+            DataManager.Instance
+                .UpgradeDatasDic[id]
+                .dotDamage[level];
+
+        int playedCount = 0;
+
+        // =========================================
+        // DOT 반복
+        // =========================================
+
+        while (playedCount < dotCount)
+        {
+            // 타겟 자체가 사라짐
+            if (enemyCombat == null)
+                break;
+
+            // =========================================
+            // 적이 죽어있음
+            //
+            // 지금까지 Dot을 하나도 안 했다면
+            // Dot 1회 재생
+            //
+            // 이미 하나라도 했다면
+            // 추가 Dot 없이 종료
+            // =========================================
+
+            if (enemyCombat.isDead)
+            {
+                if (playedCount == 0)
+                {
+                    yield return PlayDotAnimation();
+                }
+
+                break;
+            }
+
+            // =========================================
+            // Dot 애니메이션
+            // =========================================
+
+            yield return PlayDotAnimation();
+
+            playedCount++;
+
+            // =========================================
+            // 애니메이션 도중 적이 죽었음
+            //
+            // 현재 애니메이션은 이미 끝났으므로
+            // 추가 데미지 없이 종료
+            // =========================================
+
+            if (enemyCombat == null)
+                break;
+
+            if (enemyCombat.isDead)
+                break;
+
+            // =========================================
+            // DOT 데미지
+            // =========================================
+
+            DealDamage(dotDamageValue);
+
+            // =========================================
+            // 이번 데미지로 적 사망
+            // =========================================
+
+            if (enemyCombat == null)
+                break;
+
+            if (enemyCombat.isDead)
+                break;
+
+            // =========================================
+            // 다음 DOT 데이터 갱신
+            // =========================================
+
+            level =
+                DataManager.Instance
+                    .UpgradeDatasDic[id]
+                    .upgradeLevel;
+
+            dotCount =
+                DataManager.Instance
+                    .UpgradeDatasDic[id]
+                    .dotCount[level];
+
+            dotDamageValue =
+                DataManager.Instance
+                    .UpgradeDatasDic[id]
+                    .dotDamage[level];
+        }
+
+        pooledObject.DestroyObj();
+    }
+
+    /// <summary>
+    /// 타겟이 이미 죽어있는 경우
+    /// Dot 1회만 재생하고 종료
+    /// </summary>
+    protected IEnumerator PlayDeadTargetDot()
+    {
+        yield return PlayDotAnimation();
+
+        pooledObject.DestroyObj();
+    }
+
+    /// <summary>
+    /// Dot 애니메이션을 끝까지 재생
+    /// </summary>
+    protected IEnumerator PlayDotAnimation()
+    {
+        if (animator == null)
+            yield break;
+
+        animator.SetBool("Idle", false);
+
+        animator.ResetTrigger("Dot");
+        animator.SetTrigger("Dot");
+
+        // Animator 상태 변경 대기
+        yield return null;
+
+        // Dot 상태 진입 대기
+        yield return new WaitUntil(() =>
+        {
+            if (animator == null)
+                return true;
+
+            AnimatorStateInfo state =
+                animator.GetCurrentAnimatorStateInfo(0);
+
+            return state.IsName("Dot");
+        });
+
+        // Dot 애니메이션 종료 대기
+        yield return new WaitUntil(() =>
+        {
+            if (animator == null)
+                return true;
+
+            AnimatorStateInfo state =
+                animator.GetCurrentAnimatorStateInfo(0);
+
+            return state.IsName("Dot") &&
+                   state.normalizedTime >= 1f;
+        });
+    }
+
+    /// <summary>
+    /// 현재 타겟에게 DOT 데미지
+    /// </summary>
+    protected void DealDamage(int damage)
+    {
+        if (enemyCombat == null)
+            return;
+
+        if (enemyCombat.isDead)
+            return;
+
+        Collider2D targetCollider =
+            enemyCombat.GetComponent<Collider2D>();
+
+        if (targetCollider == null)
+            return;
+
+        Vector2 hitPoint =
+            targetCollider.ClosestPoint(
+                transform.position
+            );
+
+        enemyCombat.TakeDamage(
+            damage,
+            hitPoint
+        );
+    }
+
+    protected virtual void OnTriggerEnter2D(
+        Collider2D other
+    )
+    {
         if (other.CompareTag("Wall"))
         {
             pooledObject.DestroyObj();
         }
     }
 
+    protected virtual void OnDisable()
+    {
+        // =========================================
+        // 코루틴 정리
+        // =========================================
+
+        if (dotDamage != null)
+        {
+            StopCoroutine(dotDamage);
+            dotDamage = null;
+        }
+
+
+        enemyCombat = null;
+
+        // Rigidbody 초기화
+        // =========================================
+
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.bodyType = RigidbodyType2D.Dynamic;
+        }
+
+        // =========================================
+        // Collider 초기화
+        // =========================================
+
+        if (col != null)
+            col.enabled = true;
+    }
+
     protected int GetDamage()
     {
         int level =
-            DataManager.Instance.UpgradeDatasDic[id].upgradeLevel;
+            DataManager.Instance
+                .UpgradeDatasDic[id]
+                .upgradeLevel;
 
-        return DataManager.Instance.UpgradeDatasDic[id].damage[level];
-    }
-
-    protected IEnumerator PoisonDamage(GameObject target = null)
-    {
-        if (target != null)
-        {
-            gameObject.transform.SetParent(target.transform);
-            rb.linearVelocity = Vector3.zero;
-            gameObject.transform.localPosition = Vector3.zero;
-        }
-
-        if (gameObject.activeInHierarchy)
-            stopAfterSeconds = StartCoroutine(
-                StopAfterSeconds(
-                    DataManager.Instance.UpgradeDatasDic[id]
-                        .dotDuration[
-                            DataManager.Instance.UpgradeDatasDic[id].upgradeLevel
-                        ],
-                    dotDamage
-                )
-            );
-
-        animator.SetBool("Idle", false);
-
-        while (gameObject.activeInHierarchy)
-        {
-            animator.SetTrigger("Dot");
-            Vector2 hitPoint = target.GetComponent<Collider2D>().ClosestPoint(transform.position);
-            
-            enemyCombat.TakeDamage(
-                DataManager.Instance.UpgradeDatasDic[id]
-                    .dotDamage[
-                        DataManager.Instance.UpgradeDatasDic[id].upgradeLevel
-                    ], hitPoint
-            );
-
-            if (enemyCombat.isDead)
-            {
-                // Dot 애니메이션 끝날 때까지 대기
-                yield return new WaitUntil(() =>
-                    animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f
-                );
-
-                pooledObject.DestroyObj();
-                yield break;
-            }
-
-            yield return new WaitForSeconds(
-                DataManager.Instance.UpgradeDatasDic[id].dotInterval
-            );
-        }
-    }
-
-    protected IEnumerator StopAfterSeconds(float time, Coroutine coroutine)
-    {
-        yield return new WaitForSeconds(time);
-
-        if (coroutine != null)
-            StopCoroutine(coroutine);
-
-        stopAfterSeconds = null;
-        dotDamage = null;
-        pooledObject.DestroyObj();
+        return DataManager.Instance
+            .UpgradeDatasDic[id]
+            .damage[level];
     }
 }

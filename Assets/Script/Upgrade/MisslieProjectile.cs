@@ -10,8 +10,22 @@ public class MissileProjectile : HomingProjectile
 
     public override void SetTarget(Vector3 target)
     {
+        Debug.Log(
+            $"[Missile] SetTarget 호출 | " +
+            $"Name={gameObject.name} | " +
+            $"ID={GetInstanceID()} | " +
+            $"Active={gameObject.activeInHierarchy} | " +
+            $"Start={transform.position} | " +
+            $"Target={target}"
+        );
+
         if (moveCoroutine != null)
         {
+            Debug.Log(
+                $"[Missile] 기존 MoveCoroutine 중지 | " +
+                $"ID={GetInstanceID()}"
+            );
+
             StopCoroutine(moveCoroutine);
             moveCoroutine = null;
         }
@@ -24,6 +38,13 @@ public class MissileProjectile : HomingProjectile
         Vector2 startPosition = transform.position;
         rb.position = startPosition;
 
+        Debug.Log(
+            $"[Missile] 이동 시작 | " +
+            $"ID={GetInstanceID()} | " +
+            $"Start={startPosition} | " +
+            $"Target={target}"
+        );
+
         moveCoroutine = StartCoroutine(
             MoveParabola(startPosition, target)
         );
@@ -34,6 +55,13 @@ public class MissileProjectile : HomingProjectile
         Vector3 target
     )
     {
+        Debug.Log(
+            $"[Missile] MoveParabola 시작 | " +
+            $"ID={GetInstanceID()} | " +
+            $"Start={startPosition} | " +
+            $"Target={target}"
+        );
+
         float speed =
             DataManager.Instance.UpgradeDatasDic[id].speed;
 
@@ -45,13 +73,39 @@ public class MissileProjectile : HomingProjectile
         float moveTime =
             distance / speed;
 
+        Debug.Log(
+            $"[Missile] 이동 정보 | " +
+            $"ID={GetInstanceID()} | " +
+            $"Speed={speed} | " +
+            $"Distance={distance} | " +
+            $"MoveTime={moveTime}"
+        );
+
         // 거리가 너무 가까운 경우
         if (moveTime <= 0.01f)
         {
+            Debug.Log(
+                $"[Missile] 거리가 너무 가까움 → 즉시 제거 | " +
+                $"ID={GetInstanceID()}"
+            );
+
             rb.position = target;
             rb.linearVelocity = Vector2.zero;
 
+            Debug.Log(
+                $"[Missile] DestroyObj 호출 직전 | " +
+                $"ID={GetInstanceID()} | " +
+                $"Active={gameObject.activeInHierarchy}"
+            );
+
             pooledObject.DestroyObj();
+
+            Debug.Log(
+                $"[Missile] DestroyObj 호출 완료 | " +
+                $"ID={GetInstanceID()} | " +
+                $"Active={gameObject.activeInHierarchy}"
+            );
+
             moveCoroutine = null;
 
             yield break;
@@ -72,6 +126,13 @@ public class MissileProjectile : HomingProjectile
                 -targetDirection.y,
                 targetDirection.x
             );
+
+        Debug.Log(
+            $"[Missile] 포물선 설정 | " +
+            $"ID={GetInstanceID()} | " +
+            $"CurveDirection={curveDirection} | " +
+            $"CurveHeight={curveHeight}"
+        );
 
         float elapsed = 0f;
 
@@ -125,23 +186,76 @@ public class MissileProjectile : HomingProjectile
 
             // Rigidbody 이동
             rb.MovePosition(position);
+
+            // 0.2초마다 진행 상황 출력
+            if (Mathf.Abs(
+                    (elapsed % 0.2f) -
+                    0f
+                ) < Time.fixedDeltaTime)
+            {
+                Debug.Log(
+                    $"[Missile] 이동 중 | " +
+                    $"ID={GetInstanceID()} | " +
+                    $"Elapsed={elapsed:F2}/{moveTime:F2} | " +
+                    $"T={t:F2} | " +
+                    $"Position={position} | " +
+                    $"Active={gameObject.activeInHierarchy}"
+                );
+            }
         }
+
+        Debug.Log(
+            $"[Missile] while 종료 | " +
+            $"ID={GetInstanceID()} | " +
+            $"Elapsed={elapsed} | " +
+            $"MoveTime={moveTime}"
+        );
 
         // 마지막 위치 정확하게 목표에 맞춤
         rb.position = target;
+
         rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
 
+        Debug.Log(
+            $"[Missile] 목표 도착 | " +
+            $"ID={GetInstanceID()} | " +
+            $"Position={rb.position}"
+        );
+
+        Debug.Log(
+            $"[Missile] DestroyObj 호출 직전 | " +
+            $"ID={GetInstanceID()} | " +
+            $"Active={gameObject.activeInHierarchy}"
+        );
+
         // 도착하면 풀 반환
         pooledObject.DestroyObj();
+
+        Debug.Log(
+            $"[Missile] DestroyObj 호출 완료 | " +
+            $"ID={GetInstanceID()} | " +
+            $"Active={gameObject.activeInHierarchy}"
+        );
 
         moveCoroutine = null;
     }
 
     protected override void OnDisable()
     {
+        Debug.Log(
+            $"[Missile] OnDisable 호출 ★ | " +
+            $"ID={GetInstanceID()} | " +
+            $"Name={gameObject.name}"
+        );
+
         if (moveCoroutine != null)
         {
+            Debug.Log(
+                $"[Missile] OnDisable에서 MoveCoroutine 중지 | " +
+                $"ID={GetInstanceID()}"
+            );
+
             StopCoroutine(moveCoroutine);
             moveCoroutine = null;
         }
@@ -153,5 +267,11 @@ public class MissileProjectile : HomingProjectile
         }
 
         base.OnDisable();
+
+        Debug.Log(
+            $"[Missile] OnDisable 종료 | " +
+            $"ID={GetInstanceID()} | " +
+            $"Active={gameObject.activeInHierarchy}"
+        );
     }
 }

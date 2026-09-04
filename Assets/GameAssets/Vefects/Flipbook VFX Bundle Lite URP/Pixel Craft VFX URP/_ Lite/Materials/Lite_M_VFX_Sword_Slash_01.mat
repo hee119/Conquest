@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Lite_M_VFX_Sword_Slash_01
-  m_Shader: {fileID: 4800000, guid: 737a8d28b59eb3948b2dddab974841d1, type: 3}
+  m_Shader: {fileID: 4800000, guid: 1f5ac0864ad3440ec9c3d1eaf8033b89, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []

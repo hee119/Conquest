@@ -1927,7 +1927,7 @@ Shader "Vefects/Lite_SH_Vefects_URP_Unlit_Flipbook_Pixel_01"
 
 			// Deferred Rendering Path does not support the OpenGL-based graphics API:
 			// Desktop OpenGL, OpenGL ES 3.0, WebGL 2.0.
-			#pragma exclude_renderers glcore gles3 
+			#pragma exclude_renderers glcore gles3 webgpu 
 
 			#pragma multi_compile_fragment _ _DBUFFER_MRT1 _DBUFFER_MRT2 _DBUFFER_MRT3
 			#pragma multi_compile_fragment _ _GBUFFER_NORMALS_OCT
@@ -2260,8 +2260,6 @@ Shader "Vefects/Lite_SH_Vefects_URP_Unlit_Flipbook_Pixel_01"
 
 			#if ( UNITY_VERSION >= 60010000 )
 				return PackGBuffersSurfaceData( surfaceData, inputData, float3( 0, 0, 0 ) );
-			#else
-				return SurfaceDataToGbuffer( surfaceData, inputData, float3( 0, 0, 0 ), kLightingInvalid );
 			#endif
 			}
 

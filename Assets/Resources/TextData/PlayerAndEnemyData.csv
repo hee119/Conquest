@@ -1,7 +1,7 @@
 Id,Name,Hp,HpRegenRate,Speed,Damage,Defense,Critical Damage,Critical Chance,Drop Exp Orb Id
 1,swordMan,100,5,5,1,5,1.5,10,0
 100,Bull,15,0,2,2,5,0,0,300
-101,Crap,5,0,3,1,5,0,0,300
+101,Crap,5,0,1,1,5,0,0,300
 102,Eagle,10,0,6,2,5,0,0,300
 103,Goat,20,0,2,5,5,0,0,300
 104,Pufferfish,10,0,3,7,5,0,0,300

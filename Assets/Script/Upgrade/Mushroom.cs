@@ -20,6 +20,21 @@ public class Mushroom : MonoBehaviour
         upgradeInfo = GetComponent<UpgradeInfo>();
         id = upgradeInfo.id;
     }
+    
+    private void OnEnable()
+    {
+        if (animator != null)
+        {
+            animator.enabled = true;
+            animator.ResetTrigger("Boom");
+            animator.Play("Empty", 0, 0f);
+        }
+
+        if (spriteRenderer != null && sprites.Count > 0)
+        {
+            spriteRenderer.sprite = sprites[0];
+        }
+    }
 
     public void TargetMushroom(GameObject target)
     {
@@ -83,10 +98,17 @@ public class Mushroom : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void OnDisable()
+    private void OnDisable()
     {
-        StopCoroutine(targetMushroomCor);
-        targetMushroomCor = null;
-        spriteRenderer.sprite = sprites[0];
+        if (targetMushroomCor != null)
+        {
+            StopCoroutine(targetMushroomCor);
+            targetMushroomCor = null;
+        }
+
+        if (spriteRenderer != null && sprites.Count > 0)
+        {
+            spriteRenderer.sprite = sprites[0];
+        }
     }
 }

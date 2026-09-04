@@ -6,19 +6,21 @@ public abstract class HomingProjectile : MonoBehaviour
     protected int id;
 
     protected UpgradeInfo upgradeInfo;
-    
+
     protected Rigidbody2D rb;
     protected PooledObject pooledObject;
 
     protected Vector2 moveDirection;
     protected int hp;
 
+    // 현재 타겟
+    protected GameObject target;
+
     protected virtual void Awake()
     {
-        
         upgradeInfo = GetComponent<UpgradeInfo>();
         id = upgradeInfo.id;
-        // Rigidbody2D가 없으면 추가
+
         rb = GetComponent<Rigidbody2D>();
 
         if (rb == null)
@@ -26,52 +28,86 @@ public abstract class HomingProjectile : MonoBehaviour
 
         rb.gravityScale = 0f;
 
-        // PooledObject가 없으면 추가
         pooledObject = GetComponent<PooledObject>();
 
         if (pooledObject == null)
             pooledObject = gameObject.AddComponent<PooledObject>();
 
-        // Collider2D가 하나도 없으면 추가
         Collider2D collider = GetComponent<Collider2D>();
 
         if (collider == null)
             collider = gameObject.AddComponent<BoxCollider2D>();
-        
-        SortingGroup sortingGroup = GetComponent<SortingGroup>();
+
+        SortingGroup sortingGroup =
+            GetComponent<SortingGroup>();
 
         if (sortingGroup == null)
-            sortingGroup = gameObject.AddComponent<SortingGroup>();
+            sortingGroup =
+                gameObject.AddComponent<SortingGroup>();
 
         sortingGroup.sortingLayerName = "Upgrade";
-        
-        // 트리거 활성화
+
         collider.isTrigger = true;
     }
 
-    public void OnEnable()
+    protected virtual void OnEnable()
     {
-        hp = DataManager.Instance.UpgradeDatasDic[id].hp;
+        if (DataManager.Instance != null &&
+            DataManager.Instance.UpgradeDatasDic.TryGetValue(id, out var data))
+        {
+            hp = data.hp;
+        }
+        else
+        {
+            Debug.LogWarning($"[HomingProjectile] id={id} 업그레이드 데이터가 아직 준비되지 않음");
+            hp = 1;
+        }
+
+        target = null;
     }
-    
-    public virtual void SetTarget(Vector3 target)
+
+    public virtual void SetTarget(GameObject target)
     {
+        if (target == null)
+            return;
+
+        // 타겟 저장
+        this.target = target;
+
+        // 타겟 위치를 기준으로 이동
         Vector2 direction =
-            (target - (Vector3)transform.position).normalized;
+            (target.transform.position -
+             transform.position).normalized;
 
         MoveToDirection(direction);
     }
 
-    protected virtual void MoveToDirection(Vector2 direction)
+    // 기존에 위치를 직접 받는 것도 필요하면 유지
+    public virtual void SetTarget(Vector3 targetPosition)
     {
-        moveDirection = direction.normalized;
+        Vector2 direction =
+            (targetPosition -
+             (Vector3)transform.position).normalized;
+
+        MoveToDirection(direction);
+    }
+
+    protected virtual void MoveToDirection(
+        Vector2 direction
+    )
+    {
+        moveDirection =
+            direction.normalized;
 
         RotateToDirection();
 
         float speed =
-            DataManager.Instance.UpgradeDatasDic[id].speed;
+            DataManager.Instance
+                .UpgradeDatasDic[id]
+                .speed;
 
-        rb.linearVelocity = moveDirection * speed;
+        rb.linearVelocity =
+            moveDirection * speed;
     }
 
     protected void RotateToDirection()
@@ -83,35 +119,52 @@ public abstract class HomingProjectile : MonoBehaviour
             ) * Mathf.Rad2Deg;
 
         transform.rotation =
-            Quaternion.Euler(0f, 0f, angle);
+            Quaternion.Euler(
+                0f,
+                0f,
+                angle
+            );
     }
 
     protected int GetDamage()
     {
         int level =
-            DataManager.Instance.UpgradeDatasDic[id].upgradeLevel;
+            DataManager.Instance
+                .UpgradeDatasDic[id]
+                .upgradeLevel;
 
-        return DataManager.Instance.UpgradeDatasDic[id].damage[level];
+        return DataManager.Instance
+            .UpgradeDatasDic[id]
+            .damage[level];
     }
 
-    protected virtual void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(
+        Collider2D other
+    )
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (other.gameObject.layer ==
+            LayerMask.NameToLayer("Enemy"))
         {
             EnemyCombat enemyCombat =
                 other.GetComponent<EnemyCombat>();
-            
-            Collider2D targetCollider = other.GetComponent<Collider2D>();
-            Vector2 hitPoint = targetCollider.ClosestPoint(transform.position);
+
+            Collider2D targetCollider =
+                other.GetComponent<Collider2D>();
+
+            Vector2 hitPoint =
+                targetCollider.ClosestPoint(
+                    transform.position
+                );
 
             if (enemyCombat != null)
             {
-                enemyCombat.TakeDamage(GetDamage(), hitPoint);
+                enemyCombat.TakeDamage(
+                    GetDamage(),
+                    hitPoint
+                );
             }
-            
-            
-            
-            if(hp <= 0)
+
+            if (hp <= 0)
                 pooledObject.DestroyObj();
         }
 
@@ -124,5 +177,8 @@ public abstract class HomingProjectile : MonoBehaviour
     protected virtual void OnDisable()
     {
         rb.linearVelocity = Vector2.zero;
+
+        // 타겟 초기화
+        target = null;
     }
 }

@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Linq;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
@@ -74,6 +73,7 @@ public class DataManager : MonoBehaviour
             int enemyId = int.Parse(stageData[1]);
             int enemySpawnCount = int.Parse(stageData[2]);
             float spawnInterval = float.Parse(stageData[3]);
+            int monstersPerSpawn = int.Parse(stageData[4]);
             for (int j = 0; j < stageData.Length; j++)
             {
                 if (i == stage)
@@ -81,6 +81,7 @@ public class DataManager : MonoBehaviour
                     stageInfos[i].enemyId.Add(enemyId);
                     stageInfos[i].enemySpawnCount.Add(enemySpawnCount);
                     stageInfos[i].spawnInterval.Add(spawnInterval);
+                    stageInfos[i].enemysPerSpawn.Add(monstersPerSpawn);
                 }
             }
         }
@@ -405,36 +406,32 @@ public class DataManager : MonoBehaviour
             .ToArray();
 
     // Dot Duration
-    upgradeDataTemp.dotDuration =
+    upgradeDataTemp.dotCount =
         upgradeData[10]
             .Split(',')
             .Select(x => int.Parse(x.Trim()))
             .ToArray();
 
-    // Dot Interval
-    upgradeDataTemp.dotInterval =
-        int.Parse(upgradeData[11].Trim());
-
     upgradeDataTemp.hp =
-        int.Parse(upgradeData[12].Trim());
+        int.Parse(upgradeData[11].Trim());
     
     upgradeDataTemp.slow =
-        upgradeData[13]
+        upgradeData[12]
             .Split(',')
             .Select(x => float.Parse(x.Trim()))
             .ToArray();
     
     upgradeDataTemp.lifetime =         
-        int.Parse(upgradeData[14].Trim());
+        int.Parse(upgradeData[13].Trim());
     
     upgradeDataTemp.debuffChance =
-        upgradeData[15]
+        upgradeData[14]
             .Split(',')
             .Select(x => int.Parse(x.Trim()))
             .ToArray();
     
     upgradeDataTemp.orbitTime =
-        upgradeData[16]
+        upgradeData[15]
             .Split(',')
             .Select(x => int.Parse(x.Trim()))
             .ToArray();
@@ -522,6 +519,7 @@ public class StageInfo
     public List<int> enemyId = new List<int>();
     public List<int> enemySpawnCount = new List<int>();
     public List<float> spawnInterval = new List<float>();
+    public List<int> enemysPerSpawn = new List<int>();
 }
 
 public class PlayerAndEnemyInfos
@@ -570,8 +568,7 @@ public class UpgradeData
     public float speed;
     public int[] damage;
     public int[] dotDamage;
-    public int[] dotDuration;
-    public int dotInterval;
+    public int[] dotCount;
     public int hp;
     public float[] slow;
     public float lifetime;

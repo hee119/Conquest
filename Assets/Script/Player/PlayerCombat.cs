@@ -11,6 +11,7 @@ public class PlayerCombat : MonoBehaviour
     PooledObject pooledObject;
     UnitInfo unitInfo;
     private SpriteRenderer[] spriteRenderers;
+    public event Action hpUpdate;
 
 
     public void Awake()
@@ -24,6 +25,7 @@ public class PlayerCombat : MonoBehaviour
     public void TakeDamage(int damage)
     {
         hp -= damage;
+        hpUpdate?.Invoke();
         HitFlash();
         if (hp <= 0)
         {
