@@ -1,4 +1,5 @@
 using System.IO;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -30,20 +31,35 @@ public class GetData : MonoBehaviour
                 return;
             }
 
-            // Assets/Resources
-            string resourcesPath = Path.Combine(Application.dataPath, "Resources");
+            string resourcesPath = Path.Combine(
+                Application.dataPath,
+                "Resources"
+            );
 
-            // Assets/Resources/TextData
-            string folderPath = Path.Combine(resourcesPath, folderName);
+            string folderPath = Path.Combine(
+                resourcesPath,
+                folderName
+            );
 
-            // Assets/Resources/TextData/StageData.csv
-            string filePath = Path.Combine(folderPath, saveFileName);
+            string filePath = Path.Combine(
+                folderPath,
+                saveFileName
+            );
 
-            // 폴더가 없으면 자동 생성
             Directory.CreateDirectory(folderPath);
 
-            // CSV 저장
-            File.WriteAllText(filePath, request.downloadHandler.text);
+            // CSV 가져오기
+            string csvData = request.downloadHandler.text;
+
+            // 첫 번째 열이 비어있는 행 제거
+            csvData = Regex.Replace(
+                csvData,
+                @"(?m)^[ \t]*,[^\r\n]*(?:\r?\n|$)",
+                ""
+            );
+
+            // 저장
+            File.WriteAllText(filePath, csvData);
 
             Debug.Log($"다운로드 완료!\n{filePath}");
 

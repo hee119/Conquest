@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mushroom : MonoBehaviour
+public class Mold : MonoBehaviour
 {
     public Animator animator;
     [SerializeField]
@@ -12,7 +12,7 @@ public class Mushroom : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public UpgradeInfo upgradeInfo;
     private int id;
-    Coroutine targetMushroomCor;
+    Coroutine targetMoldCor;
     public void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -38,10 +38,10 @@ public class Mushroom : MonoBehaviour
 
     public void TargetMushroom(GameObject target)
     {
-        targetMushroomCor = StartCoroutine(TargetMushroomCor());
+        targetMoldCor = StartCoroutine(TargetMoldCor());
     }
 
-    public IEnumerator TargetMushroomCor()
+    public IEnumerator TargetMoldCor()
     {
         animator.enabled = false;
         int i = 1;
@@ -100,10 +100,10 @@ public class Mushroom : MonoBehaviour
 
     private void OnDisable()
     {
-        if (targetMushroomCor != null)
+        if (targetMoldCor != null)
         {
-            StopCoroutine(targetMushroomCor);
-            targetMushroomCor = null;
+            StopCoroutine(targetMoldCor);
+            targetMoldCor = null;
         }
 
         if (spriteRenderer != null && sprites.Count > 0)

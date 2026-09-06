@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public int burnPrefabId;
     public int mushroomChance;
     public int mushroomPrefabId;
+    public string currentLanguage = "ko";
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()

@@ -59,7 +59,7 @@ public class EnemyCombat : MonoBehaviour
                 if (ran <= GameManager.Instance.mushroomChance)
                 {
                     GameObject obj = PoolManager.Instance.Spawn(GameManager.Instance.mushroomPrefabId, hitPoint);
-                    obj.GetComponent<Mushroom>().TargetMushroom(gameObject);
+                    obj.GetComponent<Mold>().TargetMushroom(gameObject);
                     obj.transform.SetParent(transform);
                 } 
             }
@@ -92,7 +92,7 @@ public class EnemyCombat : MonoBehaviour
                 {
                     child.SetParent(null, true);
                 }
-                if (child.TryGetComponent<Mushroom>(out var mus))
+                if (child.TryGetComponent<Mold>(out var mus))
                 {
                     child.SetParent(null, true);
                     if (mus.gameObject.activeInHierarchy)

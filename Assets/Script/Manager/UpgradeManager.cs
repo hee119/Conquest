@@ -83,12 +83,14 @@ public class UpgradeManager : MonoBehaviour
         {
             upgradesInfo[i].upgradeData.id = DataManager.Instance.UpgradeDatasDic[upgrades[i]].id;
             upgradesInfo[i].name = DataManager.Instance.UpgradeDatasDic[upgrades[i]].name;
-            upgradesInfo[i].upgradeName.text = DataManager.Instance.UpgradeDatasDic[upgrades[i]].name;
+            upgradesInfo[i].upgradeNameLo.key = DataManager.Instance.UpgradeDatasDic[upgrades[i]].name;
             if(upgradesInfo[i].upgradeData.sprite != null)
                 upgradesInfo[i].upgradeData.sprite = DataManager.Instance.UpgradeDatasDic[upgrades[i]].sprite;
             upgradesInfo[i].upgradeData.type = DataManager.Instance.UpgradeDatasDic[upgrades[i]].type;
             upgradesInfo[i].upgradeData.upgradeLevel = DataManager.Instance.UpgradeDatasDic[upgrades[i]].upgradeLevel;
-            upgradesInfo[i].upgradeData.description = DataManager.Instance.UpgradeDatasDic[upgrades[i]].description;
+            upgradesInfo[i].upgradeDesLo.key = DataManager.Instance.UpgradeDatasDic[upgrades[i]].description;
+            upgradesInfo[i].upgradeDesLo.ForceUpdateText();
+            upgradesInfo[i].upgradeNameLo.ForceUpdateText();
         }
     }
 
@@ -193,9 +195,9 @@ public class UpgradeManager : MonoBehaviour
         StartSkillCoroutine(id, MissileCor(id));
     }
 
-    public void Mushroom(int id)
+    public void Mold(int id)
     {
-        StartSkillCoroutine(id, MushroomCor(id));
+        StartSkillCoroutine(id, MoldCor(id));
     }
     
     private IEnumerator LightningCor(int id)
@@ -430,7 +432,7 @@ public class UpgradeManager : MonoBehaviour
     }
 }
     
-    private IEnumerator MushroomCor(int id)
+    private IEnumerator MoldCor(int id)
     {
         GameManager.Instance.mushroomPrefabId = id;
         GameManager.Instance.mushroomChance = DataManager.Instance.UpgradeDatasDic[id].debuffChance[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel];

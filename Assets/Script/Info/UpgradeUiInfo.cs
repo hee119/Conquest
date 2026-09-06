@@ -6,7 +6,9 @@ public class UpgradeUiInfo : MonoBehaviour
 {
     public UpgradeData upgradeData;
     
-    public TextMeshProUGUI upgradeName;
+    public LocalizedText upgradeNameLo;
+    
+    public LocalizedText upgradeDesLo;
     
     public Image sprite;
 }

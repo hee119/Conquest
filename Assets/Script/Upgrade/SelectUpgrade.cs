@@ -1,16 +1,25 @@
 using System;
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class SelectUpgrade : MonoBehaviour
 {
-    public GameObject augmentsMomMom;
-    [FormerlySerializedAs("upgradeInfo")] public UpgradeUiInfo upgradeUiInfo;
+    [SerializeField] private GameObject upgredesMom;
+    public UpgradeUiInfo upgradeUiInfo;
+
+    [SerializeField] private int speed;
 
     public void Awake()
     {
-        augmentsMomMom = gameObject.transform.parent.transform.parent.gameObject;
         upgradeUiInfo = GetComponent<UpgradeUiInfo>();
+    }
+
+    void OnEnable()
+    {
+        upgredesMom.transform.localScale = Vector3.zero;
+        StartCoroutine(UpgredesMomScale(1));
     }
 
     public void UpgradeIsSelected()
@@ -25,8 +34,36 @@ public class SelectUpgrade : MonoBehaviour
         }
 
         upgradeUiInfo.upgradeData.upgradeLevel++;
-        
+
         Time.timeScale = 1f;
-        augmentsMomMom.SetActive(false);
+        StartCoroutine(UpgredesMomScale(-1));
+    }
+
+    IEnumerator UpgredesMomScale(int scaleDirection)
+    {
+        float scale = upgredesMom.transform.localScale.x;
+        if (scaleDirection >= 0)
+        {
+            upgredesMom.SetActive(true);
+            while (scale < 1f)
+            {
+                scale += speed * Time.unscaledDeltaTime;
+                upgredesMom.transform.localScale = new Vector3(scale, scale, scale);
+                yield return null;
+            }
+
+            upgredesMom.transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
+            while (scale > 0.06f)
+            {
+                scale -= speed * Time.unscaledDeltaTime;
+                upgredesMom.transform.localScale = new Vector3(scale, scale, scale);
+                yield return null;
+            }
+
+            upgredesMom.SetActive(false);
+        }
     }
 }
