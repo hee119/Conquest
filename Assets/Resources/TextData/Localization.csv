@@ -11,16 +11,7 @@ upgread_des_Lightning,일정 시간마다 주변의 적에게 강력한 번개�
 upgread_des_Fireball,일정 시간마다 주변의 적에게 파이어볼을 발사합니다.,"Every so often, fires a fireball at nearby enemies.",一定時間ごとに周囲の敵にファイアボールを発射します。
 upgread_des_Burn,적을 공격할 때 일정 확률로 화상 효과를 부여합니다.,Has a chance to inflict Burn when attacking an enemy.,敵を攻撃すると、一定確率で火傷効果を付与します。
 upgread_des_Poison,일정 시간마다 주변의 적에게 독을 발사합니다.,"Every so often, shoots poison at nearby enemies.",一定時間ごとに周囲の敵に毒を放ちます。
-upgread_des_Snail,플레이어가 지나간 곳에 적의 이동 속도를 늦추는 장판을 생성합니다.,"Leaves a slowing field behind as you move,
- reducing the movement speed of enemies inside it.","プレイヤーが通った場所に、
-敵の移動速度を低下させるエリアを生成します。"
+upgread_des_Snail,플레이어가 지나간 곳에 적의 이동 속도를 늦추는 장판을 생성합니다.,"Leaves a slowing field behind as you move, reducing the movement speed of enemies inside it.",プレイヤーが通った場所に、敵の移動速度を低下させるエリアを生成します。
 upgread_des_Shurlken,일정 시간마다 플레이어 주변을 회전하는 표창을 생성합니다.,"Every so often, creates shurikens that orbit around you.",一定時間ごとにプレイヤーの周囲を回転する手裏剣を生成します。
 upgread_des_Missile,일정 시간마다 주변의 적을 향해 미사일을 연속 발사합니다.,"Every so often, rapidly fires missiles at nearby enemies.",一定時間ごとに周囲の敵に向かってミサイルを連続発射します。
-upgread_des_Mold,"적을 피격하면 일정 확률로 곰팡이가 생성됩니다. 
-곰팡이는 주변 적에게 달라붙어 점점 커지며,
- 충분히 커지면 폭발해 주변에 피해를 줍니다.","Has a chance to spawn a mold when hitting an enemy. 
-The mold attaches to nearby enemies, grows over time,
- and explodes to deal damage when fully grown.
-","敵に攻撃を当てると、一定確率でカビが発生します。
-カビは周囲の敵に付着して徐々に大きくなり、
-十分に成長すると爆発して周囲にダメージを与えます。"
+upgread_des_Mold,"적을 피격하면 일정 확률로 곰팡이가 생성됩니다. 곰팡이는 주변 적에게 달라붙어 점점 커지며, 충분히 커지면 폭발해 주변에 피해를 줍니다.","Has a chance to spawn a mold when hitting an enemy. The mold attaches to nearby enemies, grows over time, and explodes to deal damage when fully grown.",敵に攻撃を当てると、一定確率でカビが発生します。カビは周囲の敵に付着して徐々に大きくなり、十分に成長すると爆発して周囲にダメージを与えます。

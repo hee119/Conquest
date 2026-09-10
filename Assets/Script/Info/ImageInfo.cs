@@ -1,8 +1,8 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-public class ImageInfo : MonoBehaviour
+[CreateAssetMenu(fileName = "ImageInfo", menuName = "Data/ImageInfo")]
+public class ImageInfo : ScriptableObject
 {
     public int id;
-    public Image image;
+    public Sprite image;
 }

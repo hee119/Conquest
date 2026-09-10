@@ -23,7 +23,12 @@ public class DataManager : MonoBehaviour
     public int[] levelDatas;
     public Dictionary<int, ExpData> expDatasDic = new();
     public Dictionary<int, UpgradeData> UpgradeDatasDic = new();
-    public Dictionary <int, Image> upgradeImagesDic = new();
+    public Dictionary <int, Sprite> upgradeImagesDic = new();
+    public Dictionary <int, Sprite> skillUpgradeIconDic = new();
+    public Dictionary <int, Sprite> statUpgradeIconDic = new();
+    public ImageInfo[] upgradeImages;
+    public ImageInfo[] skillUpgradeIcons;
+    public ImageInfo[] statUpgradeIcons;
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -302,7 +307,7 @@ public class DataManager : MonoBehaviour
     upgradeDataText = textAsset.text;
 
     // 이미지 데이터 불러오기
-    ImageInfo[] upgradeImages = Resources.LoadAll<ImageInfo>("Image");
+    upgradeImages = Resources.LoadAll<ImageInfo>("UpgradeImageScrip");
 
     foreach (ImageInfo imageInfo in upgradeImages)
     {
@@ -311,7 +316,27 @@ public class DataManager : MonoBehaviour
             upgradeImagesDic.Add(imageInfo.id, imageInfo.image);
         }
     }
+    
+    skillUpgradeIcons = Resources.LoadAll<ImageInfo>("SkillUpgradeIcon");
 
+    foreach (ImageInfo imageInfo in skillUpgradeIcons)
+    {
+        if (!skillUpgradeIconDic.ContainsKey(imageInfo.id))
+        {
+            skillUpgradeIconDic.Add(imageInfo.id, imageInfo.image);
+        }
+    }
+    
+    statUpgradeIcons = Resources.LoadAll<ImageInfo>("StatUpgradeIcon");
+
+    foreach (ImageInfo imageInfo in statUpgradeIcons)
+    {
+        if (!statUpgradeIconDic.ContainsKey(imageInfo.id))
+        {
+            statUpgradeIconDic.Add(imageInfo.id, imageInfo.image);
+        }
+    }
+    
     // 줄 단위로 분리
     string[] lines = upgradeDataText.Split(
         new[] { '\r', '\n' },
@@ -440,7 +465,7 @@ public class DataManager : MonoBehaviour
     // 이미지
     if (upgradeImagesDic.TryGetValue(
         upgradeDataTemp.id,
-        out Image sprite))
+        out Sprite sprite))
     {
         upgradeDataTemp.sprite = sprite;
     }
@@ -574,6 +599,6 @@ public class UpgradeData
     public int[] debuffChance;
     public int[] orbitTime;
     public string description;
-    public Image sprite;
+    public Sprite sprite;
     public int upgradeLevel;
 }

@@ -53,12 +53,12 @@ public class EnemyCombat : MonoBehaviour
                 }
             }
 
-            if (GameManager.Instance.mushroomChance > 0)
+            if (GameManager.Instance.moldChance > 0)
             {
                 int ran = Random.Range(0, 100);
-                if (ran <= GameManager.Instance.mushroomChance)
+                if (ran <= GameManager.Instance.moldChance)
                 {
-                    GameObject obj = PoolManager.Instance.Spawn(GameManager.Instance.mushroomPrefabId, hitPoint);
+                    GameObject obj = PoolManager.Instance.Spawn(GameManager.Instance.moldPrefabId, hitPoint);
                     obj.GetComponent<Mold>().TargetMushroom(gameObject);
                     obj.transform.SetParent(transform);
                 } 

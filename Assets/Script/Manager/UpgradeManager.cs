@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System.Reflection;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 public class UpgradeManager : MonoBehaviour
 {
@@ -16,7 +17,10 @@ public class UpgradeManager : MonoBehaviour
     Dictionary<int, Coroutine> upgradeCor = new Dictionary<int, Coroutine>();
     private GameObject player;
     BoxCollider2D playerCollider;
-    
+    public Image[] skillUpgradeIcons;
+    public Image[] statUpgradeIcons;
+    public int skillUpgradeCount;
+    public int statUpgradeCount;
     public event Action upgradeSelect;
     [SerializeField]
     private DetectUpgrade detectUpgrade;
@@ -65,27 +69,35 @@ public class UpgradeManager : MonoBehaviour
         
             
             
-            if (skillUpgrades.Count >= 5)
-            {
-                upgrades.RemoveAll(id =>
-                    DataManager.Instance.UpgradeDatasDic[id].type == "skill"
-                );
-            }
+        if (skillUpgrades.Count >= 5)
+        {
+            upgrades.RemoveAll(id =>
+                DataManager.Instance.UpgradeDatasDic[id].type == "Skill"
+                && !skillUpgrades.Contains(id)
+            );
+        }
 
-            if (statUpgrades.Count >= 5)
-            {
-                upgrades.RemoveAll(id =>
-                    DataManager.Instance.UpgradeDatasDic[id].type == "stat"
-                );
-            }
+        if (statUpgrades.Count >= 5)
+        {
+            upgrades.RemoveAll(id =>
+                DataManager.Instance.UpgradeDatasDic[id].type == "Stat"
+                && !statUpgrades.Contains(id)
+            );
+        }
     
         for (int i = 0; i < 3; i++)
         {
             upgradesInfo[i].upgradeData.id = DataManager.Instance.UpgradeDatasDic[upgrades[i]].id;
             upgradesInfo[i].name = DataManager.Instance.UpgradeDatasDic[upgrades[i]].name;
             upgradesInfo[i].upgradeNameLo.key = DataManager.Instance.UpgradeDatasDic[upgrades[i]].name;
-            if(upgradesInfo[i].upgradeData.sprite != null)
-                upgradesInfo[i].upgradeData.sprite = DataManager.Instance.UpgradeDatasDic[upgrades[i]].sprite;
+            if (DataManager.Instance.UpgradeDatasDic[upgrades[i]].sprite != null)
+            {
+                upgradesInfo[i].upgradeImage.sprite = DataManager.Instance.UpgradeDatasDic[upgrades[i]].sprite;
+            }
+            else
+            {
+                upgradesInfo[i].upgradeImage.sprite = null;
+            }
             upgradesInfo[i].upgradeData.type = DataManager.Instance.UpgradeDatasDic[upgrades[i]].type;
             upgradesInfo[i].upgradeData.upgradeLevel = DataManager.Instance.UpgradeDatasDic[upgrades[i]].upgradeLevel;
             upgradesInfo[i].upgradeDesLo.key = DataManager.Instance.UpgradeDatasDic[upgrades[i]].description;
@@ -99,6 +111,11 @@ public class UpgradeManager : MonoBehaviour
         if (!skillUpgrades.Contains(id))
         {
             skillUpgrades.Add(id);
+            if (DataManager.Instance.skillUpgradeIconDic.ContainsKey(id))
+            {
+                skillUpgradeIcons[skillUpgradeCount].sprite = DataManager.Instance.skillUpgradeIconDic[id];
+                skillUpgradeCount++;
+            }
         }
         else
         {
@@ -118,6 +135,11 @@ public class UpgradeManager : MonoBehaviour
         if (!statUpgrades.Contains(id))
         {
             statUpgrades.Add(id);
+            if (DataManager.Instance.statUpgradeIconDic.ContainsKey(id))
+            {
+                statUpgradeIcons[statUpgradeCount].sprite = DataManager.Instance.statUpgradeIconDic[id];
+                statUpgradeCount++;
+            }
         }
         if (DataManager.Instance.UpgradeDatasDic[id].upgradeLevel >= 4)
         {
@@ -434,8 +456,8 @@ public class UpgradeManager : MonoBehaviour
     
     private IEnumerator MoldCor(int id)
     {
-        GameManager.Instance.mushroomPrefabId = id;
-        GameManager.Instance.mushroomChance = DataManager.Instance.UpgradeDatasDic[id].debuffChance[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel];
+        GameManager.Instance.moldPrefabId = id;
+        GameManager.Instance.moldChance = DataManager.Instance.UpgradeDatasDic[id].debuffChance[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel];
         yield return null;
     }
 }

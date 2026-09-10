@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Cainos.PixelArtTopDown_Basic
 {
-    //animate the sprite color base on the gradient and time
+    //animate the upgradeImage color base on the gradient and time
     public class SpriteColorAnimation : MonoBehaviour
     {
         public Gradient gradient;
