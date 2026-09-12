@@ -584,7 +584,7 @@ Material:
     - _CamouflageDistortionSpeed: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _CamouflageNoiseScaleA: {r: 0.25, g: 0.25, b: 0, a: 0}
     - _CamouflageNoiseScaleB: {r: 0.25, g: 0.25, b: 0, a: 0}
-    - _Color: {r: 2436.8037, g: 2436.8037, b: 2436.8037, a: 1}
+    - _Color: {r: 0.28382558, g: 0.26153064, b: 0, a: 1}
     - _ColorReplaceFromColor: {r: 0, g: 0, b: 0, a: 0}
     - _ColorReplaceToColor: {r: 0, g: 0, b: 0.2, a: 0}
     - _CustomFadeNoiseScale: {r: 1, g: 1, b: 0, a: 0}
@@ -629,7 +629,7 @@ Material:
     - _InkSpreadColor: {r: 8.47419, g: 5.013525, b: 0.08873497, a: 0}
     - _InkSpreadNoiseScale: {r: 0.4, g: 0.4, b: 0, a: 0}
     - _InkSpreadPosition: {r: 0.5, g: -1, b: 0, a: 0}
-    - _InnerOutlineColor: {r: 15.999997, g: 15.449452, b: 0, a: 1}
+    - _InnerOutlineColor: {r: 766.99603, g: 740.60443, b: 0, a: 1}
     - _InnerOutlineDistortionIntensity: {r: 0.01, g: 0.01, b: 0, a: 0}
     - _InnerOutlineNoiseScale: {r: 4, g: 4, b: 0, a: 0}
     - _InnerOutlineNoiseSpeed: {r: 0, g: 0.1, b: 0, a: 0}
