@@ -460,7 +460,22 @@ public class DataManager : MonoBehaviour
             .Split(',')
             .Select(x => int.Parse(x.Trim()))
             .ToArray();
+    
     upgradeDataTemp.description = upgradeData[16].Trim();
+    
+    upgradeDataTemp.combinationList =
+        upgradeData[17]
+            .Split(',')
+            .Select(x => int.Parse(x.Trim()))
+            .ToArray();
+    
+    upgradeDataTemp.result =
+        upgradeData[18]
+            .Split(',')
+            .Select(x => int.Parse(x.Trim()))
+            .ToArray();
+    
+    upgradeDataTemp.chainCount = int.Parse(upgradeData[19].Trim());
     
     // 이미지
     if (upgradeImagesDic.TryGetValue(
@@ -599,6 +614,9 @@ public class UpgradeData
     public int[] debuffChance;
     public int[] orbitTime;
     public string description;
+    public int[] combinationList;
+    public int[] result;
+    public int chainCount;
     public Sprite sprite;
     public int upgradeLevel;
 }
