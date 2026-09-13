@@ -11,7 +11,7 @@ public class Mold : MonoBehaviour
     
     public SpriteRenderer spriteRenderer;
     public UpgradeInfo upgradeInfo;
-    private int id;
+    protected int id;
     Coroutine targetMoldCor;
     public void Awake()
     {
@@ -70,7 +70,7 @@ public class Mold : MonoBehaviour
         animator.SetTrigger("Boom");
     }
 
-    public void Boom()
+    public virtual void Boom()
     {
         Collider2D col = GetComponent<Collider2D>();
 

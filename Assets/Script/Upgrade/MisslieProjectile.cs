@@ -91,6 +91,8 @@ public class MissileProjectile : HomingProjectile
 
             rb.position = target;
             rb.linearVelocity = Vector2.zero;
+            
+            GetComponent<SporeWarhead>()?.Boom();
 
             Debug.Log(
                 $"[Missile] DestroyObj 호출 직전 | " +
@@ -216,6 +218,8 @@ public class MissileProjectile : HomingProjectile
 
         rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
+        
+        GetComponent<SporeWarhead>()?.Boom();
 
         Debug.Log(
             $"[Missile] 목표 도착 | " +

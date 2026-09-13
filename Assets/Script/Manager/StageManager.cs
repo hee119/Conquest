@@ -7,14 +7,22 @@ using UnityEngine.Tilemaps;
 public class StageManager : MonoBehaviour
 {
     public static StageManager Instance;
+
     public Tilemap backgroundTilemap;
     public TileBase[] tiles;
     public GameObject monsterSpawnPointPrefab;
+
     private List<Transform> monsterSpawnPoints = new List<Transform>();
+
     public int currentStage;
     public NavMeshSurface navMeshSurface;
     public int monsterCount = 0;
+
     private Camera camera;
+
+    private Transform player;
+    [SerializeField] private float minSpawnDistance = 5f;
+
 
     void Awake()
     {
@@ -30,28 +38,48 @@ public class StageManager : MonoBehaviour
 
         if (navMeshSurface == null)
         {
-            navMeshSurface = GameObject.FindGameObjectWithTag("Nav").GetComponent<NavMeshSurface>();
+            navMeshSurface = GameObject.FindGameObjectWithTag("Nav")
+                .GetComponent<NavMeshSurface>();
         }
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
+
 
     public void StageInit()
     {
         camera = Camera.main;
+
         currentStage = GameManager.Instance.currentStage;
         tiles = GameManager.Instance.tiles[currentStage].tiles;
+
         if (backgroundTilemap == null)
         {
-            backgroundTilemap = GameObject.FindGameObjectWithTag("BackGround").GetComponent<Tilemap>();
+            backgroundTilemap = GameObject.FindGameObjectWithTag("BackGround")
+                .GetComponent<Tilemap>();
         }
+
+        // 기존 스폰포인트 제거
+        foreach (Transform spawnPoint in monsterSpawnPoints)
+        {
+            if (spawnPoint != null)
+            {
+                Destroy(spawnPoint.gameObject);
+            }
+        }
+
+        monsterSpawnPoints.Clear();
+        monsterCount = 0;
 
         FillCameraArea();
         StageStart();
     }
 
+
     public void StageStart()
     {
         StartCoroutine(StageStartCol());
     }
+
 
     void FillCameraArea()
     {
@@ -67,8 +95,14 @@ public class StageManager : MonoBehaviour
 
         int padding = 3;
 
-        Vector3Int minCell = backgroundTilemap.WorldToCell(bottomLeft) - new Vector3Int(padding, padding, 0);
-        Vector3Int maxCell = backgroundTilemap.WorldToCell(topRight) + new Vector3Int(padding, padding, 0);
+        Vector3Int minCell =
+            backgroundTilemap.WorldToCell(bottomLeft)
+            - new Vector3Int(padding, padding, 0);
+
+        Vector3Int maxCell =
+            backgroundTilemap.WorldToCell(topRight)
+            + new Vector3Int(padding, padding, 0);
+
 
         for (int x = minCell.x; x <= maxCell.x; x++)
         {
@@ -77,19 +111,25 @@ public class StageManager : MonoBehaviour
                 TileBase randomTile =
                     tiles[Random.Range(0, tiles.Length)];
 
-                backgroundTilemap.SetTile(new Vector3Int(x, y, 0), randomTile);
+                backgroundTilemap.SetTile(
+                    new Vector3Int(x, y, 0),
+                    randomTile
+                );
             }
         }
-        
+
+
         navMeshSurface.RemoveData();
         navMeshSurface.BuildNavMesh();
-        
+
         CreateMonsterSpawnPoints(minCell, maxCell);
     }
+
 
     void CreateMonsterSpawnPoints(Vector3Int minCell, Vector3Int maxCell)
     {
         int spawnCountPerSide = 3;
+
 
         // 아래 / 위
         for (int i = 0; i < spawnCountPerSide; i++)
@@ -101,11 +141,16 @@ public class StageManager : MonoBehaviour
             );
 
             // 아래
-            CreateSpawnPoint(new Vector3Int(x, minCell.y, 0));
+            CreateSpawnPoint(
+                new Vector3Int(x, minCell.y, 0)
+            );
 
             // 위
-            CreateSpawnPoint(new Vector3Int(x, maxCell.y, 0));
+            CreateSpawnPoint(
+                new Vector3Int(x, maxCell.y, 0)
+            );
         }
+
 
         // 왼쪽 / 오른쪽
         for (int i = 0; i < spawnCountPerSide; i++)
@@ -117,12 +162,17 @@ public class StageManager : MonoBehaviour
             );
 
             // 왼쪽
-            CreateSpawnPoint(new Vector3Int(minCell.x, y, 0));
+            CreateSpawnPoint(
+                new Vector3Int(minCell.x, y, 0)
+            );
 
             // 오른쪽
-            CreateSpawnPoint(new Vector3Int(maxCell.x, y, 0));
+            CreateSpawnPoint(
+                new Vector3Int(maxCell.x, y, 0)
+            );
         }
     }
+
 
     void CreateSpawnPoint(Vector3Int cell)
     {
@@ -134,40 +184,162 @@ public class StageManager : MonoBehaviour
             position,
             Quaternion.identity
         );
+
         monsterSpawnPoints.Add(spawnPoint.transform);
     }
 
+
+    Transform GetSafeSpawnPoint()
+    {
+        List<Transform> safeSpawnPoints =
+            new List<Transform>();
+
+
+        // 플레이어와 충분히 떨어진 스폰포인트만 추가
+        foreach (Transform spawnPoint in monsterSpawnPoints)
+        {
+            if (spawnPoint == null)
+                continue;
+
+            float distance =
+                Vector3.Distance(
+                    player.position,
+                    spawnPoint.position
+                );
+
+            if (distance >= minSpawnDistance)
+            {
+                safeSpawnPoints.Add(spawnPoint);
+            }
+        }
+
+
+        // 안전한 스폰포인트가 있으면 랜덤 선택
+        if (safeSpawnPoints.Count > 0)
+        {
+            return safeSpawnPoints[
+                Random.Range(0, safeSpawnPoints.Count)
+            ];
+        }
+
+
+        // 모든 스폰포인트가 가까우면
+        // 플레이어와 가장 먼 곳 선택
+        Transform farthestSpawnPoint = null;
+        float farthestDistance = -1f;
+
+        foreach (Transform spawnPoint in monsterSpawnPoints)
+        {
+            if (spawnPoint == null)
+                continue;
+
+            float distance =
+                Vector3.Distance(
+                    player.position,
+                    spawnPoint.position
+                );
+
+            if (distance > farthestDistance)
+            {
+                farthestDistance = distance;
+                farthestSpawnPoint = spawnPoint;
+            }
+        }
+
+        return farthestSpawnPoint;
+    }
+
+
     public IEnumerator StageStartCol()
     {
-        yield return new WaitUntil(() => DataManager.Instance != null);
+        yield return new WaitUntil(
+            () => DataManager.Instance != null
+        );
+
+
         Debug.Log(DataManager.Instance.stageInfos);
         Debug.Log(DataManager.Instance.stageInfos[currentStage]);
-        Debug.Log(DataManager.Instance.stageInfos[currentStage].enemyId.Count);
-        for (int i = 0; i < DataManager.Instance.stageInfos[currentStage].enemyId.Count; i++)
-        {
+        Debug.Log(
+            DataManager.Instance
+                .stageInfos[currentStage]
+                .enemyId.Count
+        );
 
-            for (int j = 0; j < DataManager.Instance.stageInfos[currentStage].enemySpawnCount[i]; j++)
+
+        for (
+            int i = 0;
+            i < DataManager.Instance
+                .stageInfos[currentStage]
+                .enemyId.Count;
+            i++
+        )
+        {
+            for (
+                int j = 0;
+                j < DataManager.Instance
+                    .stageInfos[currentStage]
+                    .enemySpawnCount[i];
+                j++
+            )
             {
-                for (int k = 0; k < DataManager.Instance.stageInfos[currentStage].enemysPerSpawn[i]; k++)
+                for (
+                    int k = 0;
+                    k < DataManager.Instance
+                        .stageInfos[currentStage]
+                        .enemysPerSpawn[i];
+                    k++
+                )
                 {
+                    Transform spawnPoint =
+                        GetSafeSpawnPoint();
+
+
+                    if (spawnPoint == null)
+                    {
+                        Debug.LogWarning(
+                            "사용할 수 있는 몬스터 스폰포인트가 없습니다."
+                        );
+
+                        continue;
+                    }
+
+
                     PoolManager.Instance.Spawn(
-                        DataManager.Instance.stageInfos[currentStage].enemyId[i],
-                        monsterSpawnPoints[k % monsterSpawnPoints.Count].position
+                        DataManager.Instance
+                            .stageInfos[currentStage]
+                            .enemyId[i],
+                        spawnPoint.position
                     );
+
 
                     monsterCount++;
 
-                    if (monsterCount >= DataManager.Instance.stageInfos[currentStage].enemySpawnCount[i])
+
+                    if (
+                        monsterCount >=
+                        DataManager.Instance
+                            .stageInfos[currentStage]
+                            .enemySpawnCount[i]
+                    )
                     {
                         break;
                     }
-
                 }
+
+
                 yield return new WaitForSeconds(
-                    DataManager.Instance.stageInfos[currentStage].spawnInterval[i]
+                    DataManager.Instance
+                        .stageInfos[currentStage]
+                        .spawnInterval[i]
                 );
-                
-                if (monsterCount >= DataManager.Instance.stageInfos[currentStage].enemySpawnCount[i])
+
+
+                if (
+                    monsterCount >=
+                    DataManager.Instance
+                        .stageInfos[currentStage]
+                        .enemySpawnCount[i]
+                )
                 {
                     monsterCount = 0;
                     break;

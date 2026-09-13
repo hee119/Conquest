@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Shuriken
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 405
-  image: {fileID: 21300000, guid: 1cfb3511f66474edc93997cd6ebe9300, type: 3}
+  image: {fileID: 21300000, guid: 0de73bddd52f0a34f9192db315a70ca0, type: 3}

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FireBall
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 401
-  image: {fileID: 21300000, guid: fc7bd59f00c084fe9a563369d26b748b, type: 3}
+  image: {fileID: 21300000, guid: 975723dbc60711e4080ffcdffb389f13, type: 3}
