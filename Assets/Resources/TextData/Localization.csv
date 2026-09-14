@@ -7,6 +7,12 @@ upgread_name_Snail,달팽이,Snail,カタツムリ
 upgread_name_Shuriken,표창,Shuriken,手裏剣
 upgread_name_Missile,미사일,Missile,ミサイル
 upgread_name_Mold,곰팡이,Mold,カビ
+upgread_name_FireStorm,화염 뇌우,Firestorm,ファイアストーム
+upgread_name_SporeWarhead,포자 탄두,Spore Warhead,胞子弾頭
+upgread_name_LightningShuriken,뇌전 표창,Lightning Shuriken,雷電手裏剣
+upgread_name_Heatwave,폭염,Heatwave,熱波
+upgread_name_LavaField,용암 지대,Lava Field,溶岩地帯
+upgread_name_RottingSpore,부패 포자,Rotting Spore,腐敗胞子
 upgread_des_Lightning,일정 시간마다 주변의 적에게 강력한 번개를 떨어뜨립니다.,"Every so often, a powerful lightning bolt strikes nearby enemies from above.",一定時間ごとに周囲の敵に強力な雷を落とします。
 upgread_des_Fireball,일정 시간마다 주변의 적에게 파이어볼을 발사합니다.,"Every so often, fires a fireball at nearby enemies.",一定時間ごとに周囲の敵にファイアボールを発射します。
 upgread_des_Burn,적을 공격할 때 일정 확률로 화상 효과를 부여합니다.,Has a chance to inflict Burn when attacking an enemy.,敵を攻撃すると、一定確率で火傷効果を付与します。
@@ -14,5 +20,10 @@ upgread_des_Poison,일정 시간마다 주변의 적에게 독을 발사합니�
 upgread_des_Snail,플레이어가 지나간 곳에 적의 이동 속도를 늦추는 장판을 생성합니다.,"Leaves a slowing field behind as you move, reducing the movement speed of enemies inside it.",プレイヤーが通った場所に、敵の移動速度を低下させるエリアを生成します。
 upgread_des_Shurlken,일정 시간마다 플레이어 주변을 회전하는 표창을 생성합니다.,"Every so often, creates shurikens that orbit around you.",一定時間ごとにプレイヤーの周囲を回転する手裏剣を生成します。
 upgread_des_Missile,일정 시간마다 주변의 적을 향해 미사일을 연속 발사합니다.,"Every so often, rapidly fires missiles at nearby enemies.",一定時間ごとに周囲の敵に向かってミサイルを連続発射します。
-upgread_des_Mold,적을 공격하면 일정 확률로 곰팡이가 생성됩니다. 곰팡이는 적에게 달라붙어 성장한 뒤 폭발합니다.,"Has a chance to spawn mold when attacking. Mold attaches to enemies, grows, and explodes.","敵を攻撃すると一定確率でカビが発生します。カビは敵に付着して成長し、爆発します。
-"
+upgread_des_Mold,적을 공격하면 일정 확률로 곰팡이가 생성됩니다. 곰팡이는 적에게 달라붙어 성장한 뒤 폭발합니다.,"Has a chance to spawn mold when attacking. Mold attaches to enemies, grows, and explodes.","敵を攻撃すると一定確率でカビが発生します。カビは敵に付着して成長し、爆発します。"
+upgread_des_FireStorm,파이어볼이 적을 피격할 시 연쇄로 적들에게 퍼져나갑니다.,"When a fireball hits an enemy, it chains to nearby enemies.",ファイアボールが敵に命中すると、近くの敵へ連鎖します。
+upgread_des_SporeWarhead,미사일 대신 곰팡이가 날아갑니다.,Fires mold instead of missiles.,ミサイルの代わりにカビを発射します。
+upgread_des_LightningShuriken,표창이 적을 피격할 시 연쇄 번개를 일으킵니다.,"When a shuriken hits an enemy, it triggers chain lightning.",手裏剣が敵に命中すると、連鎖雷撃を発生させます。
+upgread_des_Heatwave,파이어볼이 적을 피격할 시 폭발합니다.,Fireballs explode when they hit an enemy.,ファイアボールが敵に命中すると爆発します。
+upgread_des_LavaField,플레이어가 지나간 곳에 생성되는 장판에 화상 효과가 추가됩니다.,Adds a Burn effect to the field left behind as you move.,プレイヤーが通った場所に生成されるエリアに火傷効果を追加します。
+upgread_des_RottingSpore,곰팡이가 터질 때 주변의 적에게 독 효과를 적용합니다.,"When mold explodes, it inflicts Poison on nearby enemies.",カビが爆発すると、周囲の敵に毒効果を付与します。

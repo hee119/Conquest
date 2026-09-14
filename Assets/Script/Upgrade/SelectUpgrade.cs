@@ -70,7 +70,6 @@ public class SelectUpgrade : MonoBehaviour
 
         upgradeUiInfo.upgradeData.upgradeLevel++;
 
-        Time.timeScale = 1f;
         selectEffect.SetActive(true);
         foreach (SelectUpgrade selectUpgrade in siblingObjects)
         {
@@ -97,7 +96,7 @@ public class SelectUpgrade : MonoBehaviour
         }
         else
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSecondsRealtime(0.5f);
             while (scale > 0.06f)
             {
                 scale -= speed * Time.unscaledDeltaTime;
@@ -106,6 +105,7 @@ public class SelectUpgrade : MonoBehaviour
             }
 
             selectEffect.SetActive(false);
+            Time.timeScale = 1f;
             upgredesMom.SetActive(false);
         }
     }

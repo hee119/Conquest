@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d690d7b943f2549b1930e812453246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeInfo
-  id: 407
+  id: 505
 --- !u!61 &6993671178107046227
 BoxCollider2D:
   m_ObjectHideFlags: 0

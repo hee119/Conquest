@@ -1,33 +1,36 @@
 using UnityEngine;
 using System;
+using System.Collections;
 
 public class SporeWarhead : Mold
 {
-    public override void Boom()
+    public override IEnumerator TargetMoldCor()
     {
-        animator.SetTrigger("Boom");
+        animator.enabled = false;
+        int i = 1;
+        transform.localRotation = Quaternion.Euler(0, 0, 0);
 
-        Collider2D col = GetComponent<Collider2D>();
+        Debug.Log("Mushroom 시작 / Sprite 개수 : " + sprites.Count);
 
-        if (col == null)
-            return;
-
-        ContactFilter2D filter = new ContactFilter2D();
-        filter.SetLayerMask(LayerMask.GetMask("Enemy"));
-        filter.useTriggers = true;
-
-        Collider2D[] enemies = new Collider2D[50];
-        int count = col.Overlap(filter, enemies);
-
-        for (int i = 0; i < count; i++)
+        while (i < sprites.Count)
         {
-            EnemyCombat enemy = enemies[i].GetComponent<EnemyCombat>();
-            if (enemy == null) continue;
+            yield return new WaitForSeconds(0.3f);
 
-            enemy.TakeDamage(
-                DataManager.Instance.UpgradeDatasDic[id].damage[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel],
-                enemies[i].ClosestPoint(transform.position)
+            Debug.Log(
+                $"변경 전 : {spriteRenderer.sprite?.name} → 변경 : {sprites[i]?.name}"
             );
+
+            spriteRenderer.sprite = sprites[i];
+
+            Debug.Log(
+                $"변경 후 : {spriteRenderer.sprite?.name}"
+            );
+
+            i++;
         }
+
+        Debug.Log("Boom!");
+        animator.enabled = true;
+        animator.SetTrigger("Boom");
     }
 }

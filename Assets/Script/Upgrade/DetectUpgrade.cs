@@ -11,6 +11,8 @@ public class DetectUpgrade : MonoBehaviour
     protected int count;
     protected float coolTime;
     public float detectionRange;
+    public PooledObject pooledObject;
+    protected virtual float ChainAttackInterval => 0.05f;
 
     protected virtual void Awake()
     {
@@ -24,19 +26,113 @@ public class DetectUpgrade : MonoBehaviour
             $"Name={gameObject.name} | " +
             $"Player={(player != null ? player.name : "NULL")}"
         );
+        pooledObject = GetComponent<PooledObject>();
     }
 
-    public virtual IEnumerator DetectUpgradeCor(int id)
+    public virtual IEnumerator DetectUpgradeCor(int id, bool chain = false, GameObject target = null)
     {
         this.id = id;
 
         Debug.Log(
-            $"[DetectUpgrade] Coroutine 시작 | ID={id}"
+            $"[DetectUpgrade] Coroutine 시작 | ID={id} | Chain={chain} | Target={(target != null ? target.name : "NULL")}"
         );
 
+        // =========================================
+        // 연쇄 번개
+        // =========================================
+        if (chain)
+{
+    SetUpgradeData(true);
+
+    // 1) 첫 타겟 결정: 타겟이 있으면 그대로 사용, 없으면 플레이어 기준으로 탐색
+    GameObject firstTarget = target;
+
+    if (firstTarget == null)
+    {
+        List<Collider2D> initialEnemies = DetectEnemies(detectionRange);
+        Transform closest = FindClosestEnemy(initialEnemies);
+
+        if (closest == null)
+        {
+            Debug.Log("[Chain] 초기 타겟 없음 → 종료");
+            yield break;
+        }
+
+        firstTarget = closest.gameObject;
+    }
+
+    // 2) 현재 타겟 기준으로 chainRange 안 가장 가까운 다음 타겟을
+    //    chainCount(count)만큼 반복 탐색해서 공격 리스트 구성
+    List<GameObject> attackList = new List<GameObject>();
+    List<GameObject> hitEnemies = new List<GameObject>();
+
+    GameObject searchOrigin = firstTarget;
+
+    for (int i = 0; i < count; i++)
+    {
+        if (searchOrigin == null || !searchOrigin.activeInHierarchy)
+            break;
+
+        EnemyCombat originEnemy = searchOrigin.GetComponent<EnemyCombat>();
+
+        if (originEnemy == null || originEnemy.isDead)
+            break;
+
+        attackList.Add(searchOrigin);
+        hitEnemies.Add(searchOrigin);
+
+        Vector3 searchPos = searchOrigin.transform.position;
+
+        List<Collider2D> enemies = DetectEnemiesFromPosition(searchPos, detectionRange);
+        enemies.RemoveAll(x => x == null || hitEnemies.Contains(x.gameObject));
+
+        Transform nextEnemy = FindClosestEnemyFromPosition(enemies, searchPos);
+
+        if (nextEnemy == null)
+        {
+            Debug.Log($"[Chain] {i + 1}번째 이후 다음 타겟 없음 → 탐색 종료");
+            break;
+        }
+
+        searchOrigin = nextEnemy.gameObject;
+    }
+
+    Debug.Log($"[Chain] 공격 리스트 구성 완료 | Count={attackList.Count}");
+
+    // 3) 구성된 리스트를 순서대로 공격
+    for (int i = 0; i < attackList.Count; i++)
+    {
+        GameObject attackTarget = attackList[i];
+
+        if (attackTarget == null || !attackTarget.activeInHierarchy)
+            continue;
+
+        EnemyCombat enemyCombat = attackTarget.GetComponent<EnemyCombat>();
+
+        if (enemyCombat == null || enemyCombat.isDead)
+            continue;
+
+        bool isLast = (i == attackList.Count - 1);
+        Vector3? chainStart = (i == 0) ? (Vector3?)null : attackList[i - 1].transform.position;
+
+        Attack(attackTarget.transform.position, attackTarget, true, chainStart, isLast);
+
+        // 이 스트라이크가 완전히 끝난 뒤에 다음 타겟을 침 (같은 LineRenderer 겹쳐쓰기 방지)
+        yield return new WaitForSeconds(ChainAttackInterval);
+    }
+    if (gameObject.activeInHierarchy)
+    {
+        pooledObject.DestroyObj();
+    }
+    yield break;
+}
+
+        // =========================================
+        // 일반 공격
+        // =========================================
         while (true)
         {
-            SetUpgradeData();
+            SetUpgradeData(false);
 
             Debug.Log(
                 $"[DetectUpgrade] 데이터 갱신 | " +
@@ -61,37 +157,19 @@ public class DetectUpgrade : MonoBehaviour
 
             for (int i = 0; i < count; i++)
             {
-                Debug.Log(
-                    $"[DetectUpgrade] 공격 대상 탐색 | " +
-                    $"Index={i + 1}/{count} | " +
-                    $"EnemyListCount={enemies.Count}"
-                );
-
                 Transform closestEnemy =
                     FindClosestEnemy(enemies);
 
                 if (closestEnemy == null)
-                {
-                    Debug.LogWarning(
-                        $"[DetectUpgrade] FindClosestEnemy 결과 NULL"
-                    );
-
                     break;
-                }
 
                 Vector3 targetPos =
                     closestEnemy.position;
 
-                Debug.Log(
-                    $"[DetectUpgrade] 타겟 발견 | " +
-                    $"Target={closestEnemy.name} | " +
-                    $"Position={targetPos} | " +
-                    $"Active={closestEnemy.gameObject.activeInHierarchy}"
-                );
-
                 Attack(
                     targetPos,
-                    closestEnemy.gameObject
+                    closestEnemy.gameObject,
+                    false
                 );
 
                 Collider2D collider =
@@ -100,58 +178,64 @@ public class DetectUpgrade : MonoBehaviour
                 if (collider != null)
                 {
                     enemies.Remove(collider);
-
-                    Debug.Log(
-                        $"[DetectUpgrade] 타겟 제거 | " +
-                        $"Target={closestEnemy.name} | " +
-                        $"남은 적={enemies.Count}"
-                    );
-                }
-                else
-                {
-                    Debug.LogWarning(
-                        $"[DetectUpgrade] Collider2D 없음 | " +
-                        $"Target={closestEnemy.name}"
-                    );
                 }
             }
-
-            Debug.Log(
-                $"[DetectUpgrade] 공격 완료 → 쿨타임 {coolTime}초"
-            );
 
             yield return new WaitForSeconds(coolTime);
         }
     }
 
-    protected virtual void SetUpgradeData()
+    // =========================================
+    // 업그레이드 데이터
+    // =========================================
+
+    protected virtual void SetUpgradeData(bool chain)
     {
         int level =
-            DataManager.Instance.UpgradeDatasDic[id].upgradeLevel;
+            DataManager.Instance
+                .UpgradeDatasDic[id]
+                .upgradeLevel;
 
         count =
-            DataManager.Instance.UpgradeDatasDic[id]
+            DataManager.Instance
+                .UpgradeDatasDic[id]
                 .count[level];
 
+        if (chain)
+        {
+            count =
+                DataManager.Instance
+                    .UpgradeDatasDic[id]
+                    .chainCount;
+        }
+
         coolTime =
-            DataManager.Instance.UpgradeDatasDic[id]
+            DataManager.Instance
+                .UpgradeDatasDic[id]
                 .coolTime[level];
 
         detectionRange =
-            DataManager.Instance.UpgradeDatasDic[id]
+            DataManager.Instance
+                .UpgradeDatasDic[id]
                 .detectionRange[level];
 
-        Debug.Log(
-            $"[DetectUpgrade] SetUpgradeData | " +
-            $"ID={id} | Level={level} | " +
-            $"Count={count} | CoolTime={coolTime} | " +
-            $"Range={detectionRange}"
-        );
+        if (chain)
+        {
+            detectionRange =
+                DataManager.Instance
+                    .UpgradeDatasDic[id]
+                    .chainRange;
+        }
     }
+
+    // =========================================
+    // 플레이어 기준 적 탐색
+    // =========================================
 
     public virtual List<Collider2D> DetectEnemies(float detectionRange)
     {
-        int enemyLayer = LayerMask.GetMask("Enemy");
+        int enemyLayer =
+            LayerMask.GetMask("Enemy");
 
         Collider2D[] detected =
             Physics2D.OverlapCircleAll(
@@ -160,18 +244,34 @@ public class DetectUpgrade : MonoBehaviour
                 enemyLayer
             );
 
-        Debug.Log(
-            $"[DetectUpgrade] DetectEnemies | " +
-            $"PlayerPos={player.transform.position} | " +
-            $"Range={detectionRange} | " +
-            $"Found={detected.Length}"
-        );
+        return new List<Collider2D>(detected);
+    }
+
+    // =========================================
+    // 특정 위치 기준 적 탐색
+    // 연쇄 번개용
+    // =========================================
+
+    protected virtual List<Collider2D> DetectEnemiesFromPosition(Vector3 position, float range)
+    {
+        int enemyLayer =
+            LayerMask.GetMask("Enemy");
+
+        Collider2D[] detected =
+            Physics2D.OverlapCircleAll(
+                position,
+                range,
+                enemyLayer
+            );
 
         return new List<Collider2D>(detected);
     }
 
-    public virtual Transform FindClosestEnemy(
-        List<Collider2D> enemies)
+    // =========================================
+    // 플레이어 기준 가장 가까운 적
+    // =========================================
+
+    public virtual Transform FindClosestEnemy(List<Collider2D> enemies)
     {
         Transform closestEnemy = null;
         float closestDistance = Mathf.Infinity;
@@ -179,33 +279,16 @@ public class DetectUpgrade : MonoBehaviour
         foreach (Collider2D enemy in enemies)
         {
             if (enemy == null)
-            {
-                Debug.LogWarning(
-                    "[DetectUpgrade] 적 목록에 NULL Collider 존재"
-                );
-
                 continue;
-            }
 
             if (!enemy.gameObject.activeInHierarchy)
-            {
-                Debug.LogWarning(
-                    $"[DetectUpgrade] 비활성 적 발견 | " +
-                    $"Name={enemy.name}"
-                );
-
                 continue;
-            }
 
             float distance =
-                (enemy.transform.position -
-                 player.transform.position).sqrMagnitude;
-
-            Debug.Log(
-                $"[DetectUpgrade] 적 거리 확인 | " +
-                $"Enemy={enemy.name} | " +
-                $"DistanceSqr={distance}"
-            );
+                (
+                    enemy.transform.position -
+                    player.transform.position
+                ).sqrMagnitude;
 
             if (distance < closestDistance)
             {
@@ -214,76 +297,76 @@ public class DetectUpgrade : MonoBehaviour
             }
         }
 
-        if (closestEnemy != null)
+        return closestEnemy;
+    }
+
+    // =========================================
+    // 특정 위치 기준 가장 가까운 적
+    // 연쇄 번개용
+    // =========================================
+
+    protected virtual Transform FindClosestEnemyFromPosition(List<Collider2D> enemies, Vector3 position)
+    {
+        Transform closestEnemy = null;
+        float closestDistance = Mathf.Infinity;
+
+        foreach (Collider2D enemy in enemies)
         {
-            Debug.Log(
-                $"[DetectUpgrade] 가장 가까운 적 | " +
-                $"Target={closestEnemy.name} | " +
-                $"DistanceSqr={closestDistance}"
-            );
-        }
-        else
-        {
-            Debug.LogWarning(
-                "[DetectUpgrade] 가장 가까운 적을 찾지 못함"
-            );
+            if (enemy == null)
+                continue;
+
+            if (!enemy.gameObject.activeInHierarchy)
+                continue;
+
+            EnemyCombat enemyCombat =
+                enemy.GetComponent<EnemyCombat>();
+
+            if (enemyCombat == null ||
+                enemyCombat.isDead)
+            {
+                continue;
+            }
+
+            float distance =
+                (
+                    enemy.transform.position -
+                    position
+                ).sqrMagnitude;
+
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestEnemy = enemy.transform;
+            }
         }
 
         return closestEnemy;
     }
 
-    public virtual void Attack(
-        Vector3 targetPos,
-        GameObject target = null)
-    {
-        Debug.Log(
-            $"[DetectUpgrade] Attack 시작 | " +
-            $"ID={id} | " +
-            $"TargetPos={targetPos} | " +
-            $"Target={(target != null ? target.name : "NULL")}"
-        );
+    // =========================================
+    // 공격
+    // =========================================
 
-        GameObject obj =
-            PoolManager.Instance.Spawn(
-                id,
-                player.transform.position
-            );
+    public virtual void Attack(Vector3 targetPos, GameObject target = null, bool isChain = false, Vector3? startPosition = null, bool destroyAfter = true)
+    {
+        Vector3 spawnPos = startPosition ?? player.transform.position;
+
+        GameObject obj = PoolManager.Instance.Spawn(id, spawnPos);
 
         if (obj == null)
-        {
-            Debug.LogError(
-                $"[DetectUpgrade] Attack Spawn 실패 | ID={id}"
-            );
-
             return;
-        }
 
-        HomingProjectile projectile =
-            obj.GetComponent<HomingProjectile>();
+        HomingProjectile projectile = obj.GetComponent<HomingProjectile>();
 
         if (projectile == null)
-        {
-            Debug.LogError(
-                $"[DetectUpgrade] HomingProjectile 없음 | " +
-                $"Obj={obj.name}"
-            );
-
             return;
-        }
-
-        Debug.Log(
-            $"[DetectUpgrade] SetTarget 호출 | " +
-            $"Obj={obj.name} | " +
-            $"TargetPos={targetPos}"
-        );
 
         projectile.SetTarget(targetPos);
-
-        Debug.Log(
-            $"[DetectUpgrade] SetTarget 완료 | " +
-            $"Obj={obj.name}"
-        );
     }
+
+    // =========================================
+    // 범위 표시
+    // =========================================
 
     protected virtual void OnDrawGizmosSelected()
     {
@@ -296,16 +379,15 @@ public class DetectUpgrade : MonoBehaviour
         );
     }
 
-    public virtual bool HasEnemyInRange(float detectionRange)
+    // =========================================
+    // 범위 내 적 존재 여부
+    // =========================================
+
+    public virtual bool HasEnemyInRange(
+        float detectionRange)
     {
-        bool result =
-            DetectEnemies(detectionRange).Count > 0;
-
-        Debug.Log(
-            $"[DetectUpgrade] HasEnemyInRange | " +
-            $"Range={detectionRange} | Result={result}"
-        );
-
-        return result;
+        return DetectEnemies(
+            detectionRange
+        ).Count > 0;
     }
 }

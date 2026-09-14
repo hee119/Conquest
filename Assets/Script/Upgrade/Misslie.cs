@@ -17,11 +17,11 @@ public class Missle : DetectUpgrade
         id = upgradeInfo.id;
     }
     
-    public override IEnumerator DetectUpgradeCor(int id)
+    public override IEnumerator DetectUpgradeCor(int id, bool chain, GameObject target = null)
     {
         this.id = id;
 
-        SetUpgradeData();
+        SetUpgradeData(false);
 
         List<Collider2D> enemies = DetectEnemies(detectionRange);
 
@@ -33,14 +33,14 @@ public class Missle : DetectUpgrade
         if (closestEnemy != null)
         {
             Vector3 targetPos = closestEnemy.position;
-            Attack(targetPos, closestEnemy.gameObject);
+            Attack(targetPos, closestEnemy.gameObject, chain);
         }
 
         yield return null;
 
         yield return null;
     }
-    public override void Attack(Vector3 targetPos, GameObject target = null)
+    public override void Attack(Vector3 targetPos, GameObject target = null, bool isChain = false, Vector3? startPosition = null, bool destroyAfter = false)
     {
         Vector3 randomTarget = targetPos;
         randomTarget.y += Random.Range(-1f, 1f);

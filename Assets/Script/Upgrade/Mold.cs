@@ -41,7 +41,7 @@ public class Mold : MonoBehaviour
         targetMoldCor = StartCoroutine(TargetMoldCor());
     }
 
-    public IEnumerator TargetMoldCor()
+    public virtual IEnumerator TargetMoldCor()
     {
         animator.enabled = false;
         int i = 1;

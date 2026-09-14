@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 7785406347294270516}
   - component: {fileID: 5059762783091124930}
   - component: {fileID: 6170115201910191084}
+  - component: {fileID: 5060069943991263215}
+  - component: {fileID: -6534209438867789439}
   m_Layer: 0
   m_Name: Heatwave
   m_TagString: Upgrade
@@ -87,8 +89,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: a5931ba9c99ddcb4aae9ca53e94a89fa, type: 3}
-  m_Color: {r: 1, g: 0.41093186, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 03d5a0fef664049a1b70822687cd7d28, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -209,4 +211,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d690d7b943f2549b1930e812453246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeInfo
-  id: 401
+  id: 503
+--- !u!114 &5060069943991263215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701875621883889077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b0d1807d81d948e6a34f2c569b0692f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Boom
+--- !u!95 &-6534209438867789439
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701875621883889077}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8005da001cc9f44649c8dbb1f8ee1319, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

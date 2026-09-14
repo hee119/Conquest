@@ -164,6 +164,8 @@ public abstract class HomingProjectile : MonoBehaviour
                 );
             }
 
+            hp -= 1;
+
             if (hp <= 0)
                 pooledObject.DestroyObj();
         }

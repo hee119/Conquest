@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3682944441621780815}
   - component: {fileID: -4959143080261532646}
   - component: {fileID: 8307512279691809119}
-  - component: {fileID: 3062541207315263680}
   - component: {fileID: 7785406347294270516}
   - component: {fileID: 5059762783091124930}
   - component: {fileID: 6170115201910191084}
+  - component: {fileID: 3969672869257221882}
   m_Layer: 0
   m_Name: FireStorm
   m_TagString: Upgrade
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: a5931ba9c99ddcb4aae9ca53e94a89fa, type: 3}
-  m_Color: {r: 1, g: 0.41093186, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -160,18 +160,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3062541207315263680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6701875621883889077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 311151ecd8fc945ecae0c88e14f51fd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FireBall
 --- !u!114 &7785406347294270516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,4 +197,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d690d7b943f2549b1930e812453246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeInfo
-  id: 401
+  id: 500
+--- !u!114 &3969672869257221882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701875621883889077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17319b213b8a8441cbb130bd3b615f19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireStorm
+  isChain: 1
+  player: {fileID: 0}

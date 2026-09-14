@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
     StageInfo[] stageInfos;
     public int burnChance;
     public int burnPrefabId;
-    [FormerlySerializedAs("mushroomChance")] public int moldChance;
-    [FormerlySerializedAs("mushroomPrefabId")] public int moldPrefabId;
+    public int moldChance;
+    public int moldPrefabId;
     public string currentLanguage = "ko";
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created

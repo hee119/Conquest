@@ -464,19 +464,38 @@ public class DataManager : MonoBehaviour
     upgradeDataTemp.description = upgradeData[16].Trim();
     
     upgradeDataTemp.combinationList =
-        upgradeData[17]
-            .Split(',')
-            .Select(x => int.Parse(x.Trim()))
-            .ToArray();
+        string.IsNullOrWhiteSpace(upgradeData[17])
+            ? Array.Empty<int>()
+            : upgradeData[17]
+                .Split(',')
+                .Select(x => int.Parse(x.Trim()))
+                .ToArray();
     
     upgradeDataTemp.result =
-        upgradeData[18]
-            .Split(',')
-            .Select(x => int.Parse(x.Trim()))
-            .ToArray();
+        string.IsNullOrWhiteSpace(upgradeData[18])
+            ? Array.Empty<int>()
+            : upgradeData[17]
+                .Split(',')
+                .Select(x => int.Parse(x.Trim()))
+                .ToArray();
     
-    upgradeDataTemp.chainCount = int.Parse(upgradeData[19].Trim());
+    upgradeDataTemp.chainCount =
+        string.IsNullOrWhiteSpace(upgradeData[19])
+            ? 0
+            : int.Parse(upgradeData[19].Trim()); 
     
+    upgradeDataTemp.chainRange =
+        string.IsNullOrWhiteSpace(upgradeData[20])
+            ? 0
+            : float.Parse(upgradeData[20].Trim()); 
+    
+    upgradeDataTemp.boomDamage = string.IsNullOrWhiteSpace(upgradeData[21])
+        ? 0
+        : int.Parse(upgradeData[21].Trim()); 
+    
+    upgradeDataTemp.explosionRange = string.IsNullOrWhiteSpace(upgradeData[22])
+        ? 0
+        : float.Parse(upgradeData[22].Trim()); 
     // 이미지
     if (upgradeImagesDic.TryGetValue(
         upgradeDataTemp.id,
@@ -617,6 +636,9 @@ public class UpgradeData
     public int[] combinationList;
     public int[] result;
     public int chainCount;
+    public float chainRange;
+    public int boomDamage;
+    public float explosionRange;
     public Sprite sprite;
     public int upgradeLevel;
 }

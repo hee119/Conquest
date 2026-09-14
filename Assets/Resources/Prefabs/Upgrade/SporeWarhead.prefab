@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 1994419012082136042}
   - component: {fileID: 7789169025342397106}
   - component: {fileID: -7388670829804187052}
+  - component: {fileID: 2395735233306426766}
   - component: {fileID: 3995457353358635887}
   - component: {fileID: 3281676030774469516}
-  - component: {fileID: 2395735233306426766}
   m_Layer: 0
   m_Name: SporeWarhead
   m_TagString: Upgrade
@@ -250,6 +250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Missle
   player: {fileID: 0}
   detectionRange: 0
+  pooledObject: {fileID: 0}
   upgradeInfo: {fileID: 0}
 --- !u!114 &1994419012082136042
 MonoBehaviour:
@@ -276,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d690d7b943f2549b1930e812453246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeInfo
-  id: 505
+  id: 501
 --- !u!114 &-7388670829804187052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,6 +290,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0050a2139b24ea295a2647d5984370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PooledObject
+--- !u!114 &2395735233306426766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122500298605524579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63426fbf15c6bbf4989313d7bf0e9704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SporeWarhead
+  animator: {fileID: 0}
+  sprites:
+  - {fileID: 21300000, guid: f2152b72baef04aafa9581f3b33eb1a1, type: 3}
+  - {fileID: 21300000, guid: 0e8f4cad96f3d408eb7b4d4c75d0316e, type: 3}
+  - {fileID: 21300000, guid: 03d3daf4f931b4e07b4d1217c3593994, type: 3}
+  spriteRenderer: {fileID: 0}
+  upgradeInfo: {fileID: 0}
 --- !u!61 &3995457353358635887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -323,7 +343,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.08107865, y: 0.14188716}
   m_SpriteTilingProperty:
     border: {x: 2.9299998, y: 1.49, z: 2.54, w: 3.84}
     pivot: {x: 0.5357094, y: 0.2953578}
@@ -333,7 +353,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.512, y: 0.768}
+  m_Size: {x: 1.6470976, y: 1.8625588}
   m_EdgeRadius: 0
 --- !u!95 &3281676030774469516
 Animator:
@@ -357,15 +377,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2395735233306426766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122500298605524579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63426fbf15c6bbf4989313d7bf0e9704, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SporeWarhead

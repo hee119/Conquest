@@ -92,7 +92,7 @@ public class MissileProjectile : HomingProjectile
             rb.position = target;
             rb.linearVelocity = Vector2.zero;
             
-            GetComponent<SporeWarhead>()?.Boom();
+            GetComponent<SporeWarhead>()?.StartCoroutine(GetComponent<SporeWarhead>()?.TargetMoldCor());
 
             Debug.Log(
                 $"[Missile] DestroyObj 호출 직전 | " +
@@ -100,8 +100,8 @@ public class MissileProjectile : HomingProjectile
                 $"Active={gameObject.activeInHierarchy}"
             );
 
-            pooledObject.DestroyObj();
-
+            if(GetComponent<SporeWarhead>() == null)
+                pooledObject.DestroyObj();
             Debug.Log(
                 $"[Missile] DestroyObj 호출 완료 | " +
                 $"ID={GetInstanceID()} | " +
@@ -219,7 +219,7 @@ public class MissileProjectile : HomingProjectile
         rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
         
-        GetComponent<SporeWarhead>()?.Boom();
+        GetComponent<SporeWarhead>()?.StartCoroutine(GetComponent<SporeWarhead>()?.TargetMoldCor());
 
         Debug.Log(
             $"[Missile] 목표 도착 | " +
@@ -232,9 +232,9 @@ public class MissileProjectile : HomingProjectile
             $"ID={GetInstanceID()} | " +
             $"Active={gameObject.activeInHierarchy}"
         );
-
-        // 도착하면 풀 반환
-        pooledObject.DestroyObj();
+        
+        if(GetComponent<SporeWarhead>() == null)
+            pooledObject.DestroyObj();
 
         Debug.Log(
             $"[Missile] DestroyObj 호출 완료 | " +

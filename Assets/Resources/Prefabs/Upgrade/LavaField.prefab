@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -373297750853753420}
   - component: {fileID: -1671886800219482700}
   - component: {fileID: -3105820041375505985}
+  - component: {fileID: -2935188180546994564}
   m_Layer: 0
   m_Name: LavaField
   m_TagString: Untagged
@@ -86,8 +87,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 390858e432383144086fffd444f277aa, type: 3}
-  m_Color: {r: 1, g: 0.94921625, b: 0.7028302, a: 1}
+  m_Sprite: {fileID: 21300000, guid: e2a3f68d0ea3b415187d760d2b9680b8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -191,4 +192,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d690d7b943f2549b1930e812453246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeInfo
-  id: 404
+  id: 504
+--- !u!114 &-2935188180546994564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206114430016736175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec34c9538bc4248ce88478e4571b37da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LavaField

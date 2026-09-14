@@ -221,6 +221,36 @@ public class UpgradeManager : MonoBehaviour
     {
         StartSkillCoroutine(id, MoldCor(id));
     }
+
+    public void FireStorm(int id)
+    {
+        Fireball(id);
+    }
+
+    public void SporeWarhead(int id)
+    {
+        Missile(id);
+    }
+
+    public void LightningShuriken(int id)
+    {
+        Shuriken(id);
+    }
+
+    public void Heatwave(int id)
+    {
+        
+    }
+
+    public void LavaField(int id)
+    {
+        Snail(id);
+    }
+
+    public void RottingSpore(int id)
+    {
+        
+    }
     
     private IEnumerator LightningCor(int id)
     {
@@ -275,183 +305,77 @@ public class UpgradeManager : MonoBehaviour
     }
     
     private IEnumerator MissileCor(int id)
-{
-    Debug.Log($"[MissileCor] 시작 | ID={id}");
-
-    while (true)
     {
-        int level =
-            DataManager.Instance.UpgradeDatasDic[id].upgradeLevel;
-
-        int count =
-            DataManager.Instance.UpgradeDatasDic[id]
-                .count[level];
-
-        float detectionRange =
-            DataManager.Instance.UpgradeDatasDic[id]
-                .detectionRange[level];
-
-        Debug.Log(
-            $"[MissileCor] 데이터 | " +
-            $"ID={id} | Level={level} | Count={count} | " +
-            $"Range={detectionRange} | PlayerPos={player.transform.position}"
-        );
-
-        // 적이 나타날 때까지 대기
-        Debug.Log(
-            $"[MissileCor] 적 대기 시작 | " +
-            $"Range={detectionRange}"
-        );
-
-        yield return new WaitUntil(() =>
-            detectUpgrade.HasEnemyInRange(detectionRange)
-        );
-
-        Debug.Log(
-            $"[MissileCor] 적 감지됨 | " +
-            $"PlayerPos={player.transform.position}"
-        );
-
-        // 적 목록 가져오기
-        List<Collider2D> enemies =
-            detectUpgrade.DetectEnemies(detectionRange);
-
-        Debug.Log(
-            $"[MissileCor] 적 목록 생성 | " +
-            $"Count={enemies.Count}"
-        );
-
-        if (enemies.Count == 0)
+        while (true)
         {
-            Debug.LogWarning(
-                $"[MissileCor] 적 감지됐다고 했는데 목록이 비어있음"
+            int level =
+                DataManager.Instance
+                    .UpgradeDatasDic[id]
+                    .upgradeLevel;
+
+            int count =
+                DataManager.Instance
+                    .UpgradeDatasDic[id]
+                    .count[level];
+
+            float detectionRange =
+                DataManager.Instance
+                    .UpgradeDatasDic[id]
+                    .detectionRange[level];
+
+            // 적이 나타날 때까지 대기
+            yield return new WaitUntil(() =>
+                detectUpgrade.HasEnemyInRange(detectionRange)
             );
 
-            continue;
-        }
+            // 적 탐색
+            List<Collider2D> enemies =
+                detectUpgrade.DetectEnemies(detectionRange);
 
-        // 가장 가까운 적 한 번만 찾기
-        Transform target =
-            detectUpgrade.FindClosestEnemy(enemies);
+            if (enemies.Count == 0)
+                continue;
 
-        if (target == null)
-        {
-            Debug.LogWarning(
-                $"[MissileCor] 타겟이 NULL"
-            );
+            // 가장 가까운 적
+            Transform target =
+                detectUpgrade.FindClosestEnemy(enemies);
 
-            continue;
-        }
+            if (target == null)
+                continue;
 
-        Vector3 targetPos = target.position;
+            // 발사 순간의 위치를 저장
+            Vector3 targetPosition =
+                target.position;
 
-        Debug.Log(
-            $"[MissileCor] 타겟 선정 | " +
-            $"Target={target.name} | " +
-            $"TargetPos={targetPos} | " +
-            $"Active={target.gameObject.activeInHierarchy}"
-        );
-
-        // 모든 미사일이 같은 타겟을 사용
-        for (int i = 0; i < count; i++)
-        {
-            Debug.Log(
-                $"[MissileCor] 미사일 생성 시도 | " +
-                $"Index={i + 1}/{count} | " +
-                $"SpawnPos={player.transform.position} | " +
-                $"TargetPos={targetPos}"
-            );
-
-            GameObject missile =
-                PoolManager.Instance.Spawn(
-                    id,
-                    player.transform.position
-                );
-
-            if (missile == null)
+            // 같은 위치를 향해 count만큼 발사
+            for (int i = 0; i < count; i++)
             {
-                Debug.LogError(
-                    $"[MissileCor] Spawn 실패 | ID={id}"
-                );
-            }
-            else
-            {
-                Debug.Log(
-                    $"[MissileCor] Spawn 성공 | " +
-                    $"Missile={missile.name} | " +
-                    $"InstanceID={missile.GetInstanceID()} | " +
-                    $"Active={missile.activeInHierarchy} | " +
-                    $"Position={missile.transform.position}"
-                );
+                GameObject missile =
+                    PoolManager.Instance.Spawn(
+                        id,
+                        player.transform.position
+                    );
+
+                if (missile == null)
+                    continue;
 
                 Missle missle =
                     missile.GetComponent<Missle>();
 
                 if (missle == null)
-                {
-                    Debug.LogError(
-                        $"[MissileCor] Missle 컴포넌트 없음 | " +
-                        $"Missile={missile.name}"
-                    );
-                }
-                else
-                {
-                    bool targetValid =
-                        target != null &&
-                        target.gameObject != null &&
-                        target.gameObject.activeInHierarchy;
+                    continue;
 
-                    Debug.Log(
-                        $"[MissileCor] Attack 호출 준비 | " +
-                        $"TargetValid={targetValid} | " +
-                        $"TargetPos={targetPos}"
-                    );
+                missle.Attack(targetPosition);
 
-                    if (targetValid)
-                    {
-                        missle.Attack(
-                            targetPos,
-                            target.gameObject
-                        );
-
-                        Debug.Log(
-                            $"[MissileCor] Attack 호출 완료 | " +
-                            $"Missile={missile.name}"
-                        );
-                    }
-                    else
-                    {
-                        Debug.LogWarning(
-                            $"[MissileCor] 타겟 무효 → 위치만 전달 | " +
-                            $"TargetPos={targetPos}"
-                        );
-
-                        missle.Attack(
-                            targetPos,
-                            null
-                        );
-                    }
-                }
+                yield return new WaitForSeconds(0.1f);
             }
 
-            yield return new WaitForSeconds(0.1f);
+            float coolTime =
+                DataManager.Instance
+                    .UpgradeDatasDic[id]
+                    .coolTime[level];
+
+            yield return new WaitForSeconds(coolTime);
         }
-
-        float coolTime =
-            DataManager.Instance.UpgradeDatasDic[id]
-                .coolTime[level];
-
-        Debug.Log(
-            $"[MissileCor] 미사일 발사 완료 → 쿨타임 | " +
-            $"CoolTime={coolTime}"
-        );
-
-        yield return new WaitForSeconds(coolTime);
-
-        Debug.Log(
-            $"[MissileCor] 쿨타임 종료 → 다시 탐색"
-        );
-    }
 }
     
     private IEnumerator MoldCor(int id)
