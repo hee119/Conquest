@@ -7,7 +7,7 @@ Id,NameId,Type,Function,CoolTime,Count,DetectionRange,Damage,Speed,DotDamage,Dot
 405,upgread_name_Shuriken,Skill,Shuriken,"5, 4.5, 4, 3.5, 3","1, 2, 3, 4, 5","3, 3, 4, 4, 5","2, 3, 4, 5, 6",0,"0,0,0,0,0","0,0,0,0,0",1,"0,0,0,0,0",10,"0,0,0,0,0","3, 3, 4, 4, 5",upgread_des_Shurlken,400,502,,,,
 406,upgread_name_Missile,Skill,Missile,"6, 6, 6, 6, 7","10, 15, 20, 25, 30","3, 3, 4, 4, 5","2, 3, 4, 5, 6",3,"0,0,0,0,0","0,0,0,0,0",1,"0,0,0,0,0",10,"0,0,0,0,0","0,0,0,0,0",upgread_des_Missile,407,501,,,,
 407,upgread_name_Mold,Skill,Mold,"0,0,0,0,0","0,0,0,0,0","0,0,0,0,0","3,3,3,3,3",0,"0,0,0,0,0","0,0,0,0,0",1,"0,0,0,0,0",10,"20, 40, 60, 80, 100","0,0,0,0,0",upgread_des_Mold,,,,,,
-500,upgread_name_FireStorm,Skill,FireStorm,"5, 4.5, 4, 3.5, 3","1, 2, 3, 4, 5","3, 3, 4, 4, 5","2, 3, 4, 5, 6",3,"0,0,0,0,0","0,0,0,0,0",1,"0,0,0,0,0",10,"0,0,0,0,0","0,0,0,0,0",upgread_des_FireStorm,,,5,5,,
+500,upgread_name_FireStorm,Skill,FireStorm,"5, 4.5, 4, 3.5, 3","1, 2, 3, 4, 5","3, 3, 4, 4, 5","2, 3, 4, 5, 6",6,"0,0,0,0,0","0,0,0,0,0",1,"0,0,0,0,0",10,"0,0,0,0,0","0,0,0,0,0",upgread_des_FireStorm,,,5,5,,
 501,upgread_name_SporeWarhead,Skill,SporeWarhead,"6, 6, 6, 6, 6","30, 30, 30, 30, 30","5, 5, 5, 5, 5","0, 0, 0, 0, 0",3,"0,0,0,0,0","0,0,0,0,0",1,"0,0,0,0,0",10,"0,0,0,0,0","0,0,0,0,0",upgread_des_SporeWarhead,,,,,,
 502,upgread_name_LightningShuriken,Skill,LightningShuriken,"3, 3, 3, 3, 3","5, 5, 5, 5, 5","5, 5, 5, 5, 5","6, 6, 6, 6, 6",0,"0,0,0,0,0","0,0,0,0,0",1,"0,0,0,0,0",10,"0,0,0,0,0","3, 3, 4, 4, 5",upgread_des_LightningShuriken,,,5,5,,
 503,upgread_name_Heatwave,Skill,Heatwave,"1, 1, 1, 1, 1","5, 5, 5, 5, 5","5, 5, 5, 5, 5","5, 5, 5, 5, 5",5,"0,0,0,0,0","0,0,0,0,0",1,"0,0,0,0,0",10,"0,0,0,0,0","0,0,0,0,0",upgread_des_Heatwave,,,,,5,3
