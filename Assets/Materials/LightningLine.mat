@@ -118,7 +118,7 @@ Material:
     - _GlossyReflections: 0
     - _Glow: 2
     - _GlowWidth: 0.014
-    - _Intensity: 10
+    - _Intensity: 2.26
     - _Jaggedness: 0.735
     - _Metallic: 0
     - _OcclusionStrength: 1

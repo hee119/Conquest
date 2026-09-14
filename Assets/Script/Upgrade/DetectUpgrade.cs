@@ -38,96 +38,6 @@ public class DetectUpgrade : MonoBehaviour
         );
 
         // =========================================
-        // 연쇄 번개
-        // =========================================
-        if (chain)
-{
-    SetUpgradeData(true);
-
-    // 1) 첫 타겟 결정: 타겟이 있으면 그대로 사용, 없으면 플레이어 기준으로 탐색
-    GameObject firstTarget = target;
-
-    if (firstTarget == null)
-    {
-        List<Collider2D> initialEnemies = DetectEnemies(detectionRange);
-        Transform closest = FindClosestEnemy(initialEnemies);
-
-        if (closest == null)
-        {
-            Debug.Log("[Chain] 초기 타겟 없음 → 종료");
-            yield break;
-        }
-
-        firstTarget = closest.gameObject;
-    }
-
-    // 2) 현재 타겟 기준으로 chainRange 안 가장 가까운 다음 타겟을
-    //    chainCount(count)만큼 반복 탐색해서 공격 리스트 구성
-    List<GameObject> attackList = new List<GameObject>();
-    List<GameObject> hitEnemies = new List<GameObject>();
-
-    GameObject searchOrigin = firstTarget;
-
-    for (int i = 0; i < count; i++)
-    {
-        if (searchOrigin == null || !searchOrigin.activeInHierarchy)
-            break;
-
-        EnemyCombat originEnemy = searchOrigin.GetComponent<EnemyCombat>();
-
-        if (originEnemy == null || originEnemy.isDead)
-            break;
-
-        attackList.Add(searchOrigin);
-        hitEnemies.Add(searchOrigin);
-
-        Vector3 searchPos = searchOrigin.transform.position;
-
-        List<Collider2D> enemies = DetectEnemiesFromPosition(searchPos, detectionRange);
-        enemies.RemoveAll(x => x == null || hitEnemies.Contains(x.gameObject));
-
-        Transform nextEnemy = FindClosestEnemyFromPosition(enemies, searchPos);
-
-        if (nextEnemy == null)
-        {
-            Debug.Log($"[Chain] {i + 1}번째 이후 다음 타겟 없음 → 탐색 종료");
-            break;
-        }
-
-        searchOrigin = nextEnemy.gameObject;
-    }
-
-    Debug.Log($"[Chain] 공격 리스트 구성 완료 | Count={attackList.Count}");
-
-    // 3) 구성된 리스트를 순서대로 공격
-    for (int i = 0; i < attackList.Count; i++)
-    {
-        GameObject attackTarget = attackList[i];
-
-        if (attackTarget == null || !attackTarget.activeInHierarchy)
-            continue;
-
-        EnemyCombat enemyCombat = attackTarget.GetComponent<EnemyCombat>();
-
-        if (enemyCombat == null || enemyCombat.isDead)
-            continue;
-
-        bool isLast = (i == attackList.Count - 1);
-        Vector3? chainStart = (i == 0) ? (Vector3?)null : attackList[i - 1].transform.position;
-
-        Attack(attackTarget.transform.position, attackTarget, true, chainStart, isLast);
-
-        // 이 스트라이크가 완전히 끝난 뒤에 다음 타겟을 침 (같은 LineRenderer 겹쳐쓰기 방지)
-        yield return new WaitForSeconds(ChainAttackInterval);
-    }
-    if (gameObject.activeInHierarchy)
-    {
-        pooledObject.DestroyObj();
-    }
-    yield break;
-}
-
-        // =========================================
         // 일반 공격
         // =========================================
         while (true)
@@ -390,4 +300,100 @@ public class DetectUpgrade : MonoBehaviour
             detectionRange
         ).Count > 0;
     }
+    
+    public List<GameObject> GetChainAttackList(GameObject target = null)
+{
+    SetUpgradeData(true);
+
+    Debug.Log(
+        $"[Chain 진단] GetChainAttackList 시작 | id={id} | " +
+        $"count(chainCount)={count} | detectionRange(chainRange)={detectionRange} | " +
+        $"전달받은 target={(target != null ? target.name : "NULL")}"
+    );
+
+    GameObject firstTarget = target;
+
+    // 첫 타겟이 없으면 플레이어 기준으로 찾기
+    if (firstTarget == null)
+    {
+        List<Collider2D> initialEnemies =
+            DetectEnemies(detectionRange);
+
+        Debug.Log(
+            $"[Chain 진단] 플레이어 기준 재탐색 | " +
+            $"플레이어 위치={player.transform.position} | range={detectionRange} | " +
+            $"발견된 적 수={initialEnemies.Count}"
+        );
+
+        Transform closest = FindClosestEnemy(initialEnemies);
+
+        if (closest == null)
+        {
+            Debug.LogWarning("[Chain 진단] firstTarget을 찾지 못함 → 빈 리스트 반환");
+            return new List<GameObject>();
+        }
+
+        firstTarget = closest.gameObject;
+        Debug.Log($"[Chain 진단] firstTarget 확정 = {firstTarget.name}");
+    }
+
+    List<GameObject> attackList = new List<GameObject>();
+    List<GameObject> hitEnemies = new List<GameObject>();
+
+    GameObject searchOrigin = firstTarget;
+
+    for (int i = 0; i < count; i++)
+    {
+        if (searchOrigin == null || !searchOrigin.activeInHierarchy)
+        {
+            Debug.LogWarning($"[Chain 진단] i={i} searchOrigin이 null이거나 비활성 → break");
+            break;
+        }
+
+        EnemyCombat originEnemy = searchOrigin.GetComponent<EnemyCombat>();
+
+        if (originEnemy == null || originEnemy.isDead)
+        {
+            Debug.LogWarning(
+                $"[Chain 진단] i={i} EnemyCombat 없음 또는 사망 상태 → break | " +
+                $"컴포넌트 존재={originEnemy != null} | isDead={(originEnemy != null ? originEnemy.isDead.ToString() : "N/A")}"
+            );
+            break;
+        }
+
+        attackList.Add(searchOrigin);
+        hitEnemies.Add(searchOrigin);
+
+        Debug.Log($"[Chain 진단] i={i} 리스트에 추가됨: {searchOrigin.name}");
+
+        Vector3 searchPos = searchOrigin.transform.position;
+
+        List<Collider2D> enemies =
+            DetectEnemiesFromPosition(searchPos, detectionRange);
+
+        enemies.RemoveAll(
+            x => x == null || hitEnemies.Contains(x.gameObject)
+        );
+
+        Debug.Log(
+            $"[Chain 진단] i={i} 다음 후보 탐색 | 기준위치={searchPos} | " +
+            $"range={detectionRange} | 후보 수(중복제외)={enemies.Count}"
+        );
+
+        Transform nextEnemy =
+            FindClosestEnemyFromPosition(enemies, searchPos);
+
+        if (nextEnemy == null)
+        {
+            Debug.Log($"[Chain 진단] i={i} 다음 타겟 없음 → break");
+            break;
+        }
+
+        searchOrigin = nextEnemy.gameObject;
+    }
+
+    Debug.Log($"[Chain 진단] GetChainAttackList 종료 | 최종 attackList.Count={attackList.Count}");
+
+    return attackList;
+}
 }

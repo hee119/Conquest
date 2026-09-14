@@ -5,6 +5,7 @@ using UnityEngine;
 public class Orbit : MonoBehaviour
 {
     public List<GameObject> orbitList = new();
+    public List<Collider2D> orbitColList = new();
 
     public float radius = 2f;
 
@@ -30,9 +31,19 @@ public class Orbit : MonoBehaviour
             transform.position
         );
 
+        Debug.Log(
+            $"[Orbit] Spawn : {orbit.name} / Active = {orbit.activeInHierarchy}"
+        );
+
         orbitList.Add(orbit);
 
-        // 처음에는 투명
+        Collider2D col = orbit.GetComponent<Collider2D>();
+        orbitColList.Add(col);
+
+        // 새로 생성된 표창 콜라이더 활성화
+        if (col != null)
+            col.enabled = true;
+
         SetAlpha(orbit, 0f);
     }
 
@@ -44,6 +55,18 @@ public class Orbit : MonoBehaviour
     {
         if (orbitList.Count == 0)
             yield break;
+
+        // =====================================
+        // 다시 나가기 시작 → 콜라이더 활성화
+        // =====================================
+
+        foreach (Collider2D col in orbitColList)
+        {
+            if (col != null)
+                col.enabled = true;
+        }
+
+        Debug.Log("[Orbit] Rotate START");
 
         // =====================================
         // 1. 플레이어 → 반지름
@@ -58,21 +81,26 @@ public class Orbit : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            angles.Add(currentAngle + angleStep * i);
+            angles.Add(
+                currentAngle + angleStep * i
+            );
         }
 
         while (spawnT < spawnTime)
         {
             spawnT += Time.deltaTime;
 
-            float t = Mathf.Clamp01(spawnT / spawnTime);
+            float t = Mathf.Clamp01(
+                spawnT / spawnTime
+            );
 
             for (int i = 0; i < orbitList.Count; i++)
             {
                 if (orbitList[i] == null)
                     continue;
 
-                float rad = angles[i] * Mathf.Deg2Rad;
+                float rad =
+                    angles[i] * Mathf.Deg2Rad;
 
                 Vector3 direction = new Vector3(
                     Mathf.Cos(rad),
@@ -86,7 +114,10 @@ public class Orbit : MonoBehaviour
                     direction * (radius * t);
 
                 // 서서히 나타남
-                SetAlpha(orbitList[i], t);
+                SetAlpha(
+                    orbitList[i],
+                    t
+                );
 
                 // 자전
                 orbitList[i].transform.Rotate(
@@ -107,7 +138,6 @@ public class Orbit : MonoBehaviour
                 SetAlpha(orbit, 1f);
         }
 
-
         // =====================================
         // 2. 공전 + 자전
         // =====================================
@@ -117,7 +147,8 @@ public class Orbit : MonoBehaviour
         float orbitTime =
             DataManager.Instance.UpgradeDatasDic[id]
             .orbitTime[
-                DataManager.Instance.UpgradeDatasDic[id].upgradeLevel
+                DataManager.Instance.UpgradeDatasDic[id]
+                .upgradeLevel
             ];
 
         while (orbitT < orbitTime)
@@ -134,7 +165,6 @@ public class Orbit : MonoBehaviour
                     orbitSpeed * Time.deltaTime;
 
                 ArrangeOrbits();
-
 
                 // -----------------------------
                 // 자전
@@ -156,10 +186,16 @@ public class Orbit : MonoBehaviour
             yield return null;
         }
 
-
         // =====================================
         // 3. 플레이어로 돌아오기
         // =====================================
+
+        // 돌아오기 시작 → 콜라이더 비활성화
+        foreach (Collider2D col in orbitColList)
+        {
+            if (col != null)
+                col.enabled = false;
+        }
 
         float returnT = 0f;
 
@@ -168,16 +204,22 @@ public class Orbit : MonoBehaviour
         foreach (GameObject orbit in orbitList)
         {
             if (orbit != null)
-                startPositions.Add(orbit.transform.position);
+                startPositions.Add(
+                    orbit.transform.position
+                );
             else
-                startPositions.Add(transform.position);
+                startPositions.Add(
+                    transform.position
+                );
         }
 
         while (returnT < returnTime)
         {
             returnT += Time.deltaTime;
 
-            float t = Mathf.Clamp01(returnT / returnTime);
+            float t = Mathf.Clamp01(
+                returnT / returnTime
+            );
 
             for (int i = 0; i < orbitList.Count; i++)
             {
@@ -209,7 +251,6 @@ public class Orbit : MonoBehaviour
             yield return null;
         }
 
-
         // =====================================
         // 4. 플레이어 위치
         // =====================================
@@ -221,11 +262,13 @@ public class Orbit : MonoBehaviour
                 orbit.transform.position =
                     transform.position;
 
-                SetAlpha(orbit, 0f);
+                SetAlpha(
+                    orbit,
+                    0f
+                );
             }
         }
     }
-
 
     // =====================================
     // 공전 배치
@@ -262,7 +305,6 @@ public class Orbit : MonoBehaviour
                 transform.position + offset;
         }
     }
-
 
     // =====================================
     // 알파값 변경
