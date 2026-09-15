@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 3682944441621780815}
   - component: {fileID: -4959143080261532646}
   - component: {fileID: 8307512279691809119}
-  - component: {fileID: 3062541207315263680}
   - component: {fileID: 7785406347294270516}
   - component: {fileID: 5059762783091124930}
   - component: {fileID: 6170115201910191084}
   - component: {fileID: 5060069943991263215}
   - component: {fileID: -6534209438867789439}
+  - component: {fileID: -3187898938074498662}
   m_Layer: 0
   m_Name: Heatwave
   m_TagString: Upgrade
@@ -133,8 +133,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.10140991, y: 0}
-  m_Radius: 0.6014099
+  m_Offset: {x: 0.6991272, y: 0}
+  m_Radius: 0.7427063
 --- !u!50 &8307512279691809119
 Rigidbody2D:
   serializedVersion: 5
@@ -162,18 +162,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3062541207315263680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6701875621883889077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 311151ecd8fc945ecae0c88e14f51fd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FireBall
 --- !u!114 &7785406347294270516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,3 +234,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3187898938074498662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701875621883889077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1cf581d02664175ada0417ce6ab633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'

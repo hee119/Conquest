@@ -90,7 +90,7 @@ public class Burn : DotDamage
         int level =
             DataManager.Instance
                 .UpgradeDatasDic[id]
-                .upgradeLevel;
+                .UpgradeLevel;
 
         int dotCount =
             DataManager.Instance

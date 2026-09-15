@@ -148,7 +148,7 @@ public class Orbit : MonoBehaviour
             DataManager.Instance.UpgradeDatasDic[id]
             .orbitTime[
                 DataManager.Instance.UpgradeDatasDic[id]
-                .upgradeLevel
+                .UpgradeLevel
             ];
 
         while (orbitT < orbitTime)

@@ -136,7 +136,7 @@ public class DotDamage : MonoBehaviour
         int level =
             DataManager.Instance
                 .UpgradeDatasDic[id]
-                .upgradeLevel;
+                .UpgradeLevel;
 
         int dotCount =
             DataManager.Instance
@@ -224,7 +224,7 @@ public class DotDamage : MonoBehaviour
             level =
                 DataManager.Instance
                     .UpgradeDatasDic[id]
-                    .upgradeLevel;
+                    .UpgradeLevel;
 
             dotCount =
                 DataManager.Instance
@@ -368,7 +368,7 @@ public class DotDamage : MonoBehaviour
         int level =
             DataManager.Instance
                 .UpgradeDatasDic[id]
-                .upgradeLevel;
+                .UpgradeLevel;
 
         return DataManager.Instance
             .UpgradeDatasDic[id]

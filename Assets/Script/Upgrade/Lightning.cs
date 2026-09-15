@@ -112,7 +112,7 @@ public class Lightning : DetectUpgrade
                 .damage[
                     DataManager.Instance
                     .UpgradeDatasDic[id]
-                    .upgradeLevel
+                    .UpgradeLevel
                 ];
 
             enemy.TakeDamage(damage, hitPoint);
@@ -158,7 +158,7 @@ public class Lightning : DetectUpgrade
             .damage[
                 DataManager.Instance
                 .UpgradeDatasDic[id]
-                .upgradeLevel
+                .UpgradeLevel
             ];
 
         enemy.TakeDamage(damage, hitPoint);

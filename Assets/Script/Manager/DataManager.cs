@@ -474,7 +474,7 @@ public class DataManager : MonoBehaviour
     upgradeDataTemp.result =
         string.IsNullOrWhiteSpace(upgradeData[18])
             ? Array.Empty<int>()
-            : upgradeData[17]
+            : upgradeData[18]
                 .Split(',')
                 .Select(x => int.Parse(x.Trim()))
                 .ToArray();
@@ -496,6 +496,10 @@ public class DataManager : MonoBehaviour
     upgradeDataTemp.explosionRange = string.IsNullOrWhiteSpace(upgradeData[22])
         ? 0
         : float.Parse(upgradeData[22].Trim()); 
+    
+    upgradeDataTemp.tier = string.IsNullOrWhiteSpace(upgradeData[23])
+        ? 0
+        : int.Parse(upgradeData[23].Trim()); 
     // 이미지
     if (upgradeImagesDic.TryGetValue(
         upgradeDataTemp.id,
@@ -504,9 +508,12 @@ public class DataManager : MonoBehaviour
         upgradeDataTemp.sprite = sprite;
     }
 
-    UpgradeManager.Instance.upgrades.Add(
-        upgradeDataTemp.id
-    );
+    if (upgradeDataTemp.tier <= 0)
+    {
+        UpgradeManager.Instance.upgrades.Add(
+            upgradeDataTemp.id
+        );
+    }
 
     UpgradeDatasDic.Add(
         upgradeDataTemp.id,
@@ -639,6 +646,18 @@ public class UpgradeData
     public float chainRange;
     public int boomDamage;
     public float explosionRange;
+    public int tier;
     public Sprite sprite;
     public int upgradeLevel;
+    public int UpgradeLevel
+    {
+        get
+        {
+            return upgradeLevel - 1;
+        }
+        set
+        {
+            upgradeLevel = value; 
+        }
+    }
 }

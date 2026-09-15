@@ -104,7 +104,7 @@ public class DetectUpgrade : MonoBehaviour
         int level =
             DataManager.Instance
                 .UpgradeDatasDic[id]
-                .upgradeLevel;
+                .UpgradeLevel;
 
         count =
             DataManager.Instance

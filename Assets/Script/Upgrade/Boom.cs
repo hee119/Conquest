@@ -6,13 +6,18 @@ public class Boom : MonoBehaviour
 
     protected int id;
 
+    private PooledObject pooledObject;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
+
         UpgradeInfo upgradeInfo = GetComponent<UpgradeInfo>();
 
         if (upgradeInfo != null)
             id = upgradeInfo.id;
+
+        pooledObject = GetComponent<PooledObject>();
     }
 
     public void BoomStart()
@@ -20,7 +25,6 @@ public class Boom : MonoBehaviour
         animator.SetTrigger("Boom");
     }
 
-    // 애니메이션 이벤트에서 호출
     public void BoomDamage()
     {
         UpgradeData data =
@@ -50,6 +54,13 @@ public class Boom : MonoBehaviour
 
             enemy.TakeDamage(damage, hitPoint);
         }
+    }
+
+    // 폭발 애니메이션 마지막 프레임에 이벤트 추가
+    public void BoomEnd()
+    {
+        if (pooledObject != null)
+            pooledObject.DestroyObj();
     }
 
     private void OnDrawGizmosSelected()

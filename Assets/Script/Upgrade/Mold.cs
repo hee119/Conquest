@@ -92,7 +92,7 @@ public class Mold : MonoBehaviour
             if (enemy == null)
                 continue;
 
-            enemy.TakeDamage(DataManager.Instance.UpgradeDatasDic[id].damage[DataManager.Instance.UpgradeDatasDic[id].upgradeLevel], enemies[i].ClosestPoint(transform.position));
+            enemy.TakeDamage(DataManager.Instance.UpgradeDatasDic[id].damage[DataManager.Instance.UpgradeDatasDic[id].UpgradeLevel], enemies[i].ClosestPoint(transform.position));
         }
         
         gameObject.SetActive(false);

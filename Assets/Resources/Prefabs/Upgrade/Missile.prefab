@@ -87,7 +87,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 1a44f3632e3914626ab8d57a0c4462a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6070d2dcd042b45d695b740a5d8aa583, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -248,6 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Missle
   player: {fileID: 0}
   detectionRange: 0
+  pooledObject: {fileID: 0}
   upgradeInfo: {fileID: 0}
 --- !u!114 &1994419012082136042
 MonoBehaviour:
@@ -325,7 +326,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.768, y: 0.512}
+    oldSize: {x: 6.06, y: 6.06}
     newSize: {x: 0.768, y: 0.512}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

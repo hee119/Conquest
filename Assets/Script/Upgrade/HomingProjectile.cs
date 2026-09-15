@@ -131,7 +131,7 @@ public abstract class HomingProjectile : MonoBehaviour
         int level =
             DataManager.Instance
                 .UpgradeDatasDic[id]
-                .upgradeLevel;
+                .UpgradeLevel;
 
         return DataManager.Instance
             .UpgradeDatasDic[id]

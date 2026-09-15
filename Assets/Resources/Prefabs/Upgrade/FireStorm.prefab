@@ -64,7 +64,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: 5a4fcae6b527b4587b94f2f92e50ddf7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -212,3 +212,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FireStorm
   isChain: 1
   player: {fileID: 0}
+  removeFromTarget: {fileID: 0}
