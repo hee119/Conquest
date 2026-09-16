@@ -16,17 +16,17 @@ public class EnemyMove : MonoBehaviour
     public bool isSlowDown;
     public int slowCount;
 
-    [SerializeField] private float pathUpdateInterval = 0.2f;
-    [SerializeField] private float knockbackCooldown = 0.3f;
+    [SerializeField] protected float pathUpdateInterval = 0.2f;
+    [SerializeField] protected float knockbackCooldown = 0.3f;
 
     [Header("Knockback")]
-    [SerializeField] private float knockbackPower = 5f;
-    [SerializeField] private float knockbackDuration = 0.15f;
+    [SerializeField] protected float knockbackPower = 5f;
+    [SerializeField] protected float knockbackDuration = 0.15f;
 
-    private bool canKnockback = true;
+    protected bool canKnockback = true;
 
     public Coroutine moveCoroutine;
-    private Coroutine knockbackCoroutine;
+    protected Coroutine knockbackCoroutine;
 
 
     void Awake()
@@ -50,7 +50,7 @@ public class EnemyMove : MonoBehaviour
     }
 
 
-    public IEnumerator Move()
+    protected virtual IEnumerator Move()
     {
         while (true)
         {

@@ -1,5 +1,6 @@
-using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgreadeSelectConfirm : MonoBehaviour
 {
@@ -7,98 +8,90 @@ public class UpgreadeSelectConfirm : MonoBehaviour
     public int removeUpgradeId1;
     public int removeUpgradeId2;
     public GameObject mom;
-    
+    public GameObject upgradeCombine;
+    public GameObject upgradeCombineCollection;
+
     public void SelectConfirm()
     {
-        UpgradeManager.Instance.StopCoroutine(UpgradeManager.Instance.upgradeCor[removeUpgradeId1]);
-        UpgradeManager.Instance.StopCoroutine(UpgradeManager.Instance.upgradeCor[removeUpgradeId2]);
-        if (DataManager.Instance.UpgradeDatasDic[removeUpgradeId1].type == "Skill")
+        StopAndRemoveCoroutine(removeUpgradeId1);
+        StopAndRemoveCoroutine(removeUpgradeId2);
+
+        string removeType = DataManager.Instance.UpgradeDatasDic[removeUpgradeId1].type;
+
+        if (removeType == "Skill")
         {
-            int index1 = UpgradeManager.Instance.skillUpgrades.IndexOf(removeUpgradeId1);
-            int index2 = UpgradeManager.Instance.skillUpgrades.IndexOf(removeUpgradeId2);
-            int bigIndex = Mathf.Max(index1, index2);
-
-            UpgradeManager.Instance.skillUpgrades.Remove(removeUpgradeId1);
-            UpgradeManager.Instance.skillUpgrades.Remove(removeUpgradeId2);
-            
-            UpgradeManager.Instance.skillUpgradeIcons[index1].sprite = null;
-            UpgradeManager.Instance.skillUpgradeIcons[index2].sprite = null;
-
-            int lastIndex = UpgradeManager.Instance.skillUpgradeIcons
-                .Select((image, index) => new { image, index })
-                .Where(x => x.image.sprite != null)
-                .Select(x => x.index)
-                .DefaultIfEmpty(-1)
-                .Max();
-
-            if (lastIndex > bigIndex)
-            {
-                for (int i = bigIndex + 1; i < UpgradeManager.Instance.skillUpgradeIcons.Length; i++)
-                {
-                    int nullIndex = i;
-                    int currentIndex = i - 1;
-                    
-                    while (currentIndex >= 0 && UpgradeManager.Instance.skillUpgradeIcons[currentIndex].sprite == null)
-                    {
-                        UpgradeManager.Instance.skillUpgradeIcons[currentIndex].sprite = UpgradeManager.Instance.skillUpgradeIcons[nullIndex].sprite;
-                        UpgradeManager.Instance.skillUpgradeIcons[nullIndex].sprite = null;
-                        nullIndex--;
-                        currentIndex--;
-                    }
-                }
-            }
+            RemoveAndCompact(
+                UpgradeManager.Instance.skillUpgrades,
+                UpgradeManager.Instance.skillUpgradeIcons,
+                removeUpgradeId1, removeUpgradeId2);
 
             UpgradeManager.Instance.skillUpgradeCount -= 2;
         }
-        else if (DataManager.Instance.UpgradeDatasDic[removeUpgradeId1].type == "Stat")
+        else if (removeType == "Stat")
         {
-            int index1 = UpgradeManager.Instance.statUpgrades.IndexOf(removeUpgradeId1);
-            int index2 = UpgradeManager.Instance.statUpgrades.IndexOf(removeUpgradeId2);
-            int bigIndex = Mathf.Max(index1, index2);
-
-            UpgradeManager.Instance.statUpgrades.Remove(removeUpgradeId1);
-            UpgradeManager.Instance.statUpgrades.Remove(removeUpgradeId2);
-
-            UpgradeManager.Instance.statUpgradeIcons[index1].sprite = null;
-            UpgradeManager.Instance.statUpgradeIcons[index2].sprite = null;
-
-            int lastIndex = UpgradeManager.Instance.statUpgradeIcons
-                .Select((image, index) => new { image, index })
-                .Where(x => x.image.sprite != null)
-                .Select(x => x.index)
-                .DefaultIfEmpty(-1)
-                .Max();
-
-            if (lastIndex > bigIndex)
-            {
-                for (int i = bigIndex + 1; i < UpgradeManager.Instance.statUpgradeIcons.Length; i++)
-                {
-                    int nullIndex = i;
-                    int currentIndex = i - 1;
-
-                    while (currentIndex >= 0 &&
-                           UpgradeManager.Instance.statUpgradeIcons[currentIndex].sprite == null)
-                    {
-                        UpgradeManager.Instance.statUpgradeIcons[currentIndex].sprite = UpgradeManager.Instance.statUpgradeIcons[nullIndex].sprite;
-                        UpgradeManager.Instance.statUpgradeIcons[nullIndex].sprite = null;
-                        nullIndex--;
-                        currentIndex--;
-                    }
-                }
-            }
+            RemoveAndCompact(
+                UpgradeManager.Instance.statUpgrades,
+                UpgradeManager.Instance.statUpgradeIcons,
+                removeUpgradeId1, removeUpgradeId2);
 
             UpgradeManager.Instance.statUpgradeCount -= 2;
         }
 
-        if (DataManager.Instance.UpgradeDatasDic[id].type == "Skill")
+        string addType = DataManager.Instance.UpgradeDatasDic[id].type;
+        if (addType == "Skill")
         {
             UpgradeManager.Instance.SkillUpgradesAdd(id);
         }
-        else if (DataManager.Instance.UpgradeDatasDic[id].type == "Stat")
+        else if (addType == "Stat")
         {
             UpgradeManager.Instance.StatUpgradesAdd(id);
         }
+
+        UpgradeManager.Instance.maxLevelUpgrades.Remove(removeUpgradeId1);
+        UpgradeManager.Instance.maxLevelUpgrades.Remove(removeUpgradeId2);
+
+        UpgradeManager.Instance.upgrades.AddRange(UpgradeManager.Instance.renewableUpgrades);
+        UpgradeManager.Instance.renewableUpgrades.Clear();
+
         Time.timeScale = 1;
+        upgradeCombine.SetActive(false);
+        upgradeCombineCollection.SetActive(false);
         mom.SetActive(false);
+    }
+
+    private void StopAndRemoveCoroutine(int upgradeId)
+    {
+        if (UpgradeManager.Instance.upgradeCor.TryGetValue(upgradeId, out Coroutine cor))
+        {
+            UpgradeManager.Instance.StopCoroutine(cor);
+            UpgradeManager.Instance.upgradeCor.Remove(upgradeId);
+        }
+    }
+
+    // ids 리스트에서 두 업그레이드를 제거하고, icons의 sprite를 할당 없이 앞으로 압축
+    private void RemoveAndCompact(List<int> upgradeIds, Image[] icons, int removeId1, int removeId2)
+    {
+        int index1 = upgradeIds.IndexOf(removeId1);
+        int index2 = upgradeIds.IndexOf(removeId2);
+
+        if (index1 >= 0) icons[index1].sprite = null;
+        if (index2 >= 0) icons[index2].sprite = null;
+
+        upgradeIds.Remove(removeId1);
+        upgradeIds.Remove(removeId2);
+
+        int writeIndex = 0;
+        for (int readIndex = 0; readIndex < icons.Length; readIndex++)
+        {
+            Sprite sprite = icons[readIndex].sprite;
+            if (sprite == null) continue;
+
+            if (writeIndex != readIndex)
+            {
+                icons[writeIndex].sprite = sprite;
+                icons[readIndex].sprite = null;
+            }
+            writeIndex++;
+        }
     }
 }

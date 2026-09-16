@@ -16,6 +16,7 @@ public class DataManager : MonoBehaviour
     public string levelDataText;
     public string expDataText;
     public string upgradeDataText;
+    public string bulletDataText;
 
     public StageInfo[] stageInfos;
     public Dictionary<int, PlayerAndEnemyInfos> playerAndEnemyInfosDic = new();
@@ -23,6 +24,7 @@ public class DataManager : MonoBehaviour
     public int[] levelDatas;
     public Dictionary<int, ExpData> expDatasDic = new();
     public Dictionary<int, UpgradeData> UpgradeDatasDic = new();
+    public Dictionary <int, BulletData> bulletDatasDic = new();
     public Dictionary <int, Sprite> upgradeImagesDic = new();
     public Dictionary <int, Sprite> skillUpgradeIconDic = new();
     public Dictionary <int, Sprite> statUpgradeIconDic = new();
@@ -56,6 +58,7 @@ public class DataManager : MonoBehaviour
         GetLevelDatas();
         GetExpDatas();
         GetUpgradeDatas();
+        GetBulletData();
     }
     
 
@@ -76,17 +79,23 @@ public class DataManager : MonoBehaviour
             string[] stageData = lines[i].Split(",");
             int stage = int.Parse(stageData[0]);
             int enemyId = int.Parse(stageData[1]);
-            int enemySpawnCount = int.Parse(stageData[2]);
+            int waveCount = int.Parse(stageData[2]);
             float spawnInterval = float.Parse(stageData[3]);
-            int monstersPerSpawn = int.Parse(stageData[4]);
+            int enemyPerSpawn = int.Parse(stageData[4]);
+            float enemySpawnMultiplier = float.Parse(stageData[5]);
+            float waveIncreaseInterval = float.Parse(stageData[6]);
+            string type = stageData[7];
             for (int j = 0; j < stageData.Length; j++)
             {
                 if (i == stage)
                 {
                     stageInfos[i].enemyId.Add(enemyId);
-                    stageInfos[i].enemySpawnCount.Add(enemySpawnCount);
+                    stageInfos[i].waveCount.Add(waveCount);
                     stageInfos[i].spawnInterval.Add(spawnInterval);
-                    stageInfos[i].enemysPerSpawn.Add(monstersPerSpawn);
+                    stageInfos[i].enemyPerSpawn.Add(enemyPerSpawn);
+                    stageInfos[i].enemySpawnMultiplier.Add(enemySpawnMultiplier);
+                    stageInfos[i].waveIncreaseInterval.Add(waveIncreaseInterval);
+                    stageInfos[i].type.Add(type);
                 }
             }
         }
@@ -525,6 +534,44 @@ public class DataManager : MonoBehaviour
     UpgradeManager.Instance.UpgradesInit();
 }
 
+    public void GetBulletData()
+    {
+        TextAsset textAsset = Resources.Load<TextAsset>("TextData/BulletData");
+        bulletDataText = textAsset.text;
+
+        string[] lines = textAsset.text.Split('\n');
+
+        for (int i = 1; i < lines.Length; i++)
+        {
+            if (string.IsNullOrWhiteSpace(lines[i]))
+                continue;
+
+            string[] bulletData = ParseCsvLine(lines[i]);
+
+            BulletData bulletDataTemp = new BulletData();
+
+            bulletDataTemp.id = int.Parse(bulletData[0]);
+            bulletDataTemp.damage = int.Parse(bulletData[1]);
+            bulletDataTemp.range = int.Parse(bulletData[2]);
+            bulletDataTemp.speed = int.Parse(bulletData[3]);
+
+            bulletDatasDic.Add(bulletDataTemp.id, bulletDataTemp);
+        }
+        
+        GameObject[] bulletPrefabs = Resources.LoadAll<GameObject>("Prefabs/Bullet");
+
+        foreach (GameObject prefab in bulletPrefabs)
+        {
+            BulletInfo bulletInfo = prefab.GetComponent<BulletInfo>();
+            if (bulletInfo != null)
+            {
+                bulletInfo.damage = bulletDatasDic[bulletInfo.id].damage;
+                bulletInfo.range = bulletDatasDic[bulletInfo.id].range;
+                bulletInfo.speed = bulletDatasDic[bulletInfo.id].speed;
+            }
+        }
+    }
+
 
 /// <summary>
 /// CSV 한 줄을 파싱한다.
@@ -582,9 +629,12 @@ private string[] ParseCsvLine(string line)
 public class StageInfo
 {
     public List<int> enemyId = new List<int>();
-    public List<int> enemySpawnCount = new List<int>();
+    public List<int> waveCount = new List<int>();
     public List<float> spawnInterval = new List<float>();
-    public List<int> enemysPerSpawn = new List<int>();
+    public List<int> enemyPerSpawn = new List<int>();
+    public List<float> enemySpawnMultiplier = new List<float>();
+    public List<float> waveIncreaseInterval = new List<float>();
+    public List<string> type = new List<string>();
 }
 
 public class PlayerAndEnemyInfos
@@ -660,4 +710,13 @@ public class UpgradeData
             upgradeLevel = value; 
         }
     }
+}
+
+[System.Serializable]
+public class BulletData{
+    public int id;
+    public int damage;
+    public int range;
+    public int speed;
+    public string name;
 }

@@ -22,6 +22,8 @@ public class StageManager : MonoBehaviour
 
     private Transform player;
     [SerializeField] private float minSpawnDistance = 5f;
+    
+    int currentWave;
 
 
     void Awake()
@@ -93,7 +95,7 @@ public class StageManager : MonoBehaviour
             new Vector3(1, 1, -cam.transform.position.z)
         );
 
-        int padding = 3;
+        int padding = 7;
 
         Vector3Int minCell =
             backgroundTilemap.WorldToCell(bottomLeft)
@@ -266,34 +268,16 @@ public class StageManager : MonoBehaviour
         );
 
 
-        for (
-            int i = 0;
-            i < DataManager.Instance
-                .stageInfos[currentStage]
-                .enemyId.Count;
-            i++
-        )
+        for (int i = 0; i < DataManager.Instance.stageInfos[currentStage].enemyId.Count; i++)
         {
-            for (
-                int j = 0;
-                j < DataManager.Instance
-                    .stageInfos[currentStage]
-                    .enemySpawnCount[i];
-                j++
-            )
+            for (int j = 0; j < DataManager.Instance.stageInfos[currentStage].waveCount[i]; j++)
             {
-                for (
-                    int k = 0;
-                    k < DataManager.Instance
-                        .stageInfos[currentStage]
-                        .enemysPerSpawn[i];
-                    k++
-                )
-                {
-                    Transform spawnPoint =
-                        GetSafeSpawnPoint();
 
-
+                GameObject boss = null;
+                for (int k = 0; k < DataManager.Instance.stageInfos[currentStage].enemyPerSpawn[i]; k++) {
+                    
+                    Transform spawnPoint = GetSafeSpawnPoint();
+                    
                     if (spawnPoint == null)
                     {
                         Debug.LogWarning(
@@ -303,47 +287,61 @@ public class StageManager : MonoBehaviour
                         continue;
                     }
 
-
-                    PoolManager.Instance.Spawn(
-                        DataManager.Instance
-                            .stageInfos[currentStage]
-                            .enemyId[i],
-                        spawnPoint.position
-                    );
+                    if (DataManager.Instance.stageInfos[currentStage].type[i] == "Boss")
+                    {
+                        boss = PoolManager.Instance.Spawn(
+                            DataManager.Instance
+                                .stageInfos[currentStage]
+                                .enemyId[i],
+                            spawnPoint.position
+                        );
+                    }
+                    else
+                    {
+                        PoolManager.Instance.Spawn(
+                            DataManager.Instance
+                                .stageInfos[currentStage]
+                                .enemyId[i],
+                            spawnPoint.position
+                        );
+                    }
 
 
                     monsterCount++;
-
-
-                    if (
-                        monsterCount >=
-                        DataManager.Instance
-                            .stageInfos[currentStage]
-                            .enemySpawnCount[i]
-                    )
-                    {
-                        break;
-                    }
                 }
 
-
+                if (DataManager.Instance.stageInfos[currentStage].type[i] == "Boss")
+                {
+                    yield return new WaitUntil(() => !boss.activeInHierarchy);
+                }
+                
                 yield return new WaitForSeconds(
                     DataManager.Instance
                         .stageInfos[currentStage]
                         .spawnInterval[i]
                 );
 
+                currentWave++;
 
                 if (
-                    monsterCount >=
+                    currentWave >=
                     DataManager.Instance
                         .stageInfos[currentStage]
-                        .enemySpawnCount[i]
+                        .waveCount[i]
                 )
                 {
                     monsterCount = 0;
+                    currentWave = 0;
                     break;
                 }
+                
+                if (currentWave % DataManager.Instance.stageInfos[currentStage].waveIncreaseInterval[i] == 0)
+                {
+                    DataManager.Instance.stageInfos[currentStage].enemyPerSpawn[i] =
+                        (int)(DataManager.Instance.stageInfos[currentStage].enemyPerSpawn[i] *
+                              DataManager.Instance.stageInfos[currentStage].enemySpawnMultiplier[i]);                
+                }
+                
             }
         }
     }

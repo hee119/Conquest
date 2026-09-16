@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -25,6 +26,8 @@ public class SelectUpgrade : MonoBehaviour
     private SelectUpgrade[] siblingObjects;
     
     private Image[] _images;
+    
+    private TextMeshProUGUI[] _texts;
 
     private Color[] originalColors;
     
@@ -40,6 +43,8 @@ public class SelectUpgrade : MonoBehaviour
         _images = GetComponentsInChildren<Image>()
             .Where(image => !levelIcons.Contains(image))
             .ToArray();
+        
+        _texts = GetComponentsInChildren<TextMeshProUGUI>();
 
         siblingObjects = transform.parent.GetComponentsInChildren<SelectUpgrade>()
             .Where(x => x != this)
@@ -59,7 +64,10 @@ public class SelectUpgrade : MonoBehaviour
         for(int i = 0; i < _images.Length; i++)
         {
             _images[i].color = originalColors[i];
+            if(i < _texts.Length) _texts[i].color = Color.white;
         }
+        
+        
 
         // 패널이 다시 열릴 때 레이캐스트 타겟 복구 (자기 자신 + 자식)
         SetRaycastTarget(true);
@@ -200,6 +208,7 @@ public class SelectUpgrade : MonoBehaviour
             for (int i = 0; i < _images.Length; i++)
             {
                 _images[i].color = originalColors[i] * value;
+                if(i < _texts.Length) _texts[i].color = originalColors[i] * value;
             }
 
             yield return null;
@@ -252,7 +261,7 @@ public class SelectUpgrade : MonoBehaviour
 
             color.a = Mathf.PingPong(time * blinkSpeed, 1f);
             image.color = color;
-
+            
             yield return null;
         }
     }

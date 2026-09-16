@@ -11,6 +11,7 @@ TagManager:
   - Upgrade
   - Enemy
   - Wall
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -77,6 +78,9 @@ TagManager:
     locked: 0
   - name: ExpBar
     uniqueID: 563543691
+    locked: 0
+  - name: Bullet
+    uniqueID: 4289755741
     locked: 0
   - name: UI
     uniqueID: 1418487415

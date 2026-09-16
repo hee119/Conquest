@@ -36,6 +36,7 @@ public class PoolManager : MonoBehaviour
         prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/SkillEffect"));
         prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/Exp"));
         prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/Upgrade"));
+        prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/Bullet"));
 
         
 
@@ -59,6 +60,7 @@ public class PoolManager : MonoBehaviour
         var skillInfo = prefab.GetComponent<SkillInfo>();
         var expInfo = prefab.GetComponent<ExpInfo>();
         var upgradeInfo = prefab.GetComponent<UpgradeInfo>();
+        var bulletInfo = prefab.GetComponent<BulletInfo>();
         
 
         int id;
@@ -71,6 +73,8 @@ public class PoolManager : MonoBehaviour
             id = expInfo.id;
         else if (upgradeInfo != null)
             id = upgradeInfo.id;
+        else if (bulletInfo != null)
+            id = bulletInfo.id; 
         else
             return;
 
@@ -146,5 +150,10 @@ public class PoolManager : MonoBehaviour
         obj.gameObject.SetActive(true);
 
         return obj.gameObject;
+    }
+
+    public void SpawnTest(int id)
+    {
+        Spawn(id, Vector2.zero);
     }
 }

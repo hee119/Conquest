@@ -14,6 +14,7 @@ public class UpgradeManager : MonoBehaviour
     public List<int> statUpgrades = new List<int>();
     public List<int> upgrades = new List<int>();
     public List<UpgradeUiInfo> upgradesInfo = new List<UpgradeUiInfo>();
+    public List<int> renewableUpgrades = new List<int>();
 
     Dictionary<int, Action<int>> upgradeActions = new Dictionary<int, Action<int>>();
     public Dictionary<int, Coroutine> upgradeCor = new Dictionary<int, Coroutine>();
@@ -91,25 +92,41 @@ public class UpgradeManager : MonoBehaviour
     {
         upgrades = upgrades.OrderBy(x => Random.value).ToList();
 
-        maxLevelUpgrades.AddRange(
-            skillUpgrades.Where(id =>
-                DataManager.Instance.UpgradeDatasDic[id].UpgradeLevel >= 4
-            )
-        );
-
         if (skillUpgrades.Count >= 5)
         {
+            renewableUpgrades.AddRange(
+                upgrades.Where(id =>
+                    DataManager.Instance.UpgradeDatasDic[id].type == "Skill"
+                    && !skillUpgrades.Contains(id)
+                )
+            );
+
             upgrades.RemoveAll(id =>
                 DataManager.Instance.UpgradeDatasDic[id].type == "Skill"
                 && !skillUpgrades.Contains(id)
             );
         }
+        
+        maxLevelUpgrades.AddRange(
+            skillUpgrades.Where(id =>
+                DataManager.Instance.UpgradeDatasDic[id].UpgradeLevel >= 4 &&
+                !upgrades.Contains(id) && !maxLevelUpgrades.Contains(id)
+            )
+        );
+
+        maxLevelUpgrades.AddRange(
+            statUpgrades.Where(id =>
+                DataManager.Instance.UpgradeDatasDic[id].UpgradeLevel >= 4 &&
+                !upgrades.Contains(id) && !maxLevelUpgrades.Contains(id)
+            )
+        );
 
         if (statUpgrades.Count >= 5)
         {
-            maxLevelUpgrades.AddRange(
-                statUpgrades.Where(id =>
-                    DataManager.Instance.UpgradeDatasDic[id].UpgradeLevel >= 5
+            renewableUpgrades.AddRange(
+                upgrades.Where(id =>
+                    DataManager.Instance.UpgradeDatasDic[id].type == "Stat"
+                    && !skillUpgrades.Contains(id)
                 )
             );
 
@@ -119,39 +136,79 @@ public class UpgradeManager : MonoBehaviour
             );
         }
 
-        for (int i = 0; i < 3; i++)
+        if (upgrades.Count >= 3)
         {
-            upgradesInfo[i].upgradeData.id =
-                DataManager.Instance.UpgradeDatasDic[upgrades[i]].id;
-
-            upgradesInfo[i].name =
-                DataManager.Instance.UpgradeDatasDic[upgrades[i]].name;
-
-            upgradesInfo[i].upgradeNameLo.key =
-                DataManager.Instance.UpgradeDatasDic[upgrades[i]].name;
-
-            if (DataManager.Instance.UpgradeDatasDic[upgrades[i]].sprite != null)
+            for (int i = 0; i < 3; i++)
             {
+                if(!upgradesInfo[i].gameObject.activeInHierarchy)
+                    upgradesInfo[i].gameObject.SetActive(true);
+                upgradesInfo[i].upgradeData.id =
+                    DataManager.Instance.UpgradeDatasDic[upgrades[i]].id;
+
+                upgradesInfo[i].name =
+                    DataManager.Instance.UpgradeDatasDic[upgrades[i]].name;
+
+                upgradesInfo[i].upgradeNameLo.key =
+                    DataManager.Instance.UpgradeDatasDic[upgrades[i]].name;
+
+                if (DataManager.Instance.UpgradeDatasDic[upgrades[i]].sprite != null)
+                {
+                    upgradesInfo[i].upgradeImage.sprite =
+                        DataManager.Instance.UpgradeDatasDic[upgrades[i]].sprite;
+                }
+                else
+                {
+                    upgradesInfo[i].upgradeImage.sprite = null;
+                }
+
+                upgradesInfo[i].upgradeData.type =
+                    DataManager.Instance.UpgradeDatasDic[upgrades[i]].type;
+
+                // 실제 레벨 + 1을 UI에 표시
+                upgradesInfo[i].upgradeData.upgradeLevel =
+                    DataManager.Instance.UpgradeDatasDic[upgrades[i]].upgradeLevel;
+
+                upgradesInfo[i].upgradeDesLo.key =
+                    DataManager.Instance.UpgradeDatasDic[upgrades[i]].description;
+
+                upgradesInfo[i].upgradeDesLo.ForceUpdateText();
+                upgradesInfo[i].upgradeNameLo.ForceUpdateText();
+            }
+        }
+        else if(upgrades.Count > 0 && upgrades.Count < 3)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                int upgradeId = upgrades[i % upgrades.Count];
+
+                upgradesInfo[i].upgradeData.id =
+                    DataManager.Instance.UpgradeDatasDic[upgradeId].id;
+
+                upgradesInfo[i].name =
+                    DataManager.Instance.UpgradeDatasDic[upgradeId].name;
+
+                upgradesInfo[i].upgradeNameLo.key =
+                    DataManager.Instance.UpgradeDatasDic[upgradeId].name;
+
                 upgradesInfo[i].upgradeImage.sprite =
-                    DataManager.Instance.UpgradeDatasDic[upgrades[i]].sprite;
+                    DataManager.Instance.UpgradeDatasDic[upgradeId].sprite;
+
+                upgradesInfo[i].upgradeData.type =
+                    DataManager.Instance.UpgradeDatasDic[upgradeId].type;
+
+                upgradesInfo[i].upgradeData.upgradeLevel =
+                    DataManager.Instance.UpgradeDatasDic[upgradeId].upgradeLevel;
+
+                upgradesInfo[i].upgradeDesLo.key =
+                    DataManager.Instance.UpgradeDatasDic[upgradeId].description;
+
+                upgradesInfo[i].upgradeDesLo.ForceUpdateText();
+                upgradesInfo[i].upgradeNameLo.ForceUpdateText();
             }
-            else
-            {
-                upgradesInfo[i].upgradeImage.sprite = null;
-            }
-
-            upgradesInfo[i].upgradeData.type =
-                DataManager.Instance.UpgradeDatasDic[upgrades[i]].type;
-
-            // 실제 레벨 + 1을 UI에 표시
-            upgradesInfo[i].upgradeData.upgradeLevel =
-                DataManager.Instance.UpgradeDatasDic[upgrades[i]].upgradeLevel;
-
-            upgradesInfo[i].upgradeDesLo.key =
-                DataManager.Instance.UpgradeDatasDic[upgrades[i]].description;
-
-            upgradesInfo[i].upgradeDesLo.ForceUpdateText();
-            upgradesInfo[i].upgradeNameLo.ForceUpdateText();
+        }
+        else
+        {
+            
         }
 
         upgradeRenewal?.Invoke();

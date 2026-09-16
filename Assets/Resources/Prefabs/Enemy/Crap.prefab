@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 7115658254923622402}
   - component: {fileID: 79239086328230691}
   - component: {fileID: 5149760970550755715}
+  - component: {fileID: 2996686744030071390}
   m_Layer: 8
   m_Name: Crap
   m_TagString: Enemy
@@ -176,7 +177,6 @@ MonoBehaviour:
   hp: 0
   isDead: 0
   isBurn: 0
-  attckCoolTime: 1
 --- !u!114 &-5811335577426929627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,3 +304,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2996686744030071390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4125709159630829647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca527eb14e3584eb8bd8090bdf59db03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MeleeEnemyAttack
+  attackCoolTime: 1
