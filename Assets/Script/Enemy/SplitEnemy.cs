@@ -6,40 +6,8 @@ public class SplitEnemy : EnemyCombat
     public int splitSpawnCount = 2;
     public override void Die()
     {
-        if (!isDead)
-        {
-            isDead = true;
-
-            PoolManager.Instance.Spawn(
-                unitInfo.dropExpOrbId,
-                transform.position
-            );
-
-            for (int i = transform.childCount - 1; i >= 0; i--)
-            {
-                Transform child = transform.GetChild(i);
-
-                if (child.TryGetComponent<DotDamage>(out var dot))
-                {
-                    child.SetParent(null, true);
-                }
-
-                if (child.TryGetComponent<Mold>(out var mus))
-                {
-                    child.SetParent(null, true);
-
-                    if (mus.gameObject.activeInHierarchy)
-                    {
-                        mus.animator.enabled = true;
-                        mus.animator.SetTrigger("Boom");
-                    }
-                }
-            }
-            
-            EnemySplit();
-
-            pooledObject.DestroyObj();
-        }
+        EnemySplit();
+        base.Die();
     }
 
     public void EnemySplit()
@@ -76,5 +44,10 @@ public class SplitEnemy : EnemyCombat
         unitInfo.hp = DataManager.Instance.playerAndEnemyInfosDic[unitInfo.id].hp;
         enemyMove.moveSpeed = unitInfo.speed;
         enemyMove.MoveSpeedRenewal();
+    }
+
+    public void BaseDie()
+    {
+        base.Die();
     }
 }

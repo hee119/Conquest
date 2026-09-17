@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,9 @@ public class UpgreadeSelectConfirm : MonoBehaviour
         StopAndRemoveCoroutine(removeUpgradeId1);
         StopAndRemoveCoroutine(removeUpgradeId2);
 
+        if (!DataManager.Instance.UpgradeDatasDic.ContainsKey(removeUpgradeId1) && DataManager.Instance.UpgradeDatasDic.ContainsKey(removeUpgradeId2))
+            return;
+        
         string removeType = DataManager.Instance.UpgradeDatasDic[removeUpgradeId1].type;
 
         if (removeType == "Skill")
@@ -61,7 +65,7 @@ public class UpgreadeSelectConfirm : MonoBehaviour
 
     private void StopAndRemoveCoroutine(int upgradeId)
     {
-        if (UpgradeManager.Instance.upgradeCor.TryGetValue(upgradeId, out Coroutine cor))
+        if (UpgradeManager.Instance.upgradeCor.TryGetValue(upgradeId, out IEnumerator cor))
         {
             UpgradeManager.Instance.StopCoroutine(cor);
             UpgradeManager.Instance.upgradeCor.Remove(upgradeId);

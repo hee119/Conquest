@@ -14,7 +14,8 @@ public class Lightning : DetectUpgrade
 
     [SerializeField]
     protected float damageDistance = 0.1f;
-    
+
+    private int id;
     protected override float ChainAttackInterval => strikeDuration;
     protected override void Awake()
     {
@@ -33,7 +34,7 @@ public class Lightning : DetectUpgrade
         StartCoroutine(DetectUpgradeCor(id));
     }
 
-    public override void Attack(Vector3 targetPos, GameObject target, bool isChain = false, Vector3? startPosition = null, bool destroyAfter = true)
+    public override void Attack(int id, Vector3 targetPos, GameObject target = null, bool isChain = false, Vector3? startPosition = null, bool destroyAfter = true)
     {
         StartCoroutine(Strike(targetPos, target, isChain ? startPosition : null, destroyAfter));
     }

@@ -17,7 +17,7 @@ public class UpgradeManager : MonoBehaviour
     public List<int> renewableUpgrades = new List<int>();
 
     Dictionary<int, Action<int>> upgradeActions = new Dictionary<int, Action<int>>();
-    public Dictionary<int, Coroutine> upgradeCor = new Dictionary<int, Coroutine>();
+    public Dictionary<int, IEnumerator> upgradeCor = new Dictionary<int, IEnumerator>();
 
     private GameObject player;
     BoxCollider2D playerCollider;
@@ -38,6 +38,7 @@ public class UpgradeManager : MonoBehaviour
     private Orbit orbit;
 
     public List<int> maxLevelUpgrades = new List<int>();
+    
 
     public void Awake()
     {
@@ -270,14 +271,16 @@ public class UpgradeManager : MonoBehaviour
 
     public void StartSkillCoroutine(int id, IEnumerator coroutine)
     {
-        if (upgradeCor.TryGetValue(id, out Coroutine oldCoroutine))
+        if (upgradeCor.TryGetValue(id, out IEnumerator oldCoroutine))
         {
             StopCoroutine(oldCoroutine);
         }
 
-        Coroutine newCoroutine = StartCoroutine(coroutine);
+        IEnumerator newCoroutine = coroutine;
 
         upgradeCor[id] = newCoroutine;
+        
+        StartCoroutine(newCoroutine);
     }
 
     public void Lightning(int id)
@@ -298,6 +301,9 @@ public class UpgradeManager : MonoBehaviour
 
     public void Burn(int id)
     {
+        if (upgradeCor.ContainsKey(id))
+            return;
+        
         StartSkillCoroutine(id, BurnCor(id));
     }
 
@@ -335,6 +341,9 @@ public class UpgradeManager : MonoBehaviour
 
     public void Mold(int id)
     {
+        if (upgradeCor.ContainsKey(id))
+            return;
+        
         StartSkillCoroutine(id, MoldCor(id));
     }
 
@@ -534,8 +543,7 @@ public class UpgradeManager : MonoBehaviour
                 if (missle == null)
                     continue;
 
-                missle.Attack(targetPosition);
-
+                missle.Attack(id, targetPosition, target.gameObject, false, player.transform.position, true);
                 yield return new WaitForSeconds(0.1f);
             }
 

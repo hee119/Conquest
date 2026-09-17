@@ -212,7 +212,7 @@ public class ExpBar : MonoBehaviour
         Debug.Log("[ExpBar] ExpInitCor 종료");
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         Debug.Log("[ExpBar] OnDestroy");
 

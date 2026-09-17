@@ -17,7 +17,6 @@ public class Chain : DetectUpgrade
         }
         
         upgradeInfo = GetComponent<UpgradeInfo>();
-        id = upgradeInfo.id;
         pooledObject = GetComponent<PooledObject>();
     }
     
@@ -30,7 +29,7 @@ public class Chain : DetectUpgrade
 
     if (collision.CompareTag("Enemy"))
     {
-        List<GameObject> target = GetChainAttackList();
+        List<GameObject> target = GetChainAttackList(chainId);
 
         Debug.Log($"[Chain 진단] 반환된 target 리스트 개수={target.Count}");
         for (int i = 0; i < target.Count; i++)
@@ -111,7 +110,7 @@ private IEnumerator ChainAttack(List<GameObject> target)
 
         Debug.Log($"[Chain 진단] i={i} 번개 발사 {previousPosition} → {currentPosition} (타겟: {currentTarget.name})");
 
-        lightning.Attack(currentPosition, currentTarget, true, previousPosition);
+        lightning.Attack(chainId, currentPosition, currentTarget, true, previousPosition);
 
         previousPosition = currentPosition;
 

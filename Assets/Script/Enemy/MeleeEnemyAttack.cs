@@ -44,7 +44,7 @@ public class MeleeEnemyAttack : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && canAttack && !isDead)
+        if (other.CompareTag("Player") && canAttack && !isDead && gameObject.activeInHierarchy)
         {
             StartCoroutine(AttackCoolTimeCor());
         }

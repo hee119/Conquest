@@ -28,18 +28,30 @@ public abstract class Flooring : MonoBehaviour
 
     protected virtual void OnDisable()
     {
-        for (int i = enemies.Count - 1; i >= 0; i++)
+        for (int i = enemies.Count - 1; i >= 0; i--)
         {
-            UnitInfo unitInfo = enemies[i].GetComponent<UnitInfo>();
-            enemies[i].slowCount -= 1;
+            EnemyMove enemy = enemies[i];
 
-            if (enemies[i].slowCount <= 0)
+            if (enemy == null)
+                continue;
+
+            UnitInfo unitInfo = enemy.GetComponent<UnitInfo>();
+
+            if (unitInfo == null)
+                continue;
+
+            enemy.slowCount -= 1;
+
+            if (enemy.slowCount <= 0)
             {
-                enemies[i].isSlowDown = false;
-                enemies[i].moveSpeed = DataManager.Instance.playerAndEnemyInfosDic[unitInfo.id].speed;
-                enemies[i].MoveSpeedRenewal();
+                enemy.isSlowDown = false;
+                enemy.moveSpeed =
+                    DataManager.Instance.playerAndEnemyInfosDic[unitInfo.id].speed;
+
+                enemy.MoveSpeedRenewal();
             }
         }
+
         enemies.Clear();
     }
     protected void SlowDown(GameObject target)

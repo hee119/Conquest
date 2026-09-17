@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 
 public class EnemyCombat : MonoBehaviour
 {
-    Animator anim;
+    protected Animator anim;
     public int maxHp = 0;
     public int hp;
     public bool isDead = false;

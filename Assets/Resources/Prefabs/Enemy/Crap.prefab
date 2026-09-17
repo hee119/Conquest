@@ -177,6 +177,7 @@ MonoBehaviour:
   hp: 0
   isDead: 0
   isBurn: 0
+  enemyMove: {fileID: 0}
 --- !u!114 &-5811335577426929627
 MonoBehaviour:
   m_ObjectHideFlags: 0
