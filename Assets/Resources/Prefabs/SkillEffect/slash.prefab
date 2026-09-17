@@ -152,7 +152,7 @@ MonoBehaviour:
   skillCoolTime: 1
   skillDamage: 4
   skillCritDamage: 15
-  lifetime: 0.5
+  lifetime: 0.3
   movementLockTime: 0.7
   skillLevel: 0
   skillDesc: 
@@ -223,7 +223,7 @@ SortingGroup:
   m_GameObject: {fileID: 243201233587572126}
   m_Enabled: 1
   m_SortingLayerID: -105541197
-  m_SortingLayer: 3
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_SortAtRoot: 0
   m_Sort3DAs2D: 0

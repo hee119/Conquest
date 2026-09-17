@@ -46,11 +46,11 @@ GameObject:
   - component: {fileID: -8184704702133321677}
   - component: {fileID: -5811335577426929627}
   - component: {fileID: -7300561714549636109}
-  - component: {fileID: -7031049320459269606}
   - component: {fileID: 7115658254923622402}
   - component: {fileID: 79239086328230691}
   - component: {fileID: 5149760970550755715}
   - component: {fileID: 6804793964692302286}
+  - component: {fileID: 2890242813744974307}
   m_Layer: 8
   m_Name: Octopus
   m_TagString: Enemy
@@ -237,34 +237,12 @@ MonoBehaviour:
   name: 
   hp: 5
   hpRegenRate: 0
-  speed: 1
-  damage: 1
+  speed: 0.5
+  damage: 0
   defense: 5
   criticalDamage: 0
   criticalChance: 0
   dropExpOrbId: 300
---- !u!114 &-7031049320459269606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4125709159630829647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84b1e260f44b6468aa075bf584267bb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
-  target: {fileID: 0}
-  agent: {fileID: 0}
-  moveSpeed: 1
-  stoppingDistance: 0
-  isSlowDown: 0
-  slowCount: 0
-  pathUpdateInterval: 0.2
-  knockbackCooldown: 0.3
-  knockbackPower: 6
-  knockbackDuration: 0.2
 --- !u!195 &7115658254923622402
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -350,4 +328,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RamgedEnemyAttack
   bulletId: 600
   bulleSpawnPos: {fileID: 2751941530656367470}
-  attackCoolTime: 1
+  attackCoolTime: 3
+--- !u!114 &2890242813744974307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4125709159630829647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca6cdb93709a47369190b79fc0e9ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyKitingMove
+  target: {fileID: 0}
+  agent: {fileID: 0}
+  moveSpeed: 0.5
+  stoppingDistance: 3
+  isSlowDown: 0
+  slowCount: 0
+  pathUpdateInterval: 0.2
+  knockbackCooldown: 0.3
+  knockbackPower: 5
+  knockbackDuration: 0.15
+  kiteDistance: 3
+  directionCheckDistance: 2
+  directionCount: 16

@@ -11,9 +11,10 @@ public class EnemyCombat : MonoBehaviour
     public bool isBurn = false;
     private bool isInvincible = false;
 
-    PooledObject pooledObject;
+    protected PooledObject pooledObject;
     private SpriteRenderer[] spriteRenderers;
-    UnitInfo unitInfo;
+    protected UnitInfo unitInfo;
+    public EnemyMove enemyMove;
 
     public void Awake()
     {
@@ -21,11 +22,12 @@ public class EnemyCombat : MonoBehaviour
         pooledObject = GetComponent<PooledObject>();
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
         unitInfo = GetComponent<UnitInfo>();
+        enemyMove = GetComponent<EnemyMove>();
     }
 
     public void TakeDamage(int damage, Vector2 hitPoint)
     {
-        if (!isDead)
+        if (!isDead && gameObject.activeInHierarchy)
         {
             StartCoroutine(InvincibleCor());
 
@@ -73,7 +75,7 @@ public class EnemyCombat : MonoBehaviour
         }
     }
 
-    public void OnEnable()
+    protected virtual void OnEnable()
     {
         isDead = false;
         hp = maxHp;
@@ -85,7 +87,7 @@ public class EnemyCombat : MonoBehaviour
         }
     }
 
-    public void Die()
+    public virtual void Die()
     {
         if (!isDead)
         {
@@ -123,7 +125,7 @@ public class EnemyCombat : MonoBehaviour
 
     public void HitFlash()
     {
-        if (!isDead)
+        if (!isDead && gameObject.activeInHierarchy)
         {
             StartCoroutine(HitFlashCor());
         }
@@ -131,7 +133,7 @@ public class EnemyCombat : MonoBehaviour
 
     public IEnumerator HitFlashCor()
     {
-        if (!isDead)
+        if (!isDead && gameObject.activeInHierarchy)
         {
             foreach (SpriteRenderer spriteRenderer in spriteRenderers)
             {
@@ -158,7 +160,7 @@ public class EnemyCombat : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Skill") && !isInvincible)
+        if (other.CompareTag("Skill") && !isInvincible && !isDead && gameObject.activeInHierarchy)
         {
             Collider2D myCollider = GetComponent<Collider2D>();
 
