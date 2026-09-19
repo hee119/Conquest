@@ -17,14 +17,17 @@ public class DataManager : MonoBehaviour
     public string expDataText;
     public string upgradeDataText;
     public string bulletDataText;
+    public string bossPatternData;
 
     public StageInfo[] stageInfos;
-    public Dictionary<int, PlayerAndEnemyInfos> playerAndEnemyInfosDic = new();
+    public Dictionary<int, PlayerData> playerDatasDic = new();
+    public Dictionary<int, EnemyData> enemyDatasDic = new();
     public Dictionary<int, SkillData> skillDatasDic = new();
     public int[] levelDatas;
     public Dictionary<int, ExpData> expDatasDic = new();
     public Dictionary<int, UpgradeData> UpgradeDatasDic = new();
     public Dictionary <int, BulletData> bulletDatasDic = new();
+    public Dictionary <int, BossPatternData> bossPatternDatasDic = new();
     public Dictionary <int, Sprite> upgradeImagesDic = new();
     public Dictionary <int, Sprite> skillUpgradeIconDic = new();
     public Dictionary <int, Sprite> statUpgradeIconDic = new();
@@ -53,12 +56,14 @@ public class DataManager : MonoBehaviour
     public void AllDataDownload()
     {
         GetStageDatas();
-        GetPlayerAndEnemyDatas();
+        GetPlayerDatas();
+        GetEnemyDatas();
         GetSkillDatas();
         GetLevelDatas();
         GetExpDatas();
         GetUpgradeDatas();
         GetBulletData();
+        GetBossPatternData();
     }
     
 
@@ -103,97 +108,143 @@ public class DataManager : MonoBehaviour
         Debug.Log("<color=green>Stage Data Download Complete</color>");
     }
     
-    public void GetPlayerAndEnemyDatas()
+public void GetPlayerDatas()
+{
+    TextAsset textAsset =
+        Resources.Load<TextAsset>("TextData/PlayerData");
+
+    playerAndEnemyDataText = textAsset.text;
+
+    string[] lines = playerAndEnemyDataText.Split('\n');
+
+    for (int i = 1; i < lines.Length; i++)
     {
-        playerAndEnemyDataText = Resources.Load<TextAsset>("TextData/PlayerAndEnemyData").text;
+        if (string.IsNullOrWhiteSpace(lines[i]))
+            continue;
 
-        string[] lines = playerAndEnemyDataText.Split('\n');
-        
-        
-        for (int i = 1; i < lines.Length; i++)
-        {
-            string[] playerAndEnemyData = lines[i].Split(",");
-            PlayerAndEnemyInfos playerAndEnemyInfosTemp = new PlayerAndEnemyInfos();
-                playerAndEnemyInfosTemp.id = int.Parse(playerAndEnemyData[0]);
-                playerAndEnemyInfosTemp.name = playerAndEnemyData[1];
-                playerAndEnemyInfosTemp.hp = int.Parse(playerAndEnemyData[2]);
-                playerAndEnemyInfosTemp.hpRegenRate = int.Parse(playerAndEnemyData[3]);
-                playerAndEnemyInfosTemp.speed = float.Parse(playerAndEnemyData[4]);
-                playerAndEnemyInfosTemp.damage = int.Parse(playerAndEnemyData[5]);
-                playerAndEnemyInfosTemp.defense = int.Parse(playerAndEnemyData[6]);
-                playerAndEnemyInfosTemp.criticalDamage = float.Parse(playerAndEnemyData[7]);
-                playerAndEnemyInfosTemp.criticalChance = int.Parse(playerAndEnemyData[8]);
-                playerAndEnemyInfosTemp.dropExpOrbId = int.Parse(playerAndEnemyData[9]);
-            playerAndEnemyInfosDic.Add(playerAndEnemyInfosTemp.id, playerAndEnemyInfosTemp);
-        }
-        
-        
-        GameObject[] enemyPrefabs =
-            Resources.LoadAll<GameObject>("Prefabs/Enemy");
+        string[] data = lines[i].Split(",");
 
-        foreach (GameObject prefab in enemyPrefabs)
-        {
-            UnitInfo unitInfo = prefab.GetComponent<UnitInfo>();
-            EnemyCombat enemyCombat = prefab.GetComponent<EnemyCombat>();
-            EnemyMove enemyMove = prefab.GetComponent<EnemyMove>();
+        PlayerData playerData = new PlayerData();
 
-            if (unitInfo == null)
-                continue;
+        playerData.id = int.Parse(data[0]);
+        playerData.name = data[1];
+        playerData.hp = int.Parse(data[2]);
+        playerData.hpRegenRate = int.Parse(data[3]);
+        playerData.speed = float.Parse(data[4]);
+        playerData.damage = int.Parse(data[5]);
+        playerData.defense = int.Parse(data[6]);
+        playerData.criticalDamage = float.Parse(data[7]);
+        playerData.criticalChance = int.Parse(data[8]);
 
-            if (playerAndEnemyInfosDic.TryGetValue(unitInfo.id, out PlayerAndEnemyInfos data))
-            {
-                unitInfo.hp = data.hp;
-                unitInfo.hpRegenRate = data.hpRegenRate;
-                unitInfo.speed = data.speed;
-                unitInfo.damage = data.damage;
-                unitInfo.defense = data.defense;
-                unitInfo.criticalDamage = data.criticalDamage;
-                unitInfo.criticalChance = data.criticalChance;
-                unitInfo.dropExpOrbId = data.dropExpOrbId;
-                if(enemyCombat !=null) enemyCombat.maxHp = unitInfo.hp;
-                if(enemyMove !=null) enemyMove.moveSpeed = unitInfo.speed;
-                
-            }
-            else
-            {
-                Debug.LogWarning(
-                    $"ID {unitInfo.id}에 해당하는 데이터를 찾을 수 없습니다."
-                );
-            }
-        }
-        
-        GameObject[] agentPrefabs =
-            Resources.LoadAll<GameObject>("Prefabs/Agent");
-
-        foreach (GameObject prefab in agentPrefabs)
-        {
-            UnitInfo unitInfo = prefab.GetComponent<UnitInfo>();
-
-            if (unitInfo == null)
-                continue;
-
-            if (playerAndEnemyInfosDic.TryGetValue(unitInfo.id, out PlayerAndEnemyInfos data))
-            {
-                unitInfo.hp = data.hp;
-                unitInfo.hpRegenRate = data.hpRegenRate;
-                unitInfo.speed = data.speed;
-                unitInfo.damage = data.damage;
-                unitInfo.defense = data.defense;
-                unitInfo.criticalDamage = data.criticalDamage;
-                unitInfo.criticalChance = data.criticalChance;
-                unitInfo.dropExpOrbId = data.dropExpOrbId;
-            }
-            else
-            {
-                Debug.LogWarning(
-                    $"ID {unitInfo.id}에 해당하는 데이터를 찾을 수 없습니다."
-                );
-            }
-        }
-
-
-        Debug.Log("<color=green>GetPlayerAndEnemy Data Download Complete</color>");
+        playerDatasDic.Add(playerData.id, playerData);
     }
+
+    GameObject[] agentPrefabs =
+        Resources.LoadAll<GameObject>("Prefabs/Agent");
+
+    foreach (GameObject prefab in agentPrefabs)
+    {
+        UnitInfo unitInfo = prefab.GetComponent<UnitInfo>();
+
+        if (unitInfo == null)
+            continue;
+
+        if (playerDatasDic.TryGetValue(
+                unitInfo.id,
+                out PlayerData data))
+        {
+            unitInfo.hp = data.hp;
+            unitInfo.hpRegenRate = data.hpRegenRate;
+            unitInfo.speed = data.speed;
+            unitInfo.damage = data.damage;
+            unitInfo.defense = data.defense;
+            unitInfo.criticalDamage = data.criticalDamage;
+            unitInfo.criticalChance = data.criticalChance;
+        }
+        else
+        {
+            Debug.LogWarning(
+                $"ID {unitInfo.id}에 해당하는 플레이어 데이터를 찾을 수 없습니다."
+            );
+        }
+    }
+
+    Debug.Log("<color=green>Player Data Download Complete</color>");
+}
+public void GetEnemyDatas()
+{
+    TextAsset textAsset =
+        Resources.Load<TextAsset>("TextData/EnemyData");
+
+    playerAndEnemyDataText = textAsset.text;
+
+    string[] lines = playerAndEnemyDataText.Split('\n');
+
+    for (int i = 1; i < lines.Length; i++)
+    {
+        if (string.IsNullOrWhiteSpace(lines[i]))
+            continue;
+
+        string[] data = lines[i].Split(",");
+
+        EnemyData enemyData = new EnemyData();
+
+        enemyData.id = int.Parse(data[0]);
+        enemyData.name = data[1];
+        enemyData.hp = int.Parse(data[2]);
+        enemyData.hpRegenRate = int.Parse(data[3]);
+        enemyData.speed = float.Parse(data[4]);
+        enemyData.damage = int.Parse(data[5]);
+        enemyData.defense = int.Parse(data[6]);
+        enemyData.criticalDamage = float.Parse(data[7]);
+        enemyData.criticalChance = int.Parse(data[8]);
+        enemyData.dropExpOrbId = int.Parse(data[9]);
+
+        enemyDatasDic.Add(enemyData.id, enemyData);
+    }
+
+    GameObject[] enemyPrefabs =
+        Resources.LoadAll<GameObject>("Prefabs/Enemy");
+
+    foreach (GameObject prefab in enemyPrefabs)
+    {
+        UnitInfo unitInfo = prefab.GetComponent<UnitInfo>();
+        EnemyCombat enemyCombat = prefab.GetComponent<EnemyCombat>();
+        EnemyMove enemyMove = prefab.GetComponent<EnemyMove>();
+
+        if (unitInfo == null)
+            continue;
+
+        if (enemyDatasDic.TryGetValue(
+                unitInfo.id,
+                out EnemyData data))
+        {
+            unitInfo.hp = data.hp;
+            unitInfo.hpRegenRate = data.hpRegenRate;
+            unitInfo.speed = data.speed;
+            unitInfo.damage = data.damage;
+            unitInfo.defense = data.defense;
+            unitInfo.criticalDamage = data.criticalDamage;
+            unitInfo.criticalChance = data.criticalChance;
+            unitInfo.dropExpOrbId = data.dropExpOrbId;
+
+            if (enemyCombat != null)
+                enemyCombat.maxHp = unitInfo.hp;
+
+            if (enemyMove != null)
+                enemyMove.moveSpeed = unitInfo.speed;
+        }
+        else
+        {
+            Debug.LogWarning(
+                $"ID {unitInfo.id}에 해당하는 에너미 데이터를 찾을 수 없습니다."
+            );
+        }
+    }
+
+    Debug.Log("<color=green>Enemy Data Download Complete</color>");
+}
+
     
     public void GetSkillDatas()
     {
@@ -571,6 +622,38 @@ public class DataManager : MonoBehaviour
             }
         }
     }
+    
+    public void GetBossPatternData()
+    {
+        bossPatternData = Resources.Load<TextAsset>("TextData/PatternData").text;
+        
+        string[] lines = bossPatternData.Split('\n');
+
+        for (int i = 1; i < lines.Length; i++)
+        {
+            string[] bossPatternData = lines[i].Split(",");
+            
+            BossPatternData bossPatternDataTemp = new BossPatternData();
+            
+            bossPatternDataTemp.id = int.Parse(bossPatternData[0]);
+            bossPatternDataTemp.name = bossPatternData[1];
+            bossPatternDataTemp.damage = int.Parse(bossPatternData[2]);
+            
+            bossPatternDatasDic.Add(bossPatternDataTemp.id, bossPatternDataTemp);
+        }
+        
+        GameObject[] bossPatternPrefab = Resources.LoadAll<GameObject>("Prefabs/BossPattern");
+
+        foreach (GameObject prefab in bossPatternPrefab)
+        {
+            BossPatternInfo patternData = prefab.GetComponent<BossPatternInfo>();
+            if (patternData != null)
+            {
+                patternData.name = bossPatternDatasDic[patternData.id].name;
+                patternData.damage = bossPatternDatasDic[patternData.id].damage;
+            }
+        }
+    }
 
 
 /// <summary>
@@ -637,7 +720,8 @@ public class StageInfo
     public List<string> type = new List<string>();
 }
 
-public class PlayerAndEnemyInfos
+[System.Serializable]
+public class PlayerData
 {
     public int id;
     public string name;
@@ -648,6 +732,23 @@ public class PlayerAndEnemyInfos
     public int defense;
     public float criticalDamage;
     public int criticalChance;
+
+}
+
+[System.Serializable]
+public class EnemyData
+{
+    public int id;
+    public string name;
+    public int hp;
+    public int hpRegenRate;
+    public float speed;
+    public int damage;
+    public int defense;
+    public float criticalDamage;
+    public int criticalChance;
+    public int explosionDamage;
+    public int explosionRange;
     public int dropExpOrbId;
 }
 
@@ -719,4 +820,12 @@ public class BulletData{
     public int range;
     public int speed;
     public string name;
+}
+
+[System.Serializable]
+public class BossPatternData
+{
+    public int id;
+    public string name;
+    public int damage;
 }

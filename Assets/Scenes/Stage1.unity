@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 162551602}
   - component: {fileID: 162551601}
   m_Layer: 0
-  m_Name: GetPlayerAndEnemyData
+  m_Name: GetPlayerData
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -529,9 +529,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b877539a40c05481d9ad28d588fad1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GetData
-  dataLink: https://docs.google.com/spreadsheets/d/e/2PACX-1vRtpyp_AjAfKr1vNuo8x0sTesxeq8sT0swE5pwGWJq1AwNeItDCQNuCIpr700rMOteZ0lzfa_FrCVB4/pub?gid=970065474&single=true&output=csv
+  dataLink: https://docs.google.com/spreadsheets/d/e/2PACX-1vRtpyp_AjAfKr1vNuo8x0sTesxeq8sT0swE5pwGWJq1AwNeItDCQNuCIpr700rMOteZ0lzfa_FrCVB4/pub?gid=2105887205&single=true&output=csv
   folderName: TextData
-  saveFileName: PlayerAndEnemyData.csv
+  saveFileName: PlayerData.csv
 --- !u!4 &162551602
 Transform:
   m_ObjectHideFlags: 0
@@ -2327,6 +2327,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438443126}
   m_CullTransparentMesh: 1
+--- !u!1 &465541944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 465541945}
+  - component: {fileID: 465541946}
+  m_Layer: 0
+  m_Name: GetEnemyData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &465541945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465541944}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.26207998, y: -0.046629995, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1380464169}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &465541946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465541944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b877539a40c05481d9ad28d588fad1d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GetData
+  dataLink: https://docs.google.com/spreadsheets/d/e/2PACX-1vQUqTLweaZj1WD7xB8il2xn00zwgOncFYtt_GMLcYCE_MleoSmS0iZoPZjD2sk2ema9Co3VMjSdavlS/pub?gid=2006331397&single=true&output=csv
+  folderName: TextData
+  saveFileName: EnemyData.csv
 --- !u!1 &502803922 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 131014493827720774, guid: 850ed1f8a631d4353a4275807a77eb74,
@@ -2843,6 +2890,53 @@ MonoBehaviour:
   upgradeImageSet: {fileID: 0}
   id: 0
   image: {fileID: 646775035}
+--- !u!1 &647335546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 647335547}
+  - component: {fileID: 647335548}
+  m_Layer: 0
+  m_Name: GetBossPatternData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &647335547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647335546}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.26207998, y: -0.046629995, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1380464169}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &647335548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647335546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b877539a40c05481d9ad28d588fad1d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GetData
+  dataLink: https://docs.google.com/spreadsheets/d/e/2PACX-1vSbA0wLzhcR0wZPBfSgIkrXPcSJOJEzaEnRAjB2VnacsdEpPeW-F0gl-6L0IjgIvzOZrS1Q_DaoWfuT/pub?output=csv
+  folderName: TextData
+  saveFileName: PatternData.csv
 --- !u!1 &672507426
 GameObject:
   m_ObjectHideFlags: 0
@@ -6338,12 +6432,14 @@ Transform:
   m_Children:
   - {fileID: 1926097700}
   - {fileID: 162551602}
+  - {fileID: 465541945}
   - {fileID: 1947181068}
   - {fileID: 37180313}
   - {fileID: 672507428}
   - {fileID: 1605887430}
   - {fileID: 1888222843}
   - {fileID: 2124938766}
+  - {fileID: 647335547}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1396276848

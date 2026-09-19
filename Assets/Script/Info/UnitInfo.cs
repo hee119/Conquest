@@ -13,4 +13,6 @@ public class UnitInfo : MonoBehaviour
     public float criticalDamage;
     public int criticalChance;
     public int dropExpOrbId;
+    public int explosionDamage;
+    public int explosionRange;
 }

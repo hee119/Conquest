@@ -39,9 +39,9 @@ public class SplitEnemy : EnemyCombat
 
     protected void OnDisable()
     {
-        unitInfo.damage = DataManager.Instance.playerAndEnemyInfosDic[unitInfo.id].damage;
-        unitInfo.speed = DataManager.Instance.playerAndEnemyInfosDic[unitInfo.id].speed;
-        unitInfo.hp = DataManager.Instance.playerAndEnemyInfosDic[unitInfo.id].hp;
+        unitInfo.damage = DataManager.Instance.enemyDatasDic[unitInfo.id].damage;
+        unitInfo.speed = DataManager.Instance.enemyDatasDic[unitInfo.id].speed;
+        unitInfo.hp = DataManager.Instance.enemyDatasDic[unitInfo.id].hp;
         enemyMove.moveSpeed = unitInfo.speed;
         enemyMove.MoveSpeedRenewal();
     }
