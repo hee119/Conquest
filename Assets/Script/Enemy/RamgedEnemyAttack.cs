@@ -9,7 +9,7 @@ public class RamgedEnemyAttack : MonoBehaviour
     
     private Animator anim;
     private PlayerCombat playerCombat;
-    private UnitInfo unitInfo;
+    private EnemyInfo _enemyInfo;
     
     public float attackCoolTime = 1f;
 
@@ -21,7 +21,7 @@ public class RamgedEnemyAttack : MonoBehaviour
         anim = GetComponent<Animator>();
         playerCombat = GameObject.FindGameObjectWithTag("Player")
             .GetComponent<PlayerCombat>();
-        unitInfo = GetComponent<UnitInfo>();
+        _enemyInfo = GetComponent<EnemyInfo>();
     }
     
     private void OnEnable()

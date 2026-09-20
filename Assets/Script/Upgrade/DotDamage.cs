@@ -135,17 +135,17 @@ public class DotDamage : MonoBehaviour
 
         int level =
             DataManager.Instance
-                .UpgradeDatasDic[id]
+                .upgradeDatasDic[id]
                 .UpgradeLevel;
 
         int dotCount =
             DataManager.Instance
-                .UpgradeDatasDic[id]
+                .upgradeDatasDic[id]
                 .dotCount[level];
 
         int dotDamageValue =
             DataManager.Instance
-                .UpgradeDatasDic[id]
+                .upgradeDatasDic[id]
                 .dotDamage[level];
 
         int playedCount = 0;
@@ -223,17 +223,17 @@ public class DotDamage : MonoBehaviour
 
             level =
                 DataManager.Instance
-                    .UpgradeDatasDic[id]
+                    .upgradeDatasDic[id]
                     .UpgradeLevel;
 
             dotCount =
                 DataManager.Instance
-                    .UpgradeDatasDic[id]
+                    .upgradeDatasDic[id]
                     .dotCount[level];
 
             dotDamageValue =
                 DataManager.Instance
-                    .UpgradeDatasDic[id]
+                    .upgradeDatasDic[id]
                     .dotDamage[level];
         }
 
@@ -310,13 +310,63 @@ public class DotDamage : MonoBehaviour
         if (targetCollider == null)
             return;
 
+        // =====================================
+        // 현재 캐릭터 스탯
+        // =====================================
+
+        int characterId =
+            CharacterManager.Instance.currentCharacter;
+
+        PlayerData playerData =
+            DataManager.Instance.playerDatasDic[characterId];
+
+        int playerDamage =
+            playerData.damage;
+
+        int critChance =
+            playerData.criticalChance;
+
+        float critDamage =
+            playerData.criticalDamage;
+
+        // =====================================
+        // 공격력 적용
+        // =====================================
+
+        int finalDamage =
+            (int)(
+                damage *
+                (1f + playerDamage / 100f)
+            );
+
+        // =====================================
+        // 크리티컬 판정
+        // DOT 1틱마다 한 번 판정
+        // =====================================
+
+        bool isCritical =
+            Random.Range(0, 100) < critChance;
+
+        if (isCritical)
+        {
+            finalDamage =
+                (int)(
+                    finalDamage *
+                    (2f + critDamage / 100f)
+                );
+        }
+
+        // =====================================
+        // 피격 위치
+        // =====================================
+
         Vector2 hitPoint =
             targetCollider.ClosestPoint(
                 transform.position
             );
 
         enemyCombat.TakeDamage(
-            damage,
+            finalDamage,
             hitPoint
         );
     }
@@ -367,11 +417,11 @@ public class DotDamage : MonoBehaviour
     {
         int level =
             DataManager.Instance
-                .UpgradeDatasDic[id]
+                .upgradeDatasDic[id]
                 .UpgradeLevel;
 
         return DataManager.Instance
-            .UpgradeDatasDic[id]
+            .upgradeDatasDic[id]
             .damage[level];
     }
 }

@@ -38,7 +38,17 @@ public class UpgradeManager : MonoBehaviour
     private Orbit orbit;
 
     public List<int> maxLevelUpgrades = new List<int>();
-    
+
+    // 스킬(upgradeDatasDic) / 스탯(statUpgradeDatasDic) 데이터를 UI 표시용으로 통일한 구조체
+    private struct UpgradeView
+    {
+        public int id;
+        public string name;
+        public Sprite sprite;
+        public string type;
+        public int upgradeLevel;
+        public string description;
+    }
 
     public void Awake()
     {
@@ -58,7 +68,37 @@ public class UpgradeManager : MonoBehaviour
 
     public void UpgradesInit()
     {
-        foreach (var pair in DataManager.Instance.UpgradeDatasDic)
+        foreach (var pair in DataManager.Instance.upgradeDatasDic)
+        {
+            int upgrade = pair.Key;
+
+            string functionName =
+                pair.Value.function;
+
+            MethodInfo method = GetType().GetMethod(
+                functionName,
+                BindingFlags.Instance | BindingFlags.Public
+            );
+
+            if (method == null)
+            {
+                Debug.LogWarning(
+                    $"[UpgradeManager] 함수를 찾을 수 없음: {functionName} (ID: {upgrade})"
+                );
+                continue;
+            }
+
+            Action<int> action =
+                (Action<int>)Delegate.CreateDelegate(
+                    typeof(Action<int>),
+                    this,
+                    method
+                );
+
+            upgradeActions[upgrade] = action;
+        }
+
+        foreach (var pair in DataManager.Instance.statUpgradeDatasDic)
         {
             int upgrade = pair.Key;
 
@@ -89,131 +129,158 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
+    // =========================================================
+    // 스킬/스탯 공통 조회
+    // =========================================================
+
+    // id로 upgradeDatasDic(스킬) → statUpgradeDatasDic(스탯) 순서로 찾아서 UI용 데이터로 반환
+    private bool TryGetView(int id, out UpgradeView v)
+    {
+        var dm = DataManager.Instance;
+
+        if (dm.upgradeDatasDic.TryGetValue(id, out var u))
+        {
+            v = new UpgradeView
+            {
+                id = u.id,
+                name = u.name,
+                sprite = u.sprite,
+                type = u.type,
+                upgradeLevel = u.upgradeLevel,
+                description = u.description
+            };
+            return true;
+        }
+
+        if (dm.statUpgradeDatasDic.TryGetValue(id, out var s))
+        {
+            v = new UpgradeView
+            {
+                id = s.id,
+                name = s.name,
+                sprite = s.sprite,
+                type = s.type,
+                upgradeLevel = s.upgradeLevel,
+                description = s.description
+            };
+            return true;
+        }
+
+        v = default;
+        return false;
+    }
+
+    // 스킬/스탯 상관없이 현재 UpgradeLevel 반환
+    private int GetLevel(int id)
+    {
+        var dm = DataManager.Instance;
+
+        if (dm.upgradeDatasDic.TryGetValue(id, out var u))
+            return u.UpgradeLevel;
+
+        if (dm.statUpgradeDatasDic.TryGetValue(id, out var s))
+            return s.UpgradeLevel;
+
+        return 0;
+    }
+
+    // 카드 슬롯 하나에 업그레이드 정보를 채움
+    private void ApplyToSlot(int slot, int id)
+    {
+        if (!TryGetView(id, out var v))
+        {
+            Debug.LogWarning($"[UpgradeManager] 업그레이드 데이터를 찾을 수 없음 (ID: {id})");
+            return;
+        }
+
+        var info = upgradesInfo[slot];
+
+        if (!info.gameObject.activeInHierarchy)
+            info.gameObject.SetActive(true);
+
+        info.upgradeData.id = v.id;
+        info.name = v.name;
+        info.upgradeNameLo.key = v.name;
+        info.upgradeImage.sprite = v.sprite;
+        info.upgradeData.type = v.type;
+
+        // 실제 레벨 + 1을 UI에 표시
+        info.upgradeData.upgradeLevel = v.upgradeLevel;
+
+        info.upgradeDesLo.key = v.description;
+
+        info.upgradeDesLo.ForceUpdateText();
+        info.upgradeNameLo.ForceUpdateText();
+    }
+
+    // =========================================================
+    // 리뉴얼
+    // =========================================================
+
     public void UpgradeListRenewal()
     {
         upgrades = upgrades.OrderBy(x => Random.value).ToList();
 
+        // 스킬을 5개 이상 보유했으면
+        // 아직 보유하지 않은 스킬을 renewableUpgrades로 이동
         if (skillUpgrades.Count >= 5)
         {
-            renewableUpgrades.AddRange(
-                upgrades.Where(id =>
-                    DataManager.Instance.UpgradeDatasDic[id].type == "Skill"
-                    && !skillUpgrades.Contains(id)
-                )
-            );
-
-            upgrades.RemoveAll(id =>
-                DataManager.Instance.UpgradeDatasDic[id].type == "Skill"
-                && !skillUpgrades.Contains(id)
-            );
+            MoveUnownedToRenewable("Skill", skillUpgrades);
         }
-        
-        maxLevelUpgrades.AddRange(
-            skillUpgrades.Where(id =>
-                DataManager.Instance.UpgradeDatasDic[id].UpgradeLevel >= 4 &&
-                !upgrades.Contains(id) && !maxLevelUpgrades.Contains(id)
-            )
-        );
 
-        maxLevelUpgrades.AddRange(
-            statUpgrades.Where(id =>
-                DataManager.Instance.UpgradeDatasDic[id].UpgradeLevel >= 4 &&
-                !upgrades.Contains(id) && !maxLevelUpgrades.Contains(id)
-            )
-        );
+        // 최대 레벨 스킬/스탯 추가
+        foreach (int id in skillUpgrades.Concat(statUpgrades))
+        {
+            if (GetLevel(id) >= 4 &&
+                !upgrades.Contains(id) &&
+                !maxLevelUpgrades.Contains(id))
+            {
+                maxLevelUpgrades.Add(id);
+            }
+        }
 
+        // 스탯을 5개 이상 보유했으면
+        // 아직 보유하지 않은 스탯을 renewableUpgrades로 이동
         if (statUpgrades.Count >= 5)
         {
-            renewableUpgrades.AddRange(
-                upgrades.Where(id =>
-                    DataManager.Instance.UpgradeDatasDic[id].type == "Stat"
-                    && !skillUpgrades.Contains(id)
-                )
-            );
-
-            upgrades.RemoveAll(id =>
-                DataManager.Instance.UpgradeDatasDic[id].type == "Stat"
-                && !statUpgrades.Contains(id)
-            );
+            MoveUnownedToRenewable("Stat", statUpgrades);
         }
 
-        if (upgrades.Count >= 3)
+        // 업그레이드 UI 갱신
+        // 3개 이상이면 앞의 3개, 3개 미만이면 순환하며 채움 (i % Count)
+        if (upgrades.Count > 0)
         {
             for (int i = 0; i < 3; i++)
             {
-                if(!upgradesInfo[i].gameObject.activeInHierarchy)
-                    upgradesInfo[i].gameObject.SetActive(true);
-                upgradesInfo[i].upgradeData.id =
-                    DataManager.Instance.UpgradeDatasDic[upgrades[i]].id;
-
-                upgradesInfo[i].name =
-                    DataManager.Instance.UpgradeDatasDic[upgrades[i]].name;
-
-                upgradesInfo[i].upgradeNameLo.key =
-                    DataManager.Instance.UpgradeDatasDic[upgrades[i]].name;
-
-                if (DataManager.Instance.UpgradeDatasDic[upgrades[i]].sprite != null)
-                {
-                    upgradesInfo[i].upgradeImage.sprite =
-                        DataManager.Instance.UpgradeDatasDic[upgrades[i]].sprite;
-                }
-                else
-                {
-                    upgradesInfo[i].upgradeImage.sprite = null;
-                }
-
-                upgradesInfo[i].upgradeData.type =
-                    DataManager.Instance.UpgradeDatasDic[upgrades[i]].type;
-
-                // 실제 레벨 + 1을 UI에 표시
-                upgradesInfo[i].upgradeData.upgradeLevel =
-                    DataManager.Instance.UpgradeDatasDic[upgrades[i]].upgradeLevel;
-
-                upgradesInfo[i].upgradeDesLo.key =
-                    DataManager.Instance.UpgradeDatasDic[upgrades[i]].description;
-
-                upgradesInfo[i].upgradeDesLo.ForceUpdateText();
-                upgradesInfo[i].upgradeNameLo.ForceUpdateText();
+                ApplyToSlot(i, upgrades[i % upgrades.Count]);
             }
-        }
-        else if(upgrades.Count > 0 && upgrades.Count < 3)
-        {
-            for (int i = 0; i < 3; i++)
-            {
-                int upgradeId = upgrades[i % upgrades.Count];
-
-                upgradesInfo[i].upgradeData.id =
-                    DataManager.Instance.UpgradeDatasDic[upgradeId].id;
-
-                upgradesInfo[i].name =
-                    DataManager.Instance.UpgradeDatasDic[upgradeId].name;
-
-                upgradesInfo[i].upgradeNameLo.key =
-                    DataManager.Instance.UpgradeDatasDic[upgradeId].name;
-
-                upgradesInfo[i].upgradeImage.sprite =
-                    DataManager.Instance.UpgradeDatasDic[upgradeId].sprite;
-
-                upgradesInfo[i].upgradeData.type =
-                    DataManager.Instance.UpgradeDatasDic[upgradeId].type;
-
-                upgradesInfo[i].upgradeData.upgradeLevel =
-                    DataManager.Instance.UpgradeDatasDic[upgradeId].upgradeLevel;
-
-                upgradesInfo[i].upgradeDesLo.key =
-                    DataManager.Instance.UpgradeDatasDic[upgradeId].description;
-
-                upgradesInfo[i].upgradeDesLo.ForceUpdateText();
-                upgradesInfo[i].upgradeNameLo.ForceUpdateText();
-            }
-        }
-        else
-        {
-            
         }
 
         upgradeRenewal?.Invoke();
     }
+
+    private void MoveUnownedToRenewable(string type, List<int> owned)
+    {
+        var unowned = upgrades
+            .Where(id =>
+                TryGetView(id, out var v) &&
+                v.type == type &&
+                !owned.Contains(id)
+            )
+            .ToList();
+
+        foreach (int id in unowned)
+        {
+            if (!renewableUpgrades.Contains(id))
+                renewableUpgrades.Add(id);
+        }
+
+        upgrades.RemoveAll(id => unowned.Contains(id));
+    }
+
+    // =========================================================
+    // 업그레이드 선택
+    // =========================================================
 
     public void SkillUpgradesAdd(int id)
     {
@@ -231,9 +298,9 @@ public class UpgradeManager : MonoBehaviour
         }
 
         // 내부 레벨 증가
-        DataManager.Instance.UpgradeDatasDic[id].upgradeLevel++;
+        DataManager.Instance.upgradeDatasDic[id].upgradeLevel++;
 
-        if (DataManager.Instance.UpgradeDatasDic[id].UpgradeLevel >= 4)
+        if (DataManager.Instance.upgradeDatasDic[id].UpgradeLevel >= 4)
         {
             upgrades.Remove(id);
         }
@@ -258,9 +325,9 @@ public class UpgradeManager : MonoBehaviour
         }
 
         // 내부 레벨 증가
-        DataManager.Instance.UpgradeDatasDic[id].upgradeLevel++;
+        DataManager.Instance.statUpgradeDatasDic[id].upgradeLevel++;
 
-        if (DataManager.Instance.UpgradeDatasDic[id].UpgradeLevel >= 4)
+        if (DataManager.Instance.statUpgradeDatasDic[id].UpgradeLevel >= 4)
         {
             upgrades.Remove(id);
         }
@@ -268,6 +335,10 @@ public class UpgradeManager : MonoBehaviour
         upgradeActions[id](id);
         upgradeSelect?.Invoke();
     }
+
+    // =========================================================
+    // 스킬 코루틴
+    // =========================================================
 
     public void StartSkillCoroutine(int id, IEnumerator coroutine)
     {
@@ -279,7 +350,7 @@ public class UpgradeManager : MonoBehaviour
         IEnumerator newCoroutine = coroutine;
 
         upgradeCor[id] = newCoroutine;
-        
+
         StartCoroutine(newCoroutine);
     }
 
@@ -303,7 +374,7 @@ public class UpgradeManager : MonoBehaviour
     {
         if (upgradeCor.ContainsKey(id))
             return;
-        
+
         StartSkillCoroutine(id, BurnCor(id));
     }
 
@@ -343,7 +414,7 @@ public class UpgradeManager : MonoBehaviour
     {
         if (upgradeCor.ContainsKey(id))
             return;
-        
+
         StartSkillCoroutine(id, MoldCor(id));
     }
 
@@ -376,18 +447,18 @@ public class UpgradeManager : MonoBehaviour
     {
         Mold(id);
     }
-    
+
     private IEnumerator LightningCor(int id)
     {
         while (true)
         {
             int level =
                 DataManager.Instance
-                    .UpgradeDatasDic[id]
+                    .upgradeDatasDic[id]
                     .UpgradeLevel;
 
             for (int i = 0;
-                 i < DataManager.Instance.UpgradeDatasDic[id].count[level];
+                 i < DataManager.Instance.upgradeDatasDic[id].count[level];
                  i++)
             {
                 PoolManager.Instance.Spawn(
@@ -398,7 +469,7 @@ public class UpgradeManager : MonoBehaviour
 
             yield return new WaitForSeconds(
                 DataManager.Instance
-                    .UpgradeDatasDic[id]
+                    .upgradeDatasDic[id]
                     .coolTime[level]
             );
         }
@@ -408,14 +479,14 @@ public class UpgradeManager : MonoBehaviour
     {
         int level =
             DataManager.Instance
-                .UpgradeDatasDic[id]
+                .upgradeDatasDic[id]
                 .UpgradeLevel;
 
         GameManager.Instance.burnPrefabId = id;
 
         GameManager.Instance.burnChance =
             DataManager.Instance
-                .UpgradeDatasDic[id]
+                .upgradeDatasDic[id]
                 .debuffChance[level];
 
         yield return null;
@@ -427,7 +498,7 @@ public class UpgradeManager : MonoBehaviour
         {
             int level =
                 DataManager.Instance
-                    .UpgradeDatasDic[id]
+                    .upgradeDatasDic[id]
                     .UpgradeLevel;
 
             PoolManager.Instance.Spawn(
@@ -437,13 +508,13 @@ public class UpgradeManager : MonoBehaviour
 
             Debug.Log(
                 DataManager.Instance
-                    .UpgradeDatasDic[id]
+                    .upgradeDatasDic[id]
                     .coolTime[level]
             );
 
             yield return new WaitForSeconds(
                 DataManager.Instance
-                    .UpgradeDatasDic[id]
+                    .upgradeDatasDic[id]
                     .coolTime[level]
             );
         }
@@ -455,12 +526,12 @@ public class UpgradeManager : MonoBehaviour
         {
             int level =
                 DataManager.Instance
-                    .UpgradeDatasDic[id]
+                    .upgradeDatasDic[id]
                     .UpgradeLevel;
 
             int count =
                 DataManager.Instance
-                    .UpgradeDatasDic[id]
+                    .upgradeDatasDic[id]
                     .count[level];
 
             for (int i = 0; i < count; i++)
@@ -477,7 +548,7 @@ public class UpgradeManager : MonoBehaviour
 
             yield return new WaitForSeconds(
                 DataManager.Instance
-                    .UpgradeDatasDic[id]
+                    .upgradeDatasDic[id]
                     .coolTime[level]
             );
         }
@@ -489,17 +560,17 @@ public class UpgradeManager : MonoBehaviour
         {
             int level =
                 DataManager.Instance
-                    .UpgradeDatasDic[id]
+                    .upgradeDatasDic[id]
                     .UpgradeLevel;
 
             int count =
                 DataManager.Instance
-                    .UpgradeDatasDic[id]
+                    .upgradeDatasDic[id]
                     .count[level];
 
             float detectionRange =
                 DataManager.Instance
-                    .UpgradeDatasDic[id]
+                    .upgradeDatasDic[id]
                     .detectionRange[level];
 
             // 적이 나타날 때까지 대기
@@ -521,13 +592,17 @@ public class UpgradeManager : MonoBehaviour
             if (target == null)
                 continue;
 
-            // 발사 순간의 위치를 저장
+            // 발사 순간의 위치 저장
             Vector3 targetPosition =
                 target.position;
 
             // 같은 위치를 향해 count만큼 발사
             for (int i = 0; i < count; i++)
             {
+                // 발사 전에 타겟이 사라졌는지 확인
+                if (target == null)
+                    break;
+
                 GameObject missile =
                     PoolManager.Instance.Spawn(
                         id,
@@ -543,13 +618,21 @@ public class UpgradeManager : MonoBehaviour
                 if (missle == null)
                     continue;
 
-                missle.Attack(id, targetPosition, target.gameObject, false, player.transform.position, true);
+                missle.Attack(
+                    id,
+                    targetPosition,
+                    target.gameObject,
+                    false,
+                    player.transform.position,
+                    true
+                );
+
                 yield return new WaitForSeconds(0.1f);
             }
 
             float coolTime =
                 DataManager.Instance
-                    .UpgradeDatasDic[id]
+                    .upgradeDatasDic[id]
                     .coolTime[level];
 
             yield return new WaitForSeconds(coolTime);
@@ -560,16 +643,128 @@ public class UpgradeManager : MonoBehaviour
     {
         int level =
             DataManager.Instance
-                .UpgradeDatasDic[id]
+                .upgradeDatasDic[id]
                 .UpgradeLevel;
 
         GameManager.Instance.moldPrefabId = id;
 
         GameManager.Instance.moldChance =
             DataManager.Instance
-                .UpgradeDatasDic[id]
+                .upgradeDatasDic[id]
                 .debuffChance[level];
 
         yield return null;
+    }
+
+    // =========================================================
+    // 스탯 업그레이드
+    // =========================================================
+
+    public void CriticalInstinct(int id)
+    {
+        float percent =
+            DataManager.Instance.statUpgradeDatasDic[id]
+                .critChance[DataManager.Instance.statUpgradeDatasDic[id].UpgradeLevel];
+
+        foreach (PlayerData player in DataManager.Instance.playerDatasDic.Values)
+        {
+            player.criticalChance =
+                (int)(player.criticalChance * (1f + percent / 100f));
+        }
+    }
+
+    public void CriticalForce(int id)
+    {
+        float percent =
+            DataManager.Instance.statUpgradeDatasDic[id]
+                .critDamage[DataManager.Instance.statUpgradeDatasDic[id].UpgradeLevel];
+
+        foreach (PlayerData player in DataManager.Instance.playerDatasDic.Values)
+        {
+            player.criticalDamage *= 1f + percent / 100f;
+        }
+    }
+
+    public void PowerBoost(int id)
+    {
+        float percent =
+            DataManager.Instance.statUpgradeDatasDic[id]
+                .attackPower[DataManager.Instance.statUpgradeDatasDic[id].UpgradeLevel];
+
+        foreach (PlayerData player in DataManager.Instance.playerDatasDic.Values)
+        {
+            player.damage =
+                (int)(player.damage * (1f + percent / 100f));
+        }
+    }
+
+    public void Vitality(int id)
+    {
+        float percent =
+            DataManager.Instance.statUpgradeDatasDic[id]
+                .maxHp[DataManager.Instance.statUpgradeDatasDic[id].UpgradeLevel];
+
+        foreach (PlayerData player in DataManager.Instance.playerDatasDic.Values)
+        {
+            int oldHp = player.hp;
+
+            player.hp =
+                (int)(player.hp * (1f + percent / 100f));
+
+            int increasedHp = player.hp - oldHp;
+
+            PlayerCombat playerCombat =
+                GameObject.FindGameObjectWithTag("Player")
+                    .GetComponent<PlayerCombat>();
+
+            playerCombat.maxHp += increasedHp;
+            playerCombat.hp += increasedHp;
+            playerCombat.UpdateHpUI();
+        }
+    }
+
+    public void QuickCast(int id)
+    {
+        float percent =
+            DataManager.Instance.statUpgradeDatasDic[id]
+                .skillCooldown[DataManager.Instance.statUpgradeDatasDic[id].UpgradeLevel];
+
+        // Skill 쿨타임만 감소
+        foreach (SkillData skill in DataManager.Instance.skillDatasDic.Values)
+        {
+            skill.skillCoolTime *= 1f - percent / 100f;
+        }
+    }
+
+    public void RapidCycle(int id)
+    {
+        float percent =
+            DataManager.Instance.statUpgradeDatasDic[id]
+                .passiveCooldown[DataManager.Instance.statUpgradeDatasDic[id].UpgradeLevel];
+
+        // Passive Upgrade 쿨타임만 감소
+        foreach (UpgradeData upgrade in DataManager.Instance.upgradeDatasDic.Values)
+        {
+            if (upgrade.type != "Passive")
+                continue;
+
+            for (int i = 0; i < upgrade.coolTime.Length; i++)
+            {
+                upgrade.coolTime[i] *= 1f - percent / 100f;
+            }
+        }
+    }
+
+    public void IronWall(int id)
+    {
+        float percent =
+            DataManager.Instance.statUpgradeDatasDic[id]
+                .defense[DataManager.Instance.statUpgradeDatasDic[id].UpgradeLevel];
+
+        foreach (PlayerData player in DataManager.Instance.playerDatasDic.Values)
+        {
+            player.defense =
+                (int)(player.defense * (1f + percent / 100f));
+        }
     }
 }

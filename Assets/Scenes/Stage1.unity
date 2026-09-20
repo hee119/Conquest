@@ -155,6 +155,8 @@ MonoBehaviour:
   expDataText: 
   upgradeDataText: 
   bulletDataText: 
+  bossPatternData: 
+  statUpgradeDataText: 
   levelDatas: 
   upgradeImages: []
   skillUpgradeIcons: []
@@ -6022,7 +6024,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 106
+          m_IntArgument: 150
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6440,6 +6442,7 @@ Transform:
   - {fileID: 1888222843}
   - {fileID: 2124938766}
   - {fileID: 647335547}
+  - {fileID: 1636368474}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1396276848
@@ -7274,6 +7277,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1380464169}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1636368473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1636368474}
+  - component: {fileID: 1636368475}
+  m_Layer: 0
+  m_Name: GetStatUpgradeData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1636368474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636368473}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.26207998, y: -0.046629995, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1380464169}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1636368475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636368473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b877539a40c05481d9ad28d588fad1d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GetData
+  dataLink: https://docs.google.com/spreadsheets/d/e/2PACX-1vTuN4zB400CWq1S3VZt-ztOEUMh4TE7OVnqsnCOApOS6e5JLW1BqXnjfYAo0ktoLDULkRZNMLHDgHpc/pub?gid=0&single=true&output=csv
+  folderName: TextData
+  saveFileName: StatUpgradeData.csv
 --- !u!1 &1643930255
 GameObject:
   m_ObjectHideFlags: 0
@@ -7601,6 +7651,51 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1098628991}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1798256409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1798256411}
+  - component: {fileID: 1798256410}
+  m_Layer: 0
+  m_Name: CharacterManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1798256410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798256409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1637bff0c179a549a34d7817ecda494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterManager
+  currentCharacter: 1
+--- !u!4 &1798256411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798256409}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.28489, y: -5.53473, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1816348908
 GameObject:
   m_ObjectHideFlags: 0
@@ -9625,3 +9720,4 @@ SceneRoots:
   - {fileID: 1380464169}
   - {fileID: 386105158}
   - {fileID: 1577560651}
+  - {fileID: 1798256411}

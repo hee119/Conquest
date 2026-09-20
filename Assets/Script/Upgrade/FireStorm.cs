@@ -44,7 +44,8 @@ public class FireStorm : HomingProjectile
 
         collider.isTrigger = true;
 
-        player = GameObject.FindGameObjectWithTag("Player");
+        player =
+            GameObject.FindGameObjectWithTag("Player");
     }
 
     protected override void OnTriggerEnter2D(Collider2D other)
@@ -66,8 +67,8 @@ public class FireStorm : HomingProjectile
         if (other.gameObject.layer ==
             LayerMask.NameToLayer("Enemy"))
         {
-            // 내가 맞은 적을 저장
-            removeFromTarget = other.gameObject;
+            removeFromTarget =
+                other.gameObject;
 
             EnemyCombat enemyCombat =
                 other.GetComponent<EnemyCombat>();
@@ -75,22 +76,70 @@ public class FireStorm : HomingProjectile
             Collider2D targetCollider =
                 other.GetComponent<Collider2D>();
 
+            if (enemyCombat == null ||
+                targetCollider == null)
+            {
+                return;
+            }
+
             Vector2 hitPoint =
                 targetCollider.ClosestPoint(
                     transform.position
                 );
 
             // =====================================
-            // 데미지
+            // 현재 캐릭터 스탯
             // =====================================
 
-            if (enemyCombat != null)
-            {
-                enemyCombat.TakeDamage(
-                    GetDamage(),
-                    hitPoint
+            int characterId =
+                CharacterManager.Instance.currentCharacter;
+
+            PlayerData playerData =
+                DataManager.Instance.playerDatasDic[characterId];
+
+            int playerDamage =
+                playerData.damage;
+
+            int critChance =
+                playerData.criticalChance;
+
+            float critDamage =
+                playerData.criticalDamage;
+
+            // =====================================
+            // 데미지 계산
+            // =====================================
+
+            int damage =
+                GetDamage();
+
+            // 공격력 적용
+            damage =
+                (int)(
+                    damage *
+                    (1f + playerDamage / 100f)
                 );
+
+            // =====================================
+            // 크리티컬 판정
+            // =====================================
+
+            bool isCritical =
+                Random.Range(0, 100) < critChance;
+
+            if (isCritical)
+            {
+                damage =
+                    (int)(
+                        damage *
+                        (2f + critDamage / 100f)
+                    );
             }
+
+            enemyCombat.TakeDamage(
+                damage,
+                hitPoint
+            );
 
             // =====================================
             // 체인 생성
@@ -100,10 +149,12 @@ public class FireStorm : HomingProjectile
             {
                 int chainCount =
                     DataManager.Instance
-                    .UpgradeDatasDic[id]
-                    .chainCount;
+                        .upgradeDatasDic[id]
+                        .chainCount;
 
-                for (int i = 0; i < chainCount; i++)
+                for (int i = 0;
+                     i < chainCount;
+                     i++)
                 {
                     float angle =
                         360f / chainCount * i;
@@ -127,8 +178,6 @@ public class FireStorm : HomingProjectile
                     FireStorm fireStorm =
                         fireStormObj.GetComponent<FireStorm>();
 
-                    // 체인으로 생성된 FireStorm는
-                    // 원래 맞았던 적을 무시
                     fireStorm.removeFromTarget =
                         removeFromTarget;
 
@@ -162,7 +211,8 @@ public class FireStorm : HomingProjectile
 
     protected override void OnDisable()
     {
-        rb.linearVelocity = Vector2.zero;
+        rb.linearVelocity =
+            Vector2.zero;
 
         target = null;
 

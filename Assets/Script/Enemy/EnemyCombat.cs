@@ -13,7 +13,7 @@ public class EnemyCombat : MonoBehaviour
 
     protected PooledObject pooledObject;
     private SpriteRenderer[] spriteRenderers;
-    protected UnitInfo unitInfo;
+    public EnemyInfo enemyInfo;
     public EnemyMove enemyMove;
 
     public void Awake()
@@ -21,7 +21,7 @@ public class EnemyCombat : MonoBehaviour
         anim = GetComponent<Animator>();
         pooledObject = GetComponent<PooledObject>();
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
-        unitInfo = GetComponent<UnitInfo>();
+        enemyInfo = GetComponent<EnemyInfo>();
         enemyMove = GetComponent<EnemyMove>();
     }
 
@@ -94,7 +94,7 @@ public class EnemyCombat : MonoBehaviour
             isDead = true;
 
             PoolManager.Instance.Spawn(
-                unitInfo.dropExpOrbId,
+                enemyInfo.dropExpOrbId,
                 transform.position
             );
 

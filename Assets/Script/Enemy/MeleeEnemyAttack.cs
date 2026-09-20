@@ -5,7 +5,7 @@ public class MeleeEnemyAttack : MonoBehaviour
 {
     private Animator anim;
     private PlayerCombat playerCombat;
-    private UnitInfo unitInfo;
+    private EnemyInfo _enemyInfo;
 
     public float attackCoolTime = 1f;
 
@@ -17,7 +17,7 @@ public class MeleeEnemyAttack : MonoBehaviour
         anim = GetComponent<Animator>();
         playerCombat = GameObject.FindGameObjectWithTag("Player")
             .GetComponent<PlayerCombat>();
-        unitInfo = GetComponent<UnitInfo>();
+        _enemyInfo = GetComponent<EnemyInfo>();
     }
 
     private void OnEnable()
@@ -28,7 +28,7 @@ public class MeleeEnemyAttack : MonoBehaviour
 
     public void Attack()
     {
-        playerCombat.TakeDamage(unitInfo.damage);
+        playerCombat.TakeDamage(_enemyInfo.damage);
     }
 
     private IEnumerator AttackCoolTimeCor()

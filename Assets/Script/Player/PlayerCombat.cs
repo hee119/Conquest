@@ -9,7 +9,7 @@ public class PlayerCombat : MonoBehaviour
     public int hp;
     public bool isDead = false;
     PooledObject pooledObject;
-    UnitInfo unitInfo;
+    PlayerInfo _playerInfo;
     private SpriteRenderer[] spriteRenderers;
     public event Action hpUpdate;
 
@@ -18,20 +18,31 @@ public class PlayerCombat : MonoBehaviour
     {
         pooledObject = GetComponent<PooledObject>();
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
-        unitInfo = GetComponent<UnitInfo>();
-        maxHp = unitInfo.hp;
+        _playerInfo = GetComponent<PlayerInfo>();
+        maxHp = _playerInfo.hp;
     }
 
     public void TakeDamage(int damage)
     {
-        hp -= damage;
+        int defense =
+            DataManager.Instance.playerDatasDic[CharacterManager.Instance.currentCharacter].defense;
+
+        int finalDamage =
+            (int)(damage * (1f - defense / 100f));
+
+        finalDamage = Mathf.Max(1, finalDamage);
+
+        hp -= finalDamage;
+
         hpUpdate?.Invoke();
         HitFlash();
+
         if (hp <= 0)
         {
             Die();
         }
-        Debug.Log(hp);
+
+        UnityEngine.Debug.Log(hp);
     }
 
     public void OnEnable()
@@ -74,5 +85,10 @@ public class PlayerCombat : MonoBehaviour
                 spriteRenderer.color = Color.white;
             }
             
+    }
+    
+    public void UpdateHpUI()
+    {
+        hpUpdate?.Invoke();
     }
 }

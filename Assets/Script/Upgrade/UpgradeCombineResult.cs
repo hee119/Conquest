@@ -26,7 +26,7 @@ public class UpgradeCombineResult : MonoBehaviour
         int id2 = upgradeImageSet2.id;
 
         UpgradeData data =
-            DataManager.Instance.UpgradeDatasDic[id1];
+            DataManager.Instance.upgradeDatasDic[id1];
 
         for (int i = 0; i < data.combinationList.Length; i++)
         {
@@ -35,7 +35,7 @@ public class UpgradeCombineResult : MonoBehaviour
                 result = data.result[i];
 
                 upgradeUiInfo.upgradeImage.sprite =
-                    DataManager.Instance.UpgradeDatasDic[result].sprite;
+                    DataManager.Instance.upgradeDatasDic[result].sprite;
 
                 selectConfirm.removeUpgradeId1 = id1;
                 selectConfirm.removeUpgradeId2 = id2;

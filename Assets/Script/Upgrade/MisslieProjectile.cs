@@ -63,7 +63,7 @@ public class MissileProjectile : HomingProjectile
         );
 
         float speed =
-            DataManager.Instance.UpgradeDatasDic[id].speed;
+            DataManager.Instance.upgradeDatasDic[id].speed;
 
         speed = Mathf.Max(speed, 0.01f);
 

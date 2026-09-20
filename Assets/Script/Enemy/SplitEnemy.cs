@@ -16,12 +16,12 @@ public class SplitEnemy : EnemyCombat
         {
             for (int i = 0; i < splitSpawnCount; i++)
             { 
-                GameObject obj = PoolManager.Instance.Spawn(unitInfo.id, transform.position);
+                GameObject obj = PoolManager.Instance.Spawn(enemyInfo.id, transform.position);
                 SplitEnemy splitEnemy = obj.GetComponent<SplitEnemy>();
-                splitEnemy.unitInfo.damage = (int)(splitEnemy.unitInfo.damage / 2f);
-                splitEnemy.unitInfo.hp = (int)(splitEnemy.unitInfo.hp / 1.4f);
-                splitEnemy.unitInfo.speed = (int)(splitEnemy.unitInfo.speed * 2f);
-                splitEnemy.enemyMove.moveSpeed = splitEnemy.unitInfo.speed;
+                splitEnemy.enemyInfo.damage = (int)(splitEnemy.enemyInfo.damage / 2f);
+                splitEnemy.enemyInfo.hp = (int)(splitEnemy.enemyInfo.hp / 1.4f);
+                splitEnemy.enemyInfo.speed = (int)(splitEnemy.enemyInfo.speed * 2f);
+                splitEnemy.enemyMove.moveSpeed = splitEnemy.enemyInfo.speed;
                 splitEnemy.enemyMove.MoveSpeedRenewal();
                 obj.transform.localScale = transform.localScale;
                 obj.transform.localScale = new Vector3(obj.transform.localScale.x / 1.3f, obj.transform.localScale.y / 1.3f, 1);
@@ -39,10 +39,10 @@ public class SplitEnemy : EnemyCombat
 
     protected void OnDisable()
     {
-        unitInfo.damage = DataManager.Instance.enemyDatasDic[unitInfo.id].damage;
-        unitInfo.speed = DataManager.Instance.enemyDatasDic[unitInfo.id].speed;
-        unitInfo.hp = DataManager.Instance.enemyDatasDic[unitInfo.id].hp;
-        enemyMove.moveSpeed = unitInfo.speed;
+        enemyInfo.damage = DataManager.Instance.enemyDatasDic[enemyInfo.id].damage;
+        enemyInfo.speed = DataManager.Instance.enemyDatasDic[enemyInfo.id].speed;
+        enemyInfo.hp = (int)DataManager.Instance.enemyDatasDic[enemyInfo.id].hp;
+        enemyMove.moveSpeed = enemyInfo.speed;
         enemyMove.MoveSpeedRenewal();
     }
 

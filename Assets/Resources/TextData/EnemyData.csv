@@ -8,5 +8,5 @@ Id,Name,Hp,HpRegenLate,Speed,Damage,Defense,Drop Exp Orb Id,ExplosionDamage,Expl
 106,Slime,20,0,0.5,1,4,300,0,0
 107,BombSlime,30,0,0.5,1,4,300,10,4
 108,Octopus,5,0,0.5,0,5,300,0,0
-150,Octopus king,2000,0,0.3,10,5,302,0,0
+150,Octopusking,2000,0,0.3,10,5,302,0,0
 151,SlimeKing,5000,0,0.3,10,5,302,0,0

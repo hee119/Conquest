@@ -35,9 +35,9 @@ public abstract class Flooring : MonoBehaviour
             if (enemy == null)
                 continue;
 
-            UnitInfo unitInfo = enemy.GetComponent<UnitInfo>();
+            EnemyInfo enemyInfo = enemy.GetComponent<EnemyInfo>();
 
-            if (unitInfo == null)
+            if (enemyInfo == null)
                 continue;
 
             enemy.slowCount -= 1;
@@ -46,7 +46,7 @@ public abstract class Flooring : MonoBehaviour
             {
                 enemy.isSlowDown = false;
                 enemy.moveSpeed =
-                    DataManager.Instance.enemyDatasDic[unitInfo.id].speed;
+                    DataManager.Instance.enemyDatasDic[enemyInfo.id].speed;
 
                 enemy.MoveSpeedRenewal();
             }
@@ -57,11 +57,11 @@ public abstract class Flooring : MonoBehaviour
     protected void SlowDown(GameObject target)
     {
         EnemyMove enemyMove = target.GetComponent<EnemyMove>();
-        UnitInfo unitInfo = target.GetComponent<UnitInfo>();
+        PlayerInfo playerInfo = target.GetComponent<PlayerInfo>();
         enemyMove.slowCount += 1;
         enemyMove.isSlowDown = true;
         enemies.Add(enemyMove);
-        enemyMove.moveSpeed = DataManager.Instance.enemyDatasDic[unitInfo.id].speed * DataManager.Instance.UpgradeDatasDic[id].slow[DataManager.Instance.UpgradeDatasDic[id].UpgradeLevel];
+        enemyMove.moveSpeed = DataManager.Instance.enemyDatasDic[playerInfo.id].speed * DataManager.Instance.upgradeDatasDic[id].slow[DataManager.Instance.upgradeDatasDic[id].UpgradeLevel];
         enemyMove.MoveSpeedRenewal();
     }
 
@@ -69,12 +69,12 @@ public abstract class Flooring : MonoBehaviour
     {
         enemy.slowCount -= 1;
         enemies.Remove(enemy);
-        UnitInfo unitInfo = enemy.GetComponent<UnitInfo>();
+        PlayerInfo playerInfo = enemy.GetComponent<PlayerInfo>();
 
         if (enemy.slowCount <= 0)
         {
             enemy.isSlowDown = false;
-            enemy.moveSpeed = DataManager.Instance.enemyDatasDic[unitInfo.id].speed;
+            enemy.moveSpeed = DataManager.Instance.enemyDatasDic[playerInfo.id].speed;
             enemy.MoveSpeedRenewal();
         }
     }
@@ -100,7 +100,7 @@ public abstract class Flooring : MonoBehaviour
         Vector3 startScale = transform.localScale;
         Vector3 endScale = new Vector3(0,0,0);
         float timer = 0;
-        float duration = DataManager.Instance.UpgradeDatasDic[id].lifetime;
+        float duration = DataManager.Instance.upgradeDatasDic[id].lifetime;
         float alpha = 1;
         Color color = spriteRenderer.color;
         

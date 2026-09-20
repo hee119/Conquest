@@ -111,10 +111,10 @@ public class DetectUpgrade : MonoBehaviour
     {
         int level =
             DataManager.Instance
-                .UpgradeDatasDic[id]
+                .upgradeDatasDic[id]
                 .UpgradeLevel;
 
-        var upgradeData = DataManager.Instance.UpgradeDatasDic[id];
+        var upgradeData = DataManager.Instance.upgradeDatasDic[id];
 
         return new UpgradeData
         {

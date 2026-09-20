@@ -1,0 +1,8 @@
+Id,NameId,Type,Function,CritChance,CritDamage,AttackPower,MaxHp,SkillCooldown,PassiveCooldown,Defense,DesId,CombinationList,Result,Tier,,,,,,,,,Tier
+700,Critical Instinct,Stat,CriticalInstinct,"10, 15, 20, 25, 30",,,,,,,upgread_des_CriticalInstinct,,,0,,,,,,,,,
+701,Critical Force,Stat,CriticalForce,,"20, 25, 30. 35. 40",,,,,,upgread_des_CriticalForce,,,0,,,,,,,,,
+702,Power Boost,Stat,PowerBoost,,,"10, 15, 20, 25, 30",,,,,upgread_des_PowerBoost,,,0,,,,,,,,,
+703,Vitality,Stat,Vitality,,,,"10, 15, 20, 25, 30",,,,upgread_des_Vitality,,,0,,,,,,,,,
+704,Quick Cast,Stat,QuickCast,,,,,"5, 10, 15, 20, 25",,,upgread_des_QuickCast,,,0,,,,,,,,,
+705,Rapid Cycle,Stat,RapidCycle,,,,,,"10, 15, 20, 25, 30",,upgread_des_RapidCycle,,,0,,,,,,,,,
+706,Iron Wall,Stat,IronWall,,,,,,,"10, 15, 20, 25, 30",upgread_des_IronWall,,,0,,,,,,,,,

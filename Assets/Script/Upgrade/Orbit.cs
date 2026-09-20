@@ -145,9 +145,9 @@ public class Orbit : MonoBehaviour
         float orbitT = 0f;
 
         float orbitTime =
-            DataManager.Instance.UpgradeDatasDic[id]
+            DataManager.Instance.upgradeDatasDic[id]
             .orbitTime[
-                DataManager.Instance.UpgradeDatasDic[id]
+                DataManager.Instance.upgradeDatasDic[id]
                 .UpgradeLevel
             ];
 

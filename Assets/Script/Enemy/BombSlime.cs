@@ -15,11 +15,11 @@ public class BoomSlime : SplitEnemy
 
    public void Boom()
    {
-      var enemyInfo =
-         DataManager.Instance.enemyDatasDic[unitInfo.id];
+      var _enemyInfo =
+         DataManager.Instance.enemyDatasDic[enemyInfo.id];
 
-      int explosionRange = enemyInfo.explosionRange;
-      int explosionDamage = enemyInfo.explosionDamage;
+      int explosionRange = _enemyInfo.explosionRange;
+      int explosionDamage = _enemyInfo.explosionDamage;
 
       Collider2D[] enemies = Physics2D.OverlapCircleAll(
          transform.position,

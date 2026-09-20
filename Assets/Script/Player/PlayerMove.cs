@@ -4,7 +4,19 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerMove : MonoBehaviour
 {
-    private Vector2 moveDir;
+    public Vector2 MoveDir
+    {
+        get
+        {
+            return moveDir;
+        }
+        private set
+        {
+            moveDir = value;
+        }
+    }
+
+    public Vector2 moveDir;
     private Rigidbody2D playerRb;
     private AnimationController animationController;
     private Coroutine idleCor;
@@ -20,16 +32,16 @@ public class PlayerMove : MonoBehaviour
     
     public void Move(InputAction.CallbackContext context)
     {
-        moveDir = context.ReadValue<Vector2>();
+        MoveDir = context.ReadValue<Vector2>();
 
         if (canMove && context.performed)
         {
-            playerRb.linearVelocity = moveDir * speed;
+            playerRb.linearVelocity = MoveDir * speed;
             animationController.Move(true);
             
-            if (moveDir != Vector2.zero)
+            if (MoveDir != Vector2.zero)
                 transform.localScale = new Vector3(
-                    Mathf.Sign(moveDir.x) * Mathf.Abs(transform.localScale.x),
+                    Mathf.Sign(MoveDir.x) * Mathf.Abs(transform.localScale.x),
                     transform.localScale.y,
                     transform.localScale.z
                 );
@@ -55,14 +67,14 @@ public class PlayerMove : MonoBehaviour
         if (canIMove >= 1)
         {
             canMove = true;
-            if (moveDir != Vector2.zero)
+            if (MoveDir != Vector2.zero)
             {
-                playerRb.linearVelocity = moveDir * speed;
+                playerRb.linearVelocity = MoveDir * speed;
                 animationController.Move(true);
 
-                if (moveDir != Vector2.zero)
+                if (MoveDir != Vector2.zero)
                     transform.localScale = new Vector3(
-                        Mathf.Sign(moveDir.x) * Mathf.Abs(transform.localScale.x),
+                        Mathf.Sign(MoveDir.x) * Mathf.Abs(transform.localScale.x),
                         transform.localScale.y,
                         transform.localScale.z
                     );            
@@ -85,7 +97,7 @@ public class PlayerMove : MonoBehaviour
     private IEnumerator IdleDelayCor()
     {
         yield return new WaitForSeconds(idleDelay);
-        if (moveDir == Vector2.zero)
+        if (MoveDir == Vector2.zero)
         {
             animationController.Move(false);
         }

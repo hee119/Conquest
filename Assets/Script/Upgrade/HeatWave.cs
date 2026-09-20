@@ -20,52 +20,106 @@ public class HeatWave : HomingProjectile
     }
 
     protected override void OnTriggerEnter2D(Collider2D other)
+{
+    if (isBoom)
+        return;
+
+    if (other.gameObject.layer ==
+        LayerMask.NameToLayer("Enemy"))
     {
-        if (isBoom)
-            return;
+        EnemyCombat enemyCombat =
+            other.GetComponent<EnemyCombat>();
 
-        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        Collider2D targetCollider =
+            other.GetComponent<Collider2D>();
+
+        if (enemyCombat != null &&
+            targetCollider != null)
         {
-            EnemyCombat enemyCombat =
-                other.GetComponent<EnemyCombat>();
-
-            Collider2D targetCollider =
-                other.GetComponent<Collider2D>();
-
-            if (enemyCombat != null && targetCollider != null)
-            {
-                Vector2 hitPoint =
-                    targetCollider.ClosestPoint(transform.position);
-
-                enemyCombat.TakeDamage(
-                    GetDamage(),
-                    hitPoint
-                );
-            }
-
-            isBoom = true;
-
-            // 이동 정지
-            rb.linearVelocity = Vector2.zero;
-
-            // 폭발 시작
-            if (boom != null)
-            {
-                boom.BoomStart();
-            }
-            else
-            {
-                UnityEngine.Debug.LogError(
-                    "[HeatWave] Boom 컴포넌트가 없음"
+            Vector2 hitPoint =
+                targetCollider.ClosestPoint(
+                    transform.position
                 );
 
-                pooledObject.DestroyObj();
+            // =====================================
+            // 현재 캐릭터 스탯
+            // =====================================
+
+            int characterId =
+                CharacterManager.Instance.currentCharacter;
+
+            PlayerData playerData =
+                DataManager.Instance.playerDatasDic[characterId];
+
+            int playerDamage =
+                playerData.damage;
+
+            int critChance =
+                playerData.criticalChance;
+
+            float critDamage =
+                playerData.criticalDamage;
+
+            // =====================================
+            // 데미지 계산
+            // =====================================
+
+            int damage =
+                GetDamage();
+
+            // 공격력 적용
+            damage =
+                (int)(
+                    damage *
+                    (1f + playerDamage / 100f)
+                );
+
+            // =====================================
+            // 크리티컬 판정
+            // =====================================
+
+            bool isCritical =
+                Random.Range(0, 100) < critChance;
+
+            if (isCritical)
+            {
+                damage =
+                    (int)(
+                        damage *
+                        (2f + critDamage / 100f)
+                    );
             }
+
+            enemyCombat.TakeDamage(
+                damage,
+                hitPoint
+            );
         }
 
-        if (other.CompareTag("Wall"))
+        isBoom = true;
+
+        // 이동 정지
+        rb.linearVelocity =
+            Vector2.zero;
+
+        // 폭발 시작
+        if (boom != null)
         {
+            boom.BoomStart();
+        }
+        else
+        {
+            UnityEngine.Debug.LogError(
+                "[HeatWave] Boom 컴포넌트가 없음"
+            );
+
             pooledObject.DestroyObj();
         }
     }
+
+    if (other.CompareTag("Wall"))
+    {
+        pooledObject.DestroyObj();
+    }
+}
 }

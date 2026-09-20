@@ -89,17 +89,17 @@ public class Burn : DotDamage
 
         int level =
             DataManager.Instance
-                .UpgradeDatasDic[id]
+                .upgradeDatasDic[id]
                 .UpgradeLevel;
 
         int dotCount =
             DataManager.Instance
-                .UpgradeDatasDic[id]
+                .upgradeDatasDic[id]
                 .dotCount[level];
 
         int damage =
             DataManager.Instance
-                .UpgradeDatasDic[id]
+                .upgradeDatasDic[id]
                 .dotDamage[level];
 
         // =====================================================
@@ -202,17 +202,17 @@ public class Burn : DotDamage
 
             level =
                 DataManager.Instance
-                    .UpgradeDatasDic[id]
+                    .upgradeDatasDic[id]
                     .upgradeLevel;
 
             dotCount =
                 DataManager.Instance
-                    .UpgradeDatasDic[id]
+                    .upgradeDatasDic[id]
                     .dotCount[level];
 
             damage =
                 DataManager.Instance
-                    .UpgradeDatasDic[id]
+                    .upgradeDatasDic[id]
                     .dotDamage[level];
         }
 
@@ -237,11 +237,63 @@ public class Burn : DotDamage
         if (targetCol == null)
             return;
 
+        // =====================================
+        // 현재 캐릭터 스탯
+        // =====================================
+
+        int characterId =
+            CharacterManager.Instance.currentCharacter;
+
+        PlayerData playerData =
+            DataManager.Instance.playerDatasDic[characterId];
+
+        int playerDamage =
+            playerData.damage;
+
+        int critChance =
+            playerData.criticalChance;
+
+        float critDamage =
+            playerData.criticalDamage;
+
+        // =====================================
+        // 공격력 적용
+        // =====================================
+
+        int finalDamage =
+            (int)(
+                damage *
+                (1f + playerDamage / 100f)
+            );
+
+        // =====================================
+        // 크리티컬 판정
+        // DOT 1틱마다 한 번 판정
+        // =====================================
+
+        bool isCritical =
+            Random.Range(0, 100) < critChance;
+
+        if (isCritical)
+        {
+            finalDamage =
+                (int)(
+                    finalDamage *
+                    (2f + critDamage / 100f)
+                );
+        }
+
+        // =====================================
+        // 피격 위치
+        // =====================================
+
         Vector2 hitPoint =
-            targetCol.ClosestPoint(transform.position);
+            targetCol.ClosestPoint(
+                transform.position
+            );
 
         enemyCombat.TakeDamage(
-            damage,
+            finalDamage,
             hitPoint
         );
     }

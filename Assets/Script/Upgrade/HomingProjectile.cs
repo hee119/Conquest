@@ -53,13 +53,18 @@ public abstract class HomingProjectile : MonoBehaviour
     protected virtual void OnEnable()
     {
         if (DataManager.Instance != null &&
-            DataManager.Instance.UpgradeDatasDic.TryGetValue(id, out var data))
+            DataManager.Instance.upgradeDatasDic.TryGetValue(
+                id,
+                out var data))
         {
             hp = data.hp;
         }
         else
         {
-            Debug.LogWarning($"[HomingProjectile] id={id} 업그레이드 데이터가 아직 준비되지 않음");
+            UnityEngine.Debug.LogWarning(
+                $"[HomingProjectile] id={id} 업그레이드 데이터가 아직 준비되지 않음"
+            );
+
             hp = 1;
         }
 
@@ -103,7 +108,7 @@ public abstract class HomingProjectile : MonoBehaviour
 
         float speed =
             DataManager.Instance
-                .UpgradeDatasDic[id]
+                .upgradeDatasDic[id]
                 .speed;
 
         rb.linearVelocity =
@@ -130,11 +135,11 @@ public abstract class HomingProjectile : MonoBehaviour
     {
         int level =
             DataManager.Instance
-                .UpgradeDatasDic[id]
+                .upgradeDatasDic[id]
                 .UpgradeLevel;
 
         return DataManager.Instance
-            .UpgradeDatasDic[id]
+            .upgradeDatasDic[id]
             .damage[level];
     }
 
@@ -151,18 +156,74 @@ public abstract class HomingProjectile : MonoBehaviour
             Collider2D targetCollider =
                 other.GetComponent<Collider2D>();
 
+            if (enemyCombat == null ||
+                targetCollider == null)
+            {
+                return;
+            }
+
             Vector2 hitPoint =
                 targetCollider.ClosestPoint(
                     transform.position
                 );
 
-            if (enemyCombat != null)
-            {
-                enemyCombat.TakeDamage(
-                    GetDamage(),
-                    hitPoint
+            // =====================================
+            // 현재 캐릭터 스탯
+            // =====================================
+
+            int characterId =
+                CharacterManager.Instance.currentCharacter;
+
+            PlayerData playerData =
+                DataManager.Instance.playerDatasDic[characterId];
+
+            int playerDamage =
+                playerData.damage;
+
+            int critChance =
+                playerData.criticalChance;
+
+            float critDamage =
+                playerData.criticalDamage;
+
+            // =====================================
+            // 데미지 계산
+            // =====================================
+
+            int damage =
+                GetDamage();
+
+            // 공격력 적용
+            damage =
+                (int)(
+                    damage *
+                    (1f + playerDamage / 100f)
                 );
+
+            // =====================================
+            // 크리티컬 판정
+            // =====================================
+
+            bool isCritical =
+                Random.Range(0, 100) < critChance;
+
+            if (isCritical)
+            {
+                damage =
+                    (int)(
+                        damage *
+                        (2f + critDamage / 100f)
+                    );
             }
+
+            enemyCombat.TakeDamage(
+                damage,
+                hitPoint
+            );
+
+            // =====================================
+            // HP 감소
+            // =====================================
 
             hp -= 1;
 
@@ -178,7 +239,8 @@ public abstract class HomingProjectile : MonoBehaviour
 
     protected virtual void OnDisable()
     {
-        rb.linearVelocity = Vector2.zero;
+        rb.linearVelocity =
+            Vector2.zero;
 
         // 타겟 초기화
         target = null;

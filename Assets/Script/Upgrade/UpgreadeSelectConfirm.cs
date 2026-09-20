@@ -17,10 +17,10 @@ public class UpgreadeSelectConfirm : MonoBehaviour
         StopAndRemoveCoroutine(removeUpgradeId1);
         StopAndRemoveCoroutine(removeUpgradeId2);
 
-        if (!DataManager.Instance.UpgradeDatasDic.ContainsKey(removeUpgradeId1) && DataManager.Instance.UpgradeDatasDic.ContainsKey(removeUpgradeId2))
+        if (!DataManager.Instance.upgradeDatasDic.ContainsKey(removeUpgradeId1) && DataManager.Instance.upgradeDatasDic.ContainsKey(removeUpgradeId2))
             return;
         
-        string removeType = DataManager.Instance.UpgradeDatasDic[removeUpgradeId1].type;
+        string removeType = DataManager.Instance.upgradeDatasDic[removeUpgradeId1].type;
 
         if (removeType == "Skill")
         {
@@ -41,7 +41,7 @@ public class UpgreadeSelectConfirm : MonoBehaviour
             UpgradeManager.Instance.statUpgradeCount -= 2;
         }
 
-        string addType = DataManager.Instance.UpgradeDatasDic[id].type;
+        string addType = DataManager.Instance.upgradeDatasDic[id].type;
         if (addType == "Skill")
         {
             UpgradeManager.Instance.SkillUpgradesAdd(id);

@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class BulletMove : MonoBehaviour
 {
-    BulletInfo bulletInfo;
-    PooledObject pooledObject;
+    protected BulletInfo bulletInfo;
+    protected PooledObject pooledObject;
     private GameObject target;
-    Rigidbody2D rb;
+    protected Rigidbody2D rb;
     public GameObject Target
     {
         get
@@ -30,7 +30,7 @@ public class BulletMove : MonoBehaviour
 
    
 
-    public void Move()
+    public virtual void Move()
     {
         Vector2 direction = target.transform.position - transform.position;
         rb.linearVelocity = direction.normalized * bulletInfo.speed;

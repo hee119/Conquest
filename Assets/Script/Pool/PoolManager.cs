@@ -37,6 +37,8 @@ public class PoolManager : MonoBehaviour
         prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/Exp"));
         prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/Upgrade"));
         prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/Bullet"));
+        prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/Boss"));
+        prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/BossPattern"));
 
         
 
@@ -56,17 +58,21 @@ public class PoolManager : MonoBehaviour
     {
         GameObject prefab = prefabs[i];
 
-        var unitInfo = prefab.GetComponent<UnitInfo>();
+        var enemyInfo = prefab.GetComponent<EnemyInfo>();
+        var playerInfo = prefab.GetComponent<PlayerInfo>();
         var skillInfo = prefab.GetComponent<SkillInfo>();
         var expInfo = prefab.GetComponent<ExpInfo>();
         var upgradeInfo = prefab.GetComponent<UpgradeInfo>();
         var bulletInfo = prefab.GetComponent<BulletInfo>();
+        var bossPatternInfo = prefab.GetComponent<BossPatternInfo>();
         
 
         int id;
 
-        if (unitInfo != null)
-            id = unitInfo.id;
+        if (enemyInfo != null)
+            id = enemyInfo.id;
+        else if (playerInfo != null)
+            id = playerInfo.id;
         else if (skillInfo != null)
             id = skillInfo.skillId;
         else if (expInfo != null)
@@ -75,6 +81,8 @@ public class PoolManager : MonoBehaviour
             id = upgradeInfo.id;
         else if (bulletInfo != null)
             id = bulletInfo.id; 
+        else if (bossPatternInfo != null)
+            id = bossPatternInfo.id; 
         else
             return;
 
@@ -104,6 +112,9 @@ public class PoolManager : MonoBehaviour
     private PooledObject CreatePool(GameObject prefab, IObjectPool<PooledObject> pool)
     {
         PooledObject pooledObject = Instantiate(prefab).GetComponent<PooledObject>();
+        
+        if(pooledObject == null) Debug.LogWarning("pooled object is null");
+        
         pooledObject.SetManagedPool(pool);
         pooledObject.gameObject.SetActive(false);
         return pooledObject;

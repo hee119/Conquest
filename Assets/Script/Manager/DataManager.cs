@@ -18,6 +18,7 @@ public class DataManager : MonoBehaviour
     public string upgradeDataText;
     public string bulletDataText;
     public string bossPatternData;
+    public string statUpgradeDataText;
 
     public StageInfo[] stageInfos;
     public Dictionary<int, PlayerData> playerDatasDic = new();
@@ -25,7 +26,8 @@ public class DataManager : MonoBehaviour
     public Dictionary<int, SkillData> skillDatasDic = new();
     public int[] levelDatas;
     public Dictionary<int, ExpData> expDatasDic = new();
-    public Dictionary<int, UpgradeData> UpgradeDatasDic = new();
+    public Dictionary<int, UpgradeData> upgradeDatasDic = new();
+    public Dictionary<int, StatUpgradeData> statUpgradeDatasDic = new();
     public Dictionary <int, BulletData> bulletDatasDic = new();
     public Dictionary <int, BossPatternData> bossPatternDatasDic = new();
     public Dictionary <int, Sprite> upgradeImagesDic = new();
@@ -64,6 +66,7 @@ public class DataManager : MonoBehaviour
         GetUpgradeDatas();
         GetBulletData();
         GetBossPatternData();
+        GetStatUpgradeData();
     }
     
 
@@ -108,7 +111,7 @@ public class DataManager : MonoBehaviour
         Debug.Log("<color=green>Stage Data Download Complete</color>");
     }
     
-public void GetPlayerDatas()
+    public void GetPlayerDatas()
 {
     TextAsset textAsset =
         Resources.Load<TextAsset>("TextData/PlayerData");
@@ -144,107 +147,171 @@ public void GetPlayerDatas()
 
     foreach (GameObject prefab in agentPrefabs)
     {
-        UnitInfo unitInfo = prefab.GetComponent<UnitInfo>();
+        PlayerInfo playerInfo = prefab.GetComponent<PlayerInfo>();
 
-        if (unitInfo == null)
+        if (playerInfo == null)
             continue;
 
         if (playerDatasDic.TryGetValue(
-                unitInfo.id,
+                playerInfo.id,
                 out PlayerData data))
         {
-            unitInfo.hp = data.hp;
-            unitInfo.hpRegenRate = data.hpRegenRate;
-            unitInfo.speed = data.speed;
-            unitInfo.damage = data.damage;
-            unitInfo.defense = data.defense;
-            unitInfo.criticalDamage = data.criticalDamage;
-            unitInfo.criticalChance = data.criticalChance;
+            playerInfo.hp = data.hp;
+            playerInfo.hpRegenRate = data.hpRegenRate;
+            playerInfo.speed = data.speed;
+            playerInfo.damage = data.damage;
+            playerInfo.defense = data.defense;
+            playerInfo.criticalDamage = data.criticalDamage;
+            playerInfo.criticalChance = data.criticalChance;
         }
         else
         {
             Debug.LogWarning(
-                $"ID {unitInfo.id}에 해당하는 플레이어 데이터를 찾을 수 없습니다."
+                $"ID {playerInfo.id}에 해당하는 플레이어 데이터를 찾을 수 없습니다."
             );
         }
     }
 
     Debug.Log("<color=green>Player Data Download Complete</color>");
 }
-public void GetEnemyDatas()
+    public void GetEnemyDatas()
 {
     TextAsset textAsset =
         Resources.Load<TextAsset>("TextData/EnemyData");
 
     playerAndEnemyDataText = textAsset.text;
 
-    string[] lines = playerAndEnemyDataText.Split('\n');
+    string[] lines =
+        playerAndEnemyDataText.Split('\n');
 
     for (int i = 1; i < lines.Length; i++)
     {
         if (string.IsNullOrWhiteSpace(lines[i]))
             continue;
 
-        string[] data = lines[i].Split(",");
+        string[] data =
+            lines[i].Split(",");
 
-        EnemyData enemyData = new EnemyData();
+        EnemyData enemyData =
+            new EnemyData();
 
-        enemyData.id = int.Parse(data[0]);
-        enemyData.name = data[1];
-        enemyData.hp = int.Parse(data[2]);
-        enemyData.hpRegenRate = int.Parse(data[3]);
-        enemyData.speed = float.Parse(data[4]);
-        enemyData.damage = int.Parse(data[5]);
-        enemyData.defense = int.Parse(data[6]);
-        enemyData.criticalDamage = float.Parse(data[7]);
-        enemyData.criticalChance = int.Parse(data[8]);
-        enemyData.dropExpOrbId = int.Parse(data[9]);
+        enemyData.id =
+            int.Parse(data[0]);
 
-        enemyDatasDic.Add(enemyData.id, enemyData);
+        enemyData.name =
+            data[1];
+
+        enemyData.hp =
+            int.Parse(data[2]);
+
+        enemyData.hpRegenRate =
+            int.Parse(data[3]);
+
+        enemyData.speed =
+            float.Parse(data[4]);
+
+        enemyData.damage =
+            int.Parse(data[5]);
+
+        enemyData.defense =
+            int.Parse(data[6]);
+
+        enemyData.dropExpOrbId =
+            int.Parse(data[7]);
+
+        enemyData.explosionDamage =
+            int.Parse(data[8]);
+
+        enemyData.explosionRange =
+            int.Parse(data[9]);
+
+        enemyDatasDic.Add(
+            enemyData.id,
+            enemyData
+        );
     }
 
     GameObject[] enemyPrefabs =
-        Resources.LoadAll<GameObject>("Prefabs/Enemy");
+        Resources.LoadAll<GameObject>(
+            "Prefabs/Enemy"
+        );
 
-    foreach (GameObject prefab in enemyPrefabs)
+    GameObject[] bossPrefabs =
+        Resources.LoadAll<GameObject>(
+            "Prefabs/Boss"
+        );
+
+    GameObject[] allEnemyPrefabs =
+        enemyPrefabs
+            .Concat(bossPrefabs)
+            .ToArray();
+
+    foreach (GameObject prefab in allEnemyPrefabs)
     {
-        UnitInfo unitInfo = prefab.GetComponent<UnitInfo>();
-        EnemyCombat enemyCombat = prefab.GetComponent<EnemyCombat>();
-        EnemyMove enemyMove = prefab.GetComponent<EnemyMove>();
+        EnemyInfo enemyInfo =
+            prefab.GetComponent<EnemyInfo>();
 
-        if (unitInfo == null)
+        EnemyCombat enemyCombat =
+            prefab.GetComponent<EnemyCombat>();
+
+        EnemyMove enemyMove =
+            prefab.GetComponent<EnemyMove>();
+
+        if (enemyInfo == null)
             continue;
 
         if (enemyDatasDic.TryGetValue(
-                unitInfo.id,
+                enemyInfo.id,
                 out EnemyData data))
         {
-            unitInfo.hp = data.hp;
-            unitInfo.hpRegenRate = data.hpRegenRate;
-            unitInfo.speed = data.speed;
-            unitInfo.damage = data.damage;
-            unitInfo.defense = data.defense;
-            unitInfo.criticalDamage = data.criticalDamage;
-            unitInfo.criticalChance = data.criticalChance;
-            unitInfo.dropExpOrbId = data.dropExpOrbId;
+            enemyInfo.hp =
+                data.hp;
+
+            enemyInfo.hpRegenRate =
+                data.hpRegenRate;
+
+            enemyInfo.speed =
+                data.speed;
+
+            enemyInfo.damage =
+                data.damage;
+
+            enemyInfo.defense =
+                data.defense;
+
+            enemyInfo.dropExpOrbId =
+                data.dropExpOrbId;
+
+            enemyInfo.explosionDamage =
+                data.explosionDamage;
+
+            enemyInfo.explosionRange =
+                data.explosionRange;
 
             if (enemyCombat != null)
-                enemyCombat.maxHp = unitInfo.hp;
+            {
+                enemyCombat.maxHp =
+                    (int)enemyInfo.hp;
+            }
 
             if (enemyMove != null)
-                enemyMove.moveSpeed = unitInfo.speed;
+            {
+                enemyMove.moveSpeed =
+                    enemyInfo.speed;
+            }
         }
         else
         {
-            Debug.LogWarning(
-                $"ID {unitInfo.id}에 해당하는 에너미 데이터를 찾을 수 없습니다."
+            UnityEngine.Debug.LogWarning(
+                $"ID {enemyInfo.id}에 해당하는 에너미 데이터를 찾을 수 없습니다."
             );
         }
     }
 
-    Debug.Log("<color=green>Enemy Data Download Complete</color>");
+    UnityEngine.Debug.Log(
+        "<color=green>Enemy Data Download Complete</color>"
+    );
 }
-
     
     public void GetSkillDatas()
     {
@@ -294,8 +361,8 @@ public void GetEnemyDatas()
             skillInfo.skillName = data.skillName;
             skillInfo.skillHp = data.skillHp;
             skillInfo.skillCoolTime = data.skillCoolTime;
-            skillInfo.skillDamage = data.skillDamage;
-            skillInfo.skillCritDamage = data.skillCritDamage;
+            skillInfo.skillDamage = (int)data.skillDamage;
+            skillInfo.skillCritDamage = (int)data.skillCritDamage;
             skillInfo.lifetime = data.lifetime;
             skillInfo.movementLockTime = data.movementLockTime;
         }
@@ -349,6 +416,11 @@ public void GetEnemyDatas()
     public void GetUpgradeDatas()
     {
         StartCoroutine(GetUpgradeDatasCor());
+    }
+    
+    public void GetStatUpgradeData()
+    {
+        StartCoroutine(GetStatUpgradeDatasCor());
     }
     
     public IEnumerator GetUpgradeDatasCor()
@@ -575,7 +647,7 @@ public void GetEnemyDatas()
         );
     }
 
-    UpgradeDatasDic.Add(
+    upgradeDatasDic.Add(
         upgradeDataTemp.id,
         upgradeDataTemp
     );
@@ -584,7 +656,193 @@ public void GetEnemyDatas()
     // 업그레이드 함수 연결
     UpgradeManager.Instance.UpgradesInit();
 }
+    
+    public IEnumerator GetStatUpgradeDatasCor()
+{
+    yield return new WaitUntil(() => UpgradeManager.Instance != null);
 
+    // StatUpgradeData CSV 불러오기
+    TextAsset textAsset =
+        Resources.Load<TextAsset>("TextData/StatUpgradeData");
+
+    if (textAsset == null)
+    {
+        UnityEngine.Debug.LogError(
+            "StatUpgradeData.csv를 찾을 수 없습니다."
+        );
+
+        yield break;
+    }
+
+    statUpgradeDataText =
+        textAsset.text;
+
+    // 줄 단위로 분리
+    string[] lines =
+        statUpgradeDataText.Split(
+            new[] { '\r', '\n' },
+            System.StringSplitOptions.RemoveEmptyEntries
+        );
+
+    for (int i = 1; i < lines.Length; i++)
+    {
+        if (string.IsNullOrWhiteSpace(lines[i]))
+            continue;
+
+        string[] statData =
+            ParseCsvLine(lines[i]);
+
+        // Id ~ Defense = 11개
+        if (statData.Length < 11)
+        {
+            UnityEngine.Debug.LogError(
+                $"StatUpgradeData CSV 데이터 부족\n" +
+                $"Line: {i + 1}\n" +
+                $"내용: {lines[i]}"
+            );
+
+            continue;
+        }
+
+        UnityEngine.Debug.Log(
+            $"StatUpgradeData CSV Line {i + 1} ID = [{statData[0]}]"
+        );
+
+        // ID
+        if (!int.TryParse(
+                statData[0].Trim(),
+                out int id))
+        {
+            UnityEngine.Debug.LogError(
+                $"StatUpgradeData ID 파싱 실패!\n" +
+                $"Line: {i + 1}\n" +
+                $"ID 값: [{statData[0]}]\n" +
+                $"전체 줄: {lines[i]}"
+            );
+
+            continue;
+        }
+
+        StatUpgradeData statUpgradeDataTemp =
+            new StatUpgradeData();
+
+        // ID
+        statUpgradeDataTemp.id =
+            id;
+
+        // 타입
+        statUpgradeDataTemp.type =
+            statData[2].Trim();
+
+        // 함수
+        statUpgradeDataTemp.function =
+            statData[3].Trim();
+
+        // 이름
+        // Localization CSV의 key 사용
+        statUpgradeDataTemp.name =
+            "upgread_name_" +
+            statUpgradeDataTemp.function;
+
+        // 설명
+        // Localization CSV의 key 사용
+        statUpgradeDataTemp.description =
+            "upgread_des_" +
+            statUpgradeDataTemp.function;
+
+        // Critical Chance
+        statUpgradeDataTemp.critChance =
+            string.IsNullOrWhiteSpace(statData[4])
+                ? Array.Empty<float>()
+                : statData[4]
+                    .Split(',')
+                    .Select(x => float.Parse(x.Trim()))
+                    .ToArray();
+
+        // Critical Damage
+        statUpgradeDataTemp.critDamage =
+            string.IsNullOrWhiteSpace(statData[5])
+                ? Array.Empty<float>()
+                : statData[5]
+                    .Split(',')
+                    .Select(x => float.Parse(x.Trim()))
+                    .ToArray();
+
+        // Attack Power
+        statUpgradeDataTemp.attackPower =
+            string.IsNullOrWhiteSpace(statData[6])
+                ? Array.Empty<float>()
+                : statData[6]
+                    .Split(',')
+                    .Select(x => float.Parse(x.Trim()))
+                    .ToArray();
+
+        // Max HP
+        statUpgradeDataTemp.maxHp =
+            string.IsNullOrWhiteSpace(statData[7])
+                ? Array.Empty<float>()
+                : statData[7]
+                    .Split(',')
+                    .Select(x => float.Parse(x.Trim()))
+                    .ToArray();
+
+        // Skill Cooldown
+        statUpgradeDataTemp.skillCooldown =
+            string.IsNullOrWhiteSpace(statData[8])
+                ? Array.Empty<float>()
+                : statData[8]
+                    .Split(',')
+                    .Select(x => float.Parse(x.Trim()))
+                    .ToArray();
+
+        // Passive Cooldown
+        statUpgradeDataTemp.passiveCooldown =
+            string.IsNullOrWhiteSpace(statData[9])
+                ? Array.Empty<float>()
+                : statData[9]
+                    .Split(',')
+                    .Select(x => float.Parse(x.Trim()))
+                    .ToArray();
+
+        // Defense
+        statUpgradeDataTemp.defense =
+            string.IsNullOrWhiteSpace(statData[10])
+                ? Array.Empty<float>()
+                : statData[10]
+                    .Split(',')
+                    .Select(x => float.Parse(x.Trim()))
+                    .ToArray();
+
+        // Tier
+        // 현재 CSV에는 Tier 컬럼이 없으므로 기본값 0
+        statUpgradeDataTemp.tier = 0;
+
+        // 이미지
+        if (statUpgradeIconDic.TryGetValue(
+                statUpgradeDataTemp.id,
+                out Sprite sprite))
+        {
+            statUpgradeDataTemp.sprite =
+                sprite;
+        }
+
+        // Dictionary 등록
+        statUpgradeDatasDic.Add(
+            statUpgradeDataTemp.id,
+            statUpgradeDataTemp
+        );
+
+        // Tier가 0 이하이면 업그레이드 목록에 추가
+        if (statUpgradeDataTemp.tier <= 0)
+        {
+            UpgradeManager.Instance.upgrades.Add(
+                statUpgradeDataTemp.id
+            );
+        }
+
+        UpgradeManager.Instance.UpgradesInit();
+    }
+}
     public void GetBulletData()
     {
         TextAsset textAsset = Resources.Load<TextAsset>("TextData/BulletData");
@@ -740,16 +998,14 @@ public class EnemyData
 {
     public int id;
     public string name;
-    public int hp;
+    public float hp;
     public int hpRegenRate;
     public float speed;
     public int damage;
     public int defense;
-    public float criticalDamage;
-    public int criticalChance;
+    public int dropExpOrbId;
     public int explosionDamage;
     public int explosionRange;
-    public int dropExpOrbId;
 }
 
 public class SkillData
@@ -758,8 +1014,8 @@ public class SkillData
     public string skillName;
     public int skillHp;
     public float skillCoolTime;
-    public int skillDamage;
-    public int skillCritDamage;
+    public float skillDamage;
+    public float skillCritDamage;
     public float lifetime;
     public float movementLockTime;
 }
@@ -828,4 +1084,38 @@ public class BossPatternData
     public int id;
     public string name;
     public int damage;
+}
+
+[System.Serializable]
+public class StatUpgradeData
+{
+    public int id;
+    public string name;
+    public string type;
+    public string function;
+
+    public float[] critChance;
+    public float[] critDamage;
+    public float[] attackPower;
+    public float[] maxHp;
+    public float[] skillCooldown;
+    public float[] passiveCooldown;
+    public float[] defense;
+
+    public int tier;
+    public Sprite sprite;
+    public int upgradeLevel;
+    public string description;
+
+    public int UpgradeLevel
+    {
+        get
+        {
+            return upgradeLevel - 1;
+        }
+        set
+        {
+            upgradeLevel = value;
+        }
+    }
 }

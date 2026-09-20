@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class UnitInfo : MonoBehaviour
+public class PlayerInfo : MonoBehaviour
 {
     public int id;
     public string name;
@@ -12,7 +12,4 @@ public class UnitInfo : MonoBehaviour
     public int defense;
     public float criticalDamage;
     public int criticalChance;
-    public int dropExpOrbId;
-    public int explosionDamage;
-    public int explosionRange;
 }

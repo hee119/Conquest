@@ -382,10 +382,10 @@ GameObject:
   - component: {fileID: 2108498982311189303}
   - component: {fileID: -1418664590154070681}
   - component: {fileID: -1484454570177552468}
-  - component: {fileID: 2210541941392045012}
   - component: {fileID: 3617475037612200455}
   - component: {fileID: 6826015629366012844}
   - component: {fileID: 3217690283206078485}
+  - component: {fileID: -8830295099159391034}
   m_Layer: 8
   m_Name: Eagle
   m_TagString: Enemy
@@ -483,7 +483,7 @@ SortingGroup:
   m_GameObject: {fileID: 5695257265632678611}
   m_Enabled: 1
   m_SortingLayerID: -1869315837
-  m_SortingLayer: 2
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_SortAtRoot: 0
   m_Sort3DAs2D: 0
@@ -548,7 +548,9 @@ MonoBehaviour:
   maxHp: 10
   hp: 0
   isDead: 0
-  attckCoolTime: 1
+  isBurn: 0
+  enemyInfo: {fileID: 0}
+  enemyMove: {fileID: 0}
 --- !u!114 &-1484454570177552468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,28 +563,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0050a2139b24ea295a2647d5984370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PooledObject
---- !u!114 &2210541941392045012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5695257265632678611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6634a5299f24849bcad405a415aa9362, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnitInfo
-  id: 102
-  name: 
-  hp: 10
-  hpRegenRate: 0
-  speed: 6
-  damage: 2
-  defense: 5
-  criticalDamage: 0
-  criticalChance: 0
-  dropExpOrbId: 300
 --- !u!114 &3617475037612200455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,7 +579,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   moveSpeed: 0
   stoppingDistance: 0
+  isSlowDown: 0
+  slowCount: 0
   pathUpdateInterval: 0.2
+  knockbackCooldown: 0.3
+  knockbackPower: 5
+  knockbackDuration: 0.15
 --- !u!195 &6826015629366012844
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -649,6 +634,30 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-8830295099159391034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695257265632678611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65b08747a06e5b4c858a5e0b89d95ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyInfo
+  id: 102
+  name: 
+  hp: 0
+  hpRegenRate: 0
+  speed: 0
+  damage: 0
+  defense: 0
+  criticalDamage: 0
+  criticalChance: 0
+  explosionDamage: 0
+  explosionRange: 0
+  dropExpOrbId: 0
 --- !u!1 &5716578981780477455
 GameObject:
   m_ObjectHideFlags: 0
