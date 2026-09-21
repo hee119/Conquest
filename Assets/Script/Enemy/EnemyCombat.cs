@@ -1,18 +1,31 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class EnemyCombat : MonoBehaviour
 {
     protected Animator anim;
-    public int maxHp = 0;
-    public int hp;
+
+    public float maxHp = 0;
+    public float hp;
+
     public bool isDead = false;
     public bool isBurn = false;
-    private bool isInvincible = false;
+
+    protected bool isInvincible = false;
+    protected bool isDying = false;
+
+    [SerializeField]
+    protected ParticleSystem hitParticle;
+
+    [Header("Hit 후 사망")]
+    public string hitStateName = "Hit";
+    public float hitMaxWait = 1f;
 
     protected PooledObject pooledObject;
-    private SpriteRenderer[] spriteRenderers;
+    protected SpriteRenderer[] spriteRenderers;
+
     public EnemyInfo enemyInfo;
     public EnemyMove enemyMove;
 
@@ -21,26 +34,32 @@ public class EnemyCombat : MonoBehaviour
         anim = GetComponent<Animator>();
         pooledObject = GetComponent<PooledObject>();
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+
         enemyInfo = GetComponent<EnemyInfo>();
         enemyMove = GetComponent<EnemyMove>();
     }
 
-    public void TakeDamage(int damage, Vector2 hitPoint)
+    public void TakeDamage(float damage, Vector2 hitPoint)
     {
-        if (!isDead && gameObject.activeInHierarchy)
+        if (!isDead &&
+            !isDying &&
+            gameObject.activeInHierarchy)
         {
             StartCoroutine(InvincibleCor());
 
             hp -= damage;
 
-            anim.SetTrigger("Hit");
-            HitFlash();
+            if (hitParticle != null)
+                hitParticle.Play();
 
-            if (hp <= 0)
+            bool hasHit = HasAnimatorParameter("Hit");
+
+            if (hasHit)
             {
-                Die();
-                return;
+                anim.SetTrigger("Hit");
             }
+
+            HitFlash();
 
             if (GameManager.Instance.burnChance > 0 && !isBurn)
             {
@@ -72,55 +91,109 @@ public class EnemyCombat : MonoBehaviour
                     obj.transform.SetParent(transform);
                 }
             }
+
+            if (hp <= 0)
+            {
+                if (hasHit)
+                {
+                    StartCoroutine(DieAfterHitCor());
+                }
+                else
+                {
+                    Die();
+                }
+            }
         }
     }
 
     protected virtual void OnEnable()
     {
         isDead = false;
-        hp = maxHp;
+        isDying = false;
         isInvincible = false;
 
-        foreach (SpriteRenderer spriteRenderer in spriteRenderers)
+        hp = maxHp;
+
+        if (spriteRenderers != null)
         {
-            spriteRenderer.color = Color.white;
+            foreach (SpriteRenderer spriteRenderer in spriteRenderers)
+            {
+                if (spriteRenderer != null)
+                    spriteRenderer.color = Color.white;
+            }
         }
+    }
+
+    private IEnumerator DieAfterHitCor()
+    {
+        isDying = true;
+
+        float t = 0f;
+
+        while (
+            t < 0.3f &&
+            !anim.GetCurrentAnimatorStateInfo(0).IsName(hitStateName)
+        )
+        {
+            t += Time.deltaTime;
+            yield return null;
+        }
+
+        t = 0f;
+
+        while (t < hitMaxWait)
+        {
+            AnimatorStateInfo info =
+                anim.GetCurrentAnimatorStateInfo(0);
+
+            if (!info.IsName(hitStateName) ||
+                info.normalizedTime >= 1f)
+            {
+                break;
+            }
+
+            t += Time.deltaTime;
+            yield return null;
+        }
+
+        Die();
     }
 
     public virtual void Die()
     {
-        if (!isDead)
+        if (isDead)
+            return;
+
+        isDead = true;
+        isDying = false;
+
+        PoolManager.Instance.Spawn(
+            enemyInfo.dropExpOrbId,
+            transform.position
+        );
+
+        for (int i = transform.childCount - 1; i >= 0; i--)
         {
-            isDead = true;
+            Transform child = transform.GetChild(i);
 
-            PoolManager.Instance.Spawn(
-                enemyInfo.dropExpOrbId,
-                transform.position
-            );
-
-            for (int i = transform.childCount - 1; i >= 0; i--)
+            if (child.TryGetComponent<DotDamage>(out var dot))
             {
-                Transform child = transform.GetChild(i);
-
-                if (child.TryGetComponent<DotDamage>(out var dot))
-                {
-                    child.SetParent(null, true);
-                }
-
-                if (child.TryGetComponent<Mold>(out var mus))
-                {
-                    child.SetParent(null, true);
-
-                    if (mus.gameObject.activeInHierarchy)
-                    {
-                        mus.animator.enabled = true;
-                        mus.animator.SetTrigger("Boom");
-                    }
-                }
+                child.SetParent(null, true);
             }
 
-            pooledObject.DestroyObj();
+            if (child.TryGetComponent<Mold>(out var mus))
+            {
+                child.SetParent(null, true);
+
+                if (mus.gameObject.activeInHierarchy)
+                {
+                    mus.animator.enabled = true;
+                    mus.animator.SetTrigger("Boom");
+                }
+            }
         }
+
+        pooledObject.DestroyObj();
     }
 
     public void HitFlash()
@@ -144,7 +217,8 @@ public class EnemyCombat : MonoBehaviour
 
             foreach (SpriteRenderer spriteRenderer in spriteRenderers)
             {
-                spriteRenderer.color = Color.white;
+                if (spriteRenderer != null)
+                    spriteRenderer.color = Color.white;
             }
         }
     }
@@ -160,18 +234,43 @@ public class EnemyCombat : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Skill") && !isInvincible && !isDead && gameObject.activeInHierarchy)
+        if (
+            other.CompareTag("Skill") &&
+            !isInvincible &&
+            !isDead &&
+            !isDying &&
+            gameObject.activeInHierarchy
+        )
         {
             Collider2D myCollider = GetComponent<Collider2D>();
 
-            Vector2 hitPoint = myCollider.ClosestPoint(
-                other.transform.position
-            );
+            Vector2 hitPoint =
+                myCollider.ClosestPoint(other.transform.position);
 
-            TakeDamage(
-                other.gameObject.GetComponent<SkillInfo>().skillDamage,
-                hitPoint
-            );
+            SkillInfo skillInfo =
+                other.gameObject.GetComponent<SkillInfo>();
+
+            if (skillInfo != null)
+            {
+                TakeDamage(
+                    skillInfo.skillDamage,
+                    hitPoint
+                );
+            }
         }
+    }
+
+    protected bool HasAnimatorParameter(string paramName)
+    {
+        if (anim == null)
+            return false;
+
+        foreach (AnimatorControllerParameter param in anim.parameters)
+        {
+            if (param.name == paramName)
+                return true;
+        }
+
+        return false;
     }
 }

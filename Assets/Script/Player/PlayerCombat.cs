@@ -1,18 +1,23 @@
- using System;
- using System.Collections;
- using Unity.VisualScripting;
+using System;
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    public int maxHp = 0;
-    public int hp;
+    public float maxHp = 0;
+    public float hp;
     public bool isDead = false;
     PooledObject pooledObject;
     PlayerInfo _playerInfo;
     private SpriteRenderer[] spriteRenderers;
     public event Action hpUpdate;
 
+    [Header("체력 재생")]
+    public float regenDelay = 5f;       // 마지막 피격 후 이 시간 동안 안 맞으면 회복 시작
+    public float regenInterval = 1f;    // 회복 주기
+    float noDamageTimer;
+    float regenTimer;
 
     public void Awake()
     {
@@ -22,17 +27,46 @@ public class PlayerCombat : MonoBehaviour
         maxHp = _playerInfo.hp;
     }
 
+    void Update()
+    {
+        if (isDead || hp >= maxHp) return;
+
+        noDamageTimer += Time.deltaTime;
+        if (noDamageTimer < regenDelay) return;
+
+        regenTimer += Time.deltaTime;
+        if (regenTimer >= regenInterval)
+        {
+            regenTimer -= regenInterval;
+            Regen();
+        }
+    }
+
+    void Regen()
+    {
+        float rate =
+            DataManager.Instance.playerDatasDic[CharacterManager.Instance.currentCharacter].hpRegenRate;
+
+        if (rate <= 0f) return;
+
+        int amount = Mathf.Max(1, Mathf.RoundToInt(maxHp * rate / 100f));
+        hp = Mathf.Min(maxHp, hp + amount);
+
+        hpUpdate?.Invoke();
+    }
+
     public void TakeDamage(int damage)
     {
-        int defense =
+        float defense =
             DataManager.Instance.playerDatasDic[CharacterManager.Instance.currentCharacter].defense;
 
-        int finalDamage =
-            (int)(damage * (1f - defense / 100f));
-
-        finalDamage = Mathf.Max(1, finalDamage);
-
+        float finalDamage =
+            damage * (1f - defense / 100f);
+        
         hp -= finalDamage;
+
+        noDamageTimer = 0f;
+        regenTimer = 0f;
 
         hpUpdate?.Invoke();
         HitFlash();
@@ -49,6 +83,8 @@ public class PlayerCombat : MonoBehaviour
     {
         isDead = false;
         hp = maxHp;
+        noDamageTimer = 0f;
+        regenTimer = 0f;
         foreach (SpriteRenderer spriteRenderer in spriteRenderers)
         {
             spriteRenderer.color = Color.white;
@@ -71,22 +107,19 @@ public class PlayerCombat : MonoBehaviour
 
     public IEnumerator HitFlashCor()
     {
-        
+        foreach (SpriteRenderer spriteRenderer in spriteRenderers)
+        {
+            spriteRenderer.color = Color.red;
+        }
 
-            foreach (SpriteRenderer spriteRenderer in spriteRenderers)
-            {
-                spriteRenderer.color = Color.red;
-            }
-        
-            yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.1f);
 
-            foreach (SpriteRenderer spriteRenderer in spriteRenderers)
-            {
-                spriteRenderer.color = Color.white;
-            }
-            
+        foreach (SpriteRenderer spriteRenderer in spriteRenderers)
+        {
+            spriteRenderer.color = Color.white;
+        }
     }
-    
+
     public void UpdateHpUI()
     {
         hpUpdate?.Invoke();

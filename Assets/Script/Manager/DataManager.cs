@@ -71,45 +71,178 @@ public class DataManager : MonoBehaviour
     
 
     public void GetStageDatas()
+{
+    TextAsset textAsset =
+        Resources.Load<TextAsset>("TextData/StageData");
+
+    if (textAsset == null)
     {
-        stageDataText = Resources.Load<TextAsset>("TextData/StageData").text;
+        UnityEngine.Debug.LogWarning(
+            "StageData를 찾을 수 없습니다."
+        );
 
-        string[] lines = stageDataText.Split('\n');
-        stageInfos = new StageInfo[lines.Length];
-
-        for (int i = 0; i < stageInfos.Length; i++)
-        {
-            stageInfos[i] = new StageInfo();
-        }
-        
-        for (int i = 1; i < lines.Length; i++)
-        {
-            string[] stageData = lines[i].Split(",");
-            int stage = int.Parse(stageData[0]);
-            int enemyId = int.Parse(stageData[1]);
-            int waveCount = int.Parse(stageData[2]);
-            float spawnInterval = float.Parse(stageData[3]);
-            int enemyPerSpawn = int.Parse(stageData[4]);
-            float enemySpawnMultiplier = float.Parse(stageData[5]);
-            float waveIncreaseInterval = float.Parse(stageData[6]);
-            string type = stageData[7];
-            for (int j = 0; j < stageData.Length; j++)
-            {
-                if (i == stage)
-                {
-                    stageInfos[i].enemyId.Add(enemyId);
-                    stageInfos[i].waveCount.Add(waveCount);
-                    stageInfos[i].spawnInterval.Add(spawnInterval);
-                    stageInfos[i].enemyPerSpawn.Add(enemyPerSpawn);
-                    stageInfos[i].enemySpawnMultiplier.Add(enemySpawnMultiplier);
-                    stageInfos[i].waveIncreaseInterval.Add(waveIncreaseInterval);
-                    stageInfos[i].type.Add(type);
-                }
-            }
-        }
-        
-        Debug.Log("<color=green>Stage Data Download Complete</color>");
+        return;
     }
+
+    stageDataText = textAsset.text;
+
+    string[] lines =
+        stageDataText.Split(
+            new[] { '\r', '\n' },
+            System.StringSplitOptions.RemoveEmptyEntries
+        );
+
+
+    int maxStage = 0;
+
+
+    // 최대 스테이지 번호 찾기
+    for (int i = 1; i < lines.Length; i++)
+    {
+        string[] stageData =
+            lines[i].Split(',');
+
+        if (stageData.Length < 8)
+            continue;
+
+        if (int.TryParse(
+                stageData[0].Trim(),
+                out int stage))
+        {
+            maxStage =
+                Mathf.Max(
+                    maxStage,
+                    stage
+                );
+        }
+    }
+
+
+    // StageInfo 배열 생성
+    stageInfos =
+        new StageInfo[maxStage + 1];
+
+
+    for (int i = 0;
+         i < stageInfos.Length;
+         i++)
+    {
+        stageInfos[i] =
+            new StageInfo();
+    }
+
+
+    // 실제 데이터 저장
+    for (int i = 1;
+         i < lines.Length;
+         i++)
+    {
+        string[] stageData =
+            lines[i].Split(',');
+
+        if (stageData.Length < 8)
+            continue;
+
+
+        int stage =
+            int.Parse(
+                stageData[0].Trim()
+            );
+
+        int enemyId =
+            int.Parse(
+                stageData[1].Trim()
+            );
+
+        int waveCount =
+            int.Parse(
+                stageData[2].Trim()
+            );
+
+        float spawnInterval =
+            float.Parse(
+                stageData[3].Trim()
+            );
+
+        int enemyPerSpawn =
+            int.Parse(
+                stageData[4].Trim()
+            );
+
+        float enemySpawnMultiplier =
+            float.Parse(
+                stageData[5].Trim()
+            );
+
+        float waveIncreaseInterval =
+            float.Parse(
+                stageData[6].Trim()
+            );
+
+        string type =
+            stageData[7].Trim();
+
+
+        // ★ 핵심
+        // i가 아니라 stage를 사용해야 함
+        stageInfos[stage].enemyId.Add(
+            enemyId
+        );
+
+        stageInfos[stage].waveCount.Add(
+            waveCount
+        );
+
+        stageInfos[stage].spawnInterval.Add(
+            spawnInterval
+        );
+
+        stageInfos[stage].enemyPerSpawn.Add(
+            enemyPerSpawn
+        );
+
+        stageInfos[stage].enemySpawnMultiplier.Add(
+            enemySpawnMultiplier
+        );
+
+        stageInfos[stage].waveIncreaseInterval.Add(
+            waveIncreaseInterval
+        );
+
+        stageInfos[stage].type.Add(
+            type
+        );
+    }
+
+
+    // 확인용 로그
+    for (int stage = 0;
+         stage < stageInfos.Length;
+         stage++)
+    {
+        if (stageInfos[stage] == null)
+            continue;
+
+        UnityEngine.Debug.Log(
+            $"[StageData] Stage {stage} / " +
+            $"Enemy Count = {stageInfos[stage].enemyId.Count}"
+        );
+
+        for (int i = 0;
+             i < stageInfos[stage].enemyId.Count;
+             i++)
+        {
+            UnityEngine.Debug.Log(
+                $"[StageData] " +
+                $"Stage={stage} / " +
+                $"Index={i} / " +
+                $"EnemyId={stageInfos[stage].enemyId[i]} / " +
+                $"Wave={stageInfos[stage].waveCount[i]} / " +
+                $"Spawn={stageInfos[stage].enemyPerSpawn[i]}"
+            );
+        }
+    }
+}
     
     public void GetPlayerDatas()
 {
@@ -548,7 +681,7 @@ public class DataManager : MonoBehaviour
     upgradeDataTemp.damage =
         upgradeData[7]
             .Split(',')
-            .Select(x => int.Parse(x.Trim()))
+            .Select(x => float.Parse(x.Trim()))
             .ToArray();
 
     // Speed
@@ -559,7 +692,7 @@ public class DataManager : MonoBehaviour
     upgradeDataTemp.dotDamage =
         upgradeData[9]
             .Split(',')
-            .Select(x => int.Parse(x.Trim()))
+            .Select(x => float.Parse(x.Trim()))
             .ToArray();
 
     // Dot Duration
@@ -818,7 +951,7 @@ public class DataManager : MonoBehaviour
         statUpgradeDataTemp.tier = 0;
 
         // 이미지
-        if (statUpgradeIconDic.TryGetValue(
+        if (upgradeImagesDic.TryGetValue(
                 statUpgradeDataTemp.id,
                 out Sprite sprite))
         {
@@ -1038,8 +1171,8 @@ public class UpgradeData
     public int[] count;
     public float[] detectionRange;
     public float speed;
-    public int[] damage;
-    public int[] dotDamage;
+    public float[] damage;
+    public float[] dotDamage;
     public int[] dotCount;
     public int hp;
     public float[] slow;

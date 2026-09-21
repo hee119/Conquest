@@ -5,20 +5,8 @@ public class BulletMove : MonoBehaviour
 {
     protected BulletInfo bulletInfo;
     protected PooledObject pooledObject;
-    private GameObject target;
+    public GameObject target;
     protected Rigidbody2D rb;
-    public GameObject Target
-    {
-        get
-        {
-            return target;
-        }
-        set
-        {
-            target = value;
-            Move();
-        }
-    }
 
    
     public void Awake()
@@ -40,7 +28,7 @@ public class BulletMove : MonoBehaviour
     {
         Vector2 hitPoint = other.ClosestPoint(transform.position);
 
-        if (other.CompareTag(target.tag))
+        if (target != null && other.CompareTag(target.tag))
         {
             if (target.CompareTag("Player"))
             {

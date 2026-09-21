@@ -1,16 +1,403 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class SlimeKing : MonoBehaviour
+public class SlimeKing : SplitEnemy
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Header("공통")]
+    public float startDelay = 1.5f;
+    public float patternInterval = 2f;
+    public float hitRadius = 1.2f;          // 슬라이딩 피격 판정 반경
+
+    [Header("패시브 - 분열")]
+    public int maxSplitCount = 3;           // 마지막 분열은 일반 슬라임으로 나옴
+    public int normalSlimeId;               // 일반 슬라임 풀 id
+    public float splitSpread = 0.5f;
+    public float splitDamageDiv = 1.5f;     // 세대마다 누적 적용
+    public float splitHpDiv = 1.4f;
+    public float splitSpeedMul = 1.3f;
+    public float splitScaleDiv = 1.3f;
+
+    [Header("패턴1 - 몸 열고 슬라임 생성")]
+    public int minionId;                    // 작은 슬라임 풀 id
+    public float openDuration = 3f;
+    public float minionSpawnInterval = 0.8f;
+    public int minionsPerWave = 2;
+
+    [Header("패턴2 - 점프 내려찍기")]
+    public int warningId;                   // 워닝 사인 풀 id
+    public int slamCount = 3;
+    public float jumpHeight = 8f;
+    public float jumpRiseTime = 0.4f;
+    public float warningTime = 0.8f;
+    public float fallTime = 0.12f;
+    public float slamRadius = 1.5f;
+    public float slamDamageMul = 1.5f;
+    public float slamGap = 0.3f;
+    public float slamRecovery = 0.8f;
+    public float shadowStartAlpha = 0.15f; 
+    public float shadowEndAlpha = 0.8f; 
+
+    [Header("패턴3 - 슬라이딩")]
+    public float slideWindup = 0.6f;
+    public float slideSpeed = 14f;
+    public float slideOvershoot = 3f;
+    public float slideDamageMul = 1f;
+    public float slideRecovery = 0.8f;
+    public LayerMask obstacleMask;          // 벽 레이어 (비워두면 벽 체크 안 함)
+
+    NavMeshAgent agent;
+    Collider2D[] cols;
+    Transform playerTf;
+    readonly List<GameObject> warnings = new List<GameObject>();
+
+    Vector3 baseScale = Vector3.one;
+    Vector3 airbornePos;
+    bool inPattern;
+    bool isAirborne;
+
+    // ───────────── 생명주기 ─────────────
+
+    protected override void OnEnable()
     {
-        
+        base.OnEnable();    // SplitEnemy: 스케일 1로 초기화
+
+        if (agent == null) agent = GetComponent<NavMeshAgent>();
+        if (cols == null || cols.Length == 0) cols = GetComponents<Collider2D>();
+
+        splitCount = maxSplitCount;     // 풀 재사용 시 분열 횟수 복구 (분열 자식은 스폰 후 덮어씀)
+        baseScale = transform.localScale;
+        inPattern = false;
+        isAirborne = false;
+
+        StartCoroutine(PatternLoop());
     }
 
-    // Update is called once per frame
-    void Update()
+    protected new void OnDisable()
     {
-        
+        base.OnDisable();   // 스탯 초기화 유지
+
+        ReleaseAllWarnings();
+        inPattern = false;
+        isAirborne = false;
+        SetColliders(true);
+        if (agent != null) agent.updatePosition = true;
+        if (enemyMove != null) enemyMove.enabled = true;
+    }
+
+    public override void Die()
+    {
+        StopAllCoroutines();
+        ReleaseAllWarnings();
+
+        if (isAirborne) { transform.position = airbornePos; isAirborne = false; }
+        if (inPattern) { transform.localScale = baseScale; inPattern = false; }
+        SetColliders(true);
+        SetAI(true);
+
+        base.Die();         // EnemySplit() → EnemyCombat.Die()
+    }
+
+    // ───────────── 패시브: 분열 ─────────────
+
+    public override void EnemySplit()
+    {
+        if (splitCount <= 0) return;
+
+        bool toNormal = splitCount <= 1;                // 마지막 분열 → 일반 슬라임
+        int gen = maxSplitCount - splitCount + 1;       // 자식 세대
+        var data = DataManager.Instance.enemyDatasDic[enemyInfo.id];
+
+        for (int i = 0; i < splitSpawnCount; i++)
+        {
+            Vector3 pos = transform.position + (Vector3)(Random.insideUnitCircle * splitSpread);
+
+            if (toNormal)
+            {
+                PoolManager.Instance.Spawn(normalSlimeId, pos);
+                continue;
+            }
+
+            GameObject obj = PoolManager.Instance.Spawn(enemyInfo.id, pos);
+            SlimeKing child = obj.GetComponent<SlimeKing>();
+
+            child.enemyInfo.damage = (int)(data.damage / Mathf.Pow(splitDamageDiv, gen));
+            child.enemyInfo.hp = Mathf.Max(1, (int)(data.hp / Mathf.Pow(splitHpDiv, gen)));
+            child.enemyInfo.speed = Mathf.RoundToInt(data.speed * Mathf.Pow(splitSpeedMul, gen));
+            child.enemyMove.moveSpeed = child.enemyInfo.speed;
+            child.enemyMove.MoveSpeedRenewal();
+
+            obj.transform.localScale = new Vector3(
+                transform.localScale.x / splitScaleDiv,
+                transform.localScale.y / splitScaleDiv, 1f);
+
+            child.splitCount = splitCount - 1;
+        }
+    }
+
+    // ───────────── 패턴 루프 ─────────────
+
+    IEnumerator PatternLoop()
+    {
+        yield return new WaitForSeconds(startDelay);
+
+        int last = -1;
+        while (true)
+        {
+            yield return new WaitForSeconds(patternInterval);
+
+            int next;
+            do { next = Random.Range(0, 3); } while (next == last);
+            last = next;
+
+            baseScale = transform.localScale;
+            inPattern = true;
+            SetAI(false);
+
+            switch (next)
+            {
+                case 0: yield return OpenBodyPattern(); break;
+                case 1: yield return JumpSlamPattern(); break;
+                case 2: yield return SlidePattern(); break;
+            }
+
+            transform.localScale = baseScale;
+            SetAI(true);
+            inPattern = false;
+        }
+    }
+
+    // 패턴1: 몸을 열어 작은 슬라임 생성
+    IEnumerator OpenBodyPattern()
+    {
+        yield return ScaleTo(new Vector3(baseScale.x * 1.15f, baseScale.y * 0.8f, 1f), 0.3f);
+
+        float elapsed = 0f;
+        float timer = minionSpawnInterval;      // 열자마자 첫 웨이브
+        while (elapsed < openDuration)
+        {
+            timer += Time.deltaTime;
+            elapsed += Time.deltaTime;
+            if (timer >= minionSpawnInterval)
+            {
+                timer = 0f;
+                for (int i = 0; i < minionsPerWave; i++)
+                {
+                    Vector3 pos = transform.position + (Vector3)(Random.insideUnitCircle.normalized * baseScale.x * 0.8f);
+                    PoolManager.Instance.Spawn(minionId, pos);
+                }
+            }
+            yield return null;
+        }
+
+        yield return ScaleTo(baseScale, 0.2f);
+    }
+
+    // 패턴2: 점프 후 워닝 사인 → 플레이어 위치 연속 내려찍기
+    IEnumerator JumpSlamPattern()
+    {
+        float s = baseScale.x;
+        Vector3 ground = transform.position;
+
+        SetColliders(false);
+        isAirborne = true;
+        airbornePos = ground;
+        yield return MoveTo(ground + Vector3.up * jumpHeight, jumpRiseTime);
+
+        for (int i = 0; i < slamCount; i++)
+        {
+            Transform player = GetPlayer();
+            Vector3 target = player != null ? player.position : ground;
+            target.z = ground.z;
+            airbornePos = target;               // 공중에서 죽으면 여기로 내려서 분열
+
+            GameObject warning = SpawnWarning(target, slamRadius * s * 2f);
+            StartCoroutine(FadeShadow(warning, warningTime + fallTime));   // 착지 순간까지 진해짐
+            yield return new WaitForSeconds(warningTime);
+
+            transform.position = target + Vector3.up * jumpHeight;
+            yield return MoveTo(target, fallTime, true);
+
+            TryHitPlayer(target, slamRadius * s, slamDamageMul);
+            ReleaseWarning(warning);
+
+            if (i < slamCount - 1)
+            {
+                yield return new WaitForSeconds(slamGap);
+                yield return MoveTo(target + Vector3.up * jumpHeight, jumpRiseTime);
+            }
+        }
+
+        isAirborne = false;
+        SetColliders(true);
+        yield return new WaitForSeconds(slamRecovery);
+    }
+
+    // 패턴3: 플레이어 위치로 빠르게 슬라이딩
+    IEnumerator SlidePattern()
+    {
+        float s = baseScale.x;
+
+        yield return ScaleTo(new Vector3(baseScale.x * 1.2f, baseScale.y * 0.8f, 1f), slideWindup);
+
+        Transform player = GetPlayer();
+        if (player == null) yield break;
+
+        Vector3 start = transform.position;
+        Vector2 dir = (Vector2)(player.position - start);
+        float dist = dir.magnitude + slideOvershoot;
+        dir = dir.sqrMagnitude > 0.0001f ? dir.normalized : Vector2.right;
+
+        float travelled = 0f;
+        bool hit = false;
+        while (travelled < dist)
+        {
+            float step = slideSpeed * Time.deltaTime;
+
+            if (obstacleMask.value != 0)
+            {
+                RaycastHit2D wall = Physics2D.CircleCast(transform.position, hitRadius * s * 0.5f, dir, step + 0.05f, obstacleMask);
+                if (wall.collider != null) break;
+            }
+
+            transform.position += (Vector3)(dir * step);
+            travelled += step;
+
+            if (!hit) hit = TryHitPlayer(transform.position, hitRadius * s, slideDamageMul);
+            yield return null;
+        }
+
+        yield return ScaleTo(baseScale, 0.15f);
+        yield return new WaitForSeconds(slideRecovery);
+    }
+
+    // ───────────── 유틸 ─────────────
+
+    bool TryHitPlayer(Vector3 pos, float radius, float mul)
+    {
+        Transform p = GetPlayer();
+        if (p == null || Vector2.Distance(pos, p.position) > radius) return false;
+
+        // TODO: 실제 플레이어 피격 함수로 교체
+        p.gameObject.SendMessage("TakeDamage", Mathf.RoundToInt(enemyInfo.damage * mul), SendMessageOptions.DontRequireReceiver);
+        return true;
+    }
+
+    Transform GetPlayer()
+    {
+        if (playerTf == null || !playerTf.gameObject.activeInHierarchy)
+        {
+            GameObject p = GameObject.FindWithTag("Player");
+            playerTf = p != null ? p.transform : null;
+        }
+        return playerTf;
+    }
+
+    void SetAI(bool on)
+    {
+        if (on)
+        {
+            if (agent != null)
+            {
+                agent.updatePosition = true;
+                if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 3f, NavMesh.AllAreas))
+                    agent.Warp(hit.position);
+                if (agent.isOnNavMesh) agent.isStopped = false;
+            }
+            if (enemyMove != null) enemyMove.enabled = true;
+        }
+        else
+        {
+            if (enemyMove != null) enemyMove.enabled = false;
+            if (agent != null)
+            {
+                if (agent.isOnNavMesh) agent.isStopped = true;
+                agent.updatePosition = false;
+            }
+        }
+    }
+
+    void SetColliders(bool on)
+    {
+        if (cols == null) return;
+        for (int i = 0; i < cols.Length; i++)
+            if (cols[i] != null) cols[i].enabled = on;
+    }
+
+    GameObject SpawnWarning(Vector3 pos, float diameter)
+    {
+        GameObject w = PoolManager.Instance.Spawn(warningId, pos);
+        if (w != null)
+        {
+            w.transform.localScale = new Vector3(diameter, diameter, 1f);
+            SpriteRenderer sr = w.GetComponentInChildren<SpriteRenderer>();
+            if (sr != null) SetAlpha(sr, shadowStartAlpha);   // 풀 재사용 시 알파 초기화
+            warnings.Add(w);
+        }
+        return w;
+    }
+
+    void ReleaseWarning(GameObject w)
+    {
+        if (w == null) return;
+        warnings.Remove(w);
+        if (PoolManager.Instance == null) return;
+
+        PooledObject po = w.GetComponent<PooledObject>();
+        if (po != null) po.DestroyObj();
+        else w.SetActive(false);
+    }
+
+    void ReleaseAllWarnings()
+    {
+        for (int i = warnings.Count - 1; i >= 0; i--)
+            ReleaseWarning(warnings[i]);
+        warnings.Clear();
+    }
+
+    IEnumerator ScaleTo(Vector3 target, float time)
+    {
+        Vector3 from = transform.localScale;
+        for (float t = 0f; t < time; t += Time.deltaTime)
+        {
+            transform.localScale = Vector3.Lerp(from, target, t / time);
+            yield return null;
+        }
+        transform.localScale = target;
+    }
+
+    IEnumerator MoveTo(Vector3 to, float time, bool easeIn = false)
+    {
+        Vector3 from = transform.position;
+        for (float t = 0f; t < time; t += Time.deltaTime)
+        {
+            float k = t / time;
+            k = easeIn ? k * k : Mathf.SmoothStep(0f, 1f, k);
+            transform.position = Vector3.Lerp(from, to, k);
+            yield return null;
+        }
+        transform.position = to;
+    }
+    
+    IEnumerator FadeShadow(GameObject w, float time)
+    {
+        if (w == null) yield break;
+        SpriteRenderer sr = w.GetComponentInChildren<SpriteRenderer>();
+        if (sr == null) yield break;
+
+        for (float t = 0f; t < time; t += Time.deltaTime)
+        {
+            SetAlpha(sr, Mathf.Lerp(shadowStartAlpha, shadowEndAlpha, t / time));
+            yield return null;
+        }
+        SetAlpha(sr, shadowEndAlpha);
+    }
+
+    void SetAlpha(SpriteRenderer sr, float a)
+    {
+        Color c = sr.color;
+        c.a = a;
+        sr.color = c;
     }
 }

@@ -41,7 +41,7 @@ public class Shuriken : MonoBehaviour
         int level =
             upgradeData.UpgradeLevel;
 
-        int damage =
+        float damage =
             upgradeData.damage[level];
 
         // =====================================

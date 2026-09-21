@@ -143,7 +143,7 @@ public class DotDamage : MonoBehaviour
                 .upgradeDatasDic[id]
                 .dotCount[level];
 
-        int dotDamageValue =
+        float dotDamageValue =
             DataManager.Instance
                 .upgradeDatasDic[id]
                 .dotDamage[level];
@@ -296,7 +296,7 @@ public class DotDamage : MonoBehaviour
     /// <summary>
     /// 현재 타겟에게 DOT 데미지
     /// </summary>
-    protected void DealDamage(int damage)
+    protected void DealDamage(float damage)
     {
         if (enemyCombat == null)
             return;
@@ -413,7 +413,7 @@ public class DotDamage : MonoBehaviour
             col.enabled = true;
     }
 
-    protected int GetDamage()
+    protected float GetDamage()
     {
         int level =
             DataManager.Instance

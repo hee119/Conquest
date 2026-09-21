@@ -97,7 +97,7 @@ public class Burn : DotDamage
                 .upgradeDatasDic[id]
                 .dotCount[level];
 
-        int damage =
+        float damage =
             DataManager.Instance
                 .upgradeDatasDic[id]
                 .dotDamage[level];
@@ -223,7 +223,7 @@ public class Burn : DotDamage
     // Burn 데미지
     // =========================================================
 
-    private void DealBurnDamage(int damage)
+    private void DealBurnDamage(float damage)
     {
         if (enemyCombat == null)
             return;

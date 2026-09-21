@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: -1488538973715075973}
   - component: {fileID: 6911475216402954597}
   - component: {fileID: 144147814657861750}
+  - component: {fileID: 1488483257672250662}
   m_Layer: 9
   m_Name: ExpOrb 1
-  m_TagString: Untagged
+  m_TagString: Exp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ExpInfo
   id: 301
   name: BlueOrb
-  exp: 10
+  exp: 50
 --- !u!114 &6911475216402954597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,3 +181,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.96, y: 0.64}
   m_EdgeRadius: 0
+--- !u!210 &1488483257672250662
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886853310425748561}
+  m_Enabled: 1
+  m_SortingLayerID: 1032376735
+  m_SortingLayer: 2
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
+  m_Sort3DAs2D: 0

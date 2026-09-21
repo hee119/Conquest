@@ -47,7 +47,8 @@ public class RamgedEnemyAttack : MonoBehaviour
             );
                 
             GameObject bullet = PoolManager.Instance.Spawn(bulletId, bulleSpawnPos.transform.position);
-            bullet.GetComponent<BulletMove>().Target = playerCombat.gameObject;
+            bullet.GetComponent<BulletMove>().target = playerCombat.gameObject;
+            bullet.GetComponent<BulletMove>().Move();
             yield return new WaitForSeconds(attackCoolTime);
 
             canAttack = true;

@@ -149,4 +149,29 @@ public class UpgradeHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
         hoverCancel = null;
     }
+    
+    public void ForceHoverCancel()
+    {
+        if (hover != null)
+        {
+            StopCoroutine(hover);
+            hover = null;
+        }
+
+        if (hoverCancel != null)
+        {
+            StopCoroutine(hoverCancel);
+            hoverCancel = null;
+        }
+
+        outLine.SetActive(false);
+
+        transform.localPosition = new Vector3(
+            transform.localPosition.x,
+            defaultYValue,
+            transform.localPosition.z
+        );
+
+        transform.localScale = defaultScale;
+    }
 }

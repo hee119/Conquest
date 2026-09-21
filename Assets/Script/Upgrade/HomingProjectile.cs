@@ -131,7 +131,7 @@ public abstract class HomingProjectile : MonoBehaviour
             );
     }
 
-    protected int GetDamage()
+    protected float GetDamage()
     {
         int level =
             DataManager.Instance
@@ -190,7 +190,7 @@ public abstract class HomingProjectile : MonoBehaviour
             // 데미지 계산
             // =====================================
 
-            int damage =
+            float damage =
                 GetDamage();
 
             // 공격력 적용

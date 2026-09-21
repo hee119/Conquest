@@ -35,7 +35,15 @@ public class MeleeEnemyAttack : MonoBehaviour
     {
         canAttack = false;
 
-        anim.SetTrigger("Attack");
+        if (HasAnimatorParameter("Attack"))
+        {
+            anim.SetTrigger("Attack");
+        }
+        else if (!HasAnimatorParameter("Attack"))
+        {
+            Attack();
+        }
+        
 
         yield return new WaitForSeconds(attackCoolTime);
 
@@ -48,5 +56,16 @@ public class MeleeEnemyAttack : MonoBehaviour
         {
             StartCoroutine(AttackCoolTimeCor());
         }
+    }
+    
+    protected bool HasAnimatorParameter(string paramName)
+    {
+        foreach (AnimatorControllerParameter param in anim.parameters)
+        {
+            if (param.name == paramName)
+                return true;
+        }
+
+        return false;
     }
 }

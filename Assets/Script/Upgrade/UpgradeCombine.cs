@@ -27,10 +27,13 @@ public class UpgradeCombine : MonoBehaviour
                     $"[UpgradeCombine] i={i} | upgrades[i]={upgrades[i]} | UpgradeManager={UpgradeManager.Instance} | maxLevelUpgrades={UpgradeManager.Instance.maxLevelUpgrades}"
                 );
                 upgrades[i].id = UpgradeManager.Instance.maxLevelUpgrades[i];
-                upgrades[i].image.sprite =
-                    DataManager.Instance.skillUpgradeIconDic[
-                        UpgradeManager.Instance.maxLevelUpgrades[i]
-                    ];
+                if (DataManager.Instance.skillUpgradeIconDic.ContainsKey(UpgradeManager.Instance.maxLevelUpgrades[i]))
+                {
+                    upgrades[i].image.sprite =
+                        DataManager.Instance.skillUpgradeIconDic[
+                            UpgradeManager.Instance.maxLevelUpgrades[i]
+                        ]; 
+                }
 
                 upgrades[i].gameObject.SetActive(true);
                 upgrades[i].upgradeImageSet = upgradeImageSet;

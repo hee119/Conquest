@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec14367f9ef3a42eb88c5bc058b5512f, type: 3}
+  m_Name: CriticalInstinct
+  m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
+  id: 700
+  image: {fileID: 21300000, guid: 3080fd2ffabce45b19fb2ff907770cb2, type: 3}

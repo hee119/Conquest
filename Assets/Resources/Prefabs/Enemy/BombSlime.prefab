@@ -36,10 +36,11 @@ Transform:
   m_GameObject: {fileID: 4125709159630829647}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.23, y: 1.42362, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7716954754174387043}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2849458514429630293
@@ -68,7 +69,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: afb08e61759bc4481b08eaf25144e284, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -91,7 +92,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1804385078083064442, guid: 3379e485396574f2dac321cb88074deb,
+  m_Sprite: {fileID: 4571065045598337492, guid: c2556938cb614499b84fdcee6bdcac06,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -153,7 +154,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.03125, y: 0.84375}
+    oldSize: {x: 1.5675, y: 1.5675}
     newSize: {x: 1.03125, y: 0.84375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -187,7 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
   target: {fileID: 0}
   agent: {fileID: 0}
-  moveSpeed: 1
+  moveSpeed: 0.5
   stoppingDistance: 0
   isSlowDown: 0
   slowCount: 0
@@ -254,7 +255,7 @@ Animator:
   m_GameObject: {fileID: 4125709159630829647}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7b337e564c2944acd92554c0c3cdb475, type: 2}
+  m_Controller: {fileID: 9100000, guid: 558ed730e91a44b04b8ac0149c77be4e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -291,14 +292,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d339a4a912e8d422aad2d86f2e6e9661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoomSlime
-  maxHp: 0
+  maxHp: 30
   hp: 0
   isDead: 0
   isBurn: 0
+  hitParticle: {fileID: 8038513103130619623}
+  hitStateName: Hit
+  hitMaxWait: 1
   enemyInfo: {fileID: 0}
   enemyMove: {fileID: 0}
-  splitCount: 0
+  splitCount: 2
   splitSpawnCount: 2
+  defaultScale: 1
+  idleStateName: Idle
 --- !u!114 &1970854130161994557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,13 +319,91 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyInfo
   id: 107
   name: 
-  hp: 0
+  hp: 30
   hpRegenRate: 0
-  speed: 0
-  damage: 0
-  defense: 0
-  criticalDamage: 0
-  criticalChance: 0
-  explosionDamage: 0
-  explosionRange: 0
-  dropExpOrbId: 0
+  speed: 0.5
+  damage: 1
+  defense: 4
+  dropExpOrbId: 301
+  explosionDamage: 10
+  explosionRange: 2
+--- !u!1001 &5298795737036882177
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1811646982818379475}
+    m_Modifications:
+    - target: {fileID: 2490837835551310434, guid: 5bc9a0bf98f67d240a936bf476ba2082,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490837835551310434, guid: 5bc9a0bf98f67d240a936bf476ba2082,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490837835551310434, guid: 5bc9a0bf98f67d240a936bf476ba2082,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490837835551310434, guid: 5bc9a0bf98f67d240a936bf476ba2082,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490837835551310434, guid: 5bc9a0bf98f67d240a936bf476ba2082,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490837835551310434, guid: 5bc9a0bf98f67d240a936bf476ba2082,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490837835551310434, guid: 5bc9a0bf98f67d240a936bf476ba2082,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490837835551310434, guid: 5bc9a0bf98f67d240a936bf476ba2082,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490837835551310434, guid: 5bc9a0bf98f67d240a936bf476ba2082,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490837835551310434, guid: 5bc9a0bf98f67d240a936bf476ba2082,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7275548786892498063, guid: 5bc9a0bf98f67d240a936bf476ba2082,
+        type: 3}
+      propertyPath: m_Name
+      value: 'Ice Hit '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5bc9a0bf98f67d240a936bf476ba2082, type: 3}
+--- !u!4 &7716954754174387043 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2490837835551310434, guid: 5bc9a0bf98f67d240a936bf476ba2082,
+    type: 3}
+  m_PrefabInstance: {fileID: 5298795737036882177}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8038513103130619623 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2740321307519119334, guid: 5bc9a0bf98f67d240a936bf476ba2082,
+    type: 3}
+  m_PrefabInstance: {fileID: 5298795737036882177}
+  m_PrefabAsset: {fileID: 0}

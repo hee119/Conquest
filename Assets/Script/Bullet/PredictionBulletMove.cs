@@ -7,11 +7,11 @@ public class PredictionBulletMove : BulletMove
     private float predictTime;
     public override void Move()
     {
-        Vector2 targetPosition = Target.transform.position;
+        Vector2 targetPosition = target.transform.position;
 
-        if (Target.CompareTag("Player"))
+        if (target.CompareTag("Player"))
         {
-            PlayerMove playerMove = Target.GetComponent<PlayerMove>();
+            PlayerMove playerMove = target.GetComponent<PlayerMove>();
             
             Vector2 playerMoveDir = playerMove.moveDir;
 

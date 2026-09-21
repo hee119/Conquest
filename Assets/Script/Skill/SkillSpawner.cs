@@ -34,19 +34,19 @@ public class SkillSpawner : MonoBehaviour
     {
             if (animationController.canSkillUse1 && skillId == skillId1)
             {
-                animationController.Skill1();
+                animationController.Skill1(skillId);
             }
             else if (animationController.canSkillUse2 && skillId == skillId2)
             {
-                animationController.Skill2();
+                animationController.Skill2(skillId);
             }
             else if (animationController.canSkillUse3 && skillId == skillId3)
             {
-                animationController.Skill3();
+                animationController.Skill3(skillId);
             }
             else if(animationController.canSkillUse4 && skillId == skillId4)
             {
-                animationController.Skill4();
+                animationController.Skill4(skillId);
             }
     }
     

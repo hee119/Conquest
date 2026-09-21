@@ -57,11 +57,11 @@ public abstract class Flooring : MonoBehaviour
     protected void SlowDown(GameObject target)
     {
         EnemyMove enemyMove = target.GetComponent<EnemyMove>();
-        PlayerInfo playerInfo = target.GetComponent<PlayerInfo>();
+        EnemyInfo enemyInfo = target.GetComponent<EnemyInfo>();
         enemyMove.slowCount += 1;
         enemyMove.isSlowDown = true;
         enemies.Add(enemyMove);
-        enemyMove.moveSpeed = DataManager.Instance.enemyDatasDic[playerInfo.id].speed * DataManager.Instance.upgradeDatasDic[id].slow[DataManager.Instance.upgradeDatasDic[id].UpgradeLevel];
+        enemyMove.moveSpeed = DataManager.Instance.enemyDatasDic[enemyInfo.id].speed * DataManager.Instance.upgradeDatasDic[id].slow[DataManager.Instance.upgradeDatasDic[id].UpgradeLevel];
         enemyMove.MoveSpeedRenewal();
     }
 
@@ -69,12 +69,12 @@ public abstract class Flooring : MonoBehaviour
     {
         enemy.slowCount -= 1;
         enemies.Remove(enemy);
-        PlayerInfo playerInfo = enemy.GetComponent<PlayerInfo>();
+        EnemyInfo enemyInfo = enemy.GetComponent<EnemyInfo>();
 
         if (enemy.slowCount <= 0)
         {
             enemy.isSlowDown = false;
-            enemy.moveSpeed = DataManager.Instance.enemyDatasDic[playerInfo.id].speed;
+            enemy.moveSpeed = DataManager.Instance.enemyDatasDic[enemyInfo.id].speed;
             enemy.MoveSpeedRenewal();
         }
     }

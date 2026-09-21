@@ -83,7 +83,7 @@ public class Lightning : DetectUpgrade
         // 번개 1회당 한 번만 계산
         // =====================================
 
-        int damage =
+        float damage =
             DataManager.Instance
                 .upgradeDatasDic[id]
                 .damage[

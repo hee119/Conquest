@@ -118,8 +118,17 @@ public class SelectUpgrade : MonoBehaviour
     
     public void UpgradeIsSelected()
     {
-        // 클릭 즉시 레이캐스트 타겟 비활성화: 자기 자신+자식, 형제+형제의 자식
+        // 자기 자신 + 형제들의 호버 상태 강제 초기화
+        GetComponent<UpgradeHover>()?.ForceHoverCancel();
+
+        foreach (SelectUpgrade selectUpgrade in siblingObjects)
+        {
+            selectUpgrade.GetComponent<UpgradeHover>()?.ForceHoverCancel();
+        }
+
+        // 클릭 즉시 레이캐스트 차단
         SetRaycastTarget(false);
+
         foreach (SelectUpgrade selectUpgrade in siblingObjects)
         {
             selectUpgrade.SetRaycastTarget(false);
@@ -135,24 +144,29 @@ public class SelectUpgrade : MonoBehaviour
         }
 
         StartCoroutine(LevelUpAnim());
-        
+
         selectEffect.SetActive(true);
+
         foreach (SelectUpgrade selectUpgrade in siblingObjects)
         {
-            if (selectUpgrade.gameObject.activeInHierarchy && selectUpgrade.blinkLevelIcon != null)
+            if (selectUpgrade.gameObject.activeInHierarchy &&
+                selectUpgrade.blinkLevelIcon != null)
             {
                 selectUpgrade.StopCoroutine(selectUpgrade.blinkLevelIcon);
                 selectUpgrade.blinkLevelIcon = null;
+
                 foreach (var icon in selectUpgrade.levelIcons)
                 {
-                    Color alpha = new Color(icon.color.r, icon.color.g, icon.color.b, 0f);
+                    Color alpha = icon.color;
+                    alpha.a = 0f;
                     icon.color = alpha;
                 }
             }
-                
-            selectUpgrade.padeOutCoroutine = selectUpgrade.StartCoroutine(selectUpgrade.FadeOut());
-            
+
+            selectUpgrade.padeOutCoroutine =
+                selectUpgrade.StartCoroutine(selectUpgrade.FadeOut());
         }
+
         StartCoroutine(UpgredesMomScale(-1));
     }
 

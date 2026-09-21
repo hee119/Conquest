@@ -110,7 +110,7 @@ public class FireStorm : HomingProjectile
             // 데미지 계산
             // =====================================
 
-            int damage =
+            float damage =
                 GetDamage();
 
             // 공격력 적용
