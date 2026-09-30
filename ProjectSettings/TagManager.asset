@@ -86,5 +86,17 @@ TagManager:
   - name: UI
     uniqueID: 1418487415
     locked: 0
+  - name: Setting
+    uniqueID: 922256211
+    locked: 0
+  - name: Dropdown
+    uniqueID: 4137397549
+    locked: 0
+  - name: Slider
+    uniqueID: 3354445177
+    locked: 0
+  - name: Template
+    uniqueID: 3266090137
+    locked: 0
   m_RenderingLayers:
   - Default

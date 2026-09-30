@@ -852,7 +852,7 @@ MonoBehaviour:
     - line: '|   webEnableSubmoduleStrippingCompatibility: 0'
     - line: '|   scriptingDefineSymbols:'
     - line: '|     Standalone: AMPLIFY_SHADER_EDITOR'
-    - line: '|     WebGL: AMPLIFY_SHADER_EDITOR'
+    - line: '|     WebGL: AMPLIFY_SHADER_EDITOR;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;ODIN_INSPECTOR_3_2;ODIN_INSPECTOR_3_3'
     - line: '|   additionalCompilerArguments: {}'
     - line: '|   platformArchitecture: {}'
     - line: '|   scriptingBackend:'

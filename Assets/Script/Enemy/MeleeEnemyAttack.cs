@@ -15,8 +15,6 @@ public class MeleeEnemyAttack : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        playerCombat = GameObject.FindGameObjectWithTag("Player")
-            .GetComponent<PlayerCombat>();
         _enemyInfo = GetComponent<EnemyInfo>();
     }
 
@@ -28,6 +26,16 @@ public class MeleeEnemyAttack : MonoBehaviour
 
     public void Attack()
     {
+        if (!TryCachePlayerCombat())
+        {
+            return;
+        }
+
+        if (_enemyInfo == null)
+        {
+            return;
+        }
+
         playerCombat.TakeDamage(_enemyInfo.damage);
     }
 
@@ -35,11 +43,12 @@ public class MeleeEnemyAttack : MonoBehaviour
     {
         canAttack = false;
 
-        if (HasAnimatorParameter("Attack"))
+        bool hasAttackAnimation = HasAnimatorParameter("Attack");
+        if (hasAttackAnimation)
         {
             anim.SetTrigger("Attack");
         }
-        else if (!HasAnimatorParameter("Attack"))
+        else
         {
             Attack();
         }
@@ -54,12 +63,23 @@ public class MeleeEnemyAttack : MonoBehaviour
     {
         if (other.CompareTag("Player") && canAttack && !isDead && gameObject.activeInHierarchy)
         {
+            playerCombat = other.GetComponent<PlayerCombat>();
+            if (playerCombat == null)
+            {
+                return;
+            }
+
             StartCoroutine(AttackCoolTimeCor());
         }
     }
     
     protected bool HasAnimatorParameter(string paramName)
     {
+        if (anim == null)
+        {
+            return false;
+        }
+
         foreach (AnimatorControllerParameter param in anim.parameters)
         {
             if (param.name == paramName)
@@ -67,5 +87,22 @@ public class MeleeEnemyAttack : MonoBehaviour
         }
 
         return false;
+    }
+
+    private bool TryCachePlayerCombat()
+    {
+        if (playerCombat != null)
+        {
+            return true;
+        }
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null)
+        {
+            return false;
+        }
+
+        playerCombat = player.GetComponent<PlayerCombat>();
+        return playerCombat != null;
     }
 }

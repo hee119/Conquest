@@ -20,24 +20,24 @@ upgread_name_Vitality,활력,Vitality,バイタリティ
 upgread_name_QuickCast,신속 시전,Quick Cast,クイックキャスト
 upgread_name_RapidCycle,빠른 순환,Rapid Cycle,ラピッドサイクル
 upgread_name_IronWall,철벽,Iron Wall,アイアンウォール
-upgread_des_Lightning,일정 시간마다 주변의 적에게 강력한 번개를 떨어뜨립니다.,"Every so often, a powerful lightning bolt strikes nearby enemies from above.",一定時間ごとに周囲の敵に強力な雷を落とします。
-upgread_des_Fireball,일정 시간마다 주변의 적에게 파이어볼을 발사합니다.,"Every so often, fires a fireball at nearby enemies.",一定時間ごとに周囲の敵にファイアボールを発射します。
-upgread_des_Burn,적을 공격할 때 일정 확률로 화상 효과를 부여합니다.,Has a chance to inflict Burn when attacking an enemy.,敵を攻撃すると、一定確率で火傷効果を付与します。
-upgread_des_Poison,일정 시간마다 주변의 적에게 독을 발사합니다.,"Every so often, shoots poison at nearby enemies.",一定時間ごとに周囲の敵に毒を放ちます。
-upgread_des_Snail,플레이어가 지나간 곳에 적의 이동 속도를 늦추는 장판을 생성합니다.,"Leaves a slowing field behind as you move, reducing the movement speed of enemies inside it.",プレイヤーが通った場所に、敵の移動速度を低下させるエリアを生成します。
-upgread_des_Shurlken,일정 시간마다 플레이어 주변을 회전하는 표창을 생성합니다.,"Every so often, creates shurikens that orbit around you.",一定時間ごとにプレイヤーの周囲を回転する手裏剣を生成します。
-upgread_des_Missile,일정 시간마다 주변의 적을 향해 미사일을 연속 발사합니다.,"Every so often, rapidly fires missiles at nearby enemies.",一定時間ごとに周囲の敵に向かってミサイルを連続発射します。
-upgread_des_Mold,적을 공격하면 일정 확률로 곰팡이가 생성됩니다. 곰팡이는 적에게 달라붙어 성장한 뒤 폭발합니다.,"Has a chance to spawn mold when attacking. Mold attaches to enemies, grows, and explodes.",敵を攻撃すると一定確率でカビが発生します。カビは敵に付着して成長し、爆発します。
-upgread_des_FireStorm,파이어볼이 적을 피격할 시 연쇄로 적들에게 퍼져나갑니다.,"When a fireball hits an enemy, it chains to nearby enemies.",ファイアボールが敵に命中すると、近くの敵へ連鎖します。
-upgread_des_SporeWarhead,미사일 대신 곰팡이가 날아갑니다.,Fires mold instead of missiles.,ミサイルの代わりにカビを発射します。
-upgread_des_LightningShuriken,표창이 적을 피격할 시 연쇄 번개를 일으킵니다.,"When a shuriken hits an enemy, it triggers chain lightning.",手裏剣が敵に命中すると、連鎖雷撃を発生させます。
-upgread_des_Heatwave,파이어볼이 적을 피격할 시 폭발합니다.,Fireballs explode when they hit an enemy.,ファイアボールが敵に命中すると爆発します。
-upgread_des_LavaField,플레이어가 지나간 곳에 생성되는 장판에 화상 효과가 추가됩니다.,Adds a Burn effect to the field left behind as you move.,プレイヤーが通った場所に生成されるエリアに火傷効果を追加します。
-upgread_des_RottingSpore,곰팡이가 터질 때 주변의 적에게 독 효과를 적용합니다.,"When mold explodes, it inflicts Poison on nearby enemies.",カビが爆発すると、周囲の敵に毒効果を付与します。
-upgread_des_CriticalInstinct,치명타 확률이 10% 증가합니다.,Increases Critical Chance by 10%.,クリティカル率が10%増加します。
-upgread_des_CriticalForce,치명타 데미지가 20% 증가합니다.,Increases Critical Damage by 20%.,クリティカルダメージが20%増加します。
-upgread_des_PowerBoost,공격력이 10% 증가합니다.,Increases Attack Power by 10%.,攻撃力が10%増加します。
-upgread_des_Vitality,체력이 10% 증가합니다.,Increases HP by 10%.,HPが10%増加します。
-upgread_des_QuickCast,스킬 쿨타임이 5% 단축됩니다.,Reduces Skill Cooldown by 5%.,スキルクールタイムが5%短縮されます。
-upgread_des_RapidCycle,패시브 주기가 10% 단축됩니다.,Reduces Passive Cycle Time by 10%.,パッシブの周期が10%短縮されます。
-upgread_des_IronWall,방어력이 10% 증가합니다.,Increases Defense by 10%.,防御力が10%増加します。
+upgread_des_Lightning,번개 1개 추가,Add 1 Lightning,ライトニングを1個追加
+upgread_des_Fireball,파이어볼 1개 추가,Add 1 Fireball,ファイアボールを1個追加
+upgread_des_Burn,화상 확률 증가,Increase Burn Chance,火傷確率増加
+upgread_des_Poison,독 1개 추가,Add 1 Poison,毒を1個追加
+upgread_des_Snail,달팽이 장판 생성 주기 단축,Reduce Snail Field Interval,スネイルフィールドの生成間隔短縮
+upgread_des_Shurlken,표창 1개 추가,Add 1 Shuriken,手裏剣を1個追加
+upgread_des_Missile,미사일 10개 추가,Add 10 Missiles,ミサイルを10個追加
+upgread_des_Mold,곰팡이 확률 증가,Increase Mold Chance,カビ発生確率増加
+upgread_des_FireStorm,파이어볼을 화염 뇌우로 변경,Change Fireball to Firestorm,ファイアボールを炎の嵐に変更
+upgread_des_SporeWarhead,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に変更
+upgread_des_LightningShuriken,표창이 뇌전 표창으로 변경,Change Shuriken to Lightning Shuriken,手裏剣を雷電手裏剣に変更
+upgread_des_Heatwave,파이어볼을 폭염으로 변경,Change Fireball to Heatwave,ファイアボールを熱波に変更
+upgread_des_LavaField,달팽이를 용암지대로 변경,Change Snail to Lava Field,スネイルを溶岩地帯に変更
+upgread_des_RottingSpore,곰팡이를 부패포자로 변경,Change Mold to Rotting Spore,カビを腐敗胞子に変更
+upgread_des_CriticalInstinct,치명타 확률 10% 증가,Critical Chance +10%,クリティカル率 +10%
+upgread_des_CriticalForce,치명타 데미지 10% 증가,Critical Damage +10%,クリティカルダメージ +10%
+upgread_des_PowerBoost,공격력 10% 증가,Attack Power +10%,攻撃力 +10%
+upgread_des_Vitality,체력 10% 증가,HP +10%,HP +10%
+upgread_des_QuickCast,스킬 쿨타임 5% 단축,Skill Cooldown -5%,スキルクールダウン -5%
+upgread_des_RapidCycle,패시브 주기 10% 단축,Passive Cooldown -10%,パッシブクールダウン -10%
+upgread_des_IronWall,방어력 10% 증가,Defense +10%,防御力 +10%

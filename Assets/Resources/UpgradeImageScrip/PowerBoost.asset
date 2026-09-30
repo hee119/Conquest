@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PowerBoost
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 702
-  image: {fileID: 21300000, guid: 99c9fd1d057df4282b257570fc1e80dc, type: 3}
+  image: {fileID: 21300000, guid: 00298b506d5f04bbfb0f2d00322ddb50, type: 3}

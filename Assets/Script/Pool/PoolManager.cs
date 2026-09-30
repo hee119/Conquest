@@ -39,6 +39,7 @@ public class PoolManager : MonoBehaviour
         prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/Bullet"));
         prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/Boss"));
         prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/BossPattern"));
+        prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/UI"));
 
         
 
@@ -125,7 +126,7 @@ public class PoolManager : MonoBehaviour
         pooledObject.gameObject.SetActive(true);
     }
 
-    private void OnRelease(PooledObject pooledObject)
+    public void OnRelease(PooledObject pooledObject)
     {
         pooledObject.gameObject.SetActive(false);
     }
@@ -159,6 +160,69 @@ public class PoolManager : MonoBehaviour
         obj.gameObject.SetActive(false);
         obj.transform.position = targetPos;
         obj.gameObject.SetActive(true);
+
+        return obj.gameObject;
+    }
+    
+    public GameObject SpawnUI(
+        int id,
+        Transform parent
+    )
+    {
+        if (!_pools.ContainsKey(id))
+        {
+            Debug.LogWarning(
+                "[PoolManager] UI Pool ID 없음 : " +
+                id
+            );
+
+            return null;
+        }
+
+
+        PooledObject obj =
+            _pools[id].Get();
+
+
+        if (obj == null)
+        {
+            Debug.LogWarning(
+                "[PoolManager] UI Pool Object가 null"
+            );
+
+            return null;
+        }
+
+
+        // OnGet에서 이미 켜졌기 때문에
+        // UI Transform 세팅 전에 잠깐 꺼줌
+        obj.gameObject.SetActive(
+            false
+        );
+
+
+        obj.transform.SetParent(
+            parent,
+            false
+        );
+
+
+        obj.transform.localPosition =
+            Vector3.zero;
+
+
+        obj.transform.localRotation =
+            Quaternion.identity;
+
+
+        obj.transform.localScale =
+            Vector3.one;
+
+
+        obj.gameObject.SetActive(
+            true
+        );
+
 
         return obj.gameObject;
     }

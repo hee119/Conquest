@@ -5,6 +5,12 @@ TextureImporter:
   - first:
       213: -7871485446138885164
     second: sprite_4 1_0
+  - first:
+      213: -1855261663559914873
+    second: sprite_4 1_1
+  - first:
+      213: -9195759370120009674
+    second: sprite_4 1_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,10 +135,10 @@ TextureImporter:
       name: sprite_4 1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 400
-        height: 250
+        x: 117
+        y: 72
+        width: 87
+        height: 151
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,6 +149,50 @@ TextureImporter:
       bones: []
       spriteID: 4db0c3011bdd2c290800000000000000
       internalID: -7871485446138885164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_4 1_1
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 44
+        width: 151
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78a6c1ab859c046e0800000000000000
+      internalID: -1855261663559914873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_4 1_2
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 167
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 638e608f299126080800000000000000
+      internalID: -9195759370120009674
       vertices: []
       indices: 
       edges: []
@@ -162,6 +212,8 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       sprite_4 1_0: -7871485446138885164
+      sprite_4 1_1: -1855261663559914873
+      sprite_4 1_2: -9195759370120009674
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

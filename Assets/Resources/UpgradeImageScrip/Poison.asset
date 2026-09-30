@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Poison
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 403
-  image: {fileID: 21300000, guid: 18d5bb6f61a154e12a9294b8b4a56389, type: 3}
+  image: {fileID: 21300000, guid: c15d9e1f8ced049aa9fd793da518fc30, type: 3}
