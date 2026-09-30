@@ -1,13 +1,19 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class OptionEvent : MonoBehaviour
 {
-    public event Action SelectEvent;
+    [SerializeField]
+    private List<OptionSelect> options = new List<OptionSelect>();
 
-    public void ObjectSelect(OptionSelect option)
+    public void OptionSelect(OptionSelect optionSelect)
     {
-        SelectEvent?.Invoke();
-        option.SelectConfirmed();
+        foreach (OptionSelect option in options)
+        {
+            option.SelectCancel();
+        }
+        
+        optionSelect.SelectConfirmed();
     }
 }

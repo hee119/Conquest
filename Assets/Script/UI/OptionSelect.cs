@@ -5,43 +5,49 @@ using UnityEngine.UI;
 public class OptionSelect : MonoBehaviour
 {
     [SerializeField]
-    private Material outline;
+    private OptionEvent optionEvent;
     
     [SerializeField]
-    private OptionEvent optionEvent;
-
+    private Material outline;
+    
     [SerializeField] 
     private GameObject targetOption;
     
     private Image optionImage;
+    
+    public bool isSelected = false;
+
+    public void Awake()
+    {
+        optionImage = GetComponent<Image>();
+    }
+
     public void Start()
     {
         optionImage.material = null;
-        optionEvent.SelectEvent += SelectCancel;
+        targetOption.SetActive(false);
     }
-
-    public void SelectOption()
-    {
-        optionEvent.ObjectSelect(this);
-    }
-
+    
     public void SelectCancel()
     {
+        isSelected = false;
         optionImage.material = null;
-        Color color = optionImage.color;
-        float alpha = 0.3f;
-        color.a = alpha;
-        optionImage.color = color;
         targetOption.SetActive(false);
     }
 
     public void SelectConfirmed()
     {
+        isSelected = true;
         optionImage.material = outline;
         Color color = optionImage.color;
         float alpha = 1f;
         color.a = alpha;
         optionImage.color = color;
         targetOption.SetActive(true);
+    }
+
+    public void OnClick()
+    {
+        optionEvent.OptionSelect(this);
     }
 }

@@ -136,6 +136,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1749203462189623709}
+        m_TargetAssemblyTypeName: OptionSelect, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7017954371234287612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,8 +186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab1f5f7bd23274b89b7a30de4f16ff80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OptionSelect
-  outline: {fileID: 2100000, guid: 87889881e17924c1c97995ce82b2640d, type: 2}
   optionEvent: {fileID: 0}
+  outline: {fileID: 2100000, guid: 87889881e17924c1c97995ce82b2640d, type: 2}
   targetOption: {fileID: 0}
 --- !u!1 &9206892645412506935
 GameObject:
@@ -242,7 +254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sound
+  m_text: Graphic
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a811eea2874f9453d9aa18673c82aa99, type: 2}
   m_sharedMaterial: {fileID: -1003205873310539674, guid: a811eea2874f9453d9aa18673c82aa99,
