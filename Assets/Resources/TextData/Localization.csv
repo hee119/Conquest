@@ -41,3 +41,21 @@ upgread_des_Vitality,체력 10% 증가,HP +10%,HP +10%
 upgread_des_QuickCast,스킬 쿨타임 5% 단축,Skill Cooldown -5%,スキルクールダウン -5%
 upgread_des_RapidCycle,패시브 주기 10% 단축,Passive Cooldown -10%,パッシブクールダウン -10%
 upgread_des_IronWall,방어력 10% 증가,Defense +10%,防御力 +10%
+setting_title,설정,Settings,設定
+setting_language_title,언어 설정,Language Settings,言語設定
+setting_tab_graphic,그래픽,Graphic,グラフィック
+setting_tab_sound,사운드,Sound,サウンド
+setting_tab_language,언어,Language,言語
+setting_sfx,효과음,SFX,効果音
+setting_bgm,배경음악,BGM,BGM
+setting_master_volume,전체 음량,Master Volume,マスター音量
+setting_brightness,밝기,Brightness,明るさ
+setting_wave_skip,웨이브 건너뛰기,Wave Skip,ウェーブスキップ
+setting_resolution,해상도,Resolution,解像度
+setting_screen,화면 모드,Screen Mode,画面モード
+setting_screen_fullscreen,전체 화면,Full Screen,フルスクリーン
+setting_screen_windowed,창 모드,Windowed,ウィンドウ
+setting_screen_borderless,테두리 없는 창,Borderless Windowed,ボーダーレスウィンドウ
+setting_language_english,영어,English,英語
+setting_language_korean,한국어,Korean,韓国語
+setting_language_japanese,일본어,Japanese,日本語

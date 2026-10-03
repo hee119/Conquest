@@ -5,56 +5,76 @@ public class LocalizedText : MonoBehaviour
 {
     public string key;
     private TextMeshProUGUI textComponent;
+    private LocalizationManager subscribedManager;
     public string text;
     public bool isTextInit = true;
 
     void Awake()
     {
         textComponent = GetComponent<TextMeshProUGUI>();
-        if (LocalizationManager.Instance != null )
-        {
-            LocalizationManager.Instance.OnLanguageChanged += UpdateText;
-            UpdateText();
-        }
-        
     }
 
-    void Start()
+    private void OnEnable()
     {
-        
+        SubscribeToManager();
+    }
+
+    private void Start()
+    {
+        SubscribeToManager();
+    }
+
+    private void SubscribeToManager()
+    {
+        LocalizationManager manager = LocalizationManager.Instance;
+        if (manager == null)
+            return;
+
+        if (subscribedManager != manager)
+        {
+            if (subscribedManager != null)
+                subscribedManager.OnLanguageChanged -= UpdateText;
+
+            subscribedManager = manager;
+            subscribedManager.OnLanguageChanged += UpdateText;
+        }
+
+        UpdateText();
     }
 
     public void UpdateText()
     {
-        if (LocalizationManager.Instance == null)
+        UpdateText(false);
+    }
+
+    private void UpdateText(bool force)
+    {
+        LocalizationManager manager = subscribedManager != null
+            ? subscribedManager
+            : LocalizationManager.Instance;
+        if (manager == null)
             return;
 
-        text = LocalizationManager.Instance.GetTranslation(key);
+        text = manager.GetTranslation(key);
 
         if (textComponent == null)
             textComponent = GetComponent<TextMeshProUGUI>();
 
-        if (textComponent != null && isTextInit)
+        if (textComponent != null && (isTextInit || force))
             textComponent.text = text;
     }
 
     public void ForceUpdateText()
     {
-        if (LocalizationManager.Instance == null)
-            return;
-
-        text = LocalizationManager.Instance.GetTranslation(key);
-
-        if (textComponent == null)
-            textComponent = GetComponent<TextMeshProUGUI>();
-
-        if (textComponent != null)
-            textComponent.text = text;
+        UpdateText(true);
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
-        if (LocalizationManager.Instance != null)
-            LocalizationManager.Instance.OnLanguageChanged -= UpdateText;
+        if (subscribedManager != null)
+        {
+            subscribedManager.OnLanguageChanged -= UpdateText;
+            subscribedManager = null;
+        }
     }
 }
