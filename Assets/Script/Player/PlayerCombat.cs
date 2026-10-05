@@ -17,6 +17,7 @@ public class PlayerCombat : MonoBehaviour
     PlayerInfo _playerInfo;
 
     private SpriteRenderer[] spriteRenderers;
+    private PlayerMove playerMove;
 
     public event Action hpUpdate;
 
@@ -83,6 +84,7 @@ public class PlayerCombat : MonoBehaviour
     public void Awake()
     {
         pooledObject = GetComponent<PooledObject>();
+        playerMove = GetComponent<PlayerMove>();
 
         spriteRenderers =
             GetComponentsInChildren<SpriteRenderer>();
@@ -209,6 +211,9 @@ public class PlayerCombat : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (isDead || (playerMove != null && playerMove.IsDashing))
+            return;
+
         float defense =
             DataManager.Instance
                 .playerDatasDic[

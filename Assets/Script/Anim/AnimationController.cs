@@ -3,12 +3,22 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
+    private static readonly int DashState = Animator.StringToHash("Base Layer.Dash");
+    private static readonly int AttackState = Animator.StringToHash("Base Layer.Attack");
+    private static readonly int RunState = Animator.StringToHash("Base Layer.Run");
+    private static readonly int IdleState = Animator.StringToHash("Base Layer.Idle");
+
     private Animator animator;
 
     public bool canSkillUse1 = true;
     public bool canSkillUse2 = true;
     public bool canSkillUse3 = true;
     public bool canSkillUse4 = true;
+
+    public bool IsBasicAttacking =>
+        animator.GetCurrentAnimatorStateInfo(0).fullPathHash == AttackState ||
+        (animator.IsInTransition(0) &&
+         animator.GetNextAnimatorStateInfo(0).fullPathHash == AttackState);
 
     public void Awake()
     {
@@ -117,5 +127,24 @@ public class AnimationController : MonoBehaviour
     public void Move(bool isMove)
     {
         animator.SetBool("Move", isMove);
+    }
+
+    public void StartDashAnimation()
+    {
+        animator.ResetTrigger("Skill1");
+        animator.Play(DashState, 0, 0f);
+    }
+
+    public void EndDashAnimation(bool isMoving)
+    {
+        animator.SetBool("Move", isMoving);
+
+        // An attack can take over the dash before its movement timer ends.
+        // Only replace the dash state itself, never an active transition or attack.
+        if (!animator.IsInTransition(0) &&
+            animator.GetCurrentAnimatorStateInfo(0).fullPathHash == DashState)
+        {
+            animator.Play(isMoving ? RunState : IdleState, 0, 0f);
+        }
     }
 }
