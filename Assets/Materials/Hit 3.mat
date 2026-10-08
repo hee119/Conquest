@@ -584,7 +584,7 @@ Material:
     - _CamouflageDistortionSpeed: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _CamouflageNoiseScaleA: {r: 0.25, g: 0.25, b: 0, a: 0}
     - _CamouflageNoiseScaleB: {r: 0.25, g: 0.25, b: 0, a: 0}
-    - _Color: {r: 2.7102942, g: 1.4093255, b: 3.688605, a: 1}
+    - _Color: {r: 2.6082377, g: 2.6082377, b: 2.6082377, a: 1}
     - _ColorReplaceFromColor: {r: 0, g: 0, b: 0, a: 0}
     - _ColorReplaceToColor: {r: 0, g: 0, b: 0.2, a: 0}
     - _CustomFadeNoiseScale: {r: 1, g: 1, b: 0, a: 0}
@@ -668,8 +668,8 @@ Material:
     - _ScreenTilingScale: {r: 1, g: 1, b: 0, a: 0}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 0}
     - _ShadowOffset: {r: 0.05, g: -0.05, b: 0, a: 0}
-    - _ShiftingColorA: {r: 0.5094339, g: 0.031238886, b: 0.18929927, a: 0}
-    - _ShiftingColorB: {r: 1.2554111, g: 0.3301886, b: 1.9999998, a: 0}
+    - _ShiftingColorA: {r: 1, g: 1, b: 1, a: 0}
+    - _ShiftingColorB: {r: 1.435839, g: 1.435839, b: 1.435839, a: 0}
     - _ShineColor: {r: 11.98431, g: 11.98431, b: 11.98431, a: 0}
     - _SineGlowColor: {r: 0, g: 2.007843, b: 2.996078, a: 0}
     - _SineMoveFrequency: {r: 1, g: 1, b: 0, a: 0}

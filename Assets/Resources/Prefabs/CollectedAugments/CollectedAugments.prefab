@@ -28,8 +28,8 @@ RectTransform:
   m_GameObject: {fileID: 4597129384310282932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5673174996156783275}
   - {fileID: 5932431956388362706}
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bb9c40a9346fb463386dcdf08ca27d08, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2859a9b87b8be4014a8679e48e26797c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
   m_Padding:
-    m_Left: 15
+    m_Left: 27
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
@@ -377,6 +377,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SkillIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 951375106310964264, guid: 850ed1f8a631d4353a4275807a77eb74,
+        type: 3}
+      propertyPath: m_Name
+      value: SkillBackGround
       objectReference: {fileID: 0}
     - target: {fileID: 8854369610356425759, guid: 850ed1f8a631d4353a4275807a77eb74,
         type: 3}

@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 
-[ExecuteAlways]
 [RequireComponent(typeof(UnityEngine.UI.Slider))]
 public class SliderPercentText : MonoBehaviour
 {
@@ -12,10 +11,11 @@ public class SliderPercentText : MonoBehaviour
     private string suffix = "%";
 
     private UnityEngine.UI.Slider slider;
-    private float lastNormalizedValue = -1f;
-
     private void OnEnable()
     {
+        if (!Application.isPlaying)
+            return;
+
         CacheReferences();
         RegisterValueChanged();
         UpdatePercentText(GetNormalizedValue());
@@ -26,26 +26,6 @@ public class SliderPercentText : MonoBehaviour
         if (slider != null)
         {
             slider.onValueChanged.RemoveListener(UpdatePercentText);
-        }
-    }
-
-    private void OnValidate()
-    {
-        CacheReferences();
-        UpdatePercentText(GetNormalizedValue());
-    }
-
-    private void Update()
-    {
-        if (Application.isPlaying)
-        {
-            return;
-        }
-
-        float normalizedValue = GetNormalizedValue();
-        if (!Mathf.Approximately(lastNormalizedValue, normalizedValue))
-        {
-            UpdatePercentText(normalizedValue);
         }
     }
 
@@ -91,6 +71,5 @@ public class SliderPercentText : MonoBehaviour
 
         int percent = Mathf.RoundToInt(Mathf.Clamp01(normalizedValue) * 100f);
         percentText.text = $"{percent}{suffix}";
-        lastNormalizedValue = normalizedValue;
     }
 }

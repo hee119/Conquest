@@ -18,6 +18,7 @@ public class PlayerCombat : MonoBehaviour
 
     private SpriteRenderer[] spriteRenderers;
     private PlayerMove playerMove;
+    private ScreenHitFlash screenHitFlash;
 
     public event Action hpUpdate;
 
@@ -85,6 +86,7 @@ public class PlayerCombat : MonoBehaviour
     {
         pooledObject = GetComponent<PooledObject>();
         playerMove = GetComponent<PlayerMove>();
+        screenHitFlash = FindFirstObjectByType<ScreenHitFlash>();
 
         spriteRenderers =
             GetComponentsInChildren<SpriteRenderer>();
@@ -251,7 +253,6 @@ public class PlayerCombat : MonoBehaviour
             Die();
         }
 
-        Debug.Log(hp);
     }
 
     // ============================
@@ -306,6 +307,11 @@ public class PlayerCombat : MonoBehaviour
     {
         if (isDead)
             return;
+
+        if (screenHitFlash == null)
+            screenHitFlash = FindFirstObjectByType<ScreenHitFlash>();
+
+        screenHitFlash?.Play();
 
         // 연속으로 맞았을 때 기존 코루틴 제거
         if (hitFlashCoroutine != null)

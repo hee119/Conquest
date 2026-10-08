@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using NavMeshPlus.Components;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -25,9 +26,13 @@ public class StageManager : MonoBehaviour
 
     private Camera camera;
     private Transform player;
+    private GameObject runtimeCameraBounds;
 
     [SerializeField]
     private float minSpawnDistance = 5f;
+
+    [SerializeField]
+    private int spawnBatchSize = 10;
 
     private int currentWave;
     private bool canSkipToNextWave = false;
@@ -132,8 +137,45 @@ public class StageManager : MonoBehaviour
         InitializeEnemySpawnCounts();
 
         FillCameraArea();
+        ConfigureCameraBounds();
 
         StageStart();
+    }
+
+    private void ConfigureCameraBounds()
+    {
+        if (backgroundTilemap == null)
+            return;
+
+        CinemachineCamera virtualCamera = FindFirstObjectByType<CinemachineCamera>();
+        if (virtualCamera == null)
+            return;
+
+        if (runtimeCameraBounds != null)
+            Destroy(runtimeCameraBounds);
+
+        Bounds mapBounds = backgroundTilemap.localBounds;
+        if (mapBounds.size.x <= 0f || mapBounds.size.y <= 0f)
+            return;
+
+        runtimeCameraBounds = new GameObject("Runtime Camera Bounds");
+        runtimeCameraBounds.hideFlags = HideFlags.HideAndDontSave;
+        runtimeCameraBounds.transform.SetParent(backgroundTilemap.transform, false);
+
+        BoxCollider2D boundsCollider = runtimeCameraBounds.AddComponent<BoxCollider2D>();
+        boundsCollider.offset = mapBounds.center;
+        boundsCollider.size = mapBounds.size;
+        boundsCollider.isTrigger = true;
+
+        CinemachineConfiner2D confiner = virtualCamera.GetComponent<CinemachineConfiner2D>();
+        if (confiner == null)
+            confiner = virtualCamera.gameObject.AddComponent<CinemachineConfiner2D>();
+
+        confiner.BoundingShape2D = boundsCollider;
+        confiner.Damping = 0f;
+        confiner.SlowingDistance = 0f;
+        confiner.InvalidateBoundingShapeCache();
+        confiner.InvalidateLensCache();
     }
 
 
@@ -721,13 +763,6 @@ public class StageManager : MonoBehaviour
                             continue;
                         }
 
-                        Debug.Log(
-                            $"[Spawn] " +
-                            $"enemyId={enemyId} / " +
-                            $"wave={currentWave} / " +
-                            $"k={k + 1}/{enemyPerSpawn}"
-                        );
-
                         GameObject spawnedEnemy =
                             PoolManager.Instance.Spawn(
                                 enemyId,
@@ -744,6 +779,10 @@ public class StageManager : MonoBehaviour
                         }
 
                         monsterCount++;
+
+                        // Smooth initial spawn spikes without changing wave totals.
+                        if (spawnBatchSize > 0 && (k + 1) % spawnBatchSize == 0)
+                            yield return null;
                     }
                 }
 

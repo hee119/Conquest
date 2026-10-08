@@ -1,96 +1,104 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyKitingMove : EnemyMove
 {
-    [SerializeField] private float kiteDistance = 3f;
-    [SerializeField] private float directionCheckDistance = 2f;
-    [SerializeField] private int directionCount = 16;
+    [SerializeField] private float rangeTolerance = 0.15f;
 
-    protected override IEnumerator Move()
+    private Vector3 lastDestination;
+    private Vector2 lastDesiredPosition;
+    private bool hasLastDestination;
+
+    protected override void OnEnable()
     {
-        while (true)
+        hasLastDestination = false;
+        base.OnEnable();
+    }
+
+    protected override void Update()
+    {
+        if (target == null || !target.activeInHierarchy)
+            return;
+
+        Vector3 targetPosition = target.transform.position;
+        if (!HasTargetMoved(targetPosition))
+            return;
+
+        UpdateKitingDestination();
+    }
+
+    private void UpdateKitingDestination()
+    {
+        if (target == null || !target.activeInHierarchy || agent == null ||
+            !agent.enabled || !agent.isOnNavMesh)
         {
-            if (target != null && !agent.isStopped)
+            return;
+        }
+
+        // Don't override the NavMeshAgent while the base knockback routine owns it.
+        if (agent.isStopped && knockbackCoroutine != null)
+            return;
+
+        Vector2 origin = transform.position;
+        Vector2 targetPosition = target.transform.position;
+        Vector2 toTarget = targetPosition - origin;
+        float centerDistance = toTarget.magnitude;
+        Vector2 directionToTarget = centerDistance > 0.001f
+            ? toTarget / centerDistance
+            : Vector2.up;
+        float desiredRange = Mathf.Max(0f, stoppingDistance);
+        float tolerance = Mathf.Max(0.01f, rangeTolerance);
+
+        if (Mathf.Abs(centerDistance - desiredRange) <= tolerance)
+        {
+            // Keep a small dead zone around the desired range to avoid direction
+            // changes every frame when the target is right at the boundary.
+            agent.isStopped = true;
+            hasLastDestination = false;
+            RememberTargetPosition(target.transform.position);
+            return;
+        }
+
+        // This point lies on the desired range circle around the target. From
+        // inside the range it is behind the enemy; from outside it is toward it.
+        Vector2 desiredPosition = targetPosition - directionToTarget * desiredRange;
+        if (hasLastDestination && !agent.isStopped &&
+            (desiredPosition - lastDesiredPosition).sqrMagnitude <= 0.01f)
+        {
+            return;
+        }
+
+        float sampleRadius = Mathf.Max(0.5f, agent.radius);
+        if (NavMesh.SamplePosition(
+                desiredPosition,
+                out NavMeshHit destinationHit,
+                sampleRadius,
+                NavMesh.AllAreas))
+        {
+            bool wasStopped = agent.isStopped;
+            agent.isStopped = false;
+            if (!hasLastDestination || wasStopped ||
+                (destinationHit.position - lastDestination).sqrMagnitude > 0.01f)
             {
-                Vector2 toPlayer =
-                    (Vector2)target.transform.position -
-                    (Vector2)transform.position;
-
-                float distance = toPlayer.magnitude;
-
-                // 플레이어에게서 충분히 멀면 접근
-                if (distance > stoppingDistance)
-                {
-                    agent.SetDestination(target.transform.position);
-                }
-                else
-                {
-                    // 플레이어와 반대 방향
-                    Vector2 awayDirection = -toPlayer.normalized;
-
-                    Vector2 bestDirection = awayDirection;
-                    float bestScore = float.MinValue;
-
-                    for (int i = 0; i < directionCount; i++)
-                    {
-                        float angle = 360f / directionCount * i;
-
-                        Vector2 direction =
-                            Quaternion.Euler(0, 0, angle) *
-                            awayDirection;
-
-                        Vector3 checkPosition =
-                            transform.position +
-                            (Vector3)(direction * directionCheckDistance);
-
-                        if (!NavMesh.SamplePosition(
-                                checkPosition,
-                                out NavMeshHit hit,
-                                0.5f,
-                                NavMesh.AllAreas))
-                        {
-                            continue;
-                        }
-
-                        // 플레이어에게서 멀어지는 방향일수록 높은 점수
-                        float score =
-                            Vector2.Dot(
-                                direction.normalized,
-                                awayDirection
-                            );
-
-                        if (score > bestScore)
-                        {
-                            bestScore = score;
-                            bestDirection = direction;
-                        }
-                    }
-
-                    Vector3 kitePosition =
-                        transform.position +
-                        (Vector3)(bestDirection.normalized * kiteDistance);
-
-                    if (NavMesh.SamplePosition(
-                            kitePosition,
-                            out NavMeshHit finalHit,
-                            kiteDistance,
-                            NavMesh.AllAreas))
-                    {
-                        agent.SetDestination(finalHit.position);
-                    }
-                    else
-                    {
-                        agent.SetDestination(
-                            transform.position +
-                            (Vector3)(bestDirection.normalized * directionCheckDistance)
-                        );
-                    }
-                }
+                agent.SetDestination(destinationHit.position);
+                lastDestination = destinationHit.position;
             }
 
-            yield return new WaitForSeconds(pathUpdateInterval);
+            lastDesiredPosition = desiredPosition;
+            hasLastDestination = true;
+            RememberTargetPosition(target.transform.position);
         }
+        else
+        {
+            agent.isStopped = true;
+            hasLastDestination = false;
+        }
+    }
+
+    // Knockback completion resumes kiting immediately; Update handles it afterward.
+    protected override void Move()
+    {
+        hasLastDestination = false;
+        UpdateKitingDestination();
     }
 }

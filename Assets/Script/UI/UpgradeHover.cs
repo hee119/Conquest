@@ -1,177 +1,375 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UpgradeHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class UpgradeHover : MonoBehaviour,
+    IPointerEnterHandler,
+    IPointerExitHandler
 {
-    [SerializeField]
-    private GameObject outLine;
+    [Header("Hover")]
+    [SerializeField] private GameObject outLine;
+    [SerializeField] private RectTransform hoverTarget;
 
-    [SerializeField]
-    private float targetYValue;
+    [Header("Move")]
+    [Tooltip("기본 위치에서 위로 얼마나 올라갈지")]
+    [SerializeField] private float targetYValue = 30f;
 
-    [SerializeField]
-    private float upSpeed;
+    [SerializeField] private float upSpeed = 10f;
+    [SerializeField] private float downSpeed = 10f;
 
-    [SerializeField]
-    private float downSpeed;
+    [Header("Scale")]
+    [SerializeField] private float targetScale = 1.1f;
 
-    [SerializeField]
-    private float targetScale = 1.1f;
 
-    private float defaultYValue;
+    private RectTransform visualRect;
+
     private Vector3 defaultScale;
+    private float defaultYValue;
 
-    private Coroutine hover;
-    private Coroutine hoverCancel;
+    private bool isHovering;
 
-    public void Awake()
+    // 호버 입력 자체를 막는 용도
+    private bool hoverBlocked;
+
+    // 선택 후 현재 커진 상태를 유지하는 용도
+    private bool hoverLocked;
+
+
+    // =========================================================
+    // Awake
+    // =========================================================
+
+    private void Awake()
     {
-        defaultYValue = transform.localPosition.y;
-        defaultScale = new Vector3(1, 1, 1);
+        // hoverTarget을 지정하지 않았다면 자기 자신 사용
+        visualRect = hoverTarget != null
+            ? hoverTarget
+            : transform as RectTransform;
 
-        outLine.SetActive(false);
+
+        if (visualRect == null)
+        {
+            Debug.LogError(
+                $"{name} : UpgradeHover에 RectTransform이 없습니다."
+            );
+
+            return;
+        }
+
+
+        // 원래 크기 저장
+        defaultScale =
+            visualRect.localScale;
+
+
+        // 원래 Y 위치 저장
+        defaultYValue =
+            visualRect.anchoredPosition.y;
+
+
+        if (outLine != null)
+        {
+            outLine.SetActive(false);
+        }
     }
 
-    // 마우스가 오브젝트 위에 들어왔을 때
+
+    // =========================================================
+    // OnEnable
+    // =========================================================
+
+    private void OnEnable()
+    {
+        hoverBlocked = false;
+        hoverLocked = false;
+        isHovering = false;
+
+
+        RestoreVisual();
+    }
+
+
+    // =========================================================
+    // OnDisable
+    // =========================================================
+
+    private void OnDisable()
+    {
+        hoverBlocked = false;
+        hoverLocked = false;
+        isHovering = false;
+
+
+        RestoreVisual();
+    }
+
+
+    // =========================================================
+    // Update
+    // =========================================================
+
+    private void Update()
+    {
+        if (visualRect == null)
+            return;
+
+
+        // -----------------------------------------------------
+        // 선택 후 호버 고정 상태
+        //
+        // 이미 커진 상태 그대로 유지
+        // -----------------------------------------------------
+
+        if (hoverLocked)
+        {
+            return;
+        }
+
+
+        // -----------------------------------------------------
+        // 호버 중
+        // -----------------------------------------------------
+
+        if (isHovering && !hoverBlocked)
+        {
+            MoveUp();
+            ScaleUp();
+        }
+
+        // -----------------------------------------------------
+        // 호버 해제
+        // -----------------------------------------------------
+
+        else
+        {
+            MoveDown();
+            ScaleDown();
+        }
+    }
+
+
+    // =========================================================
+    // Pointer Enter
+    // =========================================================
+
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log($"{gameObject.name} Hover 시작");
+        // 선택 후 잠긴 상태라면 아무것도 하지 않음
+        if (hoverLocked)
+            return;
 
-        if (hoverCancel != null)
-        {
-            StopCoroutine(hoverCancel);
-            hoverCancel = null;
-        }
 
-        if (hover == null)
+        // 강제로 호버가 막힌 상태
+        if (hoverBlocked)
+            return;
+
+
+        isHovering = true;
+
+
+        if (outLine != null)
         {
-            hover = StartCoroutine(Hover());
+            outLine.SetActive(true);
         }
     }
 
-    // 마우스가 오브젝트에서 빠져나갔을 때
+
+    // =========================================================
+    // Pointer Exit
+    // =========================================================
+
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log($"{gameObject.name} Hover Cancel");
+        // 선택한 카드는 마우스가 나가도
+        // 현재 커진 상태 유지
+        if (hoverLocked)
+            return;
 
-        if (hover != null)
-        {
-            StopCoroutine(hover);
-            hover = null;
-        }
 
-        if (hoverCancel == null)
+        isHovering = false;
+
+
+        if (outLine != null)
         {
-            hoverCancel = StartCoroutine(HoverCancel());
+            outLine.SetActive(false);
         }
     }
 
-    public IEnumerator Hover()
+
+    // =========================================================
+    // 위로 이동
+    // =========================================================
+
+    private void MoveUp()
     {
-        outLine.SetActive(true);
+        Vector2 position =
+            visualRect.anchoredPosition;
 
-        float targetY = defaultYValue + targetYValue;
-        Vector3 targetScaleValue = defaultScale * targetScale;
 
-        while (
-            transform.localPosition.y < targetY ||
-            transform.localScale != targetScaleValue
-        )
-        {
-            // Y 이동
-            Vector3 pos = transform.localPosition;
+        float targetY =
+            defaultYValue + targetYValue;
 
-            pos.y = Mathf.MoveTowards(
-                pos.y,
+
+        position.y =
+            Mathf.MoveTowards(
+                position.y,
                 targetY,
                 upSpeed * Time.unscaledDeltaTime
             );
 
-            transform.localPosition = pos;
 
-            // Scale 증가
-            transform.localScale = Vector3.MoveTowards(
-                transform.localScale,
-                targetScaleValue,
-                upSpeed * Time.unscaledDeltaTime
-            );
-
-            yield return null;
-        }
-
-        // 정확하게 목표값 맞추기
-        Vector3 finalPos = transform.localPosition;
-        finalPos.y = targetY;
-        transform.localPosition = finalPos;
-
-        transform.localScale = targetScaleValue;
-
-        hover = null;
+        visualRect.anchoredPosition =
+            position;
     }
 
-    public IEnumerator HoverCancel()
+
+    // =========================================================
+    // 원래 위치로 복귀
+    // =========================================================
+
+    private void MoveDown()
     {
-        outLine.SetActive(false);
+        Vector2 position =
+            visualRect.anchoredPosition;
 
-        while (
-            transform.localPosition.y > defaultYValue ||
-            transform.localScale != defaultScale
-        )
-        {
-            // Y 이동
-            Vector3 pos = transform.localPosition;
 
-            pos.y = Mathf.MoveTowards(
-                pos.y,
+        position.y =
+            Mathf.MoveTowards(
+                position.y,
                 defaultYValue,
                 downSpeed * Time.unscaledDeltaTime
             );
 
-            transform.localPosition = pos;
 
-            // Scale 감소
-            transform.localScale = Vector3.MoveTowards(
-                transform.localScale,
+        visualRect.anchoredPosition =
+            position;
+    }
+
+
+    // =========================================================
+    // 확대
+    // =========================================================
+
+    private void ScaleUp()
+    {
+        Vector3 targetScaleValue =
+            defaultScale * targetScale;
+
+
+        visualRect.localScale =
+            Vector3.MoveTowards(
+                visualRect.localScale,
+                targetScaleValue,
+                upSpeed * Time.unscaledDeltaTime
+            );
+    }
+
+
+    // =========================================================
+    // 원래 크기로 복귀
+    // =========================================================
+
+    private void ScaleDown()
+    {
+        visualRect.localScale =
+            Vector3.MoveTowards(
+                visualRect.localScale,
                 defaultScale,
                 downSpeed * Time.unscaledDeltaTime
             );
-
-            yield return null;
-        }
-
-        // 정확하게 원래값 맞추기
-        Vector3 finalPos = transform.localPosition;
-        finalPos.y = defaultYValue;
-        transform.localPosition = finalPos;
-
-        transform.localScale = defaultScale;
-
-        hoverCancel = null;
     }
-    
+
+
+    // =========================================================
+    // 선택한 카드용
+    //
+    // 현재 호버 상태 그대로 고정
+    //
+    // 중요:
+    // RestoreVisual()을 호출하지 않음
+    // 그래서 현재 커져있는 크기와 위치가 유지됨
+    // =========================================================
+
+    public void LockCurrentHover()
+    {
+        hoverLocked = true;
+        hoverBlocked = true;
+        isHovering = true;
+
+
+        // 현재 상태 그대로 유지
+        // localScale이나 위치를 건드리지 않음
+
+
+        if (outLine != null)
+        {
+            outLine.SetActive(true);
+        }
+    }
+
+
+    // =========================================================
+    // 다른 카드용
+    //
+    // 호버 강제로 취소
+    // 원래 크기 / 위치로 즉시 복귀
+    // =========================================================
+
     public void ForceHoverCancel()
     {
-        if (hover != null)
+        hoverLocked = false;
+        hoverBlocked = true;
+        isHovering = false;
+
+
+        RestoreVisual();
+    }
+
+
+    // =========================================================
+    // 다시 호버 가능하게
+    // =========================================================
+
+    public void EnableHover()
+    {
+        hoverLocked = false;
+        hoverBlocked = false;
+        isHovering = false;
+
+
+        RestoreVisual();
+    }
+
+
+    // =========================================================
+    // 완전 초기화
+    // =========================================================
+
+    private void RestoreVisual()
+    {
+        if (visualRect == null)
+            return;
+
+
+        // Y 원래 위치
+        Vector2 position =
+            visualRect.anchoredPosition;
+
+        position.y =
+            defaultYValue;
+
+        visualRect.anchoredPosition =
+            position;
+
+
+        // 크기 원래대로
+        visualRect.localScale =
+            defaultScale;
+
+
+        // Outline OFF
+        if (outLine != null)
         {
-            StopCoroutine(hover);
-            hover = null;
+            outLine.SetActive(false);
         }
-
-        if (hoverCancel != null)
-        {
-            StopCoroutine(hoverCancel);
-            hoverCancel = null;
-        }
-
-        outLine.SetActive(false);
-
-        transform.localPosition = new Vector3(
-            transform.localPosition.x,
-            defaultYValue,
-            transform.localPosition.z
-        );
-
-        transform.localScale = defaultScale;
     }
 }

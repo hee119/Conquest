@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-[ExecuteAlways]
 [DisallowMultipleComponent]
 [RequireComponent(typeof(HorizontalLayoutGroup))]
 public sealed class SettingsOptionRowLayout : MonoBehaviour
@@ -13,15 +12,21 @@ public sealed class SettingsOptionRowLayout : MonoBehaviour
 
     private bool applying;
 
-    private void OnEnable() => ApplyLayout();
+    private void OnEnable()
+    {
+        if (Application.isPlaying)
+            ApplyLayout();
+    }
 
-    private void OnValidate() => ApplyLayout();
-
-    private void OnTransformChildrenChanged() => ApplyLayout();
+    private void OnTransformChildrenChanged()
+    {
+        if (Application.isPlaying)
+            ApplyLayout();
+    }
 
     private void ApplyLayout()
     {
-        if (applying)
+        if (!Application.isPlaying || applying)
             return;
 
         var row = transform as RectTransform;

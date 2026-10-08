@@ -38,12 +38,6 @@ public class CodexPlaytestAgent : MonoBehaviour
     private SurvivalMemory memory = new SurvivalMemory();
     private SurvivalEpisode currentEpisode;
 
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-    private static void Bootstrap()
-    {
-        // This run uses an explicit scene object so only one agent controls the player.
-    }
-
     private void Start()
     {
         startedAt = Time.realtimeSinceStartup;

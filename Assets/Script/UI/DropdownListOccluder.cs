@@ -17,21 +17,21 @@ public sealed class DropdownListOccluder : MonoBehaviour, IPointerClickHandler
 
     private void Awake()
     {
+        if (!Application.isPlaying)
+            return;
+
         Cache();
         ApplyToTemplate(true);
     }
 
     private void OnEnable()
     {
+        if (!Application.isPlaying)
+            return;
+
         Cache();
         ApplyToTemplate(true);
         refreshRequested = true;
-    }
-
-    private void OnValidate()
-    {
-        Cache();
-        ApplyToTemplate(false);
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -41,6 +41,9 @@ public sealed class DropdownListOccluder : MonoBehaviour, IPointerClickHandler
 
     private void LateUpdate()
     {
+        if (!Application.isPlaying)
+            return;
+
         if (activeList != null && activeList.gameObject.activeInHierarchy)
         {
             ApplyToList(activeList);

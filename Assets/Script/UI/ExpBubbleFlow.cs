@@ -267,7 +267,7 @@ public class ExpBubbleFlow : MonoBehaviour
 
 
                 yield return
-                    new WaitForSecondsRealtime(
+                    new WaitForSeconds(
                         waitTime
                     );
             }
@@ -288,7 +288,7 @@ public class ExpBubbleFlow : MonoBehaviour
             if (cooldown > 0f)
             {
                 yield return
-                    new WaitForSecondsRealtime(
+                    new WaitForSeconds(
                         cooldown
                     );
             }
@@ -593,7 +593,7 @@ public class ExpBubbleFlow : MonoBehaviour
         )
         {
             time +=
-                Time.unscaledDeltaTime;
+                Time.deltaTime;
 
 
             Vector2 position =
@@ -606,7 +606,7 @@ public class ExpBubbleFlow : MonoBehaviour
 
             position.x +=
                 speed *
-                Time.unscaledDeltaTime;
+                Time.deltaTime;
 
 
             // =================================================

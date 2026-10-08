@@ -285,6 +285,12 @@ public class UpgradeManager : MonoBehaviour
     // 카드 슬롯 하나에 업그레이드 정보를 채움
     private void ApplyToSlot(int slot, int id)
     {
+        if (slot < 0 || slot >= upgradesInfo.Count || upgradesInfo[slot] == null)
+        {
+            Debug.LogWarning($"[UpgradeManager] 업그레이드 UI 슬롯이 비어 있음 (Slot: {slot})");
+            return;
+        }
+
         if (!TryGetView(id, out var v))
         {
             Debug.LogWarning($"[UpgradeManager] 업그레이드 데이터를 찾을 수 없음 (ID: {id})");
@@ -293,22 +299,33 @@ public class UpgradeManager : MonoBehaviour
 
         var info = upgradesInfo[slot];
 
+        // Unity 직렬화 데이터가 누락된 카드도 런타임에서 복구한다.
+        if (info.upgradeData == null)
+            info.upgradeData = new UpgradeData();
+
         if (!info.gameObject.activeInHierarchy)
             info.gameObject.SetActive(true);
 
         info.upgradeData.id = v.id;
         info.name = v.name;
-        info.upgradeNameLo.key = v.name;
-        info.upgradeImage.sprite = v.sprite;
         info.upgradeData.type = v.type;
-
-        // 실제 레벨 + 1을 UI에 표시
         info.upgradeData.upgradeLevel = v.upgradeLevel;
 
-        info.upgradeDesLo.key = v.description;
+        // 카드 프리팹에서 제목 텍스트가 제거된 경우에도 업그레이드 선택은 가능하게 한다.
+        if (info.upgradeNameLo != null)
+        {
+            info.upgradeNameLo.key = v.name;
+            info.upgradeNameLo.ForceUpdateText();
+        }
 
-        info.upgradeDesLo.ForceUpdateText();
-        info.upgradeNameLo.ForceUpdateText();
+        if (info.upgradeImage != null)
+            info.upgradeImage.sprite = v.sprite;
+
+        if (info.upgradeDesLo != null)
+        {
+            info.upgradeDesLo.key = v.description;
+            info.upgradeDesLo.ForceUpdateText();
+        }
     }
 
     // =========================================================

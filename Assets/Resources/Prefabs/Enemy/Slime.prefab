@@ -92,7 +92,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 4571065045598337492, guid: c2556938cb614499b84fdcee6bdcac06,
+  m_Sprite: {fileID: 8831279014357658696, guid: 170803ecca95a43fa9b91866e9cc6ea7,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -154,7 +154,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.18, y: 4.18}
+    oldSize: {x: 3.4133334, y: 3.4133334}
     newSize: {x: 1.03125, y: 0.84375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -192,7 +192,7 @@ MonoBehaviour:
   stoppingDistance: 0
   isSlowDown: 0
   slowCount: 0
-  pathUpdateInterval: 0.2
+  pathUpdateInterval: 0.35
   knockbackCooldown: 0.3
   knockbackPower: 6
   knockbackDuration: 0.2
@@ -217,7 +217,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 1
 --- !u!50 &79239086328230691
 Rigidbody2D:
   serializedVersion: 5
@@ -255,7 +255,7 @@ Animator:
   m_GameObject: {fileID: 4125709159630829647}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7b337e564c2944acd92554c0c3cdb475, type: 2}
+  m_Controller: {fileID: 9100000, guid: 288c02ddcd46145d49b364133ff2ac2c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

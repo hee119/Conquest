@@ -65,7 +65,7 @@ public class OctopusKing : MonoBehaviour
 
     public IEnumerator Start()
     {
-        while (true)
+        while (target != null && target.activeInHierarchy)
         {
             int pattern =
                 UnityEngine.Random.Range(0, 4);
@@ -214,18 +214,31 @@ public class OctopusKing : MonoBehaviour
 
         while (bulletCount < bulletSpawnCount)
         {
+            if (target == null || !target.activeInHierarchy)
+                yield break;
             GameObject bulletObj =
                 PoolManager.Instance.Spawn(
                     bulletId,
                     waterSpawnPoint.transform.position
                 );
 
+            if (bulletObj == null)
+            {
+                yield return new WaitForSeconds(bulletSpawnInterval);
+                continue;
+            }
 
             PredictionBulletMove bulletMove =
                 bulletObj.GetComponent<
                     PredictionBulletMove
                 >();
 
+            if (bulletMove == null)
+            {
+                bulletObj.GetComponent<PooledObject>()?.DestroyObj();
+                yield return new WaitForSeconds(bulletSpawnInterval);
+                continue;
+            }
 
             bulletMove.target = target;
 
@@ -284,6 +297,8 @@ public class OctopusKing : MonoBehaviour
              i < waterBombCount;
              i++)
         {
+            if (target == null || !target.activeInHierarchy)
+                yield break;
             // =============================
             // 생성 위치
             // =============================

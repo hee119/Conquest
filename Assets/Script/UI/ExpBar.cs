@@ -1,12 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using Conquest.PolygonFill;
 
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
-
-[ExecuteAlways]
 public class ExpBar : MonoBehaviour
 {
     // =========================================================
@@ -49,6 +45,7 @@ public class ExpBar : MonoBehaviour
 
     private RectTransform fillMaskRect;
     private RectTransform fillTextureRect;
+    private PolygonFillGraphic customPolygonFill;
 
 
     // =========================================================
@@ -101,21 +98,6 @@ public class ExpBar : MonoBehaviour
 
 
     // =========================================================
-    // Editor
-    // =========================================================
-
-    private float lastEditorSliderValue = -1f;
-
-    private Vector2 lastEditorFillAreaSize =
-        new Vector2(-1f, -1f);
-
-
-#if UNITY_EDITOR
-    private bool editorSetupQueued;
-#endif
-
-
-    // =========================================================
     // 코드로 만든 원형 Mask Sprite
     // =========================================================
 
@@ -129,10 +111,7 @@ public class ExpBar : MonoBehaviour
     public void Awake()
     {
         if (!Application.isPlaying)
-        {
-            QueueEditorSetup();
             return;
-        }
 
         SetupExpBar();
 
@@ -157,6 +136,10 @@ public class ExpBar : MonoBehaviour
 
     private void OnEnable()
     {
+        if (!Application.isPlaying)
+            return;
+
+
         expSlider =
             GetComponent<Slider>();
 
@@ -164,82 +147,6 @@ public class ExpBar : MonoBehaviour
         RegisterSliderValueChanged();
 
 
-        if (Application.isPlaying)
-            return;
-
-
-        QueueEditorSetup();
-    }
-
-
-    private void OnValidate()
-    {
-        QueueEditorSetup();
-    }
-
-
-    // =========================================================
-    // Editor Update
-    // =========================================================
-
-    private void Update()
-    {
-        if (Application.isPlaying)
-            return;
-
-
-        if (expSlider == null)
-        {
-            expSlider =
-                GetComponent<Slider>();
-        }
-
-
-        if (expSlider == null)
-            return;
-
-
-        if (
-            fillAreaRect == null ||
-            fillMaskRect == null ||
-            fillTextureRect == null
-        )
-        {
-            QueueEditorSetup();
-            return;
-        }
-
-
-        Vector2 fillAreaSize =
-            fillAreaRect.rect.size;
-
-
-        float sliderValue =
-            expSlider.normalizedValue;
-
-
-        if (
-            !Mathf.Approximately(
-                lastEditorSliderValue,
-                sliderValue
-            )
-            ||
-            lastEditorFillAreaSize != fillAreaSize
-        )
-        {
-            lastEditorSliderValue =
-                sliderValue;
-
-
-            lastEditorFillAreaSize =
-                fillAreaSize;
-
-
-            UpdateFillTextureLayout();
-
-
-            SetFillCapGlowVisible(false);
-        }
     }
 
 
@@ -643,6 +550,20 @@ public class ExpBar : MonoBehaviour
                 : null;
 
 
+        customPolygonFill =
+            fillAreaRect != null
+                ? fillAreaRect.GetComponentInChildren<PolygonFillGraphic>(true)
+                : null;
+
+
+        if (customPolygonFill != null)
+        {
+            UpdateCustomPolygonFill();
+            RegisterSliderValueChanged();
+            return;
+        }
+
+
         SetupExpBarImages();
 
 
@@ -692,101 +613,23 @@ public class ExpBar : MonoBehaviour
         float _
     )
     {
+        if (customPolygonFill != null)
+        {
+            UpdateCustomPolygonFill();
+            return;
+        }
+
+
         if (
             fillAreaRect == null ||
             fillMaskRect == null ||
             fillTextureRect == null
         )
-        {
-            QueueEditorSetup();
-
             return;
-        }
-
-
-        lastEditorSliderValue =
-            expSlider != null
-                ? expSlider.normalizedValue
-                : -1f;
-
-
-        if (fillAreaRect != null)
-        {
-            lastEditorFillAreaSize =
-                fillAreaRect.rect.size;
-        }
 
 
         UpdateFillTextureLayout();
-
-
-        if (!Application.isPlaying)
-        {
-            SetFillCapGlowVisible(false);
-        }
     }
-
-
-    // =========================================================
-    // Editor Setup
-    // =========================================================
-
-    private void QueueEditorSetup()
-    {
-#if UNITY_EDITOR
-
-        if (editorSetupQueued)
-            return;
-
-
-        editorSetupQueued =
-            true;
-
-
-        EditorApplication.delayCall +=
-            DelayedEditorSetup;
-
-#else
-
-        SetupExpBar();
-
-#endif
-    }
-
-
-#if UNITY_EDITOR
-
-    private void DelayedEditorSetup()
-    {
-        editorSetupQueued =
-            false;
-
-
-        if (
-            this == null ||
-            !isActiveAndEnabled
-        )
-            return;
-
-
-        SetupExpBar();
-
-
-        if (expSlider != null)
-        {
-            lastEditorSliderValue =
-                expSlider.normalizedValue;
-        }
-
-
-        if (fillAreaRect != null)
-        {
-            lastEditorFillAreaSize =
-                fillAreaRect.rect.size;
-        }
-    }
-
-#endif
 
 
     // =========================================================
@@ -868,15 +711,15 @@ public class ExpBar : MonoBehaviour
         }
 
 
+        CreateFillAreaClip();
+
+
         CreateFillMask();
 
 
         CreateFillTexture(
             fillSprite
         );
-
-
-        DisableLegacyFillTextures();
 
 
         // ★ 둥근 Fill 끝
@@ -893,7 +736,23 @@ public class ExpBar : MonoBehaviour
         );
 
 
-        CreateLevelUpRimGlow();
+    }
+
+
+    // =========================================================
+    // Fill Area 바깥으로 UI 글로우가 그려지지 않도록 자르기
+    // =========================================================
+
+    private void CreateFillAreaClip()
+    {
+        if (fillAreaRect == null)
+            return;
+
+
+        if (fillAreaRect.GetComponent<RectMask2D>() == null)
+        {
+            fillAreaRect.gameObject.AddComponent<RectMask2D>();
+        }
     }
 
 
@@ -1530,74 +1389,6 @@ public class ExpBar : MonoBehaviour
     }
 
 
-    private void DisableLegacyFillTextures()
-    {
-        if (fillAreaRect == null)
-            return;
-
-
-        DisableLegacyFillTexture(
-            fillAreaRect.Find(
-                "Galaxy Fill"
-            )
-        );
-
-
-        if (
-            expSlider == null ||
-            expSlider.fillRect == null
-        )
-            return;
-
-
-        Transform[] fillChildren =
-            expSlider.fillRect
-                .GetComponentsInChildren<
-                    Transform
-                >(true);
-
-
-        foreach (
-            Transform child
-            in fillChildren
-        )
-        {
-            if (
-                child == expSlider.fillRect ||
-                child == fillTextureRect
-            )
-                continue;
-
-
-            if (
-                child.name ==
-                "Galaxy Fill"
-            )
-            {
-                DisableLegacyFillTexture(
-                    child
-                );
-            }
-        }
-    }
-
-
-    private void DisableLegacyFillTexture(
-        Transform legacyFill
-    )
-    {
-        if (
-            legacyFill == null ||
-            legacyFill == fillTextureRect
-        )
-            return;
-
-
-        legacyFill.gameObject
-            .SetActive(false);
-    }
-
-
     // =========================================================
     // Fill 진행 글로우
     // =========================================================
@@ -1705,102 +1496,19 @@ public class ExpBar : MonoBehaviour
     // EXP 획득 / 레벨업 글로우
     // =========================================================
 
-    private void CreateLevelUpRimGlow()
-    {
-        if (fillAreaRect == null)
-            return;
-
-
-        Transform existingGlow =
-            fillAreaRect.Find(
-                "Level Up Right Rim Glow"
-            );
-
-
-        GameObject glowObject =
-            existingGlow != null
-                ? existingGlow.gameObject
-                : new GameObject(
-                    "Level Up Right Rim Glow",
-                    typeof(RectTransform),
-                    typeof(CanvasRenderer),
-                    typeof(ExpBarRightEdgeGlow)
-                );
-
-
-        if (existingGlow == null)
-        {
-            glowObject.transform.SetParent(
-                fillAreaRect,
-                false
-            );
-        }
-
-
-        glowObject.SetActive(true);
-
-
-        glowObject.transform
-            .SetAsLastSibling();
-
-
-        levelUpRimGlowRect =
-            glowObject.GetComponent<
-                RectTransform
-            >();
-
-
-        levelUpRimGlow =
-            glowObject.GetComponent<
-                ExpBarRightEdgeGlow
-            >();
-
-
-        if (levelUpRimGlow == null)
-        {
-            levelUpRimGlow =
-                glowObject.AddComponent<
-                    ExpBarRightEdgeGlow
-                >();
-        }
-
-
-        // ★ Fill Area 왼쪽 기준
-        levelUpRimGlowRect.anchorMin =
-            new Vector2(
-                0f,
-                0.5f
-            );
-
-
-        levelUpRimGlowRect.anchorMax =
-            new Vector2(
-                0f,
-                0.5f
-            );
-
-
-        levelUpRimGlowRect.pivot =
-            new Vector2(
-                0.5f,
-                0.5f
-            );
-
-
-        levelUpRimGlow.raycastTarget =
-            false;
-
-
-        SetLevelUpRimGlowAlpha(0f);
-    }
-
-
     // =========================================================
     // 전체 Fill Layout
     // =========================================================
 
     private void UpdateFillTextureLayout()
     {
+        if (customPolygonFill != null)
+        {
+            UpdateCustomPolygonFill();
+            return;
+        }
+
+
         if (fillAreaRect == null)
             return;
 
@@ -1844,6 +1552,16 @@ public class ExpBar : MonoBehaviour
             width,
             height
         );
+    }
+
+
+    private void UpdateCustomPolygonFill()
+    {
+        if (customPolygonFill == null || expSlider == null)
+            return;
+
+
+        customPolygonFill.FillAmount = GetSliderFillValue();
     }
 
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Tilemaps;
 public class PlayerMove : MonoBehaviour
 {
     [Header("Dash")]
@@ -40,10 +41,16 @@ public class PlayerMove : MonoBehaviour
     public bool canMove = true;
     public float speed = 3;
 
+    [Header("Tilemap Bounds")]
+    [SerializeField, Min(0f)] private float boundaryPadding = 0.02f;
+
+    private SpriteRenderer playerSpriteRenderer;
+
     public void Awake()
     {
         playerRb = GetComponent<Rigidbody2D>();
         animationController = GetComponent<AnimationController>();
+        playerSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void OnEnable()
@@ -71,18 +78,71 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isDashing)
+        if (isDashing)
+        {
+            playerRb.linearVelocity = dashDirection * dashSpeed;
+            dashTimeLeft -= Time.fixedDeltaTime;
+
+            if (dashTimeLeft <= 0f)
+            {
+                isDashing = false;
+                playerRb.linearVelocity = canMove ? MoveDir * speed : Vector2.zero;
+                animationController.EndDashAnimation(canMove && MoveDir != Vector2.zero);
+            }
+        }
+
+        KeepInsideTilemapBounds();
+    }
+
+    private void KeepInsideTilemapBounds()
+    {
+        if (playerRb == null || StageManager.Instance == null)
             return;
 
-        playerRb.linearVelocity = dashDirection * dashSpeed;
-        dashTimeLeft -= Time.fixedDeltaTime;
+        Tilemap tilemap = StageManager.Instance.backgroundTilemap;
+        if (tilemap == null || !tilemap.gameObject.activeInHierarchy)
+            return;
 
-        if (dashTimeLeft <= 0f)
-        {
-            isDashing = false;
-            playerRb.linearVelocity = canMove ? MoveDir * speed : Vector2.zero;
-            animationController.EndDashAnimation(canMove && MoveDir != Vector2.zero);
-        }
+        Bounds localBounds = tilemap.localBounds;
+        if (localBounds.size.x <= 0f || localBounds.size.y <= 0f)
+            return;
+
+        Vector3 localMin = localBounds.min;
+        Vector3 localMax = localBounds.max;
+        Vector3 worldBottomLeft = tilemap.transform.TransformPoint(
+            new Vector3(localMin.x, localMin.y, 0f));
+        Vector3 worldTopRight = tilemap.transform.TransformPoint(
+            new Vector3(localMax.x, localMax.y, 0f));
+
+        float mapMinX = Mathf.Min(worldBottomLeft.x, worldTopRight.x);
+        float mapMaxX = Mathf.Max(worldBottomLeft.x, worldTopRight.x);
+        float mapMinY = Mathf.Min(worldBottomLeft.y, worldTopRight.y);
+        float mapMaxY = Mathf.Max(worldBottomLeft.y, worldTopRight.y);
+
+        Vector2 spriteExtents = playerSpriteRenderer != null
+            ? (Vector2)playerSpriteRenderer.bounds.extents
+            : Vector2.zero;
+        Vector2 spriteCenterOffset = playerSpriteRenderer != null
+            ? (Vector2)(playerSpriteRenderer.bounds.center - transform.position)
+            : Vector2.zero;
+
+        float padding = Mathf.Max(0f, boundaryPadding);
+        float minX = mapMinX + spriteExtents.x + padding - spriteCenterOffset.x;
+        float maxX = mapMaxX - spriteExtents.x - padding - spriteCenterOffset.x;
+        float minY = mapMinY + spriteExtents.y + padding - spriteCenterOffset.y;
+        float maxY = mapMaxY - spriteExtents.y - padding - spriteCenterOffset.y;
+
+        if (minX > maxX)
+            minX = maxX = (mapMinX + mapMaxX) * 0.5f - spriteCenterOffset.x;
+        if (minY > maxY)
+            minY = maxY = (mapMinY + mapMaxY) * 0.5f - spriteCenterOffset.y;
+
+        Vector2 currentPosition = playerRb.position;
+        Vector2 nextPosition = currentPosition + playerRb.linearVelocity * Time.fixedDeltaTime;
+        nextPosition.x = Mathf.Clamp(nextPosition.x, minX, maxX);
+        nextPosition.y = Mathf.Clamp(nextPosition.y, minY, maxY);
+
+        playerRb.linearVelocity = (nextPosition - currentPosition) / Time.fixedDeltaTime;
     }
 
     private void TryDash()

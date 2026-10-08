@@ -1,0 +1,10 @@
+{
+  "name": "com.conquest.polygon-fill",
+  "version": "1.0.0",
+  "displayName": "Editable Polygon Fill",
+  "description": "Draw filled uGUI polygons by adding and connecting editable corner points.",
+  "unity": "6000.0",
+  "dependencies": {
+    "com.unity.ugui": "2.0.0"
+  }
+}

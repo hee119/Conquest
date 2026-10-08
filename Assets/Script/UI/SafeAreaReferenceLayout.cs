@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[ExecuteAlways]
 [DisallowMultipleComponent]
 [RequireComponent(typeof(RectTransform))]
 public sealed class SafeAreaReferenceLayout : MonoBehaviour
@@ -15,6 +14,9 @@ public sealed class SafeAreaReferenceLayout : MonoBehaviour
 
     private void OnEnable()
     {
+        if (!Application.isPlaying)
+            return;
+
         content = (RectTransform)transform;
         parentRect = transform.parent as RectTransform;
         lastParentSize = Vector2.zero;
@@ -37,6 +39,9 @@ public sealed class SafeAreaReferenceLayout : MonoBehaviour
 
     private void Refresh()
     {
+        if (!Application.isPlaying)
+            return;
+
         if (content == null || parentRect == null || Screen.width <= 0 || Screen.height <= 0)
             return;
 

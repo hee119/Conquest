@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b53dde8ad1c0c41c3abf07bf37989197, type: 3}
+  m_Name: Sprite Sheet 64 Grid
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::Conquest.Editor.ImageImportPresets.TextureImportPreset
+  presetName: Sprite Sheet 64 Grid
+  textureType: 8
+  spriteImportMode: 2
+  maxTextureSize: 2048
+  sRGBTexture: 1
+  alphaIsTransparency: 1
+  mipmapEnabled: 0
+  isReadable: 0
+  filterMode: 0
+  wrapMode: 1
+  compression: 0
+  compressionQuality: 50
+  pixelsPerUnit: 100
+  spriteMeshType: 0
+  spriteAlignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  sliceMode: 1
+  cellSize: {x: 64, y: 64}
+  cellCount: {x: 4, y: 4}
+  sliceOffset: {x: 0, y: 0}
+  slicePadding: {x: 0, y: 0}

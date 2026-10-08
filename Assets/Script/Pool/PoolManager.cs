@@ -10,6 +10,7 @@ public class PoolManager : MonoBehaviour
     private Dictionary<int, IObjectPool<PooledObject>> _pools = new();
 
     [SerializeField] private int maxSize = 50;
+    [SerializeField] private int enemyPoolMaxSize = 200;
 
     public List<GameObject> prefabs = new List<GameObject>();
 
@@ -87,7 +88,6 @@ public class PoolManager : MonoBehaviour
         else
             return;
 
-        Debug.Log(id);
         if (_pools.ContainsKey(id))
         {
             Debug.LogWarning("pool already contains id: " + id);
@@ -104,7 +104,7 @@ public class PoolManager : MonoBehaviour
             OnDestroyPool,
             collectionCheck: false,
             defaultCapacity: 10,
-            maxSize: maxSize
+            maxSize: enemyInfo != null ? enemyPoolMaxSize : maxSize
         );
 
         _pools.Add(id, pool);
@@ -229,6 +229,22 @@ public class PoolManager : MonoBehaviour
 
     public void SpawnTest(int id)
     {
-        Spawn(id, Vector2.zero);
+        var countInputObject = GameObject.Find("SpawnIdCountInput");
+        var countInput = countInputObject != null
+            ? countInputObject.GetComponent<TMPro.TMP_InputField>()
+            : null;
+
+        // 씬에 입력칸이 없는 경우 기존 동작대로 한 마리를 생성합니다.
+        if (countInput == null)
+        {
+            Spawn(id, Vector2.zero);
+            return;
+        }
+
+        if (!int.TryParse(countInput.text, out int spawnCount) || spawnCount < 0)
+            return;
+
+        for (int i = 0; i < spawnCount; i++)
+            Spawn(id, Vector2.zero);
     }
 }
