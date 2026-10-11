@@ -17,8 +17,10 @@ public sealed class LobbyController : MonoBehaviour
         Bind("MainMenu/Quit", QuitGame);
         Bind("StagePanel/Stage1", StartStage);
         Bind("StagePanel/Back", ShowMainMenu);
+        Bind("StagePanel/Close", ShowMainMenu);
         Bind("CharacterPanel/Swordman", SelectSwordman);
         Bind("CharacterPanel/Back", ShowMainMenu);
+        Bind("CharacterPanel/Close", ShowMainMenu);
     }
 
     private void Bind(string path, UnityEngine.Events.UnityAction action)
