@@ -59,3 +59,10 @@ setting_screen_borderless,테두리 없는 창,Borderless Windowed,ボーダー�
 setting_language_english,영어,English,英語
 setting_language_korean,한국어,Korean,韓国語
 setting_language_japanese,일본어,Japanese,日本語
+game_title,행성 개척자,Planetary Pioneer,惑星開拓者
+lobby_stage_select,스테이지 선택,Stage Select,ステージ選択
+lobby_character_select,캐릭터 선택,Character Select,キャラクター選択
+lobby_quit,나가기,Quit,終了
+lobby_back,돌아가기,Back,戻る
+lobby_stage_1,스테이지 1,Stage 1,ステージ1
+lobby_character_swordman,검사,Swordsman,剣士

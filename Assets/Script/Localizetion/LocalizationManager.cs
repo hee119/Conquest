@@ -123,7 +123,8 @@ public class LocalizationManager : MonoBehaviour
     {
         currentLanguage = langCode.ToLower();
 
-        GameManager.Instance.currentLanguage = currentLanguage;
+        if (GameManager.Instance != null)
+            GameManager.Instance.currentLanguage = currentLanguage;
 
         PlayerPrefs.SetString("Language", currentLanguage);
         PlayerPrefs.Save();
