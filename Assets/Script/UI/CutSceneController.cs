@@ -1,4 +1,7 @@
 using DG.Tweening;
+using Febucci.TextAnimatorForUnity;
+using Febucci.TextAnimatorForUnity.TextMeshPro;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -7,8 +10,9 @@ using UnityEngine.SceneManagement;
 public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private UnityEngine.UI.Image displayImage;
-    [SerializeField] private UnityEngine.UI.Text captionText;
-    [SerializeField] private DOTweenAnimation captionAnimation;
+    [SerializeField] private TMP_Text captionText;
+    [SerializeField] private TypewriterComponent captionTypewriter;
+    [SerializeField] private TextAnimator_TMP captionAnimator;
     [SerializeField] private Sprite[] frames;
     [SerializeField, TextArea(2, 4)] private string[] captions;
     [SerializeField] private string nextSceneName = "Lobby";
@@ -52,14 +56,18 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
         displayImage.color = darkTint;
         transitioning = false;
 
-        if (captionText != null && captionAnimation != null)
+        if (captionText != null)
         {
-            DOTween.Kill(captionText);
-            captionText.text = string.Empty;
-            captionAnimation.endValueString = captions != null && index < captions.Length
+            string caption = captions != null && index < captions.Length
                 ? captions[index]
                 : string.Empty;
-            captionAnimation.RecreateTweenAndPlay();
+
+            if (captionTypewriter != null)
+                captionTypewriter.ShowText(caption);
+            else if (captionAnimator != null)
+                captionAnimator.SetText(caption, true);
+            else
+                captionText.text = caption;
         }
 
         playbackTween = DOTween.Sequence()
@@ -79,8 +87,7 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
         // A click skips the remaining bright display time, then fades out normally.
         transitioning = true;
         playbackTween?.Kill();
-        if (captionText != null)
-            DOTween.Kill(captionText);
+        captionTypewriter?.StopShowingText();
         playbackTween = displayImage.DOColor(darkTint, fadeOutSeconds)
             .SetUpdate(true)
             .OnComplete(Advance);
@@ -119,7 +126,6 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
     {
         playbackTween?.Kill();
         playbackTween = null;
-        if (captionText != null)
-            DOTween.Kill(captionText);
+        captionTypewriter?.StopShowingText();
     }
 }
