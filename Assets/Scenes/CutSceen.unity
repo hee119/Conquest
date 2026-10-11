@@ -738,7 +738,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5c89f3af6e85c7f4c81bee1b9768154c, type: 3}
   - {fileID: 21300000, guid: 674a1f581ce83624587039c1d8396531, type: 3}
   - {fileID: 21300000, guid: 6caee94f3168cf745a37ab18df40aaef, type: 3}
-  stageSceneName: Stage1
+  nextSceneName: Lobby
   fadeInSeconds: 1.2
   visibleSeconds: 3
   fadeOutSeconds: 0.8

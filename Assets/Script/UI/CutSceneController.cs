@@ -8,7 +8,7 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private UnityEngine.UI.Image displayImage;
     [SerializeField] private Sprite[] frames;
-    [SerializeField] private string stageSceneName = "Stage1";
+    [SerializeField] private string nextSceneName = "Lobby";
     [SerializeField, Min(0.01f)] private float fadeInSeconds = 1.2f;
     [SerializeField, Min(0f)] private float visibleSeconds = 3f;
     [SerializeField, Min(0.01f)] private float fadeOutSeconds = 0.8f;
@@ -97,7 +97,7 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
         loadingStage = true;
         playbackTween?.Kill();
         playbackTween = null;
-        SceneManager.LoadSceneAsync(stageSceneName);
+        SceneManager.LoadSceneAsync(nextSceneName);
     }
 
     private void OnDisable()
