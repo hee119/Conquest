@@ -58,6 +58,10 @@ namespace Conquest.Editor.ImageImportPresets
 
             foreach (string path in importedAssets)
             {
+                // Cutscene images are configured automatically during preprocessing.
+                if (IsCutsceneImage(path))
+                    continue;
+
                 if (!IsImageFile(path) || !(AssetImporter.GetAtPath(path) is TextureImporter))
                     continue;
 
@@ -155,6 +159,10 @@ namespace Conquest.Editor.ImageImportPresets
             }
         }
 
+        internal static bool IsCutsceneImage(string path) =>
+            path.StartsWith("Assets/Cutscene/", StringComparison.OrdinalIgnoreCase) &&
+            IsImageFile(path);
+
         private static bool IsHandled(string guid) =>
             EditorPrefs.GetBool(HandledPrefix + guid, false);
 
@@ -209,6 +217,25 @@ namespace Conquest.Editor.ImageImportPresets
 
     internal sealed class TextureImportPresetPostprocessor : AssetPostprocessor
     {
+        private void OnPreprocessTexture()
+        {
+            if (!TextureImportPresetQueue.IsCutsceneImage(assetPath))
+                return;
+
+            var importer = (TextureImporter)assetImporter;
+            importer.textureType = TextureImporterType.Sprite;
+            importer.spriteImportMode = SpriteImportMode.Single;
+            importer.filterMode = FilterMode.Point;
+            importer.mipmapEnabled = false;
+            importer.textureCompression = TextureImporterCompression.Uncompressed;
+            importer.wrapMode = TextureWrapMode.Clamp;
+            importer.maxTextureSize = 2048;
+            var platform = importer.GetDefaultPlatformTextureSettings();
+            platform.maxTextureSize = 2048;
+            platform.textureCompression = TextureImporterCompression.Uncompressed;
+            importer.SetPlatformTextureSettings(platform);
+        }
+
         private static void OnPostprocessAllAssets(
             string[] importedAssets,
             string[] deletedAssets,
