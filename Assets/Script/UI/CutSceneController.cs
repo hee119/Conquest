@@ -7,7 +7,10 @@ using UnityEngine.SceneManagement;
 public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private UnityEngine.UI.Image displayImage;
+    [SerializeField] private UnityEngine.UI.Text captionText;
+    [SerializeField] private DOTweenAnimation captionAnimation;
     [SerializeField] private Sprite[] frames;
+    [SerializeField, TextArea(2, 4)] private string[] captions;
     [SerializeField] private string nextSceneName = "Lobby";
     [SerializeField, Min(0.01f)] private float fadeInSeconds = 1.2f;
     [SerializeField, Min(0f)] private float visibleSeconds = 3f;
@@ -49,6 +52,16 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
         displayImage.color = darkTint;
         transitioning = false;
 
+        if (captionText != null && captionAnimation != null)
+        {
+            DOTween.Kill(captionText);
+            captionText.text = string.Empty;
+            captionAnimation.endValueString = captions != null && index < captions.Length
+                ? captions[index]
+                : string.Empty;
+            captionAnimation.RecreateTweenAndPlay();
+        }
+
         playbackTween = DOTween.Sequence()
             .SetUpdate(true)
             .Append(displayImage.DOColor(Color.white, fadeInSeconds))
@@ -66,6 +79,8 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
         // A click skips the remaining bright display time, then fades out normally.
         transitioning = true;
         playbackTween?.Kill();
+        if (captionText != null)
+            DOTween.Kill(captionText);
         playbackTween = displayImage.DOColor(darkTint, fadeOutSeconds)
             .SetUpdate(true)
             .OnComplete(Advance);
@@ -104,5 +119,7 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
     {
         playbackTween?.Kill();
         playbackTween = null;
+        if (captionText != null)
+            DOTween.Kill(captionText);
     }
 }
