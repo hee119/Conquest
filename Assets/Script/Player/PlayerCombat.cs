@@ -296,6 +296,8 @@ public class PlayerCombat : MonoBehaviour
     {
         isDead = true;
 
+        GameEndScreenController.ShowGameOver();
+
         gameObject.SetActive(false);
     }
 

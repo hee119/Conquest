@@ -15,7 +15,7 @@ public sealed class LobbyController : MonoBehaviour
         Bind("MainMenu/StageSelect", OpenStageSelect);
         Bind("MainMenu/CharacterSelect", OpenCharacterSelect);
         Bind("MainMenu/Quit", QuitGame);
-        Bind("StagePanel/Stage1", StartStage);
+        BindStageTiles();
         Bind("StagePanel/Back", ShowMainMenu);
         Bind("StagePanel/Close", ShowMainMenu);
         Bind("CharacterPanel/Swordman", SelectSwordman);
@@ -40,6 +40,28 @@ public sealed class LobbyController : MonoBehaviour
         }
 
         button.onClick.AddListener(action);
+    }
+
+    private void BindStageTiles()
+    {
+        Transform grid = transform.Find("StagePanel/StageGrid");
+        if (grid == null)
+        {
+            Debug.LogError("Lobby stage grid is missing.", this);
+            return;
+        }
+
+        foreach (Transform tile in grid)
+        {
+            Button button = tile.GetComponent<Button>();
+            if (button == null)
+                continue;
+
+            if (tile.name == "StageTile_01")
+                button.onClick.AddListener(StartStage);
+            else
+                button.interactable = false;
+        }
     }
 
     public void OpenStageSelect()

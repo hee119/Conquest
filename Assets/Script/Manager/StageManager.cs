@@ -878,5 +878,7 @@ public class StageManager : MonoBehaviour
         Debug.Log(
             "[Stage Complete] 모든 적 종류의 웨이브 종료"
         );
+
+        GameEndScreenController.ShowDemoClear();
     }
 }

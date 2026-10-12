@@ -64,5 +64,11 @@ lobby_stage_select,스테이지 선택,Stage Select,ステージ選択
 lobby_character_select,캐릭터 선택,Character Select,キャラクター選択
 lobby_quit,나가기,Quit,終了
 lobby_back,돌아가기,Back,戻る
-lobby_stage_1,스테이지 1,Stage 1,ステージ1
+lobby_stage_1,Stage 1,Stage 1,Stage 1
+gameover_title,게임 오버,Game Over,ゲームオーバー
+gameover_message,이번 도전은 여기까지입니다.,This run has come to an end.,今回の挑戦はここまでです。
+demo_clear_title,데모 클리어,DEMO CLEAR,デモクリア
+demo_clear_message,행성 개척의 첫걸음을 내디뎠습니다.,Humanity has taken its first step toward a new home.,人類は新たな故郷への第一歩を踏み出しました。
+end_retry,다시하기,Retry,リトライ
+end_lobby,로비로 돌아가기,Return to Lobby,ロビーに戻る
 lobby_character_swordman,검사,Swordsman,剣士
