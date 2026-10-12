@@ -71,4 +71,5 @@ demo_clear_title,데모 클리어,DEMO CLEAR,デモクリア
 demo_clear_message,행성 개척의 첫걸음을 내디뎠습니다.,Humanity has taken its first step toward a new home.,人類は新たな故郷への第一歩を踏み出しました。
 end_retry,다시하기,Retry,リトライ
 end_lobby,로비로 돌아가기,Return to Lobby,ロビーに戻る
+stage_panel_title,스테이지,Stage,ステージ
 lobby_character_swordman,검사,Swordsman,剣士
