@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System.Reflection;
+using TMPro;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -12,12 +13,16 @@ public class UpgradeManager : MonoBehaviour
     public static UpgradeManager Instance;
     public List<int> skillUpgrades = new List<int>();
     public List<int> statUpgrades = new List<int>();
+    public List<int> characterSkillUpgrades = new List<int>();
     public List<int> upgrades = new List<int>();
     public List<UpgradeUiInfo> upgradesInfo = new List<UpgradeUiInfo>();
     public List<int> renewableUpgrades = new List<int>();
 
     Dictionary<int, Action<int>> upgradeActions = new Dictionary<int, Action<int>>();
     public Dictionary<int, IEnumerator> upgradeCor = new Dictionary<int, IEnumerator>();
+    private readonly Dictionary<int, float> upgradeCooldownEnds = new Dictionary<int, float>();
+    private readonly Dictionary<int, float> upgradeCooldownDurations = new Dictionary<int, float>();
+    private UpgradeCooldownHud upgradeCooldownHud;
 
     private GameObject player;
     BoxCollider2D playerCollider;
@@ -27,6 +32,8 @@ public class UpgradeManager : MonoBehaviour
 
     public int skillUpgradeCount;
     public int statUpgradeCount;
+
+    public bool isFirstUpgrade = true;
 
     public event Action upgradeRenewal;
     public event Action upgradeSelect;
@@ -111,11 +118,86 @@ public class UpgradeManager : MonoBehaviour
         }
         else if (Instance != this)
         {
+            // Rebind references to controls and skills from the reloaded scene.
+            Instance.upgradesInfo = upgradesInfo;
+            Instance.skillUpgradeIcons = skillUpgradeIcons;
+            Instance.statUpgradeIcons = statUpgradeIcons;
+            Instance.detectUpgrade = detectUpgrade;
+            Instance.orbit = orbit;
             Destroy(gameObject);
+            return;
         }
 
         player = GameObject.FindGameObjectWithTag("Player");
         playerCollider = player.GetComponent<BoxCollider2D>();
+        EnsureUpgradeCooldownHud();
+    }
+
+    public void ResetForNewRun()
+    {
+        StopRun();
+        ResetBonusesToOriginal();
+
+        skillUpgrades.Clear();
+        statUpgrades.Clear();
+        characterSkillUpgrades.Clear();
+        renewableUpgrades.Clear();
+        maxLevelUpgrades.Clear();
+        upgrades.Clear();
+        skillUpgradeCount = 0;
+        statUpgradeCount = 0;
+        isFirstUpgrade = true;
+
+        foreach (var data in DataManager.Instance.upgradeDatasDic.Values)
+        {
+            data.upgradeLevel = 0;
+            if (data.tier <= 0)
+                upgrades.Add(data.id);
+        }
+        foreach (var data in DataManager.Instance.statUpgradeDatasDic.Values)
+        {
+            data.upgradeLevel = 0;
+            if (data.tier <= 0)
+                upgrades.Add(data.id);
+        }
+        foreach (var data in DataManager.Instance.characterSkillUpgradeDatasDic.Values)
+        {
+            data.upgradeLevel = 0;
+            if (data.tier <= 0)
+                upgrades.Add(data.id);
+        }
+
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerCollider = player != null ? player.GetComponent<BoxCollider2D>() : null;
+    }
+
+    public void StopRun()
+    {
+        StopAllCoroutines();
+        upgradeCor.Clear();
+        upgradeCooldownEnds.Clear();
+        upgradeCooldownDurations.Clear();
+
+        ClearCollectedUpgradeIcons(skillUpgradeIcons);
+        ClearCollectedUpgradeIcons(statUpgradeIcons);
+        if (upgradeCooldownHud != null)
+            upgradeCooldownHud.ClearAll();
+    }
+
+    private static void ClearCollectedUpgradeIcons(Image[] icons)
+    {
+        if (icons == null)
+            return;
+
+        foreach (Image icon in icons)
+        {
+            if (icon == null)
+                continue;
+
+            CollectedUpgradeIconUI view = icon.GetComponent<CollectedUpgradeIconUI>();
+            if (view != null)
+                view.Clear();
+        }
     }
 
     public void UpgradesInit()
@@ -259,7 +341,23 @@ public class UpgradeManager : MonoBehaviour
                 sprite = s.sprite,
                 type = s.type,
                 upgradeLevel = s.upgradeLevel,
-                description = s.description
+                description = s.upgradeLevel <= 0
+                    ? "upgread_intro_" + s.function
+                    : s.description
+            };
+            return true;
+        }
+
+        if (dm.characterSkillUpgradeDatasDic.TryGetValue(id, out var characterSkill))
+        {
+            v = new UpgradeView
+            {
+                id = characterSkill.id,
+                name = characterSkill.name,
+                sprite = characterSkill.sprite,
+                type = characterSkill.type,
+                upgradeLevel = characterSkill.upgradeLevel,
+                description = ValueAt(characterSkill.descriptions, characterSkill.upgradeLevel)
             };
             return true;
         }
@@ -278,6 +376,9 @@ public class UpgradeManager : MonoBehaviour
 
         if (dm.statUpgradeDatasDic.TryGetValue(id, out var s))
             return s.UpgradeLevel;
+
+        if (dm.characterSkillUpgradeDatasDic.TryGetValue(id, out var characterSkill))
+            return characterSkill.UpgradeLevel;
 
         return 0;
     }
@@ -324,8 +425,83 @@ public class UpgradeManager : MonoBehaviour
         if (info.upgradeDesLo != null)
         {
             info.upgradeDesLo.key = v.description;
+            info.upgradeDesLo.SetArguments(GetDescriptionArguments(id));
             info.upgradeDesLo.ForceUpdateText();
         }
+    }
+
+    private object[] GetDescriptionArguments(int id)
+    {
+        int level = Mathf.Clamp(GetLevel(id), 0, 4);
+        var dm = DataManager.Instance;
+
+        if (dm.upgradeDatasDic.TryGetValue(id, out var skill))
+        {
+            switch (skill.function)
+            {
+                case "Burn":
+                case "Mold":
+                    return new object[] { ValueAt(skill.debuffChance, level) };
+                case "Snail":
+                    return new object[] { Mathf.RoundToInt((1f - ValueAt(skill.slow, level)) * 100f) };
+                default:
+                    return new object[] { ValueAt(skill.count, level) };
+            }
+        }
+
+        if (dm.statUpgradeDatasDic.TryGetValue(id, out var stat))
+        {
+            // 카드에는 현재 보유 레벨이 아니라 이번 선택으로 적용될 단계의 값을 표시한다.
+            int statLevel = Mathf.Clamp(stat.upgradeLevel, 0, 4);
+            float value = stat.function switch
+            {
+                "CriticalInstinct" => ValueAt(stat.critChance, statLevel),
+                "CriticalForce" => ValueAt(stat.critDamage, statLevel),
+                "PowerBoost" => ValueAt(stat.attackPower, statLevel),
+                "Vitality" => ValueAt(stat.maxHp, statLevel),
+                "QuickCast" => ValueAt(stat.skillCooldown, statLevel),
+                "RapidCycle" => ValueAt(stat.passiveCooldown, statLevel),
+                "IronWall" => ValueAt(stat.defense, statLevel),
+                _ => 0f
+            };
+            return new object[] { value % 1f == 0f ? (object)(int)value : value };
+        }
+
+        if (dm.characterSkillUpgradeDatasDic.TryGetValue(id, out var characterSkill))
+        {
+            int nextLevel = Mathf.Clamp(
+                characterSkill.upgradeLevel,
+                0,
+                Mathf.Max(0, GetCharacterSkillMaxLevel(characterSkill) - 1));
+            return new object[]
+            {
+                ValueAt(characterSkill.rangePercent, nextLevel),
+                ValueAt(characterSkill.attackCount, nextLevel),
+                ValueAt(characterSkill.pierce, nextLevel),
+                ValueAt(characterSkill.chainCount, nextLevel),
+                ValueAt(characterSkill.chainRange, nextLevel),
+                ValueAt(characterSkill.damagePercent, nextLevel)
+            };
+        }
+
+        return System.Array.Empty<object>();
+    }
+
+    private static int ValueAt(int[] values, int index)
+    {
+        return values != null && values.Length > 0 ? values[Mathf.Min(index, values.Length - 1)] : 0;
+    }
+
+    private static float ValueAt(float[] values, int index)
+    {
+        return values != null && values.Length > 0 ? values[Mathf.Min(index, values.Length - 1)] : 0f;
+    }
+
+    private static string ValueAt(string[] values, int index)
+    {
+        return values != null && values.Length > 0
+            ? values[Mathf.Clamp(index, 0, values.Length - 1)]
+            : string.Empty;
     }
 
     // =========================================================
@@ -361,13 +537,38 @@ public class UpgradeManager : MonoBehaviour
             MoveUnownedToRenewable("Stat", statUpgrades);
         }
 
+        List<int> eligibleUpgrades = upgrades
+            .Where(IsEligibleForCurrentCharacter)
+            .ToList();
+
         // 업그레이드 UI 갱신
         // 3개 이상이면 앞의 3개, 3개 미만이면 순환하며 채움 (i % Count)
-        if (upgrades.Count > 0)
+        if (eligibleUpgrades.Count > 0)
         {
             for (int i = 0; i < 3; i++)
             {
-                ApplyToSlot(i, upgrades[i % upgrades.Count]);
+                if (isFirstUpgrade)
+                {
+                    List<int> firstSkills = eligibleUpgrades
+                        .Where(id => DataManager.Instance.upgradeDatasDic.TryGetValue(id, out var data)
+                                     && data.type == "Skill")
+                        .Take(3)
+                        .ToList();
+
+                    // A sheet may contain fewer than three starting skills.
+                    // Fill the remaining cards from the available upgrades.
+                    for (int k = 0; k < 3; k++)
+                        ApplyToSlot(k, k < firstSkills.Count
+                            ? firstSkills[k]
+                            : eligibleUpgrades[k % eligibleUpgrades.Count]);
+
+                   isFirstUpgrade = false;
+                   break;
+                }
+                else
+                {
+                    ApplyToSlot(i, eligibleUpgrades[i % eligibleUpgrades.Count]);
+                }
             }
         }
 
@@ -408,6 +609,9 @@ public class UpgradeManager : MonoBehaviour
                 skillUpgradeIcons[skillUpgradeCount].sprite =
                     DataManager.Instance.skillUpgradeIconDic[id];
 
+                // 보유 아이콘에는 레벨만 표시한다. 쿨타임은 좌하단 전용 HUD에서 표시한다.
+                CollectedUpgradeIconUI.Attach(skillUpgradeIcons[skillUpgradeCount], id);
+
                 skillUpgradeCount++;
             }
         }
@@ -421,6 +625,7 @@ public class UpgradeManager : MonoBehaviour
         }
 
         upgradeActions[id](id);
+        EnsureUpgradeCooldownHud().Track(id);
         upgradeSelect?.Invoke();
     }
 
@@ -434,6 +639,8 @@ public class UpgradeManager : MonoBehaviour
             {
                 statUpgradeIcons[statUpgradeCount].sprite =
                     DataManager.Instance.statUpgradeIconDic[id];
+
+                CollectedUpgradeIconUI.Attach(statUpgradeIcons[statUpgradeCount], id);
 
                 statUpgradeCount++;
             }
@@ -449,6 +656,121 @@ public class UpgradeManager : MonoBehaviour
 
         upgradeActions[id](id);
         upgradeSelect?.Invoke();
+    }
+
+    private bool IsEligibleForCurrentCharacter(int id)
+    {
+        if (DataManager.Instance.upgradeDatasDic.ContainsKey(id) ||
+            DataManager.Instance.statUpgradeDatasDic.ContainsKey(id))
+            return true;
+
+        if (!DataManager.Instance.characterSkillUpgradeDatasDic.TryGetValue(
+                id,
+                out CharacterSkillUpgradeData data))
+            return false;
+
+        int currentCharacterId = CharacterManager.Instance != null
+            ? CharacterManager.Instance.currentCharacter
+            : 0;
+
+        return data.characterId <= 0 ||
+               (currentCharacterId > 0 && data.characterId == currentCharacterId);
+    }
+
+    public void CharacterSkillUpgradesAdd(int id)
+    {
+        if (!DataManager.Instance.characterSkillUpgradeDatasDic.TryGetValue(
+                id,
+                out CharacterSkillUpgradeData data) ||
+            data.type != "CharacterSkill" ||
+            !IsEligibleForCurrentCharacter(id))
+            return;
+
+        if (!characterSkillUpgrades.Contains(id))
+            characterSkillUpgrades.Add(id);
+
+        data.upgradeLevel++;
+        if (data.upgradeLevel >= GetCharacterSkillMaxLevel(data))
+            upgrades.Remove(id);
+
+        upgradeSelect?.Invoke();
+    }
+
+    public BasicAttackModifiers GetBasicAttackModifiers(int characterId)
+    {
+        BasicAttackModifiers result = BasicAttackModifiers.Default;
+
+        foreach (int id in characterSkillUpgrades)
+        {
+            if (!DataManager.Instance.characterSkillUpgradeDatasDic.TryGetValue(
+                    id,
+                    out CharacterSkillUpgradeData data) ||
+                data.type != "CharacterSkill" ||
+                (data.characterId > 0 && data.characterId != characterId))
+                continue;
+
+            int level = Mathf.Max(0, data.UpgradeLevel);
+            result.rangeMultiplier += SumThrough(data.rangePercent, level) / 100f;
+            result.attackCount += SumThrough(data.attackCount, level);
+            result.pierceCount += SumThrough(data.pierce, level);
+            result.chainCount += SumThrough(data.chainCount, level);
+            result.chainRange = Mathf.Max(result.chainRange, MaxThrough(data.chainRange, level));
+            result.damageMultiplier += SumThrough(data.damagePercent, level) / 100f;
+        }
+
+        result.attackCount = Mathf.Max(1, result.attackCount);
+        result.rangeMultiplier = Mathf.Max(0.1f, result.rangeMultiplier);
+        result.damageMultiplier = Mathf.Max(0f, result.damageMultiplier);
+        return result;
+    }
+
+    private static int GetCharacterSkillMaxLevel(CharacterSkillUpgradeData data)
+    {
+        return Mathf.Max(
+            1,
+            data.rangePercent?.Length ?? 0,
+            data.attackCount?.Length ?? 0,
+            data.pierce?.Length ?? 0,
+            data.chainCount?.Length ?? 0,
+            data.chainRange?.Length ?? 0,
+            data.damagePercent?.Length ?? 0,
+            data.descriptions?.Length ?? 0);
+    }
+
+    private static int SumThrough(int[] values, int level)
+    {
+        if (values == null || values.Length == 0)
+            return 0;
+
+        int sum = 0;
+        int last = Mathf.Min(level, values.Length - 1);
+        for (int i = 0; i <= last; i++)
+            sum += values[i];
+        return sum;
+    }
+
+    private static float SumThrough(float[] values, int level)
+    {
+        if (values == null || values.Length == 0)
+            return 0f;
+
+        float sum = 0f;
+        int last = Mathf.Min(level, values.Length - 1);
+        for (int i = 0; i <= last; i++)
+            sum += values[i];
+        return sum;
+    }
+
+    private static float MaxThrough(float[] values, int level)
+    {
+        if (values == null || values.Length == 0)
+            return 0f;
+
+        float max = 0f;
+        int last = Mathf.Min(level, values.Length - 1);
+        for (int i = 0; i <= last; i++)
+            max = Mathf.Max(max, values[i]);
+        return max;
     }
 
     // =========================================================
@@ -467,6 +789,80 @@ public class UpgradeManager : MonoBehaviour
         upgradeCor[id] = newCoroutine;
 
         StartCoroutine(newCoroutine);
+    }
+
+    public int GetUpgradeDisplayLevel(int id)
+    {
+        if (DataManager.Instance == null)
+            return 0;
+
+        if (DataManager.Instance.upgradeDatasDic.TryGetValue(id, out UpgradeData skill))
+            return Mathf.Max(0, skill.upgradeLevel);
+
+        if (DataManager.Instance.statUpgradeDatasDic.TryGetValue(id, out StatUpgradeData stat))
+            return Mathf.Max(0, stat.upgradeLevel);
+
+        if (DataManager.Instance.characterSkillUpgradeDatasDic.TryGetValue(
+                id,
+                out CharacterSkillUpgradeData characterSkill))
+            return Mathf.Max(0, characterSkill.upgradeLevel);
+
+        return 0;
+    }
+
+    public void BeginUpgradeCooldown(int id, float duration)
+    {
+        duration = Mathf.Max(0f, duration);
+        upgradeCooldownDurations[id] = duration;
+        upgradeCooldownEnds[id] = Time.time + duration;
+        EnsureUpgradeCooldownHud().Track(id);
+    }
+
+    public bool TryGetUpgradeCooldown(int id, out float remaining, out float duration)
+    {
+        remaining = 0f;
+        duration = 0f;
+
+        if (!upgradeCooldownEnds.TryGetValue(id, out float endTime) ||
+            !upgradeCooldownDurations.TryGetValue(id, out duration))
+            return false;
+
+        remaining = Mathf.Max(0f, endTime - Time.time);
+        return remaining > 0f && duration > 0f;
+    }
+
+    public bool IsPersistentUpgrade(int id)
+    {
+        if (DataManager.Instance == null ||
+            !DataManager.Instance.upgradeDatasDic.TryGetValue(id, out UpgradeData data))
+            return false;
+
+        if (data.coolTime == null || data.coolTime.Length == 0)
+            return true;
+
+        int level = Mathf.Clamp(data.UpgradeLevel, 0, data.coolTime.Length - 1);
+        return data.coolTime[level] <= 0f;
+    }
+
+    public Sprite GetUpgradeIcon(int id)
+    {
+        if (DataManager.Instance == null)
+            return null;
+
+        if (DataManager.Instance.skillUpgradeIconDic.TryGetValue(id, out Sprite icon))
+            return icon;
+
+        return DataManager.Instance.upgradeDatasDic.TryGetValue(id, out UpgradeData data)
+            ? data.sprite
+            : null;
+    }
+
+    private UpgradeCooldownHud EnsureUpgradeCooldownHud()
+    {
+        if (upgradeCooldownHud == null)
+            upgradeCooldownHud = UpgradeCooldownHud.Attach(this);
+
+        return upgradeCooldownHud;
     }
 
     public void Lightning(int id)
@@ -582,11 +978,9 @@ public class UpgradeManager : MonoBehaviour
                 );
             }
 
-            yield return new WaitForSeconds(
-                DataManager.Instance
-                    .upgradeDatasDic[id]
-                    .coolTime[level]
-            );
+            float cooldown = DataManager.Instance.upgradeDatasDic[id].coolTime[level];
+            BeginUpgradeCooldown(id, cooldown);
+            yield return new WaitForSeconds(cooldown);
         }
     }
 
@@ -627,11 +1021,9 @@ public class UpgradeManager : MonoBehaviour
                     .coolTime[level]
             );
 
-            yield return new WaitForSeconds(
-                DataManager.Instance
-                    .upgradeDatasDic[id]
-                    .coolTime[level]
-            );
+            float cooldown = DataManager.Instance.upgradeDatasDic[id].coolTime[level];
+            BeginUpgradeCooldown(id, cooldown);
+            yield return new WaitForSeconds(cooldown);
         }
     }
 
@@ -661,11 +1053,9 @@ public class UpgradeManager : MonoBehaviour
                 orbit.RotateOrbits(id)
             );
 
-            yield return new WaitForSeconds(
-                DataManager.Instance
-                    .upgradeDatasDic[id]
-                    .coolTime[level]
-            );
+            float cooldown = DataManager.Instance.upgradeDatasDic[id].coolTime[level];
+            BeginUpgradeCooldown(id, cooldown);
+            yield return new WaitForSeconds(cooldown);
         }
     }
 
@@ -750,6 +1140,7 @@ public class UpgradeManager : MonoBehaviour
                     .upgradeDatasDic[id]
                     .coolTime[level];
 
+            BeginUpgradeCooldown(id, coolTime);
             yield return new WaitForSeconds(coolTime);
         }
     }
@@ -963,5 +1354,102 @@ public class UpgradeManager : MonoBehaviour
             return 1f;
 
         return originalCoolTime / skill.skillCoolTime;
+    }
+}
+
+public sealed class CollectedUpgradeIconUI : MonoBehaviour
+{
+    private TextMeshProUGUI levelText;
+    private int upgradeId;
+
+    public static CollectedUpgradeIconUI Attach(UnityEngine.UI.Image target, int id)
+    {
+        if (target == null)
+            return null;
+
+        CollectedUpgradeIconUI view = target.GetComponent<CollectedUpgradeIconUI>();
+        if (view == null)
+            view = target.gameObject.AddComponent<CollectedUpgradeIconUI>();
+
+        view.BuildIfNeeded(target);
+        view.Bind(id);
+        return view;
+    }
+
+    private void BuildIfNeeded(UnityEngine.UI.Image target)
+    {
+        target.preserveAspect = true;
+
+        RemoveOldCooldownChild("CooldownFill");
+        RemoveOldCooldownChild("CooldownText");
+
+        if (levelText == null)
+            levelText = CreateText("LevelText", 19f, TextAlignmentOptions.BottomRight,
+                new Vector2(0f, 0f), new Vector2(1f, 0.38f), new Vector2(4f, 1f), new Vector2(-5f, -1f));
+    }
+
+    private TextMeshProUGUI CreateText(
+        string objectName,
+        float fontSize,
+        TextAlignmentOptions alignment,
+        Vector2 anchorMin,
+        Vector2 anchorMax,
+        Vector2 offsetMin,
+        Vector2 offsetMax)
+    {
+        GameObject textObject = new GameObject(objectName, typeof(RectTransform), typeof(CanvasRenderer), typeof(TextMeshProUGUI));
+        textObject.transform.SetParent(transform, false);
+        RectTransform rect = (RectTransform)textObject.transform;
+        rect.anchorMin = anchorMin;
+        rect.anchorMax = anchorMax;
+        rect.offsetMin = offsetMin;
+        rect.offsetMax = offsetMax;
+
+        TextMeshProUGUI text = textObject.GetComponent<TextMeshProUGUI>();
+        text.fontSize = fontSize;
+        text.fontStyle = FontStyles.Bold;
+        text.alignment = alignment;
+        text.color = Color.white;
+        text.outlineColor = Color.black;
+        text.outlineWidth = 0.28f;
+        text.textWrappingMode = TextWrappingModes.NoWrap;
+        text.raycastTarget = false;
+        return text;
+    }
+
+    public void Bind(int id)
+    {
+        upgradeId = id;
+        RefreshVisuals();
+    }
+
+    public void Clear()
+    {
+        upgradeId = 0;
+        if (levelText != null)
+            levelText.text = string.Empty;
+    }
+
+    private void Update()
+    {
+        RefreshVisuals();
+    }
+
+    private void RefreshVisuals()
+    {
+        if (upgradeId <= 0 || UpgradeManager.Instance == null)
+            return;
+
+        levelText.text = $"Lv.{UpgradeManager.Instance.GetUpgradeDisplayLevel(upgradeId)}";
+    }
+
+    private void RemoveOldCooldownChild(string childName)
+    {
+        Transform child = transform.Find(childName);
+        if (child == null)
+            return;
+
+        child.gameObject.SetActive(false);
+        Destroy(child.gameObject);
     }
 }

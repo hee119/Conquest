@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CriticalForce
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 701
-  image: {fileID: 21300000, guid: 11a9d2b16e3044832b5eb5b2d6623718, type: 3}
+  image: {fileID: 21300000, guid: af823726dc6049d280724de851d6b6a3, type: 3}

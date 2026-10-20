@@ -349,6 +349,10 @@ public class SelectUpgrade : MonoBehaviour
                 upgradeUiInfo.upgradeData.id
             );
         }
+        else if (upgradeUiInfo.upgradeData.type == "CharacterSkill")
+        {
+            UpgradeManager.Instance.CharacterSkillUpgradesAdd(upgradeUiInfo.upgradeData.id);
+        }
 
 
         // =====================================================

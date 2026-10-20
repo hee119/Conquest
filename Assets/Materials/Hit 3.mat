@@ -495,7 +495,7 @@ Material:
     - _StencilWriteMask: 255
     - _StrongTintContrast: 0
     - _StrongTintContrastToggle: 0
-    - _StrongTintFade: 0
+    - _StrongTintFade: 0.13
     - _StrongTintMaskToggle: 0
     - _Surface: 0
     - _TMPSmoothness: 5
@@ -584,7 +584,7 @@ Material:
     - _CamouflageDistortionSpeed: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _CamouflageNoiseScaleA: {r: 0.25, g: 0.25, b: 0, a: 0}
     - _CamouflageNoiseScaleB: {r: 0.25, g: 0.25, b: 0, a: 0}
-    - _Color: {r: 2.6082377, g: 2.6082377, b: 2.6082377, a: 1}
+    - _Color: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
     - _ColorReplaceFromColor: {r: 0, g: 0, b: 0, a: 0}
     - _ColorReplaceToColor: {r: 0, g: 0, b: 0.2, a: 0}
     - _CustomFadeNoiseScale: {r: 1, g: 1, b: 0, a: 0}
@@ -668,8 +668,8 @@ Material:
     - _ScreenTilingScale: {r: 1, g: 1, b: 0, a: 0}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 0}
     - _ShadowOffset: {r: 0.05, g: -0.05, b: 0, a: 0}
-    - _ShiftingColorA: {r: 1, g: 1, b: 1, a: 0}
-    - _ShiftingColorB: {r: 1.435839, g: 1.435839, b: 1.435839, a: 0}
+    - _ShiftingColorA: {r: 5.992157, g: 5.992157, b: 5.992157, a: 0}
+    - _ShiftingColorB: {r: 1.4980391, g: 1.4980391, b: 1.4980391, a: 0}
     - _ShineColor: {r: 11.98431, g: 11.98431, b: 11.98431, a: 0}
     - _SineGlowColor: {r: 0, g: 2.007843, b: 2.996078, a: 0}
     - _SineMoveFrequency: {r: 1, g: 1, b: 0, a: 0}
@@ -687,7 +687,7 @@ Material:
     - _SpriteSheetRect: {r: 0, g: 0, b: 1, a: 1}
     - _SqueezeCenter: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _SqueezeScale: {r: 2, g: 0, b: 0, a: 0}
-    - _StrongTintTint: {r: 1, g: 1, b: 1, a: 1}
+    - _StrongTintTint: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
     - _TextureLayer1Color: {r: 0.4494117, g: 1.298301, b: 2.996079, a: 1}
     - _TextureLayer1Offset: {r: 0, g: 0, b: 0, a: 0}
     - _TextureLayer1Scale: {r: 1, g: 1, b: 0, a: 0}

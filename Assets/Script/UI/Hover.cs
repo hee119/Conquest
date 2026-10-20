@@ -5,13 +5,13 @@ using UnityEngine.UI;
 public class Hover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private Image image;
-    private float defaultAlpha = 0f;
     private OptionSelect optionSelect;
+    
+    [SerializeField] private Material outline;
 
     public void Awake()
     {
         image = GetComponent<Image>();
-        defaultAlpha = image.color.a;
         optionSelect = GetComponent<OptionSelect>();
     }
     
@@ -20,20 +20,25 @@ public class Hover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (optionSelect != null && optionSelect.isSelected)
             return;
         
-        float alpha = image.color.a * 0.8f;
+        image.material = outline;
         Color color = image.color;
+        float alpha = 1f;
         color.a = alpha;
         image.color = color;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        HoverCancel();
+    }
+
+    public void HoverCancel()
+    {
         if (optionSelect != null && optionSelect.isSelected)
             return;
         
-        float alpha = defaultAlpha;
+        image.material = null;
         Color color = image.color;
-        color.a = alpha;
         image.color = color;    
     }
 }

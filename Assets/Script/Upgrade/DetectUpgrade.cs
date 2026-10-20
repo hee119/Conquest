@@ -99,6 +99,7 @@ public class DetectUpgrade : MonoBehaviour
                 }
             }
 
+            UpgradeManager.Instance.BeginUpgradeCooldown(id, data.coolTime);
             yield return new WaitForSeconds(data.coolTime);
         }
     }

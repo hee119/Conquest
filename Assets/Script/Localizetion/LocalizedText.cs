@@ -8,6 +8,7 @@ public class LocalizedText : MonoBehaviour
     private LocalizationManager subscribedManager;
     public string text;
     public bool isTextInit = true;
+    private object[] formatArguments = System.Array.Empty<object>();
 
     void Awake()
     {
@@ -55,7 +56,7 @@ public class LocalizedText : MonoBehaviour
         if (manager == null)
             return;
 
-        text = manager.GetTranslation(key);
+        text = manager.GetTranslation(key, formatArguments);
 
         if (textComponent == null)
             textComponent = GetComponent<TextMeshProUGUI>();
@@ -66,6 +67,12 @@ public class LocalizedText : MonoBehaviour
 
     public void ForceUpdateText()
     {
+        UpdateText(true);
+    }
+
+    public void SetArguments(params object[] arguments)
+    {
+        formatArguments = arguments ?? System.Array.Empty<object>();
         UpdateText(true);
     }
 

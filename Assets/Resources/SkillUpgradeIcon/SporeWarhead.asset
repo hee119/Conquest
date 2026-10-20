@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SporeWarhead
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 501
-  image: {fileID: 21300000, guid: 11bdad1e702824d0595076a3f9bd751d, type: 3}
+  image: {fileID: 21300000, guid: 1703f2f023ee4024a9547eb08d557f10, type: 3}

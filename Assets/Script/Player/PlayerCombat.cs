@@ -211,6 +211,16 @@ public class PlayerCombat : MonoBehaviour
     // 데미지
     // ============================
 
+    public void Heal(float amount)
+    {
+        if (isDead || amount <= 0f || hp >= maxHp)
+            return;
+
+        hp = Mathf.Min(maxHp, hp + amount);
+        delayedHp = Mathf.Max(delayedHp, hp);
+        UpdateHpUI();
+    }
+
     public void TakeDamage(int damage)
     {
         if (isDead || (playerMove != null && playerMove.IsDashing))
@@ -323,6 +333,19 @@ public class PlayerCombat : MonoBehaviour
 
         hitFlashCoroutine =
             StartCoroutine(HitFlashCor());
+    }
+
+    public void SetNormalColor(Color color)
+    {
+        normalColor = color;
+        if (spriteRenderers == null)
+            return;
+
+        foreach (SpriteRenderer spriteRenderer in spriteRenderers)
+        {
+            if (spriteRenderer != null)
+                spriteRenderer.color = color;
+        }
     }
 
     public IEnumerator HitFlashCor()

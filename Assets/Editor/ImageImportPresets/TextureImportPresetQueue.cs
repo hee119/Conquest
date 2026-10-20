@@ -11,6 +11,7 @@ namespace Conquest.Editor.ImageImportPresets
     internal static class TextureImportPresetQueue
     {
         private const string QueueKey = "Conquest.ImageImportPresets.Pending";
+        private const string AutoPromptKey = "Conquest.ImageImportPresets.AutoPrompt";
         private const string InitializedKey = "Conquest.ImageImportPresets.Initialized.";
         private const string HandledPrefix = "Conquest.ImageImportPresets.Handled.";
 
@@ -21,15 +22,26 @@ namespace Conquest.Editor.ImageImportPresets
 
         static TextureImportPresetQueue()
         {
+            if (!AutoPromptEnabled)
+            {
+                SessionState.SetString(QueueKey, string.Empty);
+                return;
+            }
+
             LoadPending();
             EditorApplication.delayCall += Initialize;
         }
+
+        private static bool AutoPromptEnabled => EditorPrefs.GetBool(AutoPromptKey, false);
 
         private static string ProjectKey =>
             InitializedKey + Application.dataPath;
 
         private static void Initialize()
         {
+            if (!AutoPromptEnabled)
+                return;
+
             if (EditorApplication.isCompiling || EditorApplication.isUpdating)
             {
                 EditorApplication.delayCall += Initialize;
@@ -53,7 +65,7 @@ namespace Conquest.Editor.ImageImportPresets
 
         internal static void OnImported(string[] importedAssets)
         {
-            if (!initialized || Application.isBatchMode)
+            if (!AutoPromptEnabled || !initialized || Application.isBatchMode)
                 return;
 
             foreach (string path in importedAssets)
@@ -117,7 +129,7 @@ namespace Conquest.Editor.ImageImportPresets
 
         internal static void ShowNextPrompt()
         {
-            if (!initialized || promptOpen || Application.isBatchMode ||
+            if (!AutoPromptEnabled || !initialized || promptOpen || Application.isBatchMode ||
                 EditorApplication.isCompiling || EditorApplication.isUpdating)
                 return;
 

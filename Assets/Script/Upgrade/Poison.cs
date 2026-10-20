@@ -34,7 +34,7 @@ public class Poison : HomingProjectile
         
         EnemyCombat enemy = other.GetComponent<EnemyCombat>();
 
-        if (enemy == null)
+        if (enemy == null || !gameObject.activeInHierarchy)
             return;
 
         if (distanceCoroutine == null)

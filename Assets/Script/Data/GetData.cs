@@ -51,6 +51,13 @@ public class GetData : MonoBehaviour
             // CSV 가져오기
             string csvData = request.downloadHandler.text;
 
+            if (Regex.IsMatch(csvData, @"^\s*<(?:!DOCTYPE\s+html|html)\b", RegexOptions.IgnoreCase))
+            {
+                Debug.LogError($"CSV 다운로드 응답이 HTML입니다. 공개 CSV 링크를 확인하세요: {dataLink}");
+                request.Dispose();
+                return;
+            }
+
             // 첫 번째 열이 비어있는 행 제거
             csvData = Regex.Replace(
                 csvData,

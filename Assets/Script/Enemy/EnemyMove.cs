@@ -46,11 +46,14 @@ public class EnemyMove : MonoBehaviour
 
     protected virtual void OnEnable()
     {
+        if (target == null)
+            target = GameObject.FindGameObjectWithTag("Player");
+
         canKnockback = true;
         nextPathUpdateTime = 0f;
         hasDestinationTargetPosition = false;
 
-        if (agent != null && agent.enabled)
+        if (agent != null && agent.enabled && agent.isOnNavMesh)
             agent.isStopped = false;
     }
 

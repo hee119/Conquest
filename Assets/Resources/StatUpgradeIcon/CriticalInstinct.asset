@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CriticalInstinct
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 700
-  image: {fileID: 21300000, guid: 3080fd2ffabce45b19fb2ff907770cb2, type: 3}
+  image: {fileID: 21300000, guid: 1ab1fe49cffa41d4ac1f1db70b5dc379, type: 3}

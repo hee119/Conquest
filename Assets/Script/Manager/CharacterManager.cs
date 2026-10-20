@@ -10,6 +10,7 @@ public class CharacterManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            currentCharacter = PlayerPrefs.GetInt("SelectedCharacter", 1) == 2 ? 2 : 1;
             DontDestroyOnLoad(this);
         }
         else if (Instance != this)

@@ -8,6 +8,7 @@ public class PoolManager : MonoBehaviour
     public static PoolManager Instance { get; private set; }
 
     private Dictionary<int, IObjectPool<PooledObject>> _pools = new();
+    private readonly HashSet<PooledObject> activeObjects = new();
 
     [SerializeField] private int maxSize = 50;
     [SerializeField] private int enemyPoolMaxSize = 200;
@@ -19,6 +20,7 @@ public class PoolManager : MonoBehaviour
     public bool prefabIsLoaded = false;
 
     private GameObject player;
+    private Transform stagingParent;
 
     public void Awake()
     {
@@ -41,6 +43,7 @@ public class PoolManager : MonoBehaviour
         prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/Boss"));
         prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/BossPattern"));
         prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/UI"));
+        prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/Item"));
 
         
 
@@ -67,6 +70,8 @@ public class PoolManager : MonoBehaviour
         var upgradeInfo = prefab.GetComponent<UpgradeInfo>();
         var bulletInfo = prefab.GetComponent<BulletInfo>();
         var bossPatternInfo = prefab.GetComponent<BossPatternInfo>();
+        var healthPickup = prefab.GetComponent<HealthPickup>();
+        var magnetPickup = prefab.GetComponent<MagnetPickup>();
         
 
         int id;
@@ -85,6 +90,10 @@ public class PoolManager : MonoBehaviour
             id = bulletInfo.id; 
         else if (bossPatternInfo != null)
             id = bossPatternInfo.id; 
+        else if (healthPickup != null)
+            id = healthPickup.id;
+        else if (magnetPickup != null)
+            id = magnetPickup.id;
         else
             return;
 
@@ -112,7 +121,21 @@ public class PoolManager : MonoBehaviour
 
     private PooledObject CreatePool(GameObject prefab, IObjectPool<PooledObject> pool)
     {
-        PooledObject pooledObject = Instantiate(prefab).GetComponent<PooledObject>();
+        // Keep the prefab inactive in the hierarchy until its pool is assigned.
+        // Otherwise OnEnable runs once during Instantiate, before Spawn can set
+        // the position or the upgrade level.
+        if (stagingParent == null)
+        {
+            GameObject staging = new GameObject("Pool Staging");
+            staging.transform.SetParent(transform, false);
+            staging.SetActive(false);
+            stagingParent = staging.transform;
+        }
+
+        GameObject instance = Instantiate(prefab, stagingParent);
+        instance.SetActive(false);
+        instance.transform.SetParent(transform, false);
+        PooledObject pooledObject = instance.GetComponent<PooledObject>();
         
         if(pooledObject == null) Debug.LogWarning("pooled object is null");
         
@@ -123,12 +146,34 @@ public class PoolManager : MonoBehaviour
 
     private void OnGet(PooledObject pooledObject)
     {
-        pooledObject.gameObject.SetActive(true);
+        activeObjects.Add(pooledObject);
     }
 
     public void OnRelease(PooledObject pooledObject)
     {
+        activeObjects.Remove(pooledObject);
         pooledObject.gameObject.SetActive(false);
+
+        // UI objects are temporarily parented to a scene canvas by SpawnUI.
+        // Move every released object back under the persistent pool so a scene
+        // reload cannot destroy a pooled reference that will be reused later.
+        pooledObject.transform.SetParent(transform, false);
+    }
+
+    /// <summary>
+    /// Clears objects left active by the previous stage before a retry.
+    /// The pool itself stays alive, but no old enemies, skills, or pickups do.
+    /// </summary>
+    public void ResetActiveObjects()
+    {
+        List<PooledObject> snapshot = new List<PooledObject>(activeObjects);
+        foreach (PooledObject pooledObject in snapshot)
+        {
+            if (pooledObject != null)
+                pooledObject.DestroyObj();
+        }
+
+        activeObjects.Clear();
     }
 
     private void OnDestroyPool(PooledObject pooledObject)
@@ -157,7 +202,6 @@ public class PoolManager : MonoBehaviour
             return null;
         }
 
-        obj.gameObject.SetActive(false);
         obj.transform.position = targetPos;
         obj.gameObject.SetActive(true);
 
@@ -192,13 +236,6 @@ public class PoolManager : MonoBehaviour
 
             return null;
         }
-
-
-        // OnGet에서 이미 켜졌기 때문에
-        // UI Transform 세팅 전에 잠깐 꺼줌
-        obj.gameObject.SetActive(
-            false
-        );
 
 
         obj.transform.SetParent(

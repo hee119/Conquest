@@ -1,4 +1,5 @@
 using TMPro;
+using System.Globalization;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +15,7 @@ public sealed class DebugCameraZSlider : MonoBehaviour
     [SerializeField] private float controlWidth = 200f;
 
     private TextMeshProUGUI valueLabel;
+    private LocalizationManager subscribedLocalization;
 
     public float CurrentLensSize
     {
@@ -63,6 +65,39 @@ public sealed class DebugCameraZSlider : MonoBehaviour
         }
 
         CreateSlider(parent);
+    }
+
+    private void OnEnable()
+    {
+        SubscribeToLocalization();
+    }
+
+    private void Start()
+    {
+        SubscribeToLocalization();
+        RefreshValueLabel();
+    }
+
+    private void OnDisable()
+    {
+        if (subscribedLocalization != null)
+        {
+            subscribedLocalization.OnLanguageChanged -= RefreshValueLabel;
+            subscribedLocalization = null;
+        }
+    }
+
+    private void SubscribeToLocalization()
+    {
+        LocalizationManager manager = LocalizationManager.Instance;
+        if (manager == null || manager == subscribedLocalization)
+            return;
+
+        if (subscribedLocalization != null)
+            subscribedLocalization.OnLanguageChanged -= RefreshValueLabel;
+
+        subscribedLocalization = manager;
+        subscribedLocalization.OnLanguageChanged += RefreshValueLabel;
     }
 
     private void CreateSlider(RectTransform parent)
@@ -152,8 +187,30 @@ public sealed class DebugCameraZSlider : MonoBehaviour
         if (confiner != null)
             confiner.InvalidateLensCache();
 
-        if (valueLabel != null)
-            valueLabel.text = $"Lens: {lensSize:0.0}";
+        RefreshValueLabel(lensSize);
+    }
+
+    private void RefreshValueLabel()
+    {
+        RefreshValueLabel(CurrentLensSize);
+    }
+
+    private void RefreshValueLabel(float lensSize)
+    {
+        if (valueLabel == null)
+            return;
+
+        const string fallback = "Lens: {0}";
+        string format = LocalizationManager.Instance != null
+            ? LocalizationManager.Instance.GetTranslation("debug_camera_lens")
+            : "debug_camera_lens";
+        if (string.IsNullOrEmpty(format) || format == "debug_camera_lens")
+            format = fallback;
+
+        valueLabel.text = string.Format(
+            CultureInfo.InvariantCulture,
+            format,
+            lensSize.ToString("0.0", CultureInfo.InvariantCulture));
     }
 
     private static Image CreateImage(string objectName, Transform parent, Color color)

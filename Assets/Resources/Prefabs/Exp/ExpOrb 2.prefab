@@ -109,6 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2abce982bfbd141f5b025016439c8e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Exp
+  attractionDistance: 3
+  attractionSpeed: 6
 --- !u!114 &-1488538973715075973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,8 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExpInfo
   id: 302
-  name: GreenOrb
-  exp: 5
+  name: YellowOrb
+  exp: 500
 --- !u!114 &6911475216402954597
 MonoBehaviour:
   m_ObjectHideFlags: 0

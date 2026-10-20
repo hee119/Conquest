@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using NavMeshPlus.Components;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 public class StageManager : MonoBehaviour
@@ -40,6 +41,10 @@ public class StageManager : MonoBehaviour
 
     private Dictionary<int, int> currentEnemyPerSpawn =
         new Dictionary<int, int>();
+    private Coroutine stageRoutine;
+    private Coroutine healthPickupRoutine;
+    private Coroutine magnetPickupRoutine;
+    private string stageSceneName;
 
 
     private void Awake()
@@ -79,7 +84,25 @@ public class StageManager : MonoBehaviour
 
     public void StageInit()
     {
+        StopRun();
+
+        // Retry reloads the scene while this manager and its pools persist.
+        // Release every object left from the failed run before rebuilding the stage.
+        if (PoolManager.Instance != null)
+            PoolManager.Instance.ResetActiveObjects();
+
         camera = Camera.main;
+        stageSceneName = SceneManager.GetActiveScene().name;
+
+        // StageManager survives scene reloads, while the NavMeshSurface belongs
+        // to the new Stage1 scene. Rebind it before FillCameraArea rebuilds data.
+        if (navMeshSurface == null)
+        {
+            GameObject navObject = GameObject.FindGameObjectWithTag("Nav");
+            navMeshSurface = navObject != null
+                ? navObject.GetComponent<NavMeshSurface>()
+                : null;
+        }
 
         currentStage =
             GameManager.Instance.currentStage;
@@ -140,6 +163,87 @@ public class StageManager : MonoBehaviour
         ConfigureCameraBounds();
 
         StageStart();
+        StartPickupCoroutines();
+    }
+
+    public void StopRun()
+    {
+        if (stageRoutine != null)
+            StopCoroutine(stageRoutine);
+        stageRoutine = null;
+        StopPickupCoroutines();
+        canSkipToNextWave = false;
+        requestNextWave = false;
+    }
+
+    private void StartPickupCoroutines()
+    {
+        if (DataManager.Instance == null ||
+            !DataManager.Instance.pickupSpawnDatas.TryGetValue(currentStage, out PickupSpawnData data))
+            return;
+
+        healthPickupRoutine = StartCoroutine(
+            SpawnPickupLoop(HealthPickup.PoolId, data.healthSpawnIntervalSeconds, data.healAmount));
+        magnetPickupRoutine = StartCoroutine(
+            SpawnPickupLoop(MagnetPickup.PoolId, data.magnetSpawnIntervalSeconds, 0));
+    }
+
+    private void StopPickupCoroutines()
+    {
+        if (healthPickupRoutine != null)
+            StopCoroutine(healthPickupRoutine);
+        if (magnetPickupRoutine != null)
+            StopCoroutine(magnetPickupRoutine);
+        healthPickupRoutine = null;
+        magnetPickupRoutine = null;
+    }
+
+    private IEnumerator SpawnPickupLoop(int pickupId, float interval, int healAmount)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(interval);
+
+            if (SceneManager.GetActiveScene().name != stageSceneName ||
+                player == null || !player.gameObject.activeInHierarchy)
+                yield break;
+
+            int activeCount = pickupId == HealthPickup.PoolId
+                ? FindObjectsByType<HealthPickup>(FindObjectsSortMode.None).Length
+                : FindObjectsByType<MagnetPickup>(FindObjectsSortMode.None).Length;
+            int maxActive = pickupId == HealthPickup.PoolId ? 3 : 1;
+            if (activeCount >= maxActive || !TryGetPickupSpawnPosition(out Vector2 position))
+                continue;
+
+            GameObject pickup = PoolManager.Instance != null
+                ? PoolManager.Instance.Spawn(pickupId, position)
+                : null;
+            if (pickupId == HealthPickup.PoolId && pickup != null)
+                pickup.GetComponent<HealthPickup>().Configure(healAmount);
+        }
+    }
+
+    private bool TryGetPickupSpawnPosition(out Vector2 position)
+    {
+        position = default;
+        if (camera == null || backgroundTilemap == null)
+            return false;
+
+        for (int attempt = 0; attempt < 30; attempt++)
+        {
+            Vector3 point = camera.ViewportToWorldPoint(new Vector3(
+                Random.Range(0.1f, 0.9f), Random.Range(0.1f, 0.9f),
+                camera.nearClipPlane));
+            Vector2 candidate = point;
+            if (Vector2.Distance(candidate, player.position) < 2.5f ||
+                !backgroundTilemap.HasTile(backgroundTilemap.WorldToCell(point)))
+                continue;
+
+            position = candidate;
+            return true;
+        }
+
+        return false;
     }
 
     private void ConfigureCameraBounds()
@@ -261,7 +365,10 @@ public class StageManager : MonoBehaviour
 
     public void StageStart()
     {
-        StartCoroutine(StageStartCol());
+        if (stageRoutine != null)
+            StopCoroutine(stageRoutine);
+
+        stageRoutine = StartCoroutine(StageStartCol());
     }
 
 
@@ -651,6 +758,8 @@ public class StageManager : MonoBehaviour
             $"[Stage Start] Enemy 종류 = {stageInfo.enemyId.Count}"
         );
 
+        bool bossDefeated = false;
+
 
         for (int i = 0;
              i < stageInfo.enemyId.Count;
@@ -797,6 +906,8 @@ public class StageManager : MonoBehaviour
                                 boss == null ||
                                 !boss.activeInHierarchy
                         );
+
+                        bossDefeated = true;
                     }
                 }
 
@@ -879,6 +990,10 @@ public class StageManager : MonoBehaviour
             "[Stage Complete] 모든 적 종류의 웨이브 종료"
         );
 
-        GameEndScreenController.ShowDemoClear();
+        stageRoutine = null;
+        StopPickupCoroutines();
+
+        if (currentStage == 1 && bossDefeated)
+            GameEndScreenController.ShowDemoClear();
     }
 }

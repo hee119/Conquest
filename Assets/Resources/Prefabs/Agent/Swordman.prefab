@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 4477625147278368161}
   - component: {fileID: 7201235708750216182}
   - component: {fileID: 6014975631671674939}
+  - component: {fileID: 3857254480475159171}
+  - component: {fileID: 5323175021753648623}
   m_Layer: 0
   m_Name: Swordman
   m_TagString: Player
@@ -312,9 +314,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1583d4126f613497fa77bc4ab81a40f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
+  dashSpeed: 12
+  dashDuration: 0.2
+  dashCost: 25
+  dashRecoveryPerSecond: 20
+  dashRecoveryDelay: 0.5
+  moveDir: {x: 0, y: 0}
   idleDelay: 0.03
   canMove: 1
   speed: 3
+  boundaryPadding: 0.02
 --- !u!95 &4689823722373760585
 Animator:
   serializedVersion: 7
@@ -350,9 +359,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkillSpawner
   skillId1: 200
-  skillId2: 201
-  skillId3: 202
-  skillId4: 203
+  skillId2: 0
+  skillId3: 0
+  skillId4: 0
 --- !u!114 &3405139427750937997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,7 +411,6 @@ MonoBehaviour:
   defense: 5
   criticalDamage: 1.5
   criticalChance: 10
-  dropExpOrbId: 0
 --- !u!114 &7201235708750216182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,7 +425,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCombat
   maxHp: 0
   hp: 0
+  delayedHp: 0
   isDead: 0
+  regenDelay: 5
+  regenInterval: 1
+  hpTrailDelay: 0.5
+  hpTrailSpeed: 300
+  startHpColor: {r: 0, g: 1, b: 0, a: 1}
+  endHpColor: {r: 1, g: 0, b: 0, a: 1}
+  targetImage: {fileID: 0}
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hitFlashTime: 0.1
 --- !u!114 &6014975631671674939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,8 +451,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Orbit
   orbitList: []
+  orbitColList: []
   radius: 2
   orbitSpeed: 180
   selfRotateSpeed: 1500
   spawnTime: 0.5
   returnTime: 0.5
+--- !u!114 &3857254480475159171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5121868815476299701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7adecdd76d44a6180b7cbd43c9d23f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectedCharacterSetup
+  mageAnimatorController: {fileID: 9100000, guid: e2de60843bc184d2f8e9b845c8dcdf99,
+    type: 2}
+  mageIdleSprite: {fileID: -8070195584892687665, guid: 07fc404bbeb2a4d84986cea14e605d25,
+    type: 3}
+--- !u!114 &5323175021753648623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5121868815476299701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85acf1e4908e94c20ad25ac931db357b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MageAttack
+  shotInterval: 0.32
+  projectileSpeed: 12
+  projectileLifetime: 1.6
+  spawnOffset: 0.55
+  projectileDataId: 201

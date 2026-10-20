@@ -20,27 +20,27 @@ upgread_name_Vitality,활력,Vitality,バイタリティ
 upgread_name_QuickCast,신속 시전,Quick Cast,クイックキャスト
 upgread_name_RapidCycle,빠른 순환,Rapid Cycle,ラピッドサイクル
 upgread_name_IronWall,철벽,Iron Wall,アイアンウォール
-upgread_des_Lightning,번개 1개 추가,Add 1 Lightning,ライトニングを1個追加
-upgread_des_Fireball,파이어볼 1개 추가,Add 1 Fireball,ファイアボールを1個追加
-upgread_des_Burn,화상 확률 증가,Increase Burn Chance,火傷確率増加
-upgread_des_Poison,독 1개 추가,Add 1 Poison,毒を1個追加
-upgread_des_Snail,달팽이 장판 생성 주기 단축,Reduce Snail Field Interval,スネイルフィールドの生成間隔短縮
-upgread_des_Shurlken,표창 1개 추가,Add 1 Shuriken,手裏剣を1個追加
-upgread_des_Missile,미사일 10개 추가,Add 10 Missiles,ミサイルを10個追加
-upgread_des_Mold,곰팡이 확률 증가,Increase Mold Chance,カビ発生確率増加
+upgread_des_Lightning,번개 {0}개 추가,Add {0} Lightning,ライトニングを{0}個追加
+upgread_des_Fireball,파이어볼 {0}개 추가,Add {0} Fireball,ファイアボールを{0}個追加
+upgread_des_Burn,화상 확률 {0}% 증가,Increase Burn Chance by {0}%,火傷確率{0}%増加
+upgread_des_Poison,독 {0}개 추가,Add {0} Poison,毒を{0}個追加
+upgread_des_Snail,달팽이 장판 생성 주기 {0}% 단축,Reduce Snail Field Interval by {0}%,スネイルフィールドの生成間隔を{0}%短縮
+upgread_des_Shurlken,표창 {0}개 추가,Add {0} Shuriken,手裏剣を{0}個追加
+upgread_des_Missile,미사일 {0}개 추가,Add {0} Missiles,ミサイルを{0}個追加
+upgread_des_Mold,곰팡이 확률 {0}% 증가,Increase Mold Chance by {0}%,カビ発生確率{0}%増加
 upgread_des_FireStorm,파이어볼을 화염 뇌우로 변경,Change Fireball to Firestorm,ファイアボールを炎の嵐に変更
-upgread_des_SporeWarhead,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に変更
+upgread_des_SporeWarhead,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に 변경
 upgread_des_LightningShuriken,표창이 뇌전 표창으로 변경,Change Shuriken to Lightning Shuriken,手裏剣を雷電手裏剣に変更
 upgread_des_Heatwave,파이어볼을 폭염으로 변경,Change Fireball to Heatwave,ファイアボールを熱波に変更
 upgread_des_LavaField,달팽이를 용암지대로 변경,Change Snail to Lava Field,スネイルを溶岩地帯に変更
 upgread_des_RottingSpore,곰팡이를 부패포자로 변경,Change Mold to Rotting Spore,カビを腐敗胞子に変更
-upgread_des_CriticalInstinct,치명타 확률 10% 증가,Critical Chance +10%,クリティカル率 +10%
-upgread_des_CriticalForce,치명타 데미지 10% 증가,Critical Damage +10%,クリティカルダメージ +10%
-upgread_des_PowerBoost,공격력 10% 증가,Attack Power +10%,攻撃力 +10%
-upgread_des_Vitality,체력 10% 증가,HP +10%,HP +10%
-upgread_des_QuickCast,스킬 쿨타임 5% 단축,Skill Cooldown -5%,スキルクールダウン -5%
-upgread_des_RapidCycle,패시브 주기 10% 단축,Passive Cooldown -10%,パッシブクールダウン -10%
-upgread_des_IronWall,방어력 10% 증가,Defense +10%,防御力 +10%
+upgread_des_CriticalInstinct,치명타 확률 {0}% 증가,Critical Chance +{0}%,クリティカル率 +{0}%
+upgread_des_CriticalForce,치명타 데미지 {0}% 증가,Critical Damage +{0}%,クリティカルダメージ +{0}%
+upgread_des_PowerBoost,공격력 {0}% 증가,Attack Power +{0}%,攻撃力 +{0}%
+upgread_des_Vitality,체력 {0}% 증가,HP +{0}%,HP +{0}%
+upgread_des_QuickCast,스킬 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
+upgread_des_RapidCycle,패시브 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
+upgread_des_IronWall,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
 setting_title,설정,Settings,設定
 setting_language_title,언어 설정,Language Settings,言語設定
 setting_tab_graphic,그래픽,Graphic,グラフィック
@@ -64,12 +64,60 @@ lobby_stage_select,스테이지 선택,Stage Select,ステージ選択
 lobby_character_select,캐릭터 선택,Character Select,キャラクター選択
 lobby_quit,나가기,Quit,終了
 lobby_back,돌아가기,Back,戻る
-lobby_stage_1,Stage 1,Stage 1,Stage 1
-gameover_title,게임 오버,Game Over,ゲームオーバー
-gameover_message,이번 도전은 여기까지입니다.,This run has come to an end.,今回の挑戦はここまでです。
-demo_clear_title,데모 클리어,DEMO CLEAR,デモクリア
-demo_clear_message,행성 개척의 첫걸음을 내디뎠습니다.,Humanity has taken its first step toward a new home.,人類は新たな故郷への第一歩を踏み出しました。
-end_retry,다시하기,Retry,リトライ
-end_lobby,로비로 돌아가기,Return to Lobby,ロビーに戻る
-stage_panel_title,스테이지,Stage,ステージ
+lobby_stage_1,스테이지 1,Stage 1,ステージ1
 lobby_character_swordman,검사,Swordsman,剣士
+setting_exit,닫기,Close,閉じる
+cutscene_skip,스킵,Skip,スキップ
+cutscene_caption_earth,"지구는 황폐해졌고, 인류는 생존의 위기에 놓였다. 새로운 보금자리를 찾기 위해 개척자들이 우주로 향한다.","Earth has been devastated, and humanity faces a fight for survival. Pioneers head into space in search of a new home.",地球は荒廃し、人類は生存の危機に直面している。新たな住まいを求め、開拓者たちは宇宙へ向かう。
+cutscene_caption_mission,"개척자들의 임무는 인류가 살아갈 수 있는 행성을 찾고, 이주에 필요한 자원과 환경을 조사하는 것이다.",The pioneers' mission is to find a planet where humanity can live and survey the resources and environment needed for migration.,開拓者たちの任務は、人類が暮らせる惑星を探し、移住に必要な資源と環境を調査することだ。
+cutscene_caption_discovery,기나긴 항해 끝에 마침내 희망의 행성을 발견했다. 하지만 그곳에는 정체불명의 생명체들이 앞길을 막아섰다.,"After a long voyage, we finally discovered a planet of hope. But unknown lifeforms stood in our way.",長い航海の末、ついに希望の惑星を発見した。しかし、そこには正体不明の生命体が立ちはだかった。
+cutscene_caption_conquest,마침내 행성의 위협을 제거했다. 그러나 임무는 끝나지 않았다. 인류에게 가장 적합한 행성을 찾기 위한 여정은 계속된다.,"At last, we eliminated the planet's threat. But the mission is not over. The journey to find the planet best suited for humanity continues.",ついに惑星の脅威を排除した。しかし、任務はまだ終わっていない。人類に最も適した惑星を探す旅は続く。
+debug_camera_lens,렌즈: {0},Lens: {0},レンズ: {0}
+debug_skill_upgrade,스킬 강화,Skill Upgrade,スキル強化
+debug_spawn_id,스폰 ID,Spawn ID,スポーンID
+demo_clear_message,플레이해주셔서 감사합니다.,Thank you for playing.,プレイしていただきありがとうございます。
+demo_clear_title,데모 클리어,DEMO CLEAR,デモクリア
+end_lobby,로비로 돌아가기,Return to Lobby,ロビーに戻る
+end_play_again,다시 플레이,Play Again,もう一度プレイ
+end_retry,재도전,Retry,リトライ
+end_stage_select,스테이지 선택,Stage Select,ステージ選択
+gameover_message,이번 도전은 여기까지입니다.,This run has come to an end.,今回の挑戦はここまでです。
+gameover_title,패배하였습니다.,Defeated,敗北しました。
+lobby_character_choose,선택하기,Select,選択する
+lobby_character_info,캐릭터 정보,Character Info,キャラクター情報
+lobby_character_locked,잠김,Locked,ロック中
+lobby_character_mage,마법사,Mage,魔法使い
+lobby_character_mage_desc,지팡이로 마법 탄환을 발사하는 원거리 캐릭터입니다.,A ranged fighter who fires magic bolts with a staff.,杖で魔法弾を放つ遠距離キャラクターです。
+lobby_character_swordman_desc,검으로 가까운 적을 베는 근접 캐릭터입니다.,A close-range fighter who strikes nearby enemies with a sword.,剣で近くの敵を斬る近接キャラクターです。
+lobby_play_stage,시작,Start,開始
+stage_panel_title,스테이지,Stage,ステージ
+upgrade_combine,합성,Combine,合成
+character_skill_range_name,공격 범위 확장,Attack Range,攻撃範囲拡張
+character_skill_count_sword_name,연속 검격,Additional Slash,連続斬撃
+character_skill_chain_name,연쇄 공격,Chain Attack,連鎖攻撃
+character_skill_count_mage_name,다중 마법탄,Extra Magic Bolts,多重魔法弾
+character_skill_pierce_name,마법 관통,Magic Pierce,魔法貫通
+character_skill_range_desc,기본 공격 범위 {0}% 증가,Basic attack range +{0}%,基本攻撃範囲 +{0}%
+character_skill_count_sword_desc,검격 {1}회 추가,Add {1} slash attacks,斬撃を{1}回追加
+character_skill_chain_desc,최대 {4} 거리의 적 {3}명에게 연쇄 공격,Chain to {3} enemies within {4} range,距離{4}以内の敵{3}体に連鎖
+character_skill_count_mage_desc,마법 탄환 {1}개 추가,Add {1} magic bolts,魔法弾を{1}個追加
+character_skill_pierce_desc,마법 탄환 관통 {2}회 증가,Magic bolt pierce +{2},魔法弾の貫通 +{2}
+character_skill_slash_name,검격 강화,Slash Upgrade,剣撃強化
+character_skill_magic_name,마법탄 강화,Magic Bolt Upgrade,魔法弾強化
+character_skill_slash_desc_1,공격 범위가 {0}% 증가합니다.,Attack range increases by {0}%.,攻撃範囲が{0}%増加します。
+character_skill_slash_desc_2,공격 범위가 추가로 {0}% 증가합니다.,Attack range increases by another {0}%.,攻撃範囲がさらに{0}%増加します。
+character_skill_slash_desc_3,검격이 {1}회 추가됩니다.,Adds {1} slash attacks.,斬撃が{1}回追加されます。
+character_skill_slash_desc_4,연속 검격이 {1}회 추가됩니다.,Adds {1} consecutive slash attacks.,連続斬撃が{1}回追加されます。
+character_skill_slash_desc_5,검격이 다시 {1}회 추가됩니다.,Adds another {1} slash attacks.,斬撃がさらに{1}回追加されます。
+character_skill_magic_desc_1,마법 탄환이 {1}개 추가됩니다.,Adds {1} magic bolts.,魔法弾が{1}個追加されます。
+character_skill_magic_desc_2,마법 탄환이 추가로 {1}개 늘어납니다.,Adds another {1} magic bolts.,魔法弾がさらに{1}個追加されます。
+character_skill_magic_desc_3,최대 {4} 거리 안의 적 {3}명에게 연쇄됩니다.,Chains to {3} enemies within {4} range.,距離{4}以内の敵{3}体に連鎖します。
+character_skill_magic_desc_4,마법 탄환의 관통력이 {2} 증가합니다.,Magic bolt pierce increases by {2}.,魔法弾の貫通力が{2}増加します。
+character_skill_magic_desc_5,마법 탄환의 관통력이 추가로 {2} 증가합니다.,Magic bolt pierce increases by another {2}.,魔法弾の貫通力がさらに{2}増加します。
+upgread_intro_CriticalInstinct,치명타 확률은 공격이 치명타가 될 확률입니다. 이번 획득으로 {0}% 증가합니다.,Critical chance is the chance for an attack to critically hit. This upgrade adds {0}%.,クリティカル率は攻撃がクリティカルになる確率です。今回の獲得で{0}%増加します。
+upgread_intro_CriticalForce,치명타 피해는 치명타 적중 시 추가되는 피해량입니다. 이번 획득으로 {0}% 증가합니다.,Critical damage is the extra damage dealt on a critical hit. This upgrade adds {0}%.,クリティカルダメージはクリティカル時に追加されるダメージです。今回の獲得で{0}%増加します。
+upgread_intro_PowerBoost,공격력은 모든 공격의 기본 피해량을 높입니다. 이번 획득으로 {0}% 증가합니다.,Attack power increases the base damage of all attacks. This upgrade adds {0}%.,攻撃力はすべての攻撃の基本ダメージを高めます。今回の獲得で{0}%増加します。
+upgread_intro_Vitality,최대 체력은 플레이어가 버틸 수 있는 총 체력입니다. 이번 획득으로 {0}% 증가합니다.,Max HP is the total damage the player can withstand. This upgrade adds {0}%.,最大HPはプレイヤーが耐えられる総体力です。今回の獲得で{0}%増加します。
+upgread_intro_QuickCast,스킬 쿨타임은 액티브 스킬의 재사용 대기시간입니다. 이번 획득으로 {0}% 단축됩니다.,Skill cooldown is the wait before an active skill can be used again. This upgrade reduces it by {0}%.,スキルクールダウンはアクティブスキルの再使用待機時間です。今回の獲得で{0}%短縮します。
+upgread_intro_RapidCycle,패시브 주기는 패시브 효과가 다시 발동하기까지의 간격입니다. 이번 획득으로 {0}% 단축됩니다.,Passive cooldown is the interval before a passive effect triggers again. This upgrade reduces it by {0}%.,パッシブ周期はパッシブ効果が再発動するまでの間隔です。今回の獲得で{0}%短縮します。
+upgread_intro_IronWall,방어력은 적에게 받는 피해를 줄여줍니다. 이번 획득으로 {0}% 증가합니다.,Defense reduces damage taken from enemies. This upgrade adds {0}%.,防御力は敵から受けるダメージを軽減します。今回の獲得で{0}%増加します。

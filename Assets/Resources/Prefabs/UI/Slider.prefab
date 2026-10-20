@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 750290088309837798}
   - component: {fileID: 8383466767166944112}
   - component: {fileID: 7853019600545323517}
+  - component: {fileID: 8712345678901234567}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -57,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -94,7 +95,31 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 912345678901234567}
+        m_TargetAssemblyTypeName: SliderPercentText, Assembly-CSharp
+        m_MethodName: UpdatePercentText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7853019600545323517}
+        m_TargetAssemblyTypeName: SceneBrightnessController, Assembly-CSharp
+        m_MethodName: ApplyBrightness
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &912345678901234567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +206,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f2de64ea467452d84e868b38a1ddd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneBrightnessController
+--- !u!114 &8712345678901234567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373646984156143527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb4aca20c5b14834aee394a7e039df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SliderPlusMinus
+  slider: {fileID: 3683245984509955478}
+  step: 0.01
 --- !u!1 &1249860572556715001
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +267,7 @@ GameObject:
   - component: {fileID: 5014314161963048052}
   - component: {fileID: 5155961499576922825}
   - component: {fileID: 8025048394765268060}
+  - component: {fileID: 1003825484965781698}
   m_Layer: 5
   m_Name: 100%
   m_TagString: Untagged
@@ -317,7 +357,7 @@ MonoBehaviour:
   m_fontSizeMin: 12
   m_fontSizeMax: 36
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -355,6 +395,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1003825484965781698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2207106735330707907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
+  m_HorizontalFit: 2
+  m_VerticalFit: 0
 --- !u!1 &4240062312179577411
 GameObject:
   m_ObjectHideFlags: 0

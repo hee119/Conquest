@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: IronWall
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 706
-  image: {fileID: 21300000, guid: 04ddcf22621fd47acb1854713ffd62e8, type: 3}
+  image: {fileID: 21300000, guid: 29ca923a33a44528a50d0db6f6d3f4ec, type: 3}

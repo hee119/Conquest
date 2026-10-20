@@ -185,7 +185,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12.54, y: 12.54}
+    oldSize: {x: 1.3933333, y: 1.3933333}
     newSize: {x: 1.03125, y: 0.84375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3faa7af64e2d9be419f35587af21c46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCombat
-  maxHp: 5
+  maxHp: 10
   hp: 0
   isDead: 0
   isBurn: 0
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RamgedEnemyAttack
   bulletId: 600
   bulleSpawnPos: {fileID: 2751941530656367470}
-  attackCoolTime: 3
+  attackCoolTime: 6
 --- !u!114 &2890242813744974307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,17 +326,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyKitingMove
   target: {fileID: 0}
   agent: {fileID: 0}
-  moveSpeed: 0.5
+  moveSpeed: 1
   stoppingDistance: 3
   isSlowDown: 0
   slowCount: 0
   pathUpdateInterval: 0.35
+  targetMoveThreshold: 0.1
   knockbackCooldown: 0.3
   knockbackPower: 5
   knockbackDuration: 0.15
-  kiteDistance: 3
-  directionCheckDistance: 2
-  directionCount: 16
+  rangeTolerance: 0.15
 --- !u!114 &-2533120555214112503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,12 +350,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyInfo
   id: 108
   name: 
-  hp: 0
+  hp: 10
   hpRegenRate: 0
-  speed: 0
+  speed: 1
   damage: 0
-  defense: 0
-  dropExpOrbId: 0
+  defense: 5
+  dropExpOrbId: 300
   explosionDamage: 0
   explosionRange: 0
 --- !u!1001 &8373261622285742746

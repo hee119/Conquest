@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -189,6 +189,7 @@ MonoBehaviour:
   optionEvent: {fileID: 0}
   outline: {fileID: 2100000, guid: 87889881e17924c1c97995ce82b2640d, type: 2}
   targetOption: {fileID: 0}
+  isSelected: 0
 --- !u!1 &9206892645412506935
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +202,7 @@ GameObject:
   - component: {fileID: 633150613621199547}
   - component: {fileID: 1969351928129072645}
   - component: {fileID: 1900000010}
+  - component: {fileID: 5011652450922109162}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -338,8 +340,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3871cfe0b07b5344b50a5ec78bc7f60, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   key: setting_tab_graphic
-  text:
+  text: 
   isTextInit: 1
+--- !u!114 &5011652450922109162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9206892645412506935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
+  m_HorizontalFit: 2
+  m_VerticalFit: 0

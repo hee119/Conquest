@@ -17,27 +17,7 @@ public class SliderPercentText : MonoBehaviour
             return;
 
         CacheReferences();
-        RegisterValueChanged();
         UpdatePercentText(GetNormalizedValue());
-    }
-
-    private void OnDisable()
-    {
-        if (slider != null)
-        {
-            slider.onValueChanged.RemoveListener(UpdatePercentText);
-        }
-    }
-
-    private void RegisterValueChanged()
-    {
-        if (slider == null)
-        {
-            return;
-        }
-
-        slider.onValueChanged.RemoveListener(UpdatePercentText);
-        slider.onValueChanged.AddListener(UpdatePercentText);
     }
 
     private void CacheReferences()
@@ -62,7 +42,7 @@ public class SliderPercentText : MonoBehaviour
         return slider != null ? slider.normalizedValue : 0f;
     }
 
-    private void UpdatePercentText(float normalizedValue)
+    public void UpdatePercentText(float normalizedValue)
     {
         if (percentText == null)
         {

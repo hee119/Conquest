@@ -159,6 +159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lightning
   player: {fileID: 0}
+  detectionRange: 0
+  pooledObject: {fileID: 0}
   lineRenderer: {fileID: 0}
   height: 6
   strikeDuration: 0.15

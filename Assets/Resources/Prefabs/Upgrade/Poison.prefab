@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Poison
   targetDistance: 0.1
+  isDamage: 1
 --- !u!114 &6558015087319970998
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,1027 @@
+fileFormatVersion: 2
+guid: cb93898838bb8497593b802790828b9c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1027341067256717164
+    second: MageMagicBolt_0
+  - first:
+      213: 8856204050051260326
+    second: MageMagicBolt_1
+  - first:
+      213: -2501856095055094248
+    second: MageMagicBolt_2
+  - first:
+      213: -5660486107380981568
+    second: MageMagicBolt_3
+  - first:
+      213: 8421417019657308232
+    second: MageMagicBolt_4
+  - first:
+      213: -9157492878995393036
+    second: MageMagicBolt_5
+  - first:
+      213: -1442927352279385925
+    second: MageMagicBolt_6
+  - first:
+      213: 3977968714856181648
+    second: MageMagicBolt_7
+  - first:
+      213: 4462848452773697042
+    second: MageMagicBolt_8
+  - first:
+      213: -489640681160648942
+    second: MageMagicBolt_9
+  - first:
+      213: -4416232149452247347
+    second: MageMagicBolt_10
+  - first:
+      213: 844915902739389383
+    second: MageMagicBolt_11
+  - first:
+      213: -5145484118118013038
+    second: MageMagicBolt_12
+  - first:
+      213: 4806304478496399662
+    second: MageMagicBolt_13
+  - first:
+      213: -1907280529828443397
+    second: MageMagicBolt_14
+  - first:
+      213: 4347002629877249451
+    second: MageMagicBolt_15
+  - first:
+      213: -3336507746534907266
+    second: MageMagicBolt_16
+  - first:
+      213: -3645347984755862674
+    second: MageMagicBolt_17
+  - first:
+      213: -7189199893360437349
+    second: MageMagicBolt_18
+  - first:
+      213: 3100019108854655960
+    second: MageMagicBolt_19
+  - first:
+      213: 8747475028079045938
+    second: MageMagicBolt_20
+  - first:
+      213: -7448626848175405695
+    second: MageMagicBolt_21
+  - first:
+      213: 5717241398715082930
+    second: MageMagicBolt_22
+  - first:
+      213: 4790023582007700315
+    second: MageMagicBolt_23
+  - first:
+      213: -285864794085549727
+    second: MageMagicBolt_24
+  - first:
+      213: -7515589039748701439
+    second: MageMagicBolt_25
+  - first:
+      213: 8743154505195431102
+    second: MageMagicBolt_26
+  - first:
+      213: 163015853366363087
+    second: MageMagicBolt_27
+  - first:
+      213: 3354903537968225724
+    second: MageMagicBolt_28
+  - first:
+      213: 3522026662761691636
+    second: MageMagicBolt_29
+  - first:
+      213: 1206582898275386900
+    second: MageMagicBolt_30
+  - first:
+      213: 1330480968643442336
+    second: MageMagicBolt_31
+  - first:
+      213: 3889508984498843481
+    second: MageMagicBolt_32
+  - first:
+      213: 767628535269606029
+    second: MageMagicBolt_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 2100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MageMagicBolt_0
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 0
+        width: 1558
+        height: 738
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6fd101f149d14e00800000000000000
+      internalID: 1027341067256717164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_1
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 646
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6af5ead49ae87ea70800000000000000
+      internalID: 8856204050051260326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 347
+        width: 137
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81e581f032f974dd0800000000000000
+      internalID: -2501856095055094248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_3
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 470
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c0e58930e9e171b0800000000000000
+      internalID: -5660486107380981568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_4
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 419
+        width: 31
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8484a1a2922eed470800000000000000
+      internalID: 8421417019657308232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_5
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 427
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f57f4abebc0ae080800000000000000
+      internalID: -9157492878995393036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_6
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 401
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb831b2d731b9fbe0800000000000000
+      internalID: -1442927352279385925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_7
+      rect:
+        serializedVersion: 2
+        x: 1808
+        y: 347
+        width: 65
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09fae905875943730800000000000000
+      internalID: 3977968714856181648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_8
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 310
+        width: 124
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2165af9c5093fed30800000000000000
+      internalID: 4462848452773697042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_9
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 389
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 217d6db05627439f0800000000000000
+      internalID: -489640681160648942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_10
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 339
+        width: 90
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dce2d3e124466b2c0800000000000000
+      internalID: -4416232149452247347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_11
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 338
+        width: 99
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cb1cd7798eb9bb00800000000000000
+      internalID: 844915902739389383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_12
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 308
+        width: 68
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 297692ed4719798b0800000000000000
+      internalID: -5145484118118013038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_13
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 199
+        width: 60
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e21a523557c63b240800000000000000
+      internalID: 4806304478496399662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_14
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 300
+        width: 6
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfa8e8c967af785e0800000000000000
+      internalID: -1907280529828443397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_15
+      rect:
+        serializedVersion: 2
+        x: 1830
+        y: 278
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba5b5874cd7a35c30800000000000000
+      internalID: 4347002629877249451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_16
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 230
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e72a271d1e752b1d0800000000000000
+      internalID: -3336507746534907266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_17
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 225
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e63d0fd525f196dc0800000000000000
+      internalID: -3645347984755862674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_18
+      rect:
+        serializedVersion: 2
+        x: 1779
+        y: 216
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9799f879c4da3c90800000000000000
+      internalID: -7189199893360437349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_19
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 187
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8db643474fa750b20800000000000000
+      internalID: 3100019108854655960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_20
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 177
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23d60422136456970800000000000000
+      internalID: 8747475028079045938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_21
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 145
+        width: 53
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 185411a985921a890800000000000000
+      internalID: -7448626848175405695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_22
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 97
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b8e199c2c8b75f40800000000000000
+      internalID: 5717241398715082930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_23
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 94
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5b2057b115997240800000000000000
+      internalID: 4790023582007700315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_24
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 79
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1699dbefb77680cf0800000000000000
+      internalID: -285864794085549727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_25
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 96
+        width: 33
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 103a5ff669343b790800000000000000
+      internalID: -7515589039748701439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_26
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 94
+        width: 42
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb4a78203bce55970800000000000000
+      internalID: 8743154505195431102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_27
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 77
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc3c8a01e06234200800000000000000
+      internalID: 163015853366363087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_28
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 23
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbd1c442ef20f8e20800000000000000
+      internalID: 3354903537968225724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_29
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 33
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f97d5bd690c0e030800000000000000
+      internalID: 3522026662761691636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_30
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 7
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41604c3d0c4aeb010800000000000000
+      internalID: 1206582898275386900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_31
+      rect:
+        serializedVersion: 2
+        x: 1433
+        y: 13
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a6f86c4461d67210800000000000000
+      internalID: 1330480968643442336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_32
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 15
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95f6ebb50df4af530800000000000000
+      internalID: 3889508984498843481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MageMagicBolt_33
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 0
+        width: 79
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d82c234f51a27aa00800000000000000
+      internalID: 767628535269606029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      MageMagicBolt_0: 1027341067256717164
+      MageMagicBolt_1: 8856204050051260326
+      MageMagicBolt_10: -4416232149452247347
+      MageMagicBolt_11: 844915902739389383
+      MageMagicBolt_12: -5145484118118013038
+      MageMagicBolt_13: 4806304478496399662
+      MageMagicBolt_14: -1907280529828443397
+      MageMagicBolt_15: 4347002629877249451
+      MageMagicBolt_16: -3336507746534907266
+      MageMagicBolt_17: -3645347984755862674
+      MageMagicBolt_18: -7189199893360437349
+      MageMagicBolt_19: 3100019108854655960
+      MageMagicBolt_2: -2501856095055094248
+      MageMagicBolt_20: 8747475028079045938
+      MageMagicBolt_21: -7448626848175405695
+      MageMagicBolt_22: 5717241398715082930
+      MageMagicBolt_23: 4790023582007700315
+      MageMagicBolt_24: -285864794085549727
+      MageMagicBolt_25: -7515589039748701439
+      MageMagicBolt_26: 8743154505195431102
+      MageMagicBolt_27: 163015853366363087
+      MageMagicBolt_28: 3354903537968225724
+      MageMagicBolt_29: 3522026662761691636
+      MageMagicBolt_3: -5660486107380981568
+      MageMagicBolt_30: 1206582898275386900
+      MageMagicBolt_31: 1330480968643442336
+      MageMagicBolt_32: 3889508984498843481
+      MageMagicBolt_33: 767628535269606029
+      MageMagicBolt_4: 8421417019657308232
+      MageMagicBolt_5: -9157492878995393036
+      MageMagicBolt_6: -1442927352279385925
+      MageMagicBolt_7: 3977968714856181648
+      MageMagicBolt_8: 4462848452773697042
+      MageMagicBolt_9: -489640681160648942
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

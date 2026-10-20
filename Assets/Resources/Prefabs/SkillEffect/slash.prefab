@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2888133151593313647}
   - component: {fileID: 6461813494510707922}
   - component: {fileID: 5874237479782849789}
+  - component: {fileID: 5229595356227687885}
   m_Layer: 0
   m_Name: slash
   m_TagString: Skill
@@ -48,11 +49,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: ee8fdf6df0b237c4f9a1016200771392, type: 3}
+  m_Resource: {fileID: 8300000, guid: 902e2656865686d4f8f8fb0903adc94c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -227,6 +228,18 @@ SortingGroup:
   m_SortingOrder: 0
   m_SortAtRoot: 0
   m_Sort3DAs2D: 0
+--- !u!114 &5229595356227687885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243201233587572126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f07dd58c81246c6a4682372dc4c827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SfxAudioSourceVolume
 --- !u!1 &1330048567590964656
 GameObject:
   m_ObjectHideFlags: 0

@@ -394,6 +394,8 @@ public class ExpBubbleFlow : MonoBehaviour
 
         bubbleImage.preserveAspect = true;
 
+        bubbleImage.maskable = true;
+
 
         // =====================================================
         // 랜덤 크기
@@ -459,7 +461,8 @@ public class ExpBubbleFlow : MonoBehaviour
             Mathf.Max(
                 0f,
                 halfHeight -
-                size * 0.5f
+                size * 0.5f -
+                maxWaveAmount
             );
 
 
@@ -613,14 +616,25 @@ public class ExpBubbleFlow : MonoBehaviour
             // 위아래 뽀글뽀글
             // =================================================
 
-            position.y =
+            float verticalLimit =
+                Mathf.Max(
+                    0f,
+                    rect.rect.height * 0.5f -
+                    bubble.rect.height * 0.5f
+                );
+
+
+            position.y = Mathf.Clamp(
                 startY +
                 Mathf.Sin(
                     time *
                     waveSpeed +
                     waveOffset
                 ) *
-                waveAmount;
+                waveAmount,
+                -verticalLimit,
+                verticalLimit
+            );
 
 
             bubble.anchoredPosition =

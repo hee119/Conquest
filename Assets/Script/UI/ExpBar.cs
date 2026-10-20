@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Conquest.PolygonFill;
 
+[ExecuteAlways]
 public class ExpBar : MonoBehaviour
 {
     // =========================================================
@@ -23,6 +24,19 @@ public class ExpBar : MonoBehaviour
     [Tooltip("일반 경험치 글로우 지속 시간")]
     [SerializeField]
     private float gainGlowDuration = 0.4f;
+
+    [Header("바 전체 획득 글로우")]
+    [Tooltip("경험치를 얻을 때 경험치 바 프레임 전체에 번쩍이는 색")]
+    [SerializeField]
+    private Color gainFrameGlowColor = Color.white;
+
+    [Tooltip("경험치를 얻을 때 바 프레임 전체 글로우 강도")]
+    [SerializeField, Range(0f, 1f)]
+    private float gainFrameGlowIntensity = 0.85f;
+
+    [Tooltip("바 프레임 전체 글로우 지속 시간")]
+    [SerializeField]
+    private float gainFrameGlowDuration = 0.28f;
 
 
     [Header("레벨업 글로우")]
@@ -75,6 +89,7 @@ public class ExpBar : MonoBehaviour
 
     private RectTransform levelUpRimGlowRect;
     private ExpBarRightEdgeGlow levelUpRimGlow;
+    private Image gainFrameGlowImage;
 
 
     // =========================================================
@@ -84,6 +99,7 @@ public class ExpBar : MonoBehaviour
     private Coroutine expUpdate;
     private Coroutine expInit;
     private Coroutine levelUpRimGlowUpdate;
+    private Coroutine gainFrameGlowUpdate;
 
 
     // =========================================================
@@ -102,6 +118,7 @@ public class ExpBar : MonoBehaviour
     // =========================================================
 
     private static Sprite circleMaskSprite;
+    private static Sprite whiteFillSprite;
 
 
     // =========================================================
@@ -114,6 +131,12 @@ public class ExpBar : MonoBehaviour
             return;
 
         SetupExpBar();
+
+        gainFrameGlowImage = transform
+            .Find("Background/GainFrameGlow")
+            ?.GetComponent<Image>();
+
+        SetGainFrameGlowAlpha(0f);
 
         if (expSlider == null)
             return;
@@ -136,12 +159,15 @@ public class ExpBar : MonoBehaviour
 
     private void OnEnable()
     {
-        if (!Application.isPlaying)
-            return;
-
-
         expSlider =
             GetComponent<Slider>();
+
+
+        if (!Application.isPlaying)
+        {
+            SetupExpBar();
+            return;
+        }
 
 
         RegisterSliderValueChanged();
@@ -187,14 +213,11 @@ public class ExpBar : MonoBehaviour
             LevelManager.Instance.currentExp;
 
 
-        float maxExp =
-            DataManager.Instance.levelDatas[
-                LevelManager.Instance.currentLevel
-            ];
-
-
-        float newTarget =
-            currentExp / maxExp;
+        int[] levelData = DataManager.Instance.levelDatas;
+        bool maxLevel = levelData == null ||
+            LevelManager.Instance.currentLevel >= levelData.Length;
+        float maxExp = maxLevel ? 1f : Mathf.Max(1, levelData[LevelManager.Instance.currentLevel]);
+        float newTarget = maxLevel ? 1f : currentExp / maxExp;
 
 
         bool leveledUp =
@@ -203,6 +226,9 @@ public class ExpBar : MonoBehaviour
 
         bool gained =
             newTarget > previousTargetValue;
+
+        if (gained)
+            PlayGainFrameGlow();
 
 
         // =====================================================
@@ -469,15 +495,12 @@ public class ExpBar : MonoBehaviour
             LevelManager.Instance.currentExp;
 
 
-        float maxExp =
-            DataManager.Instance.levelDatas[
-                LevelManager.Instance.currentLevel
-            ];
+        int[] levelData = DataManager.Instance.levelDatas;
+        bool maxLevel = levelData == null ||
+            LevelManager.Instance.currentLevel >= levelData.Length;
+        float maxExp = maxLevel ? 1f : Mathf.Max(1, levelData[LevelManager.Instance.currentLevel]);
 
-
-        targetValue =
-            currentExp /
-            maxExp;
+        targetValue = maxLevel ? 1f : currentExp / maxExp;
 
 
         previousTargetValue =
@@ -508,6 +531,14 @@ public class ExpBar : MonoBehaviour
     private void OnDisable()
     {
         UnregisterSliderValueChanged();
+
+        if (gainFrameGlowUpdate != null)
+        {
+            StopCoroutine(gainFrameGlowUpdate);
+            gainFrameGlowUpdate = null;
+        }
+
+        SetGainFrameGlowAlpha(0f);
 
 
         if (!Application.isPlaying)
@@ -555,26 +586,156 @@ public class ExpBar : MonoBehaviour
                 ? fillAreaRect.GetComponentInChildren<PolygonFillGraphic>(true)
                 : null;
 
-
-        if (customPolygonFill != null)
-        {
-            UpdateCustomPolygonFill();
-            RegisterSliderValueChanged();
-            return;
-        }
-
-
-        SetupExpBarImages();
-
-
-        UpdateFillTextureLayout();
-
-
+        ApplyRectangularBarStyle();
+        SetupPlainWhiteSliderFill();
         SetFillCapGlowVisible(false);
-
-
         RegisterSliderValueChanged();
     }
+
+
+    private void SetupPlainWhiteSliderFill()
+    {
+        if (expSlider == null || expSlider.fillRect == null)
+            return;
+
+        float minY = 0f;
+        float maxY = 1f;
+
+        if (customPolygonFill != null &&
+            customPolygonFill.Corners != null &&
+            customPolygonFill.Corners.Count > 0)
+        {
+            minY = customPolygonFill.Corners[0].y;
+            maxY = minY;
+
+            for (int i = 1; i < customPolygonFill.Corners.Count; i++)
+            {
+                float y = customPolygonFill.Corners[i].y;
+                minY = Mathf.Min(minY, y);
+                maxY = Mathf.Max(maxY, y);
+            }
+
+            customPolygonFill.enabled = false;
+            customPolygonFill.gameObject.SetActive(false);
+        }
+
+        DisableLegacyFillVisual("Galaxy Fill");
+        DisableLegacyFillVisual("Galaxy Fill Mask");
+        DisableLegacyFillVisual("Galaxy Fill Cap");
+        DisableLegacyFillVisual("Fill End Glow");
+
+        RectTransform sliderFillRect = expSlider.fillRect;
+        Vector2 anchorMin = sliderFillRect.anchorMin;
+        Vector2 anchorMax = sliderFillRect.anchorMax;
+        anchorMin.y = minY;
+        anchorMax.y = maxY;
+        sliderFillRect.anchorMin = anchorMin;
+        sliderFillRect.anchorMax = anchorMax;
+
+        Vector2 offsetMin = sliderFillRect.offsetMin;
+        Vector2 offsetMax = sliderFillRect.offsetMax;
+        offsetMin.y = 0f;
+        offsetMax.y = 0f;
+        sliderFillRect.offsetMin = offsetMin;
+        sliderFillRect.offsetMax = offsetMax;
+
+        Image fillImage = sliderFillRect.GetComponent<Image>();
+        if (fillImage == null)
+            fillImage = sliderFillRect.gameObject.AddComponent<Image>();
+
+        fillImage.sprite = null;
+        fillImage.type = Image.Type.Simple;
+        fillImage.color = Color.white;
+        fillImage.preserveAspect = false;
+        fillImage.raycastTarget = false;
+        fillImage.maskable = true;
+
+        customPolygonFill = null;
+    }
+
+
+    private void DisableLegacyFillVisual(string childName)
+    {
+        if (fillAreaRect == null)
+            return;
+
+        Transform legacy = fillAreaRect.Find(childName);
+        if (legacy != null && legacy != expSlider.fillRect)
+            legacy.gameObject.SetActive(false);
+    }
+
+
+    private void ApplyRectangularBarStyle()
+    {
+        if (customPolygonFill != null)
+        {
+            float minY = 0f;
+            float maxY = 1f;
+
+            if (customPolygonFill.Corners != null && customPolygonFill.Corners.Count > 0)
+            {
+                minY = customPolygonFill.Corners[0].y;
+                maxY = minY;
+
+                for (int i = 1; i < customPolygonFill.Corners.Count; i++)
+                {
+                    float y = customPolygonFill.Corners[i].y;
+                    minY = Mathf.Min(minY, y);
+                    maxY = Mathf.Max(maxY, y);
+                }
+            }
+
+            customPolygonFill.SetCorners(new[]
+            {
+                new Vector2(0f, minY),
+                new Vector2(1f, minY),
+                new Vector2(1f, maxY),
+                new Vector2(0f, maxY)
+            });
+        }
+
+        Image background = transform.Find("Background")?.GetComponent<Image>();
+        if (background == null)
+            return;
+
+        background.sprite = null;
+        background.type = Image.Type.Simple;
+        background.color = Color.black;
+        background.preserveAspect = false;
+
+        Outline outline = background.GetComponent<Outline>();
+        if (outline == null)
+            outline = background.gameObject.AddComponent<Outline>();
+
+        outline.effectColor = Color.white;
+        outline.effectDistance = new Vector2(2f, -2f);
+        outline.useGraphicAlpha = true;
+    }
+
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (Application.isPlaying)
+            return;
+
+        UnityEditor.EditorApplication.delayCall -= ApplyEditorPreview;
+        UnityEditor.EditorApplication.delayCall += ApplyEditorPreview;
+    }
+
+
+    private void ApplyEditorPreview()
+    {
+        UnityEditor.EditorApplication.delayCall -= ApplyEditorPreview;
+
+        if (this == null || gameObject == null || !gameObject.scene.IsValid())
+            return;
+
+        SetupExpBar();
+        UnityEditor.EditorUtility.SetDirty(this);
+        UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(gameObject.scene);
+    }
+#endif
 
 
     // =========================================================
@@ -652,6 +813,9 @@ public class ExpBar : MonoBehaviour
             LoadSprite(
                 "UI/ExpBarFill"
             );
+
+        if (fillSprite == null)
+            fillSprite = GetWhiteFillSprite();
 
 
         Sprite endGlowSprite =
@@ -873,6 +1037,23 @@ public class ExpBar : MonoBehaviour
 
             100f
         );
+    }
+
+
+    private static Sprite GetWhiteFillSprite()
+    {
+        if (whiteFillSprite == null)
+        {
+            whiteFillSprite = Sprite.Create(
+                Texture2D.whiteTexture,
+                new Rect(0f, 0f, 1f, 1f),
+                new Vector2(0.5f, 0.5f),
+                1f
+            );
+            whiteFillSprite.name = "ExpBar White Fill";
+        }
+
+        return whiteFillSprite;
     }
 
 
@@ -1977,6 +2158,55 @@ public class ExpBar : MonoBehaviour
 
         levelUpRimGlow.color =
             color;
+    }
+
+
+    private void PlayGainFrameGlow()
+    {
+        if (gainFrameGlowImage == null)
+        {
+            gainFrameGlowImage = transform
+                .Find("Background/GainFrameGlow")
+                ?.GetComponent<Image>();
+        }
+
+        if (gainFrameGlowImage == null)
+            return;
+
+        if (gainFrameGlowUpdate != null)
+            StopCoroutine(gainFrameGlowUpdate);
+
+        gainFrameGlowUpdate = StartCoroutine(GainFrameGlowCor());
+    }
+
+
+    private IEnumerator GainFrameGlowCor()
+    {
+        float duration = Mathf.Max(0.01f, gainFrameGlowDuration);
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.unscaledDeltaTime;
+            float progress = Mathf.Clamp01(elapsed / duration);
+            float pulse = Mathf.Sin(progress * Mathf.PI);
+            SetGainFrameGlowAlpha(pulse * gainFrameGlowIntensity);
+            yield return null;
+        }
+
+        SetGainFrameGlowAlpha(0f);
+        gainFrameGlowUpdate = null;
+    }
+
+
+    private void SetGainFrameGlowAlpha(float alpha)
+    {
+        if (gainFrameGlowImage == null)
+            return;
+
+        Color color = gainFrameGlowColor;
+        color.a = Mathf.Clamp01(alpha);
+        gainFrameGlowImage.color = color;
     }
 
 

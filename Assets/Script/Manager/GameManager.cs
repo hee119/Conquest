@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         else if (Instance != this)
         {
             Destroy(gameObject);
+            return;
         }
         FillTiles();
     }

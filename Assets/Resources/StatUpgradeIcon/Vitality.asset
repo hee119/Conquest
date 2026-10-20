@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Vitality
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 703
-  image: {fileID: 21300000, guid: 9b5f4d11e854042afadc813ced8fd7a9, type: 3}
+  image: {fileID: 21300000, guid: d4bd5008eafa45dc909a7b10b7ad8a5d, type: 3}

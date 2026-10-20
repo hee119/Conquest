@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: QuickCast
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 704
-  image: {fileID: 21300000, guid: 8f3137e412a1845ab9e8df5a532cc917, type: 3}
+  image: {fileID: 21300000, guid: f9ffcc18568a4cee8c144b9a312e23dd, type: 3}

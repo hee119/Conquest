@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LavaField
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 504
-  image: {fileID: 21300000, guid: b2b33ffbb0c04439d9fd11bebb7f9bd6, type: 3}
+  image: {fileID: 21300000, guid: 40ae9d89379b4af09af6c349bd847d89, type: 3}

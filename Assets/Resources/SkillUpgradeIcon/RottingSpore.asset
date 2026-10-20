@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: RottingSpore
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 505
-  image: {fileID: 21300000, guid: ee6cc571a98af4db0be818dde3e965fa, type: 3}
+  image: {fileID: 21300000, guid: b643b1ef7e9b44daafa829eb215ba968, type: 3}

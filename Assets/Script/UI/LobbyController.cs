@@ -1,77 +1,27 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 /// <summary>Handles the static lobby scene's button navigation.</summary>
 public sealed class LobbyController : MonoBehaviour
 {
+    public static bool OpenStageSelectOnEntry { get; set; }
+
     [SerializeField] private string stageSceneName = "Stage1";
     [SerializeField] private GameObject mainMenu;
-    [SerializeField] private GameObject stagePanel;
     [SerializeField] private GameObject characterPanel;
+    [SerializeField] private LocalizedText characterName;
+    [SerializeField] private LocalizedText characterDescription;
+    [SerializeField] private GameObject swordmanIdlePreview;
+    [SerializeField] private GameObject mageIdlePreview;
+    [SerializeField] private CharacterCardVisual swordmanCard;
+    [SerializeField] private CharacterCardVisual mageCard;
 
-    private void Awake()
+    private int previewCharacterId = 1;
+
+    private void Start()
     {
-        Bind("MainMenu/StageSelect", OpenStageSelect);
-        Bind("MainMenu/CharacterSelect", OpenCharacterSelect);
-        Bind("MainMenu/Quit", QuitGame);
-        BindStageTiles();
-        Bind("StagePanel/Back", ShowMainMenu);
-        Bind("StagePanel/Close", ShowMainMenu);
-        Bind("CharacterPanel/Swordman", SelectSwordman);
-        Bind("CharacterPanel/Back", ShowMainMenu);
-        Bind("CharacterPanel/Close", ShowMainMenu);
-    }
-
-    private void Bind(string path, UnityEngine.Events.UnityAction action)
-    {
-        Transform target = transform.Find(path);
-        if (target == null)
-        {
-            Debug.LogError($"Lobby button '{path}' is missing.", this);
-            return;
-        }
-
-        Button button = target.GetComponent<Button>();
-        if (button == null)
-        {
-            Debug.LogError($"Lobby button '{path}' has no Button component.", target);
-            return;
-        }
-
-        button.onClick.AddListener(action);
-    }
-
-    private void BindStageTiles()
-    {
-        Transform grid = transform.Find("StagePanel/StageGrid");
-        if (grid == null)
-        {
-            Debug.LogError("Lobby stage grid is missing.", this);
-            return;
-        }
-
-        foreach (Transform tile in grid)
-        {
-            Button button = tile.GetComponent<Button>();
-            if (button == null)
-                continue;
-
-            if (tile.name == "StageTile_01")
-                button.onClick.AddListener(StartStage);
-            else
-                button.interactable = false;
-        }
-    }
-
-    public void OpenStageSelect()
-    {
-        SetView(stagePanel);
-    }
-
-    public void OpenCharacterSelect()
-    {
-        SetView(characterPanel);
+        previewCharacterId = PlayerPrefs.GetInt("SelectedCharacter", 1) == 2 ? 2 : 1;
+        UpdateCharacterPreview();
     }
 
     public void ShowMainMenu()
@@ -81,27 +31,85 @@ public sealed class LobbyController : MonoBehaviour
 
     public void SelectSwordman()
     {
-        // Swordman is the only playable character in the current project.
-        PlayerPrefs.SetInt("SelectedCharacter", 1);
+        SelectCharacter(1);
+    }
+
+    public void SelectMage()
+    {
+        SelectCharacter(2);
+    }
+
+    public void PreviewSwordman()
+    {
+        PreviewCharacter(1);
+    }
+
+    public void PreviewMage()
+    {
+        PreviewCharacter(2);
+    }
+
+    public void ConfirmCharacter()
+    {
+        SelectCharacter(previewCharacterId);
+        if (characterPanel != null)
+            characterPanel.SetActive(false);
+        if (mainMenu != null)
+            mainMenu.SetActive(true);
+    }
+
+    private void PreviewCharacter(int characterId)
+    {
+        previewCharacterId = characterId;
+        SelectCharacter(characterId);
+    }
+
+    private void UpdateCharacterPreview()
+    {
+        bool mageSelected = previewCharacterId == 2;
+
+        if (characterName != null)
+        {
+            characterName.key = mageSelected ? "lobby_character_mage" : "lobby_character_swordman";
+            characterName.ForceUpdateText();
+        }
+
+        if (characterDescription != null)
+        {
+            characterDescription.key = mageSelected
+                ? "lobby_character_mage_desc"
+                : "lobby_character_swordman_desc";
+            characterDescription.ForceUpdateText();
+        }
+
+        if (swordmanIdlePreview != null)
+            swordmanIdlePreview.SetActive(!mageSelected);
+        if (mageIdlePreview != null)
+            mageIdlePreview.SetActive(mageSelected);
+        if (swordmanCard != null)
+            swordmanCard.SetSelected(!mageSelected);
+        if (mageCard != null)
+            mageCard.SetSelected(mageSelected);
+    }
+
+    private void SelectCharacter(int characterId)
+    {
+        previewCharacterId = characterId;
+        PlayerPrefs.SetInt("SelectedCharacter", characterId);
         PlayerPrefs.Save();
-        ShowMainMenu();
-    }
 
-    public void StartStage()
-    {
-        if (!string.IsNullOrWhiteSpace(stageSceneName))
-            SceneManager.LoadSceneAsync(stageSceneName);
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
+        if (CharacterManager.Instance != null)
+            CharacterManager.Instance.currentCharacter = characterId;
+        UpdateCharacterPreview();
     }
 
     private void SetView(GameObject activeView)
     {
         if (mainMenu != null) mainMenu.SetActive(activeView == mainMenu);
-        if (stagePanel != null) stagePanel.SetActive(activeView == stagePanel);
-        if (characterPanel != null) characterPanel.SetActive(activeView == characterPanel);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

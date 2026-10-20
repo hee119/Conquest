@@ -36,15 +36,32 @@ public class LevelManager : MonoBehaviour
         }
         else if (Instance != this)
         {
+            // The manager survives a retry, but its old scene UI does not.
+            if (upgradeUI != null)
+                Instance.upgradeUI = upgradeUI;
+
+            if (Instance.upgradeUI != null)
+                Instance.upgradeUI.SetActive(false);
+
             Destroy(gameObject);
             return;
         }
+
+        if (upgradeUI != null)
+            upgradeUI.SetActive(false);
 
         StartCoroutine(WaitLevelDataDownloader());
     }
 
     private void Update()
     {
+        // A large EXP pickup can pay for several levels. Present one upgrade
+        // choice at a time, then spend the remaining EXP after that UI closes.
+        if (Time.timeScale > 0f && upgradeUI != null && !upgradeUI.activeSelf &&
+            levelDatas != null && currentLevel < levelDatas.Length &&
+            currentExp >= levelDatas[currentLevel])
+            LevelUp();
+
         minuteTimer += Time.deltaTime;
 
         if (minuteTimer >= 60f)
@@ -75,21 +92,43 @@ public class LevelManager : MonoBehaviour
         levelDatas = DataManager.Instance.levelDatas;
     }
 
+    public void ResetForNewRun()
+    {
+        currentLevel = 0;
+        currentExp = 0;
+        minuteExp = 0;
+        minuteLevel = 0;
+        minuteTimer = 0f;
+        expPerMinute.Clear();
+        levelPerMinute.Clear();
+        if (DataManager.Instance != null)
+            levelDatas = DataManager.Instance.levelDatas;
+        if (upgradeUI != null)
+            upgradeUI.SetActive(false);
+        expUpdate?.Invoke();
+        levelUpdate?.Invoke();
+    }
+
     public void AddExp(int exp)
     {
+        if (exp <= 0 || levelDatas == null || levelDatas.Length == 0 ||
+            currentLevel >= levelDatas.Length)
+            return;
+
         currentExp += exp;
         minuteExp += exp;
         expUpdate?.Invoke();
 
-        while (currentLevel < levelDatas.Length &&
-               currentExp >= levelDatas[currentLevel])
-        {
+        if (upgradeUI != null && !upgradeUI.activeSelf && Time.timeScale > 0f &&
+            currentLevel < levelDatas.Length && currentExp >= levelDatas[currentLevel])
             LevelUp();
-        }
     }
 
     public void LevelUp()
     {
+        if (levelDatas == null || currentLevel < 0 || currentLevel >= levelDatas.Length)
+            return;
+
         currentExp -= levelDatas[currentLevel]; // 초과분 보존 (currentLevel++ 전에 계산)
         currentLevel++;
         minuteLevel++;

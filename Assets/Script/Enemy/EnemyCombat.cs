@@ -25,6 +25,7 @@ public class EnemyCombat : MonoBehaviour
 
     protected PooledObject pooledObject;
     protected SpriteRenderer[] spriteRenderers;
+    private Collider2D bodyCollider;
 
     public EnemyInfo enemyInfo;
     public EnemyMove enemyMove;
@@ -37,6 +38,7 @@ public class EnemyCombat : MonoBehaviour
 
         enemyInfo = GetComponent<EnemyInfo>();
         enemyMove = GetComponent<EnemyMove>();
+        bodyCollider = GetComponent<Collider2D>();
     }
 
     public void TakeDamage(float damage, Vector2 hitPoint)
@@ -98,6 +100,12 @@ public class EnemyCombat : MonoBehaviour
                 {
                     StartCoroutine(DieAfterHitCor());
                 }
+                else if (hitParticle != null)
+                {
+                    // Keep the pooled enemy alive briefly so a lethal hit's
+                    // particle can render before the whole object is disabled.
+                    StartCoroutine(DieAfterParticleCor());
+                }
                 else
                 {
                     Die();
@@ -113,6 +121,8 @@ public class EnemyCombat : MonoBehaviour
         isInvincible = false;
 
         hp = maxHp;
+        if (bodyCollider != null)
+            bodyCollider.enabled = true;
 
         if (spriteRenderers != null)
         {
@@ -156,6 +166,16 @@ public class EnemyCombat : MonoBehaviour
             yield return null;
         }
 
+        Die();
+    }
+
+    private IEnumerator DieAfterParticleCor()
+    {
+        isDying = true;
+        if (bodyCollider != null)
+            bodyCollider.enabled = false;
+
+        yield return new WaitForSeconds(0.25f);
         Die();
     }
 
