@@ -30,8 +30,8 @@ public class LocalizationManager : MonoBehaviour
             return;
         }
 
-        // Localization.csv is a generated cache. Update it from the Google Sheet with
-        // Conquest > Localization > Sync Google Sheet before making a build.
+        // Localization.csv is a generated cache. Download the Google Sheet's Master
+        // tab with GetLocalizationData (GetData > Data Download) before making a build.
         LoadCSV();
 
         // 저장된 언어 설정 불러오기
@@ -111,6 +111,14 @@ public class LocalizationManager : MonoBehaviour
     public string GetTranslation(string key)
     {
         return GetTranslation(key, Array.Empty<object>());
+    }
+
+    public bool HasTranslation(string key)
+    {
+        return !string.IsNullOrWhiteSpace(key) &&
+               localizationData.TryGetValue(key, out var languages) &&
+               languages.TryGetValue(currentLanguage, out string value) &&
+               !string.IsNullOrWhiteSpace(value);
     }
 
     public string GetTranslation(string key, params object[] arguments)

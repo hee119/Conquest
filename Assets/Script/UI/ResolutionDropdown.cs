@@ -131,8 +131,7 @@ public sealed class ResolutionDropdown : MonoBehaviour
         if (dropdown == null)
             return;
 
-        int modeIndex = PlayerPrefs.GetInt("Settings.ScreenMode", 1);
-        bool browserFullscreen = Application.platform == RuntimePlatform.WebGLPlayer;
-        dropdown.interactable = modeIndex != 2 || browserFullscreen;
+        // 해상도 목록은 화면 모드와 관계없이 열 수 있어야 한다.
+        dropdown.interactable = true;
     }
 }

@@ -4,8 +4,11 @@ using UnityEngine;
 /// <summary>A pooled pixel bolt that hits the first enemy along its travel path.</summary>
 public sealed class MageProjectile : MonoBehaviour
 {
+    [SerializeField] private int projectileDataId = 201;
+
     private Vector2 direction;
     private float speed;
+    private float launchLifetime;
     private float remainingLifetime;
     private int damage;
     private int remainingPierces;
@@ -13,6 +16,8 @@ public sealed class MageProjectile : MonoBehaviour
     private float chainRange;
     private bool chainTriggered;
     private readonly HashSet<int> hitEnemies = new HashSet<int>();
+    private readonly HashSet<int> chainedEnemies = new HashSet<int>();
+    private EnemyCombat homingTarget;
     private TrailRenderer trail;
     private SkillInfo skillInfo;
     private PooledObject pooledObject;
@@ -26,20 +31,31 @@ public sealed class MageProjectile : MonoBehaviour
 
     public void Launch(Vector2 position, Vector2 travelDirection,
         float travelSpeed, float lifetime, int hitDamage,
-        int pierceCount = 0, int chainedTargets = 0, float chainedRange = 0f)
+        int pierceCount = 0, int chainedTargets = 0, float chainedRange = 0f,
+        EnemyCombat target = null, IEnumerable<int> visitedTargets = null)
     {
         transform.position = position;
-        direction = travelDirection;
+        direction = travelDirection.sqrMagnitude > 0.0001f
+            ? travelDirection.normalized
+            : Vector2.right;
         transform.rotation = Quaternion.Euler(0f, 0f,
             Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         speed = travelSpeed;
+        launchLifetime = lifetime;
         remainingLifetime = lifetime;
         damage = hitDamage;
         remainingPierces = Mathf.Max(0, pierceCount);
         chainCount = Mathf.Max(0, chainedTargets);
         chainRange = Mathf.Max(0f, chainedRange);
         chainTriggered = false;
+        homingTarget = target;
         hitEnemies.Clear();
+        chainedEnemies.Clear();
+        if (visitedTargets != null)
+        {
+            foreach (int targetId in visitedTargets)
+                chainedEnemies.Add(targetId);
+        }
         if (skillInfo != null)
             skillInfo.skillDamage = damage;
         if (trail != null)
@@ -63,6 +79,23 @@ public sealed class MageProjectile : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (homingTarget != null && homingTarget.gameObject.activeInHierarchy &&
+            !homingTarget.isDead)
+        {
+            Vector2 targetDirection =
+                (Vector2)homingTarget.transform.position - (Vector2)transform.position;
+            if (targetDirection.sqrMagnitude > 0.0001f)
+            {
+                direction = targetDirection.normalized;
+                transform.rotation = Quaternion.Euler(0f, 0f,
+                    Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
+            }
+        }
+        else
+        {
+            homingTarget = null;
+        }
+
         float distance = speed * Time.fixedDeltaTime;
         transform.position += (Vector3)(direction * distance);
         remainingLifetime -= Time.fixedDeltaTime;
@@ -73,18 +106,19 @@ public sealed class MageProjectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         EnemyCombat enemy = other.GetComponentInParent<EnemyCombat>();
-        if (enemy == null || !hitEnemies.Add(enemy.GetInstanceID()))
+        if (enemy == null)
             return;
+
+        int enemyId = enemy.GetInstanceID();
+        if (chainedEnemies.Contains(enemyId) || !hitEnemies.Add(enemyId))
+            return;
+
+        chainedEnemies.Add(enemyId);
 
         if (!chainTriggered && chainCount > 0 && chainRange > 0f)
         {
             chainTriggered = true;
-            BasicAttackChainUtility.Apply(
-                enemy.transform.position,
-                enemy,
-                damage,
-                chainCount,
-                chainRange);
+            SpawnNextChainProjectile(enemy);
         }
 
         if (remainingPierces <= 0)
@@ -96,9 +130,101 @@ public sealed class MageProjectile : MonoBehaviour
         remainingPierces--;
     }
 
+    private void SpawnNextChainProjectile(EnemyCombat currentTarget)
+    {
+        if (PoolManager.Instance == null)
+            return;
+
+        Vector2 origin = currentTarget.transform.position;
+        EnemyCombat nextTarget = FindNearestChainTarget(origin);
+        if (nextTarget == null)
+            return;
+
+        Vector2 nextDirection =
+            (Vector2)nextTarget.transform.position - origin;
+        if (nextDirection.sqrMagnitude <= 0.0001f)
+            return;
+
+        nextDirection.Normalize();
+        origin += nextDirection * 0.1f;
+        GameObject projectileObject = PoolManager.Instance.Spawn(projectileDataId, origin);
+        if (projectileObject == null)
+            return;
+
+        MageProjectile projectile = projectileObject.GetComponent<MageProjectile>();
+        if (projectile == null)
+        {
+            projectileObject.GetComponent<PooledObject>()?.DestroyObj();
+            return;
+        }
+
+        CopySortingTo(projectileObject);
+        projectile.Launch(
+            origin,
+            nextDirection,
+            speed,
+            launchLifetime,
+            damage,
+            0,
+            chainCount - 1,
+            chainRange,
+            nextTarget,
+            chainedEnemies);
+    }
+
+    private EnemyCombat FindNearestChainTarget(Vector2 origin)
+    {
+        int enemyLayer = LayerMask.GetMask("Enemy");
+        Collider2D[] hits = Physics2D.OverlapCircleAll(origin, chainRange, enemyLayer);
+        EnemyCombat nearest = null;
+        float nearestDistance = float.PositiveInfinity;
+
+        foreach (Collider2D hit in hits)
+        {
+            EnemyCombat candidate = hit != null
+                ? hit.GetComponentInParent<EnemyCombat>()
+                : null;
+            if (candidate == null || candidate.isDead ||
+                !candidate.gameObject.activeInHierarchy ||
+                chainedEnemies.Contains(candidate.GetInstanceID()))
+            {
+                continue;
+            }
+
+            float distance = ((Vector2)candidate.transform.position - origin).sqrMagnitude;
+            if (distance >= nearestDistance)
+                continue;
+
+            nearest = candidate;
+            nearestDistance = distance;
+        }
+
+        return nearest;
+    }
+
+    private void CopySortingTo(GameObject projectileObject)
+    {
+        SpriteRenderer sourceRenderer = GetComponent<SpriteRenderer>();
+        SpriteRenderer targetRenderer = projectileObject.GetComponent<SpriteRenderer>();
+        if (sourceRenderer != null && targetRenderer != null)
+        {
+            targetRenderer.sortingLayerID = sourceRenderer.sortingLayerID;
+            targetRenderer.sortingOrder = sourceRenderer.sortingOrder;
+        }
+
+        TrailRenderer targetTrail = projectileObject.GetComponent<TrailRenderer>();
+        if (trail != null && targetTrail != null)
+        {
+            targetTrail.sortingLayerID = trail.sortingLayerID;
+            targetTrail.sortingOrder = trail.sortingOrder;
+        }
+    }
+
     private void ReturnToPool()
     {
         hitEnemies.Clear();
+        chainedEnemies.Clear();
+        homingTarget = null;
         ClearTrail();
         if (pooledObject != null)
             pooledObject.DestroyObj();

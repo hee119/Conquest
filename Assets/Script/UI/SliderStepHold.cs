@@ -3,7 +3,13 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public sealed class SliderStepHold : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
+public sealed class SliderStepHold : MonoBehaviour,
+    IPointerDownHandler,
+    IPointerUpHandler,
+    IPointerExitHandler,
+    IBeginDragHandler,
+    IDragHandler,
+    IEndDragHandler
 {
     private SliderPlusMinus owner;
     private UnityAction repeatAction;
@@ -36,6 +42,24 @@ public sealed class SliderStepHold : MonoBehaviour, IPointerDownHandler, IPointe
     public void OnPointerExit(PointerEventData eventData)
     {
         StopRepeating(false);
+    }
+
+    // +/- 버튼은 Slider의 자식이므로 드래그 이벤트를 처리하지 않으면
+    // 부모 Slider가 포인터 위치를 값으로 해석해 갑자기 0%/100%로 이동한다.
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        eventData.Use();
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        eventData.Use();
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        StopRepeating(false);
+        eventData.Use();
     }
 
     private IEnumerator RepeatWhileHeld()

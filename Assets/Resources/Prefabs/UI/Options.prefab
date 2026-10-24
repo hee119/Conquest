@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a15eb2e2dfbd4934b8de4b451befc834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  labelWidth: 200
+  labelWidth: 300
   controlColumnStart: 647
   controlWidth: 322
   sliderWidth: 300

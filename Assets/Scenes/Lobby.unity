@@ -444,7 +444,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -770,7 +770,7 @@ MonoBehaviour:
   m_fontSizeMin: 12
   m_fontSizeMax: 36
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 768
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4082,7 +4082,7 @@ MonoBehaviour:
   m_fontSizeMin: 12
   m_fontSizeMax: 36
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 768
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4623,6 +4623,7 @@ GameObject:
   - component: {fileID: 613877686}
   - component: {fileID: 613877685}
   - component: {fileID: 613877684}
+  - component: {fileID: 613877688}
   m_Layer: 5
   m_Name: Close
   m_TagString: Untagged
@@ -4662,7 +4663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OpenAndClose
   upgradeImageSet: {fileID: 0}
-  obj: {fileID: 539754084}
+  obj: {fileID: 1333950173}
 --- !u!114 &613877685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4708,6 +4709,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 613877684}
+        m_TargetAssemblyTypeName: OpenAndClose, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 613877688}
         m_TargetAssemblyTypeName: OpenAndClose, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 1
@@ -4757,6 +4770,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 613877682}
   m_CullTransparentMesh: 1
+--- !u!114 &613877688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613877682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f6eac6fdbe04ae69207950bfdc7b7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpenAndClose
+  upgradeImageSet: {fileID: 0}
+  obj: {fileID: 539754084}
 --- !u!1 &618113328
 GameObject:
   m_ObjectHideFlags: 0
@@ -5093,7 +5120,7 @@ MonoBehaviour:
   m_fontSizeMin: 12
   m_fontSizeMax: 36
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 768
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -5169,7 +5196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &638002738
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5955,7 +5982,7 @@ MonoBehaviour:
   m_fontSizeMin: 12
   m_fontSizeMax: 36
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 768
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -7165,7 +7192,7 @@ PrefabInstance:
     - target: {fileID: 7463672230444630179, guid: 17d58611b9bf246dc81c1bc7aaa5007b,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 210
+      value: 224
       objectReference: {fileID: 0}
     - target: {fileID: 7463672230444630179, guid: 17d58611b9bf246dc81c1bc7aaa5007b,
         type: 3}
@@ -7711,7 +7738,7 @@ MonoBehaviour:
   m_fontSizeMin: 12
   m_fontSizeMax: 36
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 768
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -10234,7 +10261,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -11395,7 +11422,7 @@ PrefabInstance:
     - target: {fileID: 7463672230444630179, guid: 17d58611b9bf246dc81c1bc7aaa5007b,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 210
+      value: 224
       objectReference: {fileID: 0}
     - target: {fileID: 7463672230444630179, guid: 17d58611b9bf246dc81c1bc7aaa5007b,
         type: 3}
@@ -13546,7 +13573,7 @@ MonoBehaviour:
   m_fontSizeMin: 12
   m_fontSizeMax: 36
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 768
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -16576,7 +16603,7 @@ MonoBehaviour:
   m_fontSizeMin: 12
   m_fontSizeMax: 36
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 768
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -17061,7 +17088,7 @@ PrefabInstance:
     - target: {fileID: 7463672230444630179, guid: 17d58611b9bf246dc81c1bc7aaa5007b,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 210
+      value: 224
       objectReference: {fileID: 0}
     - target: {fileID: 7463672230444630179, guid: 17d58611b9bf246dc81c1bc7aaa5007b,
         type: 3}

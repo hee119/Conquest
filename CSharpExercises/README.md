@@ -7,7 +7,7 @@
 | 1 | [01_Primes.cs](01_Primes.cs) | [01_설명.md](01_설명.md) | 에라토스테네스의 체, 묶음 출력 |
 | 2 | [02_SortLetters.cs](02_SortLetters.cs) | [02_설명.md](02_설명.md) | 계수 정렬, 출력 버퍼 |
 | 3 | [03_Battle.cs](03_Battle.cs) | [03_설명.md](03_설명.md) | 구조체, 피해량, 필요한 타격 수와 공격 시점 계산 |
-| 4 | [04_Square.cs](04_Square.cs) | [04_설명.md](04_설명.md) | 한 행을 만들어 재사용 |
+| 4 | [04_Quadrilaterals.cs](04_Quadrilaterals.cs) | [04_설명.md](04_설명.md) | 내각 관계로 가능한 종류 판정 |
 | 5 | [05_MatchstickTriangles.cs](05_MatchstickTriangles.cs) | [05_설명.md](05_설명.md) | 모양 사전 계산, 후보 중복 제거, 할당 감소 |
 
 ## 실행 방법
@@ -20,7 +20,7 @@
 dotnet run --project CSharpExercises.csproj -p:Exercise=01_Primes
 dotnet run --project CSharpExercises.csproj -p:Exercise=02_SortLetters
 dotnet run --project CSharpExercises.csproj -p:Exercise=03_Battle
-dotnet run --project CSharpExercises.csproj -p:Exercise=04_Square
+dotnet run --project CSharpExercises.csproj -p:Exercise=04_Quadrilaterals
 dotnet run --project CSharpExercises.csproj -p:Exercise=05_MatchstickTriangles
 ```
 
@@ -35,7 +35,7 @@ dotnet run --project CSharpExercises.csproj -p:Exercise=05_MatchstickTriangles
 - 1번: 2~999를 입력받아 **입력값 미만**인 소수를 출력한다. 예를 들어 7은 `2 3 5`다.
 - 2번: 예시 `ABcdCDef → ABCDcdef`에 맞춰 대문자와 소문자 각각을 알파벳순으로 정렬하고, 대문자부터 출력한다.
 - 3번: 첫 공격은 `1 / 공격 속도`초에 발생한다. 같은 시각에 서로를 쓰러뜨리면 무승부다. 회복, 치명타, 랜덤 요소는 없다.
-- 4번: 내부가 채워진 정사각형을 출력한다. C#에는 C의 `printf`가 없으므로 `Console.Write`와 `Console.WriteLine`을 사용한다.
+- 4번: 사각형 둘레 순서대로 네 내각을 입력받아 생성 가능한 사각형 종류를 분류한다. 각도가 0도 초과 180도 미만인지, 네 각의 합이 360도인지 예외 처리한다. 각도만으로 변의 길이는 정해지지 않으므로 변의 길이를 적절히 선택해 만들 수 있는 종류를 출력한다. 사다리꼴은 평행사변형과 구분해 한 쌍만 평행한 경우로 센다.
 - 5번: 동일 길이의 성냥을 평면에서 끝점끼리 연결한다. 변 공유와 큰 삼각형을 모두 인정한다. 성냥의 교차·포개기·절단은 허용하지 않으며, 남는 성냥은 사용하지 않아도 된다. 표준 삼각 격자 배치를 완전 탐색한다.
 
 **5번은 일반적인 반복문 입문 문제보다 어렵다.** 모든 크기와 변 공유를 허용하면 배치 자체를 탐색해야 하므로, 작은 입력으로 실행해 보는 것이 좋다. 입력이 커지면 시간과 메모리 사용량이 급격히 증가한다. 단순 공식을 전체 경우의 최댓값인 것처럼 사용하지 않았다.
@@ -47,7 +47,7 @@ dotnet run --project CSharpExercises.csproj -p:Exercise=05_MatchstickTriangles
 | 1 | 소수마다 약수 검사 → 에라토스테네스의 체 | O(N log log N) / O(N) |
 | 2 | 계수 정렬 유지, 문자별 콘솔 출력 → 한 번에 출력 | O(L + 52) / O(L + 52) |
 | 3 | 반복 없는 처치 시각 계산 유지 | O(1) / O(1) |
-| 4 | 같은 행을 한 번 만든 뒤 반복 출력 | 출력 포함 O(N²) / O(N) |
+| 4 | 네 내각 합과 각도 관계 비교 | O(1) / O(1) |
 | 5 | 삼각형 모양 재사용, 후보 구조체, 조기 탈락, 키 생성 비용 감소 | 완전 탐색의 큰 입력 한계는 유지 |
 
-5번 성냥 15개는 같은 환경의 1회 비교에서 약 24.8초 → 2.0초였으며, 두 버전 모두 정답 9개를 출력했다. 자세한 측정 조건은 5번 설명을 참고한다. 2번과 4번은 출력 버퍼를 위해 메모리를 추가로 사용하는 대신 콘솔 호출을 줄였다.
+5번 성냥 15개는 같은 환경의 1회 비교에서 약 24.8초 → 2.0초였으며, 두 버전 모두 정답 9개를 출력했다. 자세한 측정 조건은 5번 설명을 참고한다. 2번은 출력 버퍼를 위해 메모리를 추가로 사용하는 대신 콘솔 호출을 줄였다.

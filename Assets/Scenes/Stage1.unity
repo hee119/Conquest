@@ -291,6 +291,7 @@ MonoBehaviour:
   bulletDataText: 
   bossPatternData: 
   statUpgradeDataText: 
+  characterSkillUpgradeDataText: 
   levelDatas: 
   upgradeImages: []
   skillUpgradeIcons: []
@@ -695,7 +696,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -2688,7 +2689,12 @@ PrefabInstance:
     - target: {fileID: 5894876572741660603, guid: e1b8c2c1c44f64d2cae42bc3f3534fb3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 233.92
+      value: -112.000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894876572741660603, guid: e1b8c2c1c44f64d2cae42bc3f3534fb3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6077455715689543005, guid: e1b8c2c1c44f64d2cae42bc3f3534fb3,
         type: 3}
@@ -4798,12 +4804,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeManager
   skillUpgrades: 
   statUpgrades: 
+  characterSkillUpgrades: 
   upgrades: 
   upgradesInfo:
   - {fileID: 1816926039}
   - {fileID: 920623799}
   - {fileID: 857826222}
   renewableUpgrades: 
+  upgradeCooldownHud: {fileID: 5000000000000000104}
   skillUpgradeIcons:
   - {fileID: 1186359052}
   - {fileID: 682922037}
@@ -5142,7 +5150,7 @@ PrefabInstance:
     - target: {fileID: 7463672230444630179, guid: 17d58611b9bf246dc81c1bc7aaa5007b,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 210
+      value: 224
       objectReference: {fileID: 0}
     - target: {fileID: 7463672230444630179, guid: 17d58611b9bf246dc81c1bc7aaa5007b,
         type: 3}
@@ -5460,14 +5468,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.65
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 12
   m_fontSizeMax: 36
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 768
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -6933,7 +6941,7 @@ MonoBehaviour:
   m_fontSizeMin: 12
   m_fontSizeMax: 36
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 768
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -7079,7 +7087,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -8173,7 +8181,7 @@ MonoBehaviour:
   m_fontSizeMin: 12
   m_fontSizeMax: 36
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 768
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -8789,7 +8797,7 @@ MonoBehaviour:
   m_fontSizeMin: 12
   m_fontSizeMax: 36
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 768
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -9781,7 +9789,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -10029,7 +10037,12 @@ PrefabInstance:
     - target: {fileID: 5894876572741660603, guid: e1b8c2c1c44f64d2cae42bc3f3534fb3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 233.92
+      value: -112.000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894876572741660603, guid: e1b8c2c1c44f64d2cae42bc3f3534fb3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6846101669647141358, guid: e1b8c2c1c44f64d2cae42bc3f3534fb3,
         type: 3}
@@ -10841,7 +10854,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -11292,14 +11305,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.5
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 12
   m_fontSizeMax: 36
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 768
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -12092,7 +12105,7 @@ MonoBehaviour:
   m_fontSizeMin: 12
   m_fontSizeMax: 36
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 768
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -12289,14 +12302,6 @@ MonoBehaviour:
     boomDamage: 0
     explosionRange: 0
     tier: 0
-    basicCharacterId: 0
-    basicRangePercent: []
-    basicAttackCount: 
-    basicPierce: 
-    basicChainCount: 
-    basicChainRange: []
-    basicDamagePercent: []
-    basicIconId: 0
     sprite: {fileID: 0}
     upgradeLevel: 0
   upgradeNameLo: {fileID: 0}
@@ -12382,7 +12387,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -12681,7 +12686,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -16106,7 +16111,7 @@ MonoBehaviour:
   m_fontSizeMin: 12
   m_fontSizeMax: 36
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 768
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -16939,7 +16944,7 @@ PrefabInstance:
     - target: {fileID: 7463672230444630179, guid: 17d58611b9bf246dc81c1bc7aaa5007b,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 210
+      value: 224
       objectReference: {fileID: 0}
     - target: {fileID: 7463672230444630179, guid: 17d58611b9bf246dc81c1bc7aaa5007b,
         type: 3}
@@ -17301,7 +17306,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -19679,7 +19684,12 @@ PrefabInstance:
     - target: {fileID: 5894876572741660603, guid: e1b8c2c1c44f64d2cae42bc3f3534fb3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 233.92
+      value: -111.999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894876572741660603, guid: e1b8c2c1c44f64d2cae42bc3f3534fb3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6846101669647141358, guid: e1b8c2c1c44f64d2cae42bc3f3534fb3,
         type: 3}
@@ -22777,6 +22787,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 832787635}
+  - {fileID: 5000000000000000101}
   m_Father: {fileID: 2056422560}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -23313,14 +23324,6 @@ MonoBehaviour:
     boomDamage: 0
     explosionRange: 0
     tier: 0
-    basicCharacterId: 0
-    basicRangePercent: []
-    basicAttackCount: 
-    basicPierce: 
-    basicChainCount: 
-    basicChainRange: []
-    basicDamagePercent: []
-    basicIconId: 0
     sprite: {fileID: 0}
     upgradeLevel: 0
   upgradeNameLo: {fileID: 0}
@@ -23385,7 +23388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b877539a40c05481d9ad28d588fad1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GetData
-  dataLink: https://docs.google.com/spreadsheets/d/1A8P-jI_EZU8HD5Id4Nz4aB8TkFJTDQ1l3BjAdei3WOI/export?format=csv&gid=1551285417
+  dataLink: https://docs.google.com/spreadsheets/d/e/2PACX-1vRNw5hBYvvAQLRBMZHqZCluAcnL6emszvBGg7JkKol2Eot5qAynrbEkAkpjNp-5a7c0A0Ztz0qsTYjz/pub?gid=1551285417&single=true&output=csv
   folderName: TextData
   saveFileName: CharacterSkillUpgradeData.csv
 --- !u!114 &2192300000
@@ -23833,7 +23836,7 @@ PrefabInstance:
     - target: {fileID: 7463672230444630179, guid: 17d58611b9bf246dc81c1bc7aaa5007b,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 210
+      value: 224
       objectReference: {fileID: 0}
     - target: {fileID: 7463672230444630179, guid: 17d58611b9bf246dc81c1bc7aaa5007b,
         type: 3}
@@ -23862,6 +23865,94 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1954613096}
   m_SourcePrefab: {fileID: 100100000, guid: 17d58611b9bf246dc81c1bc7aaa5007b, type: 3}
+--- !u!1 &5000000000000000100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5000000000000000101}
+  - component: {fileID: 5000000000000000102}
+  - component: {fileID: 5000000000000000103}
+  - component: {fileID: 5000000000000000104}
+  m_Layer: 5
+  m_Name: UpgradeCooldownHUD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5000000000000000101
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5000000000000000100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2120958890}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 24, y: 54}
+  m_SizeDelta: {x: 620, y: 76}
+  m_Pivot: {x: 0, y: 0}
+--- !u!225 &5000000000000000102
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5000000000000000100}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!114 &5000000000000000103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5000000000000000100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 6
+  m_Spacing: 10
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 1
+--- !u!114 &5000000000000000104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5000000000000000100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 591c3a8f284574882af6a4253f1aebdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeCooldownHud
 --- !u!1001 &5223922062063780492
 PrefabInstance:
   m_ObjectHideFlags: 0

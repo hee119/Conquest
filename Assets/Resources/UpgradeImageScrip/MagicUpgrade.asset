@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MagicUpgrade
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 1001
-  image: {fileID: 21300000, guid: a3c51b7e9d224f0fa7581c4e6b982d31, type: 3}
+  image: {fileID: 21300000, guid: 89a0227bfee67759253c0cb09e524d8e, type: 3}

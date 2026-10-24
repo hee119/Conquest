@@ -11,16 +11,22 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
 
     private UpgradeManager manager;
     private RectTransform root;
+    private CanvasGroup canvasGroup;
 
-    public static UpgradeCooldownHud Attach(UpgradeManager owner)
+    public static UpgradeCooldownHud FindInScene()
     {
-        UpgradeCooldownHud hud = owner.GetComponent<UpgradeCooldownHud>();
-        if (hud == null)
-            hud = owner.gameObject.AddComponent<UpgradeCooldownHud>();
+        return FindFirstObjectByType<UpgradeCooldownHud>(FindObjectsInactive.Include);
+    }
 
-        hud.manager = owner;
-        hud.EnsureRoot();
-        return hud;
+    public void Initialize(UpgradeManager owner)
+    {
+        manager = owner;
+        root = transform as RectTransform;
+        canvasGroup = GetComponent<CanvasGroup>();
+        if (root == null)
+            Debug.LogError("[UpgradeCooldownHud] 씬 오브젝트에 RectTransform이 필요합니다.", this);
+        if (canvasGroup == null)
+            Debug.LogError("[UpgradeCooldownHud] 씬 오브젝트에 CanvasGroup이 필요합니다.", this);
     }
 
     public void Track(int upgradeId)
@@ -51,8 +57,7 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         }
 
         entries.Clear();
-        if (root != null)
-            root.gameObject.SetActive(false);
+        SetVisible(false);
     }
 
     private void Update()
@@ -101,13 +106,17 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
             }
         }
 
-        root.gameObject.SetActive(hasVisibleEntry);
+        SetVisible(hasVisibleEntry);
     }
 
     private void RefreshEntry(int upgradeId, CooldownEntry entry)
     {
         if (entry.Root == null)
             return;
+
+        int level = manager.GetUpgradeDisplayLevel(upgradeId);
+        entry.LevelText.gameObject.SetActive(level > 0);
+        entry.LevelText.text = level > 0 ? $"Lv.{level}" : string.Empty;
 
         if (manager.IsPersistentUpgrade(upgradeId))
         {
@@ -141,72 +150,20 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         if (root != null)
             return;
 
-        entries.Clear();
-        RectTransform targetParent = FindTargetParent();
-        if (targetParent == null)
-            return;
-
-        GameObject rootObject = new GameObject(
-            "UpgradeCooldownHUD",
-            typeof(RectTransform),
-            typeof(CanvasGroup),
-            typeof(HorizontalLayoutGroup));
-        rootObject.layer = LayerMask.NameToLayer("UI");
-        rootObject.transform.SetParent(targetParent, false);
-
-        root = (RectTransform)rootObject.transform;
-        root.anchorMin = Vector2.zero;
-        root.anchorMax = Vector2.zero;
-        root.pivot = Vector2.zero;
-        root.anchoredPosition = new Vector2(24f, 54f);
-        root.sizeDelta = new Vector2(620f, EntrySize);
-
-        CanvasGroup group = rootObject.GetComponent<CanvasGroup>();
-        group.interactable = false;
-        group.blocksRaycasts = false;
-
-        HorizontalLayoutGroup layout = rootObject.GetComponent<HorizontalLayoutGroup>();
-        layout.childAlignment = TextAnchor.LowerLeft;
-        layout.spacing = 10f;
-        layout.childControlWidth = false;
-        layout.childControlHeight = false;
-        layout.childForceExpandWidth = false;
-        layout.childForceExpandHeight = false;
-
-        rootObject.SetActive(false);
+        root = transform as RectTransform;
+        canvasGroup = GetComponent<CanvasGroup>();
     }
 
-    private RectTransform FindTargetParent()
+    private void SetVisible(bool visible)
     {
-        if (manager.skillUpgradeIcons != null)
-        {
-            foreach (UnityEngine.UI.Image image in manager.skillUpgradeIcons)
-            {
-                if (image == null)
-                    continue;
+        if (canvasGroup == null)
+            canvasGroup = GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+            return;
 
-                Transform current = image.transform.parent;
-                while (current != null)
-                {
-                    if (current.name == "Safe Area" && current is RectTransform safeArea)
-                        return safeArea;
-
-                    current = current.parent;
-                }
-
-                if (image.canvas != null)
-                    return image.canvas.transform as RectTransform;
-            }
-        }
-
-        Canvas[] canvases = FindObjectsByType<Canvas>(FindObjectsInactive.Include, FindObjectsSortMode.None);
-        foreach (Canvas canvas in canvases)
-        {
-            if (canvas != null && canvas.isRootCanvas)
-                return canvas.transform as RectTransform;
-        }
-
-        return null;
+        canvasGroup.alpha = visible ? 1f : 0f;
+        canvasGroup.interactable = false;
+        canvasGroup.blocksRaycasts = false;
     }
 
     private CooldownEntry CreateEntry(int upgradeId)
@@ -250,7 +207,13 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         shade.preserveAspect = true;
 
         TextMeshProUGUI timeText = CreateText(entryRect);
-        CooldownEntry entry = new CooldownEntry(entryObject, icon, shade, timeText);
+        TextMeshProUGUI levelText = CreateLevelText(entryRect);
+        CooldownEntry entry = new CooldownEntry(
+            entryObject,
+            icon,
+            shade,
+            timeText,
+            levelText);
         entry.SetIcon(manager.GetUpgradeIcon(upgradeId));
         return entry;
     }
@@ -308,23 +271,55 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         return text;
     }
 
+    private static TextMeshProUGUI CreateLevelText(RectTransform parent)
+    {
+        GameObject textObject = new GameObject(
+            "UpgradeLevel",
+            typeof(RectTransform),
+            typeof(CanvasRenderer),
+            typeof(TextMeshProUGUI));
+        textObject.layer = parent.gameObject.layer;
+        textObject.transform.SetParent(parent, false);
+
+        RectTransform rect = (RectTransform)textObject.transform;
+        rect.anchorMin = new Vector2(1f, 0f);
+        rect.anchorMax = new Vector2(1f, 0f);
+        rect.pivot = new Vector2(1f, 0f);
+        rect.anchoredPosition = new Vector2(-4f, 3f);
+        rect.sizeDelta = new Vector2(54f, 22f);
+
+        TextMeshProUGUI text = textObject.GetComponent<TextMeshProUGUI>();
+        text.fontSize = 17f;
+        text.fontStyle = FontStyles.Bold;
+        text.alignment = TextAlignmentOptions.BottomRight;
+        text.color = Color.white;
+        text.outlineColor = Color.black;
+        text.outlineWidth = 0.35f;
+        text.textWrappingMode = TextWrappingModes.NoWrap;
+        text.raycastTarget = false;
+        return text;
+    }
+
     private sealed class CooldownEntry
     {
         public readonly GameObject Root;
         public readonly UnityEngine.UI.Image Icon;
         public readonly UnityEngine.UI.Image CooldownShade;
         public readonly TextMeshProUGUI TimeText;
+        public readonly TextMeshProUGUI LevelText;
 
         public CooldownEntry(
             GameObject rootObject,
             UnityEngine.UI.Image icon,
             UnityEngine.UI.Image cooldownShade,
-            TextMeshProUGUI timeText)
+            TextMeshProUGUI timeText,
+            TextMeshProUGUI levelText)
         {
             Root = rootObject;
             Icon = icon;
             CooldownShade = cooldownShade;
             TimeText = timeText;
+            LevelText = levelText;
         }
 
         public void SetIcon(Sprite sprite)

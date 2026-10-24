@@ -262,19 +262,57 @@ internal static class MatchstickProgram
                     Point a = Transform(edge.A, rotation, reflection == 1);
                     Point b = Transform(edge.B, rotation, reflection == 1);
                     working[index++] = new Edge(a, b);
-                    minX = Math.Min(minX, Math.Min(a.X, b.X));
-                    minY = Math.Min(minY, Math.Min(a.Y, b.Y));
+                    int edgeMinX = a.X < b.X ? a.X : b.X;
+                    int edgeMinY = a.Y < b.Y ? a.Y : b.Y;
+                    if (edgeMinX < minX) minX = edgeMinX;
+                    if (edgeMinY < minY) minY = edgeMinY;
                 }
                 for (int i = 0; i < working.Length; i++) working[i] = Move(working[i], -minX, -minY);
-                Array.Sort(working);
+                SortEdges(working);
                 if (!hasBest || CompareLayouts(working, best) < 0)
                 {
-                    Array.Copy(working, best, working.Length);
+                    for (int edgeIndex = 0; edgeIndex < working.Length; edgeIndex++)
+                        best[edgeIndex] = working[edgeIndex];
                     hasBest = true;
                 }
             }
         }
         return Encode(best);
+    }
+
+    // 라이브러리 정렬 메서드 대신 추가 배열을 만들지 않는 힙 정렬을 사용한다.
+    // CompareTo 기준 오름차순으로 정렬하며 시간은 O(n log n), 추가 공간은 O(1)이다.
+    private static void SortEdges(Edge[] edges)
+    {
+        int count = edges.Length;
+        for (int root = count / 2 - 1; root >= 0; root--)
+            SiftDown(edges, root, count);
+
+        for (int end = count - 1; end > 0; end--)
+        {
+            Edge first = edges[0];
+            edges[0] = edges[end];
+            edges[end] = first;
+            SiftDown(edges, 0, end);
+        }
+    }
+
+    private static void SiftDown(Edge[] edges, int root, int count)
+    {
+        while (root * 2 + 1 < count)
+        {
+            int child = root * 2 + 1;
+            if (child + 1 < count && edges[child].CompareTo(edges[child + 1]) < 0)
+                child++;
+
+            if (edges[root].CompareTo(edges[child]) >= 0)
+                return;
+
+            Edge parent = edges[root];
+            edges[root] = edges[child];
+            edges[child] = parent;
+            root = child;
+        }
     }
 
     private static int CompareLayouts(Edge[] a, Edge[] b)

@@ -69,8 +69,8 @@ internal static class BattleProgram
             return;
         }
 
-        decimal aHits = Math.Ceiling(b.Health / damageToB);
-        decimal bHits = Math.Ceiling(a.Health / damageToA);
+        decimal aHits = CeilingPositive(b.Health / damageToB);
+        decimal bHits = CeilingPositive(a.Health / damageToA);
 
         // aHits / a.Speed와 bHits / b.Speed를 교차 곱으로 비교한다.
         // 나눗셈 반올림 때문에 동시 공격을 다르게 판정하는 문제를 줄인다.
@@ -85,15 +85,15 @@ internal static class BattleProgram
         else if (aOrder < bOrder)
         {
             // 종료 시각까지 B의 공격 횟수. 같은 시각의 공격도 적용한다.
-            decimal bAttacks = Math.Floor(aHits * b.AttackSpeed / a.AttackSpeed);
-            a.Health = Math.Max(0m, a.Health - bAttacks * damageToA);
+            decimal bAttacks = FloorPositive(aHits * b.AttackSpeed / a.AttackSpeed);
+            a.Health = SubtractWithoutGoingBelowZero(a.Health, bAttacks * damageToA);
             b.Health = 0m;
             PrintResult(a, b, aHits / a.AttackSpeed);
         }
         else
         {
-            decimal aAttacks = Math.Floor(bHits * a.AttackSpeed / b.AttackSpeed);
-            b.Health = Math.Max(0m, b.Health - aAttacks * damageToB);
+            decimal aAttacks = FloorPositive(bHits * a.AttackSpeed / b.AttackSpeed);
+            b.Health = SubtractWithoutGoingBelowZero(b.Health, aAttacks * damageToB);
             a.Health = 0m;
             PrintResult(b, a, bHits / b.AttackSpeed);
         }
@@ -113,12 +113,31 @@ internal static class BattleProgram
 
     private static bool HasTwoDecimalPlaces(decimal value)
     {
-        return value * 100m == decimal.Truncate(value * 100m);
+        return value * 100m % 1m == 0m;
+    }
+
+    // 호출 전에 0 이상이고 long 범위 안인지 보장한다.
+    // decimal을 정수로 변환하면 소수 부분이 버려지므로 직접 올림·내림을 만들 수 있다.
+    private static decimal CeilingPositive(decimal value)
+    {
+        long wholePart = (long)value;
+        return value > wholePart ? wholePart + 1m : wholePart;
+    }
+
+    private static decimal FloorPositive(decimal value)
+    {
+        return (long)value;
+    }
+
+    private static decimal SubtractWithoutGoingBelowZero(decimal value, decimal amount)
+    {
+        decimal result = value - amount;
+        return result > 0m ? result : 0m;
     }
 
     private static void PrintOneSidedWinner(Character winner, decimal targetHealth, decimal damage)
     {
-        decimal hits = Math.Ceiling(targetHealth / damage);
+        decimal hits = CeilingPositive(targetHealth / damage);
         Console.WriteLine("{0:0.###}초: {1} 승리, 남은 체력 {2:0.###}",
             hits / winner.AttackSpeed, winner.Name, winner.Health);
     }

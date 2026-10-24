@@ -64,19 +64,30 @@ public class SliderPlusMinus : MonoBehaviour
 
     public void Plus()
     {
-        if (slider == null)
-            return;
-
-        slider.value = Mathf.Min(slider.maxValue, slider.value + step);
-        onValueChanged?.Invoke();
+        ChangeValue(step);
     }
 
     public void Minus()
     {
+        ChangeValue(-step);
+    }
+
+    private void ChangeValue(float delta)
+    {
         if (slider == null)
             return;
 
-        slider.value = Mathf.Max(slider.minValue, slider.value - step);
+        float nextValue = Mathf.Clamp(
+            slider.value + delta,
+            slider.minValue,
+            slider.maxValue);
+        if (Mathf.Approximately(nextValue, slider.value))
+            return;
+
+        // 버튼 변경도 드래그와 같은 Slider 이벤트 경로를 사용한다.
+        // 밝기, 음량, 퍼센트 텍스트가 항상 같은 값으로 갱신된다.
+        slider.SetValueWithoutNotify(nextValue);
+        slider.onValueChanged.Invoke(nextValue);
         onValueChanged?.Invoke();
     }
 

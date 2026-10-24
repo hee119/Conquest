@@ -5,7 +5,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(HorizontalLayoutGroup))]
 public sealed class SettingsOptionRowLayout : MonoBehaviour
 {
-    [SerializeField, Min(0f)] private float labelWidth = 200f;
+    [SerializeField, Min(0f)] private float labelWidth = 300f;
     [SerializeField, Min(0f)] private float controlColumnStart = 647f;
     [SerializeField, Min(0f)] private float controlWidth = 322f;
     [SerializeField, Min(0f)] private float sliderWidth = 300f;

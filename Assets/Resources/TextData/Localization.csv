@@ -20,11 +20,18 @@ upgread_name_Vitality,활력,Vitality,バイタリティ
 upgread_name_QuickCast,신속 시전,Quick Cast,クイックキャスト
 upgread_name_RapidCycle,빠른 순환,Rapid Cycle,ラピッドサイクル
 upgread_name_IronWall,철벽,Iron Wall,アイアンウォール
+character_skill_range_name,공격 범위 확장,Attack Range,攻撃範囲拡張
+character_skill_count_sword_name,연속 검격,Additional Slash,連続斬撃
+character_skill_chain_name,연쇄 공격,Chain Attack,連鎖攻撃
+character_skill_count_mage_name,다중 마법탄,Extra Magic Bolts,多重魔法弾
+character_skill_pierce_name,마법 관통,Magic Pierce,魔法貫通
+character_skill_slash_name,검격 강화,Slash Upgrade,剣撃強化
+character_skill_magic_name,마법탄 강화,Magic Bolt Upgrade,魔法弾強化
 upgread_des_Lightning,번개 {0}개 추가,Add {0} Lightning,ライトニングを{0}個追加
 upgread_des_Fireball,파이어볼 {0}개 추가,Add {0} Fireball,ファイアボールを{0}個追加
 upgread_des_Burn,화상 확률 {0}% 증가,Increase Burn Chance by {0}%,火傷確率{0}%増加
 upgread_des_Poison,독 {0}개 추가,Add {0} Poison,毒を{0}個追加
-upgread_des_Snail,달팽이 장판 생성 주기 {0}% 단축,Reduce Snail Field Interval by {0}%,スネイルフィールドの生成間隔を{0}%短縮
+upgread_des_Snail,달팽이 장판이 적 이동 속도를 {0}% 감소시킵니다.,Snail fields reduce enemy movement speed by {0}%.,カタツムリフィールドが敵の移動速度を{0}%低下させます。
 upgread_des_Shurlken,표창 {0}개 추가,Add {0} Shuriken,手裏剣を{0}個追加
 upgread_des_Missile,미사일 {0}개 추가,Add {0} Missiles,ミサイルを{0}個追加
 upgread_des_Mold,곰팡이 확률 {0}% 증가,Increase Mold Chance by {0}%,カビ発生確率{0}%増加
@@ -41,6 +48,135 @@ upgread_des_Vitality,체력 {0}% 증가,HP +{0}%,HP +{0}%
 upgread_des_QuickCast,스킬 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
 upgread_des_RapidCycle,패시브 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
 upgread_des_IronWall,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
+character_skill_range_desc,기본 공격 범위 {0}% 증가,Basic attack range +{0}%,基本攻撃範囲 +{0}%
+character_skill_count_sword_desc,검격 {1}회 추가,Add {1} slash attacks,斬撃を{1}回追加
+character_skill_chain_desc,최대 {4} 거리의 적 {3}명에게 연쇄 공격,Chain to {3} enemies within {4} range,距離{4}以内の敵{3}体に連鎖
+character_skill_count_mage_desc,마법 탄환 {1}개 추가,Add {1} magic bolts,魔法弾を{1}個追加
+character_skill_pierce_desc,마법 탄환 관통 {2}회 증가,Magic bolt pierce +{2},魔法弾の貫通 +{2}
+character_skill_slash_desc_1,공격 범위가 {0}% 증가합니다.,Attack range increases by {0}%.,攻撃範囲が{0}%増加します。
+character_skill_slash_desc_2,공격 범위가 추가로 {0}% 증가합니다.,Attack range increases by another {0}%.,攻撃範囲がさらに{0}%増加します。
+character_skill_slash_desc_3,검격이 {1}회 추가됩니다.,Adds {1} slash attacks.,斬撃が{1}回追加されます。
+character_skill_slash_desc_4,연속 검격이 {1}회 추가됩니다.,Adds {1} consecutive slash attacks.,連続斬撃が{1}回追加されます。
+character_skill_slash_desc_5,검격이 다시 {1}회 추가됩니다.,Adds another {1} slash attacks.,斬撃がさらに{1}回追加されます。
+character_skill_magic_desc_1,마법 탄환이 {1}개 추가됩니다.,Adds {1} magic bolts.,魔法弾が{1}個追加されます。
+character_skill_magic_desc_2,마법 탄환이 추가로 {1}개 늘어납니다.,Adds another {1} magic bolts.,魔法弾がさらに{1}個追加されます。
+character_skill_magic_desc_3,최대 {4} 거리 안의 적 {3}명에게 연쇄됩니다.,Chains to {3} enemies within {4} range.,距離{4}以内の敵{3}体に連鎖します。
+character_skill_magic_desc_4,마법 탄환의 관통력이 {2} 증가합니다.,Magic bolt pierce increases by {2}.,魔法弾の貫通力が{2}増加します。
+character_skill_magic_desc_5,마법 탄환의 관통력이 추가로 {2} 증가합니다.,Magic bolt pierce increases by another {2}.,魔法弾の貫通力がさらに{2}増加します。
+upgread_intro_CriticalInstinct,치명타 확률은 공격이 치명타가 될 확률입니다. 이번 획득으로 {0}% 증가합니다.,Critical chance is the chance for an attack to critically hit. This upgrade adds {0}%.,クリティカル率は攻撃がクリティカルになる確率です。今回の獲得で{0}%増加します。
+upgread_intro_CriticalForce,치명타 피해는 치명타 적중 시 추가되는 피해량입니다. 이번 획득으로 {0}% 증가합니다.,Critical damage is the extra damage dealt on a critical hit. This upgrade adds {0}%.,クリティカルダメージはクリティカル時に追加されるダメージです。今回の獲得で{0}%増加します。
+upgread_intro_PowerBoost,공격력은 모든 공격의 기본 피해량을 높입니다. 이번 획득으로 {0}% 증가합니다.,Attack power increases the base damage of all attacks. This upgrade adds {0}%.,攻撃力はすべての攻撃の基本ダメージを高めます。今回の獲得で{0}%増加します。
+upgread_intro_Vitality,최대 체력은 플레이어가 버틸 수 있는 총 체력입니다. 이번 획득으로 {0}% 증가합니다.,Max HP is the total damage the player can withstand. This upgrade adds {0}%.,最大HPはプレイヤーが耐えられる総体力です。今回の獲得で{0}%増加します。
+upgread_intro_QuickCast,스킬 쿨타임은 액티브 스킬의 재사용 대기시간입니다. 이번 획득으로 {0}% 단축됩니다.,Skill cooldown is the wait before an active skill can be used again. This upgrade reduces it by {0}%.,スキルクールダウンはアクティブスキルの再使用待機時間です。今回の獲得で{0}%短縮します。
+upgread_intro_RapidCycle,패시브 주기는 패시브 효과가 다시 발동하기까지의 간격입니다. 이번 획득으로 {0}% 단축됩니다.,Passive cooldown is the interval before a passive effect triggers again. This upgrade reduces it by {0}%.,パッシブ周期はパッシブ効果が再発動するまでの間隔です。今回の獲得で{0}%短縮します。
+upgread_intro_IronWall,방어력은 적에게 받는 피해를 줄여줍니다. 이번 획득으로 {0}% 증가합니다.,Defense reduces damage taken from enemies. This upgrade adds {0}%.,防御力は敵から受けるダメージを軽減します。今回の獲得で{0}%増加します。
+upgread_intro_Snail,일정 시간마다 플레이어 주변에 적의 이동 속도를 낮추는 달팽이 장판을 생성합니다.,Periodically creates a snail field around the player that slows enemies.,一定時間ごとにプレイヤーの周囲に、敵の移動速度を低下させるカタツムリフィールドを生成します。
+upgread_intro_Mold,공격 시 일정 확률로 적에게 곰팡이를 심어 피해를 줍니다.,Attacks have a chance to infect enemies with damaging mold.,攻撃時に一定確率で敵にカビを付着させ、ダメージを与えます。
+upgread_des_Lightning_1,번개 {0}개 추가,Add {0} Lightning,ライトニングを{0}個追加
+upgread_des_Lightning_2,번개 {0}개 추가,Add {0} Lightning,ライトニングを{0}個追加
+upgread_des_Lightning_3,번개 {0}개 추가,Add {0} Lightning,ライトニングを{0}個追加
+upgread_des_Lightning_4,번개 {0}개 추가,Add {0} Lightning,ライトニングを{0}個追加
+upgread_des_Lightning_5,번개 {0}개 추가,Add {0} Lightning,ライトニングを{0}個追加
+upgread_des_Fireball_1,파이어볼 {0}개 추가,Add {0} Fireball,ファイアボールを{0}個追加
+upgread_des_Fireball_2,파이어볼 {0}개 추가,Add {0} Fireball,ファイアボールを{0}個追加
+upgread_des_Fireball_3,파이어볼 {0}개 추가,Add {0} Fireball,ファイアボールを{0}個追加
+upgread_des_Fireball_4,파이어볼 {0}개 추가,Add {0} Fireball,ファイアボールを{0}個追加
+upgread_des_Fireball_5,파이어볼 {0}개 추가,Add {0} Fireball,ファイアボールを{0}個追加
+upgread_des_Burn_1,화상 확률 {0}% 증가,Increase Burn Chance by {0}%,火傷確率{0}%増加
+upgread_des_Burn_2,화상 확률 {0}% 증가,Increase Burn Chance by {0}%,火傷確率{0}%増加
+upgread_des_Burn_3,화상 확률 {0}% 증가,Increase Burn Chance by {0}%,火傷確率{0}%増加
+upgread_des_Burn_4,화상 확률 {0}% 증가,Increase Burn Chance by {0}%,火傷確率{0}%増加
+upgread_des_Burn_5,화상 확률 {0}% 증가,Increase Burn Chance by {0}%,火傷確率{0}%増加
+upgread_des_Poison_1,독 {0}개 추가,Add {0} Poison,毒を{0}個追加
+upgread_des_Poison_2,독 {0}개 추가,Add {0} Poison,毒を{0}個追加
+upgread_des_Poison_3,독 {0}개 추가,Add {0} Poison,毒を{0}個追加
+upgread_des_Poison_4,독 {0}개 추가,Add {0} Poison,毒を{0}個追加
+upgread_des_Poison_5,독 {0}개 추가,Add {0} Poison,毒を{0}個追加
+upgread_des_Snail_1,일정 시간마다 플레이어 주변에 적의 이동 속도를 낮추는 달팽이 장판을 생성합니다.,Periodically creates a snail field around the player that slows enemies.,一定時間ごとにプレイヤーの周囲に、敵の移動速度を低下させるカタツムリフィールドを生成します。
+upgread_des_Snail_2,달팽이 장판이 적 이동 속도를 {0}% 감소시킵니다.,Snail fields reduce enemy movement speed by {0}%.,カタツムリフィールドが敵の移動速度を{0}%低下させます。
+upgread_des_Snail_3,달팽이 장판이 적 이동 속도를 {0}% 감소시킵니다.,Snail fields reduce enemy movement speed by {0}%.,カタツムリフィールドが敵の移動速度を{0}%低下させます。
+upgread_des_Snail_4,달팽이 장판이 적 이동 속도를 {0}% 감소시킵니다.,Snail fields reduce enemy movement speed by {0}%.,カタツムリフィールドが敵の移動速度を{0}%低下させます。
+upgread_des_Snail_5,달팽이 장판이 적 이동 속도를 {0}% 감소시킵니다.,Snail fields reduce enemy movement speed by {0}%.,カタツムリフィールドが敵の移動速度を{0}%低下させます。
+upgread_des_Shurlken_1,표창 {0}개 추가,Add {0} Shuriken,手裏剣を{0}個追加
+upgread_des_Shurlken_2,표창 {0}개 추가,Add {0} Shuriken,手裏剣を{0}個追加
+upgread_des_Shurlken_3,표창 {0}개 추가,Add {0} Shuriken,手裏剣を{0}個追加
+upgread_des_Shurlken_4,표창 {0}개 추가,Add {0} Shuriken,手裏剣を{0}個追加
+upgread_des_Shurlken_5,표창 {0}개 추가,Add {0} Shuriken,手裏剣を{0}個追加
+upgread_des_Missile_1,미사일 {0}개 추가,Add {0} Missiles,ミサイルを{0}個追加
+upgread_des_Missile_2,미사일 {0}개 추가,Add {0} Missiles,ミサイルを{0}個追加
+upgread_des_Missile_3,미사일 {0}개 추가,Add {0} Missiles,ミサイルを{0}個追加
+upgread_des_Missile_4,미사일 {0}개 추가,Add {0} Missiles,ミサイルを{0}個追加
+upgread_des_Missile_5,미사일 {0}개 추가,Add {0} Missiles,ミサイルを{0}個追加
+upgread_des_Mold_1,공격 시 일정 확률로 적에게 곰팡이를 심어 피해를 줍니다.,Attacks have a chance to infect enemies with damaging mold.,攻撃時に一定確率で敵にカビを付着させ、ダメージを与えます。
+upgread_des_Mold_2,곰팡이 확률 {0}% 증가,Increase Mold Chance by {0}%,カビ発生確率{0}%増加
+upgread_des_Mold_3,곰팡이 확률 {0}% 증가,Increase Mold Chance by {0}%,カビ発生確率{0}%増加
+upgread_des_Mold_4,곰팡이 확률 {0}% 증가,Increase Mold Chance by {0}%,カビ発生確率{0}%増加
+upgread_des_Mold_5,곰팡이 확률 {0}% 증가,Increase Mold Chance by {0}%,カビ発生確率{0}%増加
+upgread_des_FireStorm_1,파이어볼을 화염 뇌우로 변경,Change Fireball to Firestorm,ファイアボールを炎の嵐に変更
+upgread_des_FireStorm_2,파이어볼을 화염 뇌우로 변경,Change Fireball to Firestorm,ファイアボールを炎の嵐に変更
+upgread_des_FireStorm_3,파이어볼을 화염 뇌우로 변경,Change Fireball to Firestorm,ファイアボールを炎の嵐に変更
+upgread_des_FireStorm_4,파이어볼을 화염 뇌우로 변경,Change Fireball to Firestorm,ファイアボールを炎の嵐に変更
+upgread_des_FireStorm_5,파이어볼을 화염 뇌우로 변경,Change Fireball to Firestorm,ファイアボールを炎の嵐に変更
+upgread_des_SporeWarhead_1,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に 변경
+upgread_des_SporeWarhead_2,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に 변경
+upgread_des_SporeWarhead_3,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に 변경
+upgread_des_SporeWarhead_4,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に 변경
+upgread_des_SporeWarhead_5,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に 변경
+upgread_des_LightningShuriken_1,표창이 뇌전 표창으로 변경,Change Shuriken to Lightning Shuriken,手裏剣を雷電手裏剣に変更
+upgread_des_LightningShuriken_2,표창이 뇌전 표창으로 변경,Change Shuriken to Lightning Shuriken,手裏剣を雷電手裏剣に変更
+upgread_des_LightningShuriken_3,표창이 뇌전 표창으로 변경,Change Shuriken to Lightning Shuriken,手裏剣を雷電手裏剣に変更
+upgread_des_LightningShuriken_4,표창이 뇌전 표창으로 변경,Change Shuriken to Lightning Shuriken,手裏剣を雷電手裏剣に変更
+upgread_des_LightningShuriken_5,표창이 뇌전 표창으로 변경,Change Shuriken to Lightning Shuriken,手裏剣を雷電手裏剣に変更
+upgread_des_Heatwave_1,파이어볼을 폭염으로 변경,Change Fireball to Heatwave,ファイアボールを熱波に変更
+upgread_des_Heatwave_2,파이어볼을 폭염으로 변경,Change Fireball to Heatwave,ファイアボールを熱波に変更
+upgread_des_Heatwave_3,파이어볼을 폭염으로 변경,Change Fireball to Heatwave,ファイアボールを熱波に変更
+upgread_des_Heatwave_4,파이어볼을 폭염으로 변경,Change Fireball to Heatwave,ファイアボールを熱波に変更
+upgread_des_Heatwave_5,파이어볼을 폭염으로 변경,Change Fireball to Heatwave,ファイアボールを熱波に変更
+upgread_des_LavaField_1,달팽이를 용암지대로 변경,Change Snail to Lava Field,スネイルを溶岩地帯に変更
+upgread_des_LavaField_2,달팽이를 용암지대로 변경,Change Snail to Lava Field,スネイルを溶岩地帯に変更
+upgread_des_LavaField_3,달팽이를 용암지대로 변경,Change Snail to Lava Field,スネイルを溶岩地帯に変更
+upgread_des_LavaField_4,달팽이를 용암지대로 변경,Change Snail to Lava Field,スネイルを溶岩地帯に変更
+upgread_des_LavaField_5,달팽이를 용암지대로 변경,Change Snail to Lava Field,スネイルを溶岩地帯に変更
+upgread_des_RottingSpore_1,곰팡이를 부패포자로 변경,Change Mold to Rotting Spore,カビを腐敗胞子に変更
+upgread_des_RottingSpore_2,곰팡이를 부패포자로 변경,Change Mold to Rotting Spore,カビを腐敗胞子に変更
+upgread_des_RottingSpore_3,곰팡이를 부패포자로 변경,Change Mold to Rotting Spore,カビを腐敗胞子に変更
+upgread_des_RottingSpore_4,곰팡이를 부패포자로 변경,Change Mold to Rotting Spore,カビを腐敗胞子に変更
+upgread_des_RottingSpore_5,곰팡이를 부패포자로 변경,Change Mold to Rotting Spore,カビを腐敗胞子に変更
+upgread_des_CriticalInstinct_1,치명타 확률 {0}% 증가,Critical Chance +{0}%,クリティカル率 +{0}%
+upgread_des_CriticalInstinct_2,치명타 확률 {0}% 증가,Critical Chance +{0}%,クリティカル率 +{0}%
+upgread_des_CriticalInstinct_3,치명타 확률 {0}% 증가,Critical Chance +{0}%,クリティカル率 +{0}%
+upgread_des_CriticalInstinct_4,치명타 확률 {0}% 증가,Critical Chance +{0}%,クリティカル率 +{0}%
+upgread_des_CriticalInstinct_5,치명타 확률 {0}% 증가,Critical Chance +{0}%,クリティカル率 +{0}%
+upgread_des_CriticalForce_1,치명타 데미지 {0}% 증가,Critical Damage +{0}%,クリティカルダメージ +{0}%
+upgread_des_CriticalForce_2,치명타 데미지 {0}% 증가,Critical Damage +{0}%,クリティカルダメージ +{0}%
+upgread_des_CriticalForce_3,치명타 데미지 {0}% 증가,Critical Damage +{0}%,クリティカルダメージ +{0}%
+upgread_des_CriticalForce_4,치명타 데미지 {0}% 증가,Critical Damage +{0}%,クリティカルダメージ +{0}%
+upgread_des_CriticalForce_5,치명타 데미지 {0}% 증가,Critical Damage +{0}%,クリティカルダメージ +{0}%
+upgread_des_PowerBoost_1,공격력 {0}% 증가,Attack Power +{0}%,攻撃力 +{0}%
+upgread_des_PowerBoost_2,공격력 {0}% 증가,Attack Power +{0}%,攻撃力 +{0}%
+upgread_des_PowerBoost_3,공격력 {0}% 증가,Attack Power +{0}%,攻撃力 +{0}%
+upgread_des_PowerBoost_4,공격력 {0}% 증가,Attack Power +{0}%,攻撃力 +{0}%
+upgread_des_PowerBoost_5,공격력 {0}% 증가,Attack Power +{0}%,攻撃力 +{0}%
+upgread_des_Vitality_1,체력 {0}% 증가,HP +{0}%,HP +{0}%
+upgread_des_Vitality_2,체력 {0}% 증가,HP +{0}%,HP +{0}%
+upgread_des_Vitality_3,체력 {0}% 증가,HP +{0}%,HP +{0}%
+upgread_des_Vitality_4,체력 {0}% 증가,HP +{0}%,HP +{0}%
+upgread_des_Vitality_5,체력 {0}% 증가,HP +{0}%,HP +{0}%
+upgread_des_QuickCast_1,스킬 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
+upgread_des_QuickCast_2,스킬 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
+upgread_des_QuickCast_3,스킬 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
+upgread_des_QuickCast_4,스킬 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
+upgread_des_QuickCast_5,스킬 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
+upgread_des_RapidCycle_1,패시브 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
+upgread_des_RapidCycle_2,패시브 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
+upgread_des_RapidCycle_3,패시브 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
+upgread_des_RapidCycle_4,패시브 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
+upgread_des_RapidCycle_5,패시브 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
+upgread_des_IronWall_1,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
+upgread_des_IronWall_2,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
+upgread_des_IronWall_3,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
+upgread_des_IronWall_4,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
+upgread_des_IronWall_5,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
 setting_title,설정,Settings,設定
 setting_language_title,언어 설정,Language Settings,言語設定
 setting_tab_graphic,그래픽,Graphic,グラフィック
@@ -92,32 +228,3 @@ lobby_character_swordman_desc,검으로 가까운 적을 베는 근접 캐릭터
 lobby_play_stage,시작,Start,開始
 stage_panel_title,스테이지,Stage,ステージ
 upgrade_combine,합성,Combine,合成
-character_skill_range_name,공격 범위 확장,Attack Range,攻撃範囲拡張
-character_skill_count_sword_name,연속 검격,Additional Slash,連続斬撃
-character_skill_chain_name,연쇄 공격,Chain Attack,連鎖攻撃
-character_skill_count_mage_name,다중 마법탄,Extra Magic Bolts,多重魔法弾
-character_skill_pierce_name,마법 관통,Magic Pierce,魔法貫通
-character_skill_range_desc,기본 공격 범위 {0}% 증가,Basic attack range +{0}%,基本攻撃範囲 +{0}%
-character_skill_count_sword_desc,검격 {1}회 추가,Add {1} slash attacks,斬撃を{1}回追加
-character_skill_chain_desc,최대 {4} 거리의 적 {3}명에게 연쇄 공격,Chain to {3} enemies within {4} range,距離{4}以内の敵{3}体に連鎖
-character_skill_count_mage_desc,마법 탄환 {1}개 추가,Add {1} magic bolts,魔法弾を{1}個追加
-character_skill_pierce_desc,마법 탄환 관통 {2}회 증가,Magic bolt pierce +{2},魔法弾の貫通 +{2}
-character_skill_slash_name,검격 강화,Slash Upgrade,剣撃強化
-character_skill_magic_name,마법탄 강화,Magic Bolt Upgrade,魔法弾強化
-character_skill_slash_desc_1,공격 범위가 {0}% 증가합니다.,Attack range increases by {0}%.,攻撃範囲が{0}%増加します。
-character_skill_slash_desc_2,공격 범위가 추가로 {0}% 증가합니다.,Attack range increases by another {0}%.,攻撃範囲がさらに{0}%増加します。
-character_skill_slash_desc_3,검격이 {1}회 추가됩니다.,Adds {1} slash attacks.,斬撃が{1}回追加されます。
-character_skill_slash_desc_4,연속 검격이 {1}회 추가됩니다.,Adds {1} consecutive slash attacks.,連続斬撃が{1}回追加されます。
-character_skill_slash_desc_5,검격이 다시 {1}회 추가됩니다.,Adds another {1} slash attacks.,斬撃がさらに{1}回追加されます。
-character_skill_magic_desc_1,마법 탄환이 {1}개 추가됩니다.,Adds {1} magic bolts.,魔法弾が{1}個追加されます。
-character_skill_magic_desc_2,마법 탄환이 추가로 {1}개 늘어납니다.,Adds another {1} magic bolts.,魔法弾がさらに{1}個追加されます。
-character_skill_magic_desc_3,최대 {4} 거리 안의 적 {3}명에게 연쇄됩니다.,Chains to {3} enemies within {4} range.,距離{4}以内の敵{3}体に連鎖します。
-character_skill_magic_desc_4,마법 탄환의 관통력이 {2} 증가합니다.,Magic bolt pierce increases by {2}.,魔法弾の貫通力が{2}増加します。
-character_skill_magic_desc_5,마법 탄환의 관통력이 추가로 {2} 증가합니다.,Magic bolt pierce increases by another {2}.,魔法弾の貫通力がさらに{2}増加します。
-upgread_intro_CriticalInstinct,치명타 확률은 공격이 치명타가 될 확률입니다. 이번 획득으로 {0}% 증가합니다.,Critical chance is the chance for an attack to critically hit. This upgrade adds {0}%.,クリティカル率は攻撃がクリティカルになる確率です。今回の獲得で{0}%増加します。
-upgread_intro_CriticalForce,치명타 피해는 치명타 적중 시 추가되는 피해량입니다. 이번 획득으로 {0}% 증가합니다.,Critical damage is the extra damage dealt on a critical hit. This upgrade adds {0}%.,クリティカルダメージはクリティカル時に追加されるダメージです。今回の獲得で{0}%増加します。
-upgread_intro_PowerBoost,공격력은 모든 공격의 기본 피해량을 높입니다. 이번 획득으로 {0}% 증가합니다.,Attack power increases the base damage of all attacks. This upgrade adds {0}%.,攻撃力はすべての攻撃の基本ダメージを高めます。今回の獲得で{0}%増加します。
-upgread_intro_Vitality,최대 체력은 플레이어가 버틸 수 있는 총 체력입니다. 이번 획득으로 {0}% 증가합니다.,Max HP is the total damage the player can withstand. This upgrade adds {0}%.,最大HPはプレイヤーが耐えられる総体力です。今回の獲得で{0}%増加します。
-upgread_intro_QuickCast,스킬 쿨타임은 액티브 스킬의 재사용 대기시간입니다. 이번 획득으로 {0}% 단축됩니다.,Skill cooldown is the wait before an active skill can be used again. This upgrade reduces it by {0}%.,スキルクールダウンはアクティブスキルの再使用待機時間です。今回の獲得で{0}%短縮します。
-upgread_intro_RapidCycle,패시브 주기는 패시브 효과가 다시 발동하기까지의 간격입니다. 이번 획득으로 {0}% 단축됩니다.,Passive cooldown is the interval before a passive effect triggers again. This upgrade reduces it by {0}%.,パッシブ周期はパッシブ効果が再発動するまでの間隔です。今回の獲得で{0}%短縮します。
-upgread_intro_IronWall,방어력은 적에게 받는 피해를 줄여줍니다. 이번 획득으로 {0}% 증가합니다.,Defense reduces damage taken from enemies. This upgrade adds {0}%.,防御力は敵から受けるダメージを軽減します。今回の獲得で{0}%増加します。

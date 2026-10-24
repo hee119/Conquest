@@ -12,6 +12,7 @@ public sealed class MageAttack : MonoBehaviour
     [SerializeField, Min(0.1f)] private float projectileSpeed = 12f;
     [SerializeField, Min(0.1f)] private float projectileLifetime = 1.6f;
     [SerializeField, Min(0f)] private float spawnOffset = 0.55f;
+    [SerializeField, Min(0f)] private float projectileSpreadAngle = 7f;
     [SerializeField] private int projectileDataId = 201;
 
     private PlayerCombat combat;
@@ -233,12 +234,11 @@ public sealed class MageAttack : MonoBehaviour
         }
 
         int projectileCount = Mathf.Max(1, pendingModifiers.attackCount);
-        const float spreadAngle = 7f;
         SpriteRenderer playerRenderer = GetComponentInChildren<SpriteRenderer>();
 
         for (int i = 0; i < projectileCount; i++)
         {
-            float angle = (i - (projectileCount - 1) * 0.5f) * spreadAngle;
+            float angle = (i - (projectileCount - 1) * 0.5f) * projectileSpreadAngle;
             Vector2 shotDirection = Quaternion.Euler(0f, 0f, angle) * pendingDirection;
             Vector2 origin = (Vector2)transform.position + shotDirection * spawnOffset;
             GameObject projectileObject = PoolManager.Instance.Spawn(projectileDataId, origin);

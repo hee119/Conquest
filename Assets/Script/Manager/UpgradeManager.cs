@@ -8,6 +8,137 @@ using TMPro;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
+/// <summary>Runtime values applied to a character's basic attack.</summary>
+public struct BasicAttackModifiers
+{
+    public float rangeMultiplier;
+    public int attackCount;
+    public int pierceCount;
+    public int chainCount;
+    public float chainRange;
+    public float damageMultiplier;
+
+    public static BasicAttackModifiers Default => new BasicAttackModifiers
+    {
+        rangeMultiplier = 1f,
+        attackCount = 1,
+        pierceCount = 0,
+        chainCount = 0,
+        chainRange = 0f,
+        damageMultiplier = 1f
+    };
+}
+
+public static class BasicAttackChainUtility
+{
+    public static void Apply(
+        Vector2 origin,
+        EnemyCombat primaryTarget,
+        int damage,
+        int chainCount,
+        float chainRange)
+    {
+        if (chainCount <= 0 || chainRange <= 0f || damage <= 0)
+            return;
+
+        int enemyLayer = LayerMask.GetMask("Enemy");
+        Collider2D[] hits = Physics2D.OverlapCircleAll(origin, chainRange, enemyLayer);
+        IEnumerable<EnemyCombat> targets = hits
+            .Select(hit => hit != null ? hit.GetComponentInParent<EnemyCombat>() : null)
+            .Where(enemy => enemy != null && enemy != primaryTarget &&
+                            enemy.gameObject.activeInHierarchy)
+            .Distinct()
+            .OrderBy(enemy => ((Vector2)enemy.transform.position - origin).sqrMagnitude)
+            .Take(chainCount);
+
+        foreach (EnemyCombat enemy in targets)
+            enemy.TakeDamage(damage, enemy.transform.position);
+    }
+}
+
+/// <summary>Applies character basic attack upgrades to a pooled attack instance.</summary>
+public sealed class BasicAttackInstanceState : MonoBehaviour
+{
+    private Vector3 baseScale;
+    private int baseDamage;
+    private SkillInfo skillInfo;
+    private bool initialized;
+
+    private void Initialize()
+    {
+        if (initialized)
+            return;
+
+        initialized = true;
+        baseScale = transform.localScale;
+        skillInfo = GetComponent<SkillInfo>();
+        baseDamage = skillInfo != null ? skillInfo.skillDamage : 0;
+    }
+
+    public void Apply(BasicAttackModifiers modifiers)
+    {
+        Initialize();
+        transform.localScale = baseScale * modifiers.rangeMultiplier;
+
+        if (skillInfo != null)
+        {
+            skillInfo.skillDamage = Mathf.Max(
+                1,
+                Mathf.RoundToInt(baseDamage * modifiers.damageMultiplier));
+        }
+
+        BasicAttackChainRelay relay = GetComponent<BasicAttackChainRelay>();
+        if (relay == null)
+            relay = gameObject.AddComponent<BasicAttackChainRelay>();
+
+        relay.Configure(
+            skillInfo != null ? skillInfo.skillDamage : 0,
+            modifiers.chainCount,
+            modifiers.chainRange);
+    }
+
+    private void OnDisable()
+    {
+        if (!initialized)
+            return;
+
+        transform.localScale = baseScale;
+        if (skillInfo != null)
+            skillInfo.skillDamage = baseDamage;
+    }
+}
+
+public sealed class BasicAttackChainRelay : MonoBehaviour
+{
+    private readonly HashSet<int> triggeredTargets = new HashSet<int>();
+    private int damage;
+    private int chainCount;
+    private float chainRange;
+
+    public void Configure(int hitDamage, int count, float range)
+    {
+        damage = hitDamage;
+        chainCount = Mathf.Max(0, count);
+        chainRange = Mathf.Max(0f, range);
+        triggeredTargets.Clear();
+        enabled = chainCount > 0 && chainRange > 0f && damage > 0;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        EnemyCombat primary = other.GetComponentInParent<EnemyCombat>();
+        if (primary == null || !triggeredTargets.Add(primary.GetInstanceID()))
+            return;
+
+        BasicAttackChainUtility.Apply(
+            primary.transform.position,
+            primary,
+            damage,
+            chainCount,
+            chainRange);
+    }
+}
+
 public class UpgradeManager : MonoBehaviour
 {
     public static UpgradeManager Instance;
@@ -22,6 +153,7 @@ public class UpgradeManager : MonoBehaviour
     public Dictionary<int, IEnumerator> upgradeCor = new Dictionary<int, IEnumerator>();
     private readonly Dictionary<int, float> upgradeCooldownEnds = new Dictionary<int, float>();
     private readonly Dictionary<int, float> upgradeCooldownDurations = new Dictionary<int, float>();
+    [SerializeField]
     private UpgradeCooldownHud upgradeCooldownHud;
 
     private GameObject player;
@@ -320,6 +452,8 @@ public class UpgradeManager : MonoBehaviour
 
         if (dm.upgradeDatasDic.TryGetValue(id, out var u))
         {
+            bool showFirstSkillDescription = u.upgradeLevel <= 0 &&
+                                             (u.function == "Snail" || u.function == "Mold");
             v = new UpgradeView
             {
                 id = u.id,
@@ -327,7 +461,10 @@ public class UpgradeManager : MonoBehaviour
                 sprite = u.sprite,
                 type = u.type,
                 upgradeLevel = u.upgradeLevel,
-                description = u.description
+                description = GetUpgradeDescriptionKey(
+                    u.description,
+                    u.upgradeLevel,
+                    showFirstSkillDescription ? "upgread_intro_" + u.function : null)
             };
             return true;
         }
@@ -341,9 +478,7 @@ public class UpgradeManager : MonoBehaviour
                 sprite = s.sprite,
                 type = s.type,
                 upgradeLevel = s.upgradeLevel,
-                description = s.upgradeLevel <= 0
-                    ? "upgread_intro_" + s.function
-                    : s.description
+                description = GetUpgradeDescriptionKey(s.description, s.upgradeLevel)
             };
             return true;
         }
@@ -364,6 +499,17 @@ public class UpgradeManager : MonoBehaviour
 
         v = default;
         return false;
+    }
+
+    // DesId stays the base key. Optional _1 ... _5 entries in the localization
+    // sheet describe the next upgrade; older data still uses its original text.
+    private static string GetUpgradeDescriptionKey(string baseKey, int ownedLevel, string firstDescription = null)
+    {
+        string levelKey = baseKey + "_" + (Mathf.Clamp(ownedLevel, 0, 4) + 1);
+        if (LocalizationManager.Instance != null && LocalizationManager.Instance.HasTranslation(levelKey))
+            return levelKey;
+
+        return !string.IsNullOrEmpty(firstDescription) ? firstDescription : baseKey;
     }
 
     // 스킬/스탯 상관없이 현재 UpgradeLevel 반환
@@ -432,21 +578,35 @@ public class UpgradeManager : MonoBehaviour
 
     private object[] GetDescriptionArguments(int id)
     {
-        int level = Mathf.Clamp(GetLevel(id), 0, 4);
         var dm = DataManager.Instance;
 
         if (dm.upgradeDatasDic.TryGetValue(id, out var skill))
         {
+            // upgradeLevel is the number already owned; UpgradeLevel points to
+            // the previous stage and would repeat the old value on the next card.
+            int level = Mathf.Clamp(skill.upgradeLevel, 0, 4);
+            object primaryValue;
             switch (skill.function)
             {
                 case "Burn":
                 case "Mold":
-                    return new object[] { ValueAt(skill.debuffChance, level) };
+                    primaryValue = ValueAt(skill.debuffChance, level);
+                    break;
                 case "Snail":
-                    return new object[] { Mathf.RoundToInt((1f - ValueAt(skill.slow, level)) * 100f) };
+                    primaryValue = Mathf.RoundToInt((1f - ValueAt(skill.slow, level)) * 100f);
+                    break;
                 default:
-                    return new object[] { ValueAt(skill.count, level) };
+                    primaryValue = ValueAt(skill.count, level);
+                    break;
             }
+
+            return new object[]
+            {
+                primaryValue,
+                ValueAt(skill.damage, level),
+                ValueAt(skill.coolTime, level),
+                ValueAt(skill.detectionRange, level)
+            };
         }
 
         if (dm.statUpgradeDatasDic.TryGetValue(id, out var stat))
@@ -625,7 +785,7 @@ public class UpgradeManager : MonoBehaviour
         }
 
         upgradeActions[id](id);
-        EnsureUpgradeCooldownHud().Track(id);
+        EnsureUpgradeCooldownHud()?.Track(id);
         upgradeSelect?.Invoke();
     }
 
@@ -815,7 +975,7 @@ public class UpgradeManager : MonoBehaviour
         duration = Mathf.Max(0f, duration);
         upgradeCooldownDurations[id] = duration;
         upgradeCooldownEnds[id] = Time.time + duration;
-        EnsureUpgradeCooldownHud().Track(id);
+        EnsureUpgradeCooldownHud()?.Track(id);
     }
 
     public bool TryGetUpgradeCooldown(int id, out float remaining, out float duration)
@@ -860,7 +1020,10 @@ public class UpgradeManager : MonoBehaviour
     private UpgradeCooldownHud EnsureUpgradeCooldownHud()
     {
         if (upgradeCooldownHud == null)
-            upgradeCooldownHud = UpgradeCooldownHud.Attach(this);
+            upgradeCooldownHud = UpgradeCooldownHud.FindInScene();
+
+        if (upgradeCooldownHud != null)
+            upgradeCooldownHud.Initialize(this);
 
         return upgradeCooldownHud;
     }
