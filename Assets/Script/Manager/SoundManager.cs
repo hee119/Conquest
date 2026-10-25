@@ -87,7 +87,9 @@ public sealed class SoundManager : MonoBehaviour
 
         for (int i = 0; i < button.onClick.GetPersistentEventCount(); i++)
         {
-            if (button.onClick.GetPersistentMethodName(i) == "ConfirmCharacter")
+            string methodName = button.onClick.GetPersistentMethodName(i);
+            if (methodName == "ConfirmCharacter" ||
+                methodName == "UpgradeIsSelected")
                 return true;
         }
 
