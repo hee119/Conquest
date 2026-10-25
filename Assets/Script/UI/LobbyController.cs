@@ -17,9 +17,11 @@ public sealed class LobbyController : MonoBehaviour
     [SerializeField] private CharacterCardVisual mageCard;
 
     private int previewCharacterId = 1;
+    private AudioClip characterConfirmSfx;
 
     private void Start()
     {
+        characterConfirmSfx = Resources.Load<AudioClip>("Audio/SFX/CharacterConfirm");
         previewCharacterId = PlayerPrefs.GetInt("SelectedCharacter", 1) == 2 ? 2 : 1;
         UpdateCharacterPreview();
     }
@@ -52,6 +54,8 @@ public sealed class LobbyController : MonoBehaviour
     public void ConfirmCharacter()
     {
         SelectCharacter(previewCharacterId);
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.PlaySfx(characterConfirmSfx);
         if (characterPanel != null)
             characterPanel.SetActive(false);
         if (mainMenu != null)

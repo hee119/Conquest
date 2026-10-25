@@ -26,6 +26,7 @@ public class EnemyCombat : MonoBehaviour
     protected PooledObject pooledObject;
     protected SpriteRenderer[] spriteRenderers;
     private Collider2D bodyCollider;
+    private static AudioClip enemyHitSfx;
 
     public EnemyInfo enemyInfo;
     public EnemyMove enemyMove;
@@ -50,6 +51,12 @@ public class EnemyCombat : MonoBehaviour
             StartCoroutine(InvincibleCor());
 
             hp -= damage;
+
+            if (enemyHitSfx == null)
+                enemyHitSfx = Resources.Load<AudioClip>("Audio/SFX/EnemyHit");
+
+            if (enemyHitSfx != null && SoundManager.Instance != null)
+                SoundManager.Instance.PlaySfx(enemyHitSfx);
 
             if (hitParticle != null)
                 hitParticle.Play();

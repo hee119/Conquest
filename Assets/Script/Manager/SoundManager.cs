@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public sealed class SoundManager : MonoBehaviour
 {
@@ -9,6 +11,9 @@ public sealed class SoundManager : MonoBehaviour
 
     private AudioSource bgmSource;
     private AudioSource sfxSource;
+    private readonly HashSet<Button> hookedButtons = new HashSet<Button>();
+    private AudioClip buttonClickSfx;
+    private float nextButtonScanTime;
 
     public static SoundManager Instance { get; private set; }
     public float MasterVolume { get; private set; } = 1f;
@@ -43,9 +48,50 @@ public sealed class SoundManager : MonoBehaviour
 
         bgmSource = CreateSource("BGM", true);
         sfxSource = CreateSource("SFX", false);
+        buttonClickSfx = Resources.Load<AudioClip>("Audio/SFX/ButtonClick");
         AudioListener.volume = MasterVolume;
         bgmSource.volume = BgmVolume;
         sfxSource.volume = SfxVolume;
+    }
+
+    private void Update()
+    {
+        if (Time.unscaledTime < nextButtonScanTime)
+            return;
+
+        nextButtonScanTime = Time.unscaledTime + 0.15f;
+        Button[] buttons = FindObjectsByType<Button>(
+            FindObjectsInactive.Include,
+            FindObjectsSortMode.None);
+
+        foreach (Button button in buttons)
+        {
+            if (button == null || !hookedButtons.Add(button))
+                continue;
+
+            bool hasDedicatedSound = HasDedicatedConfirmSound(button);
+            button.onClick.AddListener(() =>
+            {
+                if (!hasDedicatedSound)
+                    PlaySfx(buttonClickSfx);
+            });
+        }
+
+        hookedButtons.RemoveWhere(button => button == null);
+    }
+
+    private bool HasDedicatedConfirmSound(Button button)
+    {
+        if (button == null)
+            return false;
+
+        for (int i = 0; i < button.onClick.GetPersistentEventCount(); i++)
+        {
+            if (button.onClick.GetPersistentMethodName(i) == "ConfirmCharacter")
+                return true;
+        }
+
+        return false;
     }
 
     public void SetMasterVolume(float volume)

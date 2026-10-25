@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class HeatWave : HomingProjectile
 {
+    [SerializeField]
+    private AudioSource launchAudio;
+    [SerializeField]
+    private AudioSource explosionAudio;
+
     private Boom boom;
     private bool isBoom;
 
@@ -17,6 +22,9 @@ public class HeatWave : HomingProjectile
         base.OnEnable();
 
         isBoom = false;
+
+        if (launchAudio != null)
+            launchAudio.Play();
     }
 
     protected override void OnTriggerEnter2D(Collider2D other)
@@ -105,6 +113,9 @@ public class HeatWave : HomingProjectile
         // 폭발 시작
         if (boom != null)
         {
+            if (explosionAudio != null)
+                explosionAudio.Play();
+
             boom.BoomStart();
         }
         else

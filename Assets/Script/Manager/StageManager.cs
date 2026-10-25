@@ -45,6 +45,7 @@ public class StageManager : MonoBehaviour
     private Coroutine healthPickupRoutine;
     private Coroutine magnetPickupRoutine;
     private string stageSceneName;
+    private AudioClip waveStartSfx;
 
 
     private void Awake()
@@ -59,6 +60,8 @@ public class StageManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        waveStartSfx = Resources.Load<AudioClip>("Audio/SFX/EnemyWaveStart");
 
         if (navMeshSurface == null)
         {
@@ -804,6 +807,9 @@ public class StageManager : MonoBehaviour
                  j++)
             {
                 currentWave++;
+
+                if (SoundManager.Instance != null)
+                    SoundManager.Instance.PlaySfx(waveStartSfx);
 
                 Debug.Log(
                     $"[Wave Start] " +

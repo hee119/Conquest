@@ -240,6 +240,8 @@ public class UpgradeManager : MonoBehaviour
     private float defenseBonus;
     private float skillCooldownBonus;
     private float passiveCooldownBonus;
+    private AudioClip snailGroundLoopClip;
+    private AudioSource snailGroundLoopSource;
 
     public void Awake()
     {
@@ -263,6 +265,7 @@ public class UpgradeManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerCollider = player.GetComponent<BoxCollider2D>();
         EnsureUpgradeCooldownHud();
+        snailGroundLoopClip = Resources.Load<AudioClip>("Audio/SFX/SnailGroundLoop");
     }
 
     public void ResetForNewRun()
@@ -305,6 +308,7 @@ public class UpgradeManager : MonoBehaviour
 
     public void StopRun()
     {
+        StopSnailGroundLoop();
         StopAllCoroutines();
         upgradeCor.Clear();
         upgradeCooldownEnds.Clear();
@@ -1065,7 +1069,36 @@ public class UpgradeManager : MonoBehaviour
         if (upgradeCor.ContainsKey(id))
             return;
 
+        StartSnailGroundLoop();
         StartSkillCoroutine(id, SnailCor(id));
+    }
+
+    private void StartSnailGroundLoop()
+    {
+        if (snailGroundLoopClip == null)
+            return;
+
+        if (snailGroundLoopSource == null)
+        {
+            GameObject audioObject = new GameObject("Snail Ground Loop Audio");
+            audioObject.transform.SetParent(transform, false);
+
+            snailGroundLoopSource = audioObject.AddComponent<AudioSource>();
+            snailGroundLoopSource.clip = snailGroundLoopClip;
+            snailGroundLoopSource.loop = true;
+            snailGroundLoopSource.playOnAwake = false;
+            snailGroundLoopSource.spatialBlend = 0f;
+            audioObject.AddComponent<SfxAudioSourceVolume>();
+        }
+
+        if (!snailGroundLoopSource.isPlaying)
+            snailGroundLoopSource.Play();
+    }
+
+    private void StopSnailGroundLoop()
+    {
+        if (snailGroundLoopSource != null)
+            snailGroundLoopSource.Stop();
     }
 
     public void Shuriken(int id)

@@ -14,6 +14,9 @@ public sealed class MageAttack : MonoBehaviour
     [SerializeField, Min(0f)] private float spawnOffset = 0.55f;
     [SerializeField, Min(0f)] private float projectileSpreadAngle = 7f;
     [SerializeField] private int projectileDataId = 201;
+    [SerializeField, Range(0f, 1f)] private float attackSfxVolume = 0.8f;
+
+    private AudioClip attackSfx;
 
     private PlayerCombat combat;
     private PlayerMove movement;
@@ -38,6 +41,7 @@ public sealed class MageAttack : MonoBehaviour
         movement = GetComponent<PlayerMove>();
         animator = GetComponent<Animator>();
         movementFacingSign = transform.localScale.x < 0f ? -1f : 1f;
+        attackSfx = Resources.Load<AudioClip>("Audio/SFX/MageAttack");
 
         if (animator != null && animator.runtimeAnimatorController != null)
         {
@@ -232,6 +236,9 @@ public sealed class MageAttack : MonoBehaviour
             Debug.LogError("PoolManager is unavailable; mage projectile was not spawned.", this);
             return;
         }
+
+        if (attackSfx != null && SoundManager.Instance != null)
+            SoundManager.Instance.PlaySfx(attackSfx, attackSfxVolume);
 
         int projectileCount = Mathf.Max(1, pendingModifiers.attackCount);
         SpriteRenderer playerRenderer = GetComponentInChildren<SpriteRenderer>();

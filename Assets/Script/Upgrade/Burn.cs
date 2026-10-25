@@ -69,6 +69,10 @@ public class Burn : DotDamage
 
             enemyCombat.isBurn = true;
 
+            AudioSource burnAudio = GetComponent<AudioSource>();
+            if (burnAudio != null)
+                burnAudio.Play();
+
         // =========================================
         // Burn 시작
         // =========================================

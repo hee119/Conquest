@@ -15,6 +15,9 @@ public class Lightning : DetectUpgrade
     [SerializeField]
     protected float damageDistance = 0.1f;
 
+    [SerializeField]
+    private AudioSource launchAudio;
+
     private int id;
 
     protected override float ChainAttackInterval =>
@@ -69,6 +72,14 @@ public class Lightning : DetectUpgrade
         Vector3? startPos = null,
         bool destroyAfter = true)
     {
+        if (launchAudio != null)
+        {
+            if (SoundManager.Instance != null)
+                SoundManager.Instance.PlaySfx(launchAudio.clip);
+            else
+                launchAudio.Play();
+        }
+
         Vector3 endPos =
             targetPos;
 

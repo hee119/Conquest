@@ -46,11 +46,22 @@ public class PlayerMove : MonoBehaviour
 
     private SpriteRenderer playerSpriteRenderer;
 
+    [Header("Footstep SFX")]
+    [SerializeField, Min(0.1f)] private float footstepDistance = 0.72f;
+    [SerializeField, Range(0f, 1f)] private float footstepVolume = 0.55f;
+    private static AudioClip[] sharedFootstepClips;
+    private static AudioClip previousFootstepClip;
+    private float distanceSinceFootstep;
+    private Vector2 lastFootstepPosition;
+
     public void Awake()
     {
         playerRb = GetComponent<Rigidbody2D>();
         animationController = GetComponent<AnimationController>();
         playerSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        lastFootstepPosition = playerRb != null ? playerRb.position : (Vector2)transform.position;
+        if (sharedFootstepClips == null || sharedFootstepClips.Length == 0)
+            sharedFootstepClips = Resources.LoadAll<AudioClip>("Audio/Footsteps");
     }
 
     private void OnEnable()
@@ -59,6 +70,8 @@ public class PlayerMove : MonoBehaviour
         dashTimeLeft = 0f;
         recoveryDelayLeft = 0f;
         isDashing = false;
+        distanceSinceFootstep = 0f;
+        lastFootstepPosition = playerRb != null ? playerRb.position : (Vector2)transform.position;
     }
 
     private void Update()
@@ -92,6 +105,45 @@ public class PlayerMove : MonoBehaviour
         }
 
         KeepInsideTilemapBounds();
+        PlayFootstepForTravelledDistance();
+    }
+
+    private void PlayFootstepForTravelledDistance()
+    {
+        if (playerRb == null)
+            return;
+
+        Vector2 currentPosition = playerRb.position;
+        float travelled = Vector2.Distance(lastFootstepPosition, currentPosition);
+        lastFootstepPosition = currentPosition;
+
+        if (!canMove || isDashing || Time.timeScale <= 0f)
+        {
+            distanceSinceFootstep = 0f;
+            return;
+        }
+
+        distanceSinceFootstep += travelled;
+        float interval = Mathf.Max(0.1f, footstepDistance);
+        if (distanceSinceFootstep < interval)
+            return;
+
+        distanceSinceFootstep %= interval;
+        if (sharedFootstepClips == null || sharedFootstepClips.Length == 0 ||
+            SoundManager.Instance == null)
+            return;
+
+        int index = Random.Range(0, sharedFootstepClips.Length);
+        if (sharedFootstepClips.Length > 1 &&
+            sharedFootstepClips[index] == previousFootstepClip)
+        {
+            index = (index + Random.Range(1, sharedFootstepClips.Length)) %
+                sharedFootstepClips.Length;
+        }
+
+        AudioClip clip = sharedFootstepClips[index];
+        previousFootstepClip = clip;
+        SoundManager.Instance.PlaySfx(clip, footstepVolume);
     }
 
     private void KeepInsideTilemapBounds()

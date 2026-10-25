@@ -8,6 +8,8 @@ public class Poison : HomingProjectile
 
     private bool dotStarted = false;
     private Coroutine distanceCoroutine;
+    [SerializeField]
+    private AudioSource travelAudioSource;
     public bool isDamage = true;
 
     protected override void OnEnable()
@@ -16,8 +18,27 @@ public class Poison : HomingProjectile
 
         dotStarted = false;
         distanceCoroutine = null;
+
+
     }
 
+    public override void SetTarget(GameObject target)
+    {
+        base.SetTarget(target);
+        PlayTravelAudioIfFlying();
+    }
+
+    public override void SetTarget(Vector3 targetPosition)
+    {
+        base.SetTarget(targetPosition);
+        PlayTravelAudioIfFlying();
+    }
+
+    private void PlayTravelAudioIfFlying()
+    {
+        if (isDamage && travelAudioSource != null)
+            travelAudioSource.Play();
+    }
     protected override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Wall"))
@@ -74,6 +95,10 @@ public class Poison : HomingProjectile
                 {
                     dotStarted = true;
 
+                    AudioSource poisonAudio = GetComponent<AudioSource>();
+                    if (poisonAudio != null)
+                        poisonAudio.Play();
+
                     DotDamage dotDamage = GetComponent<DotDamage>();
                     if (dotDamage != null)
                         dotDamage.SetTarget(enemy.gameObject);
@@ -100,6 +125,9 @@ public class Poison : HomingProjectile
     
     protected override void OnDisable()
     {
+        if (travelAudioSource != null)
+            travelAudioSource.Stop();
+
         rb.linearVelocity = Vector2.zero;
 
         // 타겟 초기화
