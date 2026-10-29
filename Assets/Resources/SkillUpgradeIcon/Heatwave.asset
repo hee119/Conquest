@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Heatwave
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 503
-  image: {fileID: 21300000, guid: b863b70db6434e3bbabbb7db4b46595e, type: 3}
+  image: {fileID: 21300000, guid: a25ea88f12c60420cba8e8057146e7e4, type: 3}

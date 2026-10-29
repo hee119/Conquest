@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Mold
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 407
-  image: {fileID: 21300000, guid: 0f924e01837f546b8be4bfdb713e6728, type: 3}
+  image: {fileID: 21300000, guid: 0bda11570afcf4161975c6b9887e2a78, type: 3}

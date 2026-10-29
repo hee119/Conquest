@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LightningShuriken
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 502
-  image: {fileID: 21300000, guid: 7d6bef96b8c2b4764a73976d88b959e5, type: 3}
+  image: {fileID: 21300000, guid: c3c5e540688224330a4da2bf0502d923, type: 3}

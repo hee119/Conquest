@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Burn
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 402
-  image: {fileID: -455432222, guid: b36d01535b70745c9870edd36de90ddf, type: 3}
+  image: {fileID: 21300000, guid: 733d8df6b8b344644a873a50740d1d20, type: 3}

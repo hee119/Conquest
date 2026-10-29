@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Snail
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 404
-  image: {fileID: 21300000, guid: e53cdd5bffa84912a77b4bc08a62d465, type: 3}
+  image: {fileID: 21300000, guid: 86bcfaec8475a472e819e2d3ac8761fd, type: 3}

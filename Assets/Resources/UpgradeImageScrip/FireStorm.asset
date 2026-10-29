@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FireStorm
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 500
-  image: {fileID: 245018474, guid: b36d01535b70745c9870edd36de90ddf, type: 3}
+  image: {fileID: 21300000, guid: 41cb64eb40e7f4c21a43ae718901a6bc, type: 3}
