@@ -5,8 +5,8 @@ Id,Name,Hp,HpRegenLate,Speed,Damage,Defense,Drop Exp Orb Id,ExplosionDamage,Expl
 103,Goat,20,0,2,5,5,300,0,0
 104,Pufferfish,10,0,3,7,5,300,0,0
 105,Tutle,30,0,0.5,1,5,300,0,0
-106,Slime,20,0,1,1,4,301,0,0
+106,Slime,60,0,1,2,5,300,0,0
 107,BombSlime,30,0,0.5,1,4,301,10,2
-108,Octopus,10,0,1,0,5,300,0,0
-150,Octopusking,1000,0,0.3,5,5,302,0,0
-151,SlimeKing,3000,0,0.3,10,5,302,0,0
+108,Octopus,15,0,1,1,5,301,0,0
+150,Octopusking,1000,0,1,5,5,302,0,0
+151,SlimeKing,3000,0,1,10,5,302,0,0

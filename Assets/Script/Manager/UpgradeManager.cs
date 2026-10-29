@@ -153,6 +153,8 @@ public class UpgradeManager : MonoBehaviour
     public Dictionary<int, IEnumerator> upgradeCor = new Dictionary<int, IEnumerator>();
     private readonly Dictionary<int, float> upgradeCooldownEnds = new Dictionary<int, float>();
     private readonly Dictionary<int, float> upgradeCooldownDurations = new Dictionary<int, float>();
+    private readonly HashSet<int> activeShurikenSpinIds = new HashSet<int>();
+    private AudioSource shurikenSpinSoundSource;
     [SerializeField]
     private UpgradeCooldownHud upgradeCooldownHud;
 
@@ -226,6 +228,8 @@ public class UpgradeManager : MonoBehaviour
         public int damage;
         public int hp;
         public int defense;
+        public int hpRegenRate;
+        public float speed;
     }
 
     private readonly Dictionary<int, PlayerStatOrigin> originalPlayerStats = new Dictionary<int, PlayerStatOrigin>();
@@ -240,8 +244,12 @@ public class UpgradeManager : MonoBehaviour
     private float defenseBonus;
     private float skillCooldownBonus;
     private float passiveCooldownBonus;
-    private AudioClip snailGroundLoopClip;
     private AudioSource snailGroundLoopSource;
+
+    private void OnDisable()
+    {
+        StopSnailGroundLoop();
+    }
 
     public void Awake()
     {
@@ -256,6 +264,7 @@ public class UpgradeManager : MonoBehaviour
             Instance.upgradesInfo = upgradesInfo;
             Instance.skillUpgradeIcons = skillUpgradeIcons;
             Instance.statUpgradeIcons = statUpgradeIcons;
+            UpgradeHudRendering.IsolateCollectedIcons(skillUpgradeIcons, statUpgradeIcons);
             Instance.detectUpgrade = detectUpgrade;
             Instance.orbit = orbit;
             Destroy(gameObject);
@@ -265,7 +274,7 @@ public class UpgradeManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerCollider = player.GetComponent<BoxCollider2D>();
         EnsureUpgradeCooldownHud();
-        snailGroundLoopClip = Resources.Load<AudioClip>("Audio/SFX/SnailGroundLoop");
+        UpgradeHudRendering.IsolateCollectedIcons(skillUpgradeIcons, statUpgradeIcons);
     }
 
     public void ResetForNewRun()
@@ -309,6 +318,7 @@ public class UpgradeManager : MonoBehaviour
     public void StopRun()
     {
         StopSnailGroundLoop();
+        StopAllShurikenSpinSounds();
         StopAllCoroutines();
         upgradeCor.Clear();
         upgradeCooldownEnds.Clear();
@@ -399,6 +409,7 @@ public class UpgradeManager : MonoBehaviour
         }
 
         SnapshotOriginalStats();
+        ApplyPlayerStats();
     }
 
     // 원본 스탯 저장 + 보너스 초기화
@@ -406,9 +417,12 @@ public class UpgradeManager : MonoBehaviour
     {
         var dm = DataManager.Instance;
 
-        originalPlayerStats.Clear();
         foreach (var pair in dm.playerDatasDic)
         {
+            // Data loaders can initialize upgrade tables more than once.
+            // Preserve the raw baseline instead of snapshotting permanent bonuses again.
+            if (originalPlayerStats.ContainsKey(pair.Key))
+                continue;
             PlayerData p = pair.Value;
 
             originalPlayerStats[pair.Key] = new PlayerStatOrigin
@@ -417,7 +431,9 @@ public class UpgradeManager : MonoBehaviour
                 criticalDamage = p.criticalDamage,
                 damage = p.damage,
                 hp = p.hp,
-                defense = p.defense
+                defense = p.defense,
+                hpRegenRate = p.hpRegenRate,
+                speed = p.speed
             };
         }
 
@@ -565,6 +581,7 @@ public class UpgradeManager : MonoBehaviour
         // 카드 프리팹에서 제목 텍스트가 제거된 경우에도 업그레이드 선택은 가능하게 한다.
         if (info.upgradeNameLo != null)
         {
+            info.upgradeNameLo.isTextInit = true;
             info.upgradeNameLo.key = v.name;
             info.upgradeNameLo.ForceUpdateText();
         }
@@ -574,13 +591,14 @@ public class UpgradeManager : MonoBehaviour
 
         if (info.upgradeDesLo != null)
         {
+            info.upgradeDesLo.isTextInit = true;
             info.upgradeDesLo.key = v.description;
             info.upgradeDesLo.SetArguments(GetDescriptionArguments(id));
             info.upgradeDesLo.ForceUpdateText();
         }
     }
 
-    private object[] GetDescriptionArguments(int id)
+    public object[] GetDescriptionArguments(int id)
     {
         var dm = DataManager.Instance;
 
@@ -762,22 +780,70 @@ public class UpgradeManager : MonoBehaviour
     // 업그레이드 선택
     // =========================================================
 
+    public bool TryCombineUpgrades(int first, int second, out int result)
+    {
+        if (!UpgradeFusionRules.CanCombine(this, first, second, out result) ||
+            !upgradeActions.ContainsKey(result) || skillUpgradeIcons == null ||
+            skillUpgradeIcons.Length < skillUpgrades.Count - 1 ||
+            skillUpgradeIcons.Any(icon => icon == null))
+            return false;
+
+        ConsumeCombinationMaterial(first);
+        ConsumeCombinationMaterial(second);
+        skillUpgradeCount = skillUpgrades.Count;
+        for (int i = 0; i < skillUpgradeIcons.Length; i++)
+        {
+            skillUpgradeIcons[i].sprite = i < skillUpgrades.Count ? GetUpgradeIcon(skillUpgrades[i]) : null;
+            CollectedUpgradeIconUI.Attach(skillUpgradeIcons[i], i < skillUpgrades.Count ? skillUpgrades[i] : 0);
+        }
+
+        // The result always starts at its first level.
+        DataManager.Instance.upgradeDatasDic[result].upgradeLevel = 0;
+        SkillUpgradesAdd(result);
+        foreach (int available in renewableUpgrades)
+            if (!upgrades.Contains(available)) upgrades.Add(available);
+        renewableUpgrades.Clear();
+        return true;
+    }
+
+    private void ConsumeCombinationMaterial(int id)
+    {
+        if (upgradeCor.TryGetValue(id, out IEnumerator routine))
+        {
+            StopCoroutine(routine);
+            upgradeCor.Remove(id);
+        }
+        upgradeCooldownEnds.Remove(id);
+        upgradeCooldownDurations.Remove(id);
+        skillUpgrades.Remove(id);
+        maxLevelUpgrades.Remove(id);
+        upgrades.Remove(id);
+        renewableUpgrades.Remove(id);
+
+        string function = DataManager.Instance.upgradeDatasDic[id].function;
+        if (function == "Snail") StopSnailGroundLoop();
+        if (function == "Shuriken" || function == "LightningShuriken")
+            StopShurikenSpinSound(id);
+        if (function == "Burn" && GameManager.Instance != null) GameManager.Instance.burnChance = 0;
+        if (function == "Mold" && GameManager.Instance != null) GameManager.Instance.moldChance = 0;
+        if (function == "Shuriken" && orbit != null)
+        {
+            foreach (GameObject projectile in orbit.orbitList)
+                if (projectile != null) projectile.GetComponent<PooledObject>()?.DestroyObj();
+            orbit.orbitList.Clear();
+            orbit.orbitColList.Clear();
+        }
+    }
+
     public void SkillUpgradesAdd(int id)
     {
         if (!skillUpgrades.Contains(id))
         {
             skillUpgrades.Add(id);
 
-            if (DataManager.Instance.skillUpgradeIconDic.ContainsKey(id))
-            {
-                skillUpgradeIcons[skillUpgradeCount].sprite =
-                    DataManager.Instance.skillUpgradeIconDic[id];
-
-                // 보유 아이콘에는 레벨만 표시한다. 쿨타임은 좌하단 전용 HUD에서 표시한다.
-                CollectedUpgradeIconUI.Attach(skillUpgradeIcons[skillUpgradeCount], id);
-
-                skillUpgradeCount++;
-            }
+            skillUpgradeIcons[skillUpgradeCount].sprite = GetUpgradeIcon(id);
+            CollectedUpgradeIconUI.Attach(skillUpgradeIcons[skillUpgradeCount], id);
+            skillUpgradeCount++;
         }
 
         // 내부 레벨 증가
@@ -862,7 +928,7 @@ public class UpgradeManager : MonoBehaviour
 
     public BasicAttackModifiers GetBasicAttackModifiers(int characterId)
     {
-        BasicAttackModifiers result = BasicAttackModifiers.Default;
+        BasicAttackModifiers result = CharacterProgression.BasicAttackBonus(characterId);
 
         foreach (int id in characterSkillUpgrades)
         {
@@ -1037,7 +1103,7 @@ public class UpgradeManager : MonoBehaviour
         if (upgradeCor.ContainsKey(id))
             return;
 
-        StartSkillCoroutine(id, LightningCor(id));
+        StartSkillCoroutine(id, detectUpgrade.DetectUpgradeCor(id));
     }
 
     public void Fireball(int id)
@@ -1075,30 +1141,42 @@ public class UpgradeManager : MonoBehaviour
 
     private void StartSnailGroundLoop()
     {
-        if (snailGroundLoopClip == null)
-            return;
-
-        if (snailGroundLoopSource == null)
-        {
-            GameObject audioObject = new GameObject("Snail Ground Loop Audio");
-            audioObject.transform.SetParent(transform, false);
-
-            snailGroundLoopSource = audioObject.AddComponent<AudioSource>();
-            snailGroundLoopSource.clip = snailGroundLoopClip;
-            snailGroundLoopSource.loop = true;
-            snailGroundLoopSource.playOnAwake = false;
-            snailGroundLoopSource.spatialBlend = 0f;
-            audioObject.AddComponent<SfxAudioSourceVolume>();
-        }
-
-        if (!snailGroundLoopSource.isPlaying)
-            snailGroundLoopSource.Play();
+        if (snailGroundLoopSource == null || !snailGroundLoopSource.isPlaying)
+            snailGroundLoopSource = SoundManager.Instance?.Play(SoundIds.SnailGroundLoop, loop: true);
     }
 
     private void StopSnailGroundLoop()
     {
-        if (snailGroundLoopSource != null)
-            snailGroundLoopSource.Stop();
+        SoundManager.Instance?.Stop(snailGroundLoopSource);
+        snailGroundLoopSource = null;
+    }
+
+    private void BeginShurikenSpinSound(int id)
+    {
+        activeShurikenSpinIds.Add(id);
+        if (shurikenSpinSoundSource == null || !shurikenSpinSoundSource.isPlaying)
+        {
+            shurikenSpinSoundSource = SoundManager.Instance?.Play(
+                SoundIds.ShurikenSpin,
+                loop: true);
+        }
+    }
+
+    private void StopShurikenSpinSound(int id)
+    {
+        activeShurikenSpinIds.Remove(id);
+        if (activeShurikenSpinIds.Count == 0)
+        {
+            SoundManager.Instance?.Stop(shurikenSpinSoundSource);
+            shurikenSpinSoundSource = null;
+        }
+    }
+
+    private void StopAllShurikenSpinSounds()
+    {
+        activeShurikenSpinIds.Clear();
+        SoundManager.Instance?.Stop(shurikenSpinSoundSource);
+        shurikenSpinSoundSource = null;
     }
 
     public void Shuriken(int id)
@@ -1153,31 +1231,6 @@ public class UpgradeManager : MonoBehaviour
     public void RottingSpore(int id)
     {
         Mold(id);
-    }
-
-    private IEnumerator LightningCor(int id)
-    {
-        while (true)
-        {
-            int level =
-                DataManager.Instance
-                    .upgradeDatasDic[id]
-                    .UpgradeLevel;
-
-            for (int i = 0;
-                 i < DataManager.Instance.upgradeDatasDic[id].count[level];
-                 i++)
-            {
-                PoolManager.Instance.Spawn(
-                    id,
-                    playerCollider.bounds.center
-                );
-            }
-
-            float cooldown = DataManager.Instance.upgradeDatasDic[id].coolTime[level];
-            BeginUpgradeCooldown(id, cooldown);
-            yield return new WaitForSeconds(cooldown);
-        }
     }
 
     private IEnumerator BurnCor(int id)
@@ -1245,9 +1298,11 @@ public class UpgradeManager : MonoBehaviour
                 }
             }
 
+            BeginShurikenSpinSound(id);
             yield return StartCoroutine(
                 orbit.RotateOrbits(id)
             );
+            StopShurikenSpinSound(id);
 
             float cooldown = DataManager.Instance.upgradeDatasDic[id].coolTime[level];
             BeginUpgradeCooldown(id, cooldown);
@@ -1373,13 +1428,24 @@ public class UpgradeManager : MonoBehaviour
 
             PlayerData p = pair.Value;
 
-            p.criticalChance = (int)(origin.criticalChance * (1f + critChanceBonus / 100f));
-            p.criticalDamage = origin.criticalDamage * (1f + critDamageBonus / 100f);
-            p.damage = (int)(origin.damage * (1f + attackPowerBonus / 100f));
-            p.hp = (int)(origin.hp * (1f + maxHpBonus / 100f));
-            p.defense = (int)(origin.defense * (1f + defenseBonus / 100f));
+            var permanent = CharacterProgression.Bonuses(pair.Key, CharacterProgression.Level(pair.Key));
+            p.criticalChance = Mathf.Clamp((int)((origin.criticalChance + permanent.criticalChance) * (1f + critChanceBonus / 100f)), 0, 100);
+            p.criticalDamage = (origin.criticalDamage + permanent.criticalDamage) * (1f + critDamageBonus / 100f);
+            p.damage = (int)((origin.damage + CharacterProgression.AttackBonus(pair.Key)) * (1f + attackPowerBonus / 100f));
+            p.hp = Mathf.RoundToInt((origin.hp + permanent.hp) * (1f + maxHpBonus / 100f));
+            p.defense = (int)((origin.defense + permanent.defense) * (1f + defenseBonus / 100f));
+            p.hpRegenRate = origin.hpRegenRate + permanent.hpRegenRate;
+            p.speed = origin.speed + permanent.speed;
         }
     }
+
+    public void RefreshPermanentStats()
+    {
+        if (DataManager.Instance != null && originalPlayerStats.Count > 0)
+            ApplyPlayerStats();
+    }
+
+    public bool HasPlayerStatBaseline => originalPlayerStats.Count > 0;
 
     // 스킬 쿨타임을 원본 기준으로 재계산해서 덮어씀
     private void ApplySkillCoolTimes()
@@ -1557,6 +1623,7 @@ public sealed class CollectedUpgradeIconUI : MonoBehaviour
 {
     private TextMeshProUGUI levelText;
     private int upgradeId;
+    private int displayedLevel = -1;
 
     public static CollectedUpgradeIconUI Attach(UnityEngine.UI.Image target, int id)
     {
@@ -1606,8 +1673,7 @@ public sealed class CollectedUpgradeIconUI : MonoBehaviour
         text.fontStyle = FontStyles.Bold;
         text.alignment = alignment;
         text.color = Color.white;
-        text.outlineColor = Color.black;
-        text.outlineWidth = 0.28f;
+        UpgradeHudRendering.ApplyTextStyle(text, UpgradeHudRendering.TextStyle.CollectedLevel);
         text.textWrappingMode = TextWrappingModes.NoWrap;
         text.raycastTarget = false;
         return text;
@@ -1616,12 +1682,14 @@ public sealed class CollectedUpgradeIconUI : MonoBehaviour
     public void Bind(int id)
     {
         upgradeId = id;
+        displayedLevel = -1;
         RefreshVisuals();
     }
 
     public void Clear()
     {
         upgradeId = 0;
+        displayedLevel = -1;
         if (levelText != null)
             levelText.text = string.Empty;
     }
@@ -1636,7 +1704,11 @@ public sealed class CollectedUpgradeIconUI : MonoBehaviour
         if (upgradeId <= 0 || UpgradeManager.Instance == null)
             return;
 
-        levelText.text = $"Lv.{UpgradeManager.Instance.GetUpgradeDisplayLevel(upgradeId)}";
+        int level = UpgradeManager.Instance.GetUpgradeDisplayLevel(upgradeId);
+        if (displayedLevel == level)
+            return;
+        displayedLevel = level;
+        levelText.text = $"Lv.{level}";
     }
 
     private void RemoveOldCooldownChild(string childName)

@@ -1,0 +1,2921 @@
+{
+  "skill": {
+    "spreadsheet_id": "1dATU1ZsqVODFL-SSgOMBLz9L0o7oNJwJgEixzs6Ansk",
+    "requests": [
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 1,
+            "columnIndex": 3
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0.9
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 1,
+            "columnIndex": 4
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 8
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 1,
+            "columnIndex": 7
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0.12
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 2,
+            "columnIndex": 3
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0.45
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 2,
+            "columnIndex": 4
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 4
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 2,
+            "columnIndex": 9
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1.5
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      }
+    ],
+    "changes": [
+      {
+        "sheet": "Skilldata",
+        "row": 2,
+        "column": 4,
+        "old": 1.5,
+        "new": 0.9
+      },
+      {
+        "sheet": "Skilldata",
+        "row": 2,
+        "column": 5,
+        "old": 3,
+        "new": 8
+      },
+      {
+        "sheet": "Skilldata",
+        "row": 2,
+        "column": 8,
+        "old": 0.7,
+        "new": 0.12
+      },
+      {
+        "sheet": "Skilldata",
+        "row": 3,
+        "column": 4,
+        "old": 0.4,
+        "new": 0.45
+      },
+      {
+        "sheet": "Skilldata",
+        "row": 3,
+        "column": 5,
+        "old": 5,
+        "new": 4
+      },
+      {
+        "sheet": "Skilldata",
+        "row": 3,
+        "column": 10,
+        "old": 10,
+        "new": 1.5
+      }
+    ]
+  },
+  "enemy": {
+    "spreadsheet_id": "1e-YZ9rl4TTvE-OnJTz-YCGM837IWz9Z8MZoOmJ-zwHs",
+    "requests": [
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 7,
+            "columnIndex": 7
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 301
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 2098892902,
+            "rowIndex": 1,
+            "columnIndex": 2
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1400
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 2098892902,
+            "rowIndex": 2,
+            "columnIndex": 2
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2200
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      }
+    ],
+    "changes": [
+      {
+        "sheet": "EnemyData",
+        "row": 8,
+        "column": 8,
+        "old": 300,
+        "new": 301
+      },
+      {
+        "sheet": "BossData",
+        "row": 2,
+        "column": 3,
+        "old": 1000,
+        "new": 1400
+      },
+      {
+        "sheet": "BossData",
+        "row": 3,
+        "column": 3,
+        "old": 3000,
+        "new": 2200
+      }
+    ]
+  },
+  "stage": {
+    "spreadsheet_id": "1crAlPFOAjYEVjawJbU2AVV29ViKw0-yS-yOprAZw2hY",
+    "requests": [
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 1,
+            "columnIndex": 4
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 6
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 2,
+            "columnIndex": 4
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 6
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 3,
+            "columnIndex": 3
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 4
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 3,
+            "columnIndex": 4
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 14
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 4,
+            "columnIndex": 4
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 8
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 4,
+            "columnIndex": 5
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1.15
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 4,
+            "columnIndex": 6
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 5,
+            "columnIndex": 3
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 4
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 5,
+            "columnIndex": 4
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 24
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 5,
+            "columnIndex": 5
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1.1
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 5,
+            "columnIndex": 6
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 6,
+            "columnIndex": 4
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 16
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 6,
+            "columnIndex": 5
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1.1
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 8,
+            "columnIndex": 3
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 10
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 8,
+            "columnIndex": 4
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 8,
+            "columnIndex": 5
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 8,
+            "columnIndex": 6
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 9,
+            "columnIndex": 3
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 8
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 9,
+            "columnIndex": 4
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 12
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 9,
+            "columnIndex": 5
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 10,
+            "columnIndex": 3
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 10
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 10,
+            "columnIndex": 4
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 10,
+            "columnIndex": 5
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 11,
+            "columnIndex": 3
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 8
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 11,
+            "columnIndex": 4
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 16
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 12,
+            "columnIndex": 4
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 12,
+            "columnIndex": 5
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 13,
+            "columnIndex": 3
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 8
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 13,
+            "columnIndex": 4
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 20
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 14,
+            "columnIndex": 3
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 12
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 14,
+            "columnIndex": 4
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 14,
+            "columnIndex": 5
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 15,
+            "columnIndex": 3
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 8
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 15,
+            "columnIndex": 4
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 24
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      }
+    ],
+    "changes": [
+      {
+        "sheet": "Stage1",
+        "row": 2,
+        "column": 5,
+        "old": 40,
+        "new": 6
+      },
+      {
+        "sheet": "Stage1",
+        "row": 3,
+        "column": 5,
+        "old": 40,
+        "new": 6
+      },
+      {
+        "sheet": "Stage1",
+        "row": 4,
+        "column": 4,
+        "old": 3,
+        "new": 4
+      },
+      {
+        "sheet": "Stage1",
+        "row": 4,
+        "column": 5,
+        "old": 80,
+        "new": 14
+      },
+      {
+        "sheet": "Stage1",
+        "row": 5,
+        "column": 5,
+        "old": 50,
+        "new": 8
+      },
+      {
+        "sheet": "Stage1",
+        "row": 5,
+        "column": 6,
+        "old": 1.5,
+        "new": 1.15
+      },
+      {
+        "sheet": "Stage1",
+        "row": 5,
+        "column": 7,
+        "old": 3,
+        "new": 5
+      },
+      {
+        "sheet": "Stage1",
+        "row": 6,
+        "column": 4,
+        "old": 3,
+        "new": 4
+      },
+      {
+        "sheet": "Stage1",
+        "row": 6,
+        "column": 5,
+        "old": 200,
+        "new": 24
+      },
+      {
+        "sheet": "Stage1",
+        "row": 6,
+        "column": 6,
+        "old": 1,
+        "new": 1.1
+      },
+      {
+        "sheet": "Stage1",
+        "row": 6,
+        "column": 7,
+        "old": 3,
+        "new": 5
+      },
+      {
+        "sheet": "Stage1",
+        "row": 7,
+        "column": 5,
+        "old": 300,
+        "new": 16
+      },
+      {
+        "sheet": "Stage1",
+        "row": 7,
+        "column": 6,
+        "old": 2,
+        "new": 1.1
+      },
+      {
+        "sheet": "Stage1",
+        "row": 9,
+        "column": 4,
+        "old": 5,
+        "new": 10
+      },
+      {
+        "sheet": "Stage1",
+        "row": 9,
+        "column": 5,
+        "old": 30,
+        "new": 1
+      },
+      {
+        "sheet": "Stage1",
+        "row": 9,
+        "column": 6,
+        "old": 1.2,
+        "new": 1
+      },
+      {
+        "sheet": "Stage1",
+        "row": 9,
+        "column": 7,
+        "old": 3,
+        "new": 5
+      },
+      {
+        "sheet": "Stage1",
+        "row": 10,
+        "column": 4,
+        "old": 5,
+        "new": 8
+      },
+      {
+        "sheet": "Stage1",
+        "row": 10,
+        "column": 5,
+        "old": 150,
+        "new": 12
+      },
+      {
+        "sheet": "Stage1",
+        "row": 10,
+        "column": 6,
+        "old": 1.5,
+        "new": 1
+      },
+      {
+        "sheet": "Stage1",
+        "row": 11,
+        "column": 4,
+        "old": 15,
+        "new": 10
+      },
+      {
+        "sheet": "Stage1",
+        "row": 11,
+        "column": 5,
+        "old": 150,
+        "new": 1
+      },
+      {
+        "sheet": "Stage1",
+        "row": 11,
+        "column": 6,
+        "old": 1.2,
+        "new": 1
+      },
+      {
+        "sheet": "Stage1",
+        "row": 12,
+        "column": 4,
+        "old": 5,
+        "new": 8
+      },
+      {
+        "sheet": "Stage1",
+        "row": 12,
+        "column": 5,
+        "old": 200,
+        "new": 16
+      },
+      {
+        "sheet": "Stage1",
+        "row": 13,
+        "column": 5,
+        "old": 200,
+        "new": 2
+      },
+      {
+        "sheet": "Stage1",
+        "row": 13,
+        "column": 6,
+        "old": 2,
+        "new": 1
+      },
+      {
+        "sheet": "Stage1",
+        "row": 14,
+        "column": 4,
+        "old": 5,
+        "new": 8
+      },
+      {
+        "sheet": "Stage1",
+        "row": 14,
+        "column": 5,
+        "old": 200,
+        "new": 20
+      },
+      {
+        "sheet": "Stage1",
+        "row": 15,
+        "column": 4,
+        "old": 15,
+        "new": 12
+      },
+      {
+        "sheet": "Stage1",
+        "row": 15,
+        "column": 5,
+        "old": 300,
+        "new": 2
+      },
+      {
+        "sheet": "Stage1",
+        "row": 15,
+        "column": 6,
+        "old": 1.2,
+        "new": 1
+      },
+      {
+        "sheet": "Stage1",
+        "row": 16,
+        "column": 4,
+        "old": 5,
+        "new": 8
+      },
+      {
+        "sheet": "Stage1",
+        "row": 16,
+        "column": 5,
+        "old": 500,
+        "new": 24
+      }
+    ]
+  },
+  "level": {
+    "spreadsheet_id": "1W-_mGatzRBR0GbJIgbNRv3JS5B5MXCqw4mun_4hPfxU",
+    "requests": [
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 3,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 65
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 4,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 75
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 5,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 95
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 6,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 110
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 7,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 135
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 8,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 155
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 9,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 180
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 10,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 205
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 11,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 230
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 12,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 255
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 13,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 285
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 14,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 310
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 15,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 340
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 16,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 365
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 17,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 390
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 18,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 415
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 19,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 440
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 20,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 465
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 21,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 490
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 22,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 510
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 23,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 535
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 24,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 555
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 25,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 570
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 26,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 590
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 27,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 610
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 28,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 625
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 29,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 640
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 30,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 655
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 31,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 665
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 32,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 680
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 33,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 690
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 34,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 700
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 35,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 710
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 36,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 720
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 37,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 725
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 38,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 735
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 39,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 740
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 40,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 745
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 41,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 755
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 42,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 760
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 43,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 760
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 44,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 765
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 45,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 770
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 46,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 775
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 47,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 775
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 48,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 780
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 49,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 780
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 50,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 785
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 51,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 785
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 52,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 785
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 53,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 785
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 54,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 790
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 55,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 790
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 56,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 790
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 57,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 790
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 58,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 790
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 59,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 795
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 60,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 795
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      },
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 61,
+            "columnIndex": 0
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 795
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      }
+    ],
+    "changes": [
+      {
+        "sheet": "Level",
+        "row": 4,
+        "column": 1,
+        "old": 80,
+        "new": 65
+      },
+      {
+        "sheet": "Level",
+        "row": 5,
+        "column": 1,
+        "old": 145,
+        "new": 75
+      },
+      {
+        "sheet": "Level",
+        "row": 6,
+        "column": 1,
+        "old": 265,
+        "new": 95
+      },
+      {
+        "sheet": "Level",
+        "row": 7,
+        "column": 1,
+        "old": 455,
+        "new": 110
+      },
+      {
+        "sheet": "Level",
+        "row": 8,
+        "column": 1,
+        "old": 720,
+        "new": 135
+      },
+      {
+        "sheet": "Level",
+        "row": 9,
+        "column": 1,
+        "old": 1080,
+        "new": 155
+      },
+      {
+        "sheet": "Level",
+        "row": 10,
+        "column": 1,
+        "old": 1530,
+        "new": 180
+      },
+      {
+        "sheet": "Level",
+        "row": 11,
+        "column": 1,
+        "old": 2080,
+        "new": 205
+      },
+      {
+        "sheet": "Level",
+        "row": 12,
+        "column": 1,
+        "old": 2725,
+        "new": 230
+      },
+      {
+        "sheet": "Level",
+        "row": 13,
+        "column": 1,
+        "old": 3455,
+        "new": 255
+      },
+      {
+        "sheet": "Level",
+        "row": 14,
+        "column": 1,
+        "old": 4265,
+        "new": 285
+      },
+      {
+        "sheet": "Level",
+        "row": 15,
+        "column": 1,
+        "old": 5135,
+        "new": 310
+      },
+      {
+        "sheet": "Level",
+        "row": 16,
+        "column": 1,
+        "old": 6050,
+        "new": 340
+      },
+      {
+        "sheet": "Level",
+        "row": 17,
+        "column": 1,
+        "old": 6990,
+        "new": 365
+      },
+      {
+        "sheet": "Level",
+        "row": 18,
+        "column": 1,
+        "old": 7930,
+        "new": 390
+      },
+      {
+        "sheet": "Level",
+        "row": 19,
+        "column": 1,
+        "old": 8855,
+        "new": 415
+      },
+      {
+        "sheet": "Level",
+        "row": 20,
+        "column": 1,
+        "old": 9740,
+        "new": 440
+      },
+      {
+        "sheet": "Level",
+        "row": 21,
+        "column": 1,
+        "old": 10565,
+        "new": 465
+      },
+      {
+        "sheet": "Level",
+        "row": 22,
+        "column": 1,
+        "old": 11325,
+        "new": 490
+      },
+      {
+        "sheet": "Level",
+        "row": 23,
+        "column": 1,
+        "old": 12000,
+        "new": 510
+      },
+      {
+        "sheet": "Level",
+        "row": 24,
+        "column": 1,
+        "old": 12590,
+        "new": 535
+      },
+      {
+        "sheet": "Level",
+        "row": 25,
+        "column": 1,
+        "old": 13095,
+        "new": 555
+      },
+      {
+        "sheet": "Level",
+        "row": 26,
+        "column": 1,
+        "old": 13510,
+        "new": 570
+      },
+      {
+        "sheet": "Level",
+        "row": 27,
+        "column": 1,
+        "old": 13850,
+        "new": 590
+      },
+      {
+        "sheet": "Level",
+        "row": 28,
+        "column": 1,
+        "old": 14120,
+        "new": 610
+      },
+      {
+        "sheet": "Level",
+        "row": 29,
+        "column": 1,
+        "old": 14325,
+        "new": 625
+      },
+      {
+        "sheet": "Level",
+        "row": 30,
+        "column": 1,
+        "old": 14480,
+        "new": 640
+      },
+      {
+        "sheet": "Level",
+        "row": 31,
+        "column": 1,
+        "old": 14595,
+        "new": 655
+      },
+      {
+        "sheet": "Level",
+        "row": 32,
+        "column": 1,
+        "old": 14675,
+        "new": 665
+      },
+      {
+        "sheet": "Level",
+        "row": 33,
+        "column": 1,
+        "old": 14730,
+        "new": 680
+      },
+      {
+        "sheet": "Level",
+        "row": 34,
+        "column": 1,
+        "old": 14765,
+        "new": 690
+      },
+      {
+        "sheet": "Level",
+        "row": 35,
+        "column": 1,
+        "old": 14790,
+        "new": 700
+      },
+      {
+        "sheet": "Level",
+        "row": 36,
+        "column": 1,
+        "old": 14805,
+        "new": 710
+      },
+      {
+        "sheet": "Level",
+        "row": 37,
+        "column": 1,
+        "old": 14815,
+        "new": 720
+      },
+      {
+        "sheet": "Level",
+        "row": 38,
+        "column": 1,
+        "old": 14820,
+        "new": 725
+      },
+      {
+        "sheet": "Level",
+        "row": 39,
+        "column": 1,
+        "old": 14820,
+        "new": 735
+      },
+      {
+        "sheet": "Level",
+        "row": 40,
+        "column": 1,
+        "old": 14825,
+        "new": 740
+      },
+      {
+        "sheet": "Level",
+        "row": 41,
+        "column": 1,
+        "old": 14825,
+        "new": 745
+      },
+      {
+        "sheet": "Level",
+        "row": 42,
+        "column": 1,
+        "old": 14825,
+        "new": 755
+      },
+      {
+        "sheet": "Level",
+        "row": 43,
+        "column": 1,
+        "old": 14825,
+        "new": 760
+      },
+      {
+        "sheet": "Level",
+        "row": 44,
+        "column": 1,
+        "old": 14825,
+        "new": 760
+      },
+      {
+        "sheet": "Level",
+        "row": 45,
+        "column": 1,
+        "old": 14825,
+        "new": 765
+      },
+      {
+        "sheet": "Level",
+        "row": 46,
+        "column": 1,
+        "old": 14825,
+        "new": 770
+      },
+      {
+        "sheet": "Level",
+        "row": 47,
+        "column": 1,
+        "old": 14825,
+        "new": 775
+      },
+      {
+        "sheet": "Level",
+        "row": 48,
+        "column": 1,
+        "old": 14825,
+        "new": 775
+      },
+      {
+        "sheet": "Level",
+        "row": 49,
+        "column": 1,
+        "old": 14825,
+        "new": 780
+      },
+      {
+        "sheet": "Level",
+        "row": 50,
+        "column": 1,
+        "old": 14825,
+        "new": 780
+      },
+      {
+        "sheet": "Level",
+        "row": 51,
+        "column": 1,
+        "old": 14825,
+        "new": 785
+      },
+      {
+        "sheet": "Level",
+        "row": 52,
+        "column": 1,
+        "old": 14825,
+        "new": 785
+      },
+      {
+        "sheet": "Level",
+        "row": 53,
+        "column": 1,
+        "old": 14825,
+        "new": 785
+      },
+      {
+        "sheet": "Level",
+        "row": 54,
+        "column": 1,
+        "old": 14825,
+        "new": 785
+      },
+      {
+        "sheet": "Level",
+        "row": 55,
+        "column": 1,
+        "old": 14825,
+        "new": 790
+      },
+      {
+        "sheet": "Level",
+        "row": 56,
+        "column": 1,
+        "old": 14825,
+        "new": 790
+      },
+      {
+        "sheet": "Level",
+        "row": 57,
+        "column": 1,
+        "old": 14825,
+        "new": 790
+      },
+      {
+        "sheet": "Level",
+        "row": 58,
+        "column": 1,
+        "old": 14825,
+        "new": 790
+      },
+      {
+        "sheet": "Level",
+        "row": 59,
+        "column": 1,
+        "old": 14825,
+        "new": 790
+      },
+      {
+        "sheet": "Level",
+        "row": 60,
+        "column": 1,
+        "old": 14825,
+        "new": 795
+      },
+      {
+        "sheet": "Level",
+        "row": 61,
+        "column": 1,
+        "old": 14825,
+        "new": 795
+      },
+      {
+        "sheet": "Level",
+        "row": 62,
+        "column": 1,
+        "old": 14825,
+        "new": 795
+      }
+    ]
+  },
+  "orb": {
+    "spreadsheet_id": "1ZBYA2T37KNaB2Z6ugLm64qJ9VqUTp3KvorLqibOBhfw",
+    "requests": [
+      {
+        "updateCells": {
+          "start": {
+            "sheetId": 0,
+            "rowIndex": 2,
+            "columnIndex": 2
+          },
+          "rows": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 30
+                  }
+                }
+              ]
+            }
+          ],
+          "fields": "userEnteredValue"
+        }
+      }
+    ],
+    "changes": [
+      {
+        "sheet": "Exp Ord Info",
+        "row": 3,
+        "column": 3,
+        "old": 50,
+        "new": 30
+      }
+    ]
+  }
+}

@@ -29,7 +29,7 @@ public class Chain : DetectUpgrade
 
     if (collision.CompareTag("Enemy"))
     {
-        List<GameObject> target = GetChainAttackList(chainId);
+        List<GameObject> target = GetChainAttackList(chainId, collision.gameObject);
 
         Debug.Log($"[Chain 진단] 반환된 target 리스트 개수={target.Count}");
         for (int i = 0; i < target.Count; i++)
@@ -55,12 +55,22 @@ private IEnumerator ChainAttack(List<GameObject> target)
     Debug.Log($"[Chain 진단] ChainAttack 코루틴 시작 | target.Count={target.Count}");
 
     Vector3 previousPosition = Vector3.zero;
+    var targetPools = new PooledObject[target.Count];
+    var targetVersions = new uint[target.Count];
+    for (int i = 0; i < target.Count; i++)
+    {
+        if (target[i] == null) continue;
+        targetPools[i] = target[i].GetComponent<PooledObject>();
+        if (targetPools[i] != null)
+            targetVersions[i] = targetPools[i].SpawnVersion;
+    }
 
     for (int i = 0; i < target.Count; i++)
     {
         GameObject currentTarget = target[i];
 
-        if (currentTarget == null)
+        if (currentTarget == null || !currentTarget.activeInHierarchy ||
+            (targetPools[i] != null && targetPools[i].SpawnVersion != targetVersions[i]))
         {
             Debug.LogWarning($"[Chain 진단] i={i} currentTarget NULL → continue");
             continue;
@@ -70,7 +80,7 @@ private IEnumerator ChainAttack(List<GameObject> target)
 
         EnemyCombat currentEnemy = currentTarget.GetComponent<EnemyCombat>();
 
-        if (currentEnemy == null)
+        if (currentEnemy == null || currentEnemy.isDead)
         {
             Debug.LogWarning($"[Chain 진단] i={i} EnemyCombat 없음 ({currentTarget.name}) → continue");
             continue;
@@ -104,6 +114,7 @@ private IEnumerator ChainAttack(List<GameObject> target)
 
         if (lightning == null)
         {
+            lightningObj.GetComponent<PooledObject>()?.DestroyObj();
             Debug.LogWarning($"[Chain 진단] i={i} Lightning 컴포넌트 없음 (스폰된 오브젝트: {lightningObj.name})");
             continue;
         }
@@ -114,9 +125,14 @@ private IEnumerator ChainAttack(List<GameObject> target)
 
         previousPosition = currentPosition;
 
-        yield return new WaitForSecondsRealtime(chainAttackInterval);
+        yield return new WaitForSeconds(chainAttackInterval);
     }
 
     Debug.Log("[Chain 진단] ChainAttack 코루틴 종료");
 }
+
+    protected virtual void OnDisable()
+    {
+        StopAllCoroutines();
+    }
 }

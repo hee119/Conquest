@@ -7,9 +7,7 @@ public class FireBall : HomingProjectile
     {
         base.OnEnable();
 
-        AudioSource launchAudio = GetComponent<AudioSource>();
-        if (launchAudio != null)
-            launchAudio.Play();
+        SoundManager.Instance?.Play(SoundIds.FireballLaunch);
     }
     
 }

@@ -8,7 +8,6 @@ public class Poison : HomingProjectile
 
     private bool dotStarted = false;
     private Coroutine distanceCoroutine;
-    [SerializeField]
     private AudioSource travelAudioSource;
     public bool isDamage = true;
 
@@ -36,8 +35,8 @@ public class Poison : HomingProjectile
 
     private void PlayTravelAudioIfFlying()
     {
-        if (isDamage && travelAudioSource != null)
-            travelAudioSource.Play();
+        if (isDamage && (travelAudioSource == null || !travelAudioSource.isPlaying))
+            travelAudioSource = SoundManager.Instance?.Play(SoundIds.PoisonFlight, loop: true);
     }
     protected override void OnTriggerEnter2D(Collider2D other)
     {
@@ -95,9 +94,7 @@ public class Poison : HomingProjectile
                 {
                     dotStarted = true;
 
-                    AudioSource poisonAudio = GetComponent<AudioSource>();
-                    if (poisonAudio != null)
-                        poisonAudio.Play();
+                    SoundManager.Instance?.Play(SoundIds.PoisonApply, enemy: enemy);
 
                     DotDamage dotDamage = GetComponent<DotDamage>();
                     if (dotDamage != null)
@@ -125,8 +122,8 @@ public class Poison : HomingProjectile
     
     protected override void OnDisable()
     {
-        if (travelAudioSource != null)
-            travelAudioSource.Stop();
+        SoundManager.Instance?.Stop(travelAudioSource);
+        travelAudioSource = null;
 
         rb.linearVelocity = Vector2.zero;
 

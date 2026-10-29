@@ -30,7 +30,7 @@ public class AnimationController : MonoBehaviour
         if (!canSkillUse1)
             return;
 
-        SetSkillAnimationSpeed(skillId);
+        SetSkillAnimationSpeed(skillId, true);
 
         animator.SetTrigger("Skill1");
         canSkillUse1 = false;
@@ -77,17 +77,24 @@ public class AnimationController : MonoBehaviour
         StartCoroutine(SkillCooldown4(skillId));
     }
 
-    private void SetSkillAnimationSpeed(int skillId)
+    private void SetSkillAnimationSpeed(int skillId, bool basicAttack = false)
     {
         float speed = UpgradeManager.Instance.GetSkillAnimationSpeed(skillId);
 
+        if (basicAttack) speed *= PermanentAttackSpeed();
         animator.SetFloat("SkillSpeed", speed);
+    }
+
+    private float PermanentAttackSpeed()
+    {
+        int id = CharacterManager.Instance != null ? CharacterManager.Instance.currentCharacter : GetComponent<PlayerInfo>().id;
+        return CharacterProgression.BasicAttackSpeed(id);
     }
 
     private IEnumerator SkillCooldown1(int skillId)
     {
         float coolTime =
-            DataManager.Instance.skillDatasDic[skillId].skillCoolTime;
+            DataManager.Instance.skillDatasDic[skillId].skillCoolTime / PermanentAttackSpeed();
 
         yield return new WaitForSeconds(coolTime);
 

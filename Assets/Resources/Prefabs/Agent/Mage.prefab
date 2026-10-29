@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3475155627520892144}
-  - component: {fileID: 2080588648036724045}
   - component: {fileID: 8716359608070917011}
   - component: {fileID: 4358641189683829206}
   - component: {fileID: 7714980940849294696}
@@ -24,7 +23,6 @@ GameObject:
   - component: {fileID: 1881479060847422842}
   - component: {fileID: 7222019323331333133}
   - component: {fileID: 8076822818889752138}
-  - component: {fileID: 3675195199687820102}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Player
@@ -47,19 +45,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!210 &2080588648036724045
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6199480255949396084}
-  m_Enabled: 1
-  m_SortingLayerID: -1869315837
-  m_SortingLayer: 5
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
-  m_Sort3DAs2D: 0
 --- !u!212 &8716359608070917011
 SpriteRenderer:
   serializedVersion: 2
@@ -105,8 +90,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1869315837
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8772082828741420050, guid: 07fc404bbeb2a4d84986cea14e605d25,
@@ -324,6 +309,8 @@ MonoBehaviour:
   canMove: 1
   speed: 5
   boundaryPadding: 0.02
+  footstepInterval: 0.3
+  footstepVolume: 0.468
 --- !u!95 &8965869449882534200
 Animator:
   serializedVersion: 7
@@ -362,6 +349,7 @@ MonoBehaviour:
   skillId2: 0
   skillId3: 0
   skillId4: 0
+  basicAttackSpreadAngle: 7
 --- !u!114 &8689228584285619767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,18 +411,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42856c4e9e291495e81216298537b791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCombat
-  maxHp: 80
-  hp: 0
   delayedHp: 47.4793
   isDead: 1
   regenDelay: 5
   regenInterval: 1
   hpTrailDelay: 0.5
   hpTrailSpeed: 300
-  startHpColor: {r: 0, g: 1, b: 0, a: 1}
-  endHpColor: {r: 1, g: 0, b: 0, a: 1}
-  targetImage: {fileID: 0}
-  targetColor: {r: 1, g: 0, b: 0, a: 1}
   hitColor: {r: 1, g: 0, b: 0, a: 1}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hitFlashTime: 0.1
@@ -473,20 +455,3 @@ MonoBehaviour:
     type: 2}
   mageIdleSprite: {fileID: -8070195584892687665, guid: 07fc404bbeb2a4d84986cea14e605d25,
     type: 3}
---- !u!114 &3675195199687820102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6199480255949396084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85acf1e4908e94c20ad25ac931db357b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MageAttack
-  shotInterval: 0.2
-  projectileSpeed: 12
-  projectileLifetime: 10
-  spawnOffset: 0.55
-  projectileDataId: 201

@@ -1,0 +1,4 @@
+Tool: built-in image_gen
+Reference: 왕관 쓴 보라 문어 픽셀 아트 (3).png
+Prompt:
+Create one right-facing side profile sprite of the exact reference octopus king. Preserve the plump purple body, deep indigo stepped outline, lavender pixel highlights, glossy purple-black eye and pink cheek, large gold crown with rounded tips and blue gemstones, and thick curled tentacles with pink undersides and pale pink suction cups. Show one visible eye in profile. No red gems or crown redesign. Resting crawling-ready pose, full body and crown visible, transparent background, crisp coarse square pixels and clustered shading. No smoothing, gradients, floor, shadow, scene, effects, or text.

@@ -27,6 +27,12 @@ public class LevelManager : MonoBehaviour
 
     private float minuteTimer;
 
+    public int RequiredExp => levelDatas != null && currentLevel >= 0 &&
+        currentLevel < levelDatas.Length ? levelDatas[currentLevel] : 0;
+
+    private bool CanLevelUp => RequiredExp > 0 && currentExp >= RequiredExp &&
+        upgradeUI != null && !upgradeUI.activeSelf && Time.timeScale > 0f;
+
     public void Awake()
     {
         if (Instance == null)
@@ -57,9 +63,7 @@ public class LevelManager : MonoBehaviour
     {
         // A large EXP pickup can pay for several levels. Present one upgrade
         // choice at a time, then spend the remaining EXP after that UI closes.
-        if (Time.timeScale > 0f && upgradeUI != null && !upgradeUI.activeSelf &&
-            levelDatas != null && currentLevel < levelDatas.Length &&
-            currentExp >= levelDatas[currentLevel])
+        if (CanLevelUp)
             LevelUp();
 
         minuteTimer += Time.deltaTime;
@@ -111,25 +115,26 @@ public class LevelManager : MonoBehaviour
 
     public void AddExp(int exp)
     {
-        if (exp <= 0 || levelDatas == null || levelDatas.Length == 0 ||
-            currentLevel >= levelDatas.Length)
+        if (exp <= 0 || RequiredExp <= 0)
             return;
 
         currentExp += exp;
         minuteExp += exp;
+        SoundManager.Instance?.Play(SoundIds.ExpPickup);
         expUpdate?.Invoke();
 
-        if (upgradeUI != null && !upgradeUI.activeSelf && Time.timeScale > 0f &&
-            currentLevel < levelDatas.Length && currentExp >= levelDatas[currentLevel])
+        if (CanLevelUp)
             LevelUp();
     }
 
     public void LevelUp()
     {
-        if (levelDatas == null || currentLevel < 0 || currentLevel >= levelDatas.Length)
+        // Keep the threshold check here too: every caller must pay the current
+        // level's cost, and an open upgrade choice must not consume another level.
+        if (!CanLevelUp)
             return;
 
-        currentExp -= levelDatas[currentLevel]; // 초과분 보존 (currentLevel++ 전에 계산)
+        currentExp -= RequiredExp; // 초과분 보존 (currentLevel++ 전에 계산)
         currentLevel++;
         minuteLevel++;
 
@@ -138,5 +143,6 @@ public class LevelManager : MonoBehaviour
 
         levelUpdate?.Invoke();
         Time.timeScale = 0f;
+        SoundManager.Instance?.PlayOneShotIgnoringPause(SoundIds.LevelUp);
     }
 }

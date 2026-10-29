@@ -15,15 +15,31 @@ public sealed class LobbyController : MonoBehaviour
     [SerializeField] private GameObject mageIdlePreview;
     [SerializeField] private CharacterCardVisual swordmanCard;
     [SerializeField] private CharacterCardVisual mageCard;
+    [SerializeField] private CharacterProgressionPanel progressionPanel;
 
     private int previewCharacterId = 1;
-    private AudioClip characterConfirmSfx;
+    private AudioSource lobbyMusicSource;
+    private AudioClip lobbyMusicClip;
 
     private void Start()
     {
-        characterConfirmSfx = Resources.Load<AudioClip>("Audio/SFX/CharacterConfirm");
+        if (SoundManager.Instance != null)
+        {
+            lobbyMusicSource = SoundManager.Instance.Play(SoundIds.LobbyMusic, loop: true, bgm: true);
+            if (lobbyMusicSource != null)
+                lobbyMusicClip = lobbyMusicSource.clip;
+        }
+
         previewCharacterId = PlayerPrefs.GetInt("SelectedCharacter", 1) == 2 ? 2 : 1;
         UpdateCharacterPreview();
+    }
+
+    private void OnDestroy()
+    {
+        // A new scene may already have replaced the shared BGM source's clip.
+        if (lobbyMusicSource != null && lobbyMusicSource.clip == lobbyMusicClip &&
+            SoundManager.Instance != null)
+            SoundManager.Instance.Stop(lobbyMusicSource);
     }
 
     public void ShowMainMenu()
@@ -55,7 +71,7 @@ public sealed class LobbyController : MonoBehaviour
     {
         SelectCharacter(previewCharacterId);
         if (SoundManager.Instance != null)
-            SoundManager.Instance.PlaySfx(characterConfirmSfx);
+            SoundManager.Instance.Play(SoundIds.CharacterConfirm);
         if (characterPanel != null)
             characterPanel.SetActive(false);
         if (mainMenu != null)
@@ -70,6 +86,8 @@ public sealed class LobbyController : MonoBehaviour
 
     private void UpdateCharacterPreview()
     {
+        if (progressionPanel != null)
+            progressionPanel.SetCharacter(previewCharacterId);
         bool mageSelected = previewCharacterId == 2;
 
         if (characterName != null)

@@ -1,0 +1,14 @@
+{
+  "victoryGold": 300,
+  "defeatGold": 100,
+  "victoryFragments": 6,
+  "defeatFragments": 3,
+  "maxLevel": 10,
+  "firstGoldCost": 200,
+  "goldCostPerLevel": 100,
+  "firstFragmentCost": 3,
+  "fragmentCostPerLevel": 2,
+  "attackBonusPerLevel": 2,
+  "hpPercentPerLevel": 5,
+  "ownedCharacters": 2
+}

@@ -94,9 +94,7 @@ public class Mold : MonoBehaviour
 
     public virtual void Boom()
     {
-        AudioSource popSound = GetComponent<AudioSource>();
-        if (popSound != null)
-            popSound.Play();
+        SoundManager.Instance?.Play(SoundIds.MoldPop);
         Collider2D col =
             GetComponent<Collider2D>();
 

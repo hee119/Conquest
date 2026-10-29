@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: -1488538973715075973}
   - component: {fileID: 6911475216402954597}
   - component: {fileID: -3857447618420918697}
-  - component: {fileID: 7138045340413767813}
   m_Layer: 9
   m_Name: ExpOrb 2
   m_TagString: Exp
@@ -82,8 +81,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1032376735
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6066672615828377025, guid: f46f98e744a0f48a1ae6111e84f1f877,
@@ -111,6 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Exp
   attractionDistance: 3
   attractionSpeed: 6
+  magnetSpeed: 30
 --- !u!114 &-1488538973715075973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,16 +184,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.3125, y: 0.31640625}
   m_EdgeRadius: 0
---- !u!210 &7138045340413767813
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8886853310425748561}
-  m_Enabled: 1
-  m_SortingLayerID: 1032376735
-  m_SortingLayer: 2
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
-  m_Sort3DAs2D: 0

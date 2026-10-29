@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Lightning
   m_EditorClassIdentifier: Assembly-CSharp::ImageInfo
   id: 400
-  image: {fileID: 21300000, guid: 1d21cd796983c49dd83854c9da3bfd72, type: 3}
+  image: {fileID: -1598851718, guid: b36d01535b70745c9870edd36de90ddf, type: 3}

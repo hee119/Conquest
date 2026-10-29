@@ -58,6 +58,14 @@ public class GetData : MonoBehaviour
                 return;
             }
 
+            if ((saveFileName == "StageData.csv" || saveFileName == "PlayerData.csv") &&
+                Regex.IsMatch(csvData, @"#(?:VALUE!|REF!|ERROR!|N/A|DIV/0!|NAME\?)"))
+            {
+                Debug.LogWarning($"공개 {saveFileName}에 수식 오류가 남아 있어 기존 데이터를 유지합니다. 시트 수식과 공개본 갱신 후 다시 다운로드하세요.");
+                request.Dispose();
+                return;
+            }
+
             // 첫 번째 열이 비어있는 행 제거
             csvData = Regex.Replace(
                 csvData,
@@ -72,6 +80,7 @@ public class GetData : MonoBehaviour
 
 #if UNITY_EDITOR
             UnityEditor.AssetDatabase.Refresh();
+            if (saveFileName == "PlayerData.csv") CharacterProgression.ReloadEnhancements();
 #endif
 
             request.Dispose();

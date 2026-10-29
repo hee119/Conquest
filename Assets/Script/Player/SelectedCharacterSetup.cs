@@ -39,6 +39,9 @@ public sealed class SelectedCharacterSetup : MonoBehaviour
         gameObject.name = "Mage";
         animator.runtimeAnimatorController = mageAnimatorController;
         spriteRenderer.sprite = mageIdleSprite;
+        SkillSpawner skillSpawner = GetComponent<SkillSpawner>();
+        if (skillSpawner != null)
+            skillSpawner.skillId1 = 201;
 
         movement.speed = data.speed;
         combat.maxHp = data.hp;

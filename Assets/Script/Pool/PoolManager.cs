@@ -9,6 +9,7 @@ public class PoolManager : MonoBehaviour
 
     private Dictionary<int, IObjectPool<PooledObject>> _pools = new();
     private readonly HashSet<PooledObject> activeObjects = new();
+    private readonly HashSet<PooledObject> pendingReparents = new();
 
     [SerializeField] private int maxSize = 50;
     [SerializeField] private int enemyPoolMaxSize = 200;
@@ -54,6 +55,39 @@ public class PoolManager : MonoBehaviour
 
         prefabIsLoaded = true;
         player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    private void OnEnable()
+    {
+        if (Instance == this)
+            GameSceneManager.SceneChanging += ResetActiveObjects;
+    }
+
+    private void OnDisable()
+    {
+        GameSceneManager.SceneChanging -= ResetActiveObjects;
+    }
+
+    private void LateUpdate()
+    {
+        FlushPendingReparents();
+    }
+
+    private void FlushPendingReparents()
+    {
+        foreach (PooledObject pooledObject in pendingReparents)
+        {
+            if (pooledObject != null && !pooledObject.IsSpawned)
+                pooledObject.transform.SetParent(transform, false);
+        }
+        pendingReparents.Clear();
+    }
+
+    private void OnDestroy()
+    {
+        GameSceneManager.SceneChanging -= ResetActiveObjects;
+        if (Instance == this)
+            Instance = null;
     }
     // =========================
     // POOL SETUP
@@ -126,7 +160,7 @@ public class PoolManager : MonoBehaviour
         // the position or the upgrade level.
         if (stagingParent == null)
         {
-            GameObject staging = new GameObject("Pool Staging");
+            GameObject staging = new GameObject(prefab.name + "Mom");
             staging.transform.SetParent(transform, false);
             staging.SetActive(false);
             stagingParent = staging.transform;
@@ -146,18 +180,39 @@ public class PoolManager : MonoBehaviour
 
     private void OnGet(PooledObject pooledObject)
     {
+        // A scene unload or an older double release may leave a destroyed
+        // Unity object in the underlying pool. Spawn will discard that entry.
+        if (pooledObject == null)
+            return;
+
+        if (pendingReparents.Remove(pooledObject))
+            pooledObject.transform.SetParent(transform, false);
+        pooledObject.MarkSpawned();
         activeObjects.Add(pooledObject);
     }
 
     public void OnRelease(PooledObject pooledObject)
     {
+        if (pooledObject == null)
+            return;
+
         activeObjects.Remove(pooledObject);
         pooledObject.gameObject.SetActive(false);
 
         // UI objects are temporarily parented to a scene canvas by SpawnUI.
         // Move every released object back under the persistent pool so a scene
         // reload cannot destroy a pooled reference that will be reused later.
-        pooledObject.transform.SetParent(transform, false);
+        Transform parent = pooledObject.transform.parent;
+        if (parent != null && parent != transform && !parent.gameObject.activeInHierarchy)
+        {
+            // ExpBubbleFlow can return children from a parent's OnDisable.
+            // Unity forbids reparenting until that hierarchy change finishes.
+            pendingReparents.Add(pooledObject);
+        }
+        else
+        {
+            pooledObject.transform.SetParent(transform, false);
+        }
     }
 
     /// <summary>
@@ -166,7 +221,17 @@ public class PoolManager : MonoBehaviour
     /// </summary>
     public void ResetActiveObjects()
     {
+        // Move already returned UI children before the old scene is unloaded.
+        FlushPendingReparents();
         List<PooledObject> snapshot = new List<PooledObject>(activeObjects);
+        // Detach pooled children before disabling their former parents.
+        // This also saves scene-owned UI objects before that scene unloads.
+        foreach (PooledObject pooledObject in snapshot)
+        {
+            if (pooledObject != null)
+                pooledObject.transform.SetParent(transform, true);
+        }
+
         foreach (PooledObject pooledObject in snapshot)
         {
             if (pooledObject != null)
@@ -188,19 +253,9 @@ public class PoolManager : MonoBehaviour
 
     public GameObject Spawn(int id, Vector2 targetPos)
     {
-        if (!_pools.ContainsKey(id))
-        {
-            Debug.LogWarning(id + " is not found");
-            return null;
-        }
-
-        PooledObject obj = _pools[id].Get();
-
+        PooledObject obj = GetPooledObject(id);
         if (obj == null)
-        {
-            Debug.LogWarning("obj is null");
             return null;
-        }
 
         obj.transform.position = targetPos;
         obj.gameObject.SetActive(true);
@@ -213,29 +268,9 @@ public class PoolManager : MonoBehaviour
         Transform parent
     )
     {
-        if (!_pools.ContainsKey(id))
-        {
-            Debug.LogWarning(
-                "[PoolManager] UI Pool ID 없음 : " +
-                id
-            );
-
-            return null;
-        }
-
-
-        PooledObject obj =
-            _pools[id].Get();
-
-
+        PooledObject obj = GetPooledObject(id);
         if (obj == null)
-        {
-            Debug.LogWarning(
-                "[PoolManager] UI Pool Object가 null"
-            );
-
             return null;
-        }
 
 
         obj.transform.SetParent(
@@ -264,6 +299,29 @@ public class PoolManager : MonoBehaviour
         return obj.gameObject;
     }
 
+    private PooledObject GetPooledObject(int id)
+    {
+        if (!_pools.TryGetValue(id, out IObjectPool<PooledObject> pool))
+        {
+            Debug.LogWarning($"[PoolManager] Pool ID {id} is not registered.", this);
+            return null;
+        }
+
+        // Drain invalid cached entries, then allow one fresh creation. Keep
+        // this bounded so a broken prefab cannot cause an infinite loop.
+        int attempts = pool.CountInactive + 1;
+        while (attempts-- > 0)
+        {
+            PooledObject obj = pool.Get();
+            if (obj != null)
+                return obj;
+            activeObjects.Remove(obj);
+        }
+
+        Debug.LogError($"[PoolManager] Could not create an object for pool ID {id}.", this);
+        return null;
+    }
+
     public void SpawnTest(int id)
     {
         var countInputObject = GameObject.Find("SpawnIdCountInput");
@@ -284,4 +342,6 @@ public class PoolManager : MonoBehaviour
         for (int i = 0; i < spawnCount; i++)
             Spawn(id, Vector2.zero);
     }
+    
+    
 }

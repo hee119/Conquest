@@ -11,6 +11,7 @@ public class Exp : MonoBehaviour
     private PooledObject pooledObject;
     private Transform player;
     private bool magnetized;
+    private bool collected;
 
     private void Awake()
     {
@@ -22,16 +23,23 @@ public class Exp : MonoBehaviour
     {
         player = null;
         magnetized = false;
+        collected = false;
     }
 
     public void ActivateMagnet(Transform target)
     {
+        if (collected || !gameObject.activeInHierarchy)
+            return;
+
         player = target;
         magnetized = true;
     }
 
     private void Update()
     {
+        if (collected)
+            return;
+
         if (player == null || !player.gameObject.activeInHierarchy)
             player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
@@ -64,8 +72,14 @@ public class Exp : MonoBehaviour
 
     private void Collect()
     {
-        if (LevelManager.Instance != null && expInfo != null)
-            LevelManager.Instance.AddExp(expInfo.exp);
+        if (collected || !gameObject.activeInHierarchy ||
+            LevelManager.Instance == null || expInfo == null)
+            return;
+
+        // Magnet arrival and trigger callbacks can both collect the same spawn.
+        // Claim it before granting EXP or invoking any level-up/UI callbacks.
+        collected = true;
+        LevelManager.Instance.AddExp(expInfo.exp);
 
         if (pooledObject != null)
             pooledObject.DestroyObj();

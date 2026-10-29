@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1811646982818379475}
   - component: {fileID: 2849458514429630293}
-  - component: {fileID: 4742182323515150838}
   - component: {fileID: 5245602997992732305}
   - component: {fileID: -5811335577426929627}
   - component: {fileID: -7031049320459269606}
@@ -20,6 +19,7 @@ GameObject:
   - component: {fileID: 2996686744030071390}
   - component: {fileID: 3186647244219781705}
   - component: {fileID: -5204337359457001001}
+  - component: {fileID: 1473741278265170918}
   m_Layer: 8
   m_Name: Slime
   m_TagString: Enemy
@@ -88,8 +88,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -172119849
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 8831279014357658696, guid: 170803ecca95a43fa9b91866e9cc6ea7,
@@ -103,19 +103,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!210 &4742182323515150838
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4125709159630829647}
-  m_Enabled: 1
-  m_SortingLayerID: -172119849
-  m_SortingLayer: 4
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
-  m_Sort3DAs2D: 0
 --- !u!61 &5245602997992732305
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -193,6 +180,7 @@ MonoBehaviour:
   isSlowDown: 0
   slowCount: 0
   pathUpdateInterval: 0.35
+  targetMoveThreshold: 0.1
   knockbackCooldown: 0.3
   knockbackPower: 6
   knockbackDuration: 0.2
@@ -326,6 +314,18 @@ MonoBehaviour:
   dropExpOrbId: 300
   explosionDamage: 0
   explosionRange: 0
+--- !u!114 &1473741278265170918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4125709159630829647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8714564344375458d8bf4697a0a91fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlimeJumpSound
 --- !u!1001 &1596700093920007851
 PrefabInstance:
   m_ObjectHideFlags: 0

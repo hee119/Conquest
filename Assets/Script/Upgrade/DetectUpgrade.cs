@@ -181,6 +181,10 @@ public class DetectUpgrade : MonoBehaviour
             if (!enemy.gameObject.activeInHierarchy)
                 continue;
 
+            EnemyCombat combat = enemy.GetComponent<EnemyCombat>();
+            if (combat == null || combat.isDead)
+                continue;
+
             float distance =
                 (
                     enemy.transform.position -
@@ -252,6 +256,13 @@ public class DetectUpgrade : MonoBehaviour
 
         if (obj == null)
             return;
+
+        Lightning lightning = obj.GetComponent<Lightning>();
+        if (lightning != null)
+        {
+            lightning.Attack(id, targetPos, target, isChain, startPosition, destroyAfter);
+            return;
+        }
 
         HomingProjectile projectile = obj.GetComponent<HomingProjectile>();
 

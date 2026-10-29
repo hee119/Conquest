@@ -38,14 +38,19 @@ public abstract class HomingProjectile : MonoBehaviour
         if (collider == null)
             collider = gameObject.AddComponent<BoxCollider2D>();
 
-        SortingGroup sortingGroup =
-            GetComponent<SortingGroup>();
+        Renderer[] renderers = GetComponentsInChildren<Renderer>(true);
+        if (renderers.Length == 1)
+        {
+            renderers[0].sortingLayerName = "Upgrade";
+        }
+        else if (renderers.Length > 1)
+        {
+            SortingGroup sortingGroup = GetComponent<SortingGroup>();
+            if (sortingGroup == null)
+                sortingGroup = gameObject.AddComponent<SortingGroup>();
 
-        if (sortingGroup == null)
-            sortingGroup =
-                gameObject.AddComponent<SortingGroup>();
-
-        sortingGroup.sortingLayerName = "Upgrade";
+            sortingGroup.sortingLayerName = "Upgrade";
+        }
 
         collider.isTrigger = true;
     }

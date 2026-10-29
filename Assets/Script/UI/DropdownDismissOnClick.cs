@@ -16,6 +16,21 @@ public sealed class DropdownDismissOnClick : MonoBehaviour, IPointerDownHandler,
         dropdownRect = transform as RectTransform;
     }
 
+    private void OnEnable()
+    {
+        dropdown.onValueChanged.AddListener(OnOptionSelected);
+    }
+
+    private void OnDisable()
+    {
+        dropdown.onValueChanged.RemoveListener(OnOptionSelected);
+    }
+
+    private void OnOptionSelected(int index)
+    {
+        SoundManager.Instance?.PlayUiConfirm();
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
         wasExpandedOnPointerDown = dropdown.IsExpanded;
@@ -23,6 +38,12 @@ public sealed class DropdownDismissOnClick : MonoBehaviour, IPointerDownHandler,
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (eventData.button != PointerEventData.InputButton.Left)
+            return;
+
+        if (!wasExpandedOnPointerDown && dropdown.IsExpanded)
+            SoundManager.Instance?.PlayUiClick();
+
         if (wasExpandedOnPointerDown && dropdown.IsExpanded)
             dropdown.Hide();
 

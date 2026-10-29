@@ -1,0 +1,197 @@
+{
+  "model_version": 1,
+  "budget": {
+    "pre_first_boss": 258550,
+    "pre_final_boss": 783000,
+    "whole_stage": 787100,
+    "current_runtime_carry_xp": 983775,
+    "baseline_cap": 5874450,
+    "proposed_cap": 665255,
+    "proposed_level_30": 206060
+  },
+  "curve": {
+    "power": 2.85,
+    "tau": 17.6,
+    "scale": 14775.433357879794
+  },
+  "costs": [
+    50,
+    55,
+    80,
+    145,
+    265,
+    455,
+    720,
+    1080,
+    1530,
+    2080,
+    2725,
+    3455,
+    4265,
+    5135,
+    6050,
+    6990,
+    7930,
+    8855,
+    9740,
+    10565,
+    11325,
+    12000,
+    12590,
+    13095,
+    13510,
+    13850,
+    14120,
+    14325,
+    14480,
+    14595,
+    14675,
+    14730,
+    14765,
+    14790,
+    14805,
+    14815,
+    14820,
+    14820,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825,
+    14825
+  ],
+  "scenarios": [
+    {
+      "collection": 0.0,
+      "milestone": "before_first_boss",
+      "xp": 0,
+      "old_level": 0,
+      "new_level": 0
+    },
+    {
+      "collection": 0.0,
+      "milestone": "before_final_boss",
+      "xp": 0,
+      "old_level": 0,
+      "new_level": 0
+    },
+    {
+      "collection": 0.0,
+      "milestone": "full_stage",
+      "xp": 0,
+      "old_level": 0,
+      "new_level": 0
+    },
+    {
+      "collection": 0.65,
+      "milestone": "before_first_boss",
+      "xp": 168058,
+      "old_level": 32,
+      "new_level": 27
+    },
+    {
+      "collection": 0.65,
+      "milestone": "before_final_boss",
+      "xp": 508950,
+      "old_level": 42,
+      "new_level": 50
+    },
+    {
+      "collection": 0.65,
+      "milestone": "full_stage",
+      "xp": 511615,
+      "old_level": 42,
+      "new_level": 50
+    },
+    {
+      "collection": 0.8,
+      "milestone": "before_first_boss",
+      "xp": 206840,
+      "old_level": 33,
+      "new_level": 30
+    },
+    {
+      "collection": 0.8,
+      "milestone": "before_final_boss",
+      "xp": 626400,
+      "old_level": 44,
+      "new_level": 58
+    },
+    {
+      "collection": 0.8,
+      "milestone": "full_stage",
+      "xp": 629680,
+      "old_level": 44,
+      "new_level": 58
+    },
+    {
+      "collection": 0.85,
+      "milestone": "before_first_boss",
+      "xp": 219768,
+      "old_level": 34,
+      "new_level": 30
+    },
+    {
+      "collection": 0.85,
+      "milestone": "before_final_boss",
+      "xp": 665550,
+      "old_level": 45,
+      "new_level": 61
+    },
+    {
+      "collection": 0.85,
+      "milestone": "full_stage",
+      "xp": 669035,
+      "old_level": 45,
+      "new_level": 61
+    },
+    {
+      "collection": 1.0,
+      "milestone": "before_first_boss",
+      "xp": 258550,
+      "old_level": 35,
+      "new_level": 33
+    },
+    {
+      "collection": 1.0,
+      "milestone": "before_final_boss",
+      "xp": 783000,
+      "old_level": 46,
+      "new_level": 61
+    },
+    {
+      "collection": 1.0,
+      "milestone": "full_stage",
+      "xp": 787100,
+      "old_level": 46,
+      "new_level": 61
+    }
+  ],
+  "checks": "passed: row XP matches sheet, float32 spawn growth, split trees, milestones, monotonicity, cap/zero boundaries",
+  "assumptions": [
+    "Row-specific spawn counts; floor after each growth step; normal slime 3 binary splits = 15 drops.",
+    "Exclude optional boss minions and boss split rewards from pre-final-boss cap target.",
+    "Collection ratio combines kills, complete split trees, and collected XP; not a survival prediction."
+  ],
+  "writes": {
+    "level_range": "Level!A2:A62",
+    "export_range": "OnlyLevel!A2:A62"
+  }
+}

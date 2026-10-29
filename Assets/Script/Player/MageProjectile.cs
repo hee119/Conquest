@@ -15,6 +15,7 @@ public sealed class MageProjectile : MonoBehaviour
     private int chainCount;
     private float chainRange;
     private bool chainTriggered;
+    private bool isFlying;
     private readonly HashSet<int> hitEnemies = new HashSet<int>();
     private readonly HashSet<int> chainedEnemies = new HashSet<int>();
     private EnemyCombat homingTarget;
@@ -64,6 +65,12 @@ public sealed class MageProjectile : MonoBehaviour
             trail.Clear();
             trail.emitting = true;
         }
+        isFlying = true;
+    }
+
+    private void OnDisable()
+    {
+        isFlying = false;
     }
 
     public void ClearTrail()
@@ -79,6 +86,9 @@ public sealed class MageProjectile : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!isFlying)
+            return;
+
         if (homingTarget != null && homingTarget.gameObject.activeInHierarchy &&
             !homingTarget.isDead)
         {
@@ -105,6 +115,9 @@ public sealed class MageProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!isFlying)
+            return;
+
         EnemyCombat enemy = other.GetComponentInParent<EnemyCombat>();
         if (enemy == null)
             return;
@@ -222,6 +235,12 @@ public sealed class MageProjectile : MonoBehaviour
 
     private void ReturnToPool()
     {
+        if (!isFlying)
+            return;
+
+        // A physics step can queue several contacts before the bolt is disabled.
+        // End this flight before releasing it so those callbacks cannot release it twice.
+        isFlying = false;
         hitEnemies.Clear();
         chainedEnemies.Clear();
         homingTarget = null;

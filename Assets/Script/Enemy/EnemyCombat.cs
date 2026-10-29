@@ -1,14 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class EnemyCombat : MonoBehaviour
+public class EnemyCombat : MonoBehaviour, ICombat
 {
     protected Animator anim;
 
-    public float maxHp = 0;
-    public float hp;
+    public float maxHp { get; set; }
+    public float hp {get; set;}
 
     public bool isDead = false;
     public bool isBurn = false;
@@ -26,10 +27,11 @@ public class EnemyCombat : MonoBehaviour
     protected PooledObject pooledObject;
     protected SpriteRenderer[] spriteRenderers;
     private Collider2D bodyCollider;
-    private static AudioClip enemyHitSfx;
 
     public EnemyInfo enemyInfo;
     public EnemyMove enemyMove;
+
+    public event Action hpUpdate;
 
     public void Awake()
     {
@@ -51,12 +53,10 @@ public class EnemyCombat : MonoBehaviour
             StartCoroutine(InvincibleCor());
 
             hp -= damage;
+            hpUpdate?.Invoke();
 
-            if (enemyHitSfx == null)
-                enemyHitSfx = Resources.Load<AudioClip>("Audio/SFX/EnemyHit");
-
-            if (enemyHitSfx != null && SoundManager.Instance != null)
-                SoundManager.Instance.PlaySfx(enemyHitSfx);
+            if (SoundManager.Instance != null)
+                SoundManager.Instance.Play(SoundIds.EnemyHit, enemy: this);
 
             if (hitParticle != null)
                 hitParticle.Play();
@@ -127,7 +127,7 @@ public class EnemyCombat : MonoBehaviour
         isDying = false;
         isInvincible = false;
 
-        hp = maxHp;
+        ResetHealth(enemyInfo != null ? enemyInfo.hp : maxHp);
         if (bodyCollider != null)
             bodyCollider.enabled = true;
 
@@ -139,6 +139,13 @@ public class EnemyCombat : MonoBehaviour
                     spriteRenderer.color = Color.white;
             }
         }
+    }
+
+    public void ResetHealth(float maximum)
+    {
+        maxHp = Mathf.Max(0f, maximum);
+        hp = maxHp;
+        hpUpdate?.Invoke();
     }
 
     private IEnumerator DieAfterHitCor()

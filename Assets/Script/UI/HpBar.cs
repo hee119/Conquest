@@ -4,7 +4,9 @@ using UnityEngine.UI;
 
 public class HpBar : MonoBehaviour
 {
-    public PlayerCombat playerCombat;
+    [SerializeField] private MonoBehaviour combat;
+    public ICombat Combat;
+
     public Slider hpSlider;
     public Coroutine hpUpdateCor;
 
@@ -19,24 +21,103 @@ public class HpBar : MonoBehaviour
     private float ghostVelocity;
     public float velocity;
 
+    [Header("HP 색상")]
+    public Color startHpColor = Color.green;
+    public Color endHpColor = Color.red;
+
+    public Color currentHpColor { get; private set; }
+
+    [Header("이미지 색상 변경")]
+    [Tooltip("HP가 줄어들수록 색이 바뀔 이미지")]
+    [SerializeField] private Image targetImage;
+
+    [Tooltip("HP가 0일 때 이미지가 도달할 목표 색")]
+    [SerializeField] private Color targetColor = Color.red;
+
+    private Color originColor;
+    private bool initialized;
+    private ICombat subscribedCombat;
+
     public void Awake()
     {
+        Initialize();
+    }
+
+    private void Initialize()
+    {
+        if (initialized)
+            return;
+        initialized = true;
         hpSlider = GetComponent<Slider>();
         hpSlider.value = 1;
+
+        if (targetImage != null)
+            originColor = targetImage.color;
 
         CreateGhostSlider();
     }
 
     public void Start()
     {
-        playerCombat.hpUpdate += HpUpdate;
+        BindCombat(combat);
+    }
+
+    private void OnEnable()
+    {
+        BindCombat(combat);
+    }
+
+    private void OnDisable()
+    {
+        Unsubscribe();
+        StopGhostUpdate();
+    }
+
+    public void BindCombat(MonoBehaviour source)
+    {
+        Initialize();
+        Unsubscribe();
+        StopGhostUpdate();
+        combat = source;
+        Combat = source != null ? source as ICombat : null;
+        if (Combat != null && isActiveAndEnabled)
+        {
+            subscribedCombat = Combat;
+            subscribedCombat.hpUpdate += HpUpdate;
+        }
+
+        targetHp = Combat != null && Combat.maxHp > 0f
+            ? Mathf.Clamp01(Combat.hp / Combat.maxHp)
+            : 0f;
+        hpSlider.value = targetHp;
+        if (ghostSlider != null)
+            ghostSlider.value = targetHp;
+        ghostVelocity = 0f;
+        UpdateHpColor();
+    }
+
+    private void Unsubscribe()
+    {
+        if (subscribedCombat != null)
+            subscribedCombat.hpUpdate -= HpUpdate;
+        subscribedCombat = null;
+    }
+
+    private void StopGhostUpdate()
+    {
+        if (ghostUpdateCor != null)
+            StopCoroutine(ghostUpdateCor);
+        ghostUpdateCor = null;
     }
 
     public void HpUpdate()
     {
-        if (playerCombat.maxHp <= 0f) return;
+        if (Combat == null)
+            return;
+        UpdateHpColor();
+        if (Combat.maxHp <= 0f) return;
 
-        targetHp = Mathf.Clamp01(playerCombat.hp / playerCombat.maxHp);
+        targetHp = Mathf.Clamp01(Combat.hp / Combat.maxHp);
         float previousHp = hpSlider.value;
         bool tookDamage = targetHp < previousHp;
 
@@ -62,9 +143,9 @@ public class HpBar : MonoBehaviour
             ghostSlider.value = targetHp;
             ghostVelocity = 0f;
         }
-        
+
         Debug.Log(
-            $"HP={playerCombat.hp}/{playerCombat.maxHp}, " +
+            $"HP={Combat.hp}/{Combat.maxHp}, " +
             $"Target={targetHp}, Slider={hpSlider.value}"
         );
     }
@@ -142,9 +223,46 @@ public class HpBar : MonoBehaviour
         ghostUpdateCor = null;
     }
 
+
+
+    public void UpdateHpColor()
+    {
+        if (Combat == null || Combat.maxHp <= 0f)
+        {
+            currentHpColor = endHpColor;
+
+            if (targetImage != null)
+                targetImage.color = targetColor;
+
+            return;
+        }
+
+        float hpRatio =
+            Mathf.Clamp01(
+                Combat.hp / Combat.maxHp
+            );
+
+        currentHpColor =
+            Color.Lerp(
+                endHpColor,
+                startHpColor,
+                hpRatio
+            );
+
+        // HP가 줄어들수록 원래 색 → 목표 색으로 변화
+        if (targetImage != null)
+        {
+            targetImage.color =
+                Color.Lerp(
+                    targetColor,
+                    originColor,
+                    hpRatio
+                );
+        }
+    }
+
     private void OnDestroy()
     {
-        if (playerCombat != null)
-            playerCombat.hpUpdate -= HpUpdate;
+        Unsubscribe();
     }
 }

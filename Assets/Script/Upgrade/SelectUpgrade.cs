@@ -58,6 +58,8 @@ public class SelectUpgrade : MonoBehaviour
     public Coroutine blinkLevelIcon;
 
     private Coroutine selectSequenceCoroutine;
+    private Coroutine managerBindingCoroutine;
+    private UpgradeManager subscribedManager;
 
 
     // =========================================================
@@ -187,19 +189,53 @@ public class SelectUpgrade : MonoBehaviour
         }
 
 
-        SetSelectionEnabled(true);
-
-
-        UpgradeManager.Instance.upgradeRenewal +=
-            LevelIconsInit;
-
-        UpgradeManager.Instance.upgradeRenewal +=
-            BlinkLevelIcon;
+        SetSelectionEnabled(false);
+        if (UpgradeManager.Instance != null)
+            BindUpgradeManager(UpgradeManager.Instance);
+        else
+            managerBindingCoroutine = StartCoroutine(WaitForUpgradeManager());
 
 
         StartCoroutine(
             UpgredesMomOpen()
         );
+    }
+
+    private IEnumerator WaitForUpgradeManager()
+    {
+        while (UpgradeManager.Instance == null)
+            yield return null;
+
+        managerBindingCoroutine = null;
+        BindUpgradeManager(UpgradeManager.Instance);
+    }
+
+    private void BindUpgradeManager(UpgradeManager manager)
+    {
+        UnbindUpgradeManager();
+        subscribedManager = manager;
+        subscribedManager.upgradeRenewal += LevelIconsInit;
+        subscribedManager.upgradeRenewal += BlinkLevelIcon;
+        SetSelectionEnabled(true);
+
+        // Renewal can run before a late binding completes. Refresh the card
+        // from its current data instead of waiting for another renewal event.
+        if (upgradeUiInfo != null && upgradeUiInfo.upgradeData != null &&
+            upgradeUiInfo.upgradeData.id > 0)
+        {
+            LevelIconsInit();
+            BlinkLevelIcon();
+        }
+    }
+
+    private void UnbindUpgradeManager()
+    {
+        if (subscribedManager != null)
+        {
+            subscribedManager.upgradeRenewal -= LevelIconsInit;
+            subscribedManager.upgradeRenewal -= BlinkLevelIcon;
+        }
+        subscribedManager = null;
     }
 
 
@@ -209,20 +245,18 @@ public class SelectUpgrade : MonoBehaviour
 
     private void OnDisable()
     {
+        if (managerBindingCoroutine != null)
+        {
+            StopCoroutine(managerBindingCoroutine);
+            managerBindingCoroutine = null;
+        }
+        UnbindUpgradeManager();
+        SetSelectionEnabled(false);
+
         if (upgradeUiInfo != null &&
             upgradeUiInfo.upgradeData != null)
         {
             upgradeUiInfo.upgradeData.id = 0;
-        }
-
-
-        if (UpgradeManager.Instance != null)
-        {
-            UpgradeManager.Instance.upgradeRenewal -=
-                LevelIconsInit;
-
-            UpgradeManager.Instance.upgradeRenewal -=
-                BlinkLevelIcon;
         }
 
 
@@ -287,7 +321,9 @@ public class SelectUpgrade : MonoBehaviour
 
     public void UpgradeIsSelected()
     {
-        if (!selectionEnabled)
+        if (!selectionEnabled || subscribedManager == null ||
+            upgradeUiInfo == null || upgradeUiInfo.upgradeData == null ||
+            upgradeUiInfo.upgradeData.id <= 0)
             return;
 
 
@@ -339,21 +375,22 @@ public class SelectUpgrade : MonoBehaviour
 
         if (upgradeUiInfo.upgradeData.type == "Stat")
         {
-            UpgradeManager.Instance.StatUpgradesAdd(
+            subscribedManager.StatUpgradesAdd(
                 upgradeUiInfo.upgradeData.id
             );
         }
         else if (upgradeUiInfo.upgradeData.type == "Skill")
         {
-            UpgradeManager.Instance.SkillUpgradesAdd(
+            subscribedManager.SkillUpgradesAdd(
                 upgradeUiInfo.upgradeData.id
             );
         }
         else if (upgradeUiInfo.upgradeData.type == "CharacterSkill")
         {
-            UpgradeManager.Instance.CharacterSkillUpgradesAdd(upgradeUiInfo.upgradeData.id);
+            subscribedManager.CharacterSkillUpgradesAdd(upgradeUiInfo.upgradeData.id);
         }
 
+        SoundManager.Instance?.PlayOneShotIgnoringPause(SoundIds.UpgradeSelect);
 
         // =====================================================
         // 레벨 아이콘 이펙트

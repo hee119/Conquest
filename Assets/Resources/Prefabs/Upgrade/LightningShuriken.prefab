@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8845672812762896165}
   - component: {fileID: -8056698103492921431}
   - component: {fileID: 2767027137402685400}
-  - component: {fileID: 7817308273007035158}
   - component: {fileID: 8072809583362348106}
   - component: {fileID: 3064450745913775}
   - component: {fileID: -4839121286235627211}
@@ -83,8 +82,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 803587905
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 2836c882eb7029a478d687a22bae1094, type: 3}
@@ -122,19 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0050a2139b24ea295a2647d5984370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PooledObject
---- !u!210 &7817308273007035158
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8715234551831941243}
-  m_Enabled: 1
-  m_SortingLayerID: 803587905
-  m_SortingLayer: 8
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
-  m_Sort3DAs2D: 0
 --- !u!61 &8072809583362348106
 BoxCollider2D:
   m_ObjectHideFlags: 0

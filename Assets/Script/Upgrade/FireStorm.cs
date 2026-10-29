@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class FireStorm : HomingProjectile
 {
@@ -9,6 +8,12 @@ public class FireStorm : HomingProjectile
 
     // 이 오브젝트와 충돌하면 무시할 타겟
     public GameObject removeFromTarget;
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        SoundManager.Instance?.Play(SoundIds.FireballLaunch);
+    }
 
     protected override void Awake()
     {
@@ -33,14 +38,6 @@ public class FireStorm : HomingProjectile
 
         if (collider == null)
             collider = gameObject.AddComponent<BoxCollider2D>();
-
-        SortingGroup sortingGroup =
-            GetComponent<SortingGroup>();
-
-        if (sortingGroup == null)
-            sortingGroup = gameObject.AddComponent<SortingGroup>();
-
-        sortingGroup.sortingLayerName = "Upgrade";
 
         collider.isTrigger = true;
 

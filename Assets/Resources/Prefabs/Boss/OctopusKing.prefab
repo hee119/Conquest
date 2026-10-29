@@ -103,7 +103,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1811646982818379475}
   - component: {fileID: 2849458514429630293}
-  - component: {fileID: 4742182323515150838}
   - component: {fileID: 5245602997992732305}
   - component: {fileID: -8184704702133321677}
   - component: {fileID: -5811335577426929627}
@@ -113,6 +112,7 @@ GameObject:
   - component: {fileID: 7556525239797194747}
   - component: {fileID: 1899265598096146531}
   - component: {fileID: -8958779555923042886}
+  - component: {fileID: 2262470753871444197}
   m_Layer: 8
   m_Name: OctopusKing
   m_TagString: Enemy
@@ -189,8 +189,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -172119849
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -4823455426446671229, guid: 8b8a3732f0acb4c2e833eb65f1fe448f,
@@ -204,19 +204,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!210 &4742182323515150838
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4125709159630829647}
-  m_Enabled: 1
-  m_SortingLayerID: -172119849
-  m_SortingLayer: 4
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
-  m_Sort3DAs2D: 0
 --- !u!61 &5245602997992732305
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -275,8 +262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3faa7af64e2d9be419f35587af21c46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCombat
-  maxHp: 2000
-  hp: 0
   isDead: 0
   isBurn: 0
   hitParticle: {fileID: 0}
@@ -456,6 +441,18 @@ MonoBehaviour:
   dropExpOrbId: 302
   explosionDamage: 0
   explosionRange: 0
+--- !u!114 &2262470753871444197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4125709159630829647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1564c88c8cdb544c6a9488f10b53b206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossHealthSource
 --- !u!1 &5137119795106006022
 GameObject:
   m_ObjectHideFlags: 0

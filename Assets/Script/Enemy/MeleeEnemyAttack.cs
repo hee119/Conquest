@@ -59,11 +59,21 @@ public class MeleeEnemyAttack : MonoBehaviour
         canAttack = true;
     }
 
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        TryStartAttack(other);
+    }
+
     public void OnTriggerStay2D(Collider2D other)
+    {
+        TryStartAttack(other);
+    }
+
+    private void TryStartAttack(Collider2D other)
     {
         if (other.CompareTag("Player") && canAttack && !isDead && gameObject.activeInHierarchy)
         {
-            playerCombat = other.GetComponent<PlayerCombat>();
+            playerCombat = other.GetComponentInParent<PlayerCombat>();
             if (playerCombat == null)
             {
                 return;

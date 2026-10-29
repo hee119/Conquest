@@ -105,21 +105,24 @@ public sealed class StagePlanetMenu : MonoBehaviour
             playButton.interactable = selectedIndex == 0;
     }
 
+    public bool IsStartButton(UnityEngine.UI.Button button) => button == playButton;
+
     public void PlaySelectedStage()
     {
         if (selectedIndex == 0 && !string.IsNullOrEmpty(playableSceneName))
         {
+            SoundManager.Instance?.PlayOneShotIgnoringPause(SoundIds.CharacterConfirm);
             // Existing managers survive the lobby, so a returning run needs
             // its own initialization after the new Stage1 scene is loaded.
             if (StageManager.Instance != null)
-                SceneManager.sceneLoaded += ReinitializeReturningStage;
-            SceneManager.LoadScene(playableSceneName);
+                GameSceneManager.SceneChanged += ReinitializeReturningStage;
+            GameSceneManager.LoadScene(playableSceneName);
         }
     }
 
     private static void ReinitializeReturningStage(Scene scene, LoadSceneMode mode)
     {
-        SceneManager.sceneLoaded -= ReinitializeReturningStage;
+        GameSceneManager.SceneChanged -= ReinitializeReturningStage;
         if (scene.name != "Stage1" || StageManager.Instance == null)
             return;
 

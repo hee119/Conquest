@@ -228,3 +228,12 @@ lobby_character_swordman_desc,검으로 가까운 적을 베는 근접 캐릭터
 lobby_play_stage,시작,Start,開始
 stage_panel_title,스테이지,Stage,ステージ
 upgrade_combine,합성,Combine,合成
+setting_interface_title,인터페이스 크기,Interface Size,インターフェースサイズ
+setting_ui_scale_buttons,버튼 크기,Button size,ボタンサイズ
+setting_ui_scale_sliders,슬라이더 크기,Slider size,スライダーサイズ
+setting_ui_scale_text,텍스트 크기,Text size,テキストサイズ
+setting_ui_scale_icons,아이콘 크기,Icon size,アイコンサイズ
+setting_ui_scale_vitals,HP · 대시바 크기,HP & dash bars,HP・ダッシュバー
+setting_ui_scale_experience,경험치바 크기,Experience bar,経験値バー
+setting_ui_scale_hint,화면 밖으로 나가는 항목은 현재 크기를 유지합니다.,Elements that would leave the screen keep their current size.,画面外にはみ出す要素は現在のサイズを維持します。
+setting_ui_scale_percent,{0}%,{0}%,{0}%

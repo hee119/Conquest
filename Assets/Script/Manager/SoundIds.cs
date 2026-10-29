@@ -1,0 +1,43 @@
+public static class SoundIds
+{
+    public const int ButtonClick = 2000; // 버튼 클릭
+    public const int CharacterConfirm = 2001; // 캐릭터 선택 확정
+    public const int MageAttack = 2002; // 마법사 공격
+    public const int EnemyHit = 2003; // 적 피격
+    public const int EnemyWaveStart = 2004; // 적 웨이브 시작
+    public const int FireballLaunch = 2005; // 화염구 발사
+    public const int HeatwaveExplosion = 2006; // 열파 폭발
+    public const int MissileLaunch = 2007; // 미사일 발사
+    public const int PoisonApply = 2008; // 독 적용
+    public const int PoisonFlight = 2009; // 독 투사체 비행
+    public const int EnemyBurn = 2010; // 적 화상
+    public const int MoldPop = 2011; // 포자 폭발
+    public const int SnailGroundLoop = 2012; // 달팽이 장판 반복음
+    public const int SwordHit = 2013; // 검 공격
+    public const int Footstep01 = 2014; // 발걸음 1
+    public const int Footstep02 = 2015; // 발걸음 2
+    public const int Footstep03 = 2016; // 발걸음 3
+    public const int Footstep04 = 2017; // 발걸음 4
+    public const int CutsceneMusic = 2018; // 컷신 배경음
+    public const int LobbyMusic = 2019; // 로비 배경음
+    public const int BattleMusic = 2020; // 전투 배경음
+    public const int GameClear = 2021; // 게임 클리어
+    public const int GameOver = 2022; // 게임 오버
+    public const int Dash = 2023; // 대시
+    public const int LightningStrike = 2024; // 번개 적중
+    public const int ShurikenSpin = 2025; // 표창 회전
+    public const int SlimeJump = 2026; // 슬라임 점프
+    public const int SlimeSplit = 2027; // 슬라임 분열
+    public const int PlayerHit = 2028; // 플레이어 피격
+    public const int LevelUp = 2029; // 레벨업
+    public const int UpgradeSelect = 2030; // 업그레이드 선택
+    public const int ExpPickup = 2031; // 경험치 획득
+    public const int Footstep05 = 2032; // 발걸음 5
+    public const int Footstep06 = 2033; // 발걸음 6
+    public const int Footstep07 = 2034; // 발걸음 7
+    public const int Footstep08 = 2035; // 발걸음 8
+    public const int Footstep09 = 2036; // 발걸음 9
+    public const int Footstep10 = 2037; // 발걸음 10
+    public const int Footstep11 = 2038; // 발걸음 11
+    public const int UiHover = 2039; // UI 호버
+}

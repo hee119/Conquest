@@ -1,0 +1,505 @@
+{
+  "spreadsheetId": "1E2kEn9rNFN16migmvJfVt0TdbfjP02xdok0M21qHquw",
+  "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1E2kEn9rNFN16migmvJfVt0TdbfjP02xdok0M21qHquw/edit",
+  "properties": {
+    "title": "플레이어 캐릭터",
+    "locale": "ko_KR",
+    "timeZone": "Asia/Seoul"
+  },
+  "sheets": [
+    {
+      "properties": {
+        "sheetId": 2105887205,
+        "title": "요원정보",
+        "index": 0,
+        "sheetType": "GRID",
+        "gridProperties": {
+          "rowCount": 1000,
+          "columnCount": 26
+        }
+      },
+      "data": [
+        {
+          "rowData": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Id"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Id"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Name"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Name"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Hp"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Hp"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "HpRegenRate"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "HpRegenRate"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Speed"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Speed"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Damage"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Damage"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Defense"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Defense"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Critical Damage"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Critical Damage"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Critical Chance"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Critical Chance"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "swordMan"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "swordMan"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "200,210,220,230,240,250"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "200,210,220,230,240,250"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "2,2,2,2,2,2"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "2,2,2,2,2,2"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "5,5,5,5,5,5"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "5,5,5,5,5,5"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "5,7,9,11,13,15"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "5,7,9,11,13,15"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "5,5,5,5,5,5"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "5,5,5,5,5,5"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "1.5,1.5,1.5,1.5,1.5,1.5"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "1.5,1.5,1.5,1.5,1.5,1.5"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "10,10,10,10,10,10"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "10,10,10,10,10,10"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "mage"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "mage"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "60,63,66,69,72,75"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "60,63,66,69,72,75"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "2,2,2,2,2,2"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "2,2,2,2,2,2"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "5,5,5,5,5,5"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "5,5,5,5,5,5"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "5,7,9,11,13,15"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "5,7,9,11,13,15"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "5,5,5,5,5,5"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "5,5,5,5,5,5"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "1.5,1.5,1.5,1.5,1.5,1.5"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "1.5,1.5,1.5,1.5,1.5,1.5"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "10,10,10,10,10,10"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "10,10,10,10,10,10"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "properties": {
+        "sheetId": 176188484,
+        "title": "캐릭터 강화",
+        "index": 1,
+        "sheetType": "GRID",
+        "gridProperties": {
+          "rowCount": 1000,
+          "columnCount": 11,
+          "frozenRowCount": 1,
+          "frozenColumnCount": 2
+        }
+      },
+      "data": [
+        {
+          "rowData": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Id"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Id"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Name"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Name"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Hp"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Hp"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "HpRegenRate"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "HpRegenRate"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Speed"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Speed"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Damage"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Damage"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Defense"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Defense"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Critical Damage"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Critical Damage"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Critical Chance"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Critical Chance"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "검사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "검사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "formulaValue": "='요원정보'!C2"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "200,210,220,230,240,250"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "formulaValue": "='요원정보'!D2"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "2,2,2,2,2,2"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "formulaValue": "='요원정보'!E2"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "5,5,5,5,5,5"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "formulaValue": "='요원정보'!F2"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "5,7,9,11,13,15"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "formulaValue": "='요원정보'!G2"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "5,5,5,5,5,5"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "formulaValue": "='요원정보'!H2"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "1.5,1.5,1.5,1.5,1.5,1.5"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "formulaValue": "='요원정보'!I2"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "10,10,10,10,10,10"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "마법사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "마법사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "formulaValue": "='요원정보'!C3"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "60,63,66,69,72,75"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "formulaValue": "='요원정보'!D3"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "2,2,2,2,2,2"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "formulaValue": "='요원정보'!E3"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "5,5,5,5,5,5"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "formulaValue": "='요원정보'!F3"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "5,7,9,11,13,15"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "formulaValue": "='요원정보'!G3"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "5,5,5,5,5,5"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "formulaValue": "='요원정보'!H3"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "1.5,1.5,1.5,1.5,1.5,1.5"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "formulaValue": "='요원정보'!I3"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "10,10,10,10,10,10"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

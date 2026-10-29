@@ -69,9 +69,7 @@ public class Burn : DotDamage
 
             enemyCombat.isBurn = true;
 
-            AudioSource burnAudio = GetComponent<AudioSource>();
-            if (burnAudio != null)
-                burnAudio.Play();
+            SoundManager.Instance?.Play(SoundIds.EnemyBurn, enemy: enemyCombat);
 
         // =========================================
         // Burn 시작
@@ -91,20 +89,11 @@ public class Burn : DotDamage
             yield break;
         }
 
-        int level =
-            DataManager.Instance
-                .upgradeDatasDic[id]
-                .UpgradeLevel;
-
-        int dotCount =
-            DataManager.Instance
-                .upgradeDatasDic[id]
-                .dotCount[level];
-
-        float damage =
-            DataManager.Instance
-                .upgradeDatasDic[id]
-                .dotDamage[level];
+        if (!TryGetBurnValues(out int dotCount, out float damage))
+        {
+            pooledObject.DestroyObj();
+            yield break;
+        }
 
         // =====================================================
         // 1. 최초 데미지
@@ -204,23 +193,32 @@ public class Burn : DotDamage
             // 다음 DOT 데이터 갱신
             // -------------------------------------------------
 
-            level =
-                DataManager.Instance
-                    .upgradeDatasDic[id]
-                    .upgradeLevel;
-
-            dotCount =
-                DataManager.Instance
-                    .upgradeDatasDic[id]
-                    .dotCount[level];
-
-            damage =
-                DataManager.Instance
-                    .upgradeDatasDic[id]
-                    .dotDamage[level];
+            if (!TryGetBurnValues(out dotCount, out damage))
+                break;
         }
 
         pooledObject.DestroyObj();
+    }
+
+    private bool TryGetBurnValues(out int dotCount, out float damage)
+    {
+        dotCount = 0;
+        damage = 0f;
+        if (DataManager.Instance == null ||
+            !DataManager.Instance.upgradeDatasDic.TryGetValue(id, out var data) ||
+            data == null || data.upgradeLevel <= 0 ||
+            data.dotCount == null || data.dotCount.Length == 0 ||
+            data.dotDamage == null || data.dotDamage.Length == 0)
+        {
+            return false;
+        }
+
+        // Owned levels are 1-based; all level arrays use the 0-based accessor.
+        // Check each array's bounds independently when refreshing an active burn.
+        int level = data.UpgradeLevel;
+        dotCount = data.dotCount[Mathf.Clamp(level, 0, data.dotCount.Length - 1)];
+        damage = data.dotDamage[Mathf.Clamp(level, 0, data.dotDamage.Length - 1)];
+        return true;
     }
 
     // =========================================================

@@ -1,0 +1,1963 @@
+{
+  "spreadsheetId": "1E2kEn9rNFN16migmvJfVt0TdbfjP02xdok0M21qHquw",
+  "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1E2kEn9rNFN16migmvJfVt0TdbfjP02xdok0M21qHquw/edit",
+  "properties": {
+    "title": "플레이어 캐릭터",
+    "locale": "ko_KR",
+    "timeZone": "Asia/Seoul"
+  },
+  "sheets": [
+    {
+      "properties": {
+        "sheetId": 176188484,
+        "title": "캐릭터 강화",
+        "index": 1,
+        "sheetType": "GRID",
+        "gridProperties": {
+          "rowCount": 1000,
+          "columnCount": 11,
+          "frozenRowCount": 1,
+          "frozenColumnCount": 3
+        }
+      },
+      "data": [
+        {
+          "rowData": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "stringValue": "캐릭터 ID"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "캐릭터 ID"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "캐릭터"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "캐릭터"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "강화 레벨"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "강화 레벨"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "체력 증가 (%)"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "체력 증가 (%)"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "공격력 증가"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "공격력 증가"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "방어력 증가"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "방어력 증가"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "치명타 확률 (%p)"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "치명타 확률 (%p)"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "평타 범위 증가 (%)"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "평타 범위 증가 (%)"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "평타 피해 증가 (%)"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "평타 피해 증가 (%)"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "평타 개수 증가"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "평타 개수 증가"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "평타 관통 수 증가"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "평타 관통 수 증가"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "검사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "검사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 3
+                  },
+                  "effectiveValue": {
+                    "numberValue": 3
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "검사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "검사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 3
+                  },
+                  "effectiveValue": {
+                    "numberValue": 3
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "검사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "검사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 3
+                  },
+                  "effectiveValue": {
+                    "numberValue": 3
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 3
+                  },
+                  "effectiveValue": {
+                    "numberValue": 3
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "검사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "검사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 4
+                  },
+                  "effectiveValue": {
+                    "numberValue": 4
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 3
+                  },
+                  "effectiveValue": {
+                    "numberValue": 3
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "검사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "검사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 3
+                  },
+                  "effectiveValue": {
+                    "numberValue": 3
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "검사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "검사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 6
+                  },
+                  "effectiveValue": {
+                    "numberValue": 6
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 3
+                  },
+                  "effectiveValue": {
+                    "numberValue": 3
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "검사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "검사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 7
+                  },
+                  "effectiveValue": {
+                    "numberValue": 7
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 3
+                  },
+                  "effectiveValue": {
+                    "numberValue": 3
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "검사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "검사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 8
+                  },
+                  "effectiveValue": {
+                    "numberValue": 8
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 3
+                  },
+                  "effectiveValue": {
+                    "numberValue": 3
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "검사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "검사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 9
+                  },
+                  "effectiveValue": {
+                    "numberValue": 9
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 3
+                  },
+                  "effectiveValue": {
+                    "numberValue": 3
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "검사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "검사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 10
+                  },
+                  "effectiveValue": {
+                    "numberValue": 10
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 3
+                  },
+                  "effectiveValue": {
+                    "numberValue": 3
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "마법사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "마법사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "마법사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "마법사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "마법사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "마법사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 3
+                  },
+                  "effectiveValue": {
+                    "numberValue": 3
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "마법사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "마법사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 4
+                  },
+                  "effectiveValue": {
+                    "numberValue": 4
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "마법사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "마법사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "마법사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "마법사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 6
+                  },
+                  "effectiveValue": {
+                    "numberValue": 6
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "마법사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "마법사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 7
+                  },
+                  "effectiveValue": {
+                    "numberValue": 7
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "마법사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "마법사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 8
+                  },
+                  "effectiveValue": {
+                    "numberValue": 8
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "마법사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "마법사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 9
+                  },
+                  "effectiveValue": {
+                    "numberValue": 9
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "마법사"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "마법사"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 10
+                  },
+                  "effectiveValue": {
+                    "numberValue": 10
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 5
+                  },
+                  "effectiveValue": {
+                    "numberValue": 5
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "numberValue": 0
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

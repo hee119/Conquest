@@ -165,6 +165,8 @@ public class UpgradeHover : MonoBehaviour,
 
         isHovering = true;
 
+        SoundManager.Instance?.PlayUiHover();
+
 
         if (outLine != null)
         {

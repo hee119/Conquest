@@ -1,0 +1,4 @@
+Tool: built-in image_gen
+Reference: output/imagegen/OctopusKing-Side.png
+Prompt:
+Edit the attached right-facing pixel art octopus king sprite. Remove ONLY the mouth: erase the tiny mouth mark / lip notch on the right side of the face, below and to the right of the eye. Fill the removed mouth area with matching purple face pixels and a continuous clean outer contour, so the character has absolutely no mouth, lips, smile, beak, or snout marking. Keep the eye, eyebrow, pink cheek, crown with blue gems, tentacles, suction cups, shading, palette, pose, dimensions, coarse pixel grid and all other details unchanged. Preserve transparent background. Do not redesign the character.

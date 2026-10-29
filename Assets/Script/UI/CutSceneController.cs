@@ -23,7 +23,6 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
     [Tooltip("0은 첫 번째 장면, 1은 두 번째 장면입니다.")]
     [SerializeField, Min(0)] private int previewFrame;
     [SerializeField] private PreviewLanguage previewLanguage;
-    [SerializeField] private AudioClip cutsceneMusic;
     [SerializeField] private string nextSceneName = "Lobby";
     [SerializeField, Min(0.01f)] private float fadeInSeconds = 1.2f;
     [SerializeField, Min(0f)] private float visibleSeconds = 3f;
@@ -72,8 +71,7 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
         SubscribeToLocalization();
         hasStarted = true;
 
-        if (cutsceneMusic != null)
-            SoundManager.Instance?.PlayBgm(cutsceneMusic, true);
+        SoundManager.Instance?.Play(SoundIds.CutsceneMusic, loop: true, bgm: true, restartIfPlaying: true);
 
         ShowFrame(currentFrame);
     }
@@ -167,8 +165,11 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
             return;
 
         int index = Mathf.Clamp(previewFrame, 0, frames.Length - 1);
-        if (displayImage != null && frames[index] != null)
+        if (displayImage != null && frames[index] != null && displayImage.sprite != frames[index])
+        {
             displayImage.sprite = frames[index];
+            UnityEditor.EditorUtility.SetDirty(displayImage);
+        }
 
         if (captionText == null)
             return;
@@ -177,10 +178,13 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
         string caption = LocalizationManager.Instance != null && !string.IsNullOrEmpty(key)
             ? LocalizationManager.Instance.GetTranslation(key)
             : key;
-        captionText.text = caption;
-        UnityEditor.EditorUtility.SetDirty(captionText);
-        if (displayImage != null)
-            UnityEditor.EditorUtility.SetDirty(displayImage);
+        // Validation can run again after saving or reloading scripts. An unchanged
+        // preview must not mark the scene dirty again.
+        if (captionText.text != caption)
+        {
+            captionText.text = caption;
+            UnityEditor.EditorUtility.SetDirty(captionText);
+        }
     }
 #endif
 
@@ -226,7 +230,7 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
         playbackTween?.Kill();
         playbackTween = null;
         SoundManager.Instance?.StopBgm();
-        SceneManager.LoadSceneAsync(nextSceneName);
+        GameSceneManager.LoadSceneAsync(nextSceneName);
     }
 
     private void OnDisable()

@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7812463728018489341}
-  - component: {fileID: 3646162756028189804}
   - component: {fileID: 7899240055226037027}
   - component: {fileID: 1405166045347888034}
   - component: {fileID: 5168042529876124248}
@@ -24,7 +23,6 @@ GameObject:
   - component: {fileID: 7201235708750216182}
   - component: {fileID: 6014975631671674939}
   - component: {fileID: 3857254480475159171}
-  - component: {fileID: 5323175021753648623}
   m_Layer: 0
   m_Name: Swordman
   m_TagString: Player
@@ -47,19 +45,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!210 &3646162756028189804
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5121868815476299701}
-  m_Enabled: 1
-  m_SortingLayerID: -1869315837
-  m_SortingLayer: 5
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
-  m_Sort3DAs2D: 0
 --- !u!212 &7899240055226037027
 SpriteRenderer:
   serializedVersion: 2
@@ -105,8 +90,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1869315837
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -7604060356387697401, guid: 5e2a0e947b8244995bfca997830049c0,
@@ -324,6 +309,8 @@ MonoBehaviour:
   canMove: 1
   speed: 3
   boundaryPadding: 0.02
+  footstepInterval: 0.3
+  footstepVolume: 0.505
 --- !u!95 &4689823722373760585
 Animator:
   serializedVersion: 7
@@ -362,6 +349,7 @@ MonoBehaviour:
   skillId2: 0
   skillId3: 0
   skillId4: 0
+  basicAttackSpreadAngle: 7
 --- !u!114 &3405139427750937997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,18 +411,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42856c4e9e291495e81216298537b791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCombat
-  maxHp: 0
-  hp: 0
   delayedHp: 0
   isDead: 0
   regenDelay: 5
   regenInterval: 1
   hpTrailDelay: 0.5
   hpTrailSpeed: 300
-  startHpColor: {r: 0, g: 1, b: 0, a: 1}
-  endHpColor: {r: 1, g: 0, b: 0, a: 1}
-  targetImage: {fileID: 0}
-  targetColor: {r: 1, g: 0, b: 0, a: 1}
   hitColor: {r: 1, g: 0, b: 0, a: 1}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hitFlashTime: 0.1
@@ -473,20 +455,3 @@ MonoBehaviour:
     type: 2}
   mageIdleSprite: {fileID: -8070195584892687665, guid: 07fc404bbeb2a4d84986cea14e605d25,
     type: 3}
---- !u!114 &5323175021753648623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5121868815476299701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85acf1e4908e94c20ad25ac931db357b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MageAttack
-  shotInterval: 0.32
-  projectileSpeed: 12
-  projectileLifetime: 1.6
-  spawnOffset: 0.55
-  projectileDataId: 201

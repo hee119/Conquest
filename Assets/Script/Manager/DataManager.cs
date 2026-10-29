@@ -33,6 +33,7 @@ public class DataManager : MonoBehaviour
     public Dictionary <int, BulletData> bulletDatasDic = new();
     public Dictionary <int, BossPatternData> bossPatternDatasDic = new();
     public Dictionary<int, PickupSpawnData> pickupSpawnDatas = new();
+    public Dictionary<int, SortedDictionary<int, int>> waveGoldDatas = new();
     public Dictionary <int, Sprite> upgradeImagesDic = new();
     public Dictionary <int, Sprite> skillUpgradeIconDic = new();
     public Dictionary <int, Sprite> statUpgradeIconDic = new();
@@ -73,6 +74,44 @@ public class DataManager : MonoBehaviour
         GetStatUpgradeData();
         GetCharacterSkillUpgradeData();
         GetPickupSpawnDatas();
+    }
+
+    public void GetWaveGoldDatas()
+    {
+        waveGoldDatas.Clear();
+        if (stageInfos == null) return;
+        for (int stage = 0; stage < stageInfos.Length; stage++)
+        {
+            var info = stageInfos[stage];
+            if (info == null) continue;
+            int waveOffset = 0;
+            var rewards = new SortedDictionary<int, int>();
+            for (int row = 0; row < info.waveCount.Count; row++)
+            {
+                if (row < info.waveCumulativeGold.Count)
+                {
+                    var values = info.waveCumulativeGold[row];
+                    for (int wave = 0; wave < values.Length && wave < info.waveCount[row]; wave++)
+                        rewards[waveOffset + wave + 1] = values[wave];
+                }
+                waveOffset += info.waveCount[row];
+            }
+            if (rewards.Count > 0) waveGoldDatas[stage] = rewards;
+        }
+    }
+
+    public bool TryGetWaveGold(int stage, int reachedWave, out int gold)
+    {
+        gold = 0;
+        if (!waveGoldDatas.TryGetValue(stage, out var rewards) || rewards.Count == 0)
+            return false;
+        foreach (var pair in rewards)
+        {
+            if (pair.Key > reachedWave) break;
+            // A missing wave keeps the last reward; cumulative rewards never shrink.
+            gold = Mathf.Max(gold, pair.Value);
+        }
+        return true;
     }
 
     public void GetPickupSpawnDatas()
@@ -117,179 +156,90 @@ public class DataManager : MonoBehaviour
     
 
     public void GetStageDatas()
-{
-    TextAsset textAsset =
-        Resources.Load<TextAsset>("TextData/StageData");
-
-    if (textAsset == null)
     {
-        UnityEngine.Debug.LogWarning(
-            "StageData를 찾을 수 없습니다."
-        );
-
-        return;
-    }
-
-    stageDataText = textAsset.text;
-
-    string[] lines =
-        stageDataText.Split(
-            new[] { '\r', '\n' },
-            System.StringSplitOptions.RemoveEmptyEntries
-        );
-
-
-    int maxStage = 0;
-
-
-    // 최대 스테이지 번호 찾기
-    for (int i = 1; i < lines.Length; i++)
-    {
-        string[] stageData =
-            lines[i].Split(',');
-
-        if (stageData.Length < 8)
-            continue;
-
-        if (int.TryParse(
-                stageData[0].Trim(),
-                out int stage))
+        TextAsset textAsset = Resources.Load<TextAsset>("TextData/StageData");
+        if (textAsset == null)
         {
-            maxStage =
-                Mathf.Max(
-                    maxStage,
-                    stage
-                );
+            Debug.LogWarning("StageData를 찾을 수 없습니다.");
+            return;
         }
+
+        stageDataText = textAsset.text;
+        stageInfos = ParseStageData(stageDataText);
+        GetWaveGoldDatas();
     }
 
-
-    // StageInfo 배열 생성
-    stageInfos =
-        new StageInfo[maxStage + 1];
-
-
-    for (int i = 0;
-         i < stageInfos.Length;
-         i++)
+    private static StageInfo[] ParseStageData(string csv)
     {
-        stageInfos[i] =
-            new StageInfo();
-    }
+        // Keep physical line numbers so a malformed row can be located in the CSV.
+        string[] lines = csv.Replace("\r\n", "\n").Replace('\r', '\n').Split('\n');
+        var stages = new Dictionary<int, StageInfo>();
+        var culture = System.Globalization.CultureInfo.InvariantCulture;
+        const System.Globalization.NumberStyles integer = System.Globalization.NumberStyles.Integer;
+        int maxStage = 0;
 
-
-    // 실제 데이터 저장
-    for (int i = 1;
-         i < lines.Length;
-         i++)
-    {
-        string[] stageData =
-            lines[i].Split(',');
-
-        if (stageData.Length < 8)
-            continue;
-
-
-        int stage =
-            int.Parse(
-                stageData[0].Trim()
-            );
-
-        int enemyId =
-            int.Parse(
-                stageData[1].Trim()
-            );
-
-        int waveCount =
-            int.Parse(
-                stageData[2].Trim()
-            );
-
-        float spawnInterval =
-            float.Parse(
-                stageData[3].Trim()
-            );
-
-        int enemyPerSpawn =
-            int.Parse(
-                stageData[4].Trim()
-            );
-
-        float enemySpawnMultiplier =
-            float.Parse(
-                stageData[5].Trim()
-            );
-
-        float waveIncreaseInterval =
-            float.Parse(
-                stageData[6].Trim()
-            );
-
-        string type =
-            stageData[7].Trim();
-
-
-        // ★ 핵심
-        // i가 아니라 stage를 사용해야 함
-        stageInfos[stage].enemyId.Add(
-            enemyId
-        );
-
-        stageInfos[stage].waveCount.Add(
-            waveCount
-        );
-
-        stageInfos[stage].spawnInterval.Add(
-            spawnInterval
-        );
-
-        stageInfos[stage].enemyPerSpawn.Add(
-            enemyPerSpawn
-        );
-
-        stageInfos[stage].enemySpawnMultiplier.Add(
-            enemySpawnMultiplier
-        );
-
-        stageInfos[stage].waveIncreaseInterval.Add(
-            waveIncreaseInterval
-        );
-
-        stageInfos[stage].type.Add(
-            type
-        );
-    }
-
-
-    // 확인용 로그
-    for (int stage = 0;
-         stage < stageInfos.Length;
-         stage++)
-    {
-        if (stageInfos[stage] == null)
-            continue;
-
-        UnityEngine.Debug.Log(
-            $"[StageData] Stage {stage} / " +
-            $"Enemy Count = {stageInfos[stage].enemyId.Count}"
-        );
-
-        for (int i = 0;
-             i < stageInfos[stage].enemyId.Count;
-             i++)
+        for (int i = 1; i < lines.Length; i++)
         {
-            UnityEngine.Debug.Log(
-                $"[StageData] " +
-                $"Stage={stage} / " +
-                $"Index={i} / " +
-                $"EnemyId={stageInfos[stage].enemyId[i]} / " +
-                $"Wave={stageInfos[stage].waveCount[i]} / " +
-                $"Spawn={stageInfos[stage].enemyPerSpawn[i]}"
-            );
+            if (string.IsNullOrWhiteSpace(lines[i]))
+                continue;
+
+            string[] row = ParseCsvLine(lines[i]);
+            if (row.Length < 8 ||
+                !int.TryParse(row[0], integer, culture, out int stage) || stage < 0 ||
+                !int.TryParse(row[1], integer, culture, out int enemyId) ||
+                !int.TryParse(row[2], integer, culture, out int waveCount) ||
+                !TryParseStageFloat(row[3], out float spawnInterval) ||
+                !int.TryParse(row[4], integer, culture, out int enemyPerSpawn) ||
+                !TryParseStageFloat(row[5], out float enemySpawnMultiplier) ||
+                !TryParseStageFloat(row[6], out float waveIncreaseInterval) ||
+                string.IsNullOrWhiteSpace(row[7]))
+            {
+                Debug.LogWarning($"[StageData] {i + 1}행의 필수 값이 비어 있거나 잘못되어 해당 행을 건너뜁니다: {lines[i]}");
+                continue;
+            }
+
+            if (!stages.TryGetValue(stage, out StageInfo info))
+            {
+                info = new StageInfo();
+                stages.Add(stage, info);
+            }
+
+            maxStage = Mathf.Max(maxStage, stage);
+            info.enemyId.Add(enemyId);
+            info.waveCount.Add(waveCount);
+            info.spawnInterval.Add(spawnInterval);
+            info.enemyPerSpawn.Add(enemyPerSpawn);
+            info.enemySpawnMultiplier.Add(enemySpawnMultiplier);
+            info.waveIncreaseInterval.Add(waveIncreaseInterval);
+            info.type.Add(row[7].Trim());
+            var goldValues = new List<int>();
+            if (row.Length > 9 && !string.IsNullOrWhiteSpace(row[9]))
+                foreach (string value in row[9].Split(','))
+                {
+                    if (!int.TryParse(value.Trim(), integer, culture, out int gold) || gold < 0)
+                    {
+                        Debug.LogWarning($"[StageData] {i + 1}행의 누적 골드 목록이 잘못되어 해당 행의 골드 설정을 건너뜁니다.");
+                        goldValues.Clear();
+                        break;
+                    }
+                    goldValues.Add(gold);
+                }
+            info.waveCumulativeGold.Add(goldValues.ToArray());
         }
+
+        var result = new StageInfo[maxStage + 1];
+        for (int stage = 0; stage < result.Length; stage++)
+            result[stage] = stages.TryGetValue(stage, out StageInfo info) ? info : new StageInfo();
+        return result;
     }
-}
-    
+
+    private static bool TryParseStageFloat(string value, out float result)
+    {
+        return float.TryParse(value, System.Globalization.NumberStyles.Float,
+                   System.Globalization.CultureInfo.InvariantCulture, out result) &&
+               !float.IsNaN(result) && !float.IsInfinity(result);
+    }
+
     public void GetPlayerDatas()
     {
         TextAsset textAsset = Resources.Load<TextAsset>("TextData/PlayerData");
@@ -309,16 +259,16 @@ public class DataManager : MonoBehaviour
             if (string.IsNullOrWhiteSpace(line))
                 continue;
 
-            string[] data = line.Split(',');
+            string[] data = ParseCsvLine(line);
             if (data.Length < 9 ||
                 !int.TryParse(data[0].Trim(), out int id) ||
-                !int.TryParse(data[2].Trim(), out int hp) ||
-                !int.TryParse(data[3].Trim(), out int hpRegenRate) ||
-                !float.TryParse(data[4].Trim(), out float speed) ||
-                !int.TryParse(data[5].Trim(), out int damage) ||
-                !int.TryParse(data[6].Trim(), out int defense) ||
-                !float.TryParse(data[7].Trim(), out float criticalDamage) ||
-                !int.TryParse(data[8].Trim(), out int criticalChance))
+                !int.TryParse(data[2].Split(',')[0].Trim(), out int hp) ||
+                !int.TryParse(data[3].Split(',')[0].Trim(), out int hpRegenRate) ||
+                !float.TryParse(data[4].Split(',')[0].Trim(), out float speed) ||
+                !int.TryParse(data[5].Split(',')[0].Trim(), out int damage) ||
+                !int.TryParse(data[6].Split(',')[0].Trim(), out int defense) ||
+                !float.TryParse(data[7].Split(',')[0].Trim(), out float criticalDamage) ||
+                !int.TryParse(data[8].Split(',')[0].Trim(), out int criticalChance))
             {
                 Debug.LogWarning($"PlayerData 행을 건너뜁니다. line={i + 1}, value=\"{line}\"");
                 continue;
@@ -1197,7 +1147,7 @@ private static string[] ParseOptionalStringArray(string[] columns, int index)
         .ToArray();
 }
 
-private string[] ParseCsvLine(string line)
+internal static string[] ParseCsvLine(string line)
 {
     List<string> result = new List<string>();
 
@@ -1249,6 +1199,7 @@ public class StageInfo
 {
     public List<int> enemyId = new List<int>();
     public List<int> waveCount = new List<int>();
+    public List<int[]> waveCumulativeGold = new List<int[]>();
     public List<float> spawnInterval = new List<float>();
     public List<int> enemyPerSpawn = new List<int>();
     public List<float> enemySpawnMultiplier = new List<float>();

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1003134967156100661}
   - component: {fileID: 1678066769265211172}
   - component: {fileID: 2884509258859137968}
-  - component: {fileID: -1876600192084269087}
   m_Layer: 0
   m_Name: HealthPickup
   m_TagString: Untagged
@@ -82,9 +81,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 20
+  m_SortingLayerID: 1032376735
+  m_SortingLayer: 2
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 3906104238461325921, guid: 5337a7b1fb0ab4470b10ccc7389ad7d9,
     type: 3}
@@ -162,7 +161,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.875, y: 0.75}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.875, y: 0.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -195,16 +194,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthPickup
   id: 7000
---- !u!210 &-1876600192084269087
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254139032340578054}
-  m_Enabled: 1
-  m_SortingLayerID: 1032376735
-  m_SortingLayer: 2
-  m_SortingOrder: 10
-  m_SortAtRoot: 0
-  m_Sort3DAs2D: 0

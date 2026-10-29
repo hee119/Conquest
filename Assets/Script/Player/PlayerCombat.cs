@@ -3,10 +3,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerCombat : MonoBehaviour
+public class PlayerCombat : MonoBehaviour, ICombat
 {
-    public float maxHp = 0;
-    public float hp;
+    public float maxHp { get; set; }
+    public float hp {get; set;}
 
     // 흰색 HP 잔상용
     public float delayedHp;
@@ -41,25 +41,6 @@ public class PlayerCombat : MonoBehaviour
     public float hpTrailSpeed = 300f;
 
     private float hpTrailTimer;
-
-    // ============================
-    // HP 색상
-    // ============================
-
-    [Header("HP 색상")]
-    public Color startHpColor = Color.green;
-    public Color endHpColor = Color.red;
-
-    public Color currentHpColor { get; private set; }
-
-    [Header("이미지 색상 변경")]
-    [Tooltip("HP가 줄어들수록 색이 바뀔 이미지")]
-    [SerializeField] private Image targetImage;
-
-    [Tooltip("HP가 0일 때 이미지가 도달할 목표 색")]
-    [SerializeField] private Color targetColor = Color.red;
-
-    private Color originColor;
 
     // ============================
     // 피격 색상
@@ -100,10 +81,26 @@ public class PlayerCombat : MonoBehaviour
         delayedHp = maxHp;
 
         // 이미지 원래 색 저장
-        if (targetImage != null)
-            originColor = targetImage.color;
+    }
 
-        UpdateHpColor();
+    private IEnumerator Start()
+    {
+        yield return new WaitUntil(() => DataManager.Instance != null &&
+            UpgradeManager.Instance != null && UpgradeManager.Instance.HasPlayerStatBaseline);
+        UpgradeManager.Instance.RefreshPermanentStats();
+        int id = CharacterManager.Instance != null ? CharacterManager.Instance.currentCharacter : _playerInfo.id;
+        if (DataManager.Instance.playerDatasDic.TryGetValue(id, out var data))
+        {
+            _playerInfo.hp = data.hp;
+            _playerInfo.damage = data.damage;
+            _playerInfo.hpRegenRate = data.hpRegenRate;
+            _playerInfo.speed = data.speed;
+            if (playerMove != null) playerMove.speed = data.speed;
+            maxHp = data.hp;
+            hp = maxHp;
+            delayedHp = maxHp;
+            hpUpdate?.Invoke();
+        }
     }
 
     // ============================
@@ -202,8 +199,6 @@ public class PlayerCombat : MonoBehaviour
             delayedHp = hp;
         }
 
-        UpdateHpColor();
-
         hpUpdate?.Invoke();
     }
 
@@ -244,14 +239,15 @@ public class PlayerCombat : MonoBehaviour
                 hp
             );
 
+        if (finalDamage > 0f)
+            SoundManager.Instance?.Play(SoundIds.PlayerHit);
+
         // 잔상 멈춤 시간 초기화
         hpTrailTimer = hpTrailDelay;
 
         // 체력 재생 초기화
         noDamageTimer = 0f;
         regenTimer = 0f;
-
-        UpdateHpColor();
 
         hpUpdate?.Invoke();
 
@@ -280,8 +276,6 @@ public class PlayerCombat : MonoBehaviour
 
         noDamageTimer = 0f;
         regenTimer = 0f;
-
-        UpdateHpColor();
 
         // 모든 SpriteRenderer 원래 색으로 복구
         if (spriteRenderers != null)
@@ -379,8 +373,6 @@ public class PlayerCombat : MonoBehaviour
 
     public void UpdateHpUI()
     {
-        UpdateHpColor();
-
         hpUpdate?.Invoke();
     }
 
@@ -388,39 +380,5 @@ public class PlayerCombat : MonoBehaviour
     // HP Color
     // ============================
 
-    public void UpdateHpColor()
-    {
-        if (maxHp <= 0f)
-        {
-            currentHpColor = endHpColor;
 
-            if (targetImage != null)
-                targetImage.color = targetColor;
-
-            return;
-        }
-
-        float hpRatio =
-            Mathf.Clamp01(
-                hp / maxHp
-            );
-
-        currentHpColor =
-            Color.Lerp(
-                endHpColor,
-                startHpColor,
-                hpRatio
-            );
-
-        // HP가 줄어들수록 원래 색 → 목표 색으로 변화
-        if (targetImage != null)
-        {
-            targetImage.color =
-                Color.Lerp(
-                    targetColor,
-                    originColor,
-                    hpRatio
-                );
-        }
-    }
 }

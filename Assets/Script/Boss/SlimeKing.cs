@@ -103,7 +103,9 @@ public class SlimeKing : SplitEnemy
 
     public override void EnemySplit()
     {
-        if (splitCount <= 0) return;
+        if (splitCount <= 0 || splitSpawnCount <= 0) return;
+
+        SoundManager.Instance?.Play(SoundIds.SlimeSplit);
 
         bool toNormal = splitCount <= 1;                // 마지막 분열 → 일반 슬라임
         int gen = maxSplitCount - splitCount + 1;       // 자식 세대
@@ -124,6 +126,7 @@ public class SlimeKing : SplitEnemy
 
             child.enemyInfo.damage = (int)(data.damage / Mathf.Pow(splitDamageDiv, gen));
             child.enemyInfo.hp = Mathf.Max(1, (int)(data.hp / Mathf.Pow(splitHpDiv, gen)));
+            child.ResetHealth(child.enemyInfo.hp);
             child.enemyInfo.speed = Mathf.RoundToInt(data.speed * Mathf.Pow(splitSpeedMul, gen));
             child.enemyMove.moveSpeed = child.enemyInfo.speed;
             child.enemyMove.MoveSpeedRenewal();

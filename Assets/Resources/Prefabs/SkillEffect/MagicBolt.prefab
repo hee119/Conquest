@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 721000000000000002}
   - component: {fileID: 2290144074503273994}
   - component: {fileID: 5796825276641877958}
-  - component: {fileID: -8279686468685703918}
   - component: {fileID: 3468652803865230108}
   - component: {fileID: 8764629523008043594}
   m_Layer: 0
@@ -34,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9227708bf138e41a5a114e419a97a4b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MageProjectile
+  projectileDataId: 201
 --- !u!114 &721000000000000001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,10 +66,10 @@ MonoBehaviour:
   skillId: 201
   skillName: mage_projectile
   skillHp: 0
-  skillCoolTime: 0.32
-  skillDamage: 20
-  skillCritDamage: 0
-  lifetime: 1.6
+  skillCoolTime: 0.4
+  skillDamage: 5
+  skillCritDamage: 15
+  lifetime: 10
   movementLockTime: 0
   skillLevel: 0
   skillDesc: 
@@ -108,7 +108,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.22
+  m_Radius: 0.0001
 --- !u!212 &2290144074503273994
 SpriteRenderer:
   serializedVersion: 2
@@ -154,8 +154,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -105541197
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: cb93898838bb8497593b802790828b9c, type: 3}
@@ -213,8 +213,8 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -105541197
+  m_SortingLayer: 7
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Time: 0.09
@@ -287,19 +287,6 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 0
   m_ApplyActiveColorSpace: 1
---- !u!210 &-8279686468685703918
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6883844256303954682}
-  m_Enabled: 1
-  m_SortingLayerID: -105541197
-  m_SortingLayer: 7
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
-  m_Sort3DAs2D: 0
 --- !u!61 &3468652803865230108
 BoxCollider2D:
   m_ObjectHideFlags: 0

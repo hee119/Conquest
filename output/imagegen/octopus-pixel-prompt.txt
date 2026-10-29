@@ -1,0 +1,6 @@
+Tool: built-in image_gen
+Transparent background: true
+Input: Assets/Sprite/ChatGPT Image 2026년 9월 21일 오후 03_30_23.png
+Output: Assets/Sprite/Octopus-Pixel.png
+
+Use case: style-transfer. Edit target: the attached purple octopus illustration. Transform this exact character into a genuine crisp low-resolution pixel-art game sprite. Preserve the recognizable rounded large purple head, two large glossy expressive purple eyes, slightly determined eyebrows, small face, pink cheeks, curled purple tentacles with pink undersides and suction cups, front-facing pose and overall silhouette. Pixel art drawn on a consistent 128 by 128 logical pixel grid, displayed enlarged with hard nearest-neighbor square pixels. Deliberately simplified sprite shapes, coherent chunky square pixel clusters, clean stepped dark-purple outline, limited palette approximately 20 colors, discrete 3-tone cel shading, small carefully placed pixel highlights. Clear readable game sprite at small size. Center one complete character, fully visible with a little empty margin on all sides. True transparent alpha background, including gaps between tentacles. No black or colored backdrop, no checkerboard baked in. No smooth gradients, no antialiasing, no blur, no vector curves, no text, no ground shadow, no extra objects. This is a single sprite, not an animation sheet.

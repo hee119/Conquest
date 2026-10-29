@@ -113,7 +113,7 @@ public class EnemyMove : MonoBehaviour
         }
     }
 
-    public void OnTriggerStay2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Upgrade") || other.CompareTag("Skill"))
         {

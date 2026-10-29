@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class RamgedEnemyAttack : MonoBehaviour
 {
+    private static readonly int AttackTrigger = Animator.StringToHash("Attack");
+
     [SerializeField] private int bulletId;
     
     [SerializeField] private GameObject bulleSpawnPos;
@@ -52,9 +54,6 @@ public class RamgedEnemyAttack : MonoBehaviour
 
             canAttack = false;
 
-            if (anim != null && anim.GetComponent<AnimationController>() != null)
-                anim.SetTrigger("Attack");
-            
             yield return new WaitUntil(() =>
                 isDead || playerCombat == null || !playerCombat.gameObject.activeInHierarchy ||
                 (DataManager.Instance != null &&
@@ -64,7 +63,9 @@ public class RamgedEnemyAttack : MonoBehaviour
 
             if (isDead || playerCombat == null || !playerCombat.gameObject.activeInHierarchy)
                 yield break;
-                
+
+            PlayAttackAnimation();
+
             GameObject bullet = PoolManager.Instance.Spawn(bulletId, bulleSpawnPos.transform.position);
             BulletMove bulletMove = bullet != null ? bullet.GetComponent<BulletMove>() : null;
             if (bulletMove != null)
@@ -75,6 +76,23 @@ public class RamgedEnemyAttack : MonoBehaviour
             yield return new WaitForSeconds(attackCoolTime);
 
             canAttack = true;
+        }
+    }
+
+    private void PlayAttackAnimation()
+    {
+        if (anim == null || anim.runtimeAnimatorController == null)
+            return;
+
+        foreach (AnimatorControllerParameter parameter in anim.parameters)
+        {
+            if (parameter.nameHash != AttackTrigger ||
+                parameter.type != AnimatorControllerParameterType.Trigger)
+                continue;
+
+            anim.ResetTrigger(AttackTrigger);
+            anim.SetTrigger(AttackTrigger);
+            return;
         }
     }
 }

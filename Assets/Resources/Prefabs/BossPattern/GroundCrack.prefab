@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: -5818542332847555796}
   - component: {fileID: 7117670414478219367}
   - component: {fileID: 5978745570494177771}
-  - component: {fileID: -8924323125047087186}
   m_Layer: 0
   m_Name: GroundCrack
   m_TagString: Untagged
@@ -83,9 +82,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -172119849
+  m_SortingLayer: 4
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5109843014221220039, guid: b06e92a638e124498b1467964fab21bd,
     type: 3}
@@ -205,16 +204,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c78769ea49ed44627ab25d4fc25632af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GroundCrack
---- !u!210 &-8924323125047087186
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5293592143614198267}
-  m_Enabled: 1
-  m_SortingLayerID: -172119849
-  m_SortingLayer: 4
-  m_SortingOrder: 10
-  m_SortAtRoot: 0
-  m_Sort3DAs2D: 0

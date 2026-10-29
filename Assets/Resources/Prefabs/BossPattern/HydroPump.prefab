@@ -171,9 +171,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -172119849
+  m_SortingLayer: 4
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 57bce6557cd8afb4e9fe8f8a9172fc64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -244,7 +244,6 @@ GameObject:
   - component: {fileID: 1810266112217792802}
   - component: {fileID: 8007861392788268243}
   - component: {fileID: 9143972182304379762}
-  - component: {fileID: -284411688796635662}
   m_Layer: 0
   m_Name: HydroPump
   m_TagString: Untagged
@@ -359,19 +358,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!210 &-284411688796635662
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8124296913827307961}
-  m_Enabled: 1
-  m_SortingLayerID: -172119849
-  m_SortingLayer: 4
-  m_SortingOrder: 10
-  m_SortAtRoot: 0
-  m_Sort3DAs2D: 0
 --- !u!1 &8723771072553122882
 GameObject:
   m_ObjectHideFlags: 0

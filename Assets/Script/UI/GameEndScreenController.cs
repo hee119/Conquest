@@ -136,6 +136,16 @@ public sealed class GameEndScreenController : MonoBehaviour
 
         isShowing = true;
         isClearShowing = isClear;
+        RunReward reward = CharacterProgression.GrantResult(isClear);
+        RunRewardView rewardView = overlay.GetComponentInChildren<RunRewardView>(true);
+        if (rewardView != null) rewardView.Bind(reward);
+        SoundManager.Instance?.StopBgm();
+        if (isClear)
+        {
+            SoundManager.Instance?.PlayOneShotIgnoringPause(SoundIds.GameClear);
+        }
+        else
+            SoundManager.Instance?.PlayOneShotIgnoringPause(SoundIds.GameOver);
         SubscribeToLocalization();
         if (titleText != null)
         {
@@ -232,7 +242,8 @@ public sealed class GameEndScreenController : MonoBehaviour
             EnsureGroup(titleText),
             EnsureGroup(messageText),
             EnsureGroup(retryButton),
-            EnsureGroup(lobbyButton)
+            EnsureGroup(lobbyButton),
+            EnsureGroup(panel.GetComponentInChildren<RunRewardView>(true))
         };
     }
 
@@ -376,13 +387,13 @@ public sealed class GameEndScreenController : MonoBehaviour
             StageManager.Instance.StopRun();
         if (UpgradeManager.Instance != null)
             UpgradeManager.Instance.StopRun();
-        SceneManager.sceneLoaded += ReinitializeRetriedStage;
-        SceneManager.LoadScene(stageSceneName);
+        GameSceneManager.SceneChanged += ReinitializeRetriedStage;
+        GameSceneManager.LoadScene(stageSceneName);
     }
 
     private static void ReinitializeRetriedStage(Scene scene, LoadSceneMode mode)
     {
-        SceneManager.sceneLoaded -= ReinitializeRetriedStage;
+        GameSceneManager.SceneChanged -= ReinitializeRetriedStage;
         if (scene.name == "Stage1" && StageManager.Instance != null)
         {
             if (UpgradeManager.Instance != null)
@@ -400,9 +411,7 @@ public sealed class GameEndScreenController : MonoBehaviour
             StageManager.Instance.StopRun();
         if (UpgradeManager.Instance != null)
             UpgradeManager.Instance.StopRun();
-        if (PoolManager.Instance != null)
-            PoolManager.Instance.ResetActiveObjects();
         LobbyController.OpenStageSelectOnEntry = true;
-        SceneManager.LoadScene(lobbySceneName);
+        GameSceneManager.LoadScene(lobbySceneName);
     }
 }

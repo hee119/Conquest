@@ -53,6 +53,9 @@ TagManager:
   - name: BackGround
     uniqueID: 3782509265
     locked: 0
+  - name: Obstacle
+    uniqueID: 1088729685
+    locked: 0
   - name: ExpOrb
     uniqueID: 1032376735
     locked: 0

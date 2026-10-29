@@ -10,6 +10,8 @@ public class SplitEnemy : EnemyCombat
     protected readonly List<EnemyCombat> spawnedChildren =
         new List<EnemyCombat>();
 
+
+
     public override void Die()
     {
         EnemySplit();
@@ -18,8 +20,10 @@ public class SplitEnemy : EnemyCombat
 
     public virtual void EnemySplit()
     {
-        if (splitCount <= 0)
+        if (splitCount <= 0 || splitSpawnCount <= 0)
             return;
+
+        SoundManager.Instance?.Play(SoundIds.SlimeSplit);
 
         for (int i = 0; i < splitSpawnCount; i++)
         {
@@ -43,6 +47,7 @@ public class SplitEnemy : EnemyCombat
 
             splitEnemy.enemyInfo.hp =
                 (int)(splitEnemy.enemyInfo.hp / 1.4f);
+            splitEnemy.ResetHealth(splitEnemy.enemyInfo.hp);
 
             splitEnemy.enemyInfo.speed =
                 (int)(splitEnemy.enemyInfo.speed * 2f);

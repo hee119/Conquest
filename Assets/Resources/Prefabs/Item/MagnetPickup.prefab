@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3708143146814957645}
   - component: {fileID: 976782096609746164}
   - component: {fileID: 6903883759217080327}
-  - component: {fileID: -6660100012201717916}
   m_Layer: 0
   m_Name: MagnetPickup
   m_TagString: Untagged
@@ -82,9 +81,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 20
+  m_SortingLayerID: 1032376735
+  m_SortingLayer: 2
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2928924651027635987, guid: 7c6ef4af791594d36b588828165a82e3,
     type: 3}
@@ -162,7 +161,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 0.9375}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.75, y: 0.9375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -195,16 +194,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MagnetPickup
   id: 7001
---- !u!210 &-6660100012201717916
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 543272882763815308}
-  m_Enabled: 1
-  m_SortingLayerID: 1032376735
-  m_SortingLayer: 2
-  m_SortingOrder: 10
-  m_SortAtRoot: 0
-  m_Sort3DAs2D: 0

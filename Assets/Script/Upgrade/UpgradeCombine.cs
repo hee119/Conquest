@@ -5,7 +5,6 @@ public class UpgradeCombine : MonoBehaviour
 {
     public List<SelectIcon> upgrades = new List<SelectIcon>();
     public UpgradeImageSet upgradeImageSet;
-    
 
     public void OnEnable()
     {
@@ -14,35 +13,38 @@ public class UpgradeCombine : MonoBehaviour
 
     public void UpgradeCombineInit()
     {
-        int count = Mathf.Min(
-            upgrades.Count,
-            UpgradeManager.Instance.maxLevelUpgrades.Count
-        );
+        var manager = UpgradeManager.Instance;
+        var data = DataManager.Instance;
+        var eligible = manager != null
+            ? manager.skillUpgrades.FindAll(id => UpgradeFusionRules.IsMaxed(manager, id))
+            : new List<int>();
+        int count = manager != null && data != null
+            ? Mathf.Min(upgrades.Count, eligible.Count) : 0;
 
         for (int i = 0; i < upgrades.Count; i++)
         {
+            SelectIcon icon = upgrades[i];
+            if (icon == null)
+                continue;
+            if (icon.image == null)
+                icon.image = icon.GetComponent<UnityEngine.UI.Image>();
+            icon.upgradeImageSet = upgradeImageSet;
             if (i < count)
             {
-                UnityEngine.Debug.Log(
-                    $"[UpgradeCombine] i={i} | upgrades[i]={upgrades[i]} | UpgradeManager={UpgradeManager.Instance} | maxLevelUpgrades={UpgradeManager.Instance.maxLevelUpgrades}"
-                );
-                upgrades[i].id = UpgradeManager.Instance.maxLevelUpgrades[i];
-                if (DataManager.Instance.skillUpgradeIconDic.ContainsKey(UpgradeManager.Instance.maxLevelUpgrades[i]))
+                icon.id = eligible[i];
+                Sprite sprite = null;
+                data.skillUpgradeIconDic.TryGetValue(icon.id, out sprite);
+                if (sprite == null && data.upgradeDatasDic.TryGetValue(icon.id, out var upgrade))
+                    sprite = upgrade.sprite;
+                if (icon.image != null)
                 {
-                    upgrades[i].image.sprite =
-                        DataManager.Instance.skillUpgradeIconDic[
-                            UpgradeManager.Instance.maxLevelUpgrades[i]
-                        ]; 
+                    icon.image.sprite = sprite;
+                    icon.image.raycastTarget = true;
                 }
-
-                upgrades[i].gameObject.SetActive(true);
-                upgrades[i].upgradeImageSet = upgradeImageSet;
             }
-            else
-            {
-                upgrades[i].image.sprite = null;
-                upgrades[i].gameObject.SetActive(false);
-            }
+            else if (icon.image != null)
+                icon.image.sprite = null;
+            icon.gameObject.SetActive(i < count);
         }
     }
 }

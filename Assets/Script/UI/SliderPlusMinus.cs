@@ -25,6 +25,7 @@ public class SliderPlusMinus : MonoBehaviour
 
     private void OnEnable()
     {
+        suppressNextClick = false;
         slider = GetComponent<Slider>();
         CreateButtons();
         lastPlayingState = Application.isPlaying;
@@ -135,6 +136,16 @@ public class SliderPlusMinus : MonoBehaviour
             group = (RectTransform)groupObject.transform;
             group.SetParent(transform, false);
         }
+
+        // Older scene data can contain two groups with the same name. Only
+        // the group wired below may receive clicks; an unwired copy covers it.
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Transform child = transform.GetChild(i);
+            if (child != group && child.name == ButtonGroupName)
+                child.gameObject.SetActive(false);
+        }
+        group.gameObject.SetActive(true);
 
         group.anchorMin = new Vector2(1f, 0.5f);
         group.anchorMax = new Vector2(1f, 0.5f);

@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1811646982818379475}
   - component: {fileID: 2849458514429630293}
-  - component: {fileID: 4742182323515150838}
   - component: {fileID: 5245602997992732305}
   - component: {fileID: -5811335577426929627}
   - component: {fileID: 7115658254923622402}
@@ -50,6 +49,7 @@ GameObject:
   - component: {fileID: 7556525239797194747}
   - component: {fileID: -8958779555923042886}
   - component: {fileID: 6099863586776256245}
+  - component: {fileID: 5059121674564822756}
   m_Layer: 8
   m_Name: SlimeKing
   m_TagString: Enemy
@@ -119,8 +119,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -172119849
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 7ad7dee76fde14c8eb13a480083839c8, type: 3}
@@ -133,19 +133,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!210 &4742182323515150838
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4125709159630829647}
-  m_Enabled: 1
-  m_SortingLayerID: -172119849
-  m_SortingLayer: 4
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
-  m_Sort3DAs2D: 0
 --- !u!61 &5245602997992732305
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -294,6 +281,7 @@ MonoBehaviour:
   isSlowDown: 0
   slowCount: 0
   pathUpdateInterval: 0.35
+  targetMoveThreshold: 0.1
   knockbackCooldown: 0.3
   knockbackPower: 5
   knockbackDuration: 0.15
@@ -331,8 +319,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2be9cd2e0cbe48bab3777f624be3cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlimeKing
-  maxHp: 5000
-  hp: 0
   isDead: 0
   isBurn: 0
   hitParticle: {fileID: 8238062321391713708}
@@ -377,6 +363,18 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &5059121674564822756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4125709159630829647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1564c88c8cdb544c6a9488f10b53b206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossHealthSource
 --- !u!1001 &6076738795607773770
 PrefabInstance:
   m_ObjectHideFlags: 0

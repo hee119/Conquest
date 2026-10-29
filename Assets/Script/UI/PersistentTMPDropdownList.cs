@@ -19,6 +19,7 @@ public class PersistentTMPDropdownList : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        SoundManager.Instance?.PlayUiClick();
         ToggleList();
     }
 
@@ -44,6 +45,7 @@ public class PersistentTMPDropdownList : MonoBehaviour, IPointerClickHandler
 
         dropdown.value = index;
         dropdown.RefreshShownValue();
+        SoundManager.Instance?.PlayUiConfirm();
         SetListActive(false);
     }
 

@@ -1,0 +1,38 @@
+{
+  "all_defeats": {
+    "first_upgrade": {
+      "mean": 2.5,
+      "p50": 2,
+      "p95": 5
+    },
+    "max_one_character": {
+      "mean": 80.18,
+      "p50": 80,
+      "p95": 96
+    }
+  },
+  "half_wins": {
+    "first_upgrade": {
+      "mean": 2.25,
+      "p50": 2,
+      "p95": 5
+    },
+    "max_one_character": {
+      "mean": 53.83,
+      "p50": 53,
+      "p95": 68
+    }
+  },
+  "all_wins": {
+    "first_upgrade": {
+      "mean": 2.0,
+      "p50": 1,
+      "p95": 5
+    },
+    "max_one_character": {
+      "mean": 40.15,
+      "p50": 40,
+      "p95": 51
+    }
+  }
+}

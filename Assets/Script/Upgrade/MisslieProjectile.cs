@@ -6,20 +6,12 @@ public class MissileProjectile : HomingProjectile
     [SerializeField]
     private float curveHeight = 1.5f;
 
-    [SerializeField]
-    private AudioSource launchAudio;
 
     private Coroutine moveCoroutine;
 
     private void PlayLaunchSound()
     {
-        if (launchAudio == null)
-            return;
-
-        if (SoundManager.Instance != null)
-            SoundManager.Instance.PlaySfx(launchAudio.clip, 0.25f);
-        else
-            launchAudio.Play();
+        SoundManager.Instance?.Play(SoundIds.MissileLaunch);
     }
     public override void SetTarget(Vector3 target)
     {

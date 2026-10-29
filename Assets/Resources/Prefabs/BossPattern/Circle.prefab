@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5062483401421645937}
   - component: {fileID: -640539001960954054}
   - component: {fileID: 5130739059434120114}
-  - component: {fileID: -1594806925743894007}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -81,9 +80,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -172119849
+  m_SortingLayer: 4
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
     type: 3}
@@ -138,16 +137,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0050a2139b24ea295a2647d5984370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PooledObject
---- !u!210 &-1594806925743894007
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 689968187370751821}
-  m_Enabled: 1
-  m_SortingLayerID: -172119849
-  m_SortingLayer: 4
-  m_SortingOrder: 10
-  m_SortAtRoot: 0
-  m_Sort3DAs2D: 0

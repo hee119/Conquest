@@ -1,21 +1,21 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class SelectIcon : MonoBehaviour, IPointerClickHandler
 {
     public UpgradeImageSet upgradeImageSet;
-
     public int id;
-    public Image image;
+    public UnityEngine.UI.Image image;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        UnityEngine.Debug.Log(
-            $"[SelectIcon] 클릭 | ID={id} | Name={gameObject.name}"
-        );
-
-        upgradeImageSet.id = id;
-        upgradeImageSet.UpgradeCombineStart();
+        if (eventData.button != PointerEventData.InputButton.Left || upgradeImageSet == null)
+            return;
+        if (upgradeImageSet.SetUpgrade(id))
+        {
+            UpgradeCombine collection = GetComponentInParent<UpgradeCombine>();
+            if (collection != null)
+                collection.gameObject.SetActive(false);
+        }
     }
 }

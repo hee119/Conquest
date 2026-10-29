@@ -13,6 +13,18 @@ public class StageManager : MonoBehaviour
     public Tilemap backgroundTilemap;
     public TileBase[] tiles;
 
+    [Header("장식 타일 자동 배치")]
+    [Tooltip("비워두면 현재 스테이지의 DecorationGrid 아래 타일맵을 사용합니다.")]
+    public Tilemap decorationTilemap;
+    public TileBase[] decorationTiles = System.Array.Empty<TileBase>();
+    [Min(0)] public int decorationCount = 50;
+    [Tooltip("장식 타일 중심 사이의 최소 거리입니다. 월드 단위이며 0이면 간격을 제한하지 않습니다.")]
+    [Min(0f)] public float decorationMinimumSpacing = 2f;
+
+    private Tilemap generatedDecorationTilemap;
+    private readonly Dictionary<Vector3Int, TileBase> generatedDecorations = new();
+    private string decorationTilemapPath;
+
     public GameObject monsterSpawnPointPrefab;
 
     private List<Transform> monsterSpawnPoints =
@@ -36,6 +48,7 @@ public class StageManager : MonoBehaviour
     private int spawnBatchSize = 10;
 
     private int currentWave;
+    private int reachedRewardWave;
     private bool canSkipToNextWave = false;
     private bool requestNextWave = false;
 
@@ -45,7 +58,6 @@ public class StageManager : MonoBehaviour
     private Coroutine healthPickupRoutine;
     private Coroutine magnetPickupRoutine;
     private string stageSceneName;
-    private AudioClip waveStartSfx;
 
 
     private void Awake()
@@ -61,7 +73,6 @@ public class StageManager : MonoBehaviour
             return;
         }
 
-        waveStartSfx = Resources.Load<AudioClip>("Audio/SFX/EnemyWaveStart");
 
         if (navMeshSurface == null)
         {
@@ -88,6 +99,8 @@ public class StageManager : MonoBehaviour
     public void StageInit()
     {
         StopRun();
+        CharacterProgression.BeginRun();
+        reachedRewardWave = 0;
 
         // Retry reloads the scene while this manager and its pools persist.
         // Release every object left from the failed run before rebuilding the stage.
@@ -109,6 +122,9 @@ public class StageManager : MonoBehaviour
 
         currentStage =
             GameManager.Instance.currentStage;
+
+        if (DataManager.Instance != null && DataManager.Instance.TryGetWaveGold(currentStage, 0, out int initialGold))
+            CharacterProgression.RecordWaveGold(initialGold);
 
         tiles =
             GameManager.Instance.tiles[currentStage].tiles;
@@ -165,6 +181,7 @@ public class StageManager : MonoBehaviour
         FillCameraArea();
         ConfigureCameraBounds();
 
+        SoundManager.Instance?.Play(SoundIds.BattleMusic, loop: true, bgm: true);
         StageStart();
         StartPickupCoroutines();
     }
@@ -377,7 +394,7 @@ public class StageManager : MonoBehaviour
 
     private void FillCameraArea()
     {
-        Camera cam = Camera.main;
+        Camera cam = camera != null ? camera : Camera.main;
 
         if (cam == null ||
             backgroundTilemap == null)
@@ -421,6 +438,17 @@ public class StageManager : MonoBehaviour
                 0
             );
 
+        // Include the whole painted map as well as the camera padding, so holes
+        // outside the initial camera view are filled without replacing painted cells.
+        if (backgroundTilemap.GetUsedTilesCount() > 0)
+        {
+            BoundsInt paintedBounds = backgroundTilemap.cellBounds;
+            minCell.x = Mathf.Min(minCell.x, paintedBounds.xMin);
+            minCell.y = Mathf.Min(minCell.y, paintedBounds.yMin);
+            maxCell.x = Mathf.Max(maxCell.x, paintedBounds.xMax - 1);
+            maxCell.y = Mathf.Max(maxCell.y, paintedBounds.yMax - 1);
+        }
+
 
         for (int x = minCell.x;
              x <= maxCell.x;
@@ -430,6 +458,10 @@ public class StageManager : MonoBehaviour
                  y <= maxCell.y;
                  y++)
             {
+                Vector3Int cell = new Vector3Int(x, y, 0);
+                if (backgroundTilemap.HasTile(cell))
+                    continue;
+
                 TileBase randomTile =
                     tiles[
                         Random.Range(
@@ -439,12 +471,14 @@ public class StageManager : MonoBehaviour
                     ];
 
                 backgroundTilemap.SetTile(
-                    new Vector3Int(x, y, 0),
+                    cell,
                     randomTile
                 );
             }
         }
 
+
+        PlaceDecorationTiles(minCell, maxCell);
 
         if (navMeshSurface != null)
         {
@@ -467,6 +501,122 @@ public class StageManager : MonoBehaviour
         );
     }
 
+
+    private void PlaceDecorationTiles(Vector3Int minCell, Vector3Int maxCell)
+    {
+        // Remove only tiles this generator placed, preserving hand-painted tiles.
+        if (generatedDecorationTilemap != null)
+            foreach (var pair in generatedDecorations)
+                if (generatedDecorationTilemap.GetTile(pair.Key) == pair.Value)
+                    generatedDecorationTilemap.SetTile(pair.Key, null);
+        generatedDecorations.Clear();
+        generatedDecorationTilemap = null;
+
+        if (backgroundTilemap == null || decorationCount <= 0 || decorationTiles == null)
+            return;
+
+        var choices = new List<TileBase>();
+        foreach (var tile in decorationTiles)
+            if (tile != null)
+                choices.Add(tile);
+        if (choices.Count == 0)
+            return;
+
+        // The manager survives retries, so scene-owned references must be rebound.
+        if (decorationTilemap == null || decorationTilemap.gameObject.scene != backgroundTilemap.gameObject.scene)
+        {
+            decorationTilemap = null;
+            foreach (var root in backgroundTilemap.gameObject.scene.GetRootGameObjects())
+                foreach (var map in root.GetComponentsInChildren<Tilemap>(true))
+                    if ((!string.IsNullOrEmpty(decorationTilemapPath) && GetTilemapPath(map) == decorationTilemapPath) ||
+                        (string.IsNullOrEmpty(decorationTilemapPath) && map.transform.parent != null && map.transform.parent.name == "DecorationGrid"))
+                    {
+                        decorationTilemap = map;
+                        break;
+                    }
+        }
+
+        if (decorationTilemap == null || decorationTilemap == backgroundTilemap)
+        {
+            Debug.LogWarning("[StageManager] 바닥과 별도의 장식 Tilemap을 지정하세요.");
+            return;
+        }
+        decorationTilemapPath = GetTilemapPath(decorationTilemap);
+        generatedDecorationTilemap = decorationTilemap;
+
+        float spacing = Mathf.Max(0f, decorationMinimumSpacing);
+        float bucketSize = Mathf.Max(0.01f, spacing);
+        var occupied = new Dictionary<Vector2Int, List<Vector2>>();
+        Vector2Int Bucket(Vector2 point) => new Vector2Int(
+            Mathf.FloorToInt(point.x / bucketSize), Mathf.FloorToInt(point.y / bucketSize));
+        void Remember(Vector2 point)
+        {
+            var key = Bucket(point);
+            if (!occupied.TryGetValue(key, out var points))
+                occupied[key] = points = new List<Vector2>();
+            points.Add(point);
+        }
+        bool HasSpace(Vector2 point)
+        {
+            if (spacing <= 0f)
+                return true;
+            var key = Bucket(point);
+            for (int x = -1; x <= 1; x++)
+                for (int y = -1; y <= 1; y++)
+                    if (occupied.TryGetValue(key + new Vector2Int(x, y), out var points))
+                        foreach (var other in points)
+                            if ((other - point).sqrMagnitude < spacing * spacing)
+                                return false;
+            return true;
+        }
+
+        if (spacing > 0f)
+            foreach (var cell in decorationTilemap.cellBounds.allPositionsWithin)
+                if (decorationTilemap.HasTile(cell))
+                    Remember(decorationTilemap.GetCellCenterWorld(cell));
+
+        var candidates = new List<Vector3Int>();
+        var seen = new HashSet<Vector3Int>();
+        for (int x = minCell.x; x <= maxCell.x; x++)
+            for (int y = minCell.y; y <= maxCell.y; y++)
+            {
+                var groundCell = new Vector3Int(x, y, 0);
+                if (!backgroundTilemap.HasTile(groundCell))
+                    continue;
+                var cell = decorationTilemap.WorldToCell(backgroundTilemap.GetCellCenterWorld(groundCell));
+                if (seen.Add(cell) && !decorationTilemap.HasTile(cell))
+                    candidates.Add(cell);
+            }
+
+        // Shuffle without retries: impossible density settings always terminate.
+        for (int i = 0; i < candidates.Count && generatedDecorations.Count < decorationCount; i++)
+        {
+            int randomIndex = Random.Range(i, candidates.Count);
+            var cell = candidates[randomIndex];
+            candidates[randomIndex] = candidates[i];
+            candidates[i] = cell;
+            Vector2 position = decorationTilemap.GetCellCenterWorld(cell);
+            if (!HasSpace(position))
+                continue;
+            var tile = choices[Random.Range(0, choices.Count)];
+            decorationTilemap.SetTile(cell, tile);
+            decorationTilemap.SetColliderType(cell, Tile.ColliderType.None);
+            generatedDecorations.Add(cell, tile);
+            if (spacing > 0f)
+                Remember(position);
+        }
+
+        if (generatedDecorations.Count < decorationCount)
+            Debug.LogWarning($"[StageManager] 장식 타일 {generatedDecorations.Count}/{decorationCount}개 배치: 빈 공간이나 최소 간격 조건을 확인하세요.");
+    }
+
+    private static string GetTilemapPath(Tilemap map)
+    {
+        string path = map.name;
+        for (Transform parent = map.transform.parent; parent != null; parent = parent.parent)
+            path = parent.name + "/" + path;
+        return path;
+    }
 
     private void CreateMonsterSpawnPoints(
         Vector3Int minCell,
@@ -807,9 +957,12 @@ public class StageManager : MonoBehaviour
                  j++)
             {
                 currentWave++;
+                reachedRewardWave++;
+                if (DataManager.Instance != null && DataManager.Instance.TryGetWaveGold(currentStage, reachedRewardWave, out int waveGold))
+                    CharacterProgression.RecordWaveGold(waveGold);
 
                 if (SoundManager.Instance != null)
-                    SoundManager.Instance.PlaySfx(waveStartSfx);
+                    SoundManager.Instance.Play(SoundIds.EnemyWaveStart);
 
                 Debug.Log(
                     $"[Wave Start] " +
@@ -846,6 +999,7 @@ public class StageManager : MonoBehaviour
                     if (spawnedBoss != null)
                     {
                         boss = spawnedBoss;
+                        spawnedBoss.GetComponent<BossHealthSource>()?.RegisterBoss();
                         monsterCount++;
 
                         Debug.Log(

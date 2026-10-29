@@ -1,0 +1,1068 @@
+{
+  "model_version": 1,
+  "seed": 20261027,
+  "checks": "PASS: baseline/hand cases, nonzero damage, normal monster combat stats preserved, wave load, progression, rounding, cap.",
+  "before_budget": {
+    "before_first_boss": 258550,
+    "before_final_boss": 783000,
+    "total": 787100,
+    "primary_spawns": 17709,
+    "peak_hp_per_second": 17280.0,
+    "normal_wave_seconds": 930
+  },
+  "after_budget": {
+    "before_first_boss": 13010,
+    "before_final_boss": 40240,
+    "total": 47340,
+    "primary_spawns": 1330,
+    "peak_hp_per_second": 108.0,
+    "normal_wave_seconds": 1066
+  },
+  "curve": {
+    "power": 1.68,
+    "tau": 21.5,
+    "scale": 746.5717149732463
+  },
+  "costs": [
+    50,
+    55,
+    65,
+    75,
+    95,
+    110,
+    135,
+    155,
+    180,
+    205,
+    230,
+    255,
+    285,
+    310,
+    340,
+    365,
+    390,
+    415,
+    440,
+    465,
+    490,
+    510,
+    535,
+    555,
+    570,
+    590,
+    610,
+    625,
+    640,
+    655,
+    665,
+    680,
+    690,
+    700,
+    710,
+    720,
+    725,
+    735,
+    740,
+    745,
+    755,
+    760,
+    760,
+    765,
+    770,
+    775,
+    775,
+    780,
+    780,
+    785,
+    785,
+    785,
+    785,
+    790,
+    790,
+    790,
+    790,
+    790,
+    795,
+    795,
+    795
+  ],
+  "level_30_xp": 10400,
+  "cap_xp": 33905,
+  "scenarios": [
+    {
+      "collection": 0,
+      "first_boss_before": 0,
+      "first_boss_after": 0,
+      "final_boss_before": 0,
+      "final_boss_after": 0
+    },
+    {
+      "collection": 0.5,
+      "first_boss_before": 24,
+      "first_boss_after": 23,
+      "final_boss_before": 42,
+      "final_boss_after": 43
+    },
+    {
+      "collection": 0.65,
+      "first_boss_before": 27,
+      "first_boss_after": 26,
+      "final_boss_before": 50,
+      "final_boss_after": 51
+    },
+    {
+      "collection": 0.8,
+      "first_boss_before": 30,
+      "first_boss_after": 30,
+      "final_boss_before": 58,
+      "final_boss_after": 58
+    },
+    {
+      "collection": 0.85,
+      "first_boss_before": 30,
+      "first_boss_after": 30,
+      "final_boss_before": 61,
+      "final_boss_after": 61
+    },
+    {
+      "collection": 1,
+      "first_boss_before": 33,
+      "first_boss_after": 33,
+      "final_boss_before": 61,
+      "final_boss_after": 61
+    }
+  ],
+  "boss_ttk": [
+    {
+      "boss": 150,
+      "character": 1,
+      "build": "novice",
+      "before": {
+        "median_seconds": 363.52,
+        "p10_seconds": 353.4,
+        "p90_seconds": 374.78,
+        "support_dps": 1.49,
+        "trials": 500
+      },
+      "after": {
+        "median_seconds": 156.85,
+        "p10_seconds": 145.35,
+        "p90_seconds": 167.58,
+        "support_dps": 1.49,
+        "trials": 500
+      }
+    },
+    {
+      "boss": 150,
+      "character": 1,
+      "build": "ordinary",
+      "before": {
+        "median_seconds": 11.06,
+        "p10_seconds": 10.99,
+        "p90_seconds": 11.09,
+        "support_dps": 88.51,
+        "trials": 500
+      },
+      "after": {
+        "median_seconds": 12.81,
+        "p10_seconds": 12.03,
+        "p90_seconds": 13.3,
+        "support_dps": 88.51,
+        "trials": 500
+      }
+    },
+    {
+      "boss": 150,
+      "character": 1,
+      "build": "optimized",
+      "before": {
+        "median_seconds": 2.9,
+        "p10_seconds": 2.9,
+        "p90_seconds": 2.91,
+        "support_dps": 341.34,
+        "trials": 500
+      },
+      "after": {
+        "median_seconds": 3.84,
+        "p10_seconds": 3.75,
+        "p90_seconds": 3.88,
+        "support_dps": 341.34,
+        "trials": 500
+      }
+    },
+    {
+      "boss": 150,
+      "character": 2,
+      "build": "novice",
+      "before": {
+        "median_seconds": 156.56,
+        "p10_seconds": 150.1,
+        "p90_seconds": 163.4,
+        "support_dps": 1.49,
+        "trials": 500
+      },
+      "after": {
+        "median_seconds": 156.56,
+        "p10_seconds": 149.62,
+        "p90_seconds": 165.02,
+        "support_dps": 1.49,
+        "trials": 500
+      }
+    },
+    {
+      "boss": 150,
+      "character": 2,
+      "build": "ordinary",
+      "before": {
+        "median_seconds": 10.11,
+        "p10_seconds": 9.79,
+        "p90_seconds": 10.44,
+        "support_dps": 82.98,
+        "trials": 500
+      },
+      "after": {
+        "median_seconds": 13.34,
+        "p10_seconds": 12.8,
+        "p90_seconds": 13.77,
+        "support_dps": 82.98,
+        "trials": 500
+      }
+    },
+    {
+      "boss": 150,
+      "character": 2,
+      "build": "optimized",
+      "before": {
+        "median_seconds": 2.87,
+        "p10_seconds": 2.84,
+        "p90_seconds": 2.91,
+        "support_dps": 328.7,
+        "trials": 500
+      },
+      "after": {
+        "median_seconds": 3.95,
+        "p10_seconds": 3.9,
+        "p90_seconds": 3.99,
+        "support_dps": 328.7,
+        "trials": 500
+      }
+    },
+    {
+      "boss": 151,
+      "character": 1,
+      "build": "novice",
+      "before": {
+        "median_seconds": 387.19,
+        "p10_seconds": 386.54,
+        "p90_seconds": 387.76,
+        "support_dps": 46.68,
+        "trials": 500
+      },
+      "after": {
+        "median_seconds": 252.25,
+        "p10_seconds": 249.04,
+        "p90_seconds": 255.96,
+        "support_dps": 46.68,
+        "trials": 500
+      }
+    },
+    {
+      "boss": 151,
+      "character": 1,
+      "build": "ordinary",
+      "before": {
+        "median_seconds": 40.86,
+        "p10_seconds": 40.84,
+        "p90_seconds": 40.89,
+        "support_dps": 452.7,
+        "trials": 500
+      },
+      "after": {
+        "median_seconds": 30.24,
+        "p10_seconds": 29.74,
+        "p90_seconds": 30.7,
+        "support_dps": 452.7,
+        "trials": 500
+      }
+    },
+    {
+      "boss": 151,
+      "character": 1,
+      "build": "optimized",
+      "before": {
+        "median_seconds": 28.12,
+        "p10_seconds": 28.12,
+        "p90_seconds": 28.12,
+        "support_dps": 658.47,
+        "trials": 500
+      },
+      "after": {
+        "median_seconds": 21.11,
+        "p10_seconds": 20.89,
+        "p90_seconds": 21.37,
+        "support_dps": 658.47,
+        "trials": 500
+      }
+    },
+    {
+      "boss": 151,
+      "character": 2,
+      "build": "novice",
+      "before": {
+        "median_seconds": 348.48,
+        "p10_seconds": 346.06,
+        "p90_seconds": 350.86,
+        "support_dps": 43.76,
+        "trials": 500
+      },
+      "after": {
+        "median_seconds": 262.65,
+        "p10_seconds": 260.0,
+        "p90_seconds": 265.3,
+        "support_dps": 43.76,
+        "trials": 500
+      }
+    },
+    {
+      "boss": 151,
+      "character": 2,
+      "build": "ordinary",
+      "before": {
+        "median_seconds": 41.21,
+        "p10_seconds": 40.89,
+        "p90_seconds": 41.48,
+        "support_dps": 416.93,
+        "trials": 500
+      },
+      "after": {
+        "median_seconds": 32.55,
+        "p10_seconds": 32.17,
+        "p90_seconds": 32.91,
+        "support_dps": 416.93,
+        "trials": 500
+      }
+    },
+    {
+      "boss": 151,
+      "character": 2,
+      "build": "optimized",
+      "before": {
+        "median_seconds": 28.73,
+        "p10_seconds": 28.53,
+        "p90_seconds": 28.88,
+        "support_dps": 606.44,
+        "trials": 500
+      },
+      "after": {
+        "median_seconds": 22.78,
+        "p10_seconds": 22.58,
+        "p90_seconds": 22.99,
+        "support_dps": 606.44,
+        "trials": 500
+      }
+    }
+  ],
+  "build_budgets": [
+    {
+      "build": "novice",
+      "phase": 0,
+      "damage_picks": 6,
+      "available": 30
+    },
+    {
+      "build": "novice",
+      "phase": 1,
+      "damage_picks": 21,
+      "available": 61
+    },
+    {
+      "build": "ordinary",
+      "phase": 0,
+      "damage_picks": 29,
+      "available": 30
+    },
+    {
+      "build": "ordinary",
+      "phase": 1,
+      "damage_picks": 50,
+      "available": 61
+    },
+    {
+      "build": "optimized",
+      "phase": 0,
+      "damage_picks": 30,
+      "available": 30
+    },
+    {
+      "build": "optimized",
+      "phase": 1,
+      "damage_picks": 50,
+      "available": 61
+    }
+  ],
+  "row_comparison": [
+    {
+      "before": {
+        "row": 2,
+        "enemy": 101,
+        "xp": 3000,
+        "hp": 3000
+      },
+      "after": {
+        "row": 2,
+        "enemy": 101,
+        "xp": 450,
+        "hp": 450
+      }
+    },
+    {
+      "before": {
+        "row": 3,
+        "enemy": 108,
+        "xp": 30000,
+        "hp": 9000
+      },
+      "after": {
+        "row": 3,
+        "enemy": 108,
+        "xp": 2700,
+        "hp": 1350
+      }
+    },
+    {
+      "before": {
+        "row": 4,
+        "enemy": 101,
+        "xp": 12000,
+        "hp": 12000
+      },
+      "after": {
+        "row": 4,
+        "enemy": 101,
+        "xp": 2100,
+        "hp": 2100
+      }
+    },
+    {
+      "before": {
+        "row": 5,
+        "enemy": 108,
+        "xp": 98550,
+        "hp": 29565
+      },
+      "after": {
+        "row": 5,
+        "enemy": 108,
+        "xp": 4050,
+        "hp": 2025
+      }
+    },
+    {
+      "before": {
+        "row": 6,
+        "enemy": 101,
+        "xp": 10000,
+        "hp": 10000
+      },
+      "after": {
+        "row": 6,
+        "enemy": 101,
+        "xp": 1250,
+        "hp": 1250
+      }
+    },
+    {
+      "before": {
+        "row": 7,
+        "enemy": 108,
+        "xp": 105000,
+        "hp": 31500
+      },
+      "after": {
+        "row": 7,
+        "enemy": 108,
+        "xp": 2460,
+        "hp": 1230
+      }
+    },
+    {
+      "before": {
+        "row": 8,
+        "enemy": 150,
+        "xp": 500,
+        "hp": 1000
+      },
+      "after": {
+        "row": 8,
+        "enemy": 150,
+        "xp": 500,
+        "hp": 1400
+      }
+    },
+    {
+      "before": {
+        "row": 9,
+        "enemy": 106,
+        "xp": 79200,
+        "hp": 684288
+      },
+      "after": {
+        "row": 9,
+        "enemy": 106,
+        "xp": 9000,
+        "hp": 12960
+      }
+    },
+    {
+      "before": {
+        "row": 10,
+        "enemy": 108,
+        "xp": 22500,
+        "hp": 6750
+      },
+      "after": {
+        "row": 10,
+        "enemy": 108,
+        "xp": 1080,
+        "hp": 540
+      }
+    },
+    {
+      "before": {
+        "row": 11,
+        "enemy": 106,
+        "xp": 60750,
+        "hp": 524880
+      },
+      "after": {
+        "row": 11,
+        "enemy": 106,
+        "xp": 2250,
+        "hp": 3240
+      }
+    },
+    {
+      "before": {
+        "row": 12,
+        "enemy": 108,
+        "xp": 30000,
+        "hp": 9000
+      },
+      "after": {
+        "row": 12,
+        "enemy": 108,
+        "xp": 1440,
+        "hp": 720
+      }
+    },
+    {
+      "before": {
+        "row": 13,
+        "enemy": 106,
+        "xp": 105000,
+        "hp": 907200
+      },
+      "after": {
+        "row": 13,
+        "enemy": 106,
+        "xp": 4500,
+        "hp": 6480
+      }
+    },
+    {
+      "before": {
+        "row": 14,
+        "enemy": 108,
+        "xp": 30000,
+        "hp": 9000
+      },
+      "after": {
+        "row": 14,
+        "enemy": 108,
+        "xp": 1800,
+        "hp": 900
+      }
+    },
+    {
+      "before": {
+        "row": 15,
+        "enemy": 106,
+        "xp": 121500,
+        "hp": 1049760
+      },
+      "after": {
+        "row": 15,
+        "enemy": 106,
+        "xp": 4500,
+        "hp": 6480
+      }
+    },
+    {
+      "before": {
+        "row": 16,
+        "enemy": 108,
+        "xp": 75000,
+        "hp": 22500
+      },
+      "after": {
+        "row": 16,
+        "enemy": 108,
+        "xp": 2160,
+        "hp": 1080
+      }
+    },
+    {
+      "before": {
+        "row": 17,
+        "enemy": 151,
+        "xp": 4100,
+        "hp": 18588
+      },
+      "after": {
+        "row": 17,
+        "enemy": 151,
+        "xp": 7100,
+        "hp": 15014
+      }
+    }
+  ],
+  "proposed": {
+    "skills": {
+      "200": {
+        "Id": 200,
+        "Name": "slash",
+        "Hp": 30,
+        "CoolTime": 0.9,
+        "Damage": 8,
+        "Critical Damage": 15,
+        "Lifetime": 0.5,
+        "MovementLockTime": 0.12
+      },
+      "201": {
+        "Id": 201,
+        "Name": "mage_projectile",
+        "Hp": 0,
+        "CoolTime": 0.45,
+        "Damage": 4,
+        "Critical Damage": 15,
+        "Lifetime": 10,
+        "MovementLockTime": 0,
+        "ProjectileSpeed": 12,
+        "ProjectileLifetime": 1.5,
+        "MaxProjectiles": 48,
+        "SpawnOffset": 0.55
+      }
+    },
+    "enemies": {
+      "100": {
+        "Id": 100,
+        "Name": "Bull",
+        "Hp": 15,
+        "HpRegenLate": 0,
+        "Speed": 2,
+        "Damage": 2,
+        "Defense": 5,
+        "Drop Exp Orb Id": 300,
+        "ExplosionDamage": 0,
+        "ExplosionRange": 0
+      },
+      "101": {
+        "Id": 101,
+        "Name": "Crap",
+        "Hp": 5,
+        "HpRegenLate": 0,
+        "Speed": 1,
+        "Damage": 1,
+        "Defense": 5,
+        "Drop Exp Orb Id": 300,
+        "ExplosionDamage": 0,
+        "ExplosionRange": 0
+      },
+      "102": {
+        "Id": 102,
+        "Name": "Eagle",
+        "Hp": 10,
+        "HpRegenLate": 0,
+        "Speed": 6,
+        "Damage": 2,
+        "Defense": 5,
+        "Drop Exp Orb Id": 300,
+        "ExplosionDamage": 0,
+        "ExplosionRange": 0
+      },
+      "103": {
+        "Id": 103,
+        "Name": "Goat",
+        "Hp": 20,
+        "HpRegenLate": 0,
+        "Speed": 2,
+        "Damage": 5,
+        "Defense": 5,
+        "Drop Exp Orb Id": 300,
+        "ExplosionDamage": 0,
+        "ExplosionRange": 0
+      },
+      "104": {
+        "Id": 104,
+        "Name": "Pufferfish",
+        "Hp": 10,
+        "HpRegenLate": 0,
+        "Speed": 3,
+        "Damage": 7,
+        "Defense": 5,
+        "Drop Exp Orb Id": 300,
+        "ExplosionDamage": 0,
+        "ExplosionRange": 0
+      },
+      "105": {
+        "Id": 105,
+        "Name": "Tutle",
+        "Hp": 30,
+        "HpRegenLate": 0,
+        "Speed": 0.5,
+        "Damage": 1,
+        "Defense": 5,
+        "Drop Exp Orb Id": 300,
+        "ExplosionDamage": 0,
+        "ExplosionRange": 0
+      },
+      "106": {
+        "Id": 106,
+        "Name": "Slime",
+        "Hp": 60,
+        "HpRegenLate": 0,
+        "Speed": 1,
+        "Damage": 2,
+        "Defense": 5,
+        "Drop Exp Orb Id": 301,
+        "ExplosionDamage": 0,
+        "ExplosionRange": 0
+      },
+      "107": {
+        "Id": 107,
+        "Name": "BombSlime",
+        "Hp": 30,
+        "HpRegenLate": 0,
+        "Speed": 0.5,
+        "Damage": 1,
+        "Defense": 4,
+        "Drop Exp Orb Id": 301,
+        "ExplosionDamage": 10,
+        "ExplosionRange": 2
+      },
+      "108": {
+        "Id": 108,
+        "Name": "Octopus",
+        "Hp": 15,
+        "HpRegenLate": 0,
+        "Speed": 1,
+        "Damage": 1,
+        "Defense": 5,
+        "Drop Exp Orb Id": 301,
+        "ExplosionDamage": 0,
+        "ExplosionRange": 0
+      },
+      "150": {
+        "Id": 150,
+        "Name": "Octopusking",
+        "Hp": 1400,
+        "HpRegenLate": 0,
+        "Speed": 1,
+        "Damage": 5,
+        "Defense": 5,
+        "Drop Exp Orb Id": 302,
+        "ExplosionDamage": 0,
+        "ExplosionRange": 0
+      },
+      "151": {
+        "Id": 151,
+        "Name": "SlimeKing",
+        "Hp": 2200,
+        "HpRegenLate": 0,
+        "Speed": 1,
+        "Damage": 10,
+        "Defense": 5,
+        "Drop Exp Orb Id": 302,
+        "ExplosionDamage": 0,
+        "ExplosionRange": 0
+      }
+    },
+    "orbs": {
+      "300": {
+        "id": 300,
+        "name": "GreenOrb",
+        "exp": 5
+      },
+      "301": {
+        "id": 301,
+        "name": "BlueOrb",
+        "exp": 30
+      },
+      "302": {
+        "id": 302,
+        "name": "YellowOrb",
+        "exp": 500
+      }
+    },
+    "stage": [
+      [
+        "스테이지",
+        "적 id",
+        "몇 웨이브 생성할지",
+        "소환 주기",
+        "한번에 소환할 몬스터 수",
+        "특정 웨이브 수 마다 증가할 적 배율",
+        "얼마 지나면 증가할지",
+        "몬스터 종류",
+        "총 경험치"
+      ],
+      [
+        1,
+        101,
+        15,
+        5,
+        6,
+        1,
+        3,
+        "Nomal",
+        450
+      ],
+      [
+        1,
+        108,
+        15,
+        10,
+        6,
+        1,
+        3,
+        "Nomal",
+        2700
+      ],
+      [
+        1,
+        101,
+        30,
+        4,
+        14,
+        1,
+        3,
+        "Nomal",
+        2100
+      ],
+      [
+        1,
+        108,
+        15,
+        10,
+        8,
+        1.15,
+        5,
+        "Nomal",
+        4050
+      ],
+      [
+        1,
+        101,
+        10,
+        4,
+        24,
+        1.1,
+        5,
+        "Nomal",
+        1250
+      ],
+      [
+        1,
+        108,
+        5,
+        10,
+        16,
+        1.1,
+        3,
+        "Nomal",
+        2460
+      ],
+      [
+        1,
+        150,
+        1,
+        0,
+        1,
+        0,
+        0,
+        "Boss",
+        500
+      ],
+      [
+        1,
+        106,
+        20,
+        10,
+        1,
+        1,
+        5,
+        "Nomal",
+        9000
+      ],
+      [
+        1,
+        108,
+        3,
+        8,
+        12,
+        1,
+        3,
+        "Nomal",
+        1080
+      ],
+      [
+        1,
+        106,
+        5,
+        10,
+        1,
+        1,
+        3,
+        "Nomal",
+        2250
+      ],
+      [
+        1,
+        108,
+        3,
+        8,
+        16,
+        1,
+        3,
+        "Nomal",
+        1440
+      ],
+      [
+        1,
+        106,
+        5,
+        15,
+        2,
+        1,
+        3,
+        "Nomal",
+        4500
+      ],
+      [
+        1,
+        108,
+        3,
+        8,
+        20,
+        1,
+        3,
+        "Nomal",
+        1800
+      ],
+      [
+        1,
+        106,
+        5,
+        12,
+        2,
+        1,
+        3,
+        "Nomal",
+        4500
+      ],
+      [
+        1,
+        108,
+        3,
+        8,
+        24,
+        1,
+        3,
+        "Nomal",
+        2160
+      ],
+      [
+        1,
+        151,
+        1,
+        0,
+        1,
+        0,
+        0,
+        "Boss",
+        7100
+      ]
+    ]
+  },
+  "assumptions": [
+    "Stage rows follow the corrected row-specific spawn count logic, float32 growth and floor rounding.",
+    "Normal slime HP, speed, damage and defense are unchanged; a complete 3-generation tree has 15 deaths and 648 total HP.",
+    "Normal slime rewards move to the blue orb so its 15-part fight gives meaningful XP. Boss summon farming is not needed to reach the cap.",
+    "Enemy defense is not applied by current EnemyCombat.TakeDamage; no enemy damage mitigation is invented in this model.",
+    "One primary basic-attack hit per cast; spread/count/chain help different targets rather than assumed stacking on one invincible target.",
+    "Passive single-target estimates exclude DOT and fusion bonuses; Lightning counts once per cooldown. Shuriken uses 180 degrees/second and its actual orbit/spawn/return/cooldown duty cycle. Projectile hits are discounted by passive uptime.",
+    "Boss TTK uses the full split-family HP budget but omits movement phases, boss summons, player healing, incoming hit patterns and death; this is not a survival simulation."
+  ],
+  "backups": [
+    {
+      "source_id": "1dATU1ZsqVODFL-SSgOMBLz9L0o7oNJwJgEixzs6Ansk",
+      "source_title": "SkillData",
+      "result": {
+        "success": true,
+        "id": "1AOt-YP-gayHZVVt2kzDSYBig0swRNBaUcSJFcmMD3Lk",
+        "title": "SkillData_밸런스조정전_2026-10-27",
+        "mimeType": "application/vnd.google-apps.spreadsheet",
+        "url": "https://docs.google.com/spreadsheets/d/1AOt-YP-gayHZVVt2kzDSYBig0swRNBaUcSJFcmMD3Lk/edit?usp=drivesdk",
+        "made_private": false
+      }
+    },
+    {
+      "source_id": "1e-YZ9rl4TTvE-OnJTz-YCGM837IWz9Z8MZoOmJ-zwHs",
+      "source_title": "적 정보",
+      "result": {
+        "success": true,
+        "id": "1LSnhG0ooN54jC8BlcioWB9pVlY6Kg-ISyWCCYBVySsQ",
+        "title": "적 정보_밸런스조정전_2026-10-27",
+        "mimeType": "application/vnd.google-apps.spreadsheet",
+        "url": "https://docs.google.com/spreadsheets/d/1LSnhG0ooN54jC8BlcioWB9pVlY6Kg-ISyWCCYBVySsQ/edit?usp=drivesdk",
+        "made_private": false
+      }
+    },
+    {
+      "source_id": "1crAlPFOAjYEVjawJbU2AVV29ViKw0-yS-yOprAZw2hY",
+      "source_title": "Stage",
+      "result": {
+        "success": true,
+        "id": "1MsxAwklCK0zLcs4yKqIogJKoJKnpoc6FkHMUudtntUk",
+        "title": "Stage_밸런스조정전_2026-10-27",
+        "mimeType": "application/vnd.google-apps.spreadsheet",
+        "url": "https://docs.google.com/spreadsheets/d/1MsxAwklCK0zLcs4yKqIogJKoJKnpoc6FkHMUudtntUk/edit?usp=drivesdk",
+        "made_private": false
+      }
+    },
+    {
+      "source_id": "1W-_mGatzRBR0GbJIgbNRv3JS5B5MXCqw4mun_4hPfxU",
+      "source_title": "Level",
+      "result": {
+        "success": true,
+        "id": "1dnWOS35ZmKZqFJ3g4D93fsDrdpaGTQ-7E68IS3-LNeM",
+        "title": "Level_밸런스조정전_2026-10-27",
+        "mimeType": "application/vnd.google-apps.spreadsheet",
+        "url": "https://docs.google.com/spreadsheets/d/1dnWOS35ZmKZqFJ3g4D93fsDrdpaGTQ-7E68IS3-LNeM/edit?usp=drivesdk",
+        "made_private": false
+      }
+    },
+    {
+      "source_id": "1ZBYA2T37KNaB2Z6ugLm64qJ9VqUTp3KvorLqibOBhfw",
+      "source_title": "Exp Orb",
+      "result": {
+        "success": true,
+        "id": "1ZkzH2jHEkprQjcwtGScrDpOtbUy4fySNLjFBRT-_W8Y",
+        "title": "Exp Orb_밸런스조정전_2026-10-27",
+        "mimeType": "application/vnd.google-apps.spreadsheet",
+        "url": "https://docs.google.com/spreadsheets/d/1ZkzH2jHEkprQjcwtGScrDpOtbUy4fySNLjFBRT-_W8Y/edit?usp=drivesdk",
+        "made_private": false
+      }
+    }
+  ]
+}
