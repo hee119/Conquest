@@ -12,6 +12,9 @@ public sealed class ScreenModeDropdown : MonoBehaviour
     [SerializeField] private TMP_Dropdown dropdown;
     private ResolutionDropdown resolutionDropdown;
 
+    internal static FullScreenMode PreferredMode => GetFullScreenMode(
+        PlayerPrefs.GetInt(ModePreference, GetModeIndex(Screen.fullScreenMode)));
+
     private void Awake()
     {
         if (dropdown == null)

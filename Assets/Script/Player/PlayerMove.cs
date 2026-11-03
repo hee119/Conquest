@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 public class PlayerMove : MonoBehaviour
 {
+    public static event System.Action<PlayerMove> BecameAvailable;
+    public event System.Action<float> DashEnergyChanged;
     [Header("Dash")]
     [SerializeField] private float dashSpeed = 12f;
     [SerializeField] private float dashDuration = 0.2f;
@@ -16,10 +18,14 @@ public class PlayerMove : MonoBehaviour
     public bool IsDashing => isDashing;
 
     private float dashEnergy = 100f;
-    private float dashTimeLeft;
-    private float recoveryDelayLeft;
+    private Coroutine dashCoroutine;
+    private Coroutine recoveryCoroutine;
+    private Coroutine movementCoroutine;
+    private static readonly WaitForFixedUpdate PhysicsStep = new WaitForFixedUpdate();
     private Vector2 dashDirection;
     private bool isDashing;
+    private InputAction dashAction;
+    private PlayerInput playerInput;
 
     public Vector2 MoveDir
     {
@@ -45,6 +51,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField, Min(0f)] private float boundaryPadding = 0.02f;
 
     private SpriteRenderer playerSpriteRenderer;
+    private Bounds boundarySpriteBounds;
 
     [Header("Footstep SFX")]
     [SerializeField, Min(0.05f)]
@@ -64,54 +71,112 @@ public class PlayerMove : MonoBehaviour
 
     public void Awake()
     {
+        playerInput = GetComponent<PlayerInput>();
         playerRb = GetComponent<Rigidbody2D>();
         animationController = GetComponent<AnimationController>();
         playerSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        // Attack frames include the weapon and can have very different bounds.
+        // Keep the standing footprint instead of moving the boundary with each frame.
+        if (playerSpriteRenderer != null)
+            boundarySpriteBounds = playerSpriteRenderer.localBounds;
         lastFootstepPosition = playerRb != null ? playerRb.position : (Vector2)transform.position;
     }
 
     private void OnEnable()
     {
+        canMove = true;
         dashEnergy = 100f;
-        dashTimeLeft = 0f;
-        recoveryDelayLeft = 0f;
         isDashing = false;
         footstepTimeRemaining = 0f;
         lastFootstepPosition = playerRb != null ? playerRb.position : (Vector2)transform.position;
+        if (dashAction == null)
+            dashAction = new InputAction("Dash", InputActionType.Button, "<Mouse>/rightButton");
+        dashAction.performed += OnDashPerformed;
+        dashAction.Enable();
+        DashEnergyChanged?.Invoke(DashEnergyNormalized);
+        BecameAvailable?.Invoke(this);
     }
 
-    private void Update()
+    private void OnDisable()
     {
-        if (Mouse.current != null && Mouse.current.rightButton.wasPressedThisFrame)
-            TryDash();
-
-        if (recoveryDelayLeft > 0f)
+        if (dashAction != null)
         {
-            recoveryDelayLeft -= Time.deltaTime;
+            dashAction.performed -= OnDashPerformed;
+            dashAction.Disable();
         }
-        else if (dashEnergy < 100f)
+        if (idleCor != null) StopCoroutine(idleCor);
+        if (dashCoroutine != null) StopCoroutine(dashCoroutine);
+        if (recoveryCoroutine != null) StopCoroutine(recoveryCoroutine);
+        if (movementCoroutine != null) StopCoroutine(movementCoroutine);
+        idleCor = null;
+        dashCoroutine = null;
+        recoveryCoroutine = null;
+        movementCoroutine = null;
+        MoveDir = Vector2.zero;
+        isDashing = false;
+        if (playerRb != null) playerRb.linearVelocity = Vector2.zero;
+    }
+
+    private void OnDestroy() => dashAction?.Dispose();
+
+    private void OnDashPerformed(InputAction.CallbackContext context)
+    {
+        if (!isActiveAndEnabled || Time.timeScale <= 0f ||
+            playerRb == null || animationController == null) return;
+        if (playerInput != null && (!playerInput.enabled || !playerInput.inputIsActive)) return;
+        TryDash();
+    }
+
+    private IEnumerator RecoverDashEnergy()
+    {
+        yield return new WaitForSeconds(Mathf.Max(0f, dashRecoveryDelay));
+        while (dashEnergy < 100f)
         {
+            float previousEnergy = dashEnergy;
             dashEnergy = Mathf.MoveTowards(dashEnergy, 100f, dashRecoveryPerSecond * Time.deltaTime);
+            if (dashEnergy != previousEnergy)
+                DashEnergyChanged?.Invoke(DashEnergyNormalized);
+            yield return null;
         }
+        recoveryCoroutine = null;
     }
 
-    private void FixedUpdate()
+    private IEnumerator Dash()
     {
-        if (isDashing)
+        float remaining = Mathf.Max(Time.fixedDeltaTime, dashDuration);
+        while (isDashing && remaining > 0f)
         {
             playerRb.linearVelocity = dashDirection * dashSpeed;
-            dashTimeLeft -= Time.fixedDeltaTime;
-
-            if (dashTimeLeft <= 0f)
-            {
-                isDashing = false;
-                playerRb.linearVelocity = canMove ? MoveDir * speed : Vector2.zero;
-                animationController.EndDashAnimation(canMove && MoveDir != Vector2.zero);
-            }
+            KeepInsideTilemapBounds();
+            yield return PhysicsStep;
+            remaining -= Time.fixedDeltaTime;
         }
+        isDashing = false;
+        playerRb.linearVelocity = canMove ? MoveDir * speed : Vector2.zero;
+        animationController.EndDashAnimation(canMove && MoveDir != Vector2.zero);
+        dashCoroutine = null;
+    }
 
+    private void TrackMovement()
+    {
+        if (movementCoroutine == null && playerRb != null &&
+            (isDashing || playerRb.linearVelocity.sqrMagnitude > 0f))
+            movementCoroutine = StartCoroutine(MovementPhysics());
+    }
+
+    private IEnumerator MovementPhysics()
+    {
+        // Run the first clamp before the next physics simulation.
         KeepInsideTilemapBounds();
-        PlayFootstepForMovement();
+        do
+        {
+            yield return PhysicsStep;
+            KeepInsideTilemapBounds();
+            PlayFootstepForMovement();
+        }
+        while (isDashing || playerRb.linearVelocity.sqrMagnitude > 0f);
+        movementCoroutine = null;
+        footstepTimeRemaining = 0f;
     }
 
     private void PlayFootstepForMovement()
@@ -174,11 +239,12 @@ public class PlayerMove : MonoBehaviour
         float mapMinY = Mathf.Min(worldBottomLeft.y, worldTopRight.y);
         float mapMaxY = Mathf.Max(worldBottomLeft.y, worldTopRight.y);
 
-        Vector2 spriteExtents = playerSpriteRenderer != null
-            ? (Vector2)playerSpriteRenderer.bounds.extents
-            : Vector2.zero;
+        Vector3 worldExtents = playerSpriteRenderer != null
+            ? playerSpriteRenderer.transform.TransformVector(boundarySpriteBounds.extents)
+            : Vector3.zero;
+        Vector2 spriteExtents = new Vector2(Mathf.Abs(worldExtents.x), Mathf.Abs(worldExtents.y));
         Vector2 spriteCenterOffset = playerSpriteRenderer != null
-            ? (Vector2)(playerSpriteRenderer.bounds.center - transform.position)
+            ? (Vector2)(playerSpriteRenderer.transform.TransformPoint(boundarySpriteBounds.center) - transform.position)
             : Vector2.zero;
 
         float padding = Mathf.Max(0f, boundaryPadding);
@@ -193,11 +259,18 @@ public class PlayerMove : MonoBehaviour
             minY = maxY = (mapMinY + mapMaxY) * 0.5f - spriteCenterOffset.y;
 
         Vector2 currentPosition = playerRb.position;
-        Vector2 nextPosition = currentPosition + playerRb.linearVelocity * Time.fixedDeltaTime;
+        Vector2 correctedPosition = new Vector2(
+            Mathf.Clamp(currentPosition.x, minX, maxX),
+            Mathf.Clamp(currentPosition.y, minY, maxY));
+        // Correct an out-of-bounds position directly; never turn that correction
+        // into a velocity that persists after an attack or input has stopped.
+        if (correctedPosition != currentPosition)
+            playerRb.position = correctedPosition;
+        Vector2 nextPosition = correctedPosition + playerRb.linearVelocity * Time.fixedDeltaTime;
         nextPosition.x = Mathf.Clamp(nextPosition.x, minX, maxX);
         nextPosition.y = Mathf.Clamp(nextPosition.y, minY, maxY);
 
-        playerRb.linearVelocity = (nextPosition - currentPosition) / Time.fixedDeltaTime;
+        playerRb.linearVelocity = (nextPosition - correctedPosition) / Time.fixedDeltaTime;
     }
 
     private void TryDash()
@@ -207,23 +280,31 @@ public class PlayerMove : MonoBehaviour
             return;
 
         if (interruptingAttack)
+        {
+            GetComponent<SkillSpawner>()?.CancelBasicAttackMovementLock();
             canMove = true;
+        }
 
         dashDirection = MoveDir.sqrMagnitude > 0f
             ? MoveDir.normalized
             : (transform.localScale.x < 0f ? Vector2.left : Vector2.right);
 
         dashEnergy -= dashCost;
-        recoveryDelayLeft = dashRecoveryDelay;
-        dashTimeLeft = dashDuration;
+        DashEnergyChanged?.Invoke(DashEnergyNormalized);
         isDashing = true;
         playerRb.linearVelocity = dashDirection * dashSpeed;
         animationController.StartDashAnimation();
         SoundManager.Instance?.Play(SoundIds.Dash);
+        if (recoveryCoroutine != null) StopCoroutine(recoveryCoroutine);
+        recoveryCoroutine = StartCoroutine(RecoverDashEnergy());
+        dashCoroutine = StartCoroutine(Dash());
+        TrackMovement();
     }
     
     public void Move(InputAction.CallbackContext context)
     {
+        // Disabling PlayerInput cancels actions after the player becomes inactive.
+        if (!isActiveAndEnabled) return;
         MoveDir = context.ReadValue<Vector2>();
 
         if (isDashing)
@@ -255,12 +336,20 @@ public class PlayerMove : MonoBehaviour
             SetIdleDelayed();
             playerRb.linearVelocity = Vector2.zero;
         }
+        TrackMovement();
     }
 
     public void StopMove(int canIMove)
     {
+        if (!isActiveAndEnabled)
+        {
+            canMove = canIMove >= 1;
+            return;
+        }
         if (canIMove < 1)
         {
+            if (dashCoroutine != null) StopCoroutine(dashCoroutine);
+            dashCoroutine = null;
             isDashing = false;
         }
 
@@ -285,14 +374,15 @@ public class PlayerMove : MonoBehaviour
         else
         {
             playerRb.linearVelocity = Vector2.zero;
-            StartCoroutine(IdleDelayCor());
+            SetIdleDelayed();
             canMove = false;
         }
+        TrackMovement();
     }
     
     private void SetIdleDelayed()
     {
-        if (idleCor == null)
+        if (isActiveAndEnabled && idleCor == null)
             idleCor = StartCoroutine(IdleDelayCor());
     }
 

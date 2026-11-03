@@ -1,0 +1,1 @@
+PASS: crack-free GroundCrack animation plays; first impact cell 06 at 0.333s; no premature attack; one existing ground effect emitted; returns to Move; resumes ongoing SpinWater; lethal interruption suppresses delayed attack.

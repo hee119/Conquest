@@ -1,0 +1,12 @@
+key,ko,en,jp
+quit_confirmation_question,정말로 나가시겠습니까?,Are you sure you want to quit?,ゲームを終了しますか？
+ui_yes,예,Yes,はい
+ui_no,아니요,No,いいえ
+character_enhance_action,강화하기,Enhance,強化する
+upgrade_confirm,확인하기,Confirm,確認する
+upgrade_select_materials,합성할 만렙 증강 두 개를 선택하세요,Select two compatible max-level upgrades,最大レベルの増強を2つ選択してください
+upgrade_name_placeholder,증강,Augment,増強
+upgrade_description_placeholder,증강 설명,Augment description,増強の説明
+stage_settings_exit,나가기,Exit to lobby,ロビーへ戻る
+reward_gold_name,골드,Gold,ゴールド
+reward_token_name,개척자의 증표,Pioneer Tokens,開拓者の証

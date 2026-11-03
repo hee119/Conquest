@@ -1,16 +1,20 @@
 using UnityEngine;
 
+/// <summary>증강 합성 가능 여부와 조합 규칙을 판정한다.</summary>
 public static class UpgradeFusionRules
 {
+    /// <summary>GetResult 동작의 가능 여부를 확인하고 처리한다.</summary>
     public static bool TryGetResult(DataManager data, int first, int second, out int result)
     {
         result = 0;
         if (data == null || first == second ||
             !data.upgradeDatasDic.ContainsKey(first) || !data.upgradeDatasDic.ContainsKey(second))
             return false;
+        /// <summary>Find 동작을 처리한다.</summary>
         return Find(data, first, second, out result) || Find(data, second, first, out result);
     }
 
+    /// <summary>Find 동작을 처리한다.</summary>
     private static bool Find(DataManager data, int first, int second, out int result)
     {
         result = 0;
@@ -31,6 +35,7 @@ public static class UpgradeFusionRules
         return false;
     }
 
+    /// <summary>CanCombine 동작을 처리한다.</summary>
     public static bool CanCombine(UpgradeManager manager, int first, int second, out int result)
     {
         result = 0;
@@ -39,12 +44,14 @@ public static class UpgradeFusionRules
             !manager.skillUpgrades.Contains(result);
     }
 
+    /// <summary>IsMaxed 동작을 처리한다.</summary>
     public static bool IsMaxed(UpgradeManager manager, int id)
     {
         return manager != null && DataManager.Instance != null && manager.skillUpgrades.Contains(id) &&
             DataManager.Instance.upgradeDatasDic.TryGetValue(id, out var data) && data.UpgradeLevel >= 4;
     }
 
+    /// <summary>HasAvailablePair 동작을 처리한다.</summary>
     public static bool HasAvailablePair(UpgradeManager manager)
     {
         if (manager == null || manager.skillUpgrades.Count < 2)

@@ -1,0 +1,14 @@
+{
+  "tool": "built-in image_gen",
+  "move": {
+    "asset": "Assets/SpriteSeet/OctopusUncrownedMove.png",
+    "reference": "Assets/SpriteSeet/OctopusKingMove.png",
+    "prompt": "Precise-object-edit of the supplied octopus MOVEMENT sprite sheet. Remove ONLY every golden crown, its gems, red tips and gold band from EVERY occupied cell, leaving plain purple octopuses. Reconstruct a natural smooth round purple top of the head under the removed crown, using the existing dark outline, purple spots, highlight and pixel shading. Preserve each original frame's exact eyes, cheeks, mouth, tentacles, pink suction cups, pose, body proportions, logical pixel size, canvas dimensions, 5x5 grid, positions, timing and original empty cells. Do not redesign, rotate, move or rescale any octopus. Each character is the same original octopus minus its crown. Keep the existing transparency, absolutely no background or extra elements, no crown remnants, gold, red ornaments, glow or fringes. Crisp pixel-art edges. Output the entire edited sprite sheet."
+  },
+  "attack": {
+    "asset": "Assets/SpriteSeet/OctopusUncrownedWaterAttack.png",
+    "reference": "/Users/hong-yeseong/Downloads/oc-ocshot (1).png",
+    "prompt": "Precise-object-edit of the supplied purple octopus WATER SHOT attack sprite sheet. Remove ONLY every golden crown with gems and gold band in EVERY occupied cell. Reconstruct the natural round purple head top beneath each removed crown, preserving dark outline, purple spots, highlight and pixel-art shading. Preserve ALL original non-crown details exactly: eyes and expressions, cheek puffing, O-shaped shooting mouth, raised curled tentacles, pink suction cups, poses, proportions, pixel density, canvas, 5x5 cell layout, character alignment and the three empty top-left cells. No water or effects added. Do not redesign or alter attack poses. Keep genuine transparent background and clear gaps between cells. No crown remnants or gold, red fringes, shadows, text or extra elements. Output the entire edited sprite sheet: the exact attack animation with crowns removed."
+  },
+  "verification": "Tools/Art/UncrownedOctopusVerification.txt"
+}

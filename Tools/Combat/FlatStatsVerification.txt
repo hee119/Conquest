@@ -1,0 +1,1 @@
+PASS attack 5 -> 35; defense 5 -> 35; actual basic damage 35

@@ -1,0 +1,7 @@
+Assets/Resources/Prefabs/Upgrade/Upgrade.prefab/Name -> upgrade_name_placeholder
+Assets/Resources/Prefabs/Upgrade/Upgrade.prefab/Text (TMP) -> upgrade_description_placeholder
+Assets/Scenes/Lobby.unity/Selected Stage Label -> stage_selected_number
+Assets/Scenes/Stage1.unity/Combine -> upgrade_combine
+Assets/Scenes/Stage1.unity/FusionLabel -> upgrade_combine
+Assets/Scenes/Stage1.unity/FusionStatus -> upgrade_select_materials
+Assets/Scenes/Stage1.unity/FusionLabel -> upgrade_confirm

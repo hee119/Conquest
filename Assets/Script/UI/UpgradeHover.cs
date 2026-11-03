@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>증강 항목에 포인터를 올렸을 때의 표시를 관리한다.</summary>
 public class UpgradeHover : MonoBehaviour,
     IPointerEnterHandler,
     IPointerExitHandler
@@ -38,6 +39,7 @@ public class UpgradeHover : MonoBehaviour,
     // Awake
     // =========================================================
 
+    /// <summary>필요한 컴포넌트와 초기 상태를 준비한다.</summary>
     private void Awake()
     {
         // hoverTarget을 지정하지 않았다면 자기 자신 사용
@@ -77,6 +79,7 @@ public class UpgradeHover : MonoBehaviour,
     // OnEnable
     // =========================================================
 
+    /// <summary>활성화될 때 필요한 이벤트와 동작을 시작한다.</summary>
     private void OnEnable()
     {
         hoverBlocked = false;
@@ -92,6 +95,7 @@ public class UpgradeHover : MonoBehaviour,
     // OnDisable
     // =========================================================
 
+    /// <summary>비활성화될 때 이벤트와 진행 중인 동작을 정리한다.</summary>
     private void OnDisable()
     {
         hoverBlocked = false;
@@ -107,6 +111,7 @@ public class UpgradeHover : MonoBehaviour,
     // Update
     // =========================================================
 
+    /// <summary>프레임마다 갱신이 필요한 상태를 처리한다.</summary>
     private void Update()
     {
         if (visualRect == null)
@@ -151,6 +156,7 @@ public class UpgradeHover : MonoBehaviour,
     // Pointer Enter
     // =========================================================
 
+    /// <summary>포인터가 항목에 들어왔을 때 표시 상태를 변경한다.</summary>
     public void OnPointerEnter(PointerEventData eventData)
     {
         // 선택 후 잠긴 상태라면 아무것도 하지 않음
@@ -165,7 +171,7 @@ public class UpgradeHover : MonoBehaviour,
 
         isHovering = true;
 
-        SoundManager.Instance?.PlayUiHover();
+        UiSoundEvents.Request(UiSoundCue.Hover);
 
 
         if (outLine != null)
@@ -179,6 +185,7 @@ public class UpgradeHover : MonoBehaviour,
     // Pointer Exit
     // =========================================================
 
+    /// <summary>포인터가 항목에서 나갔을 때 표시 상태를 복원한다.</summary>
     public void OnPointerExit(PointerEventData eventData)
     {
         // 선택한 카드는 마우스가 나가도
@@ -201,6 +208,7 @@ public class UpgradeHover : MonoBehaviour,
     // 위로 이동
     // =========================================================
 
+    /// <summary>MoveUp 동작을 처리한다.</summary>
     private void MoveUp()
     {
         Vector2 position =
@@ -228,6 +236,7 @@ public class UpgradeHover : MonoBehaviour,
     // 원래 위치로 복귀
     // =========================================================
 
+    /// <summary>MoveDown 동작을 처리한다.</summary>
     private void MoveDown()
     {
         Vector2 position =
@@ -251,6 +260,7 @@ public class UpgradeHover : MonoBehaviour,
     // 확대
     // =========================================================
 
+    /// <summary>ScaleUp 동작을 처리한다.</summary>
     private void ScaleUp()
     {
         Vector3 targetScaleValue =
@@ -270,6 +280,7 @@ public class UpgradeHover : MonoBehaviour,
     // 원래 크기로 복귀
     // =========================================================
 
+    /// <summary>ScaleDown 동작을 처리한다.</summary>
     private void ScaleDown()
     {
         visualRect.localScale =
@@ -291,6 +302,7 @@ public class UpgradeHover : MonoBehaviour,
     // 그래서 현재 커져있는 크기와 위치가 유지됨
     // =========================================================
 
+    /// <summary>LockCurrentHover 동작을 처리한다.</summary>
     public void LockCurrentHover()
     {
         hoverLocked = true;
@@ -316,6 +328,7 @@ public class UpgradeHover : MonoBehaviour,
     // 원래 크기 / 위치로 즉시 복귀
     // =========================================================
 
+    /// <summary>ForceHoverCancel 동작을 처리한다.</summary>
     public void ForceHoverCancel()
     {
         hoverLocked = false;
@@ -331,6 +344,7 @@ public class UpgradeHover : MonoBehaviour,
     // 다시 호버 가능하게
     // =========================================================
 
+    /// <summary>EnableHover 동작을 처리한다.</summary>
     public void EnableHover()
     {
         hoverLocked = false;
@@ -346,6 +360,7 @@ public class UpgradeHover : MonoBehaviour,
     // 완전 초기화
     // =========================================================
 
+    /// <summary>RestoreVisual 동작을 처리한다.</summary>
     private void RestoreVisual()
     {
         if (visualRect == null)

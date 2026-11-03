@@ -1,0 +1,1 @@
+playing=True; scene=Stage1; PoolManager=True; DataManager=True; StageManager=True; enemies=80

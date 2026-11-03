@@ -1,0 +1,3 @@
+Assets/Resources/Prefabs/Enemy/Octopus.prefab
+Assets/Resources/Prefabs/Boss/OctopusKing.prefab
+Assets/Resources/Prefabs/Boss/SlimeKing.prefab

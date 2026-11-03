@@ -1,16 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>선택한 증강을 조합하는 동작을 담당한다.</summary>
 public class UpgradeCombine : MonoBehaviour
 {
     public List<SelectIcon> upgrades = new List<SelectIcon>();
     public UpgradeImageSet upgradeImageSet;
 
+    /// <summary>활성화될 때 필요한 이벤트와 동작을 시작한다.</summary>
     public void OnEnable()
     {
         UpgradeCombineInit();
     }
 
+    /// <summary>UpgradeCombineInit 동작을 처리한다.</summary>
     public void UpgradeCombineInit()
     {
         var manager = UpgradeManager.Instance;
@@ -42,6 +45,7 @@ public class UpgradeCombine : MonoBehaviour
                     icon.image.raycastTarget = true;
                 }
             }
+            /// <summary>if 동작을 처리한다.</summary>
             else if (icon.image != null)
                 icon.image.sprite = null;
             icon.gameObject.SetActive(i < count);

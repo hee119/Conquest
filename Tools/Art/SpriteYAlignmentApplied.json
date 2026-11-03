@@ -1,0 +1,4229 @@
+[
+  {
+    "controller": "33b396de-9531-4cd0-9d51-895508de370c (1)_0",
+    "move": "Assets/Animation/Run.anim",
+    "clip": "Assets/Animation/Idle.anim",
+    "path": "Assets/SpriteSeet/player-idle-trimmed.png",
+    "baseline": -0.98666666666666669,
+    "pivotDeltaPixels": 15.000000000000005,
+    "spriteRectsBefore": [
+      {
+        "name": "player-idle-trimmed_0",
+        "id": "70d81e6d463f87690800000000000000",
+        "rect": [
+          0.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_1",
+        "id": "e6dd4f42e312166a0800000000000000",
+        "rect": [
+          256.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_2",
+        "id": "ec5035f18dcc4b750800000000000000",
+        "rect": [
+          512.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_3",
+        "id": "db16d8ad51dd38a50800000000000000",
+        "rect": [
+          768.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_4",
+        "id": "f07535ab7e9248cd0800000000000000",
+        "rect": [
+          1024.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_5",
+        "id": "2c43c6a271434abf0800000000000000",
+        "rect": [
+          0.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_6",
+        "id": "563169e96cc5d34f0800000000000000",
+        "rect": [
+          256.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_7",
+        "id": "349f3a45345173860800000000000000",
+        "rect": [
+          512.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_8",
+        "id": "03388269f18c41260800000000000000",
+        "rect": [
+          768.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_9",
+        "id": "51916666513305b90800000000000000",
+        "rect": [
+          1024.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_10",
+        "id": "6d96d2926dd2f8f80800000000000000",
+        "rect": [
+          0.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_11",
+        "id": "d70c39a6b1e09e330800000000000000",
+        "rect": [
+          256.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_12",
+        "id": "951871f0e1ae525e0800000000000000",
+        "rect": [
+          512.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_13",
+        "id": "b3f45cd8a970ead50800000000000000",
+        "rect": [
+          768.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_14",
+        "id": "b36533403b1783e30800000000000000",
+        "rect": [
+          1024.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_15",
+        "id": "f1eb401714bebebb0800000000000000",
+        "rect": [
+          0.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_16",
+        "id": "f99a8f5a53c455c40800000000000000",
+        "rect": [
+          256.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_17",
+        "id": "8faf33cfcf9dae890800000000000000",
+        "rect": [
+          512.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_18",
+        "id": "f8fe1c1e2bdd390b0800000000000000",
+        "rect": [
+          768.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_19",
+        "id": "e80c5b17f079c8ac0800000000000000",
+        "rect": [
+          1024.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_20",
+        "id": "7cfc507434301fa90800000000000000",
+        "rect": [
+          0.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_21",
+        "id": "d699fcebfe1b78520800000000000000",
+        "rect": [
+          256.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-idle-trimmed_22",
+        "id": "ae6390f8e8c4a1c50800000000000000",
+        "rect": [
+          512.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      }
+    ],
+    "ppuBefore": 75.0
+  },
+  {
+    "controller": "33b396de-9531-4cd0-9d51-895508de370c (1)_0",
+    "move": "Assets/Animation/Run.anim",
+    "clip": "Assets/Animation/Attack.anim",
+    "path": "Assets/SpriteSeet/player-attack (1) (1).png",
+    "baseline": -0.98666666666666669,
+    "pivotDeltaPixels": 7.1999999999999993,
+    "spriteRectsBefore": [
+      {
+        "name": "player-attack (1) (1)_0",
+        "id": "561b296d62c6f4050800000000000000",
+        "rect": [
+          0.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_1",
+        "id": "c53b3dacd94f680e0800000000000000",
+        "rect": [
+          256.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_2",
+        "id": "6306f23d188451bd0800000000000000",
+        "rect": [
+          512.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_3",
+        "id": "a558423de5e22de90800000000000000",
+        "rect": [
+          768.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_4",
+        "id": "ed44cf18c15150b20800000000000000",
+        "rect": [
+          1024.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_5",
+        "id": "c23cc5b6c4d81f350800000000000000",
+        "rect": [
+          0.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_6",
+        "id": "ddbe274990b846c00800000000000000",
+        "rect": [
+          256.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_7",
+        "id": "8839584448194a1a0800000000000000",
+        "rect": [
+          512.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_8",
+        "id": "37cce6c2799f93f10800000000000000",
+        "rect": [
+          768.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_9",
+        "id": "b500a0dcd3e20d0f0800000000000000",
+        "rect": [
+          1024.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_10",
+        "id": "f04e9d7a291c0b800800000000000000",
+        "rect": [
+          0.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_11",
+        "id": "2aea825b45a036050800000000000000",
+        "rect": [
+          256.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_12",
+        "id": "041edb81d4ce9ba00800000000000000",
+        "rect": [
+          512.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_13",
+        "id": "b78a9da83e0a0fc70800000000000000",
+        "rect": [
+          768.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_14",
+        "id": "368ef55160bdd8b20800000000000000",
+        "rect": [
+          1024.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_15",
+        "id": "f306047c9fa5c1550800000000000000",
+        "rect": [
+          0.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_16",
+        "id": "ae9c408c2a159f2a0800000000000000",
+        "rect": [
+          256.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_17",
+        "id": "827b3bb9b93120bd0800000000000000",
+        "rect": [
+          512.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_18",
+        "id": "238d2a2a14bc9da50800000000000000",
+        "rect": [
+          768.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_19",
+        "id": "6a74be21931e31b90800000000000000",
+        "rect": [
+          1024.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_20",
+        "id": "e634755b0371e4a40800000000000000",
+        "rect": [
+          0.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_21",
+        "id": "4e61d403e25b5d990800000000000000",
+        "rect": [
+          256.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_22",
+        "id": "c74665e0b5818caa0800000000000000",
+        "rect": [
+          512.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_23",
+        "id": "90ca3a5e3b97a1b00800000000000000",
+        "rect": [
+          768.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "player-attack (1) (1)_24",
+        "id": "1a94b9762a367ef80800000000000000",
+        "rect": [
+          1024.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      }
+    ],
+    "ppuBefore": 60.0
+  },
+  {
+    "controller": "33b396de-9531-4cd0-9d51-895508de370c (1)_0",
+    "move": "Assets/Animation/Run.anim",
+    "clip": "Assets/Animation/Dash.anim",
+    "path": "Assets/SpriteSeet/Player-dash (1).png",
+    "baseline": -0.98666666666666669,
+    "pivotDeltaPixels": 31.999999999999996,
+    "spriteRectsBefore": [
+      {
+        "name": "Player-dash (1)_0",
+        "id": "2eb82d9b32af03420800000000000000",
+        "rect": [
+          0.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_1",
+        "id": "0cbe7a4a4b4277020800000000000000",
+        "rect": [
+          256.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_2",
+        "id": "2555a94ffb906e3c0800000000000000",
+        "rect": [
+          512.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_3",
+        "id": "696a49b1c757cbcc0800000000000000",
+        "rect": [
+          768.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_4",
+        "id": "41bed3c6d0d123b40800000000000000",
+        "rect": [
+          1024.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_5",
+        "id": "02ec17ac3db581830800000000000000",
+        "rect": [
+          0.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_6",
+        "id": "29cb13c80b8dc70d0800000000000000",
+        "rect": [
+          256.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_7",
+        "id": "798ede7d63acbafb0800000000000000",
+        "rect": [
+          512.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_8",
+        "id": "a7b7bd3f69b03bc00800000000000000",
+        "rect": [
+          768.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_9",
+        "id": "19b8c90e9429685a0800000000000000",
+        "rect": [
+          1024.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_10",
+        "id": "c760a6f27f6c367c0800000000000000",
+        "rect": [
+          0.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_11",
+        "id": "e5e2b3b9392c6a810800000000000000",
+        "rect": [
+          256.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_12",
+        "id": "5d3577feb4648e6c0800000000000000",
+        "rect": [
+          512.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_13",
+        "id": "1a3bba86fdc2d1b40800000000000000",
+        "rect": [
+          768.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_14",
+        "id": "7565cc3927dd5a410800000000000000",
+        "rect": [
+          1024.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_15",
+        "id": "8dca2b94f1fed1e30800000000000000",
+        "rect": [
+          0.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_16",
+        "id": "661e0ac4850520070800000000000000",
+        "rect": [
+          256.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_17",
+        "id": "cd9c53743d85b1bc0800000000000000",
+        "rect": [
+          512.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_18",
+        "id": "8802eee4a8f2870c0800000000000000",
+        "rect": [
+          768.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_19",
+        "id": "02f2421790644c5c0800000000000000",
+        "rect": [
+          1024.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_20",
+        "id": "c6191d15f16f1b1d0800000000000000",
+        "rect": [
+          0.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_21",
+        "id": "7b75d8b4207e26910800000000000000",
+        "rect": [
+          256.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_22",
+        "id": "508001f1dc3f35720800000000000000",
+        "rect": [
+          512.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_23",
+        "id": "73afa1e0ef5f78460800000000000000",
+        "rect": [
+          768.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "Player-dash (1)_24",
+        "id": "9914a6cf900be7170800000000000000",
+        "rect": [
+          1024.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      }
+    ],
+    "ppuBefore": 75.0
+  },
+  {
+    "controller": "Mage",
+    "move": "Assets/Animation/MageRun.anim",
+    "clip": "Assets/Animation/MageIdle.anim",
+    "path": "Assets/SpriteSeet/MageIdle.png",
+    "baseline": -1.08,
+    "pivotDeltaPixels": 3.0000000000000027,
+    "spriteRectsBefore": [
+      {
+        "name": "MageIdle_0",
+        "id": "fcaab8e8fd7e00090800000000000000",
+        "rect": [
+          0.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_1",
+        "id": "96776f8b2611a0860800000000000000",
+        "rect": [
+          256.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_2",
+        "id": "e78f2202f81d65e00800000000000000",
+        "rect": [
+          512.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_3",
+        "id": "26f009e2e26438930800000000000000",
+        "rect": [
+          768.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_4",
+        "id": "33a3c7a3cffde6600800000000000000",
+        "rect": [
+          1024.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_5",
+        "id": "3f6a822c8c045c920800000000000000",
+        "rect": [
+          0.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_6",
+        "id": "6735f6a6bc285be30800000000000000",
+        "rect": [
+          256.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_7",
+        "id": "9fe60c560bcce0aa0800000000000000",
+        "rect": [
+          512.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_8",
+        "id": "d15728be66ec20650800000000000000",
+        "rect": [
+          768.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_9",
+        "id": "bc01d5ab3c45c5590800000000000000",
+        "rect": [
+          1024.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_10",
+        "id": "dffd8649e0d205a50800000000000000",
+        "rect": [
+          0.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_11",
+        "id": "e0ec927aa3f054830800000000000000",
+        "rect": [
+          256.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_12",
+        "id": "14852e9cb8427b1e0800000000000000",
+        "rect": [
+          512.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_13",
+        "id": "184bf681a58481cf0800000000000000",
+        "rect": [
+          768.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_14",
+        "id": "92a531a2cf7fc7cc0800000000000000",
+        "rect": [
+          1024.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_15",
+        "id": "878ac91d44647d420800000000000000",
+        "rect": [
+          0.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_16",
+        "id": "f5c4434e9bfaba160800000000000000",
+        "rect": [
+          256.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_17",
+        "id": "b36bf9f2ac69d5230800000000000000",
+        "rect": [
+          512.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_18",
+        "id": "1f933fd949f3c2c60800000000000000",
+        "rect": [
+          768.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_19",
+        "id": "f03883084fab08220800000000000000",
+        "rect": [
+          1024.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_20",
+        "id": "eeb509cc42d434680800000000000000",
+        "rect": [
+          0.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageIdle_21",
+        "id": "0b59ffab25a888b50800000000000000",
+        "rect": [
+          256.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      }
+    ],
+    "ppuBefore": 75.0
+  },
+  {
+    "controller": "Mage",
+    "move": "Assets/Animation/MageRun.anim",
+    "clip": "Assets/Animation/MageAttack.anim",
+    "path": "Assets/SpriteSeet/MageCastAttack.png",
+    "baseline": -1.08,
+    "pivotDeltaPixels": 4.0000000000000089,
+    "spriteRectsBefore": [
+      {
+        "name": "MageCastAttack_0",
+        "id": "29f9306031c9a15c0800000000000000",
+        "rect": [
+          0.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_1",
+        "id": "01f369c2082eb3530800000000000000",
+        "rect": [
+          256.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_2",
+        "id": "91b2a0d5102e20060800000000000000",
+        "rect": [
+          512.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_3",
+        "id": "d30ac4b9db1363aa0800000000000000",
+        "rect": [
+          768.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_4",
+        "id": "4b8311f1307c062c0800000000000000",
+        "rect": [
+          1024.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_5",
+        "id": "0fc7df5f75346fee0800000000000000",
+        "rect": [
+          0.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_6",
+        "id": "e9e61ea4c2e5a9b50800000000000000",
+        "rect": [
+          256.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_7",
+        "id": "65704349aacd06e40800000000000000",
+        "rect": [
+          512.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_8",
+        "id": "af60ea2755295ec90800000000000000",
+        "rect": [
+          768.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_9",
+        "id": "589bb7c3591c6eb70800000000000000",
+        "rect": [
+          1024.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_10",
+        "id": "efdfa1038937cb870800000000000000",
+        "rect": [
+          0.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_11",
+        "id": "4e2467df055f660c0800000000000000",
+        "rect": [
+          256.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_12",
+        "id": "dd19e393653178860800000000000000",
+        "rect": [
+          512.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_13",
+        "id": "ea331d93d68a20cd0800000000000000",
+        "rect": [
+          768.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_14",
+        "id": "55fc1ede4aaad21b0800000000000000",
+        "rect": [
+          1024.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_15",
+        "id": "ca61a95f727b0bfa0800000000000000",
+        "rect": [
+          0.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_16",
+        "id": "0d7f05551c7bcc300800000000000000",
+        "rect": [
+          256.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_17",
+        "id": "1d590a604d1aef3c0800000000000000",
+        "rect": [
+          512.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_18",
+        "id": "881b37ec82ce64cb0800000000000000",
+        "rect": [
+          768.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_19",
+        "id": "aadaf0e2f65139710800000000000000",
+        "rect": [
+          1024.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_20",
+        "id": "d3b51a27d4227bd40800000000000000",
+        "rect": [
+          0.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_21",
+        "id": "3bfe3eaf2f0005970800000000000000",
+        "rect": [
+          256.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_22",
+        "id": "f21986f6e5a538c80800000000000000",
+        "rect": [
+          512.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_23",
+        "id": "04159cdc8a4aa6ed0800000000000000",
+        "rect": [
+          768.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageCastAttack_24",
+        "id": "6da4636cf18eac500800000000000000",
+        "rect": [
+          1024.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      }
+    ],
+    "ppuBefore": 75.0
+  },
+  {
+    "controller": "Mage",
+    "move": "Assets/Animation/MageRun.anim",
+    "clip": "Assets/Animation/MageDash.anim",
+    "path": "Assets/SpriteSeet/MageDash.png",
+    "baseline": -1.08,
+    "pivotDeltaPixels": 3.0000000000000027,
+    "spriteRectsBefore": [
+      {
+        "name": "MageDash_0",
+        "id": "fd7fdd498f5c0441a9f83028278d9879",
+        "rect": [
+          0.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_1",
+        "id": "457d10f0e4bfe4a5485fd23cce34953f",
+        "rect": [
+          256.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_2",
+        "id": "a8d9c43aebd904a4e814a4b095a709ea",
+        "rect": [
+          512.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_3",
+        "id": "f414bcb27d0264ad3a2bf541ec4ff18c",
+        "rect": [
+          768.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_4",
+        "id": "8a078992f198841f380e02b36fa4f5c3",
+        "rect": [
+          1024.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_5",
+        "id": "901a0108111da480bbdb1aaa0f780c6b",
+        "rect": [
+          0.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_6",
+        "id": "870bf3fe0df164b7eb043ea4ea32e76a",
+        "rect": [
+          256.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_7",
+        "id": "5a314e3d1597c47188d157fd9541c70e",
+        "rect": [
+          512.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_8",
+        "id": "40fd1d7f2669c4629ad9bccfac066907",
+        "rect": [
+          768.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_9",
+        "id": "6269820332a0b453092b5447352dc396",
+        "rect": [
+          1024.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_10",
+        "id": "6882dc3d7d2da4fcbad96eee509f6c06",
+        "rect": [
+          0.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_11",
+        "id": "c94a4ff85e9494cc8b51c5aa97b4ce20",
+        "rect": [
+          256.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_12",
+        "id": "a8e072f8a1dd84d628788b8daa996de0",
+        "rect": [
+          512.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_13",
+        "id": "fddd80d4c0d8e465c991d37c2bb1b1a0",
+        "rect": [
+          768.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_14",
+        "id": "c6f67cb791d9446d2a6e8c8a9ec1c96a",
+        "rect": [
+          1024.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_15",
+        "id": "487977fc7f27a423ca43fc8ee8e2f4db",
+        "rect": [
+          0.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_16",
+        "id": "1bb7592c08a31458ab8a95545f935f87",
+        "rect": [
+          256.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_17",
+        "id": "38be95c603f23421782aca367066c88f",
+        "rect": [
+          512.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_18",
+        "id": "97cb8898dbf1d4f0d98ab5f381b6e87a",
+        "rect": [
+          768.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_19",
+        "id": "ae5a2f1684c2d4f4a913b615d1fdf202",
+        "rect": [
+          1024.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_20",
+        "id": "848fb9a9b534f49e5b1234d9a090d5cd",
+        "rect": [
+          0.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_21",
+        "id": "01a96c2963321447b916b214061b92a8",
+        "rect": [
+          256.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_22",
+        "id": "dd38e75998ea1481dbd181e53295bad0",
+        "rect": [
+          512.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_23",
+        "id": "5130927f6c6c54cd6bca56e32ac862c4",
+        "rect": [
+          768.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "MageDash_24",
+        "id": "782ff2b775ad74b1093c7730eeed80da",
+        "rect": [
+          1024.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      }
+    ],
+    "ppuBefore": 75.0
+  },
+  {
+    "controller": "Crap",
+    "move": "Assets/Animation/CrapWalk.anim",
+    "clip": "Assets/Animation/CrapHit.anim",
+    "path": "Assets/SpriteSeet/cb5787d7-5267-40e1-b819-542961eea023.png",
+    "baseline": -0.390625,
+    "pivotDeltaPixels": 0.65624999999999767,
+    "spriteRectsBefore": [
+      {
+        "name": "cb5787d7-5267-40e1-b819-542961eea023_0",
+        "id": "81a4307823beaf800800000000000000",
+        "rect": [
+          10.0,
+          142.0,
+          104.0,
+          71.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "cb5787d7-5267-40e1-b819-542961eea023_1",
+        "id": "1081bcf1b0a9e6240800000000000000",
+        "rect": [
+          142.0,
+          146.0,
+          99.0,
+          78.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "cb5787d7-5267-40e1-b819-542961eea023_2",
+        "id": "faa0577c9651ea250800000000000000",
+        "rect": [
+          271.0,
+          148.0,
+          98.0,
+          85.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "cb5787d7-5267-40e1-b819-542961eea023_3",
+        "id": "9d797013639e12230800000000000000",
+        "rect": [
+          7.0,
+          36.0,
+          117.0,
+          85.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "cb5787d7-5267-40e1-b819-542961eea023_4",
+        "id": "9f3fe79250b7bc8a0800000000000000",
+        "rect": [
+          141.0,
+          20.0,
+          102.0,
+          82.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "cb5787d7-5267-40e1-b819-542961eea023_5",
+        "id": "28284941e9841dd10800000000000000",
+        "rect": [
+          269.0,
+          21.0,
+          99.0,
+          70.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      }
+    ],
+    "ppuBefore": 90.0
+  },
+  {
+    "controller": "OctopusKing",
+    "move": "Assets/Animation/OctopusKingMove.anim",
+    "clip": "Assets/Animation/OctopusKingHydroLoop.anim",
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "baseline": -0.7053571428571429,
+    "pivotDeltaPixels": -19.999999999999993,
+    "spriteRectsBefore": [
+      {
+        "name": "OctopusKingSpin_00",
+        "id": "f312581fb6e104defb706a48173a1a78",
+        "rect": [
+          256.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_01",
+        "id": "83d41b5c1cb834971b9ee5c60462585a",
+        "rect": [
+          512.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_02",
+        "id": "e6e1fd0c5ba2b49f8b7b52b379900413",
+        "rect": [
+          768.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_03",
+        "id": "6634d98744330400c824ece434ae9544",
+        "rect": [
+          1024.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_04",
+        "id": "f0bdff6b0ddd84542a2f603e2cdb5348",
+        "rect": [
+          0.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_05",
+        "id": "7b013bb83afff4523b6df92a7377455e",
+        "rect": [
+          256.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_06",
+        "id": "b5103d415326d4ee192593fb16624c08",
+        "rect": [
+          512.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_07",
+        "id": "17da8875419d64311af6327be882f9db",
+        "rect": [
+          768.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_08",
+        "id": "73e26c2315c414482a008e0f8f945fb7",
+        "rect": [
+          1024.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_09",
+        "id": "f2385324d61764bae82108a9d5540664",
+        "rect": [
+          0.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_10",
+        "id": "1dc1a96039ed44685904b7ee7bf0094a",
+        "rect": [
+          256.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_11",
+        "id": "6f9ebd065dda94236b6d373c8f2f7807",
+        "rect": [
+          512.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_12",
+        "id": "dcd2ce02f2e2740cea3ee43512fc18ef",
+        "rect": [
+          768.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_13",
+        "id": "c5443909da58d4b318f016316b8248ee",
+        "rect": [
+          1024.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_14",
+        "id": "39baa09df74f84e118a431523904cc11",
+        "rect": [
+          0.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_15",
+        "id": "8dcb53281554e4997b3d95353a4786a4",
+        "rect": [
+          256.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_16",
+        "id": "0ffaaefdf24674132ba7ee37a32ea323",
+        "rect": [
+          512.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_17",
+        "id": "ac42a000c4b8b4252811546467b4864f",
+        "rect": [
+          768.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_18",
+        "id": "82b5e536f8fec463aaae108b0c9a9deb",
+        "rect": [
+          1024.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_19",
+        "id": "b1d7d62d6db3a42058c0248a9cabe35f",
+        "rect": [
+          0.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_20",
+        "id": "58a392424d6574f29a1f46925070c06a",
+        "rect": [
+          256.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_21",
+        "id": "24a1dc0d76df842338d7f46ecb43e5f7",
+        "rect": [
+          512.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_22",
+        "id": "372498fd2457f4918ac95f1a98f1ed69",
+        "rect": [
+          768.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      },
+      {
+        "name": "OctopusKingSpin_23",
+        "id": "8ba98133c1743402f9a69d9b7185986c",
+        "rect": [
+          1024.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 0
+      }
+    ],
+    "ppuBefore": 112.0
+  },
+  {
+    "controller": "OctopusKing",
+    "move": "Assets/Animation/OctopusKingMove.anim",
+    "clip": "Assets/Animation/OctopusKingGroundAttack.anim",
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "baseline": -0.7053571428571429,
+    "pivotDeltaPixels": 40.000002500000008,
+    "spriteRectsBefore": [
+      {
+        "name": "OctopusKingGroundAttack_10",
+        "id": "510dade00c7e37440800000000000000",
+        "rect": [
+          0.0,
+          502.0,
+          251.0,
+          250.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.413581252
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_11",
+        "id": "4ccad519510b20da0800000000000000",
+        "rect": [
+          251.0,
+          502.0,
+          251.0,
+          250.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.377581239
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_12",
+        "id": "35c9c9abc597c3f70800000000000000",
+        "rect": [
+          502.0,
+          502.0,
+          250.0,
+          250.0
+        ],
+        "pivot": [
+          0.5,
+          0.413581252
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_13",
+        "id": "ad462ea5923a83a10800000000000000",
+        "rect": [
+          752.0,
+          502.0,
+          251.0,
+          250.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.381581247
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_14",
+        "id": "ad6c439f4b9ab42b0800000000000000",
+        "rect": [
+          1003.0,
+          502.0,
+          251.0,
+          250.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.361581236
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_15",
+        "id": "5184a235c5d447130800000000000000",
+        "rect": [
+          0.0,
+          251.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.380061
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_16",
+        "id": "3ce9f0c69c42d9280800000000000000",
+        "rect": [
+          251.0,
+          251.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.3481885
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_17",
+        "id": "5cafc8b23159dd0b0800000000000000",
+        "rect": [
+          502.0,
+          251.0,
+          250.0,
+          251.0
+        ],
+        "pivot": [
+          0.5,
+          0.308347851
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_18",
+        "id": "b411d638b59ffaf40800000000000000",
+        "rect": [
+          752.0,
+          251.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.372092873
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_02",
+        "id": "1984c0b058d844cc5aea89bf0a2415a8",
+        "rect": [
+          502.0,
+          1003.0,
+          250.0,
+          251.0
+        ],
+        "pivot": [
+          0.5,
+          0.3242841
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_03",
+        "id": "00ce8351c7b8f41f491109d8466d94f6",
+        "rect": [
+          752.0,
+          1003.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.463726342
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_04",
+        "id": "1ef5e54d666644d8d89081ea113def50",
+        "rect": [
+          1003.0,
+          1003.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.332252234
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_05",
+        "id": "c43d0705d5bc440cfb1baa2fc6919378",
+        "rect": [
+          0.0,
+          752.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.308347851
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_06",
+        "id": "fbb9dfa9f19f5407f96e7c17ab3f82ce",
+        "rect": [
+          251.0,
+          752.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.308347851
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_07",
+        "id": "c08b08b3b90c845e7b6a822ad0146016",
+        "rect": [
+          502.0,
+          752.0,
+          250.0,
+          251.0
+        ],
+        "pivot": [
+          0.5,
+          0.308347851
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_08",
+        "id": "4654071cd23d5488d8fd5b7c9eea76d5",
+        "rect": [
+          752.0,
+          752.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.308347851
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_09",
+        "id": "4fd1dee4152cf4b728155f2dd3841a2c",
+        "rect": [
+          1003.0,
+          752.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.372092873
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_19",
+        "id": "2a4ae28b56956403f94f8adff10625e3",
+        "rect": [
+          1003.0,
+          251.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.364124745
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_20",
+        "id": "517f73d7073c74e11b21ff2ea2d33d3f",
+        "rect": [
+          0.0,
+          0.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.3681088
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_21",
+        "id": "6b839ff66fb664c839908adc771f3300",
+        "rect": [
+          251.0,
+          0.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.380061
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_22",
+        "id": "5bc51364d6b7a49d4a9ac6fff83c2090",
+        "rect": [
+          502.0,
+          0.0,
+          250.0,
+          251.0
+        ],
+        "pivot": [
+          0.5,
+          0.45177415
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_23",
+        "id": "12f400289973c4e03b6c8d4019e08eda",
+        "rect": [
+          752.0,
+          0.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.308347851
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingGroundAttack_24",
+        "id": "67e2729b5990e4a94b68ca1e029ebacd",
+        "rect": [
+          1003.0,
+          0.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.4477901
+        ],
+        "alignment": 9
+      }
+    ],
+    "ppuBefore": 109.725
+  },
+  {
+    "controller": "OctopusKing",
+    "move": "Assets/Animation/OctopusKingMove.anim",
+    "clip": "Assets/Animation/OctopusKingWaterShot.anim",
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "baseline": -0.7053571428571429,
+    "pivotDeltaPixels": 9.0000017767857141,
+    "spriteRectsBefore": [
+      {
+        "name": "OctopusKingWaterShot_10",
+        "id": "61d5b721dba853970800000000000000",
+        "rect": [
+          0.0,
+          502.0,
+          251.0,
+          250.0
+        ],
+        "pivot": [
+          0.5099602,
+          0.445294142
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_11",
+        "id": "e6839dad8f4b74310800000000000000",
+        "rect": [
+          251.0,
+          502.0,
+          251.0,
+          250.0
+        ],
+        "pivot": [
+          0.4880478,
+          0.481294125
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_12",
+        "id": "b9aed3ac80c4649d0800000000000000",
+        "rect": [
+          502.0,
+          502.0,
+          250.0,
+          250.0
+        ],
+        "pivot": [
+          0.496,
+          0.477294117
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_13",
+        "id": "a071020e8d63b66a0800000000000000",
+        "rect": [
+          752.0,
+          502.0,
+          251.0,
+          250.0
+        ],
+        "pivot": [
+          0.492031872,
+          0.469294131
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_14",
+        "id": "8bf68f333c8ef3b90800000000000000",
+        "rect": [
+          1003.0,
+          502.0,
+          251.0,
+          250.0
+        ],
+        "pivot": [
+          0.5079681,
+          0.489294142
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_15",
+        "id": "1fbb0e5b7a78a3940800000000000000",
+        "rect": [
+          0.0,
+          251.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.515936255,
+          0.323998123
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_16",
+        "id": "19b403304c9a56c40800000000000000",
+        "rect": [
+          251.0,
+          251.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.323998123
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_17",
+        "id": "6edb3eec0e8b092d0800000000000000",
+        "rect": [
+          502.0,
+          251.0,
+          250.0,
+          251.0
+        ],
+        "pivot": [
+          0.498,
+          0.323998123
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_18",
+        "id": "db2b05c28ce86f300800000000000000",
+        "rect": [
+          752.0,
+          251.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.5079681,
+          0.323998123
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_19",
+        "id": "4eeaf5d3a7e57dba0800000000000000",
+        "rect": [
+          1003.0,
+          251.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.323998123
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_20",
+        "id": "33454c7a9cf0f0fb0800000000000000",
+        "rect": [
+          0.0,
+          0.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.515936255,
+          0.5829623
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_21",
+        "id": "a582274b221fc8620800000000000000",
+        "rect": [
+          251.0,
+          0.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.494023919,
+          0.57897824
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_22",
+        "id": "dc4fecc35d214f530800000000000000",
+        "rect": [
+          502.0,
+          0.0,
+          250.0,
+          251.0
+        ],
+        "pivot": [
+          0.492,
+          0.5710101
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_23",
+        "id": "81712bd4b24234b60800000000000000",
+        "rect": [
+          752.0,
+          0.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.5059761,
+          0.5829623
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_24",
+        "id": "cdf2654e90cc8d660800000000000000",
+        "rect": [
+          1003.0,
+          0.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.511952162,
+          0.5710101
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_00",
+        "id": "9c7e32a020e514ce293640575972bac5",
+        "rect": [
+          0.0,
+          1003.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.5079681,
+          0.355870634
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_01",
+        "id": "145e5a05ffef143cda7b0352e0619732",
+        "rect": [
+          251.0,
+          1003.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.355870634
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_02",
+        "id": "1ed5144442d6640f4a61cc945b319bb3",
+        "rect": [
+          502.0,
+          1003.0,
+          250.0,
+          251.0
+        ],
+        "pivot": [
+          0.496,
+          0.3479025
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_03",
+        "id": "cbda9acdc3f774d95b0b683657d229d5",
+        "rect": [
+          752.0,
+          1003.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.501992047,
+          0.3479025
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_04",
+        "id": "42c7328de8e6149ceaa208549409ad8d",
+        "rect": [
+          1003.0,
+          1003.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.5079681,
+          0.355870634
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_05",
+        "id": "7d5f922e61cd24f10822c918dc597893",
+        "rect": [
+          0.0,
+          752.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.5079681,
+          0.395711273
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_06",
+        "id": "fb2a1ed2ca9394ce2aba08e585ab167c",
+        "rect": [
+          251.0,
+          752.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.501992047,
+          0.4036794
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_07",
+        "id": "02e1f40bce1ad4b2a875208c06ba3bfa",
+        "rect": [
+          502.0,
+          752.0,
+          250.0,
+          251.0
+        ],
+        "pivot": [
+          0.506,
+          0.4036794
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_08",
+        "id": "98e036fc13645482bbe3ec4640bef4c7",
+        "rect": [
+          752.0,
+          752.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.494023919,
+          0.399695337
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "OctopusKingWaterShot_09",
+        "id": "351bd7ffdba094f3199fe9b9d73a7a89",
+        "rect": [
+          1003.0,
+          752.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.503984034,
+          0.4036794
+        ],
+        "alignment": 9
+      }
+    ],
+    "ppuBefore": 115.294121
+  },
+  {
+    "controller": "Slime",
+    "move": "Assets/Animation/SlimeJump.anim",
+    "clip": "Assets/Animation/SlimeHit.anim",
+    "path": "Assets/SpriteSeet/SlimeHit.png",
+    "baseline": -0.72,
+    "pivotDeltaPixels": 21.999999999999996,
+    "spriteRectsBefore": [
+      {
+        "name": "SlimeHit_10",
+        "id": "6673e52b7900b6fb0800000000000000",
+        "rect": [
+          0.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_11",
+        "id": "715128f3280008750800000000000000",
+        "rect": [
+          256.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_12",
+        "id": "a5ab251a422731b70800000000000000",
+        "rect": [
+          512.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_13",
+        "id": "e06270e3f560af5a0800000000000000",
+        "rect": [
+          768.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_14",
+        "id": "7f5fbca71b8c3e4c0800000000000000",
+        "rect": [
+          1024.0,
+          512.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_15",
+        "id": "6d558ac828a2f2780800000000000000",
+        "rect": [
+          0.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_16",
+        "id": "80d5fbb24948d6bd0800000000000000",
+        "rect": [
+          256.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_17",
+        "id": "d04e72bc065557580800000000000000",
+        "rect": [
+          512.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_18",
+        "id": "9db61f44516157060800000000000000",
+        "rect": [
+          768.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_19",
+        "id": "97d97a3e5d636d810800000000000000",
+        "rect": [
+          1024.0,
+          256.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_20",
+        "id": "7ccd8f3532dc9f950800000000000000",
+        "rect": [
+          0.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_21",
+        "id": "971d56abbb711fc60800000000000000",
+        "rect": [
+          256.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_22",
+        "id": "2f88a4bbf0e0d6d60800000000000000",
+        "rect": [
+          512.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_23",
+        "id": "7b990e8885fd3dc50800000000000000",
+        "rect": [
+          768.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_24",
+        "id": "3081d0a58196c6930800000000000000",
+        "rect": [
+          1024.0,
+          0.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_00",
+        "id": "8324b89d061214d5ea25d743ca112f48",
+        "rect": [
+          0.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_01",
+        "id": "84d90588a47dc4d30bc6afd14c931db6",
+        "rect": [
+          256.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_02",
+        "id": "e1362c1f5a2374098b16632286743ea1",
+        "rect": [
+          512.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_03",
+        "id": "713e65ff7f53f4941ab0f00ada5c366b",
+        "rect": [
+          768.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_04",
+        "id": "c9123f11775d94f19b707ae0132d7266",
+        "rect": [
+          1024.0,
+          1024.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_05",
+        "id": "19d4c03e465b448d1bdb6f726b028045",
+        "rect": [
+          0.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_06",
+        "id": "a028b2c290da14196a3da7d76d971cc5",
+        "rect": [
+          256.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_07",
+        "id": "a22e5e2048d864b8ba563322a3aad9d4",
+        "rect": [
+          512.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_08",
+        "id": "992fa4ca715314f84966f8846fc3039f",
+        "rect": [
+          768.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeHit_09",
+        "id": "31d2dc7e28c9a445fa0f464e6e816979",
+        "rect": [
+          1024.0,
+          768.0,
+          256.0,
+          256.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      }
+    ],
+    "ppuBefore": 75.0
+  },
+  {
+    "controller": "SlimeKing",
+    "move": "Assets/Animation/SlimeKingMove.anim",
+    "clip": "Assets/Animation/SlimeKingHit.anim",
+    "path": "Assets/SpriteSeet/SlimeKingHit.png",
+    "baseline": -0.89333333333333331,
+    "pivotDeltaPixels": 24.999999999999993,
+    "spriteRectsBefore": [
+      {
+        "name": "SlimeKingHit_10",
+        "id": "d27c329774bd4b420800000000000000",
+        "rect": [
+          0.0,
+          502.0,
+          251.0,
+          250.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_11",
+        "id": "bafb0df319bbf94a0800000000000000",
+        "rect": [
+          251.0,
+          502.0,
+          251.0,
+          250.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_12",
+        "id": "9f3311c52891e1f60800000000000000",
+        "rect": [
+          502.0,
+          502.0,
+          250.0,
+          250.0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_13",
+        "id": "fd027e0d901225680800000000000000",
+        "rect": [
+          752.0,
+          502.0,
+          251.0,
+          250.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_14",
+        "id": "46f5d19470844b640800000000000000",
+        "rect": [
+          1003.0,
+          502.0,
+          251.0,
+          250.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.5
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_15",
+        "id": "f1e654ffda802b3d0800000000000000",
+        "rect": [
+          0.0,
+          251.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_16",
+        "id": "ccd4e113b3eb7c710800000000000000",
+        "rect": [
+          251.0,
+          251.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_17",
+        "id": "856efc0c7e51eb600800000000000000",
+        "rect": [
+          502.0,
+          251.0,
+          250.0,
+          251.0
+        ],
+        "pivot": [
+          0.5,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_18",
+        "id": "685d4e1d6baa6cde0800000000000000",
+        "rect": [
+          752.0,
+          251.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_19",
+        "id": "5528ff50e2026e2f0800000000000000",
+        "rect": [
+          1003.0,
+          251.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_20",
+        "id": "c3738c7ee23650cc0800000000000000",
+        "rect": [
+          0.0,
+          0.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_21",
+        "id": "f0b518937f3dbdb80800000000000000",
+        "rect": [
+          251.0,
+          0.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_22",
+        "id": "6c9055e74333f77b0800000000000000",
+        "rect": [
+          502.0,
+          0.0,
+          250.0,
+          251.0
+        ],
+        "pivot": [
+          0.5,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_23",
+        "id": "17ec26023fd7c48e0800000000000000",
+        "rect": [
+          752.0,
+          0.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_24",
+        "id": "4311642337064e3a0800000000000000",
+        "rect": [
+          1003.0,
+          0.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_00",
+        "id": "b467704be67ce42d3b5f95a6a1bd90e1",
+        "rect": [
+          0.0,
+          1003.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_01",
+        "id": "6ce0a90e52f40412dbdf4cc19878eb5b",
+        "rect": [
+          251.0,
+          1003.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_02",
+        "id": "d1ce4a520b22d4f1eb8eaa6ce97e0a62",
+        "rect": [
+          502.0,
+          1003.0,
+          250.0,
+          251.0
+        ],
+        "pivot": [
+          0.5,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_03",
+        "id": "505792f842b444c77b9b239fa2600b2b",
+        "rect": [
+          752.0,
+          1003.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_04",
+        "id": "0c2ce9e2f22234f77a15632cef8fced7",
+        "rect": [
+          1003.0,
+          1003.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_05",
+        "id": "427fb125fc6c54ea38217c883303fbdf",
+        "rect": [
+          0.0,
+          752.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_06",
+        "id": "31bec582221754511a55df52b61bc60c",
+        "rect": [
+          251.0,
+          752.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_07",
+        "id": "2fa4ffac04a7d47019dd7d323ecfaaf3",
+        "rect": [
+          502.0,
+          752.0,
+          250.0,
+          251.0
+        ],
+        "pivot": [
+          0.5,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_08",
+        "id": "e6a15f58897174f20885d80c26be9629",
+        "rect": [
+          752.0,
+          752.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.498007983
+        ],
+        "alignment": 9
+      },
+      {
+        "name": "SlimeKingHit_09",
+        "id": "c8389fac77090447d9600f6f4f18cd12",
+        "rect": [
+          1003.0,
+          752.0,
+          251.0,
+          251.0
+        ],
+        "pivot": [
+          0.498007983,
+          0.498007983
+        ],
+        "alignment": 9
+      }
+    ],
+    "ppuBefore": 75.0
+  }
+]

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>UpgradeCombineResult 증강 관련 동작과 상태를 관리한다.</summary>
 public class UpgradeCombineResult : MonoBehaviour
 {
     public UpgradeUiInfo upgradeUiInfo;
@@ -11,12 +12,14 @@ public class UpgradeCombineResult : MonoBehaviour
     public UpgradeImageSet upgradeImageSet1;
     public UpgradeImageSet upgradeImageSet2;
 
+    /// <summary>필요한 컴포넌트와 초기 상태를 준비한다.</summary>
     public void Awake()
     {
         upgradeUiInfo = GetComponent<UpgradeUiInfo>();
         upgradeUiInfo.upgradeImage = GetComponent<Image>();
     }
 
+    /// <summary>Result 관련 상태를 설정한다.</summary>
     public void SetResult()
     {
         UnityEngine.Debug.Log(
@@ -46,6 +49,7 @@ public class UpgradeCombineResult : MonoBehaviour
         }
     }
 
+    /// <summary>활성화될 때 필요한 이벤트와 동작을 시작한다.</summary>
     public void OnEnable()
     {
         upgradeUiInfo.upgradeImage.sprite = null;

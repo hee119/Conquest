@@ -1,0 +1,2 @@
+Static overlap both bosses: PASS
+Actual SlimeKing SlidePattern pushed crab=True; final overlap=False; crab position=(10.08, 0.00, 0.00)

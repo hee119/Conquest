@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using Sirenix.OdinInspector;
 
 public sealed class SoundManager : MonoBehaviour
@@ -16,14 +15,14 @@ public sealed class SoundManager : MonoBehaviour
     private bool upgradeSelectionOpen;
     private readonly List<AudioSource> stoppedLoops = new List<AudioSource>();
     private AudioSource bgmSource;
+    public UnityEngine.Audio.AudioMixerGroup SfxOutputGroup { get; private set; }
     private readonly List<OneShotVoice> oneShotVoices = new List<OneShotVoice>();
     private readonly Stack<AudioSource> availableOneShotSources = new Stack<AudioSource>();
     private readonly Dictionary<AudioSource, int> loopSoundIds = new Dictionary<AudioSource, int>();
     private readonly Dictionary<AudioSource, int> loopStartedFrames = new Dictionary<AudioSource, int>();
     private readonly Dictionary<AudioSource, EnemySoundLifetime> enemyLoopLifetimes = new();
     private readonly List<AudioSource> fadedLoops = new();
-    private readonly HashSet<Button> hookedButtons = new HashSet<Button>();
-    private readonly HashSet<Toggle> hookedToggles = new HashSet<Toggle>();
+    private readonly HashSet<UiSoundEmitter> uiControls = new HashSet<UiSoundEmitter>();
     private int lastUiClickFrame = -1;
     private int lastUiHoverFrame = -1;
     [SerializeField, LabelText("사운드 목록")]
@@ -31,7 +30,6 @@ public sealed class SoundManager : MonoBehaviour
     private List<SoundEntry> sounds = new List<SoundEntry>();
     private readonly Dictionary<AudioSource, float> loopVolumes = new Dictionary<AudioSource, float>();
     public IReadOnlyList<SoundEntry> Sounds => sounds;
-    private float nextButtonScanTime;
 
     private struct OneShotVoice
     {
@@ -85,6 +83,13 @@ public sealed class SoundManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
+        var sfxMixer = Resources.Load<UnityEngine.Audio.AudioMixer>("Audio/SfxGain");
+        if (sfxMixer != null)
+        {
+            var groups = sfxMixer.FindMatchingGroups("Master");
+            if (groups.Length > 0) SfxOutputGroup = groups[0];
+        }
+
         MasterVolume = Mathf.Clamp01(PlayerPrefs.GetFloat(MasterVolumeKey, 1f));
         BgmVolume = Mathf.Clamp01(PlayerPrefs.GetFloat(BgmVolumeKey, 1f));
         SfxVolume = Mathf.Clamp01(PlayerPrefs.GetFloat(SfxVolumeKey, 1f));
@@ -93,6 +98,8 @@ public sealed class SoundManager : MonoBehaviour
         bgmSource = authoredBgm != null ? authoredBgm.GetComponent<AudioSource>() : null;
         if (bgmSource == null)
             bgmSource = CreateSource("BGM", true);
+        // The fixed +6.02 dB bus is only for effects; music keeps its original gain.
+        bgmSource.outputAudioMixerGroup = null;
         AudioListener.volume = MasterVolume;
         AudioListener.pause = Time.timeScale <= 0f;
         ApplyBgmVolume();
@@ -116,44 +123,50 @@ public sealed class SoundManager : MonoBehaviour
         UpdateEnemySoundFades();
         CleanupStoppedLoops();
         CleanupFinishedOneShots();
-        if (Time.unscaledTime < nextButtonScanTime)
-            return;
+    }
 
-        nextButtonScanTime = Time.unscaledTime + 0.15f;
-        Button[] buttons = FindObjectsByType<Button>(
-            FindObjectsInactive.Include,
-            FindObjectsSortMode.None);
+    private void OnEnable()
+    {
+        if (Instance != this) return;
+        UiSoundEvents.Created += RegisterUiControl;
+        UiSoundEvents.Removed += UnregisterUiControl;
+        UiSoundEvents.Clicked += OnUiClicked;
+        UiSoundEvents.ToggleChanged += OnUiToggleChanged;
+        UiSoundEvents.Requested += OnUiSoundRequested;
+        foreach (var control in UiSoundEvents.Controls) RegisterUiControl(control);
+    }
 
-        foreach (Button button in buttons)
+    private void OnDisable()
+    {
+        UiSoundEvents.Created -= RegisterUiControl;
+        UiSoundEvents.Removed -= UnregisterUiControl;
+        UiSoundEvents.Clicked -= OnUiClicked;
+        UiSoundEvents.ToggleChanged -= OnUiToggleChanged;
+        UiSoundEvents.Requested -= OnUiSoundRequested;
+        uiControls.Clear();
+    }
+
+    private void RegisterUiControl(UiSoundEmitter control) => uiControls.Add(control);
+    private void UnregisterUiControl(UiSoundEmitter control) => uiControls.Remove(control);
+    private void OnUiClicked(UiSoundEmitter control)
+    {
+        if (control != null && !control.SuppressDefaultClick) PlayUiClick();
+    }
+    private void OnUiToggleChanged(UiSoundEmitter control, bool value)
+    {
+        if (control == null) return;
+        if (control.IsDropdownOption) { if (value) PlayUiConfirm(); }
+        else PlayUiClick();
+    }
+    private void OnUiSoundRequested(UiSoundCue cue)
+    {
+        switch (cue)
         {
-            if (button == null || !hookedButtons.Add(button))
-                continue;
-
-            bool hasDedicatedSound = HasDedicatedConfirmSound(button);
-            button.onClick.AddListener(() =>
-            {
-                if (!hasDedicatedSound)
-                    PlayUiClick();
-            });
+            case UiSoundCue.Click: PlayUiClick(); break;
+            case UiSoundCue.Confirm: PlayUiConfirm(); break;
+            case UiSoundCue.Hover: PlayUiHover(); break;
+            case UiSoundCue.Upgrade: PlayOneShotIgnoringPause(SoundIds.UpgradeSelect); break;
         }
-
-        foreach (Toggle toggle in FindObjectsByType<Toggle>(FindObjectsInactive.Include, FindObjectsSortMode.None))
-        {
-            if (toggle == null || !hookedToggles.Add(toggle))
-                continue;
-            toggle.onValueChanged.AddListener(selected =>
-            {
-                if (selected && toggle.IsActive() && toggle.IsInteractable())
-                {
-                    if (toggle.GetComponentInParent<TMPro.TMP_Dropdown>() != null)
-                        PlayUiConfirm();
-                    else
-                        PlayUiClick();
-                }
-            });
-        }
-        hookedToggles.RemoveWhere(toggle => toggle == null);
-        hookedButtons.RemoveWhere(button => button == null);
     }
 
     public void PlayUiClick()
@@ -180,32 +193,6 @@ public sealed class SoundManager : MonoBehaviour
             return;
         lastUiHoverFrame = Time.frameCount;
         PlayOneShotIgnoringPause(SoundIds.UiHover);
-    }
-
-    private bool HasDedicatedConfirmSound(Button button)
-    {
-        if (button == null)
-            return false;
-
-        foreach (StagePlanetMenu menu in FindObjectsByType<StagePlanetMenu>(FindObjectsInactive.Include, FindObjectsSortMode.None))
-            if (menu.IsStartButton(button))
-                return true;
-
-        foreach (CharacterProgressionPanel panel in FindObjectsByType<CharacterProgressionPanel>(FindObjectsInactive.Include, FindObjectsSortMode.None))
-            if (panel.IsUpgradeButton(button))
-                return true;
-
-        for (int i = 0; i < button.onClick.GetPersistentEventCount(); i++)
-        {
-            string methodName = button.onClick.GetPersistentMethodName(i);
-            if (methodName == "ConfirmCharacter" ||
-                methodName == "Upgrade" ||
-                methodName == "UpgradeIsSelected" ||
-                methodName == "PlaySelectedStage")
-                return true;
-        }
-
-        return false;
     }
 
     public void SetMasterVolume(float volume)
@@ -469,6 +456,7 @@ public sealed class SoundManager : MonoBehaviour
         source.playOnAwake = false;
         source.loop = loop;
         source.spatialBlend = 0f;
+        source.outputAudioMixerGroup = SfxOutputGroup;
         return source;
     }
 
@@ -487,6 +475,7 @@ public sealed class SoundManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        OnDisable();
         if (Instance == this)
         {
             Instance = null;

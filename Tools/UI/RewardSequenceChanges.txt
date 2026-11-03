@@ -1,0 +1,2 @@
+EndOverlay: heading removed; gold then fragments, unscaled reveal
+DemoClearOverlay: heading removed; gold then fragments, unscaled reveal

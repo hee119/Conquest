@@ -15,28 +15,7 @@ public class BoomSlime : SplitEnemy
 
         canBoom = false;
 
-        if (anim != null)
-        {
-            // 풀링에서 이전 애니메이션 상태 제거
-            anim.enabled = false;
-            anim.enabled = true;
-
-            anim.Rebind();
-            anim.Update(0f);
-
-            if (HasAnimatorParameter("Boom"))
-                anim.ResetTrigger("Boom");
-
-            if (HasAnimatorParameter("Hit"))
-                anim.ResetTrigger("Hit");
-
-            // Idle State 강제 재생
-            if (!string.IsNullOrEmpty(idleStateName))
-            {
-                anim.Play(idleStateName, 0, 0f);
-                anim.Update(0f);
-            }
-        }
+        if (anim != null) anim.Play(idleStateName);
     }
 
     public override void Die()
@@ -65,16 +44,7 @@ public class BoomSlime : SplitEnemy
             return;
         }
 
-        if (HasAnimatorParameter("Boom"))
-        {
-            anim.ResetTrigger("Boom");
-            anim.SetTrigger("Boom");
-        }
-        else
-        {
-            // Boom 애니메이션 없는 경우 즉시 처리
-            Boom();
-        }
+        if (!anim.Play("Boom")) Boom();
     }
 
     // Boom 애니메이션 Animation Event에서 실행
@@ -125,7 +95,7 @@ public class BoomSlime : SplitEnemy
             if (!damagedEnemies.Add(target))
                 continue;
 
-            target.TakeDamage(
+            target.TakeRawDamage(
                 explosionDamage,
                 target.transform.position
             );

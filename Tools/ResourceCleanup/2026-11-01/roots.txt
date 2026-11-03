@@ -1,0 +1,1795 @@
+Assets/_Recovery/0.unity
+Assets/Animation/33b396de-9531-4cd0-9d51-895508de370c (1)_0.controller
+Assets/Animation/Attack.anim
+Assets/Animation/Dash.anim
+Assets/Animation/Idle.anim
+Assets/Animation/Mage.controller
+Assets/Animation/MageAttack.anim
+Assets/Animation/MageDash.anim
+Assets/Animation/MageIdle.anim
+Assets/Animation/MageRun.anim
+Assets/Animation/Octopus.controller
+Assets/Animation/OctopusKing.controller
+Assets/Animation/OctopusKingGroundAttack.anim
+Assets/Animation/OctopusKingMove.anim
+Assets/Animation/OctopusKingSpin.anim
+Assets/Animation/OctopusKingWaterShot.anim
+Assets/Animation/OctopusUncrownedMove.anim
+Assets/Animation/OctopusUncrownedWaterAttack.anim
+Assets/Animation/Run.anim
+Assets/Animation/SlimeKing.controller
+Assets/Animation/SlimeKingHit.anim
+Assets/Animation/SlimeKingMove.anim
+Assets/Animation/SlimeKingOpenBodyHold.anim
+Assets/Animation/SlimeKingOpenBodyLower.anim
+Assets/Animation/SlimeKingOpenBodyRaise.anim
+Assets/Animation/SlimeKingSlideEnd.anim
+Assets/Animation/SlimeKingSlideLoop.anim
+Assets/Animation/SlimeKingSlidePrepare.anim
+Assets/Animation/SlimeKingSlideStart.anim
+Assets/Atlases/PixelEnemies.spriteatlasv2
+Assets/Cutscene/01_Earth_Departure.png
+Assets/Cutscene/02_Space_Travel.png
+Assets/Cutscene/03_Crab_Attack.png
+Assets/Cutscene/04_Crab_Defeated.png
+Assets/DefaultVolumeProfile.asset
+Assets/Editor/CreateJapaneseTmpFont.cs
+Assets/Editor/CutSceneEditorSetup.cs
+Assets/Editor/ImageImportPresets/TextureImportPreset.cs
+Assets/Editor/ImageImportPresets/TextureImportPresetQueue.cs
+Assets/Editor/ImageImportPresets/TextureImportPresetWindow.cs
+Assets/Editor/LocalizationSheetSync.cs
+Assets/Editor/PixelEnemyAtlasPrebuild.cs
+Assets/Editor/SoundManagerEditor.cs
+Assets/Editor/TextureImportPresets/New Image Preset.asset
+Assets/Editor/TextureImportPresets/Pixel Sprite Single.asset
+Assets/Editor/TextureImportPresets/Sprite Sheet 64 Grid.asset
+Assets/Editor/TextureImportPresets/Texture Default.asset
+Assets/Editor/TextureImportPresets/UI Sprite Single.asset
+Assets/Editor/TmpPercentRepair.cs
+Assets/GameAssets/BansheeGz/BGDatabase/Editor/Res/BGDatabaseDarkSkin.dat
+Assets/GameAssets/BansheeGz/BGDatabase/Editor/Res/BGDatabaseResources.dat
+Assets/GameAssets/BansheeGz/BGDatabase/Editor/Scripts/BGDatabaseEditor.dll
+Assets/GameAssets/BansheeGz/BGDatabase/Editor/Scripts/BGDatabaseEditorSourceCode.unitypackage
+Assets/GameAssets/BansheeGz/BGDatabase/readme.txt
+Assets/GameAssets/BansheeGz/BGDatabase/Scripts/BGDatabase.dll
+Assets/GameAssets/BansheeGz/BGDatabase/Scripts/BGDatabaseSourceCode.unitypackage
+Assets/GameAssets/BansheeGz/BGDatabase/Scripts/link.xml
+Assets/GameAssets/BansheeGz/BGDatabase/Third-Party Notices.txt
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Changelog.txt
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Documentation.url
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Patch - URP 2D Lit - Unity 6.0 to 6.2.unitypackage
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Patch - URP 2D Lit - Unity 6.3.unitypackage
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Patch - URP 2D Lit.unitypackage
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Tree 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Tree 02.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Tree 03.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Wooden Gate 01 Opened.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Wooden Gate 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Preset/Tags & Layers - Pixel Art Top Down - Basic.preset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Script/CameraFollow.cs
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Script/PropsAltar.cs
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Script/SpriteColorAnimation.cs
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Script/StairsLayerTrigger.cs
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Script/TopDownCharacterController.cs
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Shader/SH Sprite Shadow Mask.shader
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Shader/SH Sprite Shadow.shader
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Texture/TX Tileset Grass.png
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 10.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 5.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 6.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 13.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Pavement 6.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Pavement 7.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_61.asset
+Assets/GameAssets/EF_Studio/Fantasy Pixel Trees/Demo/Demo Scene.unity
+Assets/GameAssets/EF_Studio/Fantasy Pixel Trees/Demo/Demo Table.unity
+Assets/GameAssets/EF_Studio/Fantasy Pixel Trees/Demo/Environment/Clouds.png
+Assets/GameAssets/EF_Studio/Fantasy Pixel Trees/Demo/Environment/Grass.png
+Assets/GameAssets/EF_Studio/Fantasy Pixel Trees/Demo/Environment/Ground Tiles.prefab
+Assets/GameAssets/EF_Studio/Fantasy Pixel Trees/Demo/Environment/Mountains.png
+Assets/GameAssets/EF_Studio/Fantasy Pixel Trees/Demo/Environment/Tiles.asset
+Assets/GameAssets/EF_Studio/Fantasy Pixel Trees/Demo/Environment/Tiles.png
+Assets/GameAssets/EF_Studio/Fantasy Pixel Trees/PSD files/Default PSD.psd
+Assets/GameAssets/EF_Studio/Fantasy Pixel Trees/PSD files/Flat Ground PSD.psd
+Assets/GameAssets/EF_Studio/Fantasy Pixel Trees/Sprites/Default-NoOutline.png
+Assets/GameAssets/EF_Studio/Fantasy Pixel Trees/Sprites/Default-Outline.png
+Assets/GameAssets/EF_Studio/Fantasy Pixel Trees/Sprites/FlatGround-NoOutline.png
+Assets/GameAssets/EF_Studio/Fantasy Pixel Trees/Sprites/FlatGround-Outline.png
+Assets/GameAssets/EF_Studio/Fantasy Pixel Trees/Sprites/Trees.prefab
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Documentation/Readme IMPORTANT.pdf
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Documentation/Readme IMPORTANT.txt
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Scene Demo/Script/Prefab Manager.cs
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/_Generic/AlphaMultiply.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/_Generic/BakingHandler.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/_Generic/Brightness.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/_Generic/ColorLayer.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/_Generic/ColorMultiply.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/_Generic/NoiseTexture.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/_Generic/Remap2D.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/_Generic/SafePower_1.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/_Generic/SafePower_3.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/_Generic/ShaderMasker.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/_Generic/ShaderSpace.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/_Generic/ShaderTime.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/_Generic/SheetAnimation.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/_Generic/TintVertex.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/_Generic/UIVertex.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/_Generic/UVScale.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Blur/_GaussianBlur.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Blur/_Sharpen.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Blur/Sample Opposites.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Blur/Sample Plus.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_AddColor.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_AddHue.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_AlphaTint.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_BlackTint.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_Brightness.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_ColorReplace.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_Contrast.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_Hue.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_InkSpread.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_InnerOutline.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_Negative.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_OuterOutline.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_PingPongGlow.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_PixelOutline.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_RecolorPalette.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_RecolorRGB.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_RecolorRGBYCP.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_Saturation.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_Shadow.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_ShiftHue.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_SineGlow.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_SplitToning.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Color/_StrongTint.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Effect/_Burn.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Effect/_Camouflage.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Effect/_Enchanted.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Effect/_Frozen.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Effect/_Glitch.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Effect/_GlitchPre.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Effect/_GlitchUV.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Effect/_Hologram.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Effect/_HologramUV.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Effect/_Metal.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Effect/_Poison.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Effect/_Rainbow.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Effect/_Shifting.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Effect/_Shine.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Effect/_TextureLayer1.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Effect/_TextureLayer2.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Fading/_CustomFade.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Fading/_DirectionalAlphaFade.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Fading/_DirectionalDistortion.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Fading/_DirectionalGlowFade.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Fading/_FullAlphaDissolve.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Fading/_FullDistortion.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Fading/_FullGlowDissolve.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Fading/_Halftone.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Fading/_SourceAlphaDissolve.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Fading/_SourceGlowDissolve.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Generated/_Checkerboard.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Generated/_Flame.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Generated/_ScreenTiling.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Generated/_Smoke.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Generated/_SmoothPixel.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Generated/_WorldTiling.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Interactive/_Squish.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Interactive/_Wind.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Readme.txt
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Transform/_Pixelate.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Transform/_SineMove.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Transform/_SineRotate.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Transform/_SineScale.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Transform/_Squeeze.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Transform/_UVDistort.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Transform/_UVRotate.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Transform/_UVScale.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Transform/_UVScroll.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Transform/_Vibrate.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Transform/_Wiggle.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_2DLitStuff.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_3DLitStuff.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_AdditiveAlpha.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_GUIUber.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_MultiplicativeAlpha.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_PixelArtUV_1.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_PixelArtUV_2.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_UberColor.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_UberColorFinal.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_UberCustomAlpha.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_UberDissolveFade.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_UberEffect.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_UberFading.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_UberGenerated.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_UberInteractive.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_UberSample.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_UberSpreadFade.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_UberTransformOffset.asset
+Assets/GameAssets/Sprite Shaders Ultimate/ASE/Uber/_UberTransformUV.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Example/Demo_BakedBlur1.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Example/Demo_BakedBlur2.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Example/Demo_BakedBlur3.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Example/Demo_BakedBlur4.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Example/Demo_Cloud1.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Example/Demo_Cloud2.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Example/Demo_Cloud3.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Example/Demo_Halftone.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Example/Demo_Leaf.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Example/Demo_Plate.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Example/Demo_Player.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Example/Demo_SecretArea.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Example/Demo_Sky.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Example/Demo_Spikes.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/GUI/SSU_Demo_Color_Dot.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/GUI/SSU_Demo_Color_Pick.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/GUI/SSU_Demo_Display_Background.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/GUI/SSU_Demo_Display_Frame.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/GUI/SSU_Demo_Sky.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_AddColor.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_AddHue.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_AlphaTint.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_BlackTint.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Brightness.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Burn.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Camouflage.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Checkerboard.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Checkerboard2.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_ColorReplace.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Contrast.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_CustomFade.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_DirectionalAlphaFade.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_DirectionalDistortion.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_DirectionalGlowFade.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Enchanted.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Enchanted2.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Flame.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Frozen.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_FullAlphaDissolve.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_FullDistortion.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_FullGlowDissolve.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_GaussianBlur.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_GaussianBlurBaked1.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_GaussianBlurBaked2.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_GaussianBlurBaked3.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Glitch.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Halftone.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Hologram.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Hue.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_InkSpread.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_InnerOutline.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_InnerOutline2.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Metal.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Negative.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_OuterOutline.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_OuterOutline2.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_PingPongGlow.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Pixelate.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_PixelOutline.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_PixelOutline2.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Poison.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Rainbow.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Saturation.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Shadow.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Sharpen.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_ShiftHue.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Shifting.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Shifting2.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Shine.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_SineGlow.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_SineMove.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_SineRotate.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_SineScale.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Smoke.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Smoke2.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Smoke3.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_SourceAlphaDissolve.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_SourceGlowDissolve.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_SplitToning.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_SplitToning2.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Squeeze.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Squish.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_StrongTint.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_StrongTint2.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_TextureLayer.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_TextureLayer2.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_TextureLayer3.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_UVDistort.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_UVRotate.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_UVScroll.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Vibrate.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Wiggle.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Wiggle2.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Wind_Grass.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_Wind_Trees.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Materials/Shaders/SSU_Demo_WorldTiling.mat
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Misc/SSU_PP.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Misc/SSU_PP_URP.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Particles/Cloud 1.prefab
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Particles/Cloud 2.prefab
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Particles/Cloud 3.prefab
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Particles/Custom Fade.prefab
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Particles/Leafs.prefab
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Particles/Smoke 1.prefab
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Particles/Smoke 2.prefab
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Particles/Smoke 3.prefab
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Scripts/Color Pick.shader
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Scripts/Demo_Camera.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Scripts/Demo_ColorPicker.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Scripts/Demo_Display.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Scripts/Demo_DisplayTitle.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Scripts/Demo_FloatPicker.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Scripts/Demo_GUI.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Scripts/Demo_Player.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Scripts/Demo_Shaders.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Scripts/Demo_SpriteFader.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Scripts/Demo_Trigger.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Scripts/Demo_VectorFollow.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Scripts/Demo_VectorPicker.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/SSU_Demo.unity
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/SSU_Examples.unity
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Hurt/Ellen_Hurt_01.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Hurt/Ellen_Hurt_02.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Hurt/Ellen_Hurt_03.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Hurt/Ellen_Hurt_04.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Hurt/Ellen_Hurt_05.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Idle/Ellen_Idle_01.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Idle/Ellen_Idle_02.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Idle/Ellen_Idle_03.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Idle/Ellen_Idle_04.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Idle/Ellen_Idle_05.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Idle/Ellen_Idle_06.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Idle/Ellen_Idle_07.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Idle/Ellen_Idle_08.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Idle/Ellen_Idle_09.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Idle/Ellen_Idle_10.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Idle/Ellen_Idle_11.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Idle/Ellen_Idle_12.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Idle/Ellen_Idle_13.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Idle/Ellen_Idle_14.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Idle/Ellen_Idle_15.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_01.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_02.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_03.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_04.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_05.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_06.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_07.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_08.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_09.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_10.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_11.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_12.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_13.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_14.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_15.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_16.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_17.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_18.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_19.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_20.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_21.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Ellen/Run/Ellen_Run_22.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Environment/Grass.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Environment/Grass_n.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Environment/Plant.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Environment/Plant_N.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Environment/Plant_NoMips.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Environment/Tile_Grass.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Environment/Tile_Grass_n.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Environment/Tile_Rocks.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Environment/Tile_Rocks_n.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Environment/Tile_Walls.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Environment/Tree_1.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Environment/Tree_1_M.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Example/Cloud 1.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Example/Cloud 2.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Example/Cloud 3.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Example/Leaf.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Example/Plate Highlight.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Example/Plate Normal.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Example/Rock_Tiles.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Example/Sky.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Example/Spikes Highlight.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/Example/Spikes.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/GUI/Demo_Background.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/GUI/Demo_Button.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/GUI/Demo_Button_Highlight.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/GUI/Demo_Button_Pressed.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/GUI/Demo_Display_Frame.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/GUI/Demo_Display_Mask.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/GUI/Demo_Display_Shadow.png
+Assets/GameAssets/Sprite Shaders Ultimate/Demo/Textures/GUI/Dot.png
+Assets/GameAssets/Sprite Shaders Ultimate/Documentation.url
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/CodingHelper.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/ImageSSUEditor.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/MaterialInstancerSSUEditor.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Add Color.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Add Hue.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Alpha Tint.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Black Tint.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Brightness.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Burn.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Camouflage.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Checkerboard.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Color Replace.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Contrast.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Custom Fade.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Directional Alpha Fade.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Directional Distortion.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Directional Glow Fade.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Enchanted.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Flame.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Frozen.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Full Alpha Dissolve.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Full Distortion.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Full Glow Dissolve.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Gaussian Blur.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Glitch.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Halftone.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Hologram.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Hue.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Ink Spread.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Inner Outline.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Metal.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Negative.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Outer Outline.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Ping-Pong Glow.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Pixel Outline.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Pixelate.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Poison.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Rainbow.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Recolor Palette.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Recolor RGB.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Recolor RGBYCP.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Saturation.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Screen Tiling.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Shadow.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Sharpen.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Shift Hue.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Shifting.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Shine.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Sine Glow.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Sine Move.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Sine Rotate.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Sine Scale.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Smoke.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Smooth Pixel Art.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Source Alpha Dissolve.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Source Glow Dissolve.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Split Toning.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Squeeze.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Squish.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Strong Tint.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Texture Layer 1.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Texture Layer 2.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/UV Distort.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/UV Rotate.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/UV Scale.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/UV Scroll.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Vibrate.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Wiggle.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/Wind.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/Resources/SSU/Hints/World Tiling.asset
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/ShaderFaderSSUEditor.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/ShaderHintSSU.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/SpriteSheetSSUEditor.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/SSUShaderGUI.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Editor/UnscaledTimeSSUEditor.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/ImageSSU.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Interactive/Editor/InteractiveWindSSUEditor.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Interactive/Editor/WindManagerSSUEditor.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Interactive/Editor/WindParallaxSSUEditor.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Interactive/InteractiveSquishSSU.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Interactive/InteractiveWindSSU.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Interactive/WindManagerSSU.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Interactive/WindParallaxSSU.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/Internal/InstancerSSU.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/MaterialInstancerSSU.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/ShaderFaderSSU.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/SpriteSheetSSU.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Scripts/UnscaledTimeSSU.cs
+Assets/GameAssets/Sprite Shaders Ultimate/Shaders/2D Lit URP SSU.shader
+Assets/GameAssets/Sprite Shaders Ultimate/Shaders/3D Lit BuiltIn SSU.shader
+Assets/GameAssets/Sprite Shaders Ultimate/Shaders/3D Lit Cutout BuiltIn SSU.shader
+Assets/GameAssets/Sprite Shaders Ultimate/Shaders/3D Lit Cutout URP SSU.shader
+Assets/GameAssets/Sprite Shaders Ultimate/Shaders/3D Lit URP SSU.shader
+Assets/GameAssets/Sprite Shaders Ultimate/Shaders/Additive GUI SSU.shader
+Assets/GameAssets/Sprite Shaders Ultimate/Shaders/Additive SSU.shader
+Assets/GameAssets/Sprite Shaders Ultimate/Shaders/GUI SSU.shader
+Assets/GameAssets/Sprite Shaders Ultimate/Shaders/Multiplicative SSU.shader
+Assets/GameAssets/Sprite Shaders Ultimate/Shaders/Standard SSU.shader
+Assets/GameAssets/Sprite Shaders Ultimate/Textures/Mask/CircleMask.png
+Assets/GameAssets/Sprite Shaders Ultimate/Textures/Mask/VerticalMask.png
+Assets/GameAssets/Sprite Shaders Ultimate/Textures/Noise/SSU_Noise_1K.png
+Assets/GameAssets/Sprite Shaders Ultimate/Textures/Noise/SSU_Noise_2K.png
+Assets/GameAssets/Sprite Shaders Ultimate/Textures/Patterns/LightningSheet.png
+Assets/GameAssets/Sprite Shaders Ultimate/Textures/Patterns/RainbowHorizontal.png
+Assets/GameAssets/Sprite Shaders Ultimate/Textures/Patterns/RainbowVertical.png
+Assets/GameAssets/Sprite Shaders Ultimate/Textures/Shapes/FadingCircle.png
+Assets/GameAssets/Sprite Shaders Ultimate/Textures/Shapes/New Piskel (4).png
+Assets/GameAssets/Sprite Shaders Ultimate/Textures/Shapes/Ring.png
+Assets/GameAssets/Sprite Shaders Ultimate/Textures/Shapes/UnitSquare.png
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/ATTACK.anim
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/DAMAGED.anim
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/DEATH.anim
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/DEBUFF.anim
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/IDLE.anim
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/MOVE.anim
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/OTHER.anim
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/SPUMHorseController.controller
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/ATTACK.anim
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/DAMAGED.anim
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/DEATH.anim
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/DEBUFF.anim
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/IDLE.anim
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/MOVE.anim
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/OTHER.anim
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/SPUMController.controller
+Assets/GameAssets/SPUM/Core/Basic_Resources/Ect/Shadow.png
+Assets/GameAssets/SPUM/Core/Basic_Resources/Materials/ColorPicker.mat
+Assets/GameAssets/SPUM/Core/Basic_Resources/Materials/SpriteDiffuse.mat
+Assets/GameAssets/SPUM/Core/Script/Data/PreviewMatchingElement.cs
+Assets/GameAssets/SPUM/Core/Script/Data/SpritePos.cs
+Assets/GameAssets/SPUM/Core/Script/Data/SPUM_AnimationData.cs
+Assets/GameAssets/SPUM/Core/Script/Data/SPUM_CustomStyleData.cs
+Assets/GameAssets/SPUM/Core/Script/Data/SPUM_ImprovedClassData.cs
+Assets/GameAssets/SPUM/Core/Script/Data/SPUM_ImprovedStyleData.cs
+Assets/GameAssets/SPUM/Core/Script/Data/SPUM_MatchingList.cs
+Assets/GameAssets/SPUM/Core/Script/Data/SPUM_Prefabs.cs
+Assets/GameAssets/SPUM/Core/Script/Data/SpumAnimationClip.cs
+Assets/GameAssets/SPUM/Core/Script/Data/SpumPackage.cs
+Assets/GameAssets/SPUM/Core/Script/Data/SpumTextureData.cs
+Assets/GameAssets/SPUM/ReadMe - 3.1.1.txt
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215637772.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215637878.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215637961.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215640476.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215640602.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215640719.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215640838.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215640967.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215641087.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911222030968.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911215638048.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911215638140.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911215638224.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911215638308.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911222150076.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911222235923.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911222346858.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911222451694.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911222547665.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911222646591.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638389.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638474.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638558.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638643.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638731.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638814.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638897.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638981.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639069.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639152.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639234.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639316.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639405.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639493.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639580.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639662.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639748.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215640352.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911215639833.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911215639920.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911215640005.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911215640091.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911215640179.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911215640266.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911222823174.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911222907638.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911222954869.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911223046227.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye_Close.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye0.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye10.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye11.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye16.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye3.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye4.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye5.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye6.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye7.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye8.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye9.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_3.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_4.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_5.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_6.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_7.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_8.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_9.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Devil_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Elf_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Elf_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Human_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Human_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Human_3.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Human_4.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Human_5.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Orc_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Orc_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Orc_3.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Orc_4.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Skelton_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_FaceHair/FaceHair_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_FaceHair/FaceHair_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_FaceHair/FaceHair_3.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_FaceHair/FaceHair_4.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_FaceHair/FaceHair_5.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_10.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_11.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_12.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_3.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_4.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_5.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_6.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_7.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_8.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_9.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/F_SR_Cloth.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/3_Pant/F_SR_Pants.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/3_Pant/Foot_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/3_Pant/Foot_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/3_Pant/Foot_3.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/3_Pant/Foot_4.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/F_SR_Helmet.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_3.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_4.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_5.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_6.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_7.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_8.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_9.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_3.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_4.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_5.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_6.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_7.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_8.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/0_Sword/Sword_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/0_Sword/Sword_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/0_Sword/Sword_3.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/0_Sword/Sword_4.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/0_Sword/Sword_5.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/0_Sword/Sword_6.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/1_Axe/Axe_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/2_Bow/Bow_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/3_Shield/Shield_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/4_Spear/Soon_Spear.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/4_Spear/Spear_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/5_Wand/Ward_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/6_Hammer/F_SR_Hammer.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/7_Back/Back_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/7_Back/Back_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/7_Back/Back_3.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/7_Back/BowBack_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/7_Back/Soon_Back1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/00_Idle/0_idle.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/01_Move/0_move.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/02_Attack/00_MeleeAttack/0_Attack_Normal.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/02_Attack/00_MeleeAttack/1_Skill_Normal.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/02_Attack/01_LongRangeAttack/0_Attack_Bow.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/02_Attack/01_LongRangeAttack/1_Skill_Bow.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/02_Attack/02_MagicAttack/0_Attack_Magic.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/02_Attack/02_MagicAttack/1_Skill_Magic.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/03_Damaged/0_Damaged.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/04_Death/0_Die.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/05_Debuff/0_Debuff_Stun.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/06_Other/00_Concentrate/0_Conecntrate.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/06_Other/01_Buff/0_Buff.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/06_Other/02_Etc/0_Sit.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/0_Sprite/0_Body/BlackHorse.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/0_Sprite/0_Body/Horse1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/0_Sprite/0_Body/Horse2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/0_Sprite/0_Body/RedHorse.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/00_Idle/0_idle.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/01_Move/1_run.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/01_Move/Walk_Run 1.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/02_Attack/00_MeleeAttack/2_Attack_Normal.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/02_Attack/01_LongRangeAttack/2_Attack_Bow.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/02_Attack/02_MagicAttack/2_Attack_Magic.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/03_Damaged/3_damaged.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/04_Death/4_Death.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/05_Debuff/5_debuff.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/06_Other/00_Concentrate/Conventrate.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/06_Other/01_Buff/OTHER 1.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/06_Other/02_Etc/Ect.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/2_Prefab/SPUM_20250915183854408.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/2_Prefab/SPUM_20250915184739548.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/Index.json
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair10.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair11.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair12.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair13.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair2.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair3.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair4.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair5.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair6.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair7.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair8.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair9.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/1_FaceHair/Normal_Mustache1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/1_FaceHair/Normal_Mustache2.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/2_Cloth/Normal_Cloth1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/4_Helmet/Normal_Helmet1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/4_Helmet/Normal_Helmet2.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/4_Helmet/Normal_Helmet3.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/5_Armor/Normal_Armor1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/2_Axe/AxeLong1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/2_Axe/AxeNormal1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/2_Axe/AxeSmall1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/7_Shield/SteelShield1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/7_Shield/WoodShield1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/7_Shield/WoodShield2.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/7_Shield/WoodShield3.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/7_Shield/WoodShield4.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/Index.json
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/10_Back/New_Back_01.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/10_Back/New_Back_02.Png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_01.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_02.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_03.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_04.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_05.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_06.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_07.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_08.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_09.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_10.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_11.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_12.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_13.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_14.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_15.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_16.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_17.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_18.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_19.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_20.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_01.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_02.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_03.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_04.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_05.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_06.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_07.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_08.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_09.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_10.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_11.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_12.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_01.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_02.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_03.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_04.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_05.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_06.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_07.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_08.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_09.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_10.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_01.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_02.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_03.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_04.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_05.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_06.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_07.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_08.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_09.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_10.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_11.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_12.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_01.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_02.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_03.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_04.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_05.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_06.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_07.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_08.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_09.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_10.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_12.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/0_Sword/New_Weapon_01.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/0_Sword/New_Weapon_06.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/0_Sword/New_Weapon_17.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/0_Sword/New_Weapon_18.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/0_Sword/New_Weapon_19.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/0_Sword/New_Weapon_20.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/1_Spear/New_Weapon_09.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/1_Spear/New_Weapon_13.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/1_Spear/New_Weapon_14.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/1_Spear/New_Weapon_16.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/2_Axe/New_weapon_02.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/2_Axe/New_Weapon_04.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/2_Axe/New_Weapon_08.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/3_Bow/New_Weapon_10.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/3_Bow/New_Weapon_12.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/3_Bow/New_Weapon_15.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/5_Wand/New_Weapon_03.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/6_Dagger/New_Weapon_05.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/6_Dagger/New_Weapon_11.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/7_Shield/New_Shield_01.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/7_Shield/New_Shield_02.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/7_Shield/New_Shield_03.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/7_Shield/New_Shield_04.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/8_Mace/New_Weapon_07.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/1_Animation/00_Idle/LongSpear_idle.anim
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/1_Animation/01_Move/LongSpear_Walk.anim
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/1_Animation/02_Attack/00_MeleeAttack/AxeAttack_1.anim
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/1_Animation/02_Attack/00_MeleeAttack/LongSpearAttack_1.anim
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/1_Animation/02_Attack/00_MeleeAttack/ShotSwordAttack_1.anim
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/Index.json
+Assets/GameAssets/SPUM/Sample/Materials/EffectMat.mat
+Assets/GameAssets/SPUM/Sample/Materials/samplebutton.png
+Assets/GameAssets/SPUM/Sample/Prefabs/AnimationButton.prefab
+Assets/GameAssets/SPUM/Sample/Prefabs/AnimationPanel.prefab
+Assets/GameAssets/SPUM/Sample/Prefabs/SamplePlayer.prefab
+Assets/GameAssets/SPUM/Sample/Scene/Sample.unity
+Assets/GameAssets/SPUM/Sample/Script/Editor/PlayerManagerEditor.cs
+Assets/GameAssets/SPUM/Sample/Script/PlayerManager.cs
+Assets/GameAssets/SPUM/Sample/Script/PlayerObj.cs
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/_ Lite/Shaders/Lite_SH_Vefects_URP_Unlit_Combat_Flipbook_Advanced_01.shader
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Resources/Animation/_ Cam 03.controller
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Resources/Animation/_ Cam 1.controller
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Resources/Animation/_ Cam.controller
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Resources/Animation/VFX_Anim.anim
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Resources/Animation/VFX_Anim_Close.anim
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Resources/Animation/VFX_Anim_Close_Slow.anim
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Resources/Materials/M_VFX_Character_Showoff_01.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Resources/Meshes/SM_Vefects_Vexa_Unity_01.fbx
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Resources/Meshes/SM_Vefects_Vexa_Unity_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Resources/Prefabs/Lite _ VFX.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Resources/Shaders/SH_Vefects_URP_VFX_Character_Showoff.shader
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Resources/Textures/T_VFX_Perlin_2_Octaves_Equalized.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Scene/Shaders/SH_Vefects_Grid_01.shader
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Shaders/Lite_SH_Vefects_Unlit_Flipbook_URP_New.shader
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Resources/Character/Materials/M_Character_Base_01.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Resources/Character/Materials/M_VFX_Character_Showoff_01.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Resources/Character/Meshes/SM_Vefects_Vexa_Unity_01.fbx
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Resources/Character/Meshes/SM_Vefects_Vexa_Unity_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Resources/Character/Shaders/SH_Vefects_URP_VFX_Character_Showoff.shader
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Resources/Character/Textures/T_VFX_Perlin_2_Octaves_Equalized.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Resources/Environment/Materials/M_Grid.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Resources/Environment/Materials/M_Sky.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Resources/Environment/Materials/M_Vefects_Grid_01.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Resources/Environment/Meshes/SM_VFX_Background_Plate_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Resources/Environment/Meshes/SM_VFX_Background_Plate_Flat_01.fbx
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Resources/Environment/Shaders/SH_Vefects_Grid_01.shader
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Resources/Environment/Textures/T_VFX_Grid_01_Masks.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Resources/Environment/Textures/T_VFX_Grid_01_Normal.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Resources/Environment/Textures/T_VFX_Grid_01_Texture.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Resources/Environment/Textures/T_VFX_Metrics_Grid_Base_Color.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Resources/Environment/Textures/T_VFX_Metrics_Grid_Normal.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Documentation/Vefects Flipbook VFX Unity Info Doc NEW.pdf
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/_ Lite/Shaders/Lite_SH_Vefects_URP_Unlit_Flipbook_Pixel_01_Web.shader
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Materials/M_VFX_Character_Showoff_01.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Meshes/SM_Vefects_Vexa_Unity_01.fbx
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Meshes/SM_Vefects_Vexa_Unity_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Scene/Animations/dolly.controller
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Scene/Animations/VFX_Dolly_Animation.anim
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Scene/Materials/M_Grid.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Scene/Materials/M_Sky.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Scene/Materials/M_Vefects_Grid_01.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Scene/Meshes/SM_VFX_Background_Plate_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Scene/Meshes/SM_VFX_Background_Plate_Flat_01.fbx
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Scene/Prefabs/__________ VFX Thumbnail.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Scene/Settings/PostProProfile_Pixel.asset
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Scene/Shaders/SH_Vefects_Grid_01.shader
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Scene/Textures/T_VFX_Grid_01_Masks.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Scene/Textures/T_VFX_Grid_01_Normal.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Scene/Textures/T_VFX_Grid_01_Texture.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Scene/Textures/T_VFX_Metrics_Grid_Base_Color.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Scene/Textures/T_VFX_Metrics_Grid_Normal.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Shaders/SH_Vefects_URP_VFX_Character_Showoff.shader
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Resources/Textures/T_VFX_Perlin_2_Octaves_Equalized.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Documentation/Vefects Pixel Craft VFX Unity Info Doc.pdf
+Assets/InputSystem/Player.inputactions
+Assets/InputSystem_Actions.inputactions
+Assets/Materials/Asset.mat
+Assets/Materials/Glow 1.mat
+Assets/Materials/Glow.mat
+Assets/Materials/Glow2.mat
+Assets/Materials/Hit 1.mat
+Assets/Materials/Hit 2.mat
+Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll
+Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.xml
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/DemiEditor.dll
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/DemiEditor.xml
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquare.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha10.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha15.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha25.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha50.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha80.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blueSquare.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/circle.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/circle_dashedBorderEmpty.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/greenSquare.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/grid_bright.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/grid_dark.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alert.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignB.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignBC.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignBL.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignBR.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCC.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCL.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCR.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignHC.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignL.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignR.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignT.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignTC.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignTL.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignTR.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignVC.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_audio.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_audio_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_camera.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_camera_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_cog.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_cog_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_comment.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_comment_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_delete.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_demigiant.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_demigiantLogo.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_demigiantLogo_color.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_distributeHAlignT.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_distributeVAlignL.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_doing.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_end.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_flipV.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_foldout_closed.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_foldout_open.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_heart.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_heart_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_light.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_light_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_lock.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_lock_open.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_nodeArrow.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ok.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_optionsDropdown.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_play.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_play_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_skull.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_skull_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_star.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_star_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_todo.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ui.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ui_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_visibility.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_visibility_off.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/orangeSquare.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_atlas.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_audio.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_bundle.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_cog.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_cross.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_demigiant.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_folder.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_fonts.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_heart.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_materials.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_models.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_particles.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_play.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_prefab.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_scripts.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_shaders.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_skull.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_star.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_terrains.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_textures.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/purpleSquare.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/redSquare.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorder.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderAlpha15.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved_darkBorders.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved_darkBordersAlpha.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved02.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved02_darkBorders.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedAlpha.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedEmpty.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedEmpty02.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedEmptyThick.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty01.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty02.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty03.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderThickEmpty.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderThickerEmpty.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareCorners03.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareCornersEmpty02.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileBars_empty.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileBars_slanted.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileBars_slanted_alpha.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileCheckerboard.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/transparentSquare.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot_darkBorder.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot_whiteBorderAlpha.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquare.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquare_fadeOut_bt.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha10.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha15.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha25.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha50.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha80.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareCurved.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareCurved02.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/yellowSquare.png
+Assets/Plugins/Demigiant/DOTween/DOTween.dll
+Assets/Plugins/Demigiant/DOTween/DOTween.XML
+Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll
+Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.XML
+Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenIcon.png
+Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenMiniIcon.png
+Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer.png
+Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer_dark.png
+Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Header.jpg
+Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleAudio.cs
+Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleEPOOutline.cs
+Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics.cs
+Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics2D.cs
+Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleSprite.cs
+Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUI.cs
+Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUIToolkit.cs
+Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUnityVersion.cs
+Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs
+Assets/Plugins/Demigiant/DOTween/readme.txt
+Assets/Plugins/Demigiant/DOTweenPro Examples/DOTweenAnimation_Advanced.unity
+Assets/Plugins/Demigiant/DOTweenPro Examples/DOTweenAnimation_AdvancedSettings.lighting
+Assets/Plugins/Demigiant/DOTweenPro Examples/DOTweenAnimation_Basics.unity
+Assets/Plugins/Demigiant/DOTweenPro Examples/DOTweenAnimation_BasicsSettings.lighting
+Assets/Plugins/Demigiant/DOTweenPro Examples/DOTweenPath.unity
+Assets/Plugins/Demigiant/DOTweenPro Examples/DOTweenPathSettings.lighting
+Assets/Plugins/Demigiant/DOTweenPro Examples/Examples Assets/dotweenpro_logo.png
+Assets/Plugins/Demigiant/DOTweenPro/DOTweenAnimation.cs
+Assets/Plugins/Demigiant/DOTweenPro/DOTweenDeAudio.cs
+Assets/Plugins/Demigiant/DOTweenPro/DOTweenDeUnityExtended.cs
+Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll
+Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.XML
+Assets/Plugins/Demigiant/DOTweenPro/DOTweenProShortcuts.cs
+Assets/Plugins/Demigiant/DOTweenPro/DOTweenTextMeshPro.cs
+Assets/Plugins/Demigiant/DOTweenPro/DOTweenTk2d.cs
+Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenAnimationInspector.cs
+Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenPreviewManager.cs
+Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll
+Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenProEditor.XML
+Assets/Plugins/Demigiant/DOTweenPro/readme.txt
+Assets/Plugins/Demigiant/readme_DOTweenPro.txt
+Assets/Plugins/Febucci/Text Animator for Unity/Actions/Actions Database.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Actions/SpeedAction.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Actions/WaitAnyInputAction.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Actions/WaitForAction.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Curves/Bounce Curve.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Curves/Hold Curve.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Curves/Linear Curve.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Curves/Sine Curve.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Curves/Square Curve.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Curves/Step Curve.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Data/InstallationData.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Effects/Bounce Effect.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Effects/Dangle Effect.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Effects/Effects Database.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Effects/Expand Effect.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Effects/Fade Effect.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Effects/Pendulum Effect.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Effects/Rainbow Effect.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Effects/Rotation Effect.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Effects/Shake Effect.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Effects/Size Effect.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Effects/SlideHorizontal Effect.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Effects/SlideVertical Effect.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Effects/Swing Effect.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Effects/Wave Effect.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Effects/Wiggle Effect.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Playbacks/Appearance Default Playback.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Playbacks/Default Playback.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Playbacks/External playback.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Playbacks/Loop Playback.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Playbacks/Once Playback.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Playbacks/Playbacks Database.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Resources/TextAnimatorSettings.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Settings/Shared Animator Settings.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Settings/Shared Typewriter Settings.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Settings/TextAnimator StyleSheet.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Timings/Delays By Character.asset
+Assets/Plugins/Febucci/Text Animator for Unity/Timings/Delays By Word.asset
+Assets/Plugins/Sirenix/Assemblies/link.xml
+Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll
+Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.pdb
+Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll
+Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.pdb
+Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll
+Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.pdb
+Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll
+Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.pdb
+Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll
+Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.pdb
+Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.xml
+Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll
+Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.pdb
+Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.xml
+Assets/Plugins/Sirenix/Assemblies/Sirenix.Reflection.Editor.dll
+Assets/Plugins/Sirenix/Assemblies/Sirenix.Reflection.Editor.pdb
+Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll
+Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.pdb
+Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.xml
+Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll
+Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.pdb
+Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.xml
+Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll
+Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll
+Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.pdb
+Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.xml
+Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.pdb
+Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.xml
+Assets/Plugins/Sirenix/Demos/Custom Attribute Processors.unitypackage
+Assets/Plugins/Sirenix/Demos/Custom Drawers.unitypackage
+Assets/Plugins/Sirenix/Demos/Editor Windows.unitypackage
+Assets/Plugins/Sirenix/Demos/Sample - RPG Editor.unitypackage
+Assets/Plugins/Sirenix/Odin Inspector/Assets/Editor/Bootstrap License.txt
+Assets/Plugins/Sirenix/Odin Inspector/Assets/Editor/ConfigData.bytes
+Assets/Plugins/Sirenix/Odin Inspector/Assets/Editor/Hidden/ExtractSpriteShader.shader
+Assets/Plugins/Sirenix/Odin Inspector/Assets/Editor/Hidden/GUIUtilShader.shader
+Assets/Plugins/Sirenix/Odin Inspector/Assets/Editor/Hidden/LazyEditorIconShader.shader
+Assets/Plugins/Sirenix/Odin Inspector/Assets/Editor/Hidden/SdfIconShader.shader
+Assets/Plugins/Sirenix/Odin Inspector/Assets/Editor/OdinPathLookup.asset
+Assets/Plugins/Sirenix/Odin Inspector/Assets/Editor/SdfIconAtlas.png
+Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/AOTGenerationConfig.asset
+Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/GeneralDrawerConfig.asset
+Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/ImportSettingsConfig.asset
+Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/InspectorConfig.asset
+Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/OdinModuleConfig.asset
+Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/OdinVisualDesignerConfig.asset
+Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/TypeRegistryUserConfig.asset
+Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Addressables.data
+Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Addressables.info.txt
+Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Entities.data
+Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Entities.info.txt
+Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization.data
+Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization.info.txt
+Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Mathematics.data
+Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Mathematics.info.txt
+Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Mathematics/manifest.txt
+Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Mathematics/MathematicsDrawers.cs
+Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Mathematics/Sirenix.OdinInspector.Modules.UnityMathematics.asmdef
+Assets/Plugins/Sirenix/Odin Inspector/Version.txt
+Assets/Plugins/Sirenix/Readme.txt
+Assets/Plugins/WebGL/TerraformerFullscreen.jslib
+Assets/Pont/Fallback/ヒラギノ角ゴシック W3 Japanese SDF.asset
+Assets/Pont/Fallback/ヒラギノ角ゴシック W3.ttc
+Assets/Pont/GowunBatang-Regular SDF.asset
+Assets/Pont/GowunBatang-Regular.ttf
+Assets/Pont/NewClear-mincho SDF.asset
+Assets/Pont/NewClear-mincho.ttf
+Assets/Pont/ONE Mobile POP SDF.asset
+Assets/Pont/ONE Mobile POP.ttf
+Assets/ProjectSettings/UIParticleProjectSettings.asset
+Assets/Resources/Audio/Footsteps/SingleSteps/footstep_01.mp3
+Assets/Resources/Audio/Footsteps/SingleSteps/footstep_01_step_01.wav
+Assets/Resources/Audio/Footsteps/SingleSteps/footstep_01_step_02.wav
+Assets/Resources/Audio/Footsteps/SingleSteps/footstep_01_step_03.wav
+Assets/Resources/Audio/Footsteps/SingleSteps/footstep_02.mp3
+Assets/Resources/Audio/Footsteps/SingleSteps/footstep_02_step_01.wav
+Assets/Resources/Audio/Footsteps/SingleSteps/footstep_02_step_02.wav
+Assets/Resources/Audio/Footsteps/SingleSteps/footstep_02_step_03.wav
+Assets/Resources/Audio/Footsteps/SingleSteps/footstep_03.mp3
+Assets/Resources/Audio/Footsteps/SingleSteps/footstep_03_step_01.wav
+Assets/Resources/Audio/Footsteps/SingleSteps/footstep_03_step_02.wav
+Assets/Resources/Audio/Footsteps/SingleSteps/footstep_03_step_03.wav
+Assets/Resources/Audio/Footsteps/SingleSteps/footstep_04.wav
+Assets/Resources/Audio/Footsteps/SingleSteps/footstep_04_step_01.wav
+Assets/Resources/Audio/Footsteps/SingleSteps/footstep_04_step_02.wav
+Assets/Resources/Audio/Music/Celestial Arpeggios.mp3
+Assets/Resources/Audio/Music/Weightless Nebula.mp3
+Assets/Resources/Audio/SFX/ButtonClick.mp3
+Assets/Resources/Audio/SFX/CharacterConfirm.mp3
+Assets/Resources/Audio/SFX/Dash.mp3
+Assets/Resources/Audio/SFX/EnemyBurn.mp3
+Assets/Resources/Audio/SFX/EnemyHit.mp3
+Assets/Resources/Audio/SFX/EnemyWaveStart.mp3
+Assets/Resources/Audio/SFX/ExpPickup.mp3
+Assets/Resources/Audio/SFX/FireballLaunch.mp3
+Assets/Resources/Audio/SFX/GameClear5.mp3
+Assets/Resources/Audio/SFX/HeatwaveExplosion.mp3
+Assets/Resources/Audio/SFX/LevelUp.mp3
+Assets/Resources/Audio/SFX/LightningStrike.mp3
+Assets/Resources/Audio/SFX/MageAttack.mp3
+Assets/Resources/Audio/SFX/MissileLaunch.mp3
+Assets/Resources/Audio/SFX/MoldPop.mp3
+Assets/Resources/Audio/SFX/PlayerHit.mp3
+Assets/Resources/Audio/SFX/PoisonApply.mp3
+Assets/Resources/Audio/SFX/PoisonFlight.mp3
+Assets/Resources/Audio/SFX/ShurikenSpin.mp3
+Assets/Resources/Audio/SFX/SlimeJump.mp3
+Assets/Resources/Audio/SFX/SlimeSplit.mp3
+Assets/Resources/Audio/SFX/SnailGroundLoop.mp3
+Assets/Resources/Audio/SFX/SwordHit.mp3
+Assets/Resources/Audio/SFX/UIHover.mp3
+Assets/Resources/Audio/SFX/UpgradeSelect.mp3
+Assets/Resources/CharacterProgressionSettings.asset
+Assets/Resources/DOTweenSettings.asset
+Assets/Resources/Prefabs/Agent/Mage.prefab
+Assets/Resources/Prefabs/Agent/Swordman.prefab
+Assets/Resources/Prefabs/Boss/OctopusKing.prefab
+Assets/Resources/Prefabs/Boss/SlimeKing.prefab
+Assets/Resources/Prefabs/BossPattern/Circle.prefab
+Assets/Resources/Prefabs/BossPattern/GroundCrack.prefab
+Assets/Resources/Prefabs/BossPattern/HydroPump.prefab
+Assets/Resources/Prefabs/Bullet/WaterBamb.prefab
+Assets/Resources/Prefabs/Bullet/WaterBullet.prefab
+Assets/Resources/Prefabs/Bullet/WaterCannon.prefab
+Assets/Resources/Prefabs/CollectedAugments/CollectedAugments.prefab
+Assets/Resources/Prefabs/CollectedAugments/New Piskel (2).png
+Assets/Resources/Prefabs/CollectedAugments/SkillIcon.prefab
+Assets/Resources/Prefabs/Enemy/BombSlime.prefab
+Assets/Resources/Prefabs/Enemy/Bull.prefab
+Assets/Resources/Prefabs/Enemy/Crap.prefab
+Assets/Resources/Prefabs/Enemy/Eagle.prefab
+Assets/Resources/Prefabs/Enemy/Goat.prefab
+Assets/Resources/Prefabs/Enemy/Octopus.prefab
+Assets/Resources/Prefabs/Enemy/Pufferfish.prefab
+Assets/Resources/Prefabs/Enemy/Slime.prefab
+Assets/Resources/Prefabs/Enemy/Turtle.prefab
+Assets/Resources/Prefabs/Exp/ExpOrb 1.prefab
+Assets/Resources/Prefabs/Exp/ExpOrb 2.prefab
+Assets/Resources/Prefabs/Exp/ExpOrb.prefab
+Assets/Resources/Prefabs/Item/HealthPickup.prefab
+Assets/Resources/Prefabs/Item/MagnetPickup.prefab
+Assets/Resources/Prefabs/SkillEffect/MagicBolt.prefab
+Assets/Resources/Prefabs/SkillEffect/slash.prefab
+Assets/Resources/Prefabs/Spawn/SpawnPoint.prefab
+Assets/Resources/Prefabs/UI/Codex 이미지 2026년 9월 28일 오후 03_52_06_0.prefab
+Assets/Resources/Prefabs/UI/Dropdown.prefab
+Assets/Resources/Prefabs/UI/LevelImage.prefab
+Assets/Resources/Prefabs/UI/Option.prefab
+Assets/Resources/Prefabs/UI/Options.prefab
+Assets/Resources/Prefabs/UI/Slider.prefab
+Assets/Resources/Prefabs/UI/StageSelectButton.prefab
+Assets/Resources/Prefabs/UI/UpgradeCombine.prefab
+Assets/Resources/Prefabs/Upgrade/burn.prefab
+Assets/Resources/Prefabs/Upgrade/FireBall.prefab
+Assets/Resources/Prefabs/Upgrade/FireStorm.prefab
+Assets/Resources/Prefabs/Upgrade/Heatwave.prefab
+Assets/Resources/Prefabs/Upgrade/LavaField.prefab
+Assets/Resources/Prefabs/Upgrade/Lightning.prefab
+Assets/Resources/Prefabs/Upgrade/LightningShuriken.prefab
+Assets/Resources/Prefabs/Upgrade/Missile.prefab
+Assets/Resources/Prefabs/Upgrade/Mold.prefab
+Assets/Resources/Prefabs/Upgrade/Poison.prefab
+Assets/Resources/Prefabs/Upgrade/RottingSpore.prefab
+Assets/Resources/Prefabs/Upgrade/Shuriken.prefab
+Assets/Resources/Prefabs/Upgrade/Snail.prefab
+Assets/Resources/Prefabs/Upgrade/SporeWarhead.prefab
+Assets/Resources/Prefabs/Upgrade/Upgrade.prefab
+Assets/Resources/Shaders/CenterOutFade.shader
+Assets/Resources/SkillUpgradeIcon/Burn.asset
+Assets/Resources/SkillUpgradeIcon/FireBall.asset
+Assets/Resources/SkillUpgradeIcon/FireStorm.asset
+Assets/Resources/SkillUpgradeIcon/Heatwave.asset
+Assets/Resources/SkillUpgradeIcon/LavaField.asset
+Assets/Resources/SkillUpgradeIcon/Lightning.asset
+Assets/Resources/SkillUpgradeIcon/LightningShuriken.asset
+Assets/Resources/SkillUpgradeIcon/Missile.asset
+Assets/Resources/SkillUpgradeIcon/Mold.asset
+Assets/Resources/SkillUpgradeIcon/Poison.asset
+Assets/Resources/SkillUpgradeIcon/RottingSpore.asset
+Assets/Resources/SkillUpgradeIcon/Shuriken.asset
+Assets/Resources/SkillUpgradeIcon/Snail.asset
+Assets/Resources/SkillUpgradeIcon/SporeWarhead.asset
+Assets/Resources/SoundManager.prefab
+Assets/Resources/Sprites/MageMagicBolt.png
+Assets/Resources/StatUpgradeIcon/CriticalForce.asset
+Assets/Resources/StatUpgradeIcon/CriticalInstinct.asset
+Assets/Resources/StatUpgradeIcon/IronWall.asset
+Assets/Resources/StatUpgradeIcon/PowerBoost.asset
+Assets/Resources/StatUpgradeIcon/QuickCast.asset
+Assets/Resources/StatUpgradeIcon/RapidCycle.asset
+Assets/Resources/StatUpgradeIcon/Vitality.asset
+Assets/Resources/TextData/BulletData.csv
+Assets/Resources/TextData/CharacterSkillUpgradeData.csv
+Assets/Resources/TextData/EnemyData.csv
+Assets/Resources/TextData/ExpData.csv
+Assets/Resources/TextData/HealthPickupData.csv
+Assets/Resources/TextData/LevelData.csv
+Assets/Resources/TextData/Localization.csv
+Assets/Resources/TextData/PatternData.csv
+Assets/Resources/TextData/PlayerData.csv
+Assets/Resources/TextData/SkillData.csv
+Assets/Resources/TextData/StageData.csv
+Assets/Resources/TextData/StatUpgradeData.csv
+Assets/Resources/TextData/UpgradeData.csv
+Assets/Resources/Tiles/Tree_1_1.asset
+Assets/Resources/Tiles/Tree_1_2.asset
+Assets/Resources/Tiles/Tree_10_1.asset
+Assets/Resources/Tiles/Tree_10_2.asset
+Assets/Resources/Tiles/Tree_11_1.asset
+Assets/Resources/Tiles/Tree_11_2.asset
+Assets/Resources/Tiles/Tree_12_1.asset
+Assets/Resources/Tiles/Tree_12_2.asset
+Assets/Resources/Tiles/Tree_13_1.asset
+Assets/Resources/Tiles/Tree_14_1.asset
+Assets/Resources/Tiles/Tree_14_2.asset
+Assets/Resources/Tiles/Tree_15_1.asset
+Assets/Resources/Tiles/Tree_15_2.asset
+Assets/Resources/Tiles/Tree_16_1.asset
+Assets/Resources/Tiles/Tree_16_2.asset
+Assets/Resources/Tiles/Tree_17_1.asset
+Assets/Resources/Tiles/Tree_17_2.asset
+Assets/Resources/Tiles/Tree_18_1.asset
+Assets/Resources/Tiles/Tree_18_2.asset
+Assets/Resources/Tiles/Tree_19_1.asset
+Assets/Resources/Tiles/Tree_19_2.asset
+Assets/Resources/Tiles/Tree_2_1.asset
+Assets/Resources/Tiles/Tree_2_2.asset
+Assets/Resources/Tiles/Tree_20_1.asset
+Assets/Resources/Tiles/Tree_20_2.asset
+Assets/Resources/Tiles/Tree_21_1.asset
+Assets/Resources/Tiles/Tree_21_2.asset
+Assets/Resources/Tiles/Tree_21_3.asset
+Assets/Resources/Tiles/Tree_22_1.asset
+Assets/Resources/Tiles/Tree_22_2.asset
+Assets/Resources/Tiles/Tree_23_1.asset
+Assets/Resources/Tiles/Tree_23_2.asset
+Assets/Resources/Tiles/Tree_24_1.asset
+Assets/Resources/Tiles/Tree_24_2.asset
+Assets/Resources/Tiles/Tree_24_3.asset
+Assets/Resources/Tiles/Tree_25_1.asset
+Assets/Resources/Tiles/Tree_25_2.asset
+Assets/Resources/Tiles/Tree_26_1.asset
+Assets/Resources/Tiles/Tree_26_2.asset
+Assets/Resources/Tiles/Tree_27_1.asset
+Assets/Resources/Tiles/Tree_27_2.asset
+Assets/Resources/Tiles/Tree_28_1.asset
+Assets/Resources/Tiles/Tree_28_2.asset
+Assets/Resources/Tiles/Tree_29_1.asset
+Assets/Resources/Tiles/Tree_3_1.asset
+Assets/Resources/Tiles/Tree_30_1.asset
+Assets/Resources/Tiles/Tree_30_2.asset
+Assets/Resources/Tiles/Tree_30_3.asset
+Assets/Resources/Tiles/Tree_31_1.asset
+Assets/Resources/Tiles/Tree_31_2.asset
+Assets/Resources/Tiles/Tree_4_1.asset
+Assets/Resources/Tiles/Tree_4_2.asset
+Assets/Resources/Tiles/Tree_5_1.asset
+Assets/Resources/Tiles/Tree_5_2.asset
+Assets/Resources/Tiles/Tree_6_1.asset
+Assets/Resources/Tiles/Tree_6_2.asset
+Assets/Resources/Tiles/Tree_7_1.asset
+Assets/Resources/Tiles/Tree_7_2.asset
+Assets/Resources/Tiles/Tree_8_1.asset
+Assets/Resources/Tiles/Tree_8_2.asset
+Assets/Resources/Tiles/Tree_9_1.asset
+Assets/Resources/Tiles/Tree_9_2.asset
+Assets/Resources/Tiles/TX Tileset Grass 0.asset
+Assets/Resources/Tiles/TX Tileset Grass 1.asset
+Assets/Resources/Tiles/TX Tileset Grass 2.asset
+Assets/Resources/Tiles/TX Tileset Grass 3.asset
+Assets/Resources/Tiles/TX Tileset Grass 4.asset
+Assets/Resources/UI/backGround.png
+Assets/Resources/UI/backGround_noStars.png
+Assets/Resources/UI/call_VJOcS1tqEq6gHd9XwpoUfoXg.png
+Assets/Resources/UI/CharacterCardFrame.png
+Assets/Resources/UI/ChatGPT 이미지 2026년 10월 6일 오전 11_02_30.png
+Assets/Resources/UI/close.png
+Assets/Resources/UI/Codex 이미지 2026년 10월 6일 오전 08_34_29.png
+Assets/Resources/UI/Codex 이미지 2026년 10월 6일 오전 09_15_15.png
+Assets/Resources/UI/Codex 이미지 2026년 10월 6일 오전 09_19_19.png
+Assets/Resources/UI/Codex 이미지 2026년 10월 6일 오전 09_25_15.png
+Assets/Resources/UI/Codex 이미지 2026년 10월 6일 오전 09_29_04.png
+Assets/Resources/UI/Codex 이미지 2026년 10월 6일 오전 09_33_45.png
+Assets/Resources/UI/Codex 이미지 2026년 9월 28일 오후 01_36_20 (1).png
+Assets/Resources/UI/Codex 이미지 2026년 9월 28일 오후 03_52_06.png
+Assets/Resources/UI/Codex 이미지 2026년 9월 28일 오후 04_08_58.png
+Assets/Resources/UI/CornerNotchButton.png
+Assets/Resources/UI/CutsceneTypingDelays.asset
+Assets/Resources/UI/download.png
+Assets/Resources/UI/DropdownListBackground.png
+Assets/Resources/UI/FrameBlackInterior.png
+Assets/Resources/UI/FrameCornerNotches.png
+Assets/Resources/UI/FrameRecessed.png
+Assets/Resources/UI/handle.png
+Assets/Resources/UI/New Piskel (6).png
+Assets/Resources/UI/Option.png
+Assets/Resources/UI/slider 1.png
+Assets/Resources/UI/slider.png
+Assets/Resources/UI/StagePlanets/Planet_01.png
+Assets/Resources/UI/StagePlanets/Planet_02.png
+Assets/Resources/UI/StagePlanets/Planet_03.png
+Assets/Resources/UI/StagePlanets/Planet_04.png
+Assets/Resources/UI/StagePlanets/Planet_05.png
+Assets/Resources/UI/StagePlanets/Planet_06.png
+Assets/Resources/UI/StageSelectSquareButton.png
+Assets/Resources/UI/UpgradeHud/CollectedLevel.mat
+Assets/Resources/UI/UpgradeHud/CooldownLevel.mat
+Assets/Resources/UI/UpgradeHud/CooldownTime.mat
+Assets/Resources/UI/UpgradeHud/Font.asset
+Assets/Resources/UI/WhiteX.png
+Assets/Resources/UpgradeImageScrip/Burn.asset
+Assets/Resources/UpgradeImageScrip/CriticalForce.asset
+Assets/Resources/UpgradeImageScrip/CriticalInstinct.asset
+Assets/Resources/UpgradeImageScrip/FireBall.asset
+Assets/Resources/UpgradeImageScrip/FireStorm.asset
+Assets/Resources/UpgradeImageScrip/Heatwave.asset
+Assets/Resources/UpgradeImageScrip/IronWall.asset
+Assets/Resources/UpgradeImageScrip/LavaField.asset
+Assets/Resources/UpgradeImageScrip/Lightning.asset
+Assets/Resources/UpgradeImageScrip/LightningShuriken.asset
+Assets/Resources/UpgradeImageScrip/MagicUpgrade.asset
+Assets/Resources/UpgradeImageScrip/Missile.asset
+Assets/Resources/UpgradeImageScrip/Mold.asset
+Assets/Resources/UpgradeImageScrip/Poison.asset
+Assets/Resources/UpgradeImageScrip/PowerBoost.asset
+Assets/Resources/UpgradeImageScrip/QuickCast.asset
+Assets/Resources/UpgradeImageScrip/RapidCycle.asset
+Assets/Resources/UpgradeImageScrip/RottingSpre.asset
+Assets/Resources/UpgradeImageScrip/Shuriken.asset
+Assets/Resources/UpgradeImageScrip/SlashUpgrade.asset
+Assets/Resources/UpgradeImageScrip/Snail.asset
+Assets/Resources/UpgradeImageScrip/SporeWarhead.asset
+Assets/Resources/UpgradeImageScrip/Vitality.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/00 - Welcome.unity
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Fonts/Lato-Regular.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Fonts/Lato-Regular.ttf
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Fonts/OFL.txt
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CurvesEffects/BounceCurve.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CurvesEffects/HoldCurve.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CurvesEffects/LinearCurve.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CurvesEffects/SineCurve.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CurvesEffects/SquareCurve.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CurvesEffects/StepCurve.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CustomPlaybacks/NoEasingPlayback.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CustomPlaybacks/RepeatNTimesPlayback.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CustomPlaybacks/WaitBetweenCyclesPlayback.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/ExampleEffectsDatabse.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/PlaybacksEffects/NoEasing.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/PlaybacksEffects/RepeatNTimes.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/PlaybacksEffects/RepeatOnce.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/PlaybacksEffects/RepeatWithPause.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Textures/textanimator-sfondo-unity.png
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/CurvesAndPlaybacks.unity
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Febucci.TextAnimator.Demo.CurvesAndPlaybacks.Runtime.asmdef
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Prefabs/Canvas Examples TMPro.prefab
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Scripts/CurvesAndPlaybacksFormatter.cs
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Example 1A - Effects.unity
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Example 1B - Stacks.unity
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Example 1C - Attributes.unity
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Example 2 - Events.unity
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Example 3 - Actions.unity
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Example 4 - UI Toolkit.unity
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Font/Lato-Regular.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Font/Lato-Regular.ttf
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Font/OFL.txt
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Prefabs/Canvas Examples TMPro.prefab
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Scripts/Runtime/DefaultEffectsExample.cs
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Scripts/Runtime/ExampleEvents.cs
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Scripts/Runtime/Febucci.TextAnimator.Demo.Runtime.asmdef
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Scripts/Runtime/UsageExample.cs
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Sprites/Circle.png
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Sprites/example_dialoguebox_body.png
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Sprites/Example_sprites.png
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Sprites/textanimator-sfondo-unity.png
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/UIToolkit/TAnim UITK Example Settings.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/UIToolkit/TextAnimUITK_Example.uxml
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/UIToolkit/UnityDefaultRuntimeTheme.tss
+Assets/Scenes/CutSceen.unity
+Assets/Scenes/Lobby.unity
+Assets/Scenes/Stage1.unity
+Assets/Scenes/Stage1/Global Volume Profile.asset
+Assets/Scenes/Stage1/NavMesh-Nav.asset
+Assets/Script/Anim/AnimationController.cs
+Assets/Script/Boss/BossHealthSource.cs
+Assets/Script/Boss/OctopusKing.cs
+Assets/Script/Boss/SlimeKing.cs
+Assets/Script/BossPattern/GroundCrack.cs
+Assets/Script/BossPattern/HydroPump.cs
+Assets/Script/BossPattern/WaringSign.cs
+Assets/Script/Bullet/BulletMove.cs
+Assets/Script/Bullet/PredictionBulletMove.cs
+Assets/Script/Data/GetData.cs
+Assets/Script/Debug/CodexPlaytestAgent.cs
+Assets/Script/Debug/DebugCameraZSlider.cs
+Assets/Script/Debug/DevelopmentOnlyCanvas.cs
+Assets/Script/Debug/Editor/DebugCameraZSliderEditor.cs
+Assets/Script/Enemy/BombSlime.cs
+Assets/Script/Enemy/EnemyCombat.cs
+Assets/Script/Enemy/EnemyKitingMove.cs
+Assets/Script/Enemy/EnemyMove.cs
+Assets/Script/Enemy/MeleeEnemyAttack.cs
+Assets/Script/Enemy/RamgedEnemyAttack.cs
+Assets/Script/Enemy/SlimeJumpSound.cs
+Assets/Script/Enemy/SplitEnemy.cs
+Assets/Script/Exp/Exp.cs
+Assets/Script/Info/BossPatternInfo.cs
+Assets/Script/Info/BulletInfo.cs
+Assets/Script/Info/EnemyInfo.cs
+Assets/Script/Info/ExpInfo.cs
+Assets/Script/Info/ImageInfo.cs
+Assets/Script/Info/PlayerInfo.cs
+Assets/Script/Info/SkillInfo.cs
+Assets/Script/Info/UpgradeInfo.cs
+Assets/Script/Info/UpgradeUiInfo.cs
+Assets/Script/Item/HealthPickup.cs
+Assets/Script/Item/MagnetPickup.cs
+Assets/Script/Item/PickupSpawnData.cs
+Assets/Script/Localizetion/LanguageDropdown.cs
+Assets/Script/Localizetion/LocalizationManager.cs
+Assets/Script/Localizetion/LocalizedDropdownOptions.cs
+Assets/Script/Localizetion/LocalizedFont.cs
+Assets/Script/Localizetion/LocalizedText.cs
+Assets/Script/Manager/CharacterManager.cs
+Assets/Script/Manager/DataManager.cs
+Assets/Script/Manager/ExpManager.cs
+Assets/Script/Manager/GameManager.cs
+Assets/Script/Manager/GameSceneManager.cs
+Assets/Script/Manager/LevelManager.cs
+Assets/Script/Manager/PlaySoundOnEnable.cs
+Assets/Script/Manager/SfxAudioSourceVolume.cs
+Assets/Script/Manager/SoundEntry.cs
+Assets/Script/Manager/SoundIds.cs
+Assets/Script/Manager/SoundManager.cs
+Assets/Script/Manager/StageManager.cs
+Assets/Script/Manager/UpgradeManager.cs
+Assets/Script/Odin/ConquestSerializedMonoBehaviour.cs
+Assets/Script/Odin/ConquestSerializedScriptableObject.cs
+Assets/Script/Player/MageProjectile.cs
+Assets/Script/Player/PlayerCombat.cs
+Assets/Script/Player/PlayerController.cs
+Assets/Script/Player/PlayerMove.cs
+Assets/Script/Player/SelectedCharacterSetup.cs
+Assets/Script/Pool/PooledObject.cs
+Assets/Script/Pool/PoolManager.cs
+Assets/Script/Progression/CharacterEnhancementTable.cs
+Assets/Script/Progression/CharacterProgression.cs
+Assets/Script/Progression/CharacterProgressionPanel.cs
+Assets/Script/Progression/CharacterProgressionSettings.cs
+Assets/Script/Progression/ProgressionWalletView.cs
+Assets/Script/Progression/RunRewardView.cs
+Assets/Script/Skill/SkillSpawner.cs
+Assets/Script/UI/BossHpBar.cs
+Assets/Script/UI/CharacterCardVisual.cs
+Assets/Script/UI/CharacterTitleAlignment.cs
+Assets/Script/UI/CutSceneController.cs
+Assets/Script/UI/DashBar.cs
+Assets/Script/UI/DropdownDismissOnClick.cs
+Assets/Script/UI/DropdownListOccluder.cs
+Assets/Script/UI/DropdownSelectedOptionVisual.cs
+Assets/Script/UI/ExpBar.cs
+Assets/Script/UI/ExpBarRightEdgeGlow.cs
+Assets/Script/UI/ExpBubbleFlow.cs
+Assets/Script/UI/FollowTarget.cs
+Assets/Script/UI/GameEndScreenController.cs
+Assets/Script/UI/Hover.cs
+Assets/Script/UI/HpBar.cs
+Assets/Script/UI/ICombat.cs
+Assets/Script/UI/InterfaceScaleControl.cs
+Assets/Script/UI/InterfaceScaleManager.cs
+Assets/Script/UI/InterfaceScaleSettingsPanel.cs
+Assets/Script/UI/LobbyButtonTextAnchor.cs
+Assets/Script/UI/LobbyController.cs
+Assets/Script/UI/OpenAndClose.cs
+Assets/Script/UI/OptionEvent.cs
+Assets/Script/UI/OptionHover.cs
+Assets/Script/UI/OptionSelect.cs
+Assets/Script/UI/ParabolicDottedRoute.cs
+Assets/Script/UI/PersistentTMPDropdownList.cs
+Assets/Script/UI/ResolutionDropdown.cs
+Assets/Script/UI/SafeAreaReferenceLayout.cs
+Assets/Script/UI/SceneBrightnessController.cs
+Assets/Script/UI/ScreenHitFlash.cs
+Assets/Script/UI/ScreenModeDropdown.cs
+Assets/Script/UI/SettingsOptionRowLayout.cs
+Assets/Script/UI/SettingsPause.cs
+Assets/Script/UI/SliderPercentText.cs
+Assets/Script/UI/SliderPlusMinus.cs
+Assets/Script/UI/SliderStepHold.cs
+Assets/Script/UI/SoundVolumeSlider.cs
+Assets/Script/UI/StagePlanetButton.cs
+Assets/Script/UI/StagePlanetMenu.cs
+Assets/Script/UI/UIInitializer.cs
+Assets/Script/UI/UpgradeAppeared.cs
+Assets/Script/UI/UpgradeCombineAvailability.cs
+Assets/Script/UI/UpgradeCooldownHud.cs
+Assets/Script/UI/UpgradeFusionBurst.cs
+Assets/Script/UI/UpgradeFusionController.cs
+Assets/Script/UI/UpgradeHover.cs
+Assets/Script/UI/UpgradeHudRendering.cs
+Assets/Script/Upgrade/Boom.cs
+Assets/Script/Upgrade/Burn.cs
+Assets/Script/Upgrade/Chain.cs
+Assets/Script/Upgrade/DetectUpgrade.cs
+Assets/Script/Upgrade/DotDamage.cs
+Assets/Script/Upgrade/FireBall.cs
+Assets/Script/Upgrade/FireStorm.cs
+Assets/Script/Upgrade/Flooring.cs
+Assets/Script/Upgrade/HeatWave.cs
+Assets/Script/Upgrade/HomingProjectile.cs
+Assets/Script/Upgrade/LavaField.cs
+Assets/Script/Upgrade/Lightning.cs
+Assets/Script/Upgrade/Misslie.cs
+Assets/Script/Upgrade/MisslieProjectile.cs
+Assets/Script/Upgrade/Mold.cs
+Assets/Script/Upgrade/Orbit.cs
+Assets/Script/Upgrade/Poison.cs
+Assets/Script/Upgrade/RottingSpore.cs
+Assets/Script/Upgrade/SelectIcon.cs
+Assets/Script/Upgrade/SelectUpgrade.cs
+Assets/Script/Upgrade/Shuriken.cs
+Assets/Script/Upgrade/Snail.cs
+Assets/Script/Upgrade/SporeWarhead.cs
+Assets/Script/Upgrade/UpgradeCombine.cs
+Assets/Script/Upgrade/UpgradeCombineResult.cs
+Assets/Script/Upgrade/UpgradeFusionRules.cs
+Assets/Script/Upgrade/UpgradeImageSet.cs
+Assets/Script/Upgrade/UpgreadeSelectConfirm.cs
+Assets/Settings/Build Profiles/Web - Desktop - Release.asset
+Assets/Settings/Lit2DSceneTemplate.scenetemplate
+Assets/Settings/Pipeline/EditorPipelineManager.asset
+Assets/Settings/Renderer2D.asset
+Assets/Settings/Scenes/URP2DSceneTemplate.unity
+Assets/Settings/UniversalRP.asset
+Assets/Shader/Glow.shader
+Assets/Shader/LightningGlow (1).shader
+Assets/Shader/PlanetSelectedOutlineUI.shader
+Assets/Shader/PlanetSilhouetteUI.shader
+Assets/Shader/WaringSing.shader
+Assets/Sprite/ApprovedUpgradeCardIcons/RottingSporeCard.png
+Assets/Sprite/ApprovedUpgradeCardIcons/SporeWarheadCard.png
+Assets/Sprite/New Piskel (1).png
+Assets/Sprite/sprite_1 2.png
+Assets/Sprite/StarEffect-Photoroom.png
+Assets/SpriteSeet/MageAttack.png
+Assets/SpriteSeet/MageCastAttack.png
+Assets/SpriteSeet/MageDash.png
+Assets/SpriteSeet/MageIdle.png
+Assets/SpriteSeet/OctopusKingGroundAttack.png
+Assets/SpriteSeet/OctopusKingMove.png
+Assets/SpriteSeet/OctopusKingSpin.png
+Assets/SpriteSeet/OctopusKingWaterShot.png
+Assets/SpriteSeet/OctopusUncrownedMove.png
+Assets/SpriteSeet/OctopusUncrownedWaterAttack.png
+Assets/SpriteSeet/OctopusWaterShotAligned.png
+Assets/SpriteSeet/player-attack (1) (1).png
+Assets/SpriteSeet/Player-dash (1).png
+Assets/SpriteSeet/player-idle-trimmed.png
+Assets/SpriteSeet/player-run-v2.png
+Assets/SpriteSeet/SlimeKingHit.png
+Assets/SpriteSeet/SlimeKingMove.png
+Assets/SpriteSeet/SlimeKingOpenBody.png
+Assets/SpriteSeet/SlimeKingSlide.png
+Assets/SpriteSeet/SlimeKingSlideEnd.png
+Assets/SpriteSeet/SlimeKingSlidePrepare.png
+Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt
+Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
+Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt
+Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt
+Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset
+Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset
+Assets/TextMesh Pro/Resources/TMP Settings.asset
+Assets/TextMesh Pro/Shaders/SDFFunctions.hlsl
+Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader
+Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader
+Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP LIT.shadergraph
+Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP UNLIT.shadergraph
+Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile-2-Pass.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF-URP Lit.shadergraph
+Assets/TextMesh Pro/Shaders/TMP_SDF-URP Unlit.shadergraph
+Assets/TextMesh Pro/Shaders/TMP_Sprite.shader
+Assets/TextMesh Pro/Shaders/TMPro.cginc
+Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc
+Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc
+Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc
+Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt
+Assets/TextMesh Pro/Sprites/EmojiOne.json
+Assets/TextMesh Pro/Sprites/EmojiOne.png
+Assets/UniversalRenderPipelineGlobalSettings.asset
+Assets/URPDefaultResources/Default_Forward_Renderer.asset
+Assets/URPDefaultResources/High.asset
+Assets/URPDefaultResources/Low.asset
+Assets/URPDefaultResources/Medium.asset
+Assets/URPDefaultResources/Ultra.asset
+Assets/URPDefaultResources/Very High.asset
+Assets/URPDefaultResources/Very Low.asset
+Library/unity default resources
+Packages/com.coffee.ui-particle/Runtime/UIParticle.cs
+Packages/com.coffee.ui-particle/Runtime/UIParticleRenderer.cs
+Packages/com.febucci.text-animator-unity/Scripts/Editor/Resources/Text Animator/ComponentIconTAnimUnity.png
+Packages/com.febucci.text-animator-unity/Scripts/Runtime/Components/Animator/TextMeshPro/TextAnimator_TMP.cs
+Packages/com.febucci.text-animator-unity/Scripts/Runtime/Components/Typewriter/_Core/TypewriterComponent.cs
+Packages/com.febucci.text-animator-unity/Scripts/Runtime/Components/Typewriter/Scriptable/TypingDelaysByCharacter.cs
+Packages/com.h8man.2d.navmeshplus/Gizmos/NavMeshModifierVolume Icon.png
+Packages/com.h8man.2d.navmeshplus/Gizmos/NavMeshSurface Icon.png
+Packages/com.h8man.2d.navmeshplus/Gizmos/NavMeshSurface2d Icon.png
+Packages/com.h8man.2d.navmeshplus/NavMeshComponents/Scripts/CollectSources2d.cs
+Packages/com.h8man.2d.navmeshplus/NavMeshComponents/Scripts/NavMeshModifier.cs
+Packages/com.h8man.2d.navmeshplus/NavMeshComponents/Scripts/NavMeshSurface.cs
+Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/Square.png
+Packages/com.unity.cinemachine/Editor/EditorResources/Icons/Light/CmCamera@256.png
+Packages/com.unity.cinemachine/Editor/EditorResources/Icons/Light/CmComponent@256.png
+Packages/com.unity.cinemachine/Runtime/Behaviours/CinemachineBrain.cs
+Packages/com.unity.cinemachine/Runtime/Behaviours/CinemachineCamera.cs
+Packages/com.unity.cinemachine/Runtime/Components/CinemachinePositionComposer.cs
+Packages/com.unity.inputsystem/InputSystem/Actions/InputActionAsset.cs
+Packages/com.unity.inputsystem/InputSystem/Actions/InputActionReference.cs
+Packages/com.unity.inputsystem/InputSystem/Editor/Icons/InputAction.png
+Packages/com.unity.inputsystem/InputSystem/Editor/Icons/InputSystemUIInputModule@64.png
+Packages/com.unity.inputsystem/InputSystem/Plugins/PlayerInput/DefaultInputActions.inputactions
+Packages/com.unity.inputsystem/InputSystem/Plugins/PlayerInput/PlayerInput.cs
+Packages/com.unity.inputsystem/InputSystem/Plugins/UI/InputSystemUIInputModule.cs
+Packages/com.unity.render-pipelines.core/Runtime/Volume/Volume.cs
+Packages/com.unity.render-pipelines.core/Runtime/Volume/VolumeProfile.cs
+Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Unlit-Default.mat
+Packages/com.unity.render-pipelines.universal/Runtime/Overrides/Bloom.cs
+Packages/com.unity.render-pipelines.universal/Runtime/UniversalAdditionalCameraData.cs
+Packages/com.unity.render-pipelines.universal/Shaders/2D/Sprite-Unlit-Default.shader
+Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Dropdown Icon.psd
+Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Font Asset Icon.psd
+Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Input Field Icon.psd
+Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Text Component Icon.psd
+Packages/com.unity.ugui/Runtime/TMP/TextMeshProUGUI.cs
+Packages/com.unity.ugui/Runtime/TMP/TMP_Dropdown.cs
+Packages/com.unity.ugui/Runtime/TMP/TMP_FontAsset.cs
+Packages/com.unity.ugui/Runtime/TMP/TMP_InputField.cs
+Packages/com.unity.ugui/Runtime/UGUI/EventSystem/EventSystem.cs
+Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Button.cs
+Packages/com.unity.ugui/Runtime/UGUI/UI/Core/GraphicRaycaster.cs
+Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Image.cs
+Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Layout/CanvasScaler.cs
+Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Layout/ContentSizeFitter.cs
+Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Layout/GridLayoutGroup.cs
+Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Layout/HorizontalLayoutGroup.cs
+Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Layout/LayoutElement.cs
+Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Layout/VerticalLayoutGroup.cs
+Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Mask.cs
+Packages/com.unity.ugui/Runtime/UGUI/UI/Core/RectMask2D.cs
+Packages/com.unity.ugui/Runtime/UGUI/UI/Core/ScrollRect.cs
+Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Slider.cs
+Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Toggle.cs
+Packages/com.unity.ugui/Runtime/UGUI/UI/Core/VertexModifiers/Outline.cs
+Resources/unity_builtin_extra

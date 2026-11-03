@@ -6,7 +6,7 @@ public class SkillInfo : MonoBehaviour
     public string skillName;
     public int skillHp;
     public float skillCoolTime;
-    public int skillDamage;
+    public float skillDamage;
     public int skillCritDamage;
     public float lifetime;
     public float movementLockTime;

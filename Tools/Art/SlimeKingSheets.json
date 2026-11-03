@@ -1,0 +1,15 @@
+{
+  "tool": "built-in image_gen",
+  "sources": [
+    {
+      "generated": "/Users/hong-yeseong/.codex/generated_images/01a17b42-5912-71f3-ae3f-737baaa32148/exec-539d9b54-8523-45b8-bb9a-ec5c6606186c.png",
+      "asset": "Assets/SpriteSeet/SlimeKingMove.png"
+    },
+    {
+      "generated": "/Users/hong-yeseong/.codex/generated_images/01a17b42-5912-71f3-ae3f-737baaa32148/exec-af11a928-48f7-47db-bbeb-67a98eae48bf.png",
+      "asset": "Assets/SpriteSeet/SlimeKingHit.png"
+    }
+  ],
+  "prompt": "Remove the muted green background only. Preserve the 25 crowned slime frames, positions, proportions, crowns, blue gems, green bodies and outlines in the 5x5 sheet. Produce a genuinely transparent PNG, preserving green inside the slime as opaque foreground.",
+  "animation": "Reuse SlimeJump and SlimeHit frame order and timing, with king-only controller; Hit only on lethal damage."
+}

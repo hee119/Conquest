@@ -8,11 +8,13 @@ public class PooledObject : MonoBehaviour
     private Quaternion initialLocalRotation;
 
     public bool IsSpawned => isSpawned;
+    public Transform PoolParent { get; private set; }
     public uint SpawnVersion { get; private set; }
     
-    public void SetManagedPool(IObjectPool<PooledObject> pool)
+    public void SetManagedPool(IObjectPool<PooledObject> pool, Transform parent = null)
     {
         _ManagedPool = pool;
+        PoolParent = parent;
         isSpawned = false;
         initialLocalScale = transform.localScale;
         initialLocalRotation = transform.localRotation;

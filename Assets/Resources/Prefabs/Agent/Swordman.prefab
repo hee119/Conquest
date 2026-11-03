@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 7201235708750216182}
   - component: {fileID: 6014975631671674939}
   - component: {fileID: 3857254480475159171}
+  - component: {fileID: 7674433103399166245}
   m_Layer: 0
   m_Name: Swordman
   m_TagString: Player
@@ -392,10 +393,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UnitInfo
   id: 1
   name: 
-  hp: 100
-  hpRegenRate: 5
+  hp: 200
+  hpRegenRate: 2
   speed: 5
-  damage: 1
+  damage: 5
   defense: 5
   criticalDamage: 1.5
   criticalChance: 10
@@ -455,3 +456,49 @@ MonoBehaviour:
     type: 2}
   mageIdleSprite: {fileID: -8070195584892687665, guid: 07fc404bbeb2a4d84986cea14e605d25,
     type: 3}
+--- !u!61 &7674433103399166245
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5121868815476299701}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 7344119
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.027489275, y: -0.5194889}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.4133334, y: 3.4133334}
+    newSize: {x: 4.266667, y: 4.266667}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.49846452, y: 0.45653236}
+  m_EdgeRadius: 0

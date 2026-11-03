@@ -1,0 +1,545 @@
+{
+ "frames": [
+  {
+   "filename": "water-cannon-impact 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 1",
+   "frame": {
+    "x": 128,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 2",
+   "frame": {
+    "x": 256,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 3",
+   "frame": {
+    "x": 384,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 4",
+   "frame": {
+    "x": 512,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 5",
+   "frame": {
+    "x": 0,
+    "y": 112,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 6",
+   "frame": {
+    "x": 128,
+    "y": 112,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 7",
+   "frame": {
+    "x": 256,
+    "y": 112,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 8",
+   "frame": {
+    "x": 384,
+    "y": 112,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 9",
+   "frame": {
+    "x": 512,
+    "y": 112,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 10",
+   "frame": {
+    "x": 0,
+    "y": 224,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 11",
+   "frame": {
+    "x": 128,
+    "y": 224,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 12",
+   "frame": {
+    "x": 256,
+    "y": 224,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 13",
+   "frame": {
+    "x": 384,
+    "y": 224,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 14",
+   "frame": {
+    "x": 512,
+    "y": 224,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 15",
+   "frame": {
+    "x": 0,
+    "y": 336,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 16",
+   "frame": {
+    "x": 128,
+    "y": 336,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 17",
+   "frame": {
+    "x": 256,
+    "y": 336,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 18",
+   "frame": {
+    "x": 384,
+    "y": 336,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 19",
+   "frame": {
+    "x": 512,
+    "y": 336,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 20",
+   "frame": {
+    "x": 0,
+    "y": 448,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 21",
+   "frame": {
+    "x": 128,
+    "y": 448,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-cannon-impact 22",
+   "frame": {
+    "x": 256,
+    "y": 448,
+    "w": 128,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 128,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 128,
+    "h": 112
+   },
+   "duration": 42
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "water-cannon-impact.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 640,
+   "h": 560
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "water-cannon-impact",
+    "from": 0,
+    "to": 22,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "conquest/water-cannon-impact",
+   "name": "Water cannon splash",
+   "fps": 24,
+   "loop": false,
+   "frames": 23,
+   "frameSize": [
+    128,
+    112
+   ],
+   "pivot": [
+    64,
+    82
+   ],
+   "columns": 5
+  }
+ }
+}

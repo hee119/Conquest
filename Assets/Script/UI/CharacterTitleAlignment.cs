@@ -6,26 +6,24 @@ using UnityEngine;
 public sealed class CharacterTitleAlignment : MonoBehaviour
 {
     private TMP_Text title;
-    private string lastText;
-    private float lastWidth = -1f;
 
     private void OnEnable()
     {
         title = GetComponent<TMP_Text>();
-        lastText = null;
+        title.OnPreRenderText += Align;
+        title.SetVerticesDirty();
     }
 
-    private void LateUpdate()
+    private void OnDisable()
     {
-        if (title == null)
-            title = GetComponent<TMP_Text>();
+        if (title != null)
+            title.OnPreRenderText -= Align;
+    }
 
+    private void Align(TMP_TextInfo textInfo)
+    {
         RectTransform rect = title.rectTransform;
-        if (lastText == title.text && Mathf.Approximately(lastWidth, rect.rect.width))
-            return;
-
-        title.ForceMeshUpdate();
-        int count = title.textInfo.characterCount;
+        int count = textInfo.characterCount;
         if (count == 0 && !string.IsNullOrEmpty(title.text))
             return;
 
@@ -42,7 +40,7 @@ public sealed class CharacterTitleAlignment : MonoBehaviour
         float center = 0f;
         if (hasHangul && count > 0)
         {
-            TMP_CharacterInfo[] characters = title.textInfo.characterInfo;
+            TMP_CharacterInfo[] characters = textInfo.characterInfo;
             int middle = count / 2;
             center = count % 2 == 0
                 ? characters[middle].origin
@@ -53,8 +51,5 @@ public sealed class CharacterTitleAlignment : MonoBehaviour
         position.x = -center;
         if (!Mathf.Approximately(rect.anchoredPosition.x, position.x))
             rect.anchoredPosition = position;
-
-        lastText = title.text;
-        lastWidth = rect.rect.width;
     }
 }

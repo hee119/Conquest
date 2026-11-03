@@ -1,5 +1,6 @@
 using UnityEngine;
 
+/// <summary>FireStorm 증강 관련 동작과 상태를 관리한다.</summary>
 public class FireStorm : HomingProjectile
 {
     public bool isChain = true;
@@ -9,12 +10,14 @@ public class FireStorm : HomingProjectile
     // 이 오브젝트와 충돌하면 무시할 타겟
     public GameObject removeFromTarget;
 
+    /// <summary>활성화될 때 필요한 이벤트와 동작을 시작한다.</summary>
     protected override void OnEnable()
     {
         base.OnEnable();
         SoundManager.Instance?.Play(SoundIds.FireballLaunch);
     }
 
+    /// <summary>필요한 컴포넌트와 초기 상태를 준비한다.</summary>
     protected override void Awake()
     {
         base.Awake();
@@ -45,7 +48,8 @@ public class FireStorm : HomingProjectile
             GameObject.FindGameObjectWithTag("Player");
     }
 
-    protected override void OnTriggerEnter2D(Collider2D other)
+    /// <summary>다른 콜라이더가 진입했을 때 적중 효과를 처리한다.</summary>
+    public override void HandleEnemyContact(Collider2D other)
     {
         // =====================================
         // 내가 무시해야 하는 타겟이면 아무것도 하지 않음
@@ -85,60 +89,6 @@ public class FireStorm : HomingProjectile
                 );
 
             // =====================================
-            // 현재 캐릭터 스탯
-            // =====================================
-
-            int characterId =
-                CharacterManager.Instance.currentCharacter;
-
-            PlayerData playerData =
-                DataManager.Instance.playerDatasDic[characterId];
-
-            int playerDamage =
-                playerData.damage;
-
-            int critChance =
-                playerData.criticalChance;
-
-            float critDamage =
-                playerData.criticalDamage;
-
-            // =====================================
-            // 데미지 계산
-            // =====================================
-
-            float damage =
-                GetDamage();
-
-            // 공격력 적용
-            damage =
-                (int)(
-                    damage *
-                    (1f + playerDamage / 100f)
-                );
-
-            // =====================================
-            // 크리티컬 판정
-            // =====================================
-
-            bool isCritical =
-                Random.Range(0, 100) < critChance;
-
-            if (isCritical)
-            {
-                damage =
-                    (int)(
-                        damage *
-                        (2f + critDamage / 100f)
-                    );
-            }
-
-            enemyCombat.TakeDamage(
-                damage,
-                hitPoint
-            );
-
-            // =====================================
             // 체인 생성
             // =====================================
 
@@ -157,6 +107,7 @@ public class FireStorm : HomingProjectile
                         360f / chainCount * i;
 
                     Vector2 direction =
+                        /// <summary>Vector2 동작을 처리한다.</summary>
                         new Vector2(
                             Mathf.Cos(
                                 angle * Mathf.Deg2Rad
@@ -206,6 +157,7 @@ public class FireStorm : HomingProjectile
         }
     }
 
+    /// <summary>비활성화될 때 이벤트와 진행 중인 동작을 정리한다.</summary>
     protected override void OnDisable()
     {
         rb.linearVelocity =

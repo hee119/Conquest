@@ -2,8 +2,10 @@ using UnityEngine;
 using System;
 using System.Collections;
 
+/// <summary>SporeWarhead 증강 관련 동작과 상태를 관리한다.</summary>
 public class SporeWarhead : Mold
 {
+    /// <summary>TargetMoldCor 동작을 처리한다.</summary>
     public override IEnumerator TargetMoldCor()
     {
         animator.enabled = false;
@@ -14,6 +16,7 @@ public class SporeWarhead : Mold
 
         while (i < sprites.Count)
         {
+            /// <summary>WaitForSeconds 동작을 처리한다.</summary>
             yield return new WaitForSeconds(0.3f);
 
             Debug.Log(

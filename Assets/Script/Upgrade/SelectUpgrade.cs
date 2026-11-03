@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>SelectUpgrade 증강 관련 동작과 상태를 관리한다.</summary>
 public class SelectUpgrade : MonoBehaviour
 {
     [Header("선택")]
@@ -66,6 +67,7 @@ public class SelectUpgrade : MonoBehaviour
     // Awake
     // =========================================================
 
+    /// <summary>필요한 컴포넌트와 초기 상태를 준비한다.</summary>
     private void Awake()
     {
         if (selectionButton == null)
@@ -150,6 +152,7 @@ public class SelectUpgrade : MonoBehaviour
     // OnEnable
     // =========================================================
 
+    /// <summary>활성화될 때 필요한 이벤트와 동작을 시작한다.</summary>
     private void OnEnable()
     {
         padeOutCoroutine = null;
@@ -201,6 +204,7 @@ public class SelectUpgrade : MonoBehaviour
         );
     }
 
+    /// <summary>WaitForUpgradeManager 동작을 처리한다.</summary>
     private IEnumerator WaitForUpgradeManager()
     {
         while (UpgradeManager.Instance == null)
@@ -210,6 +214,7 @@ public class SelectUpgrade : MonoBehaviour
         BindUpgradeManager(UpgradeManager.Instance);
     }
 
+    /// <summary>BindUpgradeManager 동작을 처리한다.</summary>
     private void BindUpgradeManager(UpgradeManager manager)
     {
         UnbindUpgradeManager();
@@ -228,6 +233,7 @@ public class SelectUpgrade : MonoBehaviour
         }
     }
 
+    /// <summary>UnbindUpgradeManager 동작을 처리한다.</summary>
     private void UnbindUpgradeManager()
     {
         if (subscribedManager != null)
@@ -243,6 +249,7 @@ public class SelectUpgrade : MonoBehaviour
     // OnDisable
     // =========================================================
 
+    /// <summary>비활성화될 때 이벤트와 진행 중인 동작을 정리한다.</summary>
     private void OnDisable()
     {
         if (managerBindingCoroutine != null)
@@ -270,6 +277,7 @@ public class SelectUpgrade : MonoBehaviour
     // 레벨 아이콘 초기화
     // =========================================================
 
+    /// <summary>LevelIconsInit 동작을 처리한다.</summary>
     public void LevelIconsInit()
     {
         int level =
@@ -302,6 +310,7 @@ public class SelectUpgrade : MonoBehaviour
     // 다음 레벨 아이콘 깜빡임
     // =========================================================
 
+    /// <summary>BlinkLevelIcon 동작을 처리한다.</summary>
     public void BlinkLevelIcon()
     {
         if (blinkLevelIcon == null &&
@@ -319,6 +328,7 @@ public class SelectUpgrade : MonoBehaviour
     // 업그레이드 선택
     // =========================================================
 
+    /// <summary>UpgradeIsSelected 동작을 처리한다.</summary>
     public void UpgradeIsSelected()
     {
         if (!selectionEnabled || subscribedManager == null ||
@@ -379,18 +389,20 @@ public class SelectUpgrade : MonoBehaviour
                 upgradeUiInfo.upgradeData.id
             );
         }
+        /// <summary>if 동작을 처리한다.</summary>
         else if (upgradeUiInfo.upgradeData.type == "Skill")
         {
             subscribedManager.SkillUpgradesAdd(
                 upgradeUiInfo.upgradeData.id
             );
         }
+        /// <summary>if 동작을 처리한다.</summary>
         else if (upgradeUiInfo.upgradeData.type == "CharacterSkill")
         {
             subscribedManager.CharacterSkillUpgradesAdd(upgradeUiInfo.upgradeData.id);
         }
 
-        SoundManager.Instance?.PlayOneShotIgnoringPause(SoundIds.UpgradeSelect);
+        UiSoundEvents.Request(UiSoundCue.Upgrade);
 
         // =====================================================
         // 레벨 아이콘 이펙트
@@ -491,6 +503,7 @@ public class SelectUpgrade : MonoBehaviour
     // 선택 이펙트 재생
     // =========================================================
 
+    /// <summary>PlaySelectEffect 동작을 처리한다.</summary>
     private void PlaySelectEffect()
     {
         if (selectEffect == null)
@@ -533,6 +546,7 @@ public class SelectUpgrade : MonoBehaviour
     // 4. 둘 다 완료되면 전체 UI 닫기
     // =========================================================
 
+    /// <summary>SelectionSequence 동작을 처리한다.</summary>
     private IEnumerator SelectionSequence()
     {
         // -----------------------------------------------------
@@ -621,6 +635,7 @@ public class SelectUpgrade : MonoBehaviour
         // 이제 전체 UI 닫기
         // =====================================================
 
+        /// <summary>StartCoroutine 동작을 처리한다.</summary>
         yield return StartCoroutine(
             CloseUpgradeUI()
         );
@@ -634,6 +649,7 @@ public class SelectUpgrade : MonoBehaviour
     // 선택 가능 여부
     // =========================================================
 
+    /// <summary>SelectionEnabled 관련 상태를 설정한다.</summary>
     private void SetSelectionEnabled(bool value)
     {
         selectionEnabled = value;
@@ -651,6 +667,7 @@ public class SelectUpgrade : MonoBehaviour
     // 업그레이드 UI 등장
     // =========================================================
 
+    /// <summary>UpgredesMomOpen 동작을 처리한다.</summary>
     private IEnumerator UpgredesMomOpen()
     {
         if (upgredesMom == null)
@@ -679,6 +696,7 @@ public class SelectUpgrade : MonoBehaviour
 
 
             upgredesMom.transform.localScale =
+                /// <summary>Vector3 동작을 처리한다.</summary>
                 new Vector3(
                     scale,
                     scale,
@@ -699,6 +717,7 @@ public class SelectUpgrade : MonoBehaviour
     // 전체 업그레이드 UI 닫기
     // =========================================================
 
+    /// <summary>CloseUpgradeUI 동작을 처리한다.</summary>
     private IEnumerator CloseUpgradeUI()
     {
         if (upgredesMom == null)
@@ -724,6 +743,7 @@ public class SelectUpgrade : MonoBehaviour
 
 
             upgredesMom.transform.localScale =
+                /// <summary>Vector3 동작을 처리한다.</summary>
                 new Vector3(
                     scale,
                     scale,
@@ -760,6 +780,7 @@ public class SelectUpgrade : MonoBehaviour
     // 다른 카드 어둡게
     // =========================================================
 
+    /// <summary>FadeOut 동작을 처리한다.</summary>
     private IEnumerator FadeOut()
     {
         float value = 1f;
@@ -840,6 +861,7 @@ public class SelectUpgrade : MonoBehaviour
     // 선택한 레벨 아이콘 효과
     // =========================================================
 
+    /// <summary>LevelUpAnim 동작을 처리한다.</summary>
     private IEnumerator LevelUpAnim()
     {
         if (blinkLevelIcon != null)
@@ -888,8 +910,10 @@ public class SelectUpgrade : MonoBehaviour
     // 다음 레벨 아이콘 깜빡임
     // =========================================================
 
+    /// <summary>BlinkLevelIconCor 동작을 처리한다.</summary>
     private IEnumerator BlinkLevelIconCor()
     {
+        /// <summary>WaitUntil 동작을 처리한다.</summary>
         yield return new WaitUntil(
             () =>
                 upgradeUiInfo.upgradeData.id > 0

@@ -7,11 +7,24 @@ public sealed class SelectedCharacterSetup : MonoBehaviour
     [SerializeField] private RuntimeAnimatorController mageAnimatorController;
     [SerializeField] private Sprite mageIdleSprite;
 
-    private void Start()
+    private RuntimeAnimatorController swordAnimatorController;
+    private Sprite swordIdleSprite;
+    private string swordName;
+
+    private void Awake()
     {
-        if (CharacterManager.Instance == null || CharacterManager.Instance.currentCharacter != 2 ||
-            DataManager.Instance == null ||
-            !DataManager.Instance.playerDatasDic.TryGetValue(2, out PlayerData data))
+        swordAnimatorController = GetComponent<Animator>()?.runtimeAnimatorController;
+        swordIdleSprite = GetComponentInChildren<SpriteRenderer>()?.sprite;
+        swordName = gameObject.name;
+    }
+
+    private void Start() => ApplySelectedCharacter();
+
+    public void ApplySelectedCharacter()
+    {
+        int id = CharacterManager.Instance != null ? CharacterManager.Instance.currentCharacter : 1;
+        if (DataManager.Instance == null ||
+            !DataManager.Instance.playerDatasDic.TryGetValue(id, out PlayerData data))
             return;
 
         PlayerInfo info = GetComponent<PlayerInfo>();
@@ -21,7 +34,7 @@ public sealed class SelectedCharacterSetup : MonoBehaviour
         SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         if (info == null || combat == null || movement == null || animator == null ||
-            spriteRenderer == null || mageAnimatorController == null || mageIdleSprite == null)
+            spriteRenderer == null || (id == 2 && (mageAnimatorController == null || mageIdleSprite == null)))
         {
             Debug.LogError("Mage setup is missing a player component or animation asset.", this);
             return;
@@ -36,12 +49,12 @@ public sealed class SelectedCharacterSetup : MonoBehaviour
         info.defense = data.defense;
         info.criticalDamage = data.criticalDamage;
         info.criticalChance = data.criticalChance;
-        gameObject.name = "Mage";
-        animator.runtimeAnimatorController = mageAnimatorController;
-        spriteRenderer.sprite = mageIdleSprite;
+        gameObject.name = id == 2 ? "Mage" : swordName;
+        animator.runtimeAnimatorController = id == 2 ? mageAnimatorController : swordAnimatorController;
+        spriteRenderer.sprite = id == 2 ? mageIdleSprite : swordIdleSprite;
         SkillSpawner skillSpawner = GetComponent<SkillSpawner>();
         if (skillSpawner != null)
-            skillSpawner.skillId1 = 201;
+            skillSpawner.skillId1 = id == 2 ? 201 : 200;
 
         movement.speed = data.speed;
         combat.maxHp = data.hp;

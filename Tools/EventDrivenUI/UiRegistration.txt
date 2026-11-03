@@ -1,0 +1,1 @@
+UI sound emitters installed: 8 controls in 7 prefabs. Scenes register once on sceneLoaded; runtime factories register new controls explicitly.

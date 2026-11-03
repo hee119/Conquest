@@ -35,8 +35,6 @@ public sealed class SafeAreaReferenceLayout : MonoBehaviour
         lastParentSize = Vector2.zero;
     }
 
-    private void LateUpdate() => Refresh();
-
     private void Refresh()
     {
         if (!Application.isPlaying)

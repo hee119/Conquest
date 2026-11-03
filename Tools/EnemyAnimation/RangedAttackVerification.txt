@@ -1,0 +1,3 @@
+Ranged enemy animation event verification
+PASS event fired before 3s fallback, one projectile after 0.389s
+COMPLETE

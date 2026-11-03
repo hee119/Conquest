@@ -1,0 +1,11 @@
+Authored shared canvases runtime verification
+Lobby canvases=1
+PASS Lobby Dropdown options=3 click target valid, no extra canvas
+PASS Lobby Dropdown (1) options=6 click target valid, no extra canvas
+PASS Lobby Dropdown options=3 click target valid, no extra canvas
+PASS quit dialog uses shared canvas
+Stage1 canvases=2
+PASS Stage1 Dropdown (1) options=6 click target valid, no extra canvas
+PASS Stage1 Dropdown options=3 click target valid, no extra canvas
+PASS Stage1 Dropdown options=3 click target valid, no extra canvas
+COMPLETE

@@ -1,0 +1,1 @@
+PASS: normal octopus uses uncrowned Move; Attack triggers; no projectile during anticipation; one actual water projectile at O-mouth cell 12 after 0.375s; returns to Run; lethal interruption cancels pending shot.

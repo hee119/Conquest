@@ -6,6 +6,14 @@ using Conquest.PolygonFill;
 [ExecuteAlways]
 public class ExpBar : MonoBehaviour
 {
+    [SerializeField] private bool loadingMode;
+    public void SetLoadingProgress(float progress)
+    {
+        if (expSlider == null) SetupExpBar();
+        expSlider.value = Mathf.Clamp01(progress);
+        UpdateFillTextureLayout();
+    }
+
     // =========================================================
     // 글로우 설정
     // =========================================================
@@ -96,6 +104,7 @@ public class ExpBar : MonoBehaviour
     // Coroutine
     // =========================================================
 
+    private Coroutine bindingRoutine;
     private Coroutine expUpdate;
     private Coroutine expInit;
     private Coroutine levelUpRimGlowUpdate;
@@ -171,8 +180,7 @@ public class ExpBar : MonoBehaviour
 
 
         RegisterSliderValueChanged();
-
-
+        if (!loadingMode) bindingRoutine = StartCoroutine(BindGameEvents());
     }
 
 
@@ -180,26 +188,15 @@ public class ExpBar : MonoBehaviour
     // Start
     // =========================================================
 
-    public void Start()
+    private IEnumerator BindGameEvents()
     {
-        if (!Application.isPlaying)
-            return;
-
-
-        Debug.Log("[ExpBar] Start");
-
-
-        LevelManager.Instance.expUpdate +=
-            ExpUpdate;
-
-
-        UpgradeManager.Instance.upgradeSelect +=
-            ExpInit;
-
-
-        Debug.Log(
-            "[ExpBar] 이벤트 등록 완료"
-        );
+        yield return new WaitUntil(() => LevelManager.Instance != null && UpgradeManager.Instance != null);
+        LevelManager.Instance.expUpdate -= ExpUpdate;
+        LevelManager.Instance.expUpdate += ExpUpdate;
+        UpgradeManager.Instance.upgradeSelect -= ExpInit;
+        UpgradeManager.Instance.upgradeSelect += ExpInit;
+        bindingRoutine = null;
+        ExpUpdate();
     }
 
 
@@ -530,6 +527,8 @@ public class ExpBar : MonoBehaviour
 
     private void OnDisable()
     {
+        if (bindingRoutine != null) StopCoroutine(bindingRoutine);
+        bindingRoutine = null;
         UnregisterSliderValueChanged();
 
         if (gainFrameGlowUpdate != null)
@@ -728,7 +727,7 @@ public class ExpBar : MonoBehaviour
     {
         UnityEditor.EditorApplication.delayCall -= ApplyEditorPreview;
 
-        if (this == null || gameObject == null || !gameObject.scene.IsValid())
+        if (Application.isPlaying || this == null || gameObject == null || !gameObject.scene.IsValid())
             return;
 
         SetupExpBar();

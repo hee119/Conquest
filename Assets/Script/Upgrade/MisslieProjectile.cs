@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>MissileProjectile 증강 관련 동작과 상태를 관리한다.</summary>
 public class MissileProjectile : HomingProjectile
 {
     [SerializeField]
@@ -9,10 +10,12 @@ public class MissileProjectile : HomingProjectile
 
     private Coroutine moveCoroutine;
 
+    /// <summary>PlayLaunchSound 동작을 처리한다.</summary>
     private void PlayLaunchSound()
     {
         SoundManager.Instance?.Play(SoundIds.MissileLaunch);
     }
+    /// <summary>Target 관련 상태를 설정한다.</summary>
     public override void SetTarget(Vector3 target)
     {
         PlayLaunchSound();
@@ -56,6 +59,7 @@ public class MissileProjectile : HomingProjectile
         );
     }
 
+    /// <summary>MoveParabola 동작을 처리한다.</summary>
     private IEnumerator MoveParabola(
         Vector2 startPosition,
         Vector3 target
@@ -130,6 +134,7 @@ public class MissileProjectile : HomingProjectile
 
         // 진행 방향에 수직
         Vector2 perpendicular =
+            /// <summary>Vector2 동작을 처리한다.</summary>
             new Vector2(
                 -targetDirection.y,
                 targetDirection.x
@@ -146,6 +151,7 @@ public class MissileProjectile : HomingProjectile
 
         while (elapsed < moveTime)
         {
+            /// <summary>WaitForFixedUpdate 동작을 처리한다.</summary>
             yield return new WaitForFixedUpdate();
 
             elapsed += Time.fixedDeltaTime;
@@ -251,6 +257,7 @@ public class MissileProjectile : HomingProjectile
         moveCoroutine = null;
     }
 
+    /// <summary>비활성화될 때 이벤트와 진행 중인 동작을 정리한다.</summary>
     protected override void OnDisable()
     {
         Debug.Log(

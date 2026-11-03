@@ -1,0 +1,15 @@
+PASS: Sword basic attack cooldown shown
+PASS: Mage basic attack cooldown shown
+PASS: Character selection updates HP
+PASS: Row fits: Label
+PASS: Row fits: Value
+PASS: Row fits: Label
+PASS: Row fits: Value
+PASS: Row fits: Label
+PASS: Row fits: Value
+PASS: Attack begins cached movement lock
+PASS: Fixed clip end event cannot unlock timer early
+PASS: Movement released after cached duration
+PASS: Disabling spawner clears movement lock
+PASS: Reenabled lock has no orphan timer
+COMPLETE

@@ -1,0 +1,511 @@
+path	guid	bytes	type
+Assets/Animation/214_20260830172036_0 1.controller	f687c6f50acb04606afe4f554cdfcc08	4137	UnityEditor.Animations.AnimatorController
+Assets/Animation/Invisible.anim	8678228f2a9604c498981efb980ee578	6142	UnityEngine.AnimationClip
+Assets/Animation/MoldBoom.anim	d08445ff2ef5f4367a7284fcefed80d3	8205	UnityEngine.AnimationClip
+Assets/Animation/Mushroom 1.anim	b728a13771b71491e9f911f9971d0675	2890	UnityEngine.AnimationClip
+Assets/Animation/OctopusAttack.anim	ce37c353520e247659046104fff8c11f	6736	UnityEngine.AnimationClip
+Assets/Animation/OctopusRun.anim	a2b90ea924e544b60947675b3cdd7e32	6720	UnityEngine.AnimationClip
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Animation/AC Player.controller	eb1ae3e395b532e4d8dbc08a412e4a7d	12380	UnityEditor.Animations.AnimatorController
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Animation/AM Player E.anim	9c9b80278bafb8846947b902bf348003	2772	UnityEngine.AnimationClip
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Animation/AM Player Idle.anim	7c29c1735a3172c4f9b06cfaf4237e82	3269	UnityEngine.AnimationClip
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Animation/AM Player Move.anim	3efcd6bf71902b94bb400e73d4f7140e	3273	UnityEngine.AnimationClip
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Animation/AM Player N.anim	318841139f2ea6c468581225baff9a59	1770	UnityEngine.AnimationClip
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Animation/AM Player S.anim	1c0be051fbf975d4d9683fd3a6e5aa15	1770	UnityEngine.AnimationClip
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Animation/AM Player W.anim	c10ec0603bf61454d98ee6718e2130e9	1770	UnityEngine.AnimationClip
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Material/MT FX Rune Glow.mat	61b89fe75af132249ba5700ee0334a72	1771	UnityEngine.Material
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Material/MT Tileset.mat	57c303a67817e084997480cafcb3ac9f	3158	UnityEngine.Material
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Bush 01.prefab	a0a71fda412ad0941ab44f1732ea4c1e	4675	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Bush 02.prefab	5b94bf9107369684a8153921f763da38	4684	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Bush 03.prefab	0505844a909d2ea4996c19b67b2a40b9	4678	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Bush 04.prefab	4bd7b41600416b54395bf9936a05dc8e	4673	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Bush 05.prefab	9fb66d8c9d3b5194a82e9eed65a54afb	4690	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Bush 06.prefab	39562e88b536753438a3153c5fbdf7b8	5474	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Flower 01.prefab	c6d86ec8825b7674a9736d1cb0cd98a2	2342	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 01.prefab	a0a66c9b152e801409fc26c4ca493d18	2473	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 02.prefab	2d546d2d8b016864ab41e2185c250eb5	2468	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 03.prefab	403080d7568a4f949b4bfc7128477a8c	2472	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 04.prefab	fd980c817c63af4458df40a61e529e93	2476	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 05.prefab	019ab1af1d7a4b742a982c009534c058	2471	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 06.prefab	84d669757910f1f488023c92e71fcad5	2474	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 07.prefab	8d15c39fd3e3cab47ab96fbaf6dc2f92	2471	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 08.prefab	8c66149e58003104daf96668db118b4f	2474	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 09.prefab	424ccba55881d2743a04e1f1a4947e4c	2469	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 10.prefab	dbeab85cbe3b90b41a444794aab794ef	2470	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 11.prefab	4800845c2c4caa84eb6194552ae9c841	2473	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 12.prefab	1dc4948f20ddc324f84c815af63aa6a9	2473	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 13.prefab	c5c395a83c3338d46bd52e936cf46245	2469	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 14.prefab	af67ceadc087899479232f75d2b79d59	2473	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 15.prefab	bf462882706828c44a4465986b6fb8d2	2467	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Player/PF Player.prefab	ef67ba864d1ecc042b5f4cf48455c0a6	7121	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Altar 01.prefab	c5bdca1933fde624698bb8c6d6daa44b	17128	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Barrel 01.prefab	413081fc53a78a043b38591243616398	6170	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Brick 01.prefab	ebdc6ef285e0bf542bed7e9c1bfb9923	2375	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Brick 02.prefab	5d42979a3c318c341b37b4b1f2c85750	2375	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Brick 03.prefab	92a9322ee3bba184f91fbebe53b69bd9	4782	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Chest 01 Open.prefab	17b0c1ef334d17e4bbb74c4778001705	5437	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Chest 01.prefab	99597c7b4aa47494fb2b6061505735da	5432	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Crate 01.prefab	fb2df5b680b64b449a78162ebcd98e97	5995	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Crate 02.prefab	2e2ac125e54a1e44780363d638b1df34	6010	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Gravestone 01.prefab	6d9a1504606c57143b1a8bbc2249aabe	5430	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Gravestone 02.prefab	6242b925f1d3e0d44a183102cd3d4c26	5439	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Gravestone 03.prefab	3fcd8726c7cd53345947949baefbab35	5440	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Pillar 01.prefab	41ea6afb203377e42995d7d016ea5907	5426	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Pillar 02.prefab	cfa0a5ef94fb05d4f97d095a05dc55c5	5430	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Pot 01.prefab	ac719b1d0f58391469cc19fd947ca44c	6172	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Pot 02.prefab	63ee4b6a40c55fd429759b807832ded1	6167	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Pot 03.prefab	f3cc2373308c11848977b28d974a9de0	6168	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Road Sign 01 E.prefab	b823debd04fd63f4d8e579210fe0ff20	5454	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Road Sign 01 W.prefab	5c635e5bc09c93043a53ee0e17e89d0f	5452	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Rune Pillar Broken.prefab	8728cc48d2747494893fd60426c06f6e	7792	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Rune Pillar X2.prefab	6d6991dbbdeecb1488bbf78c063d1235	9314	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Rune Pillar X3.prefab	4fad9c4de6b725a43bb1200ed9479c08	8905	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone 01.prefab	6d69371a87148ee4dac7b2b814437ffd	4765	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone 02.prefab	713b33322b495794e92184973ece3034	4768	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone 03.prefab	ba7fef4c928d8c4459466bf93171730e	4765	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone 04.prefab	4c4e80b50a323dc478f7c84e0b8fdad2	4769	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone 05.prefab	139b2d65b3145ad45bc13b6d111199de	5534	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone 06.prefab	d5762f992ea3bd544bb8287f66e8f844	5704	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone 07.prefab	f826bf48ad5bedc4ab6cabe6c4e498e8	5692	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone Bench 01 E.prefab	d925f1d26bd95904886e446c97ec33c3	5449	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone Bench 01 S.prefab	8fd7cba4384381e4aad6dc90158fc9d5	5448	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone Bench 01 W.prefab	8eb546cfc24c8c24196899cee5797135	5451	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone Coffin 01 H.prefab	42d58802fe231b14c8692b0c06082f5d	5424	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone Coffin 01 V.prefab	e54d3c80cde4e314eae0912eca6a93ae	5427	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone Cube 01.prefab	f6a5710827e32d3489da2c249e3bc400	6004	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone Lantern 01.prefab	84395be60ff2def43bb58fa039614eab	5440	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Well 01.prefab	91afc0649ae41a64c860a5d49f05ff40	5800	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Gate 01.prefab	4be821d0b78ad5043985b57b738e951b	13474	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Gate 02.prefab	b95acdc3b0c1a444c87723520fbab2f0	13611	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs E 01.prefab	c4f2be6ec434a7f459aa4b66ff7fa133	12969	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs E 02.prefab	74908d4e572f4c541baeae9f5c236a36	12969	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs S 01 L.prefab	a92434f05fc24a2408687e0356655548	11598	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs S 01 M.prefab	78e9efbdf9b33994da8dfbe530f65e5e	11586	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs S 01 R.prefab	df420ddd0ffda274cba2d4807d8987bd	11598	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs S 02 L.prefab	6bc7a266104dec640a8bc2ab2e5cd968	11596	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs S 02 M.prefab	295e819650a63784185fc3d55ce9e650	11593	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs S 02 R.prefab	b7a5fce6e52ebbf488a8e8516c6692cb	11598	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs W 01.prefab	4fdd2d191ed68b0458ac373d43e8de1e	12960	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs W 02.prefab	82fc30c178d77ba448d65fe8434c568b	12960	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Scene/SC All Props.unity	d9a9fd5182a4025429c97a869864056e	450664	UnityEditor.SceneAsset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Scene/SC Demo.unity	8c13838df8e680749ae1bb30cfe63339	1200238	UnityEditor.SceneAsset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Texture/TX Player.png	ec47f75fe8aff1644ac73998f4ad31b5	2523	UnityEngine.Texture2D
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Texture/TX Struct.png	dda6bbdb704d84847b38f9eced72bf59	40561	UnityEngine.Texture2D
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Texture/TX Tileset Stone Ground.png	a07735877a3bd644094331b137b71878	8503	UnityEngine.Texture2D
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Texture/TX Tileset Wall.png	9f8f114589864b6489859a58fbb6baf9	17283	UnityEngine.Texture2D
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass.prefab	02a081c3d25f8e54396b0c278f77e6f6	35094	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 11.asset	aa14e442c407b164a9e0bba1fd35004d	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 12.asset	f332210fa22ba8549b6ac4d19975e7b1	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 13.asset	8143e435c2ff5f342951e4e9991c11ea	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 14.asset	f705d9780fd6a6847a33cc62a5c4b9ac	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 15.asset	cd739c4b4eb31934494017ea1d34324b	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 7.asset	cf6b59b7c1dad88438263b3160222715	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 8.asset	5451d01092d6a0947a1059da45c09ebe	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 9.asset	1d9b2716edff8d7418583a4c52cba7b7	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 0.asset	4c8943e2da4e8964bb3eb170c1aaba9f	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 1.asset	abe9370c58435f244a894542a9d0f78d	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 10.asset	5b0fa72a7621582478a135416a07cddb	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 11.asset	2c670dc28da29e54da4c78aac2caebe8	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 12.asset	57b6fab8e8adf24478f260a85ba4fa71	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 14.asset	6af3ae26591b05548b82024e5520c670	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 15.asset	70b8e49e6af191c4c987c778977a5dba	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 2.asset	0cb9748ff72f7c74ab513387ceba11ad	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 3.asset	78357bde4dab3464886f927c077dc765	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 4.asset	34303d25145ab104f8fabf97fe65552d	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 5.asset	fedd651a42c94b044bf92e0da3bb53df	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 6.asset	162b2c3c7ed3c8240995ad1799a0339a	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 7.asset	8743c8559250174429e1d0c2e08b2e77	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 8.asset	a9932c56762082e42ae3a877f0c79f7d	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 9.asset	2367cb1fa5ebd9d4d9082b473634a906	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Pavement 0.asset	b52eb31537a3c0f4d9b909925745af72	826	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Pavement 1.asset	d85a59ea5ef7b6d488d8434610470f09	826	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Pavement 2.asset	6d62ee5bebfab4543a4d42e4d00e4921	826	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Pavement 3.asset	32a9ac03c75f1f34991a1ef854a8eb4a	826	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Pavement 4.asset	d3860dc7511661042a0e40d8d53db3a3	826	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Pavement 5.asset	9d261fa57a186304eb7c71bcd3920f52	826	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_34.asset	f8dad7d3540a58241824a563088832e0	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_35.asset	9d6c18cd380d5004c9f822deee6e523f	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_36.asset	25c92bd1a1b2eda46b08a2414b277305	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_37.asset	72c1868f4ec438b4bb1113f44fa5c176	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_38.asset	4ade5514e3cccc441bce64010f27e527	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_39.asset	a9be3db0eddb3a94fb88a112d6deb131	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_42.asset	8159d41dde44ab340a514cf609a4bb8a	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_43.asset	c144af5afd6ab544390bce2a0d1ce972	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_44.asset	9130f7ce4b1b90146940f55caf75275d	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_45.asset	ded49c94886a1af41a1b1025eadf0a6c	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_46.asset	841517d60c3ee6342b4877ecf6e257cf	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_47.asset	d12fbd8400e101840be29555508b9a89	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_50.asset	fc84b2b02e60d1546a8a75ba64b5d5f1	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_51.asset	3d9dc795275adfd48af7618f29844554	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_52.asset	2576b2060c95e454e9ce0fb19d18f4b9	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_53.asset	b582a793ebd123e4ba5f4ca704ed259e	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_54.asset	adff4849f9e61d242bac11b47989a904	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_55.asset	7545dac8dcb9b6a48aa8ff5fd623e811	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_58.asset	fbde4feddd010b84a8e85a316d96b45e	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_59.asset	cdf8801e81d05d149ac589cebd5e1dd8	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_60.asset	80d878f99cb4c7943b5c46bf5c1a6785	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_62.asset	fa699176380f55f42a54abdfa1c53794	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_63.asset	cce0a8110310275428a80445dd873364	818	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground.prefab	d4e83863d09313942bd8054738fe5a22	29515	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_0.asset	2e00748cc4924de42a59e142923a3df8	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_1.asset	25ecd62c3dae4eb418ab0ff556e51195	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_10.asset	15eeb83986583c54b99f23d0b1d5b342	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_11.asset	58ecfed316f7f6e4eb4335ccee5a605f	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_12.asset	4be8d94c70a357b44b17240ab0021c6f	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_13.asset	9c5fb1582d999bc4b83efb5c4bd7b71b	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_14.asset	694c62b9b4b97814187f4b31011fc63f	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_15.asset	782fb9e50c00f2043abd8b2c3245d83d	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_16.asset	9adc64847915fb44dbb13ed54821f7f3	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_17.asset	f73c8ba870a97f54fba502193d31f6e3	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_18.asset	e43ab35d6a5685241a17d90925d9a865	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_19.asset	aa3cf940d6b4d604d891140dfd9d0677	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_2.asset	fabd18c6472405245b20eef7cb5ee3bb	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_20.asset	d711f37f575c12a4daf5c03e58309fae	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_21.asset	1af63b822fabf26419deb451b4adc515	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_22.asset	465893449d5293b4eb51f98fe4b64102	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_23.asset	f6b6cd20b4961164798fe1031aef5031	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_24.asset	8aa304b3e853f0248a0a03c60f4de4be	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_25.asset	4d9beb44058664246934faa275dafb48	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_26.asset	2074032077ed0f24da0353a406726e3b	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_27.asset	96945c2584c47b44ebe75d015b3cde49	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_28.asset	263019a6872a03d43ba1d0e880c6cbe7	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_29.asset	e706b680d839ef84e932174b016e9598	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_3.asset	39c8e6211a0310147854ee7319e77800	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_30.asset	ff09438222d182d478c56becdab860de	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_31.asset	25c5faa948898434db81d53c701fd51e	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_32.asset	770daa95abe070045950c08ee0afadc2	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_33.asset	ff83bcee22058b444908a98277d998c1	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_34.asset	1bc9cef8934d54d46ae8d49dfeeeb02c	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_35.asset	009f3593fa7376e41a0729c7f4181615	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_36.asset	08729fe3592aecd4d952bd7f066c45bb	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_37.asset	51fb58566819d2b40acbadd50bc4bfe9	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_38.asset	ebc7e2cba71b00c4bb3606151d6c45ad	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_39.asset	15dd07e381bfec6488f6da823213e8b2	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_4.asset	9ddec2508ba86d049ad1a5db035fccd9	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_40.asset	2ac4fa2270a94754983309b20b7796ed	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_41.asset	592acf73b5ddc6c40a8443a2e182b4b8	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_42.asset	0da41aee1c6ad1947ae6c8b7e23130ac	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_43.asset	eef9691b1631014439dae500aba2926f	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_44.asset	f1c4920ad7c362d43bab5a55f8ba298c	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_45.asset	a959b762bdf49ed4ebbf171ad48d89df	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_46.asset	34c4a150aba65a2479c36b372053f984	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_47.asset	9740ac1ac84e1b542b6a265280e94631	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_48.asset	971bd38ce774a9149a93294370f319a9	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_49.asset	d10c0d9020c08704a8956f246436fdb3	825	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_5.asset	53fda45759d8fbc4db96e92c16c04b42	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_6.asset	2bde7eb56ca3a194a9f9f0120251c1d2	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_7.asset	7ce0e64acc4968343b4d0742ee6963a8	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_8.asset	5107c39f6afd46a4ebd538297bc40b5e	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_9.asset	f5945c4f4a016ae419bd0fb1152e2d1a	824	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall.prefab	8d8700121f1eb2c4abda7e8a3dafab76	34666	UnityEngine.GameObject
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Shadow Tileset Wall 1.asset	89be3abc25335b342b0424693ef088a8	823	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Shadow Tileset Wall 2.asset	2f3b07d6ad9eccc47b6cd451a5df9a45	823	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Shadow Tileset Wall 3.asset	74fb019e61cfa1144910a53906988a6e	823	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Shadow Tileset Wall 4.asset	e787fdd8f60de2c4eb002b7e8cd621fb	823	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_0.asset	adf1e302fb349784ba09184eb69dfd8f	816	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_1.asset	8db82f4787b62ca4091d3ae9b71b58ef	816	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_10.asset	af8714fe101cd5448b037104d6b9846e	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_11.asset	36e182cf0ef2dec409ddaf4c55dad76e	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_12.asset	6320326b04ba6144f9e518073c3a753d	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_13.asset	d0ad0788fe04c754a9af8aca16961d0f	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_14.asset	f5bce4b9585a8514e81572c61b5b6460	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_15.asset	c0f664a74aa88e144b91be61242700c8	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_16.asset	503914639ae436b4e82c313961715c35	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_17.asset	91cb03f8c22d3984389f65d131eeb946	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_18.asset	de17a1cff7186dc4e81bd03c2256da56	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_19.asset	593e9d35d4ade4041a13ab33b9a1040f	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_2.asset	c30a836c12b5ca046b8850c5500adff0	816	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_20.asset	ed50a80c6ba59cf428ffc19f53876b01	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_21.asset	ab73d3ec979561b4680d6746b4c7f4c6	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_22.asset	2af854022baea474ba380cc6be59d552	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_23.asset	4eda2498ff988b547a51a6ed8b86529e	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_24.asset	2660ccf03c140484bae5749a058153f6	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_25.asset	8be27a7af89a7164283e45689a61753d	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_26.asset	482f111f39d0bb54587ed8f02772d8d6	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_27.asset	bf5a0a54564a0a3418aa14ce4ee8470c	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_28.asset	18cbc117f3291f642b4ac9ca0aa22178	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_29.asset	5cb2704116eff4443b949135e9fe07f9	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_3.asset	e56da427db9e7c147b3012603805adf9	816	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_30.asset	5c0720cf3f2e0fd40ab1e12cd776ccdc	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_31.asset	f6d4829a6950ff94e85270d3fa1f75ed	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_32.asset	f8a08cc7e1ef4bd41ad3d91c4ae0824a	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_33.asset	46b9ac16ba9ac6d4a9d82ef266ac5150	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_34.asset	3e71cd8fd02745948b1ad875522f5f72	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_35.asset	6008c5e0b4430914e81e97e42cb887da	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_36.asset	0f39ce13cb3663f47aa017b24e28c59d	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_37.asset	36928b9ff4f11f543833d3dbad299083	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_38.asset	de8a5bc2e5c5a1e4c8c9861234c3bc5f	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_39.asset	815a98150ae40f24482bf4ae569f8718	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_4.asset	b6bf52d8442ce1847a688215b6ba04da	816	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_40.asset	f0efd6c3ea0abaa4c906ce6de5e78168	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_41.asset	4dfdf77930f6d2b4b986bb91965139a3	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_42.asset	083f670d86161df46808cdc2e1eb02ab	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_43.asset	ada4c775f3d0f8e459af2867f50f7b33	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_44.asset	6f6e5fa7aced9ba499e35a5f79839641	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_45.asset	5a817684b3d859244a3e2126a2cb1589	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_46.asset	ca8588300bdb03149a3be05ab743ed56	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_47.asset	878b0f96c438d7a469c4ed3ee8afc16c	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_48.asset	590e2b09452a4594994d97cbc5d5a3e3	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_49.asset	0746a94badf11734cb00883121ea7f96	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_5.asset	4e1e2fa91134aaf47a8d4022b0d0a6ac	816	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_50.asset	b857b6b27935d14478beeb0a19d9ed05	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_51.asset	cf1074a43f170c4499f9635a49b52469	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_52.asset	057832b6b41e7b54697628c449199e86	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_53.asset	60fe87e379223bd4ca197f2113bf4448	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_54.asset	4c98f0c7991a6af4784c33b1da8d20c3	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_55.asset	74d33214d8663e14a9ff6f916f417124	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_56.asset	5fe40d7b004adde4293bdf59101e1f97	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_57.asset	8a34a97d3972ac841ab5aff6d72e9b1e	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_58.asset	cb8f53fc5187f6e4690c3aa2bc7a6aa0	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_59.asset	d1b36f97a21780343bae80aa0501ed33	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_6.asset	9cfe2171135f120429c700c27662a5d0	816	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_60.asset	1d152d7da7af5144aaa09f2cfe101265	817	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_7.asset	efe5594aca34f2745a57662f43377928	816	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_8.asset	ffa3466f9c9d64241a5dfed873df45ce	816	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_9.asset	a3de9d9dc10987d4ca90defb86d72c0b	816	UnityEngine.Tilemaps.Tile
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Basic/Basic.mat	52af16839201b3240952cc39f04a8d70	2904	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Basic/Shockwave 1.mat	4336e33a95074e7448a8ffb6653b3e8a	2910	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Basic/Shockwave 2.mat	b1b9bcb6a5ca75149ae98357836f3a2a	2910	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Basic/Shockwave 3.mat	05f012a7f5fbbe049b39d4f7eac7be50	2910	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Basic/Shockwave 5.mat	16f0946cdc67b0a418922d134f28ef2e	2910	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Basic/Shockwave.mat	4627b7f999839b741a42820e3f992290	2932	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Basic/Spark 2.mat	0312a1a4c81081b4ebc35af36ea10b47	2906	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Basic/Spark.mat	e8e403ecc6fdb024cb6154caf0ccf673	2904	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Shadow/Flash.mat	a9d769c47c48d964d8b44d7f3b28ef86	2928	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Shadow/Impact 1.mat	899835bebb26ca74a9ed15db41e4a250	2931	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Shadow/Impact.mat	abc28c9196f5f4949899403741f256fb	2929	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Basic Hit/Basic Crit 2.mat	4ca211d6221b99f479843baa6b8d55e7	2935	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Basic Hit/Basic Flash.mat	61d06632ac106114480ff5cbb68e90e7	2934	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Basic Hit/Basic Hit.mat	c5f9060adcf155b42b7e85813244f719	2932	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Basic Hit/Basic Shockwave 2.mat	8bfc7cd666aae6542b529bc14b7fdd9c	2939	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Basic Hit/Basic Shockwave.mat	f70b7ceb8001fd847bde207f418bc814	2937	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Fire Hit/Fire Flash B.mat	68c9648bd3a60e84aa02e78ffc729dff	2935	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Fire Hit/Fire Flash.mat	c01488fc1afb37c4fa2e7fb7141c2ac5	2933	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Fire Hit/Fire Hit B.mat	940a73b01c3881c4b816740dd77d1f21	2933	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Fire Hit/Fire Hit.mat	2a46548368b1f1245b4264c8a6986b31	2928	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Fire Hit/Fire Shockwave 2.mat	577c48b1d981af242b73dd01b1ff9cd1	2939	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Fire Hit/Fire Shockwave.mat	2876d749e08b59c418161f7fd7e47af6	2937	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Fire Hit/Fire Smoke.mat	18b3279709f283c4db3bad4c0f2ddb19	2909	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Fire Hit/Fire Spark.mat	0e736095a9472fb42baaca15a1b69d4e	2933	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Floor/Floor.mat	b6235ce22ba07a143b5ca83fc2745b4c	2335	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Floor/Texture/Albedo.png	b2ee15c7744aecc49b7b13f788755b90	5902971	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Floor/Texture/Height.png	ccdccdad117eec447a3acfc62d7d7630	1143317	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Ice Hit/Ice Smoke.mat	7a8baf9ef7580e5429b17143e3e22a74	2932	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Lightning Hit (Blue)/Lightning HitB.mat	e2ba51b6e5983e346846d4141b643985	2937	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Lightning Hit (Blue)/Lightning ShockwaveB.mat	08f9da24232328748b4d702fbf477aef	2943	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Lightning Hit (Blue)/Lightning SparkB.mat	527fe8cce39c6544e8d11cb0c20e274b	2938	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Lightning Hit (Blue)/Lightning TrailB.mat	dba87fe5f6aee6b4a9132acf70b2c1b6	2953	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Love Hit/Love Flash.mat	d26dc96f3e4d0e14e95f3524ff86e163	2933	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Love Hit/Love Hit.mat	473cb155e6ac43c4d9a15cb8f043fc65	2931	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Love Hit/Love Shockwave.mat	08eb1136fe2e0cc469585726c7c0fa2e	2937	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Love Hit/Love Spark.mat	db61d1277a5533442b661764ce10a2b7	2933	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Magic Hit/Magic Flash.mat	d011537e552be7342b29ba2f69d2288e	2932	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Magic Hit/Magic Hit.mat	74c538145022bc540b0ac2f9a1db8fb4	2932	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Magic Hit/Magic Shockwave.mat	fe697d3f2c8339d49adcd70c11097b3a	2937	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Magic Hit/Magic Simbol 2.mat	b14d3df379b6ebf4fb9b3d3768a9f234	2950	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Magic Hit/Magic Simbol.mat	038176a9625f64749b17e783efa25966	2948	UnityEngine.Material
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Prefab/1.2/Basic Hit 8  (NEW).prefab	36a3ddd9e9258474aa29a08939eeda45	1067652	UnityEngine.GameObject
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Prefab/1.2/Shadow Hit (NEW).prefab	da34d66431c8cd04aa98411a543a83bf	947059	UnityEngine.GameObject
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Prefab/Basic Hit .prefab	47096eff328e11a418ace7db2d72aa97	355545	UnityEngine.GameObject
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Prefab/Basic Hit 2.prefab	212ef1a41838ce044a9ac54994866708	476670	UnityEngine.GameObject
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Prefab/Basic Hit 7.prefab	4790206eadc817b4196e071640e653af	473704	UnityEngine.GameObject
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Prefab/Fire Hit .prefab	39f852c28f9c3fd45a427c24f3564ba7	593893	UnityEngine.GameObject
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Prefab/Lightning Hit Blue.prefab	fcb74f28d107e284e80af037bfec14ca	475637	UnityEngine.GameObject
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Prefab/Love Hit .prefab	bddb971e34eb14d48be30c7b922eb077	473883	UnityEngine.GameObject
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Prefab/Magic Hit 2.prefab	20fda529c996a334da7fd65b48ea40df	474720	UnityEngine.GameObject
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Scene Demo/HIT EFFECTS FREE Scene Demo.unity	219123e19023eb24da6c7b235b9600f0	58295	UnityEditor.SceneAsset
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Scene Demo/SampleScene_Profiles/PP Volumen Profile.asset	a9a7c26e48a21e846987b46aa921770e	3387	
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Basic/Impact 2.png	0320c17d441f1a34cb894947d6138718	54907	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Basic/Impact.png	6ce44a40f448d174e97c280cfa9d3f77	50744	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Basic/Point.png	7d5f5f81263f47244b3eee02d920e703	87181	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Basic/Shockwave.png	76bbc6856b7e62546bb571c0030defd9	93482	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Basic/Spark 1.png	0f1d84d773774ae44aee2fbc9d860a65	9858	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Basic/Spark 2.png	941860ab1b3cd4b4c951686d5637dd8c	10834	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Basic/Spark 3.png	b4d982c64b675b54892340a806fcca75	9519	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Basic/Spark 6.png	09558e68c37a19a4183b760d994d4efb	109224	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Basic/Spark.png	827f5bc84955fb344b8831ce8d09f942	19107	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Shadow/Impact (3).png	b1ccdcc8cebc8fb4ebac5612b7533295	31022	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Shadow/Impact (4).png	22ff7994951c5be44927fe0e9890d4e7	95060	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Shadow/Impact (5).png	8303735f723cdab4d84f2b09ea4e4d78	17063	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Crit.png	99e42351cdb99c64285ebab6d7c77679	44566	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Crit_.tiff	099d901f22db9f84e93ede581716338c	1052624	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Crit_2.png	5d0d4925b5ae28742a5f03b7600cd91e	145409	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Fire_.png	974d80522ed4bd64c9bfaf94a3d5039f	138593	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Ice Hit.png	f412c3679ea86a447a80c7f7d0f6dec4	175016	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Love.png	e239c95dc10c80d408f5972feab4941b	24810	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Love1.png	4f36dd72b41c0c04a975dc2dd3d25b66	37566	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Particle 2.png	fb823f0cf7fe3ee4480cbd9f01a03049	34383	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Particle.png	75cedbb99e2c96a49985f7bb8790fa18	453223	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Shockwave 1.tiff	a77ead24b12ac2248853d692e15e7386	1052632	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Shockwave.tiff	d0c75f6dab76e0349a13bf74539c7fac	1052626	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Smoke.tiff	906fed77d26fb6949a29657f2515367e	16782224	UnityEngine.Texture2D
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Sparks.tiff	b9df888b474ec5e4b91ad5f5e9588796	832946	UnityEngine.Texture2D
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Audio/WAV/Sergi/SFX_Vefects_Electric_Impact_02_One_Shot_01.wav	f860c8f0ff9c7304ead017a828c0fe0c	86438	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Audio/WAV/Sergi/SFX_Vefects_Hit_03_One_Shot.wav	f05cf356e17f80a43a6298315c3a34cf	46418	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Audio/WAV/Sergi/SFX_Vefects_Hit_04_One_Shot.wav	bd6e64f2ae718bd449417e6aeca63ba9	41654	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Audio/WAV/Sergi/SFX_Vefects_Hit_05_Loop_02.wav	cd0c9966dbd076c4b9ac7c6d29aafd94	1852928	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Audio/WAV/Sergi/SFX_Vefects_Lighting_Projectile_01_Loop_01.wav	853b1d2e29418fa4d893872ed774e493	5292728	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Audio/WAV/Sergi/SFX_Vefects_Lighting_Projectile_02_Loop.wav	16486939f4561ac468e9773207700d2a	5623478	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Audio/WAV/Sergi/SFX_Vefects_Radial_Charge_Skill_Ready_One_Shot_01.wav	7b887711b3e728648909f7c5cea92e00	86162	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Audio/WAV/Sergi/SFX_Vefects_Radial_Spilky_Hit_One_Shot_02.wav	2e7e5ee54614c8c4ea215ae12d48e169	20432	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Lite Vefects Combat Flipbook VFX.unity	cb5ce9cffa6699e46a08040bd87a88ec	23305	UnityEditor.SceneAsset
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Scene/Materials/M_Sky.mat	e800259053abbf14fa54d05dd53dee19	4507	UnityEngine.Material
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Scene/Materials/M_Vefects_Grid_01.mat	d1e978451fb0060438c76219336aa576	2194	UnityEngine.Material
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Scene/Meshes/SM_VFX_Background_Plate_01.prefab	b47c589d04b11f14886e94f837327111	3118	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Scene/Settings/PostProProfileCombat.asset	7d495e2baf0d0584ba9071d5369bd395	12344	UnityEngine.Rendering.VolumeProfile
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Blood_Drops.mat	d1034b4f7e70a0b4087d19ee2f6a1c22	3171	UnityEngine.Material
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Blood_Inner_Cloud.mat	c5ef3d59e4c9698439167cad1ae25ea4	3205	UnityEngine.Material
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Charge_01.mat	0b3ce2f38d8219f4bbb809c37e11d4ec	4397	UnityEngine.Material
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Charge_02.mat	35e1f6997dd5463478af22332a504bd7	4384	UnityEngine.Material
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Dust_Directional_04.mat	0006c100303aba648921fb06b6742ae7	2891	UnityEngine.Material
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Dust_Directional_05.mat	ac8569a12021dec4babbb02c419956e9	2690	UnityEngine.Material
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Fire_Burst_02.mat	9097acdf0fe0c644eb816a9019e32e7c	4414	UnityEngine.Material
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Fire_Dust_01.mat	6abf09eeb5a94e2429eadf5fb4632f25	4356	UnityEngine.Material
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Flame_01.mat	c39107e94fd838d4bb6d48ad5b01679c	4393	UnityEngine.Material
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Impact_01.mat	183c43ce1bc9da64fb00136cf1a497c9	3178	UnityEngine.Material
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Lightning_05.mat	4c70711db90d12d4c95d968b15363ad2	4387	UnityEngine.Material
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Lightning_08.mat	46b6a07c213bc27409ad7d6d6bacee59	4387	UnityEngine.Material
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Muzzle_Smoke_01.mat	e28438e6454e6f74f829f6e3d72a6ffb	4428	UnityEngine.Material
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Poison_Burst_01.mat	f6f91a3608618a8449405beb1dd28d29	4378	UnityEngine.Material
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Shrapnel_03.mat	0ba75b4b5cbf4384ebc20ff944dd45ab	4408	UnityEngine.Material
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Water_Ground_Splash_01.mat	c9767da54c0e1754e9590e3272cc81e1	3174	UnityEngine.Material
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Meshes/SM_plate.fbx	610dc28f381f75f4383f89813aa9182a	63100	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite VFX.prefab	930c28f6a10de8544aa9ae42b0e4b79d	172077	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Blood_Cloud_Base_Blur_01.prefab	62669c738f495fc4aaaf29d14d54c0c0	118591	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Blood_Cloud_Blur_01.prefab	4c1b51332ced339488b13639599d9385	117659	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Blood_Drops_01.prefab	e96155014712a5f49ae8d5f2a704062e	117450	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Charge_01.prefab	e74dbb04a4ab47246a2d9006f70a9751	119810	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Charge_02.prefab	1e46be1152fea1a4ea7b061b7d8d690b	119833	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Dust_Directional_01.prefab	f9ff32d93bc95864fb9f459824d5ef50	117686	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Dust_Directional_Small_01.prefab	6bc442c01cd9c1c4cb1d9190a81eb392	117954	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Fire_Burst_Charge_01.prefab	073c6927915e996478926904e5d348a2	119845	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Fire_Loop_01.prefab	532aecb660a16ac4baec296d7ce3f504	119781	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Flame_Burst_01.prefab	1d578c757cfdb6c46ad49e2dc5699977	117983	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Impact_01.prefab	92ac26339e67f3b47a21d8520e7adb46	119799	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Lightning_05.prefab	e52b27f5f59ce25498170c090a09d44c	117633	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Lightning_08.prefab	663f0696c77c91249b2e0cd33e65b688	117671	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Muzzle_Smoke_01.prefab	5d54c021be7d9e9449e51275f728ec14	117653	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Poison_Burst_01.prefab	0a884d06438335e4fbc2b28158d3a909	117989	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Shrapnel_03.prefab	58b005eff22f7d842a81251ee1a25e41	119771	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Water_Ground_Splash_01.prefab	df1e0bf5fdc55264d9a1ccec80a7eab9	118220	UnityEngine.GameObject
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_2x2_RGBC_drops.tga	3440c05799ed0924ca6d6090a3d25de8	1048620	UnityEngine.Texture2D
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_2x3_RC_shrapnel_08.tga	5d5dcb3e9c80294419534a305bf310bd	2797612	UnityEngine.Texture2D
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_3x3_RBC_lightingImpact_01.tga	c2e18eeca634bf347abe3225eaa1eaf7	4194348	UnityEngine.Texture2D
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_3x3_RC_splash09.tga	0b0e19b0a11b5504c8e142ee167266bc	1048620	UnityEngine.Texture2D
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_3x3_RGBC_fireSwirl_01.tga	d95f3a7f853f17d4eb44868fba56198f	4194348	UnityEngine.Texture2D
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_3x4_dustDir_04.tga	37601a321dd6767489287c479085b346	3145772	UnityEngine.Texture2D
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_3x4_RBC_fireSwirl_01.tga	a14d8c99b94a74e4b8016a1f33367c06	3145772	UnityEngine.Texture2D
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_3x4_RBC_lighting_03.tga	161e516d1ce560944869e746c14eade2	3145772	UnityEngine.Texture2D
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_3x4_RBC_loopingSmoke_01.tga	c9c80c6e228dfb2468bab9e802094471	3145772	UnityEngine.Texture2D
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_3x4_RGBC_splash03.tga	8fa5889294074a741b491146b25cc3d7	3145772	UnityEngine.Texture2D
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_3x4_RGBC_splash07.tga	3c591dda261c3214d842ea00fa7926d1	3145772	UnityEngine.Texture2D
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_4x3_RBC_dust_03.tga	6a4d8550c7e4e124489b91ccec1e08d4	3145772	UnityEngine.Texture2D
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_4x4_RGBC_fireFlames_01.tga	d11027c3ee243dd4390574ca91e9cebd	4194348	UnityEngine.Texture2D
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_4x5_RGBC_dustDir_041.tga	6f0bad7c6d47efb4abe92a24bef80f7c	5242924	UnityEngine.Texture2D
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_4x5_RGBC_fireBurst_03.tga	1130ecfcab930fb4eabe8ba35e0c920d	5242924	UnityEngine.Texture2D
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_4x5_RGBC_fireSwirl_02.tga	3b9ace650ceb0b84ca2bd0b7edec8f4e	5242924	UnityEngine.Texture2D
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Charge_01.wav	3f8feb85c7ab6924694cdacde17e5cf7	78002	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Dust_Puff_01.wav	4bcf02c046dfced4687aa5f42534ea16	96006	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Fire_Big_Loop.wav	012ba7235f1c3d043823c4e8437189ef	881304	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Fire_Burst_01.wav	3989b987d2b839448a485c420a838652	125350	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Fire_Charge_01.wav	77da6ad20dfc9174aaa0314f52eafea0	164320	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Impact_01.wav	0fc17236f67ee6b4b93e09eee791ee4e	126346	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Lightning_01.wav	e78ee39c4d8316c4999ad3df556acdf3	103844	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Liquid_Hit_02.wav	e2ace617606080345a481c4f2fc966b9	102258	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Liquid_Puff_01.wav	4b17ce71db473104ba443ddcfe82f910	91810	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Poison_Puff_03.wav	12026bc9a21b1094585436da1e8c480a	101256	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Shrapnel_02.wav	22333ae2b8afc0240bee138760768c40	88978	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Scene/Vefects_Flipbook_VFX_Overview.unity	3db9f957d0f6a2143b7979ae3c2e7696	23170	UnityEditor.SceneAsset
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Audio/WAV/Sergi/SFX_Vefects_Dust_Loop_02.wav	0c8df56957d6f5549947068cb737f849	4812842	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Audio/WAV/Sergi/SFX_Vefects_Impact_Sparks_02.wav	1e033d09112925048a215caefeca4128	60362	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Audio/WAV/Sergi/SFX_Vefects_Projectile_Burst_03.wav	bbf87cf3ae9d2344e8a0979c48676424	28820	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Audio/WAV/Sergi/SFX_Vefects_Projectile_Burst_Impact_03.wav	9cb3dde42e3f17341a7e2f1139c9d56e	70556	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Audio/WAV/Sergi/SFX_Vefects_Projectile_Burst_Loop_03.wav	0807a9bbefd4ee64bbb3a4946343f272	6819368	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Audio/WAV/Sergi/SFX_Vefects_Respawn_02.wav	7e57c436d7571184a897eb1d65f3ff0f	310742	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Audio/WAV/Sergi/SFX_Vefects_Sword_Slash_02.wav	902e2656865686d4f8f8fb0903adc94c	120812	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Audio/WAV/Sergi/SFX_Vefects_Vanish_02.wav	157ff8e0e13ed18458ded61b11586a22	56744	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Audio/WAV/Sergi/SFX_Vefects_Vapor_Loop_02.wav	795421d848241074396a693326ce295b	4917818	UnityEngine.AudioClip
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Scenes/Vefects Pixel Craft VFX Lite.unity	38c838a7a0922b549ba3b0d472a6a67f	23174	UnityEditor.SceneAsset
+Assets/Materials/Hit 4.mat	c2e9280f6019548e2ae54b7fb2f69d72	24916	UnityEngine.Material
+Assets/Materials/PlanetSelectedOutlineUI.mat	a8df3261bfa664dca874e5ccac98cd64	1068	UnityEngine.Material
+Assets/Materials/PlanetSilhouetteUI.mat	4ff5b8a5d30c3495185b6a32df57fccd	1063	UnityEngine.Material
+Assets/Materials/WaringSign.mat	431ba2456e05e4834bcf79d0f806ede0	3825	UnityEngine.Material
+Assets/Sprite/219_20260903141313.png	70c39562703a14bb99b86463bbe24d99	67834	UnityEngine.Texture2D
+Assets/Sprite/230_20260908110607.png	975723dbc60711e4080ffcdffb389f13	1368	UnityEngine.Texture2D
+Assets/Sprite/230_20260908110656.png	2aec5f3c4a3cedd4990db8894ad13741	1222	UnityEngine.Texture2D
+Assets/Sprite/230_20260908110705.png	ecec287652484df449a40edef076d92c	1079	UnityEngine.Texture2D
+Assets/Sprite/230_20260908110720.png	13bb6dc0f19dbc94b82f76f6ef24b78d	1300	UnityEngine.Texture2D
+Assets/Sprite/230_20260908110735.png	d1ac15bb7d70656499675d699372f4c2	975	UnityEngine.Texture2D
+Assets/Sprite/230_20260908110749.png	0de73bddd52f0a34f9192db315a70ca0	1313	UnityEngine.Texture2D
+Assets/Sprite/230_20260908110802.png	6ddda2c7a250db04db559ade493644ec	1239	UnityEngine.Texture2D
+Assets/Sprite/230_20260913220830.png	95f9adefcbfad40e3bf3fa6d9a6d695b	1247	UnityEngine.Texture2D
+Assets/Sprite/234_20260906160412.png	5caaa5c6e0a754edb8248679f4ea0a71	15355	UnityEngine.Texture2D
+Assets/Sprite/234_20260906160438.png	88f04be540b3447d590856b34afefaea	15647	UnityEngine.Texture2D
+Assets/Sprite/ba1f419f-0d49-4eb7-8265-4fdce1360e20.png	bc0498dbc7dc9496f903b6053f484918	388194	UnityEngine.Texture2D
+Assets/Sprite/Burn-Photoroom.png	a45e65693df264ce199e1cba05be12ee	3288	UnityEngine.Texture2D
+Assets/Sprite/CharacterSkillUpgradeIcons/MagicUpgrade.png	a3c51b7e9d224f0fa7581c4e6b982d31	942	UnityEngine.Texture2D
+Assets/Sprite/CharacterSkillUpgradeIcons/SlashUpgrade.png	6f9d8e2c4a714f1b9c32d71a8e0550ab	965	UnityEngine.Texture2D
+Assets/Sprite/ChatGPT Image 2026년 9월 15일 오전 11_39_13-Photoroom.png	9d04e7114be39482c998250ef64e18d4	1026564	UnityEngine.Texture2D
+Assets/Sprite/ChatGPT Image 2026년 9월 21일 오전 09_01_01-Photoroom.png	7ad7dee76fde14c8eb13a480083839c8	1307679	UnityEngine.Texture2D
+Assets/Sprite/ChatGPT Image 2026년 9월 21일 오전 09_01_20-Photoroom.png	8b8a3732f0acb4c2e833eb65f1fe448f	1679396	UnityEngine.Texture2D
+Assets/Sprite/ChatGPT Image 2026년 9월 21일 오후 03_30_23.png	44d1d5c68ac8f447c83c8fd5e2d5c776	1151718	UnityEngine.Texture2D
+Assets/Sprite/ChatGPT Image 2026년 8월 21일 오후 09_22_56 (1).png	e15b92666314e4cd29e243007f3857ae	41496	UnityEngine.Texture2D
+Assets/Sprite/Codex 이미지 2026년 9월 28일 오후 02_06_28.png	d7c9cfde4ae4c4859a023f1d719d894f	956463	UnityEngine.Texture2D
+Assets/Sprite/FireBall-Photoroom.png	1bcc4574aec0f41bda1af1736ae4ab99	3730	UnityEngine.Texture2D
+Assets/Sprite/HudUpgradeIcons/Burn.png	85761ae9053c440abb90ba7af3c59f6d	763	UnityEngine.Texture2D
+Assets/Sprite/HudUpgradeIcons/FireBall.png	ec26ea9d8c07451587e45e08affa60f6	795	UnityEngine.Texture2D
+Assets/Sprite/HudUpgradeIcons/FireStorm.png	0df640c35ce24d949d3a09e2d8cb2cd9	790	UnityEngine.Texture2D
+Assets/Sprite/HudUpgradeIcons/Heatwave.png	b863b70db6434e3bbabbb7db4b46595e	831	UnityEngine.Texture2D
+Assets/Sprite/HudUpgradeIcons/LavaField.png	40ae9d89379b4af09af6c349bd847d89	537	UnityEngine.Texture2D
+Assets/Sprite/HudUpgradeIcons/Lightning.png	3ad0a733d04c4a4dacde840b44b99bef	678	UnityEngine.Texture2D
+Assets/Sprite/HudUpgradeIcons/LightningShuriken.png	fd4ca5d126594b479d3141a37f11eac4	801	UnityEngine.Texture2D
+Assets/Sprite/HudUpgradeIcons/Missile.png	9e866b5f64814e5da444fdeebe5cfe03	9372	UnityEngine.Texture2D
+Assets/Sprite/HudUpgradeIcons/Mold.png	09c3b87552ec419cabe11e315f386edd	757	UnityEngine.Texture2D
+Assets/Sprite/HudUpgradeIcons/Poison.png	d2215e7e10b348b59ffd44954a98b80c	752	UnityEngine.Texture2D
+Assets/Sprite/HudUpgradeIcons/RottingSpore.png	b643b1ef7e9b44daafa829eb215ba968	734	UnityEngine.Texture2D
+Assets/Sprite/HudUpgradeIcons/Shuriken.png	769bfc164fe94266bd450bd1b94dd1ca	826	UnityEngine.Texture2D
+Assets/Sprite/HudUpgradeIcons/Snail.png	e53cdd5bffa84912a77b4bc08a62d465	619	UnityEngine.Texture2D
+Assets/Sprite/HudUpgradeIcons/SporeWarhead.png	1703f2f023ee4024a9547eb08d557f10	867	UnityEngine.Texture2D
+Assets/Sprite/IllustratedUpgradeIcons/FireLightningBurnStorm.png	b36d01535b70745c9870edd36de90ddf	1841637	UnityEngine.Texture2D
+Assets/Sprite/IllustratedUpgradeIcons/LightningShurikenCard.png	7d6bef96b8c2b4764a73976d88b959e5	1228855	UnityEngine.Texture2D
+Assets/Sprite/IllustratedUpgradeIcons/MoldCard.png	70a58192b1f5649208d1ee976669e929	1130826	UnityEngine.Texture2D
+Assets/Sprite/IllustratedUpgradeIcons/MoldPoisonAuraCard.png	0f924e01837f546b8be4bfdb713e6728	1273096	UnityEngine.Texture2D
+Assets/Sprite/IllustratedUpgradeIcons/PoisonCard.png	32598b25438174399bfd9bb822bf2f3d	949724	UnityEngine.Texture2D
+Assets/Sprite/IllustratedUpgradeIcons/ShurikenCard.png	42f8f2665457749b6a249cc20ee27919	1127371	UnityEngine.Texture2D
+Assets/Sprite/IllustratedUpgradeIcons/SnailCard.png	66ee4fe4e955c4eaba3e8a8a84b616d8	675778	UnityEngine.Texture2D
+Assets/Sprite/images-Photoroom.png	0dd4cc281954f4297800229d49b3666b	13475	UnityEngine.Texture2D
+Assets/Sprite/IMG_6246-Photoroom.png	4a43644df6b0e48668dc2715cc36a998	3722	UnityEngine.Texture2D
+Assets/Sprite/Item/Concepts/FirstAidKit_Concept.png	77b64ab9ee7244161b4612f95300e100	330889	UnityEngine.Texture2D
+Assets/Sprite/Item/Concepts/Magnet_Concept.png	368848372beb349688b771c723305f22	551608	UnityEngine.Texture2D
+Assets/Sprite/lavacrab.png	18bb27970d5a54cacba1dd59aa843897	1797	UnityEngine.Texture2D
+Assets/Sprite/Lit-Photoroom.png	1d21cd796983c49dd83854c9da3bfd72	2890	UnityEngine.Texture2D
+Assets/Sprite/Mold-Photoroom.png	4aae06e71f9e74cef845229376ded86c	3731	UnityEngine.Texture2D
+Assets/Sprite/Octopus-Pixel.png	6d8cbb14c427d4ddd862a508c7e9150d	1147308	UnityEngine.Texture2D
+Assets/Sprite/Poi-Photoroom.png	c15d9e1f8ced049aa9fd793da518fc30	3059	UnityEngine.Texture2D
+Assets/Sprite/Snail-Photoroom.png	cdfd36c8bda2d4dfdb6a6949110d6a6e	2498	UnityEngine.Texture2D
+Assets/Sprite/sprite_0 2.png	11bdad1e702824d0595076a3f9bd751d	1459	UnityEngine.Texture2D
+Assets/Sprite/sprite_0 3.png	4d55882ccc01a475da8810b778fcc7a4	4511	UnityEngine.Texture2D
+Assets/Sprite/sprite_0.png	11a9d2b16e3044832b5eb5b2d6623718	1404	UnityEngine.Texture2D
+Assets/Sprite/sprite_1 1.png	3405a3df5a61c42f594b5c6fdcb7ee83	1261	UnityEngine.Texture2D
+Assets/Sprite/sprite_1 3.png	81d18381963964d6789ddb21520aaab9	1969	UnityEngine.Texture2D
+Assets/Sprite/sprite_1.png	9b5f4d11e854042afadc813ced8fd7a9	1173	UnityEngine.Texture2D
+Assets/Sprite/sprite_2 2.png	f896b767a33d14fd7a96c7ff350bcc94	1329	UnityEngine.Texture2D
+Assets/Sprite/sprite_2 3.png	ed934f4cfc2ac457a93d28748e8864ff	2890	UnityEngine.Texture2D
+Assets/Sprite/sprite_2.png	695c9ffded58e424fb7873f6fce492f8	1264	UnityEngine.Texture2D
+Assets/Sprite/sprite_3 2.png	5c06e71b780cb4ba584b6e7b78f5848b	1247	UnityEngine.Texture2D
+Assets/Sprite/sprite_3 3.png	a9ab648be986c44e3a612a35b68b699d	3432	UnityEngine.Texture2D
+Assets/Sprite/sprite_3.png	04ddcf22621fd47acb1854713ffd62e8	1202	UnityEngine.Texture2D
+Assets/Sprite/sprite_4 2.png	b2b33ffbb0c04439d9fd11bebb7f9bd6	792	UnityEngine.Texture2D
+Assets/Sprite/sprite_4 3.png	cc6613d8adba34487bdb9f42987ea981	3304	UnityEngine.Texture2D
+Assets/Sprite/sprite_4.png	8f3137e412a1845ab9e8df5a532cc917	1108	UnityEngine.Texture2D
+Assets/Sprite/sprite_5 2.png	ee6cc571a98af4db0be818dde3e965fa	1096	UnityEngine.Texture2D
+Assets/Sprite/sprite_5 3.png	26f2d9416e1c547acb03c08a48960d72	3375	UnityEngine.Texture2D
+Assets/Sprite/sprite_5.png	be05c269a1ddf4f0ca3b48c07696cee3	1230	UnityEngine.Texture2D
+Assets/Sprite/sprite_6.png	3080fd2ffabce45b19fb2ff907770cb2	1301	UnityEngine.Texture2D
+Assets/Sprite/Su-Photoroom.png	716afa1adcefd4e65b5f9113a2f76442	3241	UnityEngine.Texture2D
+Assets/SpriteSeet/MageCastClean.png	dcef38ca0131f4641b7d78ccde28063e	1561764	UnityEngine.Texture2D
+Assets/SpriteSeet/OctopusAttack.png	9b20e959736a04ab59c8d4a6f354c4ae	293081	UnityEngine.Texture2D
+Assets/SpriteSeet/OctopusRun.png	2821b3b180fa547929a4841cbe9192e0	297606	UnityEngine.Texture2D
+Assets/SpriteSeet/player-dash-right-v1.png	9a21b960216ca814cae36bf3d31ad7e7	306504	UnityEngine.Texture2D
+Assets/SpriteSeet/player-dash-right-v2.png	8a5c5bed1c853b644a7c96c990a827ed	357001	UnityEngine.Texture2D
+Assets/SpriteSeet/player-dash-right-v3.png	3c71b137bb9c1364a97fdf46c73c071c	348959	UnityEngine.Texture2D
+Assets/Temp/stage-planets-play.png	6ba7e7c3826464706917753e5484a51f	759215	UnityEngine.Texture2D

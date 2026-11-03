@@ -1,0 +1,1 @@
+PASS: inactive movement/cancel starts no coroutine; first reward alone; left slide before second; final positions; replay reset. Sequence uses unscaled update.

@@ -1,0 +1,24 @@
+Ice Hit isolated scene batching comparison
+variant 0: scene=Lobby, camera=(0.00, 0.00, 0.00), ortho=5, sorting=CustomAxis/(0.00, 1.00, 0.00)
+sorting variant=0
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=5 delta=3 setPass=5
+count=5 batches=17 delta=15 setPass=17
+count=10 batches=32 delta=30 setPass=32
+variant 1: scene=Stage1, camera=(0.00, -0.14, -30.00), ortho=10, sorting=CustomAxis/(0.00, 1.00, 0.00)
+sorting variant=1
+count=0 batches=2 delta=0 setPass=3
+count=1 batches=5 delta=3 setPass=5
+count=5 batches=17 delta=15 setPass=17
+count=10 batches=32 delta=30 setPass=32
+sorting variant=2
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=5 delta=3 setPass=6
+count=5 batches=5 delta=3 setPass=5
+count=10 batches=5 delta=3 setPass=5
+sorting variant=3
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=5 delta=3 setPass=5
+count=5 batches=5 delta=3 setPass=6
+count=10 batches=5 delta=3 setPass=5
+COMPLETE

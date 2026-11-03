@@ -17,8 +17,11 @@ public class LocalizedText : MonoBehaviour
 
     private void OnEnable()
     {
+        LocalizationManager.InstanceChanged += OnManagerChanged;
         SubscribeToManager();
     }
+
+    private void OnManagerChanged(LocalizationManager manager) => SubscribeToManager();
 
     private void Start()
     {
@@ -53,7 +56,7 @@ public class LocalizedText : MonoBehaviour
         LocalizationManager manager = subscribedManager != null
             ? subscribedManager
             : LocalizationManager.Instance;
-        if (manager == null)
+        if (manager == null || string.IsNullOrWhiteSpace(key))
             return;
 
         text = manager.GetTranslation(key, formatArguments);
@@ -78,6 +81,7 @@ public class LocalizedText : MonoBehaviour
 
     private void OnDisable()
     {
+        LocalizationManager.InstanceChanged -= OnManagerChanged;
         if (subscribedManager != null)
         {
             subscribedManager.OnLanguageChanged -= UpdateText;

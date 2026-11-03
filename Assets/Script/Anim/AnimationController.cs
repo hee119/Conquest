@@ -25,6 +25,13 @@ public class AnimationController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    private void OnEnable()
+    {
+        // Disabling a prepared scene stops cooldown coroutines before they finish.
+        StopAllCoroutines();
+        canSkillUse1 = canSkillUse2 = canSkillUse3 = canSkillUse4 = true;
+    }
+
     public void Skill1(int skillId)
     {
         if (!canSkillUse1)
@@ -79,22 +86,16 @@ public class AnimationController : MonoBehaviour
 
     private void SetSkillAnimationSpeed(int skillId, bool basicAttack = false)
     {
-        float speed = UpgradeManager.Instance.GetSkillAnimationSpeed(skillId);
-
-        if (basicAttack) speed *= PermanentAttackSpeed();
+        float speed = basicAttack
+            ? DataManager.Instance.skillDatasDic[skillId].basicAttackAnimationSpeed
+            : UpgradeManager.Instance.GetSkillAnimationSpeed(skillId);
         animator.SetFloat("SkillSpeed", speed);
-    }
-
-    private float PermanentAttackSpeed()
-    {
-        int id = CharacterManager.Instance != null ? CharacterManager.Instance.currentCharacter : GetComponent<PlayerInfo>().id;
-        return CharacterProgression.BasicAttackSpeed(id);
     }
 
     private IEnumerator SkillCooldown1(int skillId)
     {
         float coolTime =
-            DataManager.Instance.skillDatasDic[skillId].skillCoolTime / PermanentAttackSpeed();
+            DataManager.Instance.skillDatasDic[skillId].basicAttackCooldown;
 
         yield return new WaitForSeconds(coolTime);
 

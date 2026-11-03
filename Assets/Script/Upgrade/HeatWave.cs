@@ -1,11 +1,13 @@
 using UnityEngine;
 
+/// <summary>HeatWave 증강 관련 동작과 상태를 관리한다.</summary>
 public class HeatWave : HomingProjectile
 {
 
     private Boom boom;
     private bool isBoom;
 
+    /// <summary>필요한 컴포넌트와 초기 상태를 준비한다.</summary>
     protected override void Awake()
     {
         base.Awake();
@@ -13,6 +15,7 @@ public class HeatWave : HomingProjectile
         boom = GetComponent<Boom>();
     }
 
+    /// <summary>활성화될 때 필요한 이벤트와 동작을 시작한다.</summary>
     protected override void OnEnable()
     {
         base.OnEnable();
@@ -22,7 +25,8 @@ public class HeatWave : HomingProjectile
         SoundManager.Instance?.Play(SoundIds.FireballLaunch);
     }
 
-    protected override void OnTriggerEnter2D(Collider2D other)
+    /// <summary>다른 콜라이더가 진입했을 때 적중 효과를 처리한다.</summary>
+    public override void HandleEnemyContact(Collider2D other)
 {
     if (isBoom)
         return;
@@ -43,60 +47,6 @@ public class HeatWave : HomingProjectile
                 targetCollider.ClosestPoint(
                     transform.position
                 );
-
-            // =====================================
-            // 현재 캐릭터 스탯
-            // =====================================
-
-            int characterId =
-                CharacterManager.Instance.currentCharacter;
-
-            PlayerData playerData =
-                DataManager.Instance.playerDatasDic[characterId];
-
-            int playerDamage =
-                playerData.damage;
-
-            int critChance =
-                playerData.criticalChance;
-
-            float critDamage =
-                playerData.criticalDamage;
-
-            // =====================================
-            // 데미지 계산
-            // =====================================
-
-            float damage =
-                GetDamage();
-
-            // 공격력 적용
-            damage =
-                (int)(
-                    damage *
-                    (1f + playerDamage / 100f)
-                );
-
-            // =====================================
-            // 크리티컬 판정
-            // =====================================
-
-            bool isCritical =
-                Random.Range(0, 100) < critChance;
-
-            if (isCritical)
-            {
-                damage =
-                    (int)(
-                        damage *
-                        (2f + critDamage / 100f)
-                    );
-            }
-
-            enemyCombat.TakeDamage(
-                damage,
-                hitPoint
-            );
         }
 
         isBoom = true;

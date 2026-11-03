@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>UpgreadeSelectConfirm 증강 관련 동작과 상태를 관리한다.</summary>
 public class UpgreadeSelectConfirm : MonoBehaviour
 {
     public int id;
@@ -12,6 +13,7 @@ public class UpgreadeSelectConfirm : MonoBehaviour
     public GameObject upgradeCombine;
     public GameObject upgradeCombineCollection;
 
+    /// <summary>SelectConfirm 동작을 처리한다.</summary>
     public void SelectConfirm()
     {
         StopAndRemoveCoroutine(removeUpgradeId1);
@@ -31,6 +33,7 @@ public class UpgreadeSelectConfirm : MonoBehaviour
 
             UpgradeManager.Instance.skillUpgradeCount -= 2;
         }
+        /// <summary>if 동작을 처리한다.</summary>
         else if (removeType == "Stat")
         {
             RemoveAndCompact(
@@ -46,6 +49,7 @@ public class UpgreadeSelectConfirm : MonoBehaviour
         {
             UpgradeManager.Instance.SkillUpgradesAdd(id);
         }
+        /// <summary>if 동작을 처리한다.</summary>
         else if (addType == "Stat")
         {
             UpgradeManager.Instance.StatUpgradesAdd(id);
@@ -63,6 +67,7 @@ public class UpgreadeSelectConfirm : MonoBehaviour
         mom.SetActive(false);
     }
 
+    /// <summary>StopAndRemoveCoroutine 동작을 처리한다.</summary>
     private void StopAndRemoveCoroutine(int upgradeId)
     {
         if (UpgradeManager.Instance.upgradeCor.TryGetValue(upgradeId, out IEnumerator cor))
@@ -73,6 +78,7 @@ public class UpgreadeSelectConfirm : MonoBehaviour
     }
 
     // ids 리스트에서 두 업그레이드를 제거하고, icons의 sprite를 할당 없이 앞으로 압축
+    /// <summary>RemoveAndCompact 동작을 처리한다.</summary>
     private void RemoveAndCompact(List<int> upgradeIds, Image[] icons, int removeId1, int removeId2)
     {
         int index1 = upgradeIds.IndexOf(removeId1);

@@ -1,0 +1,704 @@
+fileFormatVersion: 2
+guid: a8d14fd9af15c4707a5474e648390ad7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8351259906300692989
+    second: OctopusUncrownedMove_0
+  - first:
+      213: -3649378124376625923
+    second: OctopusUncrownedMove_1
+  - first:
+      213: 9220759265496426405
+    second: OctopusUncrownedMove_2
+  - first:
+      213: 1452853603079213616
+    second: OctopusUncrownedMove_3
+  - first:
+      213: -3216680296009386949
+    second: OctopusUncrownedMove_4
+  - first:
+      213: -3007043801947859106
+    second: OctopusUncrownedMove_5
+  - first:
+      213: 675404963451799874
+    second: OctopusUncrownedMove_6
+  - first:
+      213: 5641680319343945324
+    second: OctopusUncrownedMove_7
+  - first:
+      213: -9153653766900261828
+    second: OctopusUncrownedMove_8
+  - first:
+      213: 7984964528841821693
+    second: OctopusUncrownedMove_9
+  - first:
+      213: -5828427036411970708
+    second: OctopusUncrownedMove_10
+  - first:
+      213: -8138466426256305939
+    second: OctopusUncrownedMove_11
+  - first:
+      213: -5384635847342836798
+    second: OctopusUncrownedMove_12
+  - first:
+      213: 707931369466497574
+    second: OctopusUncrownedMove_13
+  - first:
+      213: -188841135536321694
+    second: OctopusUncrownedMove_14
+  - first:
+      213: 2804855573447866789
+    second: OctopusUncrownedMove_15
+  - first:
+      213: -5218582397219499051
+    second: OctopusUncrownedMove_16
+  - first:
+      213: -8877494283706466224
+    second: OctopusUncrownedMove_17
+  - first:
+      213: -7833475026114800844
+    second: OctopusUncrownedMove_18
+  - first:
+      213: 766623392874901631
+    second: OctopusUncrownedMove_19
+  - first:
+      213: 8820560237267034828
+    second: OctopusUncrownedMove_20
+  - first:
+      213: -3502444107858768583
+    second: OctopusUncrownedMove_21
+  - first:
+      213: -7650321303690822977
+    second: OctopusUncrownedMove_22
+  - first:
+      213: -7198131816384301642
+    second: OctopusUncrownedMove_23
+  - first:
+      213: -2353557804972447510
+    second: OctopusUncrownedMove_24
+  - first:
+      213: -5143700084660576549
+    second: OctopusUncrownedMove_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 170
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 502
+        width: 251
+        height: 250
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.452}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6bb16f9d744d1fa0800000000000000
+      internalID: -5828427036411970708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_11
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 502
+        width: 251
+        height: 250
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.452}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de0dc8e97eb5e0f80800000000000000
+      internalID: -8138466426256305939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_12
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 502
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.504, y: 0.452}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c3bb42d93ee545b0800000000000000
+      internalID: -5384635847342836798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_13
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 502
+        width: 251
+        height: 250
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.452}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62a086a64d313d900800000000000000
+      internalID: 707931369466497574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_14
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 502
+        width: 251
+        height: 250
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.452}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26b406ddcf9116df0800000000000000
+      internalID: -188841135536321694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 251
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45019922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a972a58849dce620800000000000000
+      internalID: 2804855573447866789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_16
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 251
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45019922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d310ae75fed397b0800000000000000
+      internalID: -5218582397219499051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_17
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 251
+        width: 250
+        height: 251
+      alignment: 9
+      pivot: {x: 0.504, y: 0.45019922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0508d14ebfdccc480800000000000000
+      internalID: -8877494283706466224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_18
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 251
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45019922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 433988f97f7e94390800000000000000
+      internalID: -7833475026114800844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_19
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 251
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45019922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7030d00ae793aa00800000000000000
+      internalID: 766623392874901631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45019922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc2ac3e6dcce86a70800000000000000
+      internalID: 8820560237267034828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_21
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 0
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45019922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93d0b6104a1d46fc0800000000000000
+      internalID: -3502444107858768583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_22
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 0
+        width: 250
+        height: 251
+      alignment: 9
+      pivot: {x: 0.504, y: 0.45019922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbab7e3be4994d590800000000000000
+      internalID: -7650321303690822977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_23
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 0
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45019922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b5f9f510491b1c90800000000000000
+      internalID: -7198131816384301642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_24
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 0
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45019922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae8e44465ab765fd0800000000000000
+      internalID: -2353557804972447510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_04
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 1003
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45019922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87dabdeebf9d74b3ca252c758a6a142f
+      internalID: -881651833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_05
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 752
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45019922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5338a6f4d86041528b6508918e93c31
+      internalID: 158369875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_06
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 752
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45019922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08afe14fce9c94d4fa3da0f409b8b965
+      internalID: -114566745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_07
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 752
+        width: 250
+        height: 251
+      alignment: 9
+      pivot: {x: 0.504, y: 0.45019922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae57b12b65e1b43c0bdaa85cdedea7e0
+      internalID: 719846249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_08
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 752
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45019922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc75915ed02aa4934a10b5f6849fa574
+      internalID: -1548239560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedMove_09
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 752
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45019922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bebe740e80a542449033b8b4070c262
+      internalID: -1497895994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e54758343132e44e3a1c3f0b38f822d4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      OctopusUncrownedMove_04: -881651833
+      OctopusUncrownedMove_05: 158369875
+      OctopusUncrownedMove_06: -114566745
+      OctopusUncrownedMove_07: 719846249
+      OctopusUncrownedMove_08: -1548239560
+      OctopusUncrownedMove_09: -1497895994
+      OctopusUncrownedMove_10: -5828427036411970708
+      OctopusUncrownedMove_11: -8138466426256305939
+      OctopusUncrownedMove_12: -5384635847342836798
+      OctopusUncrownedMove_13: 707931369466497574
+      OctopusUncrownedMove_14: -188841135536321694
+      OctopusUncrownedMove_15: 2804855573447866789
+      OctopusUncrownedMove_16: -5218582397219499051
+      OctopusUncrownedMove_17: -8877494283706466224
+      OctopusUncrownedMove_18: -7833475026114800844
+      OctopusUncrownedMove_19: 766623392874901631
+      OctopusUncrownedMove_20: 8820560237267034828
+      OctopusUncrownedMove_21: -3502444107858768583
+      OctopusUncrownedMove_22: -7650321303690822977
+      OctopusUncrownedMove_23: -7198131816384301642
+      OctopusUncrownedMove_24: -2353557804972447510
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

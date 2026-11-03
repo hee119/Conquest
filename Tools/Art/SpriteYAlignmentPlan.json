@@ -1,0 +1,98 @@
+[
+  {
+    "controller": "33b396de-9531-4cd0-9d51-895508de370c (1)_0",
+    "move": "Assets/Animation/Run.anim",
+    "clip": "Assets/Animation/Idle.anim",
+    "path": "Assets/SpriteSeet/player-idle-trimmed.png",
+    "baseline": -0.9866666666666667,
+    "pivotDeltaPixels": 15.000000000000005
+  },
+  {
+    "controller": "33b396de-9531-4cd0-9d51-895508de370c (1)_0",
+    "move": "Assets/Animation/Run.anim",
+    "clip": "Assets/Animation/Attack.anim",
+    "path": "Assets/SpriteSeet/player-attack (1) (1).png",
+    "baseline": -0.9866666666666667,
+    "pivotDeltaPixels": 7.199999999999999
+  },
+  {
+    "controller": "33b396de-9531-4cd0-9d51-895508de370c (1)_0",
+    "move": "Assets/Animation/Run.anim",
+    "clip": "Assets/Animation/Dash.anim",
+    "path": "Assets/SpriteSeet/Player-dash (1).png",
+    "baseline": -0.9866666666666667,
+    "pivotDeltaPixels": 31.999999999999996
+  },
+  {
+    "controller": "Mage",
+    "move": "Assets/Animation/MageRun.anim",
+    "clip": "Assets/Animation/MageIdle.anim",
+    "path": "Assets/SpriteSeet/MageIdle.png",
+    "baseline": -1.08,
+    "pivotDeltaPixels": 3.0000000000000027
+  },
+  {
+    "controller": "Mage",
+    "move": "Assets/Animation/MageRun.anim",
+    "clip": "Assets/Animation/MageAttack.anim",
+    "path": "Assets/SpriteSeet/MageCastAttack.png",
+    "baseline": -1.08,
+    "pivotDeltaPixels": 4.000000000000009
+  },
+  {
+    "controller": "Mage",
+    "move": "Assets/Animation/MageRun.anim",
+    "clip": "Assets/Animation/MageDash.anim",
+    "path": "Assets/SpriteSeet/MageDash.png",
+    "baseline": -1.08,
+    "pivotDeltaPixels": 3.0000000000000027
+  },
+  {
+    "controller": "Crap",
+    "move": "Assets/Animation/CrapWalk.anim",
+    "clip": "Assets/Animation/CrapHit.anim",
+    "path": "Assets/SpriteSeet/cb5787d7-5267-40e1-b819-542961eea023.png",
+    "baseline": -0.390625,
+    "pivotDeltaPixels": 0.6562499999999977
+  },
+  {
+    "controller": "OctopusKing",
+    "move": "Assets/Animation/OctopusKingMove.anim",
+    "clip": "Assets/Animation/OctopusKingHydroLoop.anim",
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "baseline": -0.7053571428571429,
+    "pivotDeltaPixels": -19.999999999999993
+  },
+  {
+    "controller": "OctopusKing",
+    "move": "Assets/Animation/OctopusKingMove.anim",
+    "clip": "Assets/Animation/OctopusKingGroundAttack.anim",
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "baseline": -0.7053571428571429,
+    "pivotDeltaPixels": 40.00000250000001
+  },
+  {
+    "controller": "OctopusKing",
+    "move": "Assets/Animation/OctopusKingMove.anim",
+    "clip": "Assets/Animation/OctopusKingWaterShot.anim",
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "baseline": -0.7053571428571429,
+    "pivotDeltaPixels": 9.000001776785714
+  },
+  {
+    "controller": "Slime",
+    "move": "Assets/Animation/SlimeJump.anim",
+    "clip": "Assets/Animation/SlimeHit.anim",
+    "path": "Assets/SpriteSeet/SlimeHit.png",
+    "baseline": -0.72,
+    "pivotDeltaPixels": 21.999999999999996
+  },
+  {
+    "controller": "SlimeKing",
+    "move": "Assets/Animation/SlimeKingMove.anim",
+    "clip": "Assets/Animation/SlimeKingHit.anim",
+    "path": "Assets/SpriteSeet/SlimeKingHit.png",
+    "baseline": -0.8933333333333333,
+    "pivotDeltaPixels": 24.999999999999993
+  }
+]

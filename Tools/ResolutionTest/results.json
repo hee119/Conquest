@@ -1,0 +1,655 @@
+{
+  "platform": "macOS",
+  "build": "Builds/MacResolutionTest/Terraformer.app",
+  "uiCases": [
+    {
+      "scenario": 6,
+      "width": 1280,
+      "height": 720,
+      "savedWidth": 1280,
+      "savedHeight": 720,
+      "mode": "Windowed",
+      "caption": "1280 × 720",
+      "x": 659.9221801757812,
+      "y": 188.31771850585938,
+      "right": 939.0111694335938,
+      "top": 318.328125,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 7,
+      "width": 1366,
+      "height": 768,
+      "savedWidth": 1366,
+      "savedHeight": 768,
+      "mode": "Windowed",
+      "caption": "1366 × 768",
+      "x": 704.0888061523438,
+      "y": 200.9213104248047,
+      "right": 1001.8563842773438,
+      "top": 339.6329345703125,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 8,
+      "width": 1600,
+      "height": 900,
+      "savedWidth": 1600,
+      "savedHeight": 900,
+      "mode": "Windowed",
+      "caption": "1600 × 900",
+      "x": 824.9027099609375,
+      "y": 235.39715576171875,
+      "right": 1173.763916015625,
+      "top": 397.91015625,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 9,
+      "width": 1920,
+      "height": 1080,
+      "savedWidth": 1920,
+      "savedHeight": 1080,
+      "mode": "Windowed",
+      "caption": "1920 × 1080",
+      "x": 989.88330078125,
+      "y": 282.4765930175781,
+      "right": 1408.5166015625,
+      "top": 477.4921875,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 10,
+      "width": 2560,
+      "height": 1440,
+      "savedWidth": 2560,
+      "savedHeight": 1440,
+      "mode": "Windowed",
+      "caption": "2560 × 1440",
+      "x": 1319.8443603515625,
+      "y": 376.63543701171875,
+      "right": 1878.0223388671875,
+      "top": 636.65625,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 11,
+      "width": 3840,
+      "height": 2160,
+      "savedWidth": 3840,
+      "savedHeight": 2160,
+      "mode": "Windowed",
+      "caption": "3840 × 2160",
+      "x": 1979.7666015625,
+      "y": 564.9531860351562,
+      "right": 2817.033203125,
+      "top": 954.984375,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 0,
+      "width": 1280,
+      "height": 720,
+      "savedWidth": 1280,
+      "savedHeight": 720,
+      "mode": "MaximizedWindow",
+      "caption": "1280 × 720",
+      "x": 659.9221801757812,
+      "y": 188.31771850585938,
+      "right": 939.0111694335938,
+      "top": 318.328125,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 1,
+      "width": 1366,
+      "height": 768,
+      "savedWidth": 1366,
+      "savedHeight": 768,
+      "mode": "MaximizedWindow",
+      "caption": "1366 × 768",
+      "x": 704.0888061523438,
+      "y": 200.9213104248047,
+      "right": 1001.8563842773438,
+      "top": 339.6329345703125,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 2,
+      "width": 1600,
+      "height": 900,
+      "savedWidth": 1600,
+      "savedHeight": 900,
+      "mode": "MaximizedWindow",
+      "caption": "1600 × 900",
+      "x": 824.9027099609375,
+      "y": 235.39715576171875,
+      "right": 1173.763916015625,
+      "top": 397.91015625,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 3,
+      "width": 1920,
+      "height": 1080,
+      "savedWidth": 1920,
+      "savedHeight": 1080,
+      "mode": "MaximizedWindow",
+      "caption": "1920 × 1080",
+      "x": 989.88330078125,
+      "y": 282.4765930175781,
+      "right": 1408.5166015625,
+      "top": 477.4921875,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 4,
+      "width": 2560,
+      "height": 1440,
+      "savedWidth": 2560,
+      "savedHeight": 1440,
+      "mode": "MaximizedWindow",
+      "caption": "2560 × 1440",
+      "x": 1319.8443603515625,
+      "y": 376.63543701171875,
+      "right": 1878.0223388671875,
+      "top": 636.65625,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 5,
+      "width": 3840,
+      "height": 2160,
+      "savedWidth": 3840,
+      "savedHeight": 2160,
+      "mode": "MaximizedWindow",
+      "caption": "3840 × 2160",
+      "x": 1979.7666015625,
+      "y": 564.9531860351562,
+      "right": 2817.033203125,
+      "top": 954.984375,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 12,
+      "width": 1280,
+      "height": 720,
+      "savedWidth": 1280,
+      "savedHeight": 720,
+      "mode": "FullScreenWindow",
+      "caption": "1280 × 720",
+      "x": 659.9221801757812,
+      "y": 188.31771850585938,
+      "right": 939.0111694335938,
+      "top": 318.328125,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 13,
+      "width": 1366,
+      "height": 768,
+      "savedWidth": 1366,
+      "savedHeight": 768,
+      "mode": "FullScreenWindow",
+      "caption": "1366 × 768",
+      "x": 704.0888061523438,
+      "y": 200.9213104248047,
+      "right": 1001.8563842773438,
+      "top": 339.6329345703125,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 14,
+      "width": 1600,
+      "height": 900,
+      "savedWidth": 1600,
+      "savedHeight": 900,
+      "mode": "FullScreenWindow",
+      "caption": "1600 × 900",
+      "x": 824.9027099609375,
+      "y": 235.39715576171875,
+      "right": 1173.763916015625,
+      "top": 397.91015625,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 15,
+      "width": 1920,
+      "height": 1080,
+      "savedWidth": 1920,
+      "savedHeight": 1080,
+      "mode": "FullScreenWindow",
+      "caption": "1920 × 1080",
+      "x": 989.88330078125,
+      "y": 282.4765930175781,
+      "right": 1408.5166015625,
+      "top": 477.4921875,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 16,
+      "width": 2560,
+      "height": 1440,
+      "savedWidth": 2560,
+      "savedHeight": 1440,
+      "mode": "FullScreenWindow",
+      "caption": "2560 × 1440",
+      "x": 1319.8443603515625,
+      "y": 376.63543701171875,
+      "right": 1878.0223388671875,
+      "top": 636.65625,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 17,
+      "width": 3840,
+      "height": 2160,
+      "savedWidth": 3840,
+      "savedHeight": 2160,
+      "mode": "FullScreenWindow",
+      "caption": "3840 × 2160",
+      "x": 1979.7666015625,
+      "y": 564.9531860351562,
+      "right": 2817.033203125,
+      "top": 954.984375,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 6,
+      "width": 1280,
+      "height": 720,
+      "savedWidth": 1280,
+      "savedHeight": 720,
+      "mode": "Windowed",
+      "caption": "1280 × 720",
+      "x": 659.9221801757812,
+      "y": 188.31771850585938,
+      "right": 939.0111694335938,
+      "top": 318.328125,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 6,
+      "width": 1280,
+      "height": 720,
+      "savedWidth": 1280,
+      "savedHeight": 720,
+      "mode": "Windowed",
+      "caption": "1280 × 720",
+      "x": 659.9221801757812,
+      "y": 188.31781005859375,
+      "right": 939.0111694335938,
+      "top": 318.3282165527344,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 7,
+      "width": 1366,
+      "height": 768,
+      "savedWidth": 1366,
+      "savedHeight": 768,
+      "mode": "Windowed",
+      "caption": "1366 × 768",
+      "x": 704.2503662109375,
+      "y": 200.87225341796875,
+      "right": 1001.9451904296875,
+      "top": 339.54998779296875,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 8,
+      "width": 1600,
+      "height": 900,
+      "savedWidth": 1600,
+      "savedHeight": 900,
+      "mode": "Windowed",
+      "caption": "1600 × 900",
+      "x": 824.9027099609375,
+      "y": 235.39718627929688,
+      "right": 1173.7640380859375,
+      "top": 397.91015625,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 9,
+      "width": 1920,
+      "height": 1080,
+      "savedWidth": 1920,
+      "savedHeight": 1080,
+      "mode": "Windowed",
+      "caption": "1920 × 1080",
+      "x": 989.88330078125,
+      "y": 282.47662353515625,
+      "right": 1408.516845703125,
+      "top": 477.4921875,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 10,
+      "width": 2560,
+      "height": 1440,
+      "savedWidth": 2560,
+      "savedHeight": 1440,
+      "mode": "Windowed",
+      "caption": "2560 × 1440",
+      "x": 1319.8443603515625,
+      "y": 376.635498046875,
+      "right": 1878.0224609375,
+      "top": 636.65625,
+      "clickable": true,
+      "fits": true
+    },
+    {
+      "scenario": 11,
+      "width": 3840,
+      "height": 2160,
+      "savedWidth": 3840,
+      "savedHeight": 2160,
+      "mode": "Windowed",
+      "caption": "3840 × 2160",
+      "x": 1979.7666015625,
+      "y": 564.9532470703125,
+      "right": 2817.03369140625,
+      "top": 954.984375,
+      "clickable": true,
+      "fits": true
+    }
+  ],
+  "mapCases": [
+    {
+      "resolution": "1280x720",
+      "position": "0,0",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1280x720",
+      "position": "1,0",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1280x720",
+      "position": "2,0",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1280x720",
+      "position": "0,1",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1280x720",
+      "position": "1,1",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1280x720",
+      "position": "2,1",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1280x720",
+      "position": "0,2",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1280x720",
+      "position": "1,2",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1280x720",
+      "position": "2,2",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1366x768",
+      "position": "0,0",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1366x768",
+      "position": "1,0",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1366x768",
+      "position": "2,0",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1366x768",
+      "position": "0,1",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1366x768",
+      "position": "1,1",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1366x768",
+      "position": "2,1",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1366x768",
+      "position": "0,2",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1366x768",
+      "position": "1,2",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1366x768",
+      "position": "2,2",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1600x900",
+      "position": "0,0",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1600x900",
+      "position": "1,0",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1600x900",
+      "position": "2,0",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1600x900",
+      "position": "0,1",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1600x900",
+      "position": "1,1",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1600x900",
+      "position": "2,1",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1600x900",
+      "position": "0,2",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1600x900",
+      "position": "1,2",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1600x900",
+      "position": "2,2",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1920x1080",
+      "position": "0,0",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1920x1080",
+      "position": "1,0",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1920x1080",
+      "position": "2,0",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1920x1080",
+      "position": "0,1",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1920x1080",
+      "position": "1,1",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1920x1080",
+      "position": "2,1",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1920x1080",
+      "position": "0,2",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1920x1080",
+      "position": "1,2",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "1920x1080",
+      "position": "2,2",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "2560x1440",
+      "position": "0,0",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "2560x1440",
+      "position": "1,0",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "2560x1440",
+      "position": "2,0",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "2560x1440",
+      "position": "0,1",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "2560x1440",
+      "position": "1,1",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "2560x1440",
+      "position": "2,1",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "2560x1440",
+      "position": "0,2",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "2560x1440",
+      "position": "1,2",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "2560x1440",
+      "position": "2,2",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "3840x2160",
+      "position": "0,0",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "3840x2160",
+      "position": "1,0",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "3840x2160",
+      "position": "2,0",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "3840x2160",
+      "position": "0,1",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "3840x2160",
+      "position": "1,1",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "3840x2160",
+      "position": "2,1",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "3840x2160",
+      "position": "0,2",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "3840x2160",
+      "position": "1,2",
+      "emptyTileSamples": 0
+    },
+    {
+      "resolution": "3840x2160",
+      "position": "2,2",
+      "emptyTileSamples": 0
+    }
+  ],
+  "preferencesRestored": true,
+  "complete": true
+}

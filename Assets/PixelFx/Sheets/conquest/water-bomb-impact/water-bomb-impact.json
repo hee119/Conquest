@@ -1,0 +1,743 @@
+{
+ "frames": [
+  {
+   "filename": "water-bomb-impact 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 1",
+   "frame": {
+    "x": 240,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 2",
+   "frame": {
+    "x": 480,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 3",
+   "frame": {
+    "x": 720,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 4",
+   "frame": {
+    "x": 960,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 5",
+   "frame": {
+    "x": 1200,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 6",
+   "frame": {
+    "x": 0,
+    "y": 192,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 7",
+   "frame": {
+    "x": 240,
+    "y": 192,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 8",
+   "frame": {
+    "x": 480,
+    "y": 192,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 9",
+   "frame": {
+    "x": 720,
+    "y": 192,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 10",
+   "frame": {
+    "x": 960,
+    "y": 192,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 11",
+   "frame": {
+    "x": 1200,
+    "y": 192,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 12",
+   "frame": {
+    "x": 0,
+    "y": 384,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 13",
+   "frame": {
+    "x": 240,
+    "y": 384,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 14",
+   "frame": {
+    "x": 480,
+    "y": 384,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 15",
+   "frame": {
+    "x": 720,
+    "y": 384,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 16",
+   "frame": {
+    "x": 960,
+    "y": 384,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 17",
+   "frame": {
+    "x": 1200,
+    "y": 384,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 18",
+   "frame": {
+    "x": 0,
+    "y": 576,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 19",
+   "frame": {
+    "x": 240,
+    "y": 576,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 20",
+   "frame": {
+    "x": 480,
+    "y": 576,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 21",
+   "frame": {
+    "x": 720,
+    "y": 576,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 22",
+   "frame": {
+    "x": 960,
+    "y": 576,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 23",
+   "frame": {
+    "x": 1200,
+    "y": 576,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 24",
+   "frame": {
+    "x": 0,
+    "y": 768,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 25",
+   "frame": {
+    "x": 240,
+    "y": 768,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 26",
+   "frame": {
+    "x": 480,
+    "y": 768,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 27",
+   "frame": {
+    "x": 720,
+    "y": 768,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 28",
+   "frame": {
+    "x": 960,
+    "y": 768,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 29",
+   "frame": {
+    "x": 1200,
+    "y": 768,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 30",
+   "frame": {
+    "x": 0,
+    "y": 960,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  },
+  {
+   "filename": "water-bomb-impact 31",
+   "frame": {
+    "x": 240,
+    "y": 960,
+    "w": 240,
+    "h": 192
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 192
+   },
+   "sourceSize": {
+    "w": 240,
+    "h": 192
+   },
+   "duration": 42
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "water-bomb-impact.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1440,
+   "h": 1152
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "water-bomb-impact",
+    "from": 0,
+    "to": 31,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "conquest/water-bomb-impact",
+   "name": "Heavy water bomb splash",
+   "fps": 24,
+   "loop": false,
+   "frames": 32,
+   "frameSize": [
+    240,
+    192
+   ],
+   "pivot": [
+    120,
+    144
+   ],
+   "columns": 6
+  }
+ }
+}

@@ -45,11 +45,13 @@ GameObject:
   - component: {fileID: -5811335577426929627}
   - component: {fileID: 7115658254923622402}
   - component: {fileID: 79239086328230691}
-  - component: {fileID: 5149760970550755715}
   - component: {fileID: 7556525239797194747}
   - component: {fileID: -8958779555923042886}
   - component: {fileID: 6099863586776256245}
   - component: {fileID: 5059121674564822756}
+  - component: {fileID: 6621273973454882690}
+  - component: {fileID: 5403113190260492604}
+  - component: {fileID: 2961779682765251872}
   m_Layer: 8
   m_Name: SlimeKing
   m_TagString: Enemy
@@ -72,6 +74,7 @@ Transform:
   m_Children:
   - {fileID: 8558478034161291304}
   - {fileID: 4213928574843198053}
+  - {fileID: 1797988518166041372}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2849458514429630293
@@ -123,7 +126,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 7ad7dee76fde14c8eb13a480083839c8, type: 3}
+  m_Sprite: {fileID: -1485891531, guid: 1e1c9b589b63841a58f5d18e89d64302, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -170,8 +173,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.09, y: 2.09}
+    pivot: {x: 0.49800798, y: 0.49800798}
+    oldSize: {x: 3.3466666, y: 3.3466666}
     newSize: {x: 4.18, y: 4.18}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -212,7 +215,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 1
+  m_ObstacleAvoidanceType: 0
 --- !u!50 &79239086328230691
 Rigidbody2D:
   serializedVersion: 5
@@ -240,28 +243,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!95 &5149760970550755715
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4125709159630829647}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &7556525239797194747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +324,9 @@ MonoBehaviour:
   openDuration: 3
   minionSpawnInterval: 0.8
   minionsPerWave: 2
+  openBodyRaiseClip: {fileID: 7400000, guid: cf14eebf2b5e844a2aa4fde8c8793ba1, type: 2}
+  openBodyHoldClip: {fileID: 7400000, guid: db21032f8c2104593950e5df5ffad1ba, type: 2}
+  openBodyLowerClip: {fileID: 7400000, guid: b857ff27256484e7a8e3cba4a821bcbb, type: 2}
   warningId: 1002
   slamCount: 3
   jumpHeight: 8
@@ -360,6 +344,10 @@ MonoBehaviour:
   slideOvershoot: 3
   slideDamageMul: 1
   slideRecovery: 0.8
+  slidePrepareClip: {fileID: 7400000, guid: dfda5f92d75b74284989cc2e3613cbf8, type: 2}
+  slideStartClip: {fileID: 7400000, guid: b22113c9a09284828bf61be0432b5adb, type: 2}
+  slideLoopClip: {fileID: 7400000, guid: 8825f90be5b3545f29598f1f6d2b4af9, type: 2}
+  slideEndClip: {fileID: 7400000, guid: e3aac7b0850d84c4a8c2cb20360abfd2, type: 2}
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
@@ -375,6 +363,103 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1564c88c8cdb544c6a9488f10b53b206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossHealthSource
+--- !u!95 &6621273973454882690
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4125709159630829647}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1ed6e9ea24441494c8d757a0de2e7226, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5403113190260492604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4125709159630829647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a7c43b5208004bceb076b08d6e41543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyFacing
+  body: {fileID: 2849458514429630293}
+  facesRightByDefault: 1
+--- !u!114 &2961779682765251872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4125709159630829647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e7e1c8f70004e2181ee667c07b1955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossBodyObstacle
+  navigationObstacle: {fileID: 6598465612008886303}
+--- !u!1 &5868096501166984864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1797988518166041372}
+  - component: {fileID: 6598465612008886303}
+  m_Layer: 0
+  m_Name: Boss Navigation Obstacle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1797988518166041372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5868096501166984864}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1811646982818379475}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &6598465612008886303
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5868096501166984864}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.515625, y: 0.5, z: 0.421875}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &6076738795607773770
 PrefabInstance:
   m_ObjectHideFlags: 0

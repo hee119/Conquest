@@ -17,6 +17,7 @@ public sealed class LocalizedDropdownOptions : MonoBehaviour
     private void OnEnable()
     {
         CacheDropdown();
+        LocalizationManager.InstanceChanged += OnManagerChanged;
         SubscribeToManager();
     }
 
@@ -26,24 +27,14 @@ public sealed class LocalizedDropdownOptions : MonoBehaviour
         UpdateOptions();
     }
 
-    private void LateUpdate()
+    private void OnManagerChanged(LocalizationManager manager)
     {
-        if (dropdown == null || LocalizationManager.Instance == null)
-            return;
-
-        int count = Mathf.Min(dropdown.options.Count, optionKeys.Length);
-        for (int i = 0; i < count; i++)
-        {
-            if (dropdown.options[i].text != LocalizationManager.Instance.GetTranslation(optionKeys[i]))
-            {
-                UpdateOptions();
-                return;
-            }
-        }
+        SubscribeToManager();
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
+        LocalizationManager.InstanceChanged -= OnManagerChanged;
         if (subscribedManager != null)
         {
             subscribedManager.OnLanguageChanged -= UpdateOptions;
@@ -60,16 +51,14 @@ public sealed class LocalizedDropdownOptions : MonoBehaviour
     private void SubscribeToManager()
     {
         LocalizationManager manager = LocalizationManager.Instance;
-        if (manager == null)
-            return;
-
         if (subscribedManager != manager)
         {
             if (subscribedManager != null)
                 subscribedManager.OnLanguageChanged -= UpdateOptions;
 
             subscribedManager = manager;
-            subscribedManager.OnLanguageChanged += UpdateOptions;
+            if (subscribedManager != null)
+                subscribedManager.OnLanguageChanged += UpdateOptions;
         }
 
         UpdateOptions();
@@ -77,7 +66,7 @@ public sealed class LocalizedDropdownOptions : MonoBehaviour
 
     private void UpdateOptions()
     {
-        if (dropdown == null || LocalizationManager.Instance == null)
+        if (dropdown == null || optionKeys == null || LocalizationManager.Instance == null)
             return;
 
         int count = Mathf.Min(dropdown.options.Count, optionKeys.Length);

@@ -1,0 +1,379 @@
+path	guid	bytes	type
+Assets/Materials/Beam.mat	0335df023b8c848b28d26244d00c41ad	24972	UnityEngine.Material
+Assets/Pont/Fallback/ヒラギノ角ゴシック W3 Japanese SDF.asset	174c4f63fb68841708a4a2450ffa80d1	6538	TMPro.TMP_FontAsset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/00 - Welcome.unity	6eaf322d703d50146afecde586026f57	18761	UnityEditor.SceneAsset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Fonts/Lato-Regular.asset	861887908dbc4789b2210d980f5661ee	2196763	TMPro.TMP_FontAsset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Fonts/Lato-Regular.ttf	ad7b9fba97d14234b97c8cbfc5721ceb	75136	UnityEngine.Font
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CurvesEffects/BounceCurve.asset	7408d9c72c4c95a45b4cd340ffed5746	1563	Febucci.TextAnimatorForUnity.Effects.PositionEffectScriptable
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CurvesEffects/HoldCurve.asset	afdcbf8ff3fdf354394ea0213f407fea	1559	Febucci.TextAnimatorForUnity.Effects.PositionEffectScriptable
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CurvesEffects/LinearCurve.asset	627f0e08cf7d8724785c5e830571318a	1563	Febucci.TextAnimatorForUnity.Effects.PositionEffectScriptable
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CurvesEffects/SineCurve.asset	a91131822485cec4e975ec45d75c8917	1559	Febucci.TextAnimatorForUnity.Effects.PositionEffectScriptable
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CurvesEffects/SquareCurve.asset	ef551751a81903247b32f709cae4439e	1563	Febucci.TextAnimatorForUnity.Effects.PositionEffectScriptable
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CurvesEffects/StepCurve.asset	abc73c1b52151c0469b58c90ecee0d15	1559	Febucci.TextAnimatorForUnity.Effects.PositionEffectScriptable
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CustomPlaybacks/NoEasingPlayback.asset	aea1f8bb7c1944b439ac653271f3ad1f	662	Febucci.TextAnimatorForUnity.Effects.CyclePlaybackScriptable
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CustomPlaybacks/RepeatNTimesPlayback.asset	4647390b7ed4513458dc6f2ed482c792	676	Febucci.TextAnimatorForUnity.Effects.CyclePlaybackScriptable
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CustomPlaybacks/WaitBetweenCyclesPlayback.asset	19c9ceb8580cf7d42ad7893197f40b8b	682	Febucci.TextAnimatorForUnity.Effects.CyclePlaybackScriptable
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/ExampleEffectsDatabse.asset	614abddcab41446cbc19347c2851e615	1223	Febucci.TextAnimatorForUnity.AnimationsDatabase
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/PlaybacksEffects/NoEasing.asset	ae25c2d16cad8f54aadbf80f88e700f0	1555	Febucci.TextAnimatorForUnity.Effects.PositionEffectScriptable
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/PlaybacksEffects/RepeatNTimes.asset	bceb8287424c0a04494f27ffdd06d80d	1563	Febucci.TextAnimatorForUnity.Effects.PositionEffectScriptable
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/PlaybacksEffects/RepeatOnce.asset	76f6f2e4f2174414dadb02c2ae8a70d1	1561	Febucci.TextAnimatorForUnity.Effects.PositionEffectScriptable
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/PlaybacksEffects/RepeatWithPause.asset	667e3cedd2db84a49941f0c6fe32519d	1570	Febucci.TextAnimatorForUnity.Effects.PositionEffectScriptable
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Textures/textanimator-sfondo-unity.png	c5aae4a8ce7742e9ab75f51267dff885	245339	UnityEngine.Texture2D
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/CurvesAndPlaybacks.unity	4ee110380beaef442b8b3ab4ff02d3e4	39328	UnityEditor.SceneAsset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Prefabs/Canvas Examples TMPro.prefab	f5887a0d32344ae7910c10ea6080082d	4623	UnityEngine.GameObject
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Example 1A - Effects.unity	67873b149d8e04debaea0ef4ab29bf4c	21498	UnityEditor.SceneAsset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Example 1B - Stacks.unity	82a6944f7c7c3fa47856f534f7482122	21752	UnityEditor.SceneAsset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Example 1C - Attributes.unity	85ee4ca1f3a508347b883d20385a5eac	20225	UnityEditor.SceneAsset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Example 2 - Events.unity	b6a3261d7db5245c5b24f3ec0d4968b5	55062	UnityEditor.SceneAsset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Example 3 - Actions.unity	ba92474cac6c572459cd8fb75148ea94	19742	UnityEditor.SceneAsset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Example 4 - UI Toolkit.unity	1453b0ea5817b49ceb2f4cc2034aa658	8680	UnityEditor.SceneAsset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Font/Lato-Regular.asset	1ffb8c3515fb6dc4688eff5a7e48200f	2196763	TMPro.TMP_FontAsset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Font/Lato-Regular.ttf	49342641ea2b7e6429da3245744bb92b	75136	UnityEngine.Font
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Prefabs/Canvas Examples TMPro.prefab	2a2023c41f62247d7b19e36018698d2c	4623	UnityEngine.GameObject
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Sprites/Circle.png	e074a9b4b276847b0b578d2c96d2c1db	7598	UnityEngine.Texture2D
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Sprites/example_dialoguebox_body.png	0ee0b44b8c03546a392c57dc59d85589	7929	UnityEngine.Texture2D
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Sprites/Example_sprites.png	4dffe6eab57ca4e4ba2f967307bd1c29	147550	UnityEngine.Texture2D
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Sprites/textanimator-sfondo-unity.png	aefdeb69b4be8fe41ab2965fd0f8aff9	245339	UnityEngine.Texture2D
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/UIToolkit/TAnim UITK Example Settings.asset	86972f7a559ad0243ac078945d140442	2049	UnityEngine.UIElements.PanelSettings
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_03.png	102ccb2edb80b48cca0777e2323f1a7c	257	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_03.png	20826ee5fbaa8418b93e6ece5f885b00	258	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Script/Data/SPUM_CustomStyleData.cs	20c4e825fc3dde940b3ae6f6d15bb179	4988	UnityEditor.MonoScript
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_5.png	304386aad927e4d3281f05c505bb4f54	1530	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_05.png	303412e2e31364d52aa2381383ffc211	159	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/0_Sword/Sword_6.png	30e47371660a44f038c174865e5af8d3	1890	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/0_Sprite/0_Body/Horse2.png	30f45f9a124dd104caedd36e5a3f8a75	1278	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/05_Debuff/0_Debuff_Stun.anim	40f00165003e54cb08d55abfa92b88ef	124528	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911222823174.prefab	40d7a418130ef4dfc963730368bc74ad	216084	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/0_Sword/Sword_2.png	400f84ca50ac94f20a75a7ecfbe2cfe8	1945	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Script/Data/SPUM_MatchingList.cs	5084db87f5a3218479da5aa1e18581d6	1170	UnityEditor.MonoScript
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215641087.prefab	6065dc1cc3e4540378ef9d74eb47948e	217589	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/OTHER.anim	60f5db0746506104c80e5f4deccac732	269871	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/7_Shield/New_Shield_03.png	6007e256ee90b4b0b92980878208f788	326	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_10.png	80e0cccdaf539a44c89e4d96d0fcfb3a	324	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_16.png	a0738f9b6fc444146ae1b68541e000f5	243	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_04.png	a0f407e4c5e1341129d8309f3c87e53c	218	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_3.png	a05ebb241a0b14dec9a0d4bdd31301a3	1842	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_01.png	a04f720901d7e40daa3a509c2ba96a0c	306	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/0_Sprite/0_Body/RedHorse.png	b04621f87db561d42b5d13d577608ac9	1222	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye4.png	d0b03f580ff14441c9fe2b0ccde411ca	123	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/ReadMe - 3.1.1.txt	d034931f602ab477a9001266fadf894b	1834	UnityEngine.TextAsset
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/2_Cloth/Normal_Cloth1.png	d0fda40ef2eb1ab4f945e56bc4020f8b	360	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye16.png	e0c299db1654542d0a284e53abe2746e	105	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_09.png	e0f672d1760234cecaebc26bc4c22b6e	203	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911222346858.prefab	e03c0b26bc7ff41e89f4709a00b89df7	217698	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/7_Shield/New_Shield_02.png	e03eed09328f2413d8a7cf2a8e5d1b94	294	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair3.png	f0751717167b55a43847e8904c89bf3a	202	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/0_Sword/New_Weapon_19.png	01c22b6d497e0484db647e3d384dfe67	198	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye10.png	01c9f277ec47c40b1b864b029d2004cf	97	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215640602.prefab	014fe8d68eb894953acd12f99324c58a	216436	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair11.png	11e592b1fafcd784b92a43910cc736b1	1782	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_06.png	119a166f9da694dd4834e556f1c65f76	295	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/7_Shield/WoodShield4.png	119fb0b286335eb40b5bccd74e1df90d	405	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye1.png	317140fbba14844a3b93f39a688ff60a	110	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_05.png	31e8165d2fc2d4ac592eaf7b04efcf2a	496	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/1_Animation/02_Attack/00_MeleeAttack/AxeAttack_1.anim	41d208b3a13cf418991132bfbfb7208e	196773	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_12.png	418362a88ec484e62b5aae771d2e687e	300	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_15.png	417e081ac47ec7446b1b9a119ad36394	293	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/01_Move/0_move.anim	5187132de96c18244b62b7d6e2580323	107709	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_8.png	61f60bf66a0684be3b448f6e237a3f12	2707	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/4_Helmet/Normal_Helmet1.png	71c3509a7d03cd04ab79608bc4787d09	423	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639662.prefab	81a169a76bbaf4c54b41b6823890732f	217799	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/7_Back/BowBack_1.png	81a931fa55f8a5541bf6d1f957a38926	236	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_09.png	91837876145ff43d4a8e8f457b708199	313	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/05_Debuff/5_debuff.anim	a12c1df6cd451fc49aaa1bcfc7fe4ce9	145061	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911222451694.prefab	b1d1b587ef04c4b78accd9412b85b135	216734	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/5_Wand/Ward_1.png	b1c6b014ee8384bde8873e80c5b3784c	181	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_03.png	b1873796bc6a04d0e851a8b13585448b	328	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/MOVE.anim	b1692a522a645ad488394d241ad662df	107707	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_7.png	d154430219e04402a86a4afa191e57b7	259	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Sample/Script/PlayerManager.cs	d11b11817daa5435f92b04440958b38a	12251	UnityEditor.MonoScript
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_02.png	d1bc3ad920b0d41c5b5d8aff14f0dee9	321	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/Index.json	e1215b9e0e64054468072a7776c96014	71455	UnityEngine.TextAsset
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_09.png	e12314fa70008464fa8d15d08fffd50a	154	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_3.png	e18834699727342f7b28af1c655acc6f	2088	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/3_Pant/Foot_4.png	e17d600fcd74948bd8547a87f8f5839a	1655	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/1_Axe/Axe_1.png	f17058e2bd3c44745bd37eb71c41adf1	1958	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_9.png	02da32778b3134ca7bdaa2b2d96911a5	1900	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/3_Bow/New_Weapon_12.png	1242d9257f164482a9504def032942ed	261	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair9.png	224141f741d494348afcb758c4be4f38	238	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911215638140.prefab	22278203e8d524358894260c10cb0a79	216596	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_12.png	32122f87f9a7545c38ded467d0b41b13	1795	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Sample/Scene/Sample.unity	3285a400329d740b7b5d861ebec44168	31109	UnityEditor.SceneAsset
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/02_Attack/02_MagicAttack/2_Attack_Magic.anim	4255d92a76dffad43a599ff71c2471aa	260173	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_12.png	42d85c8a42d3e427c972183183efd4f9	271	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639405.prefab	420c9e2d4f8084ea68e81a6ff465b947	216419	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair10.png	526a63f569f45764bb83cd597474b85e	201	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/8_Mace/New_Weapon_07.png	529a1a0c4dde84b71a261ee01ec0e428	292	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Human_3.png	7212bef95b8a58344944fb6e590be91e	392	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/0_Sword/New_Weapon_01.png	920510d3994f1469f8f88fd76b9f7277	294	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_02.png	a221d28f8581d4b5eb0e20fee81c5cc9	331	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/4_Helmet/Normal_Helmet2.png	a28ee4ecdec1fb14ab3637ec6be2fcf1	362	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/02_Attack/00_MeleeAttack/1_Skill_Normal.anim	b2c5fb441f4ac42c2a2e051601eea60a	155327	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911222954869.prefab	c20797b5f7794454991691cd133cba52	217287	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Human_1.png	d24756e433435b249be5737019648d69	395	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye0.png	e2579aadb18ab4cf1b2461fb9e0f0cdf	94	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/DEATH.anim	e23bc41dfc64fef439b0a9d4b49d7d6a	143938	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/00_Idle/0_idle.anim	f28f6b07698afa64788c223754b1f4ff	134390	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Sample/Script/Editor/PlayerManagerEditor.cs	13c1853439c8b8c4e9422c862942dbd0	740	UnityEditor.MonoScript
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/7_Back/Back_2.png	130ca4d6a90ce4845ab00448f7e1eb47	1525	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_08.png	2367f636a80334d659849604908ab07b	147	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_17.png	33a806a2795e8465296a826af89e28e8	278	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/3_Shield/Shield_1.png	5364a532c77cd43bc8549a556cb49758	160	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911222150076.prefab	635e49f4dcff841e3a25a246fc34903a	217111	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_07.png	732442a90ec3747df83c46125de06b60	552	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/6_Dagger/New_Weapon_11.png	83ce399493f9f4771b62359dc94f5010	156	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/7_Shield/New_Shield_04.png	93b24a9c34e5343cfa78e20fb833609a	321	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Elf_2.png	9319101edbfea48f58b3eb3a01e16f2a	449	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair8.png	93a9a243857ef944ba425e20a9a91b22	284	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_FaceHair/FaceHair_5.png	d3fa5454509bfe9428ccc7066d86d0f3	112	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_07.png	f32b27de9394bf3489d83d11bf523f21	344	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_4.png	1416614edddf54e2bb98c61ab32dc586	2209	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911222646591.prefab	24f9789f962964a0ea5c4fbedc52161a	216073	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/F_SR_Cloth.png	44caccf8dc342c54987ccaf53653b2c8	426	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911215639833.prefab	64359be8b124840d0bb4846426882691	213983	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638897.prefab	74081d2c7552d4c17953e46326368c4b	217373	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_09.png	84f507f509f5547a2904b830b2e98874	330	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/2_Prefab/SPUM_20250915184739548.prefab	8429de574bd4d4301b9b1e370a08950f	417749	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/0_Sprite/0_Body/BlackHorse.png	848bc3c193b31c7489b3ad483cc4a824	1190	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_01.png	a4b630b105c514614b9ba9d9937fef5d	149	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215637878.prefab	a4696a02c7fa04918a30ca6051a8901e	217101	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_10.png	b4bf5105033e04d45baa948da8b503b0	175	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_13.png	d44027b40417a4fd88ee6ebc5e7b3ba5	299	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638981.prefab	d4beff68b488448d0813100000431371	217410	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/4_Spear/Spear_1.png	e4c07de1d80de4718b58db6470c48501	134	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Script/Data/SPUM_ImprovedStyleData.cs	f435e7fddcc5a074782e555989cb8eda	7394	UnityEditor.MonoScript
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair13.png	050680dd0362dd14f9a89844ca20b644	338	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/DAMAGED.anim	05d885f5f1f136d4ab420d8b481613fa	159287	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_14.png	0519c0165e34c4e439be04571b1af58f	241	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/01_Move/1_run.anim	05ecca6585f041842884c2aaa6437bbc	235025	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/Index.json	1598eb722fa6c4245b2d853a1d9f0e25	39078	UnityEngine.TextAsset
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911222235923.prefab	357956955f75841efadd490ebf2d2129	216692	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639152.prefab	35dd3fb4ba4d64845bc8225ae1796b6a	215755	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye.png	45e990fcc26754c2ebdcb9d89be8d65b	94	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Script/Data/PreviewMatchingElement.cs	454fefcf272942f4c8dcc7e7f9b75249	389	UnityEditor.MonoScript
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/7_Back/Back_3.png	55bcacee5fd41654190caeb4abc46562	1508	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_04.png	555fa4a87b6b8459ba08a841fb8e1f4b	256	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911215638308.prefab	65356e3bf37bf4183afae7a9b37a062a	217801	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_09.png	6595b0d4b46cd43a5b517d5475ec1567	291	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_02.png	75c6efef2560d4417bd40473e15859cb	149	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/7_Shield/WoodShield2.png	85ecb2f1dc34e22468a7dc7ac5d23071	306	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/06_Other/00_Concentrate/Conventrate.anim	95bc898d1e9bdc0428109504a3fa80a0	266115	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/06_Other/02_Etc/Ect.anim	b5b99dfcf045f484fbc5959057ff85b3	260162	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Core/Basic_Resources/Materials/SpriteDiffuse.mat	c5a65547d1edf4a9d882bd6cff83eda8	2387	UnityEngine.Material
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638389.prefab	c54b36ee7861c4b41bd1dabf2455160f	217800	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_6.png	e58444fb66d4648758da6a91ccbd3fe9	1820	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_8.png	e5b88e17b8b03471cac1ec6c79715e0f	326	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_08.png	f5bfb7e5e8f8d482a8209d1f2f91e467	379	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Script/Data/SpumPackage.cs	0632be5f9138b2a44871e7c811a129fd	873	UnityEditor.MonoScript
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye7.png	06e374eae02034664b218e04c0c126cf	135	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_7.png	06c8d7c33ccef4cf39e374e33835e970	1623	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_9.png	06fd7b75262e041e1a78baecb78cd2ef	2100	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye_Close.png	36f759892f0769b42aeec738b5a2fce9	86	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639069.prefab	363f4ea61d089418baa625dcea51b38f	218283	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/4_Spear/Soon_Spear.png	667027c43d7d57c4baac5ef2a590761b	1788	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/2_Axe/New_Weapon_04.png	86c53b704f9924b74b39f01a089056b2	313	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/2_Axe/New_weapon_02.png	865a7131292ca4737a2713362d123c94	388	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_4.png	96abf63d683f04dee937fa2e2872886b	2236	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_18.png	a6472ecd26e224a72b9b5dc31231784b	246	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Sample/Script/PlayerObj.cs	a6ba1227b45894e71b2bccaabc54001c	4665	UnityEditor.MonoScript
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/1_Spear/New_Weapon_09.png	a65be32c958034377978891516dc581d	215	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_06.png	b6063378e26704067a2587f07d800ee9	185	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Basic_Resources/Materials/ColorPicker.mat	b63f4528eefc847b0a117c09da0c2524	3837	UnityEngine.Material
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Orc_3.png	c6a5efa382266954e847098019d55dc9	1973	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/02_Attack/00_MeleeAttack/0_Attack_Normal.anim	c66e5eb2778574f1abbd40dcb05e1df7	107083	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_04.png	d6b31bb9a1263457d996d905401b4217	134	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/10_Back/New_Back_01.png	e6689df52c68c4ffa82bf6e2e3f17a73	184	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_6.png	f63083452d68c460db811918d4f6f323	358	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639748.prefab	076e70130deb941259c717e22f40be8d	216713	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215640719.prefab	17b2559b65857488796ce0bf29f56a02	218178	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/0_Sword/New_Weapon_06.png	27428f826bad840f9bdbc88d5dcbfa6c	214	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/7_Shield/New_Shield_01.png	3710a9b513cfe4549bbf0390faef38e0	343	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_FaceHair/FaceHair_3.png	37f88f4c290f444ff8434e7b094bee9e	166	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_11.png	37e94653dd0034cee98125a6d5d6a2bf	154	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/1_Animation/02_Attack/00_MeleeAttack/LongSpearAttack_1.anim	475b498316ec84dbfa264be76ffe1ae2	126015	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Human_2.png	470cfb1e4f7865c40b83d403037c90c9	404	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/02_Attack/01_LongRangeAttack/1_Skill_Bow.anim	473ddbc57c00b45f1a93b0b519bea522	118696	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/6_Hammer/F_SR_Hammer.png	57626ad4d3c63564b8f4eb67898228b3	1643	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638474.prefab	672092d6fae854c9da73ae8124fb85bc	217830	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/SPUMHorseController.controller	87250caa4eec27040bc5650f38894ee7	18095	UnityEditor.Animations.AnimatorController
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_07.png	873ea45df537d45c48be3a02632e6f2e	301	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/0_Sword/Sword_5.png	9794293e4605a44d0826e3814ddc8431	1769	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_1.png	97dd5eff083df4f76985e690e6d60a23	268	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye11.png	a7b6100d923644d0687436562baa3118	111	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639234.prefab	a77f2796fd776459c9b84d0b63c90e3a	217886	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_02.png	a79f145e10eea4e999334e278812b365	346	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/3_Bow/New_Weapon_10.png	b703d7727b08947219074023baf91225	286	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_20.png	b7c72ebe62ba01e4f8be989021267fbc	312	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/04_Death/4_Death.anim	b74b0d85bc9eded449ea143efb3eed3f	205924	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_2.png	d7a1a0aeecfbf49a2af4eb4ac19f90e3	1659	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Script/Data/SpumAnimationClip.cs	d79ab73b864ad8c49a03da014111599e	642	UnityEditor.MonoScript
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_05.png	e7d2d469a9a9548bcb468fc5ff5792c1	155	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911215640091.prefab	f7b1e2da167594a0e97c2ce647a3d7ca	216411	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_12.png	f71ba98f5e5894a9e9a109dc34922832	149	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/1_FaceHair/Normal_Mustache1.png	f72cf5cb9bab9dd4e8dfb6bc75f8f1d1	1857	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_11.png	08107ca2f240d4540a1dfbd069e25146	340	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_1.png	1810f09d324df46289d58e432045bcd1	2042	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/7_Back/Back_1.png	28e59b8a1aa61e543bdb55515a957a9d	1536	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_7.png	287a5844c9fe94dfb88f04f7f90586d0	272	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Script/Data/SPUM_Prefabs.cs	28ac21711b0ec40a0812d33a586eb7ec	8151	UnityEditor.MonoScript
+Assets/GameAssets/SPUM/Core/Script/Data/SPUM_ImprovedClassData.cs	681cbee0569333e4087854db23e26a67	3957	UnityEditor.MonoScript
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_06.png	7837b3161c8b7477e9711cb259036797	336	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/02_Attack/01_LongRangeAttack/2_Attack_Bow.anim	787e901c54fd3a546981500b3c515ce2	293670	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/10_Back/New_Back_02.Png	781fb783fec5147eabfdef1c7fdc7e6d	337	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911215640005.prefab	98beeb71a03164bbfb5f711620fdaf02	214760	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/7_Back/Soon_Back1.png	a8f1ac045d97fcd42930e42c15011574	1864	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/2_Bow/Bow_1.png	b8a3f9debf9a740ebba84d95c6700721	1903	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/2_Axe/AxeSmall1.png	b8a87b07b40dd90488025a3ddc29f46f	299	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/IDLE.anim	b81ad915777074048bdcc320f687ee1e	108945	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_06.png	c8b0805f6931f4f7f90aea6bd3b08f57	155	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_FaceHair/FaceHair_1.png	c881fe1f539449842b243ff9a21298eb	153	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/3_Pant/Foot_3.png	c8a4db297c0ce4a38abd3c1d2da37e98	130	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215640967.prefab	097f8c9082bd04da1b89678f92e3e995	215677	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215640352.prefab	29312a108de6b4f4c9e99c061396c0cb	217902	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_06.png	2904f6c2d794c458e898120e51a66cd9	454	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638814.prefab	29a9bea320db74862816289bc063641d	217930	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/01_Move/Walk_Run 1.anim	29fd3992a72c2924a8d333a872c801c3	235030	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_1.png	296fa0f52e1fd47109c6fb6f17968669	2029	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_10.png	39b5df11e0c48498c8743958d95396b7	129	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_01.png	49278b333c23b464fbe87f4618639aa0	373	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair6.png	491cb7b79a820ef4e8caf22062770893	310	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/1_FaceHair/Normal_Mustache2.png	49bc72556f4e4c342a624e5bfa982742	213	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/2_Axe/AxeNormal1.png	59a7f0c391e16bb4d98b4be022f6d461	448	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/0_Sword/New_Weapon_17.png	69a11d8cb1f7e46718b2f15d0878ae0e	254	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Orc_4.png	69edace412443554185db672d1906d5f	1948	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638558.prefab	79d6e86fda7674749baa509978485b91	217484	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/ATTACK.anim	8904524cb1305964a8ade38c0ceebed2	276035	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/2_Axe/New_Weapon_08.png	89a79317a445e4ed8a8e70115f8a1cc0	336	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_4.png	9926b97e63b2b4f0bb0aaddb7c8d3dee	248	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/1_Animation/01_Move/LongSpear_Walk.anim	993da53478a6b4e47a444f26baf14067	117886	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215640476.prefab	a9823d640c8424348bf599518c19d05e	216766	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye2.png	a956e577cf9364311a98ed24c3bad799	106	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/00_Idle/0_idle.anim	a9cd4dc32867c7c46b8f24e065c490a1	259553	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye3.png	b93999d07022b4f388c4508c844cb984	107	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_03.png	c9a0377619143454f813b786ccb2467c	151	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/1_Spear/New_Weapon_14.png	d9e76854390974b5aa6d9ba973659387	215	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/04_Death/0_Die.anim	d98f7c88116e94c1597806a94b475144	137218	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/SPUMController.controller	e9358c226bb09e24da9c5f7064768810	11925	UnityEditor.Animations.AnimatorController
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/0_Sword/Sword_4.png	f9cdd1844b02d4c81989b265d121a78a	1681	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_01.png	0aba1c3d9e6814991b93ff6a9540656b	324	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/F_SR_Helmet.png	1ac949e421d9e24498dfbdb21574f46e	538	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye8.png	2a776543787d64c05bd10d9885b6b63e	103	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911223046227.prefab	3aabd435546394bd292bfe681b4eff9d	217483	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair4.png	4a816c9996d33c74794a28c5a1c1e7eb	229	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/7_Shield/SteelShield1.png	5ae8790598aa50a41a56581f5331198e	287	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639580.prefab	6a1158b8c77e74152951cddb6f1d77de	217534	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/7_Shield/WoodShield3.png	7ac296aa739462b4a874bf49cb637f2c	308	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_5.png	7af5ad218eb4047749e482ba17094655	2295	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_5.png	7a18280193ba94224b27d6dedc9fa979	1844	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/7_Shield/WoodShield1.png	8a48d37b36401284ab682c6f4001638d	338	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_07.png	8ac8f08f2a7884907b931477b1694539	150	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_6.png	8ada8c9e757cf49d8a0418a5be86796a	1471	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/02_Attack/02_MagicAttack/1_Skill_Magic.anim	9a26543e06de846d08fbe01dbfcd13e2	125457	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/MOVE.anim	aa0a742983e0279459d3b9b68a0b82a6	243573	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_4.png	da6895bd4082d441cbe5911031d0f43b	1819	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_05.png	dacd5b318f89e48bd97879d660685938	300	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_04.png	ea5c4fc418c71491eb063b759868a2a1	432	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_12.png	fa1984f46ef804b5b814b834d6b8c754	151	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/06_Other/02_Etc/0_Sit.anim	fabe4f140fdb9cb448bc941c7c93e8b6	129064	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_6.png	1b6aed270467e4520a414193468ecbae	482	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/1_Animation/00_Idle/LongSpear_idle.anim	2bfcb60165a9d48c3b94f739b47501a9	105780	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639493.prefab	3bf4c54d34f844ab5ad8f561d24b0052	216381	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_01.png	3b1cdd4130bbd4ca5ac423339a8f6ec1	475	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Elf_1.png	5bc9c55e31d7c4c3380f05786b90bb35	454	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/OTHER.anim	7b2a35216b7e533458ba5e38b8621354	118622	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_03.png	8ba3b6e1f45dc4bc994e67fb1591c169	167	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_08.png	9bad6bc83651a47fd87cadff0d08bdc8	536	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/1_Spear/New_Weapon_13.png	bb71197c3cd5f4dc09e7b129399d0048	286	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/02_Attack/00_MeleeAttack/2_Attack_Normal.anim	bba581848d2c13b4eb2c88797737a4e0	266119	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638643.prefab	dba443a66548243fe806dd91db6511af	217515	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_3.png	fbddd4306af2b47458c43097d5b91f87	2134	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_5.png	2cfdf111fc01544c7b58e9c0ef2601ab	354	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_05.png	3c914e501961d4d2b9adf2dcc2d8ff8e	348	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/06_Other/00_Concentrate/0_Conecntrate.anim	4c70df3312bb83346a1bf065b30d3467	38405	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/2_Prefab/SPUM_20250915183854408.prefab	4cabc6018f3b247d8a4f72a48635d94a	412353	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911215639920.prefab	5c168e864c70b4127ab2101a6d8f2696	215716	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911222907638.prefab	6c78cae001f734c67b1c2cf4d74c89e2	216515	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911215638224.prefab	6c4d025f7cfa84371b946fd4062d48a9	215629	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Core/Script/Data/SpritePos.cs	7c562f92f3b8b435d98ac3b65547b755	200	UnityEditor.MonoScript
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_19.png	7ce63253b35484946b3f790c2e4b54dc	279	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_02.png	7c5a293137726445abd2b50a8922119b	237	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair12.png	8ccaab09cead2a44daee6bc998cbef7d	236	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/DAMAGED.anim	9cb5dea9706a1964fbb1986cd1d8c4b2	124376	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/1_Spear/New_Weapon_16.png	9ceba41c6fb6d463ab9ecab86706972e	307	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Basic_Resources/Ect/Shadow.png	acb3bfd86ae6c41b084245f578292734	35935	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215640838.prefab	cc45723031f2648c0ba48e0e76684633	218455	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/02_Attack/01_LongRangeAttack/0_Attack_Bow.anim	ccc66609eaae7425f967209ab0b3935f	101352	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638731.prefab	dc4d03e9834464d82a1dec0da2b8162f	215990	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215637772.prefab	ec58634b610c94022b27f39f0cee941e	216382	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215637961.prefab	ec3e5ddc0eed847b29e7c75698f3bab0	216030	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/0_Sword/New_Weapon_20.png	fcd3983f703124c5f9580c4d3b5a5823	236	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/1_Animation/02_Attack/00_MeleeAttack/ShotSwordAttack_1.anim	0d682257ea891449794236a5b748e551	108328	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Human_5.png	2d4ddbcaa077542029456f5c81f2f981	399	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_FaceHair/FaceHair_4.png	3d7b37f79491e724d99cab75dfafabdd	146	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/0_Sword/New_Weapon_18.png	5d146494dac5544c8bbfd426f29a9110	205	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911222030968.prefab	5d1eec89dbf4b46cfadf7c59071e9317	217836	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_2.png	6dc30e5993cb04a47a6845283a352d2e	2041	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/0_Sword/Sword_3.png	6d883a2fc76fd4137ad47f5150294d01	1921	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye6.png	7d90004bdccf046eeb0c869afa15c342	126	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/DEBUFF.anim	7deccbbb01b5dce4282412d813b51593	150412	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_10.png	7dfd9fba81e474004986cd7f812dbe38	320	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_11.png	9dc3a3dbad727427780451ecc1627898	280	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Script/Data/SPUM_AnimationData.cs	9d2ad413a50205342b885458ef4e79bf	380	UnityEditor.MonoScript
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Devil_1.png	9dbef0fdede574b5fad7cc4a7adcda48	437	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_10.png	ad98517497e964b00add5977d2257a7a	305	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911215640179.prefab	cdf58f088f9ff419b85fa0917cdf4bf8	216430	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_07.png	cdf6ea08334f54b81b8e1bfb81a896c7	297	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/6_Dagger/New_Weapon_05.png	dd6402512f85d4ca2a6e3b4944b5e6b5	211	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/4_Helmet/Normal_Helmet3.png	ddd6b2be2ceeb1a4a905f2f5a905f65a	437	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911222547665.prefab	ddbf09db7bc774cabb5d46e3a3a70730	217154	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Core/Script/Data/SpumTextureData.cs	eda4d35878b37014e9d2cf953603149d	659	UnityEditor.MonoScript
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/3_Pant/Foot_2.png	ed0836d2b0b084f2a842be7fa476e1e5	1448	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye9.png	fd89b34b9905449b48f67c1c962e8ee7	106	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911215640266.prefab	0eefa5e28d29147ad8fda02ec509d1dc	217141	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/06_Other/01_Buff/0_Buff.anim	1ef525d53ae254f7d82ef364ced85490	135519	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Orc_2.png	2e602cdbabb8a91438240c454df375b7	1965	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_9.png	2e66bc6c623514a2b954b63b58c44e2f	1742	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Skelton_1.png	3e7f1bcf5e1004551853fead34d7fb5b	683	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/03_Damaged/3_damaged.anim	4e665e74bfc27d04e8d5a0f4a71567e4	166300	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_11.png	5ed80003cb7f545ab87b7c0b79ad2eed	323	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/3_Pant/F_SR_Pants.png	7eb057e51cdb4b84596e869c11cf26ba	1478	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_08.png	7e3224cd6fc3145d691ec45fdc8265fb	304	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair5.png	7e37027477a387941bdf0b128a49c474	305	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Sample/Prefabs/AnimationButton.prefab	7e6fb71a44afa074f9b95bdc0429acfa	6528	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_8.png	8e0564280a4e94fe9ab922abf53543db	1606	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911215638048.prefab	8e5c0f9a2756b4bd68bea643e5f2e029	217050	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/5_Armor/Normal_Armor1.png	8e2ee760cea01a640bf6b790a349b6be	328	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/DEATH.anim	9eb4009baf3dcbf4bb86b27ae28b21eb	205853	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_2.png	9eeb20468ab8448d6aa001c44dfc7b16	2107	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/2_Axe/AxeLong1.png	be8252f11d666d54aa6bd41959de2a8c	325	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Sample/Prefabs/AnimationPanel.prefab	ceed551bf12a3c9438ca19c61df7bb17	25970	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_1.png	deb413cebdc864517b43b7beaa19d2a5	1820	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/Index.json	defdfb4962ffb9e4da50ab8cbd224b0b	8777	UnityEngine.TextAsset
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/03_Damaged/0_Damaged.anim	eeb8ba3a0a6cb63499a6fa72e6ad7358	127427	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/0_Sprite/0_Body/Horse1.png	fea53425b09f2aa4b8888109780b0de5	1289	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/IDLE.anim	fed9f690c13398a4880b9f06e9c5d2e6	269512	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_3.png	0f4813b52b3b74ca6a74d7027ead4b9d	312	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639316.prefab	0f2e860a0377f4a9f98fa39bbafb5dad	217772	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_8.png	1f8c2d6ce27ef4cdb897e65adb057a03	2003	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair7.png	3f13697fd3c8b59458928cf59fea660f	226	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/3_Bow/New_Weapon_15.png	3fce61441a9114f3ba09e2c496de7ca8	307	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair2.png	4fd33a6638beeed4ca29d781afc6fb8a	145	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_10.png	4f75ae73445284b5393c219fadb2dc65	276	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/06_Other/01_Buff/OTHER 1.anim	4fe865043f99d8d488336f5c75256b8f	260166	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Sample/Prefabs/SamplePlayer.prefab	4fd99ad1026eb4676b6ed98658f868a9	2454	UnityEngine.GameObject
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/3_Pant/Foot_1.png	4f4d6264408da453a8511876ebec8ae3	1446	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/ATTACK.anim	5fa777919e804474080fad7ccf0cb5b4	147317	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/02_Attack/02_MagicAttack/0_Attack_Magic.anim	6fb0d327821de4ca19ea0fcf940b27ee	87914	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_2.png	6fc5cbe113e51416e9daa8f0ba7ee5dd	349	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_7.png	7f34c450245f5488bac2d54b5fbbae81	202	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Human_4.png	7f9c604e1b12d455cba1d0e36fbd14f9	406	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye5.png	8fa9fb17013e3458791bb1f2bfe2a76a	122	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_04.png	9f70f3b311741431cbbda23a4cfbc285	149	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_08.png	9fa181de1959b4dac921f0756f002901	395	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Orc_1.png	9f6f74f146203417fae095263bf53e7c	417	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_FaceHair/FaceHair_2.png	bf396ee22a706a24dba8f20538815062	133	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/DEBUFF.anim	df7347d9a26250f49a9dab946bc4b0a4	124539	UnityEngine.AnimationClip
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/0_Sword/Sword_1.png	df96032537d4c482e9b20c674c73dc45	1914	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair1.png	ef566990d29ef9b43a69464e4e475232	276	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Sample/Materials/samplebutton.png	ff3a13f848717354d9eb56697565c1b1	122	UnityEngine.Texture2D
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/5_Wand/New_Weapon_03.png	ffef52aa2bdb04c1394af5d4599ed210	238	UnityEngine.Texture2D

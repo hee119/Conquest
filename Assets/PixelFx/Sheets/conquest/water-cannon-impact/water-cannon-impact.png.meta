@@ -1,0 +1,870 @@
+fileFormatVersion: 2
+guid: 17b4bbbae9b2d45f4aa08b93d3db243e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4285019819607857117
+    second: water-cannon-impact_0
+  - first:
+      213: -2730561858823096975
+    second: water-cannon-impact_1
+  - first:
+      213: -6080201162367526285
+    second: water-cannon-impact_2
+  - first:
+      213: 2354750995244029450
+    second: water-cannon-impact_3
+  - first:
+      213: -6431555303692591500
+    second: water-cannon-impact_4
+  - first:
+      213: -5967668185636528843
+    second: water-cannon-impact_5
+  - first:
+      213: -2578385825145749631
+    second: water-cannon-impact_6
+  - first:
+      213: -6723248309848510973
+    second: water-cannon-impact_7
+  - first:
+      213: 723257853687405279
+    second: water-cannon-impact_8
+  - first:
+      213: -4427877583016585641
+    second: water-cannon-impact_9
+  - first:
+      213: -2300607425315212385
+    second: water-cannon-impact_10
+  - first:
+      213: 7488921115233030939
+    second: water-cannon-impact_11
+  - first:
+      213: -2419687930687398105
+    second: water-cannon-impact_12
+  - first:
+      213: -3459629577702796632
+    second: water-cannon-impact_13
+  - first:
+      213: -5076076482069486644
+    second: water-cannon-impact_14
+  - first:
+      213: -7988922692157950999
+    second: water-cannon-impact_15
+  - first:
+      213: 778483726202527399
+    second: water-cannon-impact_16
+  - first:
+      213: 4489827874961573636
+    second: water-cannon-impact_17
+  - first:
+      213: 3579356158694386395
+    second: water-cannon-impact_18
+  - first:
+      213: 8173888048152978318
+    second: water-cannon-impact_19
+  - first:
+      213: -6068947802818390553
+    second: water-cannon-impact_20
+  - first:
+      213: -1670040471410833300
+    second: water-cannon-impact_21
+  - first:
+      213: -5902775253886078339
+    second: water-cannon-impact_22
+  - first:
+      213: -7692342884908230807
+    second: water-cannon-impact_23
+  - first:
+      213: -3274100147725158325
+    second: water-cannon-impact_24
+  - first:
+      213: 3144886564687244940
+    second: water-cannon-impact_25
+  - first:
+      213: 2994074888474825529
+    second: water-cannon-impact_26
+  - first:
+      213: -6625940433676758861
+    second: water-cannon-impact_27
+  - first:
+      213: -7152473518865251814
+    second: water-cannon-impact_28
+  - first:
+      213: 3351759542099693032
+    second: water-cannon-impact_29
+  - first:
+      213: -3052436908562661481
+    second: water-cannon-impact_30
+  - first:
+      213: -2743454624805206450
+    second: water-cannon-impact_31
+  - first:
+      213: -4473856062539078750
+    second: water-cannon-impact_32
+  - first:
+      213: -5834118100383934287
+    second: water-cannon-impact_33
+  - first:
+      213: -1393179339207994281
+    second: water-cannon-impact_34
+  - first:
+      213: 2289986236422293567
+    second: water-cannon-impact_35
+  - first:
+      213: -4101125000604178290
+    second: water-cannon-impact_36
+  - first:
+      213: 4944972736267475656
+    second: water-cannon-impact_37
+  - first:
+      213: 4681758009964646720
+    second: water-cannon-impact_38
+  - first:
+      213: -3432755328730128045
+    second: water-cannon-impact_39
+  - first:
+      213: -418723032061539172
+    second: water-cannon-impact_40
+  - first:
+      213: -2367535142693022951
+    second: water-cannon-impact_41
+  - first:
+      213: 6087658356418379700
+    second: water-cannon-impact_42
+  - first:
+      213: 1410208093691863397
+    second: water-cannon-impact_43
+  - first:
+      213: 1651222418998659998
+    second: water-cannon-impact_44
+  - first:
+      213: -6690144469968007815
+    second: water-cannon-impact_45
+  - first:
+      213: -6839885386725444794
+    second: water-cannon-impact_46
+  - first:
+      213: 6244924762637695933
+    second: water-cannon-impact_47
+  - first:
+      213: -498658654250667925
+    second: water-cannon-impact_48
+  - first:
+      213: -4091854017956092815
+    second: water-cannon-impact_49
+  - first:
+      213: -5653236487682677919
+    second: water-cannon-impact_50
+  - first:
+      213: 5529255688946818884
+    second: water-cannon-impact_51
+  - first:
+      213: -2053503781803020750
+    second: water-cannon-impact_52
+  - first:
+      213: 1167422373002531485
+    second: water-cannon-impact_53
+  - first:
+      213: 6438145068628712666
+    second: water-cannon-impact_54
+  - first:
+      213: -8989141766090699592
+    second: water-cannon-impact_55
+  - first:
+      213: -5426063169349510336
+    second: water-cannon-impact_56
+  - first:
+      213: -3330718015587939986
+    second: water-cannon-impact_57
+  - first:
+      213: 6994928029197912174
+    second: water-cannon-impact_58
+  - first:
+      213: -7666429769517107311
+    second: water-cannon-impact_59
+  - first:
+      213: -1018221071891266862
+    second: water-cannon-impact_60
+  - first:
+      213: -1058978285536230888
+    second: water-cannon-impact_61
+  - first:
+      213: -9176856553333191925
+    second: water-cannon-impact_62
+  - first:
+      213: -1733302970403739191
+    second: water-cannon-impact_63
+  - first:
+      213: 1383258216261097770
+    second: water-cannon-impact_64
+  - first:
+      213: 2447801386511187536
+    second: water-cannon-impact_65
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: water-cannon-impact_000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1849a87df712493fa8b001a529327fe
+      internalID: -243916935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_001
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 448
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f08705e6eacff4181acc625df7296a0b
+      internalID: 933311095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_002
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 448
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b455e81b9a9a04455817c4a8ad68dc29
+      internalID: -269608587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_003
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 448
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85cb659a3ffbc4129affbcbee3a1ea21
+      internalID: 1753171408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_004
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 448
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f57ab8f86a9a4d7d9733a11caa3bf2f
+      internalID: -1905890587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_005
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af80d6d1ec9f6451dbc312bbf7ccba8b
+      internalID: 1505288130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_006
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 336
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32066e8f110bd4aaab0d7e2c471cd01b
+      internalID: 1380608480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_007
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 336
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd5e87cbd44d245b681b56197a75de2e
+      internalID: -1092186424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_008
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 336
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87bb26e7f534b4c10980ba2a64b966c5
+      internalID: -1521204023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_009
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 336
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c05c230c2d7af4e05ab2f6c1d13f3bf8
+      internalID: 265566378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_010
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d141b6c7f64304ccba320548581a7e3b
+      internalID: -313744204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_011
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab49004afe00f4e02929c9831cae32ae
+      internalID: 1796233134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_012
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 224
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3dfddaddd19540a095ba23cfb47a89f
+      internalID: 48934699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_013
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 224
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a70fcfe3b0443ac938a5a33d7af44d
+      internalID: -1817343941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_014
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 224
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74a504d8d77754a88bc4f6cd6da9abba
+      internalID: -204467384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_015
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef6adcd7b66424d3f8fc76f1499d7226
+      internalID: 1531521914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_016
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 112
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c3b1c6fbe264f1db22e4ec6ae6f385
+      internalID: 141596771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_017
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 112
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35b08bbbaa77a4f0fb857c59b2d7dfb4
+      internalID: 873407909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_018
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 112
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f08b88d968847a4b1301fbfd9c5af9
+      internalID: -6351443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_019
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 112
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c64909e4855094f998d8edacf8c4d5d9
+      internalID: 1288297654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_020
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8835cf27d370e45b9a9f54328a723a21
+      internalID: -1935080912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_021
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 392698ca175ed4234bb39584e02730c0
+      internalID: 913038140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-cannon-impact_022
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51d3807db9a8447dda6cfbfe615903d2
+      internalID: -108446219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7511cce6419ab4268b96fb316762f503
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      water-cannon-impact_000: -243916935
+      water-cannon-impact_001: 933311095
+      water-cannon-impact_002: -269608587
+      water-cannon-impact_003: 1753171408
+      water-cannon-impact_004: -1905890587
+      water-cannon-impact_005: 1505288130
+      water-cannon-impact_006: 1380608480
+      water-cannon-impact_007: -1092186424
+      water-cannon-impact_008: -1521204023
+      water-cannon-impact_009: 265566378
+      water-cannon-impact_010: -313744204
+      water-cannon-impact_011: 1796233134
+      water-cannon-impact_012: 48934699
+      water-cannon-impact_013: -1817343941
+      water-cannon-impact_014: -204467384
+      water-cannon-impact_015: 1531521914
+      water-cannon-impact_016: 141596771
+      water-cannon-impact_017: 873407909
+      water-cannon-impact_018: -6351443
+      water-cannon-impact_019: 1288297654
+      water-cannon-impact_020: -1935080912
+      water-cannon-impact_021: 913038140
+      water-cannon-impact_022: -108446219
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MeleeEnemyAttack : MonoBehaviour
 {
-    private Animator anim;
+    private IEnemySpriteAnimation anim;
     private PlayerCombat playerCombat;
     private EnemyInfo _enemyInfo;
 
@@ -14,7 +14,7 @@ public class MeleeEnemyAttack : MonoBehaviour
 
     private void Awake()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponent<IEnemySpriteAnimation>();
         _enemyInfo = GetComponent<EnemyInfo>();
     }
 
@@ -43,16 +43,8 @@ public class MeleeEnemyAttack : MonoBehaviour
     {
         canAttack = false;
 
-        bool hasAttackAnimation = HasAnimatorParameter("Attack");
-        if (hasAttackAnimation)
-        {
-            anim.SetTrigger("Attack");
-        }
-        else
-        {
+        if (anim == null || !anim.Attack())
             Attack();
-        }
-        
 
         yield return new WaitForSeconds(attackCoolTime);
 
@@ -83,22 +75,6 @@ public class MeleeEnemyAttack : MonoBehaviour
         }
     }
     
-    protected bool HasAnimatorParameter(string paramName)
-    {
-        if (anim == null)
-        {
-            return false;
-        }
-
-        foreach (AnimatorControllerParameter param in anim.parameters)
-        {
-            if (param.name == paramName)
-                return true;
-        }
-
-        return false;
-    }
-
     private bool TryCachePlayerCombat()
     {
         if (playerCombat != null)

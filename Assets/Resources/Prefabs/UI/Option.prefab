@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7017954371234287612}
   - component: {fileID: 6583892063142206292}
   - component: {fileID: 1749203462189623709}
+  - component: {fileID: 7107275190651397686}
   m_Layer: 5
   m_Name: Option
   m_TagString: Untagged
@@ -174,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552b5cccc9c4645ada7e037b1f363af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hover
+  hoverOutline: {fileID: 0}
 --- !u!114 &1749203462189623709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,6 +192,19 @@ MonoBehaviour:
   outline: {fileID: 2100000, guid: 87889881e17924c1c97995ce82b2640d, type: 2}
   targetOption: {fileID: 0}
   isSelected: 0
+--- !u!114 &7107275190651397686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8450670970124005167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 265c182c81e23406cb8af397a80b5cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UiSoundEmitter
+  suppressDefaultClick: 0
 --- !u!1 &9206892645412506935
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +274,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Graphic
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a811eea2874f9453d9aa18673c82aa99, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: -1003205873310539674, guid: a811eea2874f9453d9aa18673c82aa99,
     type: 2}
   m_fontSharedMaterials: []

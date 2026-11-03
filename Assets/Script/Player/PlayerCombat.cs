@@ -229,7 +229,7 @@ public class PlayerCombat : MonoBehaviour, ICombat
                 .defense;
 
         float finalDamage =
-            damage * (1f - defense / 100f);
+            damage * Mathf.Clamp01(1f - defense / 100f);
 
         hp -= finalDamage;
 

@@ -13,6 +13,7 @@ TagManager:
   - Wall
   - Bullet
   - Exp
+  - Decoration
   layers:
   - Default
   - TransparentFX
@@ -25,8 +26,8 @@ TagManager:
   - Enemy
   - Exp
   - Skill
-  - 
-  - 
+  - Wall
+  - Obstacle
   - 
   - 
   - 
@@ -53,9 +54,6 @@ TagManager:
   - name: BackGround
     uniqueID: 3782509265
     locked: 0
-  - name: Obstacle
-    uniqueID: 1088729685
-    locked: 0
   - name: ExpOrb
     uniqueID: 1032376735
     locked: 0
@@ -71,6 +69,9 @@ TagManager:
   - name: Teracore
     uniqueID: 4250941897
     locked: 0
+  - name: Bullet
+    uniqueID: 4289755741
+    locked: 0
   - name: SkillEffect
     uniqueID: 4189426099
     locked: 0
@@ -80,11 +81,11 @@ TagManager:
   - name: HpBar
     uniqueID: 1716683149
     locked: 0
+  - name: Obstacle
+    uniqueID: 1088729685
+    locked: 0
   - name: ExpBar
     uniqueID: 563543691
-    locked: 0
-  - name: Bullet
-    uniqueID: 4289755741
     locked: 0
   - name: UI
     uniqueID: 1418487415

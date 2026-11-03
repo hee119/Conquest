@@ -3,31 +3,36 @@ using UnityEngine;
 
 public class RamgedEnemyAttack : MonoBehaviour
 {
-    private static readonly int AttackTrigger = Animator.StringToHash("Attack");
 
     [SerializeField] private int bulletId;
     
     [SerializeField] private GameObject bulleSpawnPos;
+
+    [SerializeField, Min(0f)] private float attackReleaseDelay;
     
-    private Animator anim;
+    private IEnemySpriteAnimation anim;
     private PlayerCombat playerCombat;
     private EnemyInfo _enemyInfo;
+    private EnemyCombat combat;
     
     public float attackCoolTime = 1f;
 
+    private bool shotPending;
     private bool canAttack = true;
     private bool isDead = false;
 
     private void Awake()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponent<IEnemySpriteAnimation>();
         _enemyInfo = GetComponent<EnemyInfo>();
+        combat = GetComponent<EnemyCombat>();
         CachePlayerCombat();
     }
     
     private void OnEnable()
     {
         canAttack = true;
+        shotPending = false;
         isDead = false;
 
         if (playerCombat == null)
@@ -64,35 +69,46 @@ public class RamgedEnemyAttack : MonoBehaviour
             if (isDead || playerCombat == null || !playerCombat.gameObject.activeInHierarchy)
                 yield break;
 
+            shotPending = true;
             PlayAttackAnimation();
 
-            GameObject bullet = PoolManager.Instance.Spawn(bulletId, bulleSpawnPos.transform.position);
-            BulletMove bulletMove = bullet != null ? bullet.GetComponent<BulletMove>() : null;
-            if (bulletMove != null)
+            float windup = Mathf.Max(0f, attackReleaseDelay);
+            if (windup > 0f)
+                yield return new WaitForSeconds(windup);
+
+            // An animation event normally releases the shot. This fallback keeps
+            // attacks working if there is no animation or it was interrupted.
+            if (shotPending)
             {
-                bulletMove.target = playerCombat.gameObject;
-                bulletMove.Move();
+                yield return null;
+                if (shotPending) FireProjectile();
             }
-            yield return new WaitForSeconds(attackCoolTime);
+            // Preserve the interval between shots when anticipation is enabled.
+            yield return new WaitForSeconds(Mathf.Max(0.01f, attackCoolTime - windup));
 
             canAttack = true;
         }
     }
 
+    public void FireProjectile()
+    {
+        if (!shotPending) return;
+        shotPending = false;
+        if (isDead || playerCombat == null || !playerCombat.gameObject.activeInHierarchy ||
+            (combat != null && (combat.isDead || combat.hp <= 0f)) ||
+            PoolManager.Instance == null || bulleSpawnPos == null) return;
+
+        GameObject bullet = PoolManager.Instance.Spawn(bulletId, bulleSpawnPos.transform.position);
+        BulletMove bulletMove = bullet != null ? bullet.GetComponent<BulletMove>() : null;
+        if (bulletMove != null)
+        {
+            bulletMove.target = playerCombat.gameObject;
+            bulletMove.Move();
+        }
+    }
+
     private void PlayAttackAnimation()
     {
-        if (anim == null || anim.runtimeAnimatorController == null)
-            return;
-
-        foreach (AnimatorControllerParameter parameter in anim.parameters)
-        {
-            if (parameter.nameHash != AttackTrigger ||
-                parameter.type != AnimatorControllerParameterType.Trigger)
-                continue;
-
-            anim.ResetTrigger(AttackTrigger);
-            anim.SetTrigger(AttackTrigger);
-            return;
-        }
+        if (anim != null) anim.Attack();
     }
 }

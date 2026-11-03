@@ -556,6 +556,7 @@ GameObject:
   - component: {fileID: -7025415670022067272}
   - component: {fileID: 8731979598457492878}
   - component: {fileID: 3550246867631278144}
+  - component: {fileID: 3661505041213473702}
   m_Layer: 8
   m_Name: Goat
   m_TagString: Enemy
@@ -714,10 +715,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3faa7af64e2d9be419f35587af21c46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCombat
-  maxHp: 20
-  hp: 0
   isDead: 0
   isBurn: 0
+  hitParticle: {fileID: 0}
+  hitStateName: Hit
+  hitMaxWait: 1
   enemyInfo: {fileID: 0}
   enemyMove: {fileID: 0}
 --- !u!114 &-3406920516593856519
@@ -751,6 +753,7 @@ MonoBehaviour:
   isSlowDown: 0
   slowCount: 0
   pathUpdateInterval: 0.35
+  targetMoveThreshold: 0.1
   knockbackCooldown: 0.3
   knockbackPower: 5
   knockbackDuration: 0.15
@@ -822,8 +825,24 @@ MonoBehaviour:
   speed: 0
   damage: 0
   defense: 0
-  criticalDamage: 0
-  criticalChance: 0
+  dropExpOrbId: 0
   explosionDamage: 0
   explosionRange: 0
-  dropExpOrbId: 0
+--- !u!114 &3661505041213473702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9072985828772862859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4056d83c7b07d4b80851cd21dda2b9c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoatSpriteAnimation
+  animationData: {fileID: 11400000, guid: 2f8c04c7c9ed24156842030a07290e21, type: 2}
+  attackFrames: []
+  moveFrames: []
+  hitFrames: []
+  sequences: []
+  defaultState: 

@@ -1,0 +1,1 @@
+Applied six PixelFX effects to octopus attack prefabs; mouth frame bindings=93; release=0.25s; spin loop=16 frames; pool IDs preserved, impacts=1003/1004.

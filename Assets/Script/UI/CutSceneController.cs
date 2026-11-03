@@ -1,4 +1,4 @@
-using DG.Tweening;
+using System.Collections;
 using Febucci.TextAnimatorForUnity;
 using Febucci.TextAnimatorForUnity.TextMeshPro;
 using TMPro;
@@ -24,16 +24,14 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
     [SerializeField, Min(0)] private int previewFrame;
     [SerializeField] private PreviewLanguage previewLanguage;
     [SerializeField] private string nextSceneName = "Lobby";
-    [SerializeField, Min(0.01f)] private float fadeInSeconds = 1.2f;
+    [SerializeField, Min(0f)] private float initialBlackSeconds = 0.15f;
     [SerializeField, Min(0f)] private float visibleSeconds = 3f;
-    [SerializeField, Min(0.01f)] private float fadeOutSeconds = 0.8f;
-    [SerializeField] private Color darkTint = new Color(0.06f, 0.06f, 0.06f, 1f);
 
     private int currentFrame;
     private bool loadingStage;
     private bool transitioning;
     private bool hasStarted;
-    private Tween playbackTween;
+    private Coroutine playbackCoroutine;
     private LocalizationManager subscribedLocalization;
 
     private void Awake()
@@ -56,24 +54,49 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
         displayImage.sprite = frames[currentFrame];
         displayImage.color = Color.white;
         displayImage.raycastTarget = true;
-        fadeOverlay.color = darkTint;
+        fadeOverlay.color = Color.black;
         fadeOverlay.raycastTarget = false;
+        transitioning = true;
     }
 
     private void OnEnable()
     {
         SubscribeToLocalization();
         RefreshLocalizedCaption();
+        if (hasStarted)
+        {
+            currentFrame = 0;
+            loadingStage = false;
+            transitioning = true;
+            fadeOverlay.color = Color.black;
+            StartCoroutine(BeginPlayback());
+        }
     }
 
-    private void Start()
+    private IEnumerator Start()
+    {
+        hasStarted = true;
+        yield return BeginPlayback();
+    }
+
+    private IEnumerator BeginPlayback()
     {
         SubscribeToLocalization();
-        hasStarted = true;
 
         SoundManager.Instance?.Play(SoundIds.CutsceneMusic, loop: true, bgm: true, restartIfPlaying: true);
 
-        ShowFrame(currentFrame);
+        // Present a fully opaque black frame before the first reveal. Scene
+        // activation and the first UI rebuild finish while the image is covered.
+        Canvas.ForceUpdateCanvases();
+        yield return null;
+        yield return new WaitForSecondsRealtime(initialBlackSeconds);
+        // Direct Editor entry can still be finishing a normal scene load.
+        while (GameSceneManager.IsLoading)
+            yield return null;
+        if (!loadingStage)
+        {
+            ShowFrame(currentFrame);
+        }
     }
 
     private void ShowFrame(int index)
@@ -81,17 +104,45 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
         currentFrame = index;
         displayImage.sprite = frames[index];
         displayImage.color = Color.white;
-        fadeOverlay.color = darkTint;
-        transitioning = false;
-
+        fadeOverlay.color = Color.black;
+        transitioning = true;
         ShowCaption(index);
+        playbackCoroutine = StartCoroutine(PlayFrame());
+    }
 
-        playbackTween = DOTween.Sequence()
-            .SetUpdate(true)
-            .Append(fadeOverlay.DOFade(0f, fadeInSeconds))
-            .AppendInterval(visibleSeconds)
-            .Append(fadeOverlay.DOFade(darkTint.a, fadeOutSeconds))
-            .OnComplete(Advance);
+    private IEnumerator FadeTo(float targetAlpha)
+    {
+        float from = fadeOverlay.color.a;
+        float duration = Mathf.Max(0.1f, GameSceneManager.TransitionFadeSeconds);
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            float alpha = Mathf.SmoothStep(from, targetAlpha, elapsed / duration);
+            fadeOverlay.color = new Color(0f, 0f, 0f, alpha);
+            yield return null;
+            // Match the loading screen fade and avoid skipping a reveal on a
+            // long scene activation or first-render frame.
+            elapsed += Mathf.Min(Time.unscaledDeltaTime, 0.05f);
+        }
+        fadeOverlay.color = new Color(0f, 0f, 0f, targetAlpha);
+    }
+
+    private IEnumerator PlayFrame()
+    {
+        yield return FadeTo(0f);
+        transitioning = false;
+        yield return new WaitForSecondsRealtime(visibleSeconds);
+        transitioning = true;
+        yield return FadeTo(1f);
+        playbackCoroutine = null;
+        Advance();
+    }
+
+    private IEnumerator FadeOutAndAdvance()
+    {
+        yield return FadeTo(1f);
+        playbackCoroutine = null;
+        Advance();
     }
 
     private void SubscribeToLocalization()
@@ -196,11 +247,9 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
 
         // A click skips the remaining bright display time, then fades out normally.
         transitioning = true;
-        playbackTween?.Kill();
+        if (playbackCoroutine != null) StopCoroutine(playbackCoroutine);
         captionTypewriter?.StopShowingText();
-        playbackTween = fadeOverlay.DOFade(darkTint.a, fadeOutSeconds)
-            .SetUpdate(true)
-            .OnComplete(Advance);
+        playbackCoroutine = StartCoroutine(FadeOutAndAdvance());
     }
 
     public void SkipCutscene()
@@ -210,7 +259,7 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
 
     private void Advance()
     {
-        playbackTween = null;
+        playbackCoroutine = null;
         int nextFrame = currentFrame + 1;
         if (nextFrame < frames.Length)
         {
@@ -227,8 +276,17 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
             return;
 
         loadingStage = true;
-        playbackTween?.Kill();
-        playbackTween = null;
+        transitioning = true;
+        if (playbackCoroutine != null) StopCoroutine(playbackCoroutine);
+        captionTypewriter?.StopShowingText();
+        playbackCoroutine = StartCoroutine(FinishCutscene());
+    }
+
+    private IEnumerator FinishCutscene()
+    {
+        if (fadeOverlay.color.a < 1f)
+            yield return FadeTo(1f);
+        yield return null;
         SoundManager.Instance?.StopBgm();
         GameSceneManager.LoadSceneAsync(nextSceneName);
     }
@@ -241,8 +299,8 @@ public sealed class CutSceneController : MonoBehaviour, IPointerClickHandler
             subscribedLocalization = null;
         }
 
-        playbackTween?.Kill();
-        playbackTween = null;
+        if (playbackCoroutine != null) StopCoroutine(playbackCoroutine);
+        playbackCoroutine = null;
         captionTypewriter?.StopShowingText();
         SoundManager.Instance?.StopBgm();
     }

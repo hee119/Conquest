@@ -1,8 +1,10 @@
 using UnityEngine;
 
+/// <summary>LavaField 증강 관련 동작과 상태를 관리한다.</summary>
 public class LavaField : Burn
 {
-    protected override void OnTriggerEnter2D(Collider2D other)
+    /// <summary>다른 콜라이더가 진입했을 때 적중 효과를 처리한다.</summary>
+    public void HandleEnemyContact(Collider2D other)
     {
         if (!other.CompareTag("Enemy"))
             return;

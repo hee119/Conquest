@@ -1,0 +1,6 @@
+Damage number editor render measurement
+baseline=40
+count=1 activeViews=1 batches=41 delta=1
+count=10 activeViews=10 batches=41 delta=1
+count=100 activeViews=100 batches=41 delta=1
+COMPLETE

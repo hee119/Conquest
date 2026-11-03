@@ -20,12 +20,14 @@ public sealed class ParabolicDottedRoute : MaskableGraphic
         SetVerticesDirty();
     }
 
+#if UNITY_EDITOR
     protected override void OnValidate()
     {
         base.OnValidate();
         NormalizeRectTransform();
         SetVerticesDirty();
     }
+#endif
 
     protected override void OnPopulateMesh(VertexHelper vertexHelper)
     {

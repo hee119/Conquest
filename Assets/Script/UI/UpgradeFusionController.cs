@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>증강 합성 화면의 선택과 진행 상태를 관리한다.</summary>
 public sealed class UpgradeFusionController : MonoBehaviour
 {
     public UpgradeImageSet first;
@@ -32,15 +33,23 @@ public sealed class UpgradeFusionController : MonoBehaviour
     private int pendingResult;
     private bool committed;
     private bool normalPanelWasActive;
+    private UpgradeManager subscribedManager;
+    private LocalizationManager subscribedLocalization;
 
+    /// <summary>Copy 동작을 처리한다.</summary>
     private string Copy(string ko, string en, string ja)
     {
         string language = LocalizationManager.Instance != null ? LocalizationManager.Instance.currentLanguage : "ko";
-        return language == "en" ? en : language == "ja" ? ja : ko;
+        return language == "en" ? en : language == "jp" || language == "ja" ? ja : ko;
     }
 
+    /// <summary>활성화될 때 필요한 이벤트와 동작을 시작한다.</summary>
     private void OnEnable()
     {
+        UpgradeManager.InstanceChanged += BindManager;
+        LocalizationManager.InstanceChanged += BindLocalization;
+        if (first != null) first.SelectionChanged += Refresh;
+        if (second != null && second != first) second.SelectionChanged += Refresh;
         IsBusy = IsComplete = false;
         committed = false;
         if (normalUpgradePanel != null)
@@ -54,14 +63,34 @@ public sealed class UpgradeFusionController : MonoBehaviour
         if (flash != null) flash.gameObject.SetActive(false);
         if (burst != null) burst.gameObject.SetActive(false);
         if (combineButton != null) combineButton.gameObject.SetActive(true);
+        BindManager(UpgradeManager.Instance);
+        BindLocalization(LocalizationManager.Instance);
         Refresh();
     }
 
-    private void Update()
+    /// <summary>BindManager 동작을 처리한다.</summary>
+    private void BindManager(UpgradeManager manager)
     {
-        if (!IsBusy && !IsComplete) Refresh();
+        if (subscribedManager != null)
+            subscribedManager.UpgradesChanged -= Refresh;
+        subscribedManager = manager;
+        if (subscribedManager != null)
+            subscribedManager.UpgradesChanged += Refresh;
+        Refresh();
     }
 
+    /// <summary>BindLocalization 동작을 처리한다.</summary>
+    private void BindLocalization(LocalizationManager manager)
+    {
+        if (subscribedLocalization != null)
+            subscribedLocalization.OnLanguageChanged -= Refresh;
+        subscribedLocalization = manager;
+        if (subscribedLocalization != null)
+            subscribedLocalization.OnLanguageChanged += Refresh;
+        Refresh();
+    }
+
+    /// <summary>ResetCard 동작을 처리한다.</summary>
     private void ResetCard(UpgradeImageSet slot)
     {
         if (slot == null) return;
@@ -74,8 +103,18 @@ public sealed class UpgradeFusionController : MonoBehaviour
         if (info.upgradeDesLo != null) info.upgradeDesLo.gameObject.SetActive(false);
     }
 
+    /// <summary>현재 데이터를 바탕으로 표시 상태를 갱신한다.</summary>
     private void Refresh()
     {
+        if (IsBusy || IsComplete)
+        {
+            if (IsComplete) SetLabel(confirmButton, Copy("확인하기", "Confirm", "確認する"));
+            if (statusText != null) statusText.text = IsComplete
+                /// <summary>Copy 동작을 처리한다.</summary>
+                ? Copy("새로운 증강을 획득했습니다", "New upgrade acquired", "新しい増強を獲得しました")
+                : Copy("증강 융합 중", "Fusing upgrades", "増強を融合中");
+            return;
+        }
         bool valid = first != null && second != null &&
             UpgradeFusionRules.CanCombine(UpgradeManager.Instance, first.id, second.id, out pendingResult);
         if (combineButton != null)
@@ -86,10 +125,12 @@ public sealed class UpgradeFusionController : MonoBehaviour
         if (statusText != null)
             statusText.text = valid ? Copy("합성 준비 완료", "Ready to combine", "合成準備完了") :
                 first != null && second != null && first.id > 0 && second.id > 0
+                /// <summary>Copy 동작을 처리한다.</summary>
                 ? Copy("합성할 수 없는 조합입니다", "These upgrades cannot be combined", "合成できない組み合わせです")
                 : Copy("합성할 만렙 증강 두 개를 선택하세요", "Select two compatible max-level upgrades", "最大レベルの増強を2つ選択してください");
     }
 
+    /// <summary>BeginFusion 동작을 처리한다.</summary>
     public void BeginFusion()
     {
         if (IsBusy || IsComplete || first == null || second == null ||
@@ -104,6 +145,7 @@ public sealed class UpgradeFusionController : MonoBehaviour
         animationRoutine = StartCoroutine(Animate());
     }
 
+    /// <summary>CaptureLayout 동작을 처리한다.</summary>
     private void CaptureLayout()
     {
         Canvas.ForceUpdateCanvases();
@@ -129,6 +171,7 @@ public sealed class UpgradeFusionController : MonoBehaviour
         captured = true;
     }
 
+    /// <summary>Animate 동작을 처리한다.</summary>
     private IEnumerator Animate()
     {
         float duration = spreadDuration + gatherDuration + revealDuration;
@@ -155,6 +198,7 @@ public sealed class UpgradeFusionController : MonoBehaviour
         confirmButton.Select();
     }
 
+    /// <summary>RenderFrame 동작을 처리한다.</summary>
     private void RenderFrame(float elapsed)
     {
         float impact = spreadDuration + gatherDuration;
@@ -209,6 +253,7 @@ public sealed class UpgradeFusionController : MonoBehaviour
         burst.rectTransform.localScale = Vector3.one * Mathf.Lerp(1.4f, 2f, reveal);
     }
 
+    /// <summary>Input 관련 상태를 설정한다.</summary>
     private void SetInput(bool enabled)
     {
         foreach (var slot in new[] { first, second })
@@ -219,6 +264,7 @@ public sealed class UpgradeFusionController : MonoBehaviour
         if (exitButton != null) exitButton.interactable = enabled;
     }
 
+    /// <summary>ConfirmAndClose 동작을 처리한다.</summary>
     public void ConfirmAndClose()
     {
         if (IsBusy || !IsComplete) return;
@@ -228,6 +274,7 @@ public sealed class UpgradeFusionController : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    /// <summary>RestoreLayout 동작을 처리한다.</summary>
     private void RestoreLayout()
     {
         if (!captured) return;
@@ -244,8 +291,17 @@ public sealed class UpgradeFusionController : MonoBehaviour
         captured = false;
     }
 
+    /// <summary>비활성화될 때 이벤트와 진행 중인 동작을 정리한다.</summary>
     private void OnDisable()
     {
+        UpgradeManager.InstanceChanged -= BindManager;
+        LocalizationManager.InstanceChanged -= BindLocalization;
+        if (first != null) first.SelectionChanged -= Refresh;
+        if (second != null && second != first) second.SelectionChanged -= Refresh;
+        if (subscribedManager != null) subscribedManager.UpgradesChanged -= Refresh;
+        if (subscribedLocalization != null) subscribedLocalization.OnLanguageChanged -= Refresh;
+        subscribedManager = null;
+        subscribedLocalization = null;
         if (animationRoutine != null) StopCoroutine(animationRoutine);
         animationRoutine = null;
         RestoreLayout();
@@ -254,6 +310,7 @@ public sealed class UpgradeFusionController : MonoBehaviour
         IsBusy = false;
     }
 
+    /// <summary>Label 관련 상태를 설정한다.</summary>
     private static void SetLabel(UnityEngine.UI.Button button, string value)
     {
         var label = button.GetComponentInChildren<TMPro.TMP_Text>(true);

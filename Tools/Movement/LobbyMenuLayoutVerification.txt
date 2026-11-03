@@ -1,0 +1,5 @@
+padding=0,0 spacing=0
+StageSelect y=-208.5 height=170 scale=1.3
+CharacterSelect y=-429.5 height=170 scale=1.3
+Setting y=-650.5 height=170 scale=1.3
+Quit y=-871.5 height=170 scale=1.3

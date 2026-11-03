@@ -27,6 +27,7 @@ public class SliderPlusMinus : MonoBehaviour
     {
         suppressNextClick = false;
         slider = GetComponent<Slider>();
+        if (Application.isPlaying) SliderInputBounds.Attach(slider);
         CreateButtons();
         lastPlayingState = Application.isPlaying;
         SetButtonsInteractable(lastPlayingState);
@@ -157,15 +158,31 @@ public class SliderPlusMinus : MonoBehaviour
         ConfigureButton(group, "Plus", "+", 40f, ClickPlus, Plus);
     }
 
-    private void ConfigureButton(RectTransform parent, string objectName, string label, float x, UnityAction clickAction, UnityAction repeatAction)
+    
+    private void ConfigureButton(
+        RectTransform parent,
+        string objectName,
+        string label,
+        float x,
+        UnityAction clickAction,
+        UnityAction repeatAction)
     {
         Transform existingButton = parent.Find(objectName);
+
         GameObject buttonObject = existingButton != null
             ? existingButton.gameObject
-            : new GameObject(objectName, typeof(RectTransform), typeof(CanvasRenderer), typeof(Image), typeof(Button));
+            : new GameObject(
+                objectName,
+                typeof(RectTransform),
+                typeof(CanvasRenderer),
+                typeof(Image),
+                typeof(Button));
+
         var buttonRect = (RectTransform)buttonObject.transform;
+
         if (existingButton == null)
             buttonRect.SetParent(parent, false);
+
         buttonRect.anchorMin = new Vector2(0f, 0.5f);
         buttonRect.anchorMax = new Vector2(0f, 0.5f);
         buttonRect.pivot = new Vector2(0f, 0.5f);
@@ -173,7 +190,6 @@ public class SliderPlusMinus : MonoBehaviour
         buttonRect.sizeDelta = new Vector2(36f, 36f);
 
         Image background = buttonObject.GetComponent<Image>();
-        background.color = new Color(1f, 1f, 1f, 0.08f);
 
         Button button = buttonObject.GetComponent<Button>();
         button.targetGraphic = background;
@@ -181,18 +197,38 @@ public class SliderPlusMinus : MonoBehaviour
         button.onClick.RemoveListener(clickAction);
         button.onClick.AddListener(clickAction);
 
+        if (Application.isPlaying)
+            UiSoundEvents.Register(button);
+
+        if (buttonObject.GetComponent<OptionHover>() == null)
+            buttonObject.AddComponent<OptionHover>();
+
         SliderStepHold hold = buttonObject.GetComponent<SliderStepHold>();
+
         if (hold == null)
             hold = buttonObject.AddComponent<SliderStepHold>();
-        hold.Initialize(this, repeatAction, holdDelay, holdRepeatInterval);
+
+        hold.Initialize(
+            this,
+            repeatAction,
+            holdDelay,
+            holdRepeatInterval);
 
         Transform existingLabel = buttonRect.Find("Label");
+
         GameObject textObject = existingLabel != null
             ? existingLabel.gameObject
-            : new GameObject("Label", typeof(RectTransform), typeof(CanvasRenderer), typeof(TextMeshProUGUI));
+            : new GameObject(
+                "Label",
+                typeof(RectTransform),
+                typeof(CanvasRenderer),
+                typeof(TextMeshProUGUI));
+
         var textRect = (RectTransform)textObject.transform;
+
         if (existingLabel == null)
             textRect.SetParent(buttonRect, false);
+
         textRect.anchorMin = Vector2.zero;
         textRect.anchorMax = Vector2.one;
         textRect.offsetMin = Vector2.zero;
@@ -202,9 +238,9 @@ public class SliderPlusMinus : MonoBehaviour
         text.text = label;
         text.fontSize = 25f;
         text.alignment = TextAlignmentOptions.Center;
-        text.color = Color.white;
         text.raycastTarget = false;
     }
+
 
     private void SetButtonsInteractable(bool interactable)
     {

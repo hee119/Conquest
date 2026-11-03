@@ -90,7 +90,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3255372620511223028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
+  m_Script: {fileID: 11500000, guid: 2290f95e8d83d43ebb69340f7c1d2687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TMP_Dropdown
   m_Navigation:
@@ -145,6 +145,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_AlphaFadeSpeed: 0.15
+  popupRoot: {fileID: 0}
+  blocker: {fileID: 0}
 --- !u!210 &1565919368800157232
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -154,7 +156,7 @@ SortingGroup:
   m_GameObject: {fileID: 3255372620511223028}
   m_Enabled: 1
   m_SortingLayerID: -157569747
-  m_SortingLayer: 14
+  m_SortingLayer: 15
   m_SortingOrder: 0
   m_SortAtRoot: 0
   m_Sort3DAs2D: 0
@@ -716,7 +718,7 @@ SortingGroup:
   m_GameObject: {fileID: 6136061734258522228}
   m_Enabled: 1
   m_SortingLayerID: -1028877159
-  m_SortingLayer: 16
+  m_SortingLayer: 17
   m_SortingOrder: 0
   m_SortAtRoot: 0
   m_Sort3DAs2D: 0
@@ -808,6 +810,7 @@ GameObject:
   - component: {fileID: 6906734103094157878}
   - component: {fileID: 6571803155805576213}
   - component: {fileID: 6109687524418603329}
+  - component: {fileID: 4659736591081310228}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -935,6 +938,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4659736591081310228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7706814698995893980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 265c182c81e23406cb8af397a80b5cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UiSoundEmitter
+  suppressDefaultClick: 0
 --- !u!1 &8647737862754918321
 GameObject:
   m_ObjectHideFlags: 0

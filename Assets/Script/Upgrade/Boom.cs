@@ -1,5 +1,6 @@
 using UnityEngine;
 
+/// <summary>Boom 증강 관련 동작과 상태를 관리한다.</summary>
 public class Boom : MonoBehaviour
 {
     private Animator animator;
@@ -8,6 +9,7 @@ public class Boom : MonoBehaviour
 
     private PooledObject pooledObject;
 
+    /// <summary>필요한 컴포넌트와 초기 상태를 준비한다.</summary>
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -22,11 +24,13 @@ public class Boom : MonoBehaviour
             GetComponent<PooledObject>();
     }
 
+    /// <summary>BoomStart 동작을 처리한다.</summary>
     public void BoomStart()
     {
         animator.SetTrigger("Boom");
     }
 
+    /// <summary>BoomDamage 동작을 처리한다.</summary>
     public void BoomDamage()
     {
         UpgradeData data =
@@ -35,54 +39,8 @@ public class Boom : MonoBehaviour
         float range =
             data.explosionRange;
 
-        int damage =
+        float damage =
             data.boomDamage;
-
-        // =====================================
-        // 현재 캐릭터 스탯
-        // =====================================
-
-        int characterId =
-            CharacterManager.Instance.currentCharacter;
-
-        PlayerData playerData =
-            DataManager.Instance.playerDatasDic[characterId];
-
-        int playerDamage =
-            playerData.damage;
-
-        int critChance =
-            playerData.criticalChance;
-
-        float critDamage =
-            playerData.criticalDamage;
-
-        // =====================================
-        // 공격력 적용
-        // =====================================
-
-        damage =
-            (int)(
-                damage *
-                (1f + playerDamage / 100f)
-            );
-
-        // =====================================
-        // 크리티컬 판정
-        // 폭발 1회당 한 번만 판정
-        // =====================================
-
-        bool isCritical =
-            Random.Range(0, 100) < critChance;
-
-        if (isCritical)
-        {
-            damage =
-                (int)(
-                    damage *
-                    (2f + critDamage / 100f)
-                );
-        }
 
         // =====================================
         // 범위 내 적 탐색
@@ -111,20 +69,21 @@ public class Boom : MonoBehaviour
                     transform.position
                 );
 
-            enemy.TakeDamage(
-                damage,
+            enemy.TakeDamage(id, damage,
                 hitPoint
             );
         }
     }
 
     // 폭발 애니메이션 마지막 프레임에 이벤트 추가
+    /// <summary>BoomEnd 동작을 처리한다.</summary>
     public void BoomEnd()
     {
         if (pooledObject != null)
             pooledObject.DestroyObj();
     }
 
+    /// <summary>DrawGizmosSelected 이벤트가 발생했을 때 필요한 처리를 수행한다.</summary>
     private void OnDrawGizmosSelected()
     {
         if (DataManager.Instance == null)

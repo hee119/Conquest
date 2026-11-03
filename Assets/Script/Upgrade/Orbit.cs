@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>Orbit 증강 관련 동작과 상태를 관리한다.</summary>
 public class Orbit : MonoBehaviour
 {
     public List<GameObject> orbitList = new();
@@ -24,6 +25,7 @@ public class Orbit : MonoBehaviour
     // 표창 추가
     // =====================================
 
+    /// <summary>AddOrbit 동작을 처리한다.</summary>
     public void AddOrbit(int id)
     {
         GameObject orbit = PoolManager.Instance.Spawn(
@@ -51,6 +53,7 @@ public class Orbit : MonoBehaviour
     // 표창 전체 동작
     // =====================================
 
+    /// <summary>RotateOrbits 동작을 처리한다.</summary>
     public IEnumerator RotateOrbits(int id)
     {
         if (orbitList.Count == 0)
@@ -274,6 +277,7 @@ public class Orbit : MonoBehaviour
     // 공전 배치
     // =====================================
 
+    /// <summary>ArrangeOrbits 동작을 처리한다.</summary>
     private void ArrangeOrbits()
     {
         int count = orbitList.Count;
@@ -310,6 +314,7 @@ public class Orbit : MonoBehaviour
     // 알파값 변경
     // =====================================
 
+    /// <summary>Alpha 관련 상태를 설정한다.</summary>
     private void SetAlpha(
         GameObject obj,
         float alpha)

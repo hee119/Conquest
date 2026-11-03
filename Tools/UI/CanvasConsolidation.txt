@@ -1,0 +1,4 @@
+Loading: Loading Canvas (ScreenSpaceOverlay)
+CutSceen: Canvas (ScreenSpaceOverlay)
+Lobby: Lobby Canvas (ScreenSpaceCamera)
+Stage1: UI................/Screen Canvas (ScreenSpaceCamera), UI................/World Canvas (WorldSpace)

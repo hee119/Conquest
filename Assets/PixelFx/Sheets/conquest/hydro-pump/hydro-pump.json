@@ -1,0 +1,567 @@
+{
+ "frames": [
+  {
+   "filename": "hydro-pump 0",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 1",
+   "frame": {
+    "x": 320,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 2",
+   "frame": {
+    "x": 640,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 3",
+   "frame": {
+    "x": 960,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 4",
+   "frame": {
+    "x": 0,
+    "y": 144,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 5",
+   "frame": {
+    "x": 320,
+    "y": 144,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 6",
+   "frame": {
+    "x": 640,
+    "y": 144,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 7",
+   "frame": {
+    "x": 960,
+    "y": 144,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 8",
+   "frame": {
+    "x": 0,
+    "y": 288,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 9",
+   "frame": {
+    "x": 320,
+    "y": 288,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 10",
+   "frame": {
+    "x": 640,
+    "y": 288,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 11",
+   "frame": {
+    "x": 960,
+    "y": 288,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 12",
+   "frame": {
+    "x": 0,
+    "y": 432,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 13",
+   "frame": {
+    "x": 320,
+    "y": 432,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 14",
+   "frame": {
+    "x": 640,
+    "y": 432,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 15",
+   "frame": {
+    "x": 960,
+    "y": 432,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 16",
+   "frame": {
+    "x": 0,
+    "y": 576,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 17",
+   "frame": {
+    "x": 320,
+    "y": 576,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 18",
+   "frame": {
+    "x": 640,
+    "y": 576,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 19",
+   "frame": {
+    "x": 960,
+    "y": 576,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 20",
+   "frame": {
+    "x": 0,
+    "y": 720,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 21",
+   "frame": {
+    "x": 320,
+    "y": 720,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 22",
+   "frame": {
+    "x": 640,
+    "y": 720,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  },
+  {
+   "filename": "hydro-pump 23",
+   "frame": {
+    "x": 960,
+    "y": 720,
+    "w": 320,
+    "h": 144
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 144
+   },
+   "sourceSize": {
+    "w": 320,
+    "h": 144
+   },
+   "duration": 42
+  }
+ ],
+ "meta": {
+  "app": "https://github.com/patch-gg/pixelfx",
+  "version": "1",
+  "image": "hydro-pump.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 1280,
+   "h": 864
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "hydro-pump",
+    "from": 0,
+    "to": 23,
+    "direction": "forward"
+   }
+  ],
+  "pixelfx": {
+   "id": "conquest/hydro-pump",
+   "name": "Octopus hydro pump",
+   "fps": 24,
+   "loop": true,
+   "frames": 24,
+   "frameSize": [
+    320,
+    144
+   ],
+   "pivot": [
+    28,
+    70
+   ],
+   "columns": 4
+  }
+ }
+}

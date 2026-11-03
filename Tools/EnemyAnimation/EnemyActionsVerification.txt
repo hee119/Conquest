@@ -1,0 +1,6 @@
+Actual enemy animation action verification
+PASS crab Attack event damaged player
+PASS slime Attack event damaged player
+PASS bomb Boom event returned enemy to pool
+PASS bomb pool reuse reset
+COMPLETE

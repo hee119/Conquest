@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>DotDamage 증강 관련 동작과 상태를 관리한다.</summary>
 public class DotDamage : MonoBehaviour
 {
     protected int id;
@@ -15,6 +16,7 @@ public class DotDamage : MonoBehaviour
     protected PooledObject pooledObject;
     protected Rigidbody2D rb;
 
+    /// <summary>필요한 컴포넌트와 초기 상태를 준비한다.</summary>
     protected virtual void Awake()
     {
         upgradeInfo = GetComponent<UpgradeInfo>();
@@ -28,6 +30,7 @@ public class DotDamage : MonoBehaviour
     
     
 
+    /// <summary>활성화될 때 필요한 이벤트와 동작을 시작한다.</summary>
     protected virtual void OnEnable()
     {
         if (col != null)
@@ -174,6 +177,7 @@ public class DotDamage : MonoBehaviour
             {
                 if (playedCount == 0)
                 {
+                    /// <summary>PlayDotAnimation 동작을 처리한다.</summary>
                     yield return PlayDotAnimation();
                 }
 
@@ -184,6 +188,7 @@ public class DotDamage : MonoBehaviour
             // Dot 애니메이션
             // =========================================
 
+            /// <summary>PlayDotAnimation 동작을 처리한다.</summary>
             yield return PlayDotAnimation();
 
             playedCount++;
@@ -246,6 +251,7 @@ public class DotDamage : MonoBehaviour
     /// </summary>
     protected IEnumerator PlayDeadTargetDot()
     {
+        /// <summary>PlayDotAnimation 동작을 처리한다.</summary>
         yield return PlayDotAnimation();
 
         pooledObject.DestroyObj();
@@ -268,6 +274,7 @@ public class DotDamage : MonoBehaviour
         yield return null;
 
         // Dot 상태 진입 대기
+        /// <summary>WaitUntil 동작을 처리한다.</summary>
         yield return new WaitUntil(() =>
         {
             if (animator == null)
@@ -280,6 +287,7 @@ public class DotDamage : MonoBehaviour
         });
 
         // Dot 애니메이션 종료 대기
+        /// <summary>WaitUntil 동작을 처리한다.</summary>
         yield return new WaitUntil(() =>
         {
             if (animator == null)
@@ -311,52 +319,6 @@ public class DotDamage : MonoBehaviour
             return;
 
         // =====================================
-        // 현재 캐릭터 스탯
-        // =====================================
-
-        int characterId =
-            CharacterManager.Instance.currentCharacter;
-
-        PlayerData playerData =
-            DataManager.Instance.playerDatasDic[characterId];
-
-        int playerDamage =
-            playerData.damage;
-
-        int critChance =
-            playerData.criticalChance;
-
-        float critDamage =
-            playerData.criticalDamage;
-
-        // =====================================
-        // 공격력 적용
-        // =====================================
-
-        int finalDamage =
-            (int)(
-                damage *
-                (1f + playerDamage / 100f)
-            );
-
-        // =====================================
-        // 크리티컬 판정
-        // DOT 1틱마다 한 번 판정
-        // =====================================
-
-        bool isCritical =
-            Random.Range(0, 100) < critChance;
-
-        if (isCritical)
-        {
-            finalDamage =
-                (int)(
-                    finalDamage *
-                    (2f + critDamage / 100f)
-                );
-        }
-
-        // =====================================
         // 피격 위치
         // =====================================
 
@@ -365,12 +327,12 @@ public class DotDamage : MonoBehaviour
                 transform.position
             );
 
-        enemyCombat.TakeDamage(
-            finalDamage,
+        enemyCombat.TakeDamage(id, damage,
             hitPoint
         );
     }
 
+    /// <summary>다른 콜라이더가 진입했을 때 적중 효과를 처리한다.</summary>
     protected virtual void OnTriggerEnter2D(
         Collider2D other
     )
@@ -381,6 +343,7 @@ public class DotDamage : MonoBehaviour
         }
     }
 
+    /// <summary>비활성화될 때 이벤트와 진행 중인 동작을 정리한다.</summary>
     protected virtual void OnDisable()
     {
         // =========================================
@@ -413,6 +376,7 @@ public class DotDamage : MonoBehaviour
             col.enabled = true;
     }
 
+    /// <summary>Damage 관련 값을 조회한다.</summary>
     protected float GetDamage()
     {
         int level =

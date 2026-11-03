@@ -5,6 +5,7 @@ public class DashBar : MonoBehaviour
 {
     [SerializeField] private PlayerMove playerMove;
     private UnityEngine.UI.Slider slider;
+    private PlayerMove subscribedPlayer;
 
     private void Awake()
     {
@@ -14,12 +15,40 @@ public class DashBar : MonoBehaviour
         slider.value = 1f;
     }
 
-    private void LateUpdate()
+    private void OnEnable()
     {
+        PlayerMove.BecameAvailable += OnPlayerAvailable;
+        BindPlayer();
+    }
+
+    private void OnDisable()
+    {
+        PlayerMove.BecameAvailable -= OnPlayerAvailable;
+        if (subscribedPlayer != null)
+            subscribedPlayer.DashEnergyChanged -= SetEnergy;
+        subscribedPlayer = null;
+    }
+
+    private void OnPlayerAvailable(PlayerMove player)
+    {
+        if (playerMove != null && playerMove != player)
+            return;
+        playerMove = player;
+        BindPlayer();
+    }
+
+    private void BindPlayer()
+    {
+        if (subscribedPlayer != null)
+            subscribedPlayer.DashEnergyChanged -= SetEnergy;
         if (playerMove == null)
             playerMove = FindFirstObjectByType<PlayerMove>();
-
-        if (playerMove != null)
-            slider.value = playerMove.DashEnergyNormalized;
+        subscribedPlayer = playerMove;
+        if (subscribedPlayer == null)
+            return;
+        subscribedPlayer.DashEnergyChanged += SetEnergy;
+        SetEnergy(subscribedPlayer.DashEnergyNormalized);
     }
+
+    private void SetEnergy(float value) => slider.value = value;
 }

@@ -1,18 +1,13 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Slider))]
 public sealed class SceneBrightnessController : MonoBehaviour
 {
-    private const string PreferenceKey = "SceneBrightness";
-    private const float MinExposure = -1f;
-    private const float MaxExposure = 1f;
-    private const float DefaultSliderValue = 0.5f;
-
     private Slider slider;
-    private ColorAdjustments colorAdjustments;
 
     private void Awake()
     {
@@ -22,59 +17,78 @@ public sealed class SceneBrightnessController : MonoBehaviour
             enabled = false;
             return;
         }
-
-        Volume volume = null;
-        foreach (Volume candidate in FindObjectsByType<Volume>(FindObjectsSortMode.None))
-        {
-            if (candidate.isGlobal)
-            {
-                volume = candidate;
-                break;
-            }
-        }
-
-        if (volume == null)
-        {
-            Debug.LogWarning("Scene brightness requires a Global Volume in the active scene.", this);
-            enabled = false;
-            return;
-        }
-
-        VolumeProfile profile = volume.profile;
-        if (!profile.TryGet(out colorAdjustments))
-        {
-            colorAdjustments = profile.Add<ColorAdjustments>(true);
-        }
-
-        colorAdjustments.postExposure.overrideState = true;
         slider.minValue = 0f;
         slider.maxValue = 1f;
-        slider.value = Mathf.Clamp01(PlayerPrefs.GetFloat(PreferenceKey, DefaultSliderValue));
+        slider.SetValueWithoutNotify(SceneBrightnessSettings.SavedValue);
     }
 
     private void OnEnable()
     {
-        if (slider == null)
-        {
-            return;
-        }
-
-        ApplyBrightness(slider.value);
+        if (slider == null || !enabled) return;
+        slider.SetValueWithoutNotify(SceneBrightnessSettings.SavedValue);
+        SceneBrightnessSettings.ApplyLoadedScenes();
     }
 
     public void ApplyBrightness(float normalizedValue)
     {
-        if (colorAdjustments == null)
-        {
-            return;
-        }
+        if (!enabled) return;
+        SceneBrightnessSettings.SetValue(normalizedValue);
+    }
+}
 
-        normalizedValue = Mathf.Clamp01(normalizedValue);
-        colorAdjustments.postExposure.value = Mathf.Lerp(
-            MinExposure,
-            MaxExposure,
-            normalizedValue
-        );
-        PlayerPrefs.SetFloat(PreferenceKey, normalizedValue);
+// Brightness belongs to scene initialization, not the optional settings window.
+public static class SceneBrightnessSettings
+{
+    private const string PreferenceKey = "SceneBrightness";
+    public static float SavedValue => Mathf.Clamp01(PlayerPrefs.GetFloat(PreferenceKey, 0.5f));
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void Reset()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void Initialize()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        ApplyScene(scene, SavedValue);
+    }
+
+    public static void SetValue(float value)
+    {
+        PlayerPrefs.SetFloat(PreferenceKey, Mathf.Clamp01(value));
+        ApplyLoadedScenes();
+    }
+
+    public static void ApplyLoadedScenes()
+    {
+        float value = SavedValue;
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+            ApplyScene(SceneManager.GetSceneAt(i), value);
+    }
+
+    private static void ApplyScene(Scene scene, float value)
+    {
+        if (!scene.IsValid() || !scene.isLoaded) return;
+        float exposure = Mathf.Lerp(-1f, 1f, value);
+        foreach (GameObject root in scene.GetRootGameObjects())
+        {
+            foreach (Volume volume in root.GetComponentsInChildren<Volume>(true))
+            {
+                if (!volume.isGlobal) continue;
+                VolumeProfile profile = volume.profile;
+                if (!profile.TryGet(out ColorAdjustments adjustments))
+                    adjustments = profile.Add<ColorAdjustments>(true);
+                adjustments.active = true;
+                adjustments.postExposure.overrideState = true;
+                adjustments.postExposure.value = exposure;
+            }
+        }
     }
 }

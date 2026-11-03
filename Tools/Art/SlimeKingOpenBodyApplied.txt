@@ -1,0 +1,4 @@
+OpenBodyRaise: frames 0..11, length=1.083333, loop=False
+OpenBodyHold: frames 12..19, length=0.75, loop=True
+OpenBodyLower: frames 20..24, length=0.6, loop=False
+25 transparent frames; open/hold/close assigned to king minion-spawn pattern. Move and lethal Hit preserved.

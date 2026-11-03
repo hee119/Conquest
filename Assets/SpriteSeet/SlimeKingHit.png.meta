@@ -1,0 +1,1441 @@
+fileFormatVersion: 2
+guid: b441923bfe18f4304a085920d0fb571e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4396135811047342863
+    second: SlimeKingHit_0
+  - first:
+      213: -115356694611322811
+    second: SlimeKingHit_1
+  - first:
+      213: -1876033034850258099
+    second: SlimeKingHit_2
+  - first:
+      213: -1730826141287662
+    second: SlimeKingHit_3
+  - first:
+      213: 4746470342630737922
+    second: SlimeKingHit_4
+  - first:
+      213: 2145861914280868146
+    second: SlimeKingHit_5
+  - first:
+      213: 335517035507752129
+    second: SlimeKingHit_6
+  - first:
+      213: -959963480546346901
+    second: SlimeKingHit_7
+  - first:
+      213: 1683550736720152691
+    second: SlimeKingHit_8
+  - first:
+      213: 6794479192035334413
+    second: SlimeKingHit_9
+  - first:
+      213: 2644979981194872621
+    second: SlimeKingHit_10
+  - first:
+      213: -6584337897677078613
+    second: SlimeKingHit_11
+  - first:
+      213: 8006865235192394745
+    second: SlimeKingHit_12
+  - first:
+      213: -8767909198493703969
+    second: SlimeKingHit_13
+  - first:
+      213: 5094776274591506276
+    second: SlimeKingHit_14
+  - first:
+      213: -3192479642447155681
+    second: SlimeKingHit_15
+  - first:
+      213: 1713547344674180556
+    second: SlimeKingHit_16
+  - first:
+      213: 485849894919071320
+    second: SlimeKingHit_17
+  - first:
+      213: -1313174539149716090
+    second: SlimeKingHit_18
+  - first:
+      213: -944031689846324651
+    second: SlimeKingHit_19
+  - first:
+      213: -3745478461980395716
+    second: SlimeKingHit_20
+  - first:
+      213: -8368862423762773233
+    second: SlimeKingHit_21
+  - first:
+      213: -5224400742175667770
+    second: SlimeKingHit_22
+  - first:
+      213: -1707851675506389391
+    second: SlimeKingHit_23
+  - first:
+      213: -6637073902956310220
+    second: SlimeKingHit_24
+  - first:
+      213: -8090848131168405442
+    second: SlimeKingHit_25
+  - first:
+      213: -7911097328073859800
+    second: SlimeKingHit_26
+  - first:
+      213: 3577869978115549886
+    second: SlimeKingHit_27
+  - first:
+      213: -1139245326248186884
+    second: SlimeKingHit_28
+  - first:
+      213: 5163131121416096511
+    second: SlimeKingHit_29
+  - first:
+      213: -6180747953322265756
+    second: SlimeKingHit_30
+  - first:
+      213: 1938413635787319213
+    second: SlimeKingHit_31
+  - first:
+      213: 3296917762517423807
+    second: SlimeKingHit_32
+  - first:
+      213: 6906466076235955064
+    second: SlimeKingHit_33
+  - first:
+      213: -6344203584482732563
+    second: SlimeKingHit_34
+  - first:
+      213: -7329732686988591705
+    second: SlimeKingHit_35
+  - first:
+      213: 208560240138846247
+    second: SlimeKingHit_36
+  - first:
+      213: 6684987650161106609
+    second: SlimeKingHit_37
+  - first:
+      213: -7669245151203511326
+    second: SlimeKingHit_38
+  - first:
+      213: -7997530422804513012
+    second: SlimeKingHit_39
+  - first:
+      213: 4341592593950519430
+    second: SlimeKingHit_40
+  - first:
+      213: -5617909136237977359
+    second: SlimeKingHit_41
+  - first:
+      213: -7265954163488470970
+    second: SlimeKingHit_42
+  - first:
+      213: 7999295675166187362
+    second: SlimeKingHit_43
+  - first:
+      213: -3464750634317802455
+    second: SlimeKingHit_44
+  - first:
+      213: 2719246635606345300
+    second: SlimeKingHit_45
+  - first:
+      213: -7851099797621153724
+    second: SlimeKingHit_46
+  - first:
+      213: 8129723282209726598
+    second: SlimeKingHit_47
+  - first:
+      213: -6929563958836186187
+    second: SlimeKingHit_48
+  - first:
+      213: -1169263400911327257
+    second: SlimeKingHit_49
+  - first:
+      213: -2923726845157177449
+    second: SlimeKingHit_50
+  - first:
+      213: 8491927660553511261
+    second: SlimeKingHit_51
+  - first:
+      213: -3805486987779527824
+    second: SlimeKingHit_52
+  - first:
+      213: -4196765334945619499
+    second: SlimeKingHit_53
+  - first:
+      213: -3936593962733950854
+    second: SlimeKingHit_54
+  - first:
+      213: -4025714966397531312
+    second: SlimeKingHit_55
+  - first:
+      213: -288480981423953501
+    second: SlimeKingHit_56
+  - first:
+      213: -6656449290364397789
+    second: SlimeKingHit_57
+  - first:
+      213: 2718483318162813264
+    second: SlimeKingHit_58
+  - first:
+      213: -6191867218571680492
+    second: SlimeKingHit_59
+  - first:
+      213: 442386758177882287
+    second: SlimeKingHit_60
+  - first:
+      213: -1796964594691121938
+    second: SlimeKingHit_61
+  - first:
+      213: -5841662310589028673
+    second: SlimeKingHit_62
+  - first:
+      213: 687527411866005404
+    second: SlimeKingHit_63
+  - first:
+      213: -6613592676171736040
+    second: SlimeKingHit_64
+  - first:
+      213: -8173373083776235238
+    second: SlimeKingHit_65
+  - first:
+      213: 4768465002749972647
+    second: SlimeKingHit_66
+  - first:
+      213: 2302740259584345160
+    second: SlimeKingHit_67
+  - first:
+      213: 8495116673262917208
+    second: SlimeKingHit_68
+  - first:
+      213: 3806188621563412190
+    second: SlimeKingHit_69
+  - first:
+      213: 7622308277724047041
+    second: SlimeKingHit_70
+  - first:
+      213: -861157920923375844
+    second: SlimeKingHit_71
+  - first:
+      213: 5676763706120097510
+    second: SlimeKingHit_72
+  - first:
+      213: 1008513877775319217
+    second: SlimeKingHit_73
+  - first:
+      213: -1486557651062758394
+    second: SlimeKingHit_74
+  - first:
+      213: -8664739497828029990
+    second: SlimeKingHit_75
+  - first:
+      213: -7209900930260813577
+    second: SlimeKingHit_76
+  - first:
+      213: 3301453762934907806
+    second: SlimeKingHit_77
+  - first:
+      213: -8309270331425472014
+    second: SlimeKingHit_78
+  - first:
+      213: 8141956652329258608
+    second: SlimeKingHit_79
+  - first:
+      213: -6476644956651008072
+    second: SlimeKingHit_80
+  - first:
+      213: -8394782536736358051
+    second: SlimeKingHit_81
+  - first:
+      213: -7110043027233791684
+    second: SlimeKingHit_82
+  - first:
+      213: -4239586926226703478
+    second: SlimeKingHit_83
+  - first:
+      213: 1383012707971489931
+    second: SlimeKingHit_84
+  - first:
+      213: 8722545531763977871
+    second: SlimeKingHit_85
+  - first:
+      213: 7304895645089122972
+    second: SlimeKingHit_86
+  - first:
+      213: 6422754606637713675
+    second: SlimeKingHit_87
+  - first:
+      213: 1276556285044785757
+    second: SlimeKingHit_88
+  - first:
+      213: 8620230206595687928
+    second: SlimeKingHit_89
+  - first:
+      213: -3779327243983717629
+    second: SlimeKingHit_90
+  - first:
+      213: -320808758763009085
+    second: SlimeKingHit_91
+  - first:
+      213: 6302248807833314452
+    second: SlimeKingHit_92
+  - first:
+      213: 2355611209587693636
+    second: SlimeKingHit_93
+  - first:
+      213: -4572405569372601469
+    second: SlimeKingHit_94
+  - first:
+      213: -473161534182768438
+    second: SlimeKingHit_95
+  - first:
+      213: 3368057672633088490
+    second: SlimeKingHit_96
+  - first:
+      213: -6260039373613196400
+    second: SlimeKingHit_97
+  - first:
+      213: -5212570918434206237
+    second: SlimeKingHit_98
+  - first:
+      213: -7188485324744535440
+    second: SlimeKingHit_99
+  - first:
+      213: -6238932922689338459
+    second: SlimeKingHit_100
+  - first:
+      213: 5002280698622444563
+    second: SlimeKingHit_101
+  - first:
+      213: -8108572643101460191
+    second: SlimeKingHit_102
+  - first:
+      213: 7984594735126147011
+    second: SlimeKingHit_103
+  - first:
+      213: 8072747065113884287
+    second: SlimeKingHit_104
+  - first:
+      213: -3191308808712566026
+    second: SlimeKingHit_105
+  - first:
+      213: 7039863725244028352
+    second: SlimeKingHit_106
+  - first:
+      213: 9176568995110816154
+    second: SlimeKingHit_107
+  - first:
+      213: 5364776851795541813
+    second: SlimeKingHit_108
+  - first:
+      213: 9095527520369673253
+    second: SlimeKingHit_109
+  - first:
+      213: 729949593260389234
+    second: SlimeKingHit_110
+  - first:
+      213: -3118685371520136104
+    second: SlimeKingHit_111
+  - first:
+      213: 484767259015908696
+    second: SlimeKingHit_112
+  - first:
+      213: -9041998725548807277
+    second: SlimeKingHit_113
+  - first:
+      213: 5936213701998466224
+    second: SlimeKingHit_114
+  - first:
+      213: 6585797605994607441
+    second: SlimeKingHit_115
+  - first:
+      213: -7092631648622251087
+    second: SlimeKingHit_116
+  - first:
+      213: 9189052468499635655
+    second: SlimeKingHit_117
+  - first:
+      213: 7994287695623675715
+    second: SlimeKingHit_118
+  - first:
+      213: 808945430785943665
+    second: SlimeKingHit_119
+  - first:
+      213: -3745891345092341211
+    second: SlimeKingHit_120
+  - first:
+      213: -4660420801542872264
+    second: SlimeKingHit_121
+  - first:
+      213: 3089594241315288370
+    second: SlimeKingHit_122
+  - first:
+      213: -7491605862817234535
+    second: SlimeKingHit_123
+  - first:
+      213: 7311678763754068042
+    second: SlimeKingHit_124
+  - first:
+      213: -1259101649899176136
+    second: SlimeKingHit_125
+  - first:
+      213: -1938717588935142052
+    second: SlimeKingHit_126
+  - first:
+      213: -8243398353198601598
+    second: SlimeKingHit_127
+  - first:
+      213: 5162850166696772456
+    second: SlimeKingHit_128
+  - first:
+      213: -6603732418783013655
+    second: SlimeKingHit_129
+  - first:
+      213: -1043884477531896770
+    second: SlimeKingHit_130
+  - first:
+      213: -920115237415894187
+    second: SlimeKingHit_131
+  - first:
+      213: -6961876866974113197
+    second: SlimeKingHit_132
+  - first:
+      213: -7542137872528675208
+    second: SlimeKingHit_133
+  - first:
+      213: 7815107650345037974
+    second: SlimeKingHit_134
+  - first:
+      213: 4813242532919824507
+    second: SlimeKingHit_135
+  - first:
+      213: 2782085485152355256
+    second: SlimeKingHit_136
+  - first:
+      213: 6638880540575512680
+    second: SlimeKingHit_137
+  - first:
+      213: 4847131601522251184
+    second: SlimeKingHit_138
+  - first:
+      213: 4551883369503867679
+    second: SlimeKingHit_139
+  - first:
+      213: 2604734118275777507
+    second: SlimeKingHit_140
+  - first:
+      213: -4071333969593394229
+    second: SlimeKingHit_141
+  - first:
+      213: -9189382436086962803
+    second: SlimeKingHit_142
+  - first:
+      213: -4571514829990493566
+    second: SlimeKingHit_143
+  - first:
+      213: -471544471234702110
+    second: SlimeKingHit_144
+  - first:
+      213: 2709840819598536842
+    second: SlimeKingHit_145
+  - first:
+      213: 1248790756852076938
+    second: SlimeKingHit_146
+  - first:
+      213: -8316478397888942886
+    second: SlimeKingHit_147
+  - first:
+      213: 5637287403346256500
+    second: SlimeKingHit_148
+  - first:
+      213: 2142819707812479744
+    second: SlimeKingHit_149
+  - first:
+      213: 9112930521288745799
+    second: SlimeKingHit_150
+  - first:
+      213: 644826459272171707
+    second: SlimeKingHit_151
+  - first:
+      213: -2164179373188980915
+    second: SlimeKingHit_152
+  - first:
+      213: 2834745531894695905
+    second: SlimeKingHit_153
+  - first:
+      213: -3438845238382309996
+    second: SlimeKingHit_154
+  - first:
+      213: -7696086439330601498
+    second: SlimeKingHit_155
+  - first:
+      213: 8881561322413809206
+    second: SlimeKingHit_156
+  - first:
+      213: 5831697398651677050
+    second: SlimeKingHit_157
+  - first:
+      213: -881309146981933391
+    second: SlimeKingHit_158
+  - first:
+      213: 6976847429657157761
+    second: SlimeKingHit_159
+  - first:
+      213: -6397665956291666338
+    second: SlimeKingHit_160
+  - first:
+      213: 6546308242603662334
+    second: SlimeKingHit_161
+  - first:
+      213: -3881149180977612710
+    second: SlimeKingHit_162
+  - first:
+      213: 616380524212024843
+    second: SlimeKingHit_163
+  - first:
+      213: 6498560867940007922
+    second: SlimeKingHit_164
+  - first:
+      213: -1603998790535192815
+    second: SlimeKingHit_165
+  - first:
+      213: 5885998462420119082
+    second: SlimeKingHit_166
+  - first:
+      213: 7832655536648701916
+    second: SlimeKingHit_167
+  - first:
+      213: -5899888988236445769
+    second: SlimeKingHit_168
+  - first:
+      213: 5596257753672391615
+    second: SlimeKingHit_169
+  - first:
+      213: -3672367655885412682
+    second: SlimeKingHit_170
+  - first:
+      213: -2250744030974378712
+    second: SlimeKingHit_171
+  - first:
+      213: 1113210437574178064
+    second: SlimeKingHit_172
+  - first:
+      213: 3018596771791296227
+    second: SlimeKingHit_173
+  - first:
+      213: -1704907070383885582
+    second: SlimeKingHit_174
+  - first:
+      213: 2705042303330908164
+    second: SlimeKingHit_175
+  - first:
+      213: 6248103984693978921
+    second: SlimeKingHit_176
+  - first:
+      213: -6181473242237458973
+    second: SlimeKingHit_177
+  - first:
+      213: 7994226493253768809
+    second: SlimeKingHit_178
+  - first:
+      213: 163158724855339234
+    second: SlimeKingHit_179
+  - first:
+      213: -6996706638729285459
+    second: SlimeKingHit_180
+  - first:
+      213: 6688045318043556413
+    second: SlimeKingHit_181
+  - first:
+      213: -8659937123486632552
+    second: SlimeKingHit_182
+  - first:
+      213: -4413645815979051676
+    second: SlimeKingHit_183
+  - first:
+      213: -2631160920390875656
+    second: SlimeKingHit_184
+  - first:
+      213: -3397023864783524527
+    second: SlimeKingHit_185
+  - first:
+      213: 3174320886081974818
+    second: SlimeKingHit_186
+  - first:
+      213: 3834735854163626185
+    second: SlimeKingHit_187
+  - first:
+      213: -1050765881338858366
+    second: SlimeKingHit_188
+  - first:
+      213: -6240369063634464184
+    second: SlimeKingHit_189
+  - first:
+      213: -3837146725720442077
+    second: SlimeKingHit_190
+  - first:
+      213: -5195860979522759559
+    second: SlimeKingHit_191
+  - first:
+      213: -7364676856714408697
+    second: SlimeKingHit_192
+  - first:
+      213: -1014028518655331295
+    second: SlimeKingHit_193
+  - first:
+      213: 384058010002689754
+    second: SlimeKingHit_194
+  - first:
+      213: 3895096172977524376
+    second: SlimeKingHit_195
+  - first:
+      213: 7419352849186542210
+    second: SlimeKingHit_196
+  - first:
+      213: -2287961433507123435
+    second: SlimeKingHit_197
+  - first:
+      213: -814784535003987895
+    second: SlimeKingHit_198
+  - first:
+      213: -5765034020581080129
+    second: SlimeKingHit_199
+  - first:
+      213: 5851789151866743628
+    second: SlimeKingHit_200
+  - first:
+      213: -2783597133787424413
+    second: SlimeKingHit_201
+  - first:
+      213: -7369523648536331755
+    second: SlimeKingHit_202
+  - first:
+      213: -2464923034988323623
+    second: SlimeKingHit_203
+  - first:
+      213: -3101394505391637465
+    second: SlimeKingHit_204
+  - first:
+      213: 6403110374846013818
+    second: SlimeKingHit_205
+  - first:
+      213: 7697634017745657546
+    second: SlimeKingHit_206
+  - first:
+      213: -2123311140723312882
+    second: SlimeKingHit_207
+  - first:
+      213: -8931942740418911259
+    second: SlimeKingHit_208
+  - first:
+      213: 2130128762381175664
+    second: SlimeKingHit_209
+  - first:
+      213: 3607065821068684716
+    second: SlimeKingHit_210
+  - first:
+      213: -8427451084091470353
+    second: SlimeKingHit_211
+  - first:
+      213: -2298014147078120548
+    second: SlimeKingHit_212
+  - first:
+      213: -5672695432290022947
+    second: SlimeKingHit_213
+  - first:
+      213: -2635979259510120356
+    second: SlimeKingHit_214
+  - first:
+      213: -790679979043364534
+    second: SlimeKingHit_215
+  - first:
+      213: 1039880772066487577
+    second: SlimeKingHit_216
+  - first:
+      213: -5693750153610842239
+    second: SlimeKingHit_217
+  - first:
+      213: 8503454198512077348
+    second: SlimeKingHit_218
+  - first:
+      213: -5990264318869501714
+    second: SlimeKingHit_219
+  - first:
+      213: -3799126789024314838
+    second: SlimeKingHit_220
+  - first:
+      213: -2729100276005357880
+    second: SlimeKingHit_221
+  - first:
+      213: -167392546759074096
+    second: SlimeKingHit_222
+  - first:
+      213: -2919496459102198374
+    second: SlimeKingHit_223
+  - first:
+      213: -2296224516518244848
+    second: SlimeKingHit_224
+  - first:
+      213: -7578384608489414006
+    second: SlimeKingHit_225
+  - first:
+      213: 5830665700693490697
+    second: SlimeKingHit_226
+  - first:
+      213: -7802540875741542842
+    second: SlimeKingHit_227
+  - first:
+      213: 4863510129895146208
+    second: SlimeKingHit_228
+  - first:
+      213: 3147034334448107965
+    second: SlimeKingHit_229
+  - first:
+      213: 5618657963460701379
+    second: SlimeKingHit_230
+  - first:
+      213: 1079919001853359276
+    second: SlimeKingHit_231
+  - first:
+      213: 928915626314645635
+    second: SlimeKingHit_232
+  - first:
+      213: 352036634539918645
+    second: SlimeKingHit_233
+  - first:
+      213: -994316443935586026
+    second: SlimeKingHit_234
+  - first:
+      213: -4286583810955695816
+    second: SlimeKingHit_235
+  - first:
+      213: -7160854209452475932
+    second: SlimeKingHit_236
+  - first:
+      213: -2357359554087218957
+    second: SlimeKingHit_237
+  - first:
+      213: 7584676897155904514
+    second: SlimeKingHit_238
+  - first:
+      213: -3517756364306292192
+    second: SlimeKingHit_239
+  - first:
+      213: 6291172429144791586
+    second: SlimeKingHit_240
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 75
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SlimeKingHit_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 502
+        width: 251
+        height: 250
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d27c329774bd4b420800000000000000
+      internalID: 2644979981194872621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_11
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 502
+        width: 251
+        height: 250
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bafb0df319bbf94a0800000000000000
+      internalID: -6584337897677078613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_12
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 502
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f3311c52891e1f60800000000000000
+      internalID: 8006865235192394745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_13
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 502
+        width: 251
+        height: 250
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd027e0d901225680800000000000000
+      internalID: -8767909198493703969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_14
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 502
+        width: 251
+        height: 250
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46f5d19470844b640800000000000000
+      internalID: 5094776274591506276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 251
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1e654ffda802b3d0800000000000000
+      internalID: -3192479642447155681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_16
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 251
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccd4e113b3eb7c710800000000000000
+      internalID: 1713547344674180556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_17
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 251
+        width: 250
+        height: 251
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 856efc0c7e51eb600800000000000000
+      internalID: 485849894919071320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_18
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 251
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 685d4e1d6baa6cde0800000000000000
+      internalID: -1313174539149716090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_19
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 251
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5528ff50e2026e2f0800000000000000
+      internalID: -944031689846324651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3738c7ee23650cc0800000000000000
+      internalID: -3745478461980395716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_21
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 0
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0b518937f3dbdb80800000000000000
+      internalID: -8368862423762773233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_22
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 0
+        width: 250
+        height: 251
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c9055e74333f77b0800000000000000
+      internalID: -5224400742175667770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_23
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 0
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17ec26023fd7c48e0800000000000000
+      internalID: -1707851675506389391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_24
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 0
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4311642337064e3a0800000000000000
+      internalID: -6637073902956310220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1003
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b467704be67ce42d3b5f95a6a1bd90e1
+      internalID: -1340241636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_01
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 1003
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce0a90e52f40412dbdf4cc19878eb5b
+      internalID: -1369570461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_02
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 1003
+        width: 250
+        height: 251
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ce4a520b22d4f1eb8eaa6ce97e0a62
+      internalID: -18722543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_03
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 1003
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 505792f842b444c77b9b239fa2600b2b
+      internalID: 862144948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_04
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 1003
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c2ce9e2f22234f77a15632cef8fced7
+      internalID: -2091350838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_05
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 752
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 427fb125fc6c54ea38217c883303fbdf
+      internalID: 1745002911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_06
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 752
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31bec582221754511a55df52b61bc60c
+      internalID: -1332898853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_07
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 752
+        width: 250
+        height: 251
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa4ffac04a7d47019dd7d323ecfaaf3
+      internalID: 304230548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_08
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 752
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a15f58897174f20885d80c26be9629
+      internalID: 1356960988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingHit_09
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 752
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5976096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8389fac77090447d9600f6f4f18cd12
+      internalID: -588708290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c498240df83664930b9514bbe5cda11d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SlimeKingHit_00: -1340241636
+      SlimeKingHit_01: -1369570461
+      SlimeKingHit_02: -18722543
+      SlimeKingHit_03: 862144948
+      SlimeKingHit_04: -2091350838
+      SlimeKingHit_05: 1745002911
+      SlimeKingHit_06: -1332898853
+      SlimeKingHit_07: 304230548
+      SlimeKingHit_08: 1356960988
+      SlimeKingHit_09: -588708290
+      SlimeKingHit_10: 2644979981194872621
+      SlimeKingHit_11: -6584337897677078613
+      SlimeKingHit_12: 8006865235192394745
+      SlimeKingHit_13: -8767909198493703969
+      SlimeKingHit_14: 5094776274591506276
+      SlimeKingHit_15: -3192479642447155681
+      SlimeKingHit_16: 1713547344674180556
+      SlimeKingHit_17: 485849894919071320
+      SlimeKingHit_18: -1313174539149716090
+      SlimeKingHit_19: -944031689846324651
+      SlimeKingHit_20: -3745478461980395716
+      SlimeKingHit_21: -8368862423762773233
+      SlimeKingHit_22: -5224400742175667770
+      SlimeKingHit_23: -1707851675506389391
+      SlimeKingHit_24: -6637073902956310220
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

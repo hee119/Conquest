@@ -1,0 +1,2 @@
+EndOverlay: 180x180 gold/shard cards; lower-right white quantities; references wired.
+DemoClearOverlay: 180x180 gold/shard cards; lower-right white quantities; references wired.

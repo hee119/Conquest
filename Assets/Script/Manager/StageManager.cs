@@ -24,6 +24,32 @@ public class StageManager : MonoBehaviour
     private Tilemap generatedDecorationTilemap;
     private readonly Dictionary<Vector3Int, TileBase> generatedDecorations = new();
     private string decorationTilemapPath;
+    private Tilemap preparedTerrain;
+    private Vector3Int preparedMinCell, preparedMaxCell;
+
+    // Called on the inactive scene component: generate scenery without Awake,
+    // spawning enemies, starting a run, or activating scene roots.
+    public void PrepareTilesForLoading()
+    {
+        var scene = gameObject.scene;
+        foreach (var root in scene.GetRootGameObjects())
+        {
+            foreach (var map in root.GetComponentsInChildren<Tilemap>(true))
+                if (map.CompareTag("BackGround")) backgroundTilemap = map;
+            foreach (var candidate in root.GetComponentsInChildren<Camera>(true))
+                if (candidate.CompareTag("MainCamera")) camera = candidate;
+        }
+        if (tiles == null || tiles.Length == 0)
+        {
+            int stage = GameManager.Instance != null ? GameManager.Instance.currentStage : Mathf.Max(1, currentStage);
+            var allTiles = Resources.LoadAll<TileBase>("Tiles");
+            var choices = new List<TileBase>();
+            for (int i = (stage - 1) * 5; i < Mathf.Min(stage * 5, allTiles.Length); i++)
+                choices.Add(allTiles[i]);
+            tiles = choices.ToArray();
+        }
+        FillCameraArea(true);
+    }
 
     public GameObject monsterSpawnPointPrefab;
 
@@ -126,9 +152,12 @@ public class StageManager : MonoBehaviour
         if (DataManager.Instance != null && DataManager.Instance.TryGetWaveGold(currentStage, 0, out int initialGold))
             CharacterProgression.RecordWaveGold(initialGold);
 
-        tiles =
-            GameManager.Instance.tiles[currentStage].tiles;
-
+        if (tiles == null || tiles.Length == 0)
+        {
+            tiles =
+                GameManager.Instance.tiles[currentStage].tiles;
+        }
+        
         if (backgroundTilemap == null)
         {
             GameObject background =
@@ -392,12 +421,12 @@ public class StageManager : MonoBehaviour
     }
 
 
-    private void FillCameraArea()
+    private void FillCameraArea(bool terrainOnly = false)
     {
         Camera cam = camera != null ? camera : Camera.main;
 
         if (cam == null ||
-            backgroundTilemap == null)
+            backgroundTilemap == null || tiles == null || tiles.Length == 0)
         {
             return;
         }
@@ -450,6 +479,13 @@ public class StageManager : MonoBehaviour
         }
 
 
+        if (preparedTerrain == backgroundTilemap)
+        {
+            minCell = preparedMinCell;
+            maxCell = preparedMaxCell;
+        }
+        else
+        {
         for (int x = minCell.x;
              x <= maxCell.x;
              x++)
@@ -479,6 +515,12 @@ public class StageManager : MonoBehaviour
 
 
         PlaceDecorationTiles(minCell, maxCell);
+        preparedTerrain = backgroundTilemap;
+        preparedMinCell = minCell;
+        preparedMaxCell = maxCell;
+        }
+
+        if (terrainOnly) return;
 
         if (navMeshSurface != null)
         {
@@ -523,18 +565,29 @@ public class StageManager : MonoBehaviour
             return;
 
         // The manager survives retries, so scene-owned references must be rebound.
-        if (decorationTilemap == null || decorationTilemap.gameObject.scene != backgroundTilemap.gameObject.scene)
+        
+        if (decorationTilemap == null ||
+            decorationTilemap.gameObject.scene != backgroundTilemap.gameObject.scene ||
+            !decorationTilemap.CompareTag("Decoration"))
         {
             decorationTilemap = null;
+
             foreach (var root in backgroundTilemap.gameObject.scene.GetRootGameObjects())
+            {
                 foreach (var map in root.GetComponentsInChildren<Tilemap>(true))
-                    if ((!string.IsNullOrEmpty(decorationTilemapPath) && GetTilemapPath(map) == decorationTilemapPath) ||
-                        (string.IsNullOrEmpty(decorationTilemapPath) && map.transform.parent != null && map.transform.parent.name == "DecorationGrid"))
-                    {
-                        decorationTilemap = map;
-                        break;
-                    }
+                {
+                    if (!map.CompareTag("Decoration"))
+                        continue;
+
+                    decorationTilemap = map;
+                    break;
+                }
+
+                if (decorationTilemap != null)
+                    break;
+            }
         }
+
 
         if (decorationTilemap == null || decorationTilemap == backgroundTilemap)
         {
@@ -588,23 +641,62 @@ public class StageManager : MonoBehaviour
                     candidates.Add(cell);
             }
 
-        // Shuffle without retries: impossible density settings always terminate.
-        for (int i = 0; i < candidates.Count && generatedDecorations.Count < decorationCount; i++)
+        // Stratify the map, then give every region a turn before placing more
+        // in the same region. Randomize within regions so it does not look tiled.
+        float width = Mathf.Max(1, maxCell.x - minCell.x + 1);
+        float height = Mathf.Max(1, maxCell.y - minCell.y + 1);
+        float worldWidth = Vector3.Distance(backgroundTilemap.GetCellCenterWorld(minCell),
+            backgroundTilemap.GetCellCenterWorld(minCell + new Vector3Int((int)width, 0, 0)));
+        float worldHeight = Vector3.Distance(backgroundTilemap.GetCellCenterWorld(minCell),
+            backgroundTilemap.GetCellCenterWorld(minCell + new Vector3Int(0, (int)height, 0)));
+        // An impossible requested density must not produce hundreds of tiny regions.
+        int regionCount = spacing > 0f
+            ? Mathf.Min(decorationCount, Mathf.Max(1, Mathf.FloorToInt(worldWidth * worldHeight / (spacing * spacing * 1.5f))))
+            : decorationCount;
+        int columns = Mathf.Clamp(Mathf.RoundToInt(Mathf.Sqrt(regionCount * width / height)), 1, (int)width);
+        int rows = Mathf.Clamp(Mathf.CeilToInt((float)regionCount / columns), 1, (int)height);
+        var regions = new List<Vector3Int>[columns * rows];
+        for (int i = 0; i < regions.Length; i++) regions[i] = new List<Vector3Int>();
+        // Shuffle all candidates once; each region inherits a random order.
+        for (int i = 0; i < candidates.Count; i++)
         {
-            int randomIndex = Random.Range(i, candidates.Count);
-            var cell = candidates[randomIndex];
-            candidates[randomIndex] = candidates[i];
-            candidates[i] = cell;
-            Vector2 position = decorationTilemap.GetCellCenterWorld(cell);
-            if (!HasSpace(position))
-                continue;
-            var tile = choices[Random.Range(0, choices.Count)];
-            decorationTilemap.SetTile(cell, tile);
-            decorationTilemap.SetColliderType(cell, Tile.ColliderType.None);
-            generatedDecorations.Add(cell, tile);
-            if (spacing > 0f)
-                Remember(position);
+            int swap = Random.Range(i, candidates.Count);
+            (candidates[i], candidates[swap]) = (candidates[swap], candidates[i]);
+            Vector3Int ground = backgroundTilemap.WorldToCell(decorationTilemap.GetCellCenterWorld(candidates[i]));
+            int x = Mathf.Clamp((int)((ground.x - minCell.x) / width * columns), 0, columns - 1);
+            int y = Mathf.Clamp((int)((ground.y - minCell.y) / height * rows), 0, rows - 1);
+            regions[y * columns + x].Add(candidates[i]);
         }
+        var order = new List<int>();
+        for (int i = 0; i < regions.Length; i++) if (regions[i].Count > 0) order.Add(i);
+        for (int i = 0; i < order.Count; i++)
+        {
+            int swap = Random.Range(i, order.Count);
+            (order[i], order[swap]) = (order[swap], order[i]);
+        }
+        bool placed;
+        do
+        {
+            placed = false;
+            foreach (int region in order)
+            {
+                var cells = regions[region];
+                while (cells.Count > 0 && generatedDecorations.Count < decorationCount)
+                {
+                    var cell = cells[cells.Count - 1];
+                    cells.RemoveAt(cells.Count - 1);
+                    Vector2 position = decorationTilemap.GetCellCenterWorld(cell);
+                    if (!HasSpace(position)) continue;
+                    var tile = choices[Random.Range(0, choices.Count)];
+                    decorationTilemap.SetTile(cell, tile);
+                    decorationTilemap.SetColliderType(cell, Tile.ColliderType.None);
+                    generatedDecorations.Add(cell, tile);
+                    if (spacing > 0f) Remember(position);
+                    placed = true;
+                    break;
+                }
+            }
+        } while (placed && generatedDecorations.Count < decorationCount);
 
         if (generatedDecorations.Count < decorationCount)
             Debug.LogWarning($"[StageManager] 장식 타일 {generatedDecorations.Count}/{decorationCount}개 배치: 빈 공간이나 최소 간격 조건을 확인하세요.");
@@ -771,95 +863,59 @@ public class StageManager : MonoBehaviour
     }
 
 
+    
     private Transform GetSafeSpawnPoint()
     {
-        List<Transform> safeSpawnPoints =
-            new List<Transform>();
-
         if (player == null)
         {
             GameObject playerObject =
                 GameObject.FindGameObjectWithTag("Player");
 
             if (playerObject != null)
-            {
-                player =
-                    playerObject.transform;
-            }
+                player = playerObject.transform;
         }
 
-        foreach (Transform spawnPoint in monsterSpawnPoints)
-        {
-            if (spawnPoint == null)
-            {
-                continue;
-            }
-
-            if (player == null)
-            {
-                return spawnPoint;
-            }
-
-            float distance =
-                Vector3.Distance(
-                    player.position,
-                    spawnPoint.position
-                );
-
-            if (distance >= minSpawnDistance)
-            {
-                safeSpawnPoints.Add(
-                    spawnPoint
-                );
-            }
-        }
-
-
-        if (safeSpawnPoints.Count > 0)
-        {
-            return safeSpawnPoints[
-                Random.Range(
-                    0,
-                    safeSpawnPoints.Count
-                )
-            ];
-        }
-
-
-        Transform farthestSpawnPoint = null;
+        Transform randomSafePoint = null;
+        Transform farthestPoint = null;
 
         float farthestDistance = -1f;
+        int safeCount = 0;
 
         foreach (Transform spawnPoint in monsterSpawnPoints)
         {
             if (spawnPoint == null)
-            {
                 continue;
-            }
 
             if (player == null)
-            {
                 return spawnPoint;
+
+            float sqrDistance =
+                (player.position - spawnPoint.position).sqrMagnitude;
+
+            if (sqrDistance > farthestDistance)
+            {
+                farthestDistance = sqrDistance;
+                farthestPoint = spawnPoint;
             }
 
-            float distance =
-                Vector3.Distance(
-                    player.position,
-                    spawnPoint.position
-                );
+            float minDistanceSqr =
+                minSpawnDistance * minSpawnDistance;
 
-            if (distance > farthestDistance)
+            if (sqrDistance >= minDistanceSqr)
             {
-                farthestDistance =
-                    distance;
+                safeCount++;
 
-                farthestSpawnPoint =
-                    spawnPoint;
+                // Reservoir sampling: 추가 리스트 없이 무작위 선택
+                if (Random.Range(0, safeCount) == 0)
+                    randomSafePoint = spawnPoint;
             }
         }
 
-        return farthestSpawnPoint;
+        return randomSafePoint != null
+            ? randomSafePoint
+            : farthestPoint;
     }
+
 
 
     public IEnumerator StageStartCol()

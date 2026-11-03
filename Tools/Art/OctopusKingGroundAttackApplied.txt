@@ -1,0 +1,1 @@
+Applied crack-free crowned ground attack: 23 occupied frames, 12fps, 1.916667s; empty cells omitted; GroundCrack trigger connected; first impact delayed 0.333s; returns to Move or ongoing SpinWater.

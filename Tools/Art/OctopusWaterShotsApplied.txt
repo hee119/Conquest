@@ -1,0 +1,3 @@
+Attack: Assets/SpriteSeet/OctopusWaterShotAligned.png; frames=25
+WaterShot: Assets/SpriteSeet/OctopusKingWaterShot.png; frames=25
+Boss release0.225s; normal release0.375s. Saved prefab/controller/clip references verified.

@@ -1,0 +1,1 @@
+PASS: left/right, vertical dead zone, disabled movement during boss patterns, preserved squash/split scale, inactive targets. Mouth anchor executes after facing and already honors SpriteRenderer.flipX.

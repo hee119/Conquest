@@ -15,11 +15,11 @@ GameObject:
   - component: {fileID: -7031049320459269606}
   - component: {fileID: 7115658254923622402}
   - component: {fileID: 79239086328230691}
-  - component: {fileID: 5149760970550755715}
   - component: {fileID: 2996686744030071390}
   - component: {fileID: 3186647244219781705}
   - component: {fileID: -5204337359457001001}
   - component: {fileID: 1473741278265170918}
+  - component: {fileID: 5092722824820702611}
   m_Layer: 8
   m_Name: Slime
   m_TagString: Enemy
@@ -233,28 +233,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!95 &5149760970550755715
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4125709159630829647}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 288c02ddcd46145d49b364133ff2ac2c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2996686744030071390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,8 +258,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4fa1f76ed2224ee5a78c80adfecec94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SplitEnemy
-  maxHp: 20
-  hp: 0
   isDead: 0
   isBurn: 0
   hitParticle: {fileID: 3472009176395495757}
@@ -326,6 +302,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8714564344375458d8bf4697a0a91fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlimeJumpSound
+--- !u!114 &5092722824820702611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4125709159630829647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73253334c72d4415ea3a17c1fbbe1246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlimeSpriteAnimation
+  animationData: {fileID: 11400000, guid: 55b22c5a6c1ea4602bbfaac32cb4ae2a, type: 2}
+  attackFrames: []
+  moveFrames: []
+  hitFrames: []
+  sequences: []
+  defaultState: 
 --- !u!1001 &1596700093920007851
 PrefabInstance:
   m_ObjectHideFlags: 0

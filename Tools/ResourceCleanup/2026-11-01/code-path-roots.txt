@@ -1,0 +1,19 @@
+Assets/Atlases/PixelEnemies.spriteatlasv2
+Assets/Cutscene/
+Assets/Cutscene/01_Earth_Departure.png
+Assets/Cutscene/02_Space_Travel.png
+Assets/Cutscene/03_Crab_Attack.png
+Assets/Cutscene/04_Crab_Defeated.png
+Assets/Editor
+Assets/Editor/TextureImportPresets
+Assets/Pont/GowunBatang-Regular SDF.asset
+Assets/Pont/GowunBatang-Regular.ttf
+Assets/Pont/NewClear-mincho SDF.asset
+Assets/Pont/NewClear-mincho.ttf
+Assets/Resources/Prefabs/Boss
+Assets/Resources/Prefabs/Enemy
+Assets/Resources/SoundManager.prefab
+Assets/Resources/TextData/Localization.csv
+Assets/Scenes/CutSceen.unity
+Assets/Scenes/Stage1.unity
+Assets/TextMesh Pro/Resources/TMP Settings.asset

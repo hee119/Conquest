@@ -1,0 +1,4 @@
+PASS PowerBoost first level: attack 5 -> 6.5 (30 percent)
+PASS actual slash damage 6.5; enemy HP 100 -> 93.5
+Shuriken expected=7.8 actual=7.799988
+Mage projectile actual=6.5 expected=6.5

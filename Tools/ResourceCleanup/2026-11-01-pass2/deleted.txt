@@ -1,0 +1,378 @@
+Assets/Materials/Beam.mat
+Assets/Pont/Fallback/ヒラギノ角ゴシック W3 Japanese SDF.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/00 - Welcome.unity
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Fonts/Lato-Regular.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Fonts/Lato-Regular.ttf
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CurvesEffects/BounceCurve.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CurvesEffects/HoldCurve.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CurvesEffects/LinearCurve.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CurvesEffects/SineCurve.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CurvesEffects/SquareCurve.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CurvesEffects/StepCurve.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CustomPlaybacks/NoEasingPlayback.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CustomPlaybacks/RepeatNTimesPlayback.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/CustomPlaybacks/WaitBetweenCyclesPlayback.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/ExampleEffectsDatabse.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/PlaybacksEffects/NoEasing.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/PlaybacksEffects/RepeatNTimes.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/PlaybacksEffects/RepeatOnce.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Tanim/PlaybacksEffects/RepeatWithPause.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Assets/Textures/textanimator-sfondo-unity.png
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/CurvesAndPlaybacks.unity
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Curves and Playbacks/Prefabs/Canvas Examples TMPro.prefab
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Example 1A - Effects.unity
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Example 1B - Stacks.unity
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Example 1C - Attributes.unity
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Example 2 - Events.unity
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Example 3 - Actions.unity
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Example 4 - UI Toolkit.unity
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Font/Lato-Regular.asset
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Font/Lato-Regular.ttf
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Prefabs/Canvas Examples TMPro.prefab
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Sprites/Circle.png
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Sprites/example_dialoguebox_body.png
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Sprites/Example_sprites.png
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/Sprites/textanimator-sfondo-unity.png
+Assets/Samples/Text Animator for Unity by Febucci/3.20.1/Quick Start/UIToolkit/TAnim UITK Example Settings.asset
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_03.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_03.png
+Assets/GameAssets/SPUM/Core/Script/Data/SPUM_CustomStyleData.cs
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_5.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_05.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/0_Sword/Sword_6.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/0_Sprite/0_Body/Horse2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/05_Debuff/0_Debuff_Stun.anim
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911222823174.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/0_Sword/Sword_2.png
+Assets/GameAssets/SPUM/Core/Script/Data/SPUM_MatchingList.cs
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215641087.prefab
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/OTHER.anim
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/7_Shield/New_Shield_03.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_10.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_16.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_04.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_3.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_01.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/0_Sprite/0_Body/RedHorse.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye4.png
+Assets/GameAssets/SPUM/ReadMe - 3.1.1.txt
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/2_Cloth/Normal_Cloth1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye16.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_09.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911222346858.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/7_Shield/New_Shield_02.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair3.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/0_Sword/New_Weapon_19.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye10.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215640602.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair11.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_06.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/7_Shield/WoodShield4.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_05.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/1_Animation/02_Attack/00_MeleeAttack/AxeAttack_1.anim
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_12.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_15.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/01_Move/0_move.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_8.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/4_Helmet/Normal_Helmet1.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639662.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/7_Back/BowBack_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_09.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/05_Debuff/5_debuff.anim
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911222451694.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/5_Wand/Ward_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_03.png
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/MOVE.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_7.png
+Assets/GameAssets/SPUM/Sample/Script/PlayerManager.cs
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_02.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/Index.json
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_09.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_3.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/3_Pant/Foot_4.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/1_Axe/Axe_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_9.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/3_Bow/New_Weapon_12.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair9.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911215638140.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_12.png
+Assets/GameAssets/SPUM/Sample/Scene/Sample.unity
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/02_Attack/02_MagicAttack/2_Attack_Magic.anim
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_12.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639405.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair10.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/8_Mace/New_Weapon_07.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Human_3.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/0_Sword/New_Weapon_01.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_02.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/4_Helmet/Normal_Helmet2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/02_Attack/00_MeleeAttack/1_Skill_Normal.anim
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911222954869.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Human_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye0.png
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/DEATH.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/00_Idle/0_idle.anim
+Assets/GameAssets/SPUM/Sample/Script/Editor/PlayerManagerEditor.cs
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/7_Back/Back_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_08.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_17.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/3_Shield/Shield_1.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911222150076.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_07.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/6_Dagger/New_Weapon_11.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/7_Shield/New_Shield_04.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Elf_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair8.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_FaceHair/FaceHair_5.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_07.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_4.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911222646591.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/F_SR_Cloth.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911215639833.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638897.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_09.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/2_Prefab/SPUM_20250915184739548.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/0_Sprite/0_Body/BlackHorse.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_01.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215637878.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_10.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_13.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638981.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/4_Spear/Spear_1.png
+Assets/GameAssets/SPUM/Core/Script/Data/SPUM_ImprovedStyleData.cs
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair13.png
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/DAMAGED.anim
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_14.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/01_Move/1_run.anim
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/Index.json
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911222235923.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639152.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye.png
+Assets/GameAssets/SPUM/Core/Script/Data/PreviewMatchingElement.cs
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/7_Back/Back_3.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_04.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911215638308.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_09.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_02.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/7_Shield/WoodShield2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/06_Other/00_Concentrate/Conventrate.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/06_Other/02_Etc/Ect.anim
+Assets/GameAssets/SPUM/Core/Basic_Resources/Materials/SpriteDiffuse.mat
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638389.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_6.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_8.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_08.png
+Assets/GameAssets/SPUM/Core/Script/Data/SpumPackage.cs
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye7.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_7.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_9.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye_Close.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639069.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/4_Spear/Soon_Spear.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/2_Axe/New_Weapon_04.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/2_Axe/New_weapon_02.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_4.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_18.png
+Assets/GameAssets/SPUM/Sample/Script/PlayerObj.cs
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/1_Spear/New_Weapon_09.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_06.png
+Assets/GameAssets/SPUM/Core/Basic_Resources/Materials/ColorPicker.mat
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Orc_3.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/02_Attack/00_MeleeAttack/0_Attack_Normal.anim
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_04.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/10_Back/New_Back_01.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_6.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639748.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215640719.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/0_Sword/New_Weapon_06.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/7_Shield/New_Shield_01.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_FaceHair/FaceHair_3.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_11.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/1_Animation/02_Attack/00_MeleeAttack/LongSpearAttack_1.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Human_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/02_Attack/01_LongRangeAttack/1_Skill_Bow.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/6_Hammer/F_SR_Hammer.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638474.prefab
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/SPUMHorseController.controller
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_07.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/0_Sword/Sword_5.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye11.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639234.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_02.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/3_Bow/New_Weapon_10.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_20.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/04_Death/4_Death.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_2.png
+Assets/GameAssets/SPUM/Core/Script/Data/SpumAnimationClip.cs
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_05.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911215640091.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_12.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/1_FaceHair/Normal_Mustache1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_11.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/7_Back/Back_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_7.png
+Assets/GameAssets/SPUM/Core/Script/Data/SPUM_Prefabs.cs
+Assets/GameAssets/SPUM/Core/Script/Data/SPUM_ImprovedClassData.cs
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_06.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/02_Attack/01_LongRangeAttack/2_Attack_Bow.anim
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/10_Back/New_Back_02.Png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911215640005.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/7_Back/Soon_Back1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/2_Bow/Bow_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/2_Axe/AxeSmall1.png
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/IDLE.anim
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_06.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_FaceHair/FaceHair_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/3_Pant/Foot_3.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215640967.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215640352.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_06.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638814.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/01_Move/Walk_Run 1.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_10.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_01.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair6.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/1_FaceHair/Normal_Mustache2.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/2_Axe/AxeNormal1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/0_Sword/New_Weapon_17.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Orc_4.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638558.prefab
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/ATTACK.anim
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/2_Axe/New_Weapon_08.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_4.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/1_Animation/01_Move/LongSpear_Walk.anim
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215640476.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/00_Idle/0_idle.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye3.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_03.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/1_Spear/New_Weapon_14.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/04_Death/0_Die.anim
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/SPUMController.controller
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/0_Sword/Sword_4.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_01.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/F_SR_Helmet.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye8.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911223046227.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair4.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/7_Shield/SteelShield1.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639580.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/7_Shield/WoodShield3.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_5.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_5.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/7_Shield/WoodShield1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_07.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_6.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/02_Attack/02_MagicAttack/1_Skill_Magic.anim
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/MOVE.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_4.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_05.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_04.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_12.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/06_Other/02_Etc/0_Sit.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_6.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/1_Animation/00_Idle/LongSpear_idle.anim
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639493.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_01.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Elf_1.png
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/OTHER.anim
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_03.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_08.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/1_Spear/New_Weapon_13.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/02_Attack/00_MeleeAttack/2_Attack_Normal.anim
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638643.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_3.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_5.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_05.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/06_Other/00_Concentrate/0_Conecntrate.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/2_Prefab/SPUM_20250915183854408.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911215639920.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911222907638.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911215638224.prefab
+Assets/GameAssets/SPUM/Core/Script/Data/SpritePos.cs
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_19.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_02.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair12.png
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/DAMAGED.anim
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/1_Spear/New_Weapon_16.png
+Assets/GameAssets/SPUM/Core/Basic_Resources/Ect/Shadow.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215640838.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/02_Attack/01_LongRangeAttack/0_Attack_Bow.anim
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215638731.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215637772.prefab
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911215637961.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/0_Sword/New_Weapon_20.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/1_Animation/02_Attack/00_MeleeAttack/ShotSwordAttack_1.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Human_5.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_FaceHair/FaceHair_4.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/0_Sword/New_Weapon_18.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Devil/SPUM_20240911222030968.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/0_Sword/Sword_3.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye6.png
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/DEBUFF.anim
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Helmet/New_Helmet_10.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_11.png
+Assets/GameAssets/SPUM/Core/Script/Data/SPUM_AnimationData.cs
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Devil_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_10.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911215640179.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/7_Armor/New_Armor_07.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/6_Dagger/New_Weapon_05.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/4_Helmet/Normal_Helmet3.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911222547665.prefab
+Assets/GameAssets/SPUM/Core/Script/Data/SpumTextureData.cs
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/3_Pant/Foot_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye9.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Skelton/SPUM_20240911215640266.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/06_Other/01_Buff/0_Buff.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Orc_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_9.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Skelton_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/03_Damaged/3_damaged.anim
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_11.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/3_Pant/F_SR_Pants.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/4_Cloth/New_Cloth_08.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair5.png
+Assets/GameAssets/SPUM/Sample/Prefabs/AnimationButton.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_8.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Elf/SPUM_20240911215638048.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/5_Armor/Normal_Armor1.png
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/DEATH.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/6_Weapons/2_Axe/AxeLong1.png
+Assets/GameAssets/SPUM/Sample/Prefabs/AnimationPanel.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/Index.json
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/03_Damaged/0_Damaged.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/0_Sprite/0_Body/Horse1.png
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Horse/IDLE.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_3.png
+Assets/GameAssets/SPUM/Resources/Addons/BasicPack/2_Prefab/Human/SPUM_20240911215639316.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/4_Helmet/Helmet_8.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair7.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/3_Bow/New_Weapon_15.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/2_Cloth/Cloth_10.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/1_Horse/1_Animation/06_Other/01_Buff/OTHER 1.anim
+Assets/GameAssets/SPUM/Sample/Prefabs/SamplePlayer.prefab
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/3_Pant/Foot_1.png
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/ATTACK.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/1_Animation/02_Attack/02_MagicAttack/0_Attack_Magic.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Hair/Hair_2.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/5_Armor/Armor_7.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Human_4.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/0_Eye/Eye5.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/5_Pant/New_Pant_04.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/2_Hair/New_Hair_08.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_Body/Orc_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/1_FaceHair/FaceHair_2.png
+Assets/GameAssets/SPUM/Core/Basic_Resources/Animator/Unit/DEBUFF.anim
+Assets/GameAssets/SPUM/Resources/Addons/Legacy/0_Unit/0_Sprite/6_Weapons/0_Sword/Sword_1.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver121/0_Unit/0_Sprite/0_Hair/Normal_Hair1.png
+Assets/GameAssets/SPUM/Sample/Materials/samplebutton.png
+Assets/GameAssets/SPUM/Resources/Addons/Ver300/0_Unit/0_Sprite/8_Weapons/5_Wand/New_Weapon_03.png

@@ -1,0 +1,5 @@
+PASS: scene 0 receives saved exposure 0.6 with settings closed
+PASS: re-entering scene reads current saved preference
+PASS: scene 1 receives saved exposure 0.6 with settings closed
+PASS: re-entering scene reads current saved preference
+PASS: saved brightness clamps to slider range

@@ -1,0 +1,5 @@
+PASS: incomplete pair disabled
+PASS: compatible level 5 pair enabled on upgrade event
+PASS: owned result disables pair
+PASS: event unsubscribed on disable
+PASS: saved Stage1 fusion button active

@@ -1,0 +1,34 @@
+{
+  "health": 2000.0,
+  "hydro": {
+    "completed": true,
+    "samples": 179,
+    "maxMouthGap": 0.0,
+    "spinFrames": 16,
+    "activeAfter": 0
+  },
+  "cannon": {
+    "completed": true,
+    "count": 6,
+    "expected": 6,
+    "maxMouthGap": 0.416852057,
+    "minPredictionDot": 1.0
+  },
+  "smallSplashReturned": true,
+  "ground": {
+    "completed": true,
+    "strikes": 2,
+    "maxRadius": 4.2,
+    "activeAfter": 0
+  },
+  "bomb": {
+    "completed": true,
+    "count": 3,
+    "impacts": 3,
+    "maxAirborne": 3,
+    "maxMouthGap": 1.17133474
+  },
+  "disabledBossStopsBeam": true,
+  "errors": [],
+  "completed": true
+}

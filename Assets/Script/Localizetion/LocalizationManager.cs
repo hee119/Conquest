@@ -6,6 +6,7 @@ using UnityEngine;
 public class LocalizationManager : MonoBehaviour
 {
     public static LocalizationManager Instance;
+    public static event Action<LocalizationManager> InstanceChanged;
 
     private Dictionary<string, Dictionary<string, string>> localizationData =
         new Dictionary<string, Dictionary<string, string>>();
@@ -37,6 +38,15 @@ public class LocalizationManager : MonoBehaviour
         // 저장된 언어 설정 불러오기
         string savedLanguage = PlayerPrefs.GetString("Language", "ko");
         SetLanguage(savedLanguage);
+        InstanceChanged?.Invoke(this);
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance != this)
+            return;
+        Instance = null;
+        InstanceChanged?.Invoke(null);
     }
 
     public void LoadCSV()
@@ -59,6 +69,15 @@ public class LocalizationManager : MonoBehaviour
 
         // 줄바꿈 형식 처리
         content = content.Replace("\r\n", "\n").Replace("\r", "\n");
+
+        // Keep project UI additions when the downloaded Master cache is refreshed.
+        TextAsset extra = Resources.Load<TextAsset>("TextData/LocalizationExtra");
+        if (extra != null)
+        {
+            string additions = extra.text.Replace("\r\n", "\n").Replace("\r", "\n");
+            int headerEnd = additions.IndexOf('\n');
+            if (headerEnd >= 0) content += "\n" + additions.Substring(headerEnd + 1);
+        }
 
         string[] lines = content.Split(
             new[] { '\n' },
@@ -95,7 +114,11 @@ public class LocalizationManager : MonoBehaviour
                 string value = row[j]
                     .Trim()
                     .Trim('"')
-                    .Replace("\"\"", "\"");
+                    .Replace("\"\"", "\"")
+                    // Translation cells use natural wrapping, without forced line breaks.
+                    .Replace("\\r\\n", " ")
+                    .Replace("\\n", " ")
+                    .Replace("\\r", " ");
 
                 translations[lang] = value;
             }

@@ -1,0 +1,173 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 345224410b0c949fea9c91481dd98909, type: 3}
+  m_Name: OctopusAnimation
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimationData
+  attack:
+  - {fileID: 1397378770, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: -1350265947, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: 1082821790, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: 485186438, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: -1959657241, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: 1553056075, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: 667827647, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: -446999599, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: -587466894, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: 1616423443, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: -8882910962967551276, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: -5816981167318191024, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: -6680056329719427297, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: 770181490683160330, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: -8842328319970943079, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: -6274307596248996974, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: 2621000186124989386, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: 4483646754269623802, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: 7613438689171172436, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: -4365885694511922660, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: 7873371931040164236, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: 2475396288119764819, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: -4059823335729682531, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: 8785524830214021900, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  - {fileID: -2807847565463530432, guid: cb8b5ff4894a3452aabcb8734611c88d, type: 3}
+  move:
+  - {fileID: -881651833, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: 158369875, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: -114566745, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: 719846249, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: -1548239560, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: -1497895994, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: -5828427036411970708, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: -8138466426256305939, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: -5384635847342836798, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: 707931369466497574, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: -188841135536321694, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: 2804855573447866789, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: -5218582397219499051, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: -8877494283706466224, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: -7833475026114800844, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: 766623392874901631, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: 8820560237267034828, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: -3502444107858768583, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: -7650321303690822977, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: -7198131816384301642, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  - {fileID: -2353557804972447510, guid: a8d14fd9af15c4707a5474e648390ad7, type: 3}
+  hit: []
+  sequences:
+  - state: Run
+    frames:
+    - time: 0
+      sprite: {fileID: 0}
+    - time: 0.083333336
+      sprite: {fileID: 0}
+    - time: 0.16666667
+      sprite: {fileID: 0}
+    - time: 0.25
+      sprite: {fileID: 0}
+    - time: 0.33333334
+      sprite: {fileID: 0}
+    - time: 0.41666666
+      sprite: {fileID: 0}
+    - time: 0.5
+      sprite: {fileID: 0}
+    - time: 0.5833333
+      sprite: {fileID: 0}
+    - time: 0.6666667
+      sprite: {fileID: 0}
+    - time: 0.75
+      sprite: {fileID: 0}
+    - time: 0.8333333
+      sprite: {fileID: 0}
+    - time: 0.9166667
+      sprite: {fileID: 0}
+    - time: 1
+      sprite: {fileID: 0}
+    - time: 1.0833334
+      sprite: {fileID: 0}
+    - time: 1.1666666
+      sprite: {fileID: 0}
+    - time: 1.25
+      sprite: {fileID: 0}
+    - time: 1.3333334
+      sprite: {fileID: 0}
+    - time: 1.4166666
+      sprite: {fileID: 0}
+    - time: 1.5
+      sprite: {fileID: 0}
+    - time: 1.5833334
+      sprite: {fileID: 0}
+    - time: 1.6666666
+      sprite: {fileID: 0}
+    events: []
+    duration: 1.75
+    speed: 1
+    loop: 1
+    next: 
+  - state: Attack
+    frames:
+    - time: 0
+      sprite: {fileID: 0}
+    - time: 0.041666668
+      sprite: {fileID: 0}
+    - time: 0.083333336
+      sprite: {fileID: 0}
+    - time: 0.125
+      sprite: {fileID: 0}
+    - time: 0.16666667
+      sprite: {fileID: 0}
+    - time: 0.20833333
+      sprite: {fileID: 0}
+    - time: 0.25
+      sprite: {fileID: 0}
+    - time: 0.29166666
+      sprite: {fileID: 0}
+    - time: 0.33333334
+      sprite: {fileID: 0}
+    - time: 0.375
+      sprite: {fileID: 0}
+    - time: 0.41666666
+      sprite: {fileID: 0}
+    - time: 0.45833334
+      sprite: {fileID: 0}
+    - time: 0.5
+      sprite: {fileID: 0}
+    - time: 0.5416667
+      sprite: {fileID: 0}
+    - time: 0.5833333
+      sprite: {fileID: 0}
+    - time: 0.625
+      sprite: {fileID: 0}
+    - time: 0.6666667
+      sprite: {fileID: 0}
+    - time: 0.7083333
+      sprite: {fileID: 0}
+    - time: 0.75
+      sprite: {fileID: 0}
+    - time: 0.7916667
+      sprite: {fileID: 0}
+    - time: 0.8333333
+      sprite: {fileID: 0}
+    - time: 0.875
+      sprite: {fileID: 0}
+    - time: 0.9166667
+      sprite: {fileID: 0}
+    - time: 0.9583333
+      sprite: {fileID: 0}
+    - time: 1
+      sprite: {fileID: 0}
+    events:
+    - time: 0.375
+      function: FireProjectile
+    duration: 1.0416666
+    speed: 1
+    loop: 0
+    next: Run
+  defaultState: Run

@@ -1,0 +1,1 @@
+PASS: preparation follows slideWindup; slide start enters central afterimage loop; loop persists beyond 3 cycles; fixed transform scale; no blank frames; wall stop and short travel enter ending; ending returns to Move; lethal Hit still interrupts.

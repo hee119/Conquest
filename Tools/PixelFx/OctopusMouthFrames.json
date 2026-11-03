@@ -1,0 +1,1211 @@
+[
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_00",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      151.0,
+      156
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_01",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      152.0,
+      157
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_02",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      150.5,
+      160
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_03",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      147.5,
+      160
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_04",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      147.5,
+      159
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_05",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      148.0,
+      157
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_06",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      150.5,
+      157
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_07",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      151.0,
+      157
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_08",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      147.5,
+      158
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_09",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      147.5,
+      157
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_10",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      147.5,
+      157
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_11",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      147.0,
+      157
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_12",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      150.5,
+      157
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_13",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      151.0,
+      157
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_14",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      152.0,
+      158
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_15",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      150.0,
+      160
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_16",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      147.5,
+      160
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_17",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      147.0,
+      159
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_18",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      148.0,
+      157
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_19",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      147.5,
+      156
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingMove.png",
+    "name": "OctopusKingMove_20",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      150.5,
+      157
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_00",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      128,
+      153
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_01",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      128,
+      153
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_02",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      128,
+      153
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_03",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      128,
+      153
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_04",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      122,
+      155
+    ],
+    "angle": -90.0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_05",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      106,
+      155
+    ],
+    "angle": -112.5
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_06",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      87,
+      151
+    ],
+    "angle": -135.0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_07",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      75,
+      146
+    ],
+    "angle": -157.5
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_08",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      68,
+      143
+    ],
+    "angle": -180.0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_09",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      76,
+      142
+    ],
+    "angle": -202.5
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_10",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      101,
+      142
+    ],
+    "angle": -225.0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_11",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      128,
+      142
+    ],
+    "angle": -247.5
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_12",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      153,
+      144
+    ],
+    "angle": -270.0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_13",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      176,
+      146
+    ],
+    "angle": -292.5
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_14",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      181,
+      150
+    ],
+    "angle": -315.0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_15",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      166,
+      152
+    ],
+    "angle": -337.5
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_16",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      153,
+      154
+    ],
+    "angle": -360.0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_17",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      140,
+      154
+    ],
+    "angle": -382.5
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_18",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      128,
+      154
+    ],
+    "angle": -405.0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_19",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      128,
+      154
+    ],
+    "angle": -427.5
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_20",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      128,
+      153
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_21",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      128,
+      153
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_22",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      128,
+      153
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingSpin.png",
+    "name": "OctopusKingSpin_23",
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "mouth": [
+      128,
+      153
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_00",
+    "pivot": [
+      0.5079681274900398,
+      0.3558706445487127
+    ],
+    "mouth": [
+      153,
+      191
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_01",
+    "pivot": [
+      0.49800796812749004,
+      0.3558706445487127
+    ],
+    "mouth": [
+      153,
+      191
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_02",
+    "pivot": [
+      0.496,
+      0.34790251705867287
+    ],
+    "mouth": [
+      153,
+      193
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_03",
+    "pivot": [
+      0.50199203187251,
+      0.34790251705867287
+    ],
+    "mouth": [
+      153,
+      193
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_04",
+    "pivot": [
+      0.5079681274900398,
+      0.3558706445487127
+    ],
+    "mouth": [
+      153,
+      191
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_05",
+    "pivot": [
+      0.5079681274900398,
+      0.39571128199891187
+    ],
+    "mouth": [
+      153,
+      181
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_06",
+    "pivot": [
+      0.50199203187251,
+      0.40367940948895176
+    ],
+    "mouth": [
+      153,
+      179
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_07",
+    "pivot": [
+      0.505999968,
+      0.40367940948895176
+    ],
+    "mouth": [
+      153,
+      179
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_08",
+    "pivot": [
+      0.4940239043824701,
+      0.39969534574393184
+    ],
+    "mouth": [
+      153,
+      180
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_09",
+    "pivot": [
+      0.50398403187251,
+      0.40367940948895176
+    ],
+    "mouth": [
+      153,
+      161
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_10",
+    "pivot": [
+      0.5099601593625498,
+      0.4452941271269075
+    ],
+    "mouth": [
+      153,
+      144
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_11",
+    "pivot": [
+      0.48804780876494025,
+      0.48129412712690756
+    ],
+    "mouth": [
+      153,
+      143
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_12",
+    "pivot": [
+      0.496,
+      0.47729412712690755
+    ],
+    "mouth": [
+      153,
+      146
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_13",
+    "pivot": [
+      0.49203187250996017,
+      0.46929412712690755
+    ],
+    "mouth": [
+      153,
+      147
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_14",
+    "pivot": [
+      0.5079681274900398,
+      0.48929412712690756
+    ],
+    "mouth": [
+      153,
+      157
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_15",
+    "pivot": [
+      0.5159362549800797,
+      0.3239981345885533
+    ],
+    "mouth": [
+      153,
+      199
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_16",
+    "pivot": [
+      0.49800796812749004,
+      0.3239981345885533
+    ],
+    "mouth": [
+      153,
+      199
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_17",
+    "pivot": [
+      0.498,
+      0.3239981345885533
+    ],
+    "mouth": [
+      153,
+      199
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_18",
+    "pivot": [
+      0.5079681274900398,
+      0.3239981345885533
+    ],
+    "mouth": [
+      153,
+      199
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_19",
+    "pivot": [
+      0.49800796812749004,
+      0.3239981345885533
+    ],
+    "mouth": [
+      153,
+      199
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_20",
+    "pivot": [
+      0.5159362549800797,
+      0.5829622780148482
+    ],
+    "mouth": [
+      153,
+      134
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_21",
+    "pivot": [
+      0.4940239043824701,
+      0.5789782142698283
+    ],
+    "mouth": [
+      153,
+      135
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_22",
+    "pivot": [
+      0.492,
+      0.5710100867797885
+    ],
+    "mouth": [
+      153,
+      137
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_23",
+    "pivot": [
+      0.5059760956175299,
+      0.5829622780148482
+    ],
+    "mouth": [
+      153,
+      134
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingWaterShot.png",
+    "name": "OctopusKingWaterShot_24",
+    "pivot": [
+      0.5119521912350598,
+      0.5710100867797885
+    ],
+    "mouth": [
+      153,
+      137
+    ],
+    "angle": 0
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_02",
+    "pivot": [
+      0.5,
+      0.3242841135645517
+    ],
+    "mouth": [
+      128,
+      195
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_03",
+    "pivot": [
+      0.49800796812749004,
+      0.463726344640249
+    ],
+    "mouth": [
+      128,
+      160
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_04",
+    "pivot": [
+      0.49800796812749004,
+      0.3322522410545916
+    ],
+    "mouth": [
+      128,
+      193
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_05",
+    "pivot": [
+      0.49800796812749004,
+      0.30834785858447206
+    ],
+    "mouth": [
+      128,
+      199
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_06",
+    "pivot": [
+      0.49800796812749004,
+      0.30834785858447206
+    ],
+    "mouth": [
+      128,
+      199
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_07",
+    "pivot": [
+      0.5,
+      0.30834785858447206
+    ],
+    "mouth": [
+      128,
+      199
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_08",
+    "pivot": [
+      0.49800796812749004,
+      0.30834785858447206
+    ],
+    "mouth": [
+      128,
+      199
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_09",
+    "pivot": [
+      0.49800796812749004,
+      0.3720928785047908
+    ],
+    "mouth": [
+      128,
+      183
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_10",
+    "pivot": [
+      0.49800796812749004,
+      0.41358125001880996
+    ],
+    "mouth": [
+      128,
+      172
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_11",
+    "pivot": [
+      0.49800796812749004,
+      0.37758125001880993
+    ],
+    "mouth": [
+      128,
+      181
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_12",
+    "pivot": [
+      0.5,
+      0.41358125001880996
+    ],
+    "mouth": [
+      128,
+      172
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_13",
+    "pivot": [
+      0.49800796812749004,
+      0.38158125001880994
+    ],
+    "mouth": [
+      128,
+      180
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_14",
+    "pivot": [
+      0.49800796812749004,
+      0.36158125001881
+    ],
+    "mouth": [
+      128,
+      185
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_15",
+    "pivot": [
+      0.49800796812749004,
+      0.3800610059948306
+    ],
+    "mouth": [
+      128,
+      181
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_16",
+    "pivot": [
+      0.49800796812749004,
+      0.3481884960346713
+    ],
+    "mouth": [
+      128,
+      189
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_17",
+    "pivot": [
+      0.5,
+      0.30834785858447206
+    ],
+    "mouth": [
+      128,
+      199
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_18",
+    "pivot": [
+      0.49800796812749004,
+      0.3720928785047908
+    ],
+    "mouth": [
+      128,
+      183
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_19",
+    "pivot": [
+      0.49800796812749004,
+      0.36412475101475095
+    ],
+    "mouth": [
+      128,
+      185
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_20",
+    "pivot": [
+      0.49800796812749004,
+      0.36810881475977086
+    ],
+    "mouth": [
+      128,
+      184
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_21",
+    "pivot": [
+      0.49800796812749004,
+      0.3800610059948306
+    ],
+    "mouth": [
+      128,
+      181
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_22",
+    "pivot": [
+      0.5,
+      0.45177415340518917
+    ],
+    "mouth": [
+      128,
+      163
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_23",
+    "pivot": [
+      0.49800796812749004,
+      0.30834785858447206
+    ],
+    "mouth": [
+      128,
+      199
+    ],
+    "angle": -90
+  },
+  {
+    "path": "Assets/SpriteSeet/OctopusKingGroundAttack.png",
+    "name": "OctopusKingGroundAttack_24",
+    "pivot": [
+      0.49800796812749004,
+      0.44779008966016925
+    ],
+    "mouth": [
+      128,
+      164
+    ],
+    "angle": -90
+  }
+]

@@ -1,0 +1,2345 @@
+fileFormatVersion: 2
+guid: 6b89aae67a8734704add323e56134b79
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -794216857034817201
+    second: radial-stone-eruption_0
+  - first:
+      213: -6129305243537933658
+    second: radial-stone-eruption_1
+  - first:
+      213: -3153061998386806314
+    second: radial-stone-eruption_2
+  - first:
+      213: 184908626280672183
+    second: radial-stone-eruption_3
+  - first:
+      213: -3744341525253347921
+    second: radial-stone-eruption_4
+  - first:
+      213: -1098889872948131041
+    second: radial-stone-eruption_5
+  - first:
+      213: 9152440638205948058
+    second: radial-stone-eruption_6
+  - first:
+      213: 8139695772485373404
+    second: radial-stone-eruption_7
+  - first:
+      213: 6610787577638234007
+    second: radial-stone-eruption_8
+  - first:
+      213: -7421630443007154138
+    second: radial-stone-eruption_9
+  - first:
+      213: -3413000776234739018
+    second: radial-stone-eruption_10
+  - first:
+      213: 926150510955819335
+    second: radial-stone-eruption_11
+  - first:
+      213: -350677236221064734
+    second: radial-stone-eruption_12
+  - first:
+      213: 8678907890404689881
+    second: radial-stone-eruption_13
+  - first:
+      213: 8109003451050355069
+    second: radial-stone-eruption_14
+  - first:
+      213: 6260152796983957653
+    second: radial-stone-eruption_15
+  - first:
+      213: -6413373325604057633
+    second: radial-stone-eruption_16
+  - first:
+      213: -3230617525237961144
+    second: radial-stone-eruption_17
+  - first:
+      213: 7578754055863390453
+    second: radial-stone-eruption_18
+  - first:
+      213: 4502950242028674140
+    second: radial-stone-eruption_19
+  - first:
+      213: 3236920828600361957
+    second: radial-stone-eruption_20
+  - first:
+      213: 6237410830303511640
+    second: radial-stone-eruption_21
+  - first:
+      213: 7836816942557596288
+    second: radial-stone-eruption_22
+  - first:
+      213: -2773533133634625121
+    second: radial-stone-eruption_23
+  - first:
+      213: -9214293615230275656
+    second: radial-stone-eruption_24
+  - first:
+      213: 2287729640325649511
+    second: radial-stone-eruption_25
+  - first:
+      213: 1970992348811720704
+    second: radial-stone-eruption_26
+  - first:
+      213: 8476305112743781075
+    second: radial-stone-eruption_27
+  - first:
+      213: 3909859402489391339
+    second: radial-stone-eruption_28
+  - first:
+      213: 4583860430886540479
+    second: radial-stone-eruption_29
+  - first:
+      213: -8384836223857916399
+    second: radial-stone-eruption_30
+  - first:
+      213: 5961418477665675305
+    second: radial-stone-eruption_31
+  - first:
+      213: -8351117604408163627
+    second: radial-stone-eruption_32
+  - first:
+      213: -6018687007633389157
+    second: radial-stone-eruption_33
+  - first:
+      213: -3533294802386984038
+    second: radial-stone-eruption_34
+  - first:
+      213: -8458956873143951499
+    second: radial-stone-eruption_35
+  - first:
+      213: 2217646211479798499
+    second: radial-stone-eruption_36
+  - first:
+      213: 1938200440309273147
+    second: radial-stone-eruption_37
+  - first:
+      213: 8863434273468769268
+    second: radial-stone-eruption_38
+  - first:
+      213: -1564948646094928563
+    second: radial-stone-eruption_39
+  - first:
+      213: -6242254920094781664
+    second: radial-stone-eruption_40
+  - first:
+      213: 3812189406391779563
+    second: radial-stone-eruption_41
+  - first:
+      213: -7498386599638935361
+    second: radial-stone-eruption_42
+  - first:
+      213: 1857093288998393571
+    second: radial-stone-eruption_43
+  - first:
+      213: -4085142162880776655
+    second: radial-stone-eruption_44
+  - first:
+      213: 5349757535774125629
+    second: radial-stone-eruption_45
+  - first:
+      213: 5134955732215829579
+    second: radial-stone-eruption_46
+  - first:
+      213: 5499344089665272708
+    second: radial-stone-eruption_47
+  - first:
+      213: 7179121002744695128
+    second: radial-stone-eruption_48
+  - first:
+      213: -5929885793928466348
+    second: radial-stone-eruption_49
+  - first:
+      213: 1607871303026799780
+    second: radial-stone-eruption_50
+  - first:
+      213: -7535435932182035949
+    second: radial-stone-eruption_51
+  - first:
+      213: 165478123835645355
+    second: radial-stone-eruption_52
+  - first:
+      213: -6121331968835628485
+    second: radial-stone-eruption_53
+  - first:
+      213: -994790503162636704
+    second: radial-stone-eruption_54
+  - first:
+      213: -5010417384738815089
+    second: radial-stone-eruption_55
+  - first:
+      213: 5086157761769227654
+    second: radial-stone-eruption_56
+  - first:
+      213: -2775921422444176643
+    second: radial-stone-eruption_57
+  - first:
+      213: 4048782853508383923
+    second: radial-stone-eruption_58
+  - first:
+      213: 8070260725227020482
+    second: radial-stone-eruption_59
+  - first:
+      213: 4036549457164913014
+    second: radial-stone-eruption_60
+  - first:
+      213: 6839815084246130447
+    second: radial-stone-eruption_61
+  - first:
+      213: -8934566262955531723
+    second: radial-stone-eruption_62
+  - first:
+      213: -8806499172647582488
+    second: radial-stone-eruption_63
+  - first:
+      213: -2432858802906256941
+    second: radial-stone-eruption_64
+  - first:
+      213: 2756564153716405705
+    second: radial-stone-eruption_65
+  - first:
+      213: 5183414666705913968
+    second: radial-stone-eruption_66
+  - first:
+      213: 7987933166881104022
+    second: radial-stone-eruption_67
+  - first:
+      213: -8722431611640142238
+    second: radial-stone-eruption_68
+  - first:
+      213: -4944841728558977637
+    second: radial-stone-eruption_69
+  - first:
+      213: 9114643370894402018
+    second: radial-stone-eruption_70
+  - first:
+      213: -7490992242318328814
+    second: radial-stone-eruption_71
+  - first:
+      213: -6591864981940762100
+    second: radial-stone-eruption_72
+  - first:
+      213: 6870050897839955609
+    second: radial-stone-eruption_73
+  - first:
+      213: -7381535140932598193
+    second: radial-stone-eruption_74
+  - first:
+      213: -1876334313237323063
+    second: radial-stone-eruption_75
+  - first:
+      213: -808978636995564320
+    second: radial-stone-eruption_76
+  - first:
+      213: -5805903226371114867
+    second: radial-stone-eruption_77
+  - first:
+      213: 7204536555375605055
+    second: radial-stone-eruption_78
+  - first:
+      213: 858843254014546752
+    second: radial-stone-eruption_79
+  - first:
+      213: 8566107312417174159
+    second: radial-stone-eruption_80
+  - first:
+      213: -7400096312893943538
+    second: radial-stone-eruption_81
+  - first:
+      213: 2058806850771776619
+    second: radial-stone-eruption_82
+  - first:
+      213: 5386405505107125456
+    second: radial-stone-eruption_83
+  - first:
+      213: 66933995155408045
+    second: radial-stone-eruption_84
+  - first:
+      213: -5484513421800167461
+    second: radial-stone-eruption_85
+  - first:
+      213: -9083492457131741108
+    second: radial-stone-eruption_86
+  - first:
+      213: -3911781922219509722
+    second: radial-stone-eruption_87
+  - first:
+      213: -6902335581285644802
+    second: radial-stone-eruption_88
+  - first:
+      213: 7855512381771068475
+    second: radial-stone-eruption_89
+  - first:
+      213: 8273853841135422623
+    second: radial-stone-eruption_90
+  - first:
+      213: -8045536969979394274
+    second: radial-stone-eruption_91
+  - first:
+      213: -1490713621733690495
+    second: radial-stone-eruption_92
+  - first:
+      213: -6612060304556018482
+    second: radial-stone-eruption_93
+  - first:
+      213: 5519668806497406357
+    second: radial-stone-eruption_94
+  - first:
+      213: -3415635018311538652
+    second: radial-stone-eruption_95
+  - first:
+      213: -5419013343311567983
+    second: radial-stone-eruption_96
+  - first:
+      213: 6722770033849635679
+    second: radial-stone-eruption_97
+  - first:
+      213: -7053374248159098492
+    second: radial-stone-eruption_98
+  - first:
+      213: -1551993187790433890
+    second: radial-stone-eruption_99
+  - first:
+      213: 446511006173447983
+    second: radial-stone-eruption_100
+  - first:
+      213: -1656531572073508340
+    second: radial-stone-eruption_101
+  - first:
+      213: -1762746647893281916
+    second: radial-stone-eruption_102
+  - first:
+      213: -4431379744411320770
+    second: radial-stone-eruption_103
+  - first:
+      213: 2829563482250590773
+    second: radial-stone-eruption_104
+  - first:
+      213: 1684133744708180450
+    second: radial-stone-eruption_105
+  - first:
+      213: 3889430845178960489
+    second: radial-stone-eruption_106
+  - first:
+      213: -5370415525210066854
+    second: radial-stone-eruption_107
+  - first:
+      213: 701756085740644805
+    second: radial-stone-eruption_108
+  - first:
+      213: 1002530087819741184
+    second: radial-stone-eruption_109
+  - first:
+      213: -7319541084000647986
+    second: radial-stone-eruption_110
+  - first:
+      213: -5244757031528962067
+    second: radial-stone-eruption_111
+  - first:
+      213: 2091617237545576565
+    second: radial-stone-eruption_112
+  - first:
+      213: -3810636267758071668
+    second: radial-stone-eruption_113
+  - first:
+      213: 4429221849031749552
+    second: radial-stone-eruption_114
+  - first:
+      213: -3268579186310960034
+    second: radial-stone-eruption_115
+  - first:
+      213: 7289307254940669997
+    second: radial-stone-eruption_116
+  - first:
+      213: -199581918356490957
+    second: radial-stone-eruption_117
+  - first:
+      213: -8658462817743795911
+    second: radial-stone-eruption_118
+  - first:
+      213: 7981778365873810660
+    second: radial-stone-eruption_119
+  - first:
+      213: 7136798899094875307
+    second: radial-stone-eruption_120
+  - first:
+      213: 7944825174247958741
+    second: radial-stone-eruption_121
+  - first:
+      213: -4943001512160338144
+    second: radial-stone-eruption_122
+  - first:
+      213: -4542491761533023482
+    second: radial-stone-eruption_123
+  - first:
+      213: 3228867161714620600
+    second: radial-stone-eruption_124
+  - first:
+      213: -370331441475240085
+    second: radial-stone-eruption_125
+  - first:
+      213: -4820671095001651889
+    second: radial-stone-eruption_126
+  - first:
+      213: -5708878018015681764
+    second: radial-stone-eruption_127
+  - first:
+      213: -1345508206554499943
+    second: radial-stone-eruption_128
+  - first:
+      213: -3086375356813786491
+    second: radial-stone-eruption_129
+  - first:
+      213: -5702605805164747221
+    second: radial-stone-eruption_130
+  - first:
+      213: 7271303726645514672
+    second: radial-stone-eruption_131
+  - first:
+      213: 2847844953138386724
+    second: radial-stone-eruption_132
+  - first:
+      213: -2451281534955128852
+    second: radial-stone-eruption_133
+  - first:
+      213: 3098134610799790237
+    second: radial-stone-eruption_134
+  - first:
+      213: 2269744089853804574
+    second: radial-stone-eruption_135
+  - first:
+      213: 5173410896455278053
+    second: radial-stone-eruption_136
+  - first:
+      213: 1573797173455451584
+    second: radial-stone-eruption_137
+  - first:
+      213: 4150411237336730269
+    second: radial-stone-eruption_138
+  - first:
+      213: -610727122365369243
+    second: radial-stone-eruption_139
+  - first:
+      213: 4987997316695319005
+    second: radial-stone-eruption_140
+  - first:
+      213: -2632504461858081271
+    second: radial-stone-eruption_141
+  - first:
+      213: -3501066380041688664
+    second: radial-stone-eruption_142
+  - first:
+      213: 2247581110461801800
+    second: radial-stone-eruption_143
+  - first:
+      213: 2994763630422978359
+    second: radial-stone-eruption_144
+  - first:
+      213: 7365889003469043524
+    second: radial-stone-eruption_145
+  - first:
+      213: 7071751970981508163
+    second: radial-stone-eruption_146
+  - first:
+      213: 597901640297736673
+    second: radial-stone-eruption_147
+  - first:
+      213: -8140130377015005067
+    second: radial-stone-eruption_148
+  - first:
+      213: 6710656746156644236
+    second: radial-stone-eruption_149
+  - first:
+      213: -6013410439135824946
+    second: radial-stone-eruption_150
+  - first:
+      213: 6864829160691648237
+    second: radial-stone-eruption_151
+  - first:
+      213: -2754177455231168865
+    second: radial-stone-eruption_152
+  - first:
+      213: -9157811672955824404
+    second: radial-stone-eruption_153
+  - first:
+      213: -5434447395986040620
+    second: radial-stone-eruption_154
+  - first:
+      213: -2090865913514016532
+    second: radial-stone-eruption_155
+  - first:
+      213: -9008341463465917624
+    second: radial-stone-eruption_156
+  - first:
+      213: -2841558558731895285
+    second: radial-stone-eruption_157
+  - first:
+      213: 1065694493314023890
+    second: radial-stone-eruption_158
+  - first:
+      213: 3628890392140676988
+    second: radial-stone-eruption_159
+  - first:
+      213: 1796546579927373925
+    second: radial-stone-eruption_160
+  - first:
+      213: -8963035926442708701
+    second: radial-stone-eruption_161
+  - first:
+      213: -6688328727391111659
+    second: radial-stone-eruption_162
+  - first:
+      213: 316445275700923550
+    second: radial-stone-eruption_163
+  - first:
+      213: -663372626698381420
+    second: radial-stone-eruption_164
+  - first:
+      213: -5090823643428422143
+    second: radial-stone-eruption_165
+  - first:
+      213: -579943149941683158
+    second: radial-stone-eruption_166
+  - first:
+      213: -227465107950542575
+    second: radial-stone-eruption_167
+  - first:
+      213: 2019699499849682676
+    second: radial-stone-eruption_168
+  - first:
+      213: 275505594716404574
+    second: radial-stone-eruption_169
+  - first:
+      213: -5956240617652186926
+    second: radial-stone-eruption_170
+  - first:
+      213: -7332746355744972242
+    second: radial-stone-eruption_171
+  - first:
+      213: -5517858398015380869
+    second: radial-stone-eruption_172
+  - first:
+      213: 4229712620909578798
+    second: radial-stone-eruption_173
+  - first:
+      213: -5416451316216545666
+    second: radial-stone-eruption_174
+  - first:
+      213: 2233478063277293465
+    second: radial-stone-eruption_175
+  - first:
+      213: -6966268872938911696
+    second: radial-stone-eruption_176
+  - first:
+      213: -5312527866846097254
+    second: radial-stone-eruption_177
+  - first:
+      213: -2324348749309146817
+    second: radial-stone-eruption_178
+  - first:
+      213: 3469730422441490113
+    second: radial-stone-eruption_179
+  - first:
+      213: 5035313553708618852
+    second: radial-stone-eruption_180
+  - first:
+      213: 999084018694622507
+    second: radial-stone-eruption_181
+  - first:
+      213: -5268671492426019499
+    second: radial-stone-eruption_182
+  - first:
+      213: 8629917063372082201
+    second: radial-stone-eruption_183
+  - first:
+      213: -5031430201439216841
+    second: radial-stone-eruption_184
+  - first:
+      213: 2416650930538663515
+    second: radial-stone-eruption_185
+  - first:
+      213: 7287466322515389518
+    second: radial-stone-eruption_186
+  - first:
+      213: -4872478190386963836
+    second: radial-stone-eruption_187
+  - first:
+      213: 848121939515288949
+    second: radial-stone-eruption_188
+  - first:
+      213: 6710948174296472153
+    second: radial-stone-eruption_189
+  - first:
+      213: 7484676893686485949
+    second: radial-stone-eruption_190
+  - first:
+      213: -4039536431007135241
+    second: radial-stone-eruption_191
+  - first:
+      213: 9119662390670439105
+    second: radial-stone-eruption_192
+  - first:
+      213: 1993690266583278503
+    second: radial-stone-eruption_193
+  - first:
+      213: 1468297961549449089
+    second: radial-stone-eruption_194
+  - first:
+      213: -9047501685766441214
+    second: radial-stone-eruption_195
+  - first:
+      213: -4561999404712151183
+    second: radial-stone-eruption_196
+  - first:
+      213: 5354629793494905673
+    second: radial-stone-eruption_197
+  - first:
+      213: 2851759561205426435
+    second: radial-stone-eruption_198
+  - first:
+      213: -7902458556177238236
+    second: radial-stone-eruption_199
+  - first:
+      213: 1570555260297844408
+    second: radial-stone-eruption_200
+  - first:
+      213: -1710841255286405876
+    second: radial-stone-eruption_201
+  - first:
+      213: 7815191623649505890
+    second: radial-stone-eruption_202
+  - first:
+      213: -830090062650906716
+    second: radial-stone-eruption_203
+  - first:
+      213: 4045074632167627973
+    second: radial-stone-eruption_204
+  - first:
+      213: 8721578914357896648
+    second: radial-stone-eruption_205
+  - first:
+      213: -8130866206310999077
+    second: radial-stone-eruption_206
+  - first:
+      213: -8762728875479169230
+    second: radial-stone-eruption_207
+  - first:
+      213: 6932786886335785264
+    second: radial-stone-eruption_208
+  - first:
+      213: -7368435236993724286
+    second: radial-stone-eruption_209
+  - first:
+      213: -1320676403697989873
+    second: radial-stone-eruption_210
+  - first:
+      213: 3307502719730709496
+    second: radial-stone-eruption_211
+  - first:
+      213: 7941225961886152955
+    second: radial-stone-eruption_212
+  - first:
+      213: 5993505335642355744
+    second: radial-stone-eruption_213
+  - first:
+      213: -6903918838760709568
+    second: radial-stone-eruption_214
+  - first:
+      213: 5183642422359115241
+    second: radial-stone-eruption_215
+  - first:
+      213: 4592752724280582980
+    second: radial-stone-eruption_216
+  - first:
+      213: -2487181778600205560
+    second: radial-stone-eruption_217
+  - first:
+      213: 9093071885390209453
+    second: radial-stone-eruption_218
+  - first:
+      213: -4771359538811587584
+    second: radial-stone-eruption_219
+  - first:
+      213: -5567626845699575738
+    second: radial-stone-eruption_220
+  - first:
+      213: 3352604493650205927
+    second: radial-stone-eruption_221
+  - first:
+      213: 2359116471479614851
+    second: radial-stone-eruption_222
+  - first:
+      213: 4609318175188848994
+    second: radial-stone-eruption_223
+  - first:
+      213: 1366086835881837418
+    second: radial-stone-eruption_224
+  - first:
+      213: 2462396839175816322
+    second: radial-stone-eruption_225
+  - first:
+      213: -1413417626356140610
+    second: radial-stone-eruption_226
+  - first:
+      213: 4012615432464871618
+    second: radial-stone-eruption_227
+  - first:
+      213: 6103251933930047687
+    second: radial-stone-eruption_228
+  - first:
+      213: 5675016582545244547
+    second: radial-stone-eruption_229
+  - first:
+      213: 5299958078078165961
+    second: radial-stone-eruption_230
+  - first:
+      213: 737366160723846842
+    second: radial-stone-eruption_231
+  - first:
+      213: 1721834128442373334
+    second: radial-stone-eruption_232
+  - first:
+      213: 7581972245797174324
+    second: radial-stone-eruption_233
+  - first:
+      213: 1681865317862265093
+    second: radial-stone-eruption_234
+  - first:
+      213: 1330367186277184948
+    second: radial-stone-eruption_235
+  - first:
+      213: 1984756999005883021
+    second: radial-stone-eruption_236
+  - first:
+      213: -2101766951810098210
+    second: radial-stone-eruption_237
+  - first:
+      213: 5341625752389042517
+    second: radial-stone-eruption_238
+  - first:
+      213: 6250458793112827209
+    second: radial-stone-eruption_239
+  - first:
+      213: 4733079181518397414
+    second: radial-stone-eruption_240
+  - first:
+      213: -318853666023930698
+    second: radial-stone-eruption_241
+  - first:
+      213: -8151077062040466137
+    second: radial-stone-eruption_242
+  - first:
+      213: 3382345413625651063
+    second: radial-stone-eruption_243
+  - first:
+      213: -7887647297274780360
+    second: radial-stone-eruption_244
+  - first:
+      213: 1011743885790964441
+    second: radial-stone-eruption_245
+  - first:
+      213: 5847272300389049639
+    second: radial-stone-eruption_246
+  - first:
+      213: 2102714673720747503
+    second: radial-stone-eruption_247
+  - first:
+      213: 5689555636788960980
+    second: radial-stone-eruption_248
+  - first:
+      213: -797491787646060207
+    second: radial-stone-eruption_249
+  - first:
+      213: 3344554022051730804
+    second: radial-stone-eruption_250
+  - first:
+      213: 7978377529132836904
+    second: radial-stone-eruption_251
+  - first:
+      213: -6860839642794532302
+    second: radial-stone-eruption_252
+  - first:
+      213: -6177956281482403039
+    second: radial-stone-eruption_253
+  - first:
+      213: 1157156304216591613
+    second: radial-stone-eruption_254
+  - first:
+      213: -3363058858751133518
+    second: radial-stone-eruption_255
+  - first:
+      213: -3817582860304097501
+    second: radial-stone-eruption_256
+  - first:
+      213: 621389211465146968
+    second: radial-stone-eruption_257
+  - first:
+      213: 510903960270042668
+    second: radial-stone-eruption_258
+  - first:
+      213: -4402376367397375566
+    second: radial-stone-eruption_259
+  - first:
+      213: 381042061290320868
+    second: radial-stone-eruption_260
+  - first:
+      213: -6702218793392588593
+    second: radial-stone-eruption_261
+  - first:
+      213: -3114724949794648778
+    second: radial-stone-eruption_262
+  - first:
+      213: 2115269858040577263
+    second: radial-stone-eruption_263
+  - first:
+      213: 6723451608068358096
+    second: radial-stone-eruption_264
+  - first:
+      213: 4356309055727824683
+    second: radial-stone-eruption_265
+  - first:
+      213: -5015994364083301786
+    second: radial-stone-eruption_266
+  - first:
+      213: 3590947716486321004
+    second: radial-stone-eruption_267
+  - first:
+      213: -3612882675093780802
+    second: radial-stone-eruption_268
+  - first:
+      213: -3287977585126649951
+    second: radial-stone-eruption_269
+  - first:
+      213: -8648710717191123132
+    second: radial-stone-eruption_270
+  - first:
+      213: 3059834426289775011
+    second: radial-stone-eruption_271
+  - first:
+      213: -4639170191939949406
+    second: radial-stone-eruption_272
+  - first:
+      213: -3321128608585429598
+    second: radial-stone-eruption_273
+  - first:
+      213: 7854363347944313212
+    second: radial-stone-eruption_274
+  - first:
+      213: 3575345752931768662
+    second: radial-stone-eruption_275
+  - first:
+      213: 3019507412488191259
+    second: radial-stone-eruption_276
+  - first:
+      213: -5383093330478599409
+    second: radial-stone-eruption_277
+  - first:
+      213: -8418671456077703111
+    second: radial-stone-eruption_278
+  - first:
+      213: -9019962955533264043
+    second: radial-stone-eruption_279
+  - first:
+      213: 384856468228048533
+    second: radial-stone-eruption_280
+  - first:
+      213: -4966382711305603951
+    second: radial-stone-eruption_281
+  - first:
+      213: 7399124365847553811
+    second: radial-stone-eruption_282
+  - first:
+      213: 2933473177410014015
+    second: radial-stone-eruption_283
+  - first:
+      213: -4093997992162516556
+    second: radial-stone-eruption_284
+  - first:
+      213: 1873066119336515918
+    second: radial-stone-eruption_285
+  - first:
+      213: -4831806352151228967
+    second: radial-stone-eruption_286
+  - first:
+      213: 8339662367261662463
+    second: radial-stone-eruption_287
+  - first:
+      213: -1625088585847627262
+    second: radial-stone-eruption_288
+  - first:
+      213: -4180321520920485098
+    second: radial-stone-eruption_289
+  - first:
+      213: 2136813727000444368
+    second: radial-stone-eruption_290
+  - first:
+      213: 8053208296452613369
+    second: radial-stone-eruption_291
+  - first:
+      213: -5594235952575957135
+    second: radial-stone-eruption_292
+  - first:
+      213: 5900633112602745168
+    second: radial-stone-eruption_293
+  - first:
+      213: 5690382063655375317
+    second: radial-stone-eruption_294
+  - first:
+      213: 1099067070471370911
+    second: radial-stone-eruption_295
+  - first:
+      213: -8915344399356367805
+    second: radial-stone-eruption_296
+  - first:
+      213: 363590428061016601
+    second: radial-stone-eruption_297
+  - first:
+      213: 5439465577243727288
+    second: radial-stone-eruption_298
+  - first:
+      213: 7851180425093921983
+    second: radial-stone-eruption_299
+  - first:
+      213: 7512434697457235574
+    second: radial-stone-eruption_300
+  - first:
+      213: 6925737192778605595
+    second: radial-stone-eruption_301
+  - first:
+      213: 1402550433075781339
+    second: radial-stone-eruption_302
+  - first:
+      213: -2874255938266205756
+    second: radial-stone-eruption_303
+  - first:
+      213: 3106461802833620896
+    second: radial-stone-eruption_304
+  - first:
+      213: 2913784236847477693
+    second: radial-stone-eruption_305
+  - first:
+      213: 1335273064601660071
+    second: radial-stone-eruption_306
+  - first:
+      213: 4015745912458034294
+    second: radial-stone-eruption_307
+  - first:
+      213: -3438625721590700515
+    second: radial-stone-eruption_308
+  - first:
+      213: -5473245288833500452
+    second: radial-stone-eruption_309
+  - first:
+      213: 8242145140284933717
+    second: radial-stone-eruption_310
+  - first:
+      213: 7513659192539738596
+    second: radial-stone-eruption_311
+  - first:
+      213: -3809700283676248857
+    second: radial-stone-eruption_312
+  - first:
+      213: -295348662460467650
+    second: radial-stone-eruption_313
+  - first:
+      213: -5434048329425051706
+    second: radial-stone-eruption_314
+  - first:
+      213: -7849525960912595482
+    second: radial-stone-eruption_315
+  - first:
+      213: 1828966679452268710
+    second: radial-stone-eruption_316
+  - first:
+      213: -6196777762419571092
+    second: radial-stone-eruption_317
+  - first:
+      213: 8913608917684447599
+    second: radial-stone-eruption_318
+  - first:
+      213: -2226935219123227965
+    second: radial-stone-eruption_319
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: radial-stone-eruption_000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1792
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc2176efcd374e4ebbd719d26e60256
+      internalID: -987244665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_001
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1792
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea4c34e39d554f98b141172c6c8a92f
+      internalID: -733111579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_002
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1792
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d428d26521eff4bac85b56f3606f53b4
+      internalID: -1177623279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_003
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1792
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d52f15ccb4bb84a77b33a6e2d853c3cd
+      internalID: -169794988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_004
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1792
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c691cdfabc9f44cd78a3c76792502988
+      internalID: -531130635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_005
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 1792
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10602b8c7fd5f47e7ae0ab6d79fd35bf
+      internalID: 193143686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_006
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 1792
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f2aa32b55bb45c5be5c26984460528
+      internalID: -266261511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_007
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65fb268101195434baabd68dcf5401b0
+      internalID: 229252805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_008
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1536
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e26ead0ad75b499c985c57436a332eb
+      internalID: 699761928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_009
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1536
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9799710b4cdb1412092026694ada52e6
+      internalID: 522550525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_010
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1536
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7df8178990914ba09bce8faeed53bf5
+      internalID: -2118892162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_011
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1536
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cac2be9eefc34fae9ed8bb655cc0a6f
+      internalID: 354426700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_012
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 1536
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4159136e79db0472e9a3b1e135e58d7e
+      internalID: 1483128454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_013
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 1536
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10dc8446d08394a869f05cf59c44bcc0
+      internalID: -1565830697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_014
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8937ce1517a074d44a4def5cb62ef4e3
+      internalID: 1951451958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_015
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1280
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5345dc382bc86444c878dd8bac6348f3
+      internalID: -1269371419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_016
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1280
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a10aaf508a40043cca2e9e26e2ce9502
+      internalID: 290237352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_017
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1280
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55b1ccf0a7357428390a87536876ff28
+      internalID: 1585706506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_018
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1280
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079698bb955dd4cdfa330da49c1d52c1
+      internalID: 1597239163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_019
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 1280
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e0308978b89d47c0a34c8250bdeb2ca
+      internalID: -136704420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_020
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 1280
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d78a5dc4d1d4749d6aa1a8e494cf3af3
+      internalID: 1483855971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_021
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb1294192fc6459abfb326c72348678
+      internalID: -1682577537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_022
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1024
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a04d8334ae80e4c4bbd731cd81dffe5f
+      internalID: 1030417615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_023
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1024
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ceadc8275dd24d76bd923ce3d3eba39
+      internalID: 1034252431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_024
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1024
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4deec2de7369490196997b7895dd885
+      internalID: -1951688643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_025
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1024
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ea94ee1085ac4430b2dbda85c707af2
+      internalID: -1366909443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_026
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 1024
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a4b6a3d45f4246269f676d2e9edfeb1
+      internalID: -765544973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_027
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 1024
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13e4f495f2c3b421284c33a12f797d8e
+      internalID: 834455546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_028
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a435cc77867a4350a78afd976db5120
+      internalID: -1668699651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_029
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 768
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02da1fafa9385402c869c4fd7bc7c250
+      internalID: -985729071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_030
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 768
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc83ead64b53430184ee18d833fd2fa
+      internalID: -1874782059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_031
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 768
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75e8d88217a104fa293e2590b46cd075
+      internalID: 2001227787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_032
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 768
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f2f0c6a1f81d4c98994275b903b11b9
+      internalID: -1874057941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_033
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 768
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f443b2bdde4487d9786192dbaf3e54
+      internalID: 67513377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_034
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 768
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b8b35c7fd28f471dbc2527b4b9a6b31
+      internalID: -973638030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_035
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e6998682add43098271c6800547158
+      internalID: 1779116084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_036
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 512
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71e6603791eab428b8c91884b03bdeec
+      internalID: 1002748934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_037
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 512
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b9c0e8ab9be449b0b9adea877195d26
+      internalID: -1137621847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_038
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 512
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 398315fc524c749d98f714742dcaf7e6
+      internalID: -1180303979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_039
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 512
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cf18b78291754edfb8ec9a7ef1f1c6e
+      internalID: 52291619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_040
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 512
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac735870118a4405992a700c818accf0
+      internalID: 1941333326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_041
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 512
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f431df7c72b24581a25526d8ac65c9e
+      internalID: -1521358611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_042
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51d30ecd0f93f43faa35c3290f6b52ca
+      internalID: -371096725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_043
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 256
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6412db1202cd2408b93064c92fd461f9
+      internalID: -666964581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_044
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 256
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d94798ff4384e26bdd57fd9f73ac77
+      internalID: 199597992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_045
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 256
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81330c2c0431b42dab62db25d8da098c
+      internalID: 1521637303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_046
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 256
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c36b6a67bb5b4b5abb954489cbfed76
+      internalID: 383986740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_047
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 256
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8d8e6ce0ce39451091415192225cc4f
+      internalID: 743807200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_048
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 256
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cee04ca1f86e43118c96efef4057baf
+      internalID: 1177972495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_049
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d054c84fa73545809021cab37288ccb
+      internalID: 1715286649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_050
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b2dced1dac347769f6900389b21ea4
+      internalID: 2023469382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_051
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2f20fa57c6a94bd3ae447f800473e83
+      internalID: 1063021036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_052
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a60812345914a41ac503ed83c55d8d
+      internalID: -164564257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radial-stone-eruption_053
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 352
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41015625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e82091e6bffb448fb40a38bcd0b27f9
+      internalID: -834122919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d3b466f3e613e4e5e802d8c838bfd31a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      radial-stone-eruption_000: -987244665
+      radial-stone-eruption_001: -733111579
+      radial-stone-eruption_002: -1177623279
+      radial-stone-eruption_003: -169794988
+      radial-stone-eruption_004: -531130635
+      radial-stone-eruption_005: 193143686
+      radial-stone-eruption_006: -266261511
+      radial-stone-eruption_007: 229252805
+      radial-stone-eruption_008: 699761928
+      radial-stone-eruption_009: 522550525
+      radial-stone-eruption_010: -2118892162
+      radial-stone-eruption_011: 354426700
+      radial-stone-eruption_012: 1483128454
+      radial-stone-eruption_013: -1565830697
+      radial-stone-eruption_014: 1951451958
+      radial-stone-eruption_015: -1269371419
+      radial-stone-eruption_016: 290237352
+      radial-stone-eruption_017: 1585706506
+      radial-stone-eruption_018: 1597239163
+      radial-stone-eruption_019: -136704420
+      radial-stone-eruption_020: 1483855971
+      radial-stone-eruption_021: -1682577537
+      radial-stone-eruption_022: 1030417615
+      radial-stone-eruption_023: 1034252431
+      radial-stone-eruption_024: -1951688643
+      radial-stone-eruption_025: -1366909443
+      radial-stone-eruption_026: -765544973
+      radial-stone-eruption_027: 834455546
+      radial-stone-eruption_028: -1668699651
+      radial-stone-eruption_029: -985729071
+      radial-stone-eruption_030: -1874782059
+      radial-stone-eruption_031: 2001227787
+      radial-stone-eruption_032: -1874057941
+      radial-stone-eruption_033: 67513377
+      radial-stone-eruption_034: -973638030
+      radial-stone-eruption_035: 1779116084
+      radial-stone-eruption_036: 1002748934
+      radial-stone-eruption_037: -1137621847
+      radial-stone-eruption_038: -1180303979
+      radial-stone-eruption_039: 52291619
+      radial-stone-eruption_040: 1941333326
+      radial-stone-eruption_041: -1521358611
+      radial-stone-eruption_042: -371096725
+      radial-stone-eruption_043: -666964581
+      radial-stone-eruption_044: 199597992
+      radial-stone-eruption_045: 1521637303
+      radial-stone-eruption_046: 383986740
+      radial-stone-eruption_047: 743807200
+      radial-stone-eruption_048: 1177972495
+      radial-stone-eruption_049: 1715286649
+      radial-stone-eruption_050: 2023469382
+      radial-stone-eruption_051: 1063021036
+      radial-stone-eruption_052: -164564257
+      radial-stone-eruption_053: -834122919
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -8,7 +8,7 @@ public class PlayerInfo : MonoBehaviour
     public int hp;
     public int hpRegenRate;
     public float speed;
-    public int damage;
+    public float damage;
     public int defense;
     public float criticalDamage;
     public int criticalChance;

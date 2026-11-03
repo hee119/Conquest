@@ -1,0 +1,13 @@
+Assets/SpriteSeet/player-idle-trimmed.png | pivot Y offset=15px | sprites=23
+Assets/SpriteSeet/player-attack (1) (1).png | pivot Y offset=7.2px | sprites=25
+Assets/SpriteSeet/Player-dash (1).png | pivot Y offset=32px | sprites=25
+Assets/SpriteSeet/MageIdle.png | pivot Y offset=3px | sprites=22
+Assets/SpriteSeet/MageCastAttack.png | pivot Y offset=4px | sprites=25
+Assets/SpriteSeet/MageDash.png | pivot Y offset=3px | sprites=25
+Assets/SpriteSeet/cb5787d7-5267-40e1-b819-542961eea023.png | pivot Y offset=0.65625px | sprites=6
+Assets/SpriteSeet/OctopusKingSpin.png | pivot Y offset=-20px | sprites=24
+Assets/SpriteSeet/OctopusKingGroundAttack.png | pivot Y offset=40px | sprites=23
+Assets/SpriteSeet/OctopusKingWaterShot.png | pivot Y offset=9.000002px | sprites=25
+Assets/SpriteSeet/SlimeHit.png | pivot Y offset=22px | sprites=25
+Assets/SpriteSeet/SlimeKingHit.png | pivot Y offset=25px | sprites=25
+PASS: 12 sheets aligned; 41 animation tracks preserved; 72 mouth offsets followed Y correction. Move sheets, X pivots, artwork, PPU and animation timing unchanged. Constant sheet offsets preserve pose/jump motion.

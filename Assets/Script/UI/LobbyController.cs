@@ -16,12 +16,27 @@ public sealed class LobbyController : MonoBehaviour
     [SerializeField] private CharacterCardVisual swordmanCard;
     [SerializeField] private CharacterCardVisual mageCard;
     [SerializeField] private CharacterProgressionPanel progressionPanel;
+    [SerializeField] private CharacterDetailsPreview detailsPreview;
+    [SerializeField] private CharacterSummaryStats summaryStats;
 
     private int previewCharacterId = 1;
+    private bool started;
     private AudioSource lobbyMusicSource;
     private AudioClip lobbyMusicClip;
+    [SerializeField] private QuitConfirmationDialog quitDialog;
+
+    private void OnEnable()
+    {
+        if (started) InitializeLobby();
+    }
 
     private void Start()
+    {
+        started = true;
+        InitializeLobby();
+    }
+
+    private void InitializeLobby()
     {
         if (SoundManager.Instance != null)
         {
@@ -34,8 +49,9 @@ public sealed class LobbyController : MonoBehaviour
         UpdateCharacterPreview();
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
+        if (quitDialog != null) quitDialog.Hide();
         // A new scene may already have replaced the shared BGM source's clip.
         if (lobbyMusicSource != null && lobbyMusicSource.clip == lobbyMusicClip &&
             SoundManager.Instance != null)
@@ -70,8 +86,7 @@ public sealed class LobbyController : MonoBehaviour
     public void ConfirmCharacter()
     {
         SelectCharacter(previewCharacterId);
-        if (SoundManager.Instance != null)
-            SoundManager.Instance.Play(SoundIds.CharacterConfirm);
+        UiSoundEvents.Request(UiSoundCue.Confirm);
         if (characterPanel != null)
             characterPanel.SetActive(false);
         if (mainMenu != null)
@@ -86,6 +101,11 @@ public sealed class LobbyController : MonoBehaviour
 
     private void UpdateCharacterPreview()
     {
+        foreach (var wallet in GetComponentsInChildren<ProgressionWalletView>(true))
+            wallet.SetCharacter(previewCharacterId);
+        if (summaryStats != null) summaryStats.SetCharacter(previewCharacterId);
+        if (detailsPreview != null)
+            detailsPreview.SetCharacter(previewCharacterId);
         if (progressionPanel != null)
             progressionPanel.SetCharacter(previewCharacterId);
         bool mageSelected = previewCharacterId == 2;
@@ -132,6 +152,6 @@ public sealed class LobbyController : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit();
+        if (quitDialog != null) quitDialog.Show();
     }
 }

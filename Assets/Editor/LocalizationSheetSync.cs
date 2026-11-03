@@ -36,6 +36,9 @@ public static class LocalizationSheetSync
             return;
         }
 
+        csv = System.Text.RegularExpressions.Regex.Replace(csv,
+            @"[ \t]*(?:\\r\\n|\\n|\\r)[ \t]*", " ");
+
         Directory.CreateDirectory(Path.GetDirectoryName(AssetPath));
         File.WriteAllText(AssetPath, csv, new UTF8Encoding(false));
         AssetDatabase.ImportAsset(AssetPath, ImportAssetOptions.ForceUpdate);

@@ -19,6 +19,11 @@ public sealed class GameEndScreenController : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Button lobbyButton;
     [SerializeField] private string lobbySceneName = "Lobby";
 
+    private GameObject gameOverOverlay;
+    private TMP_Text gameOverTitle;
+    private TMP_Text gameOverMessage;
+    private UnityEngine.UI.Button gameOverRetry;
+    private UnityEngine.UI.Button gameOverLobby;
     private string stageSceneName;
     private bool isShowing;
     private CanvasGroup[] contentGroups;
@@ -39,6 +44,11 @@ public sealed class GameEndScreenController : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        gameOverOverlay = overlay;
+        gameOverTitle = titleText;
+        gameOverMessage = messageText;
+        gameOverRetry = retryButton;
+        gameOverLobby = lobbyButton;
         stageSceneName = SceneManager.GetActiveScene().name;
         if (titleText != null)
             defaultTitleColor = titleText.color;
@@ -59,13 +69,42 @@ public sealed class GameEndScreenController : MonoBehaviour
         if (demoClearOverlay != null)
             demoClearOverlay.SetActive(false);
 
-        if (retryButton != null)
-            retryButton.onClick.AddListener(RetryStage);
 
-        if (lobbyButton != null)
-            lobbyButton.onClick.AddListener(ReturnToLobby);
 
         SubscribeToLocalization();
+    }
+
+    private void OnEnable()
+    {
+        SubscribeToLocalization();
+        if (!isShowing) return;
+        if (clearTitleTypewriter != null)
+            clearTitleTypewriter.onTextShowed.RemoveListener(ShowClearMessage);
+        if (clearMessageTypewriter != null)
+            clearMessageTypewriter.onTextShowed.RemoveListener(ShowClearButtons);
+        clearTitleTypewriter = clearMessageTypewriter = null;
+        overlay = gameOverOverlay;
+        titleText = gameOverTitle;
+        messageText = gameOverMessage;
+        retryButton = gameOverRetry;
+        lobbyButton = gameOverLobby;
+        retryButtonText = retryButton != null ? retryButton.GetComponentInChildren<TMP_Text>(true) : null;
+        defaultTitleColor = titleText != null ? titleText.color : Color.white;
+        isShowing = isClearShowing = false;
+        foreach (var material in revealMaterials) if (material != null) Destroy(material);
+        revealMaterials.Clear();
+        if (overlay != null) { PrepareReveal(); overlay.SetActive(false); }
+        if (demoClearOverlay != null) demoClearOverlay.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        revealSequence?.Kill();
+        revealSequence = null;
+        if (contentGroups != null)
+            foreach (var group in contentGroups) if (group != null) group.DOKill();
+        clearTitleTypewriter?.StopShowingText();
+        clearMessageTypewriter?.StopShowingText();
     }
 
     private void Start() => SubscribeToLocalization();
@@ -123,10 +162,6 @@ public sealed class GameEndScreenController : MonoBehaviour
         defaultTitleColor = titleText != null ? titleText.color : Color.white;
 
         PrepareReveal();
-        if (retryButton != null)
-            retryButton.onClick.AddListener(RetryStage);
-        if (lobbyButton != null)
-            lobbyButton.onClick.AddListener(ReturnToLobby);
     }
 
     private void Show(string titleKey, string messageKey, bool isClear)
@@ -150,7 +185,7 @@ public sealed class GameEndScreenController : MonoBehaviour
         if (titleText != null)
         {
             titleText.text = Translate(titleKey);
-            titleText.color = isClear ? new Color(1f, 0.82f, 0.35f) : defaultTitleColor;
+            titleText.color = defaultTitleColor;
         }
         if (messageText != null)
         {
@@ -256,6 +291,7 @@ public sealed class GameEndScreenController : MonoBehaviour
             return;
         }
         SetContentAlpha(1f);
+        overlay.GetComponentInChildren<RunRewardView>(true)?.PlayReveal();
         if (retryButton != null) retryButton.interactable = true;
         if (lobbyButton != null) lobbyButton.interactable = true;
     }
@@ -288,6 +324,7 @@ public sealed class GameEndScreenController : MonoBehaviour
 
     private void ShowClearButtons()
     {
+        overlay.GetComponentInChildren<RunRewardView>(true)?.PlayReveal();
         if (contentGroups != null)
         {
             for (int i = 2; i < contentGroups.Length; i++)
@@ -325,8 +362,15 @@ public sealed class GameEndScreenController : MonoBehaviour
 
     private void RefreshLocalizedText()
     {
-        if (!isShowing || !isClearShowing)
+        if (!isShowing)
             return;
+        if (!isClearShowing)
+        {
+            if (titleText != null) titleText.text = Translate("gameover_title");
+            if (messageText != null) messageText.text = Translate("gameover_message");
+            if (retryButtonText != null) retryButtonText.text = Translate("end_retry");
+            return;
+        }
         if (clearTitleTypewriter != null)
             clearTitleTypewriter.StopShowingText();
         if (clearMessageTypewriter != null)
@@ -382,13 +426,16 @@ public sealed class GameEndScreenController : MonoBehaviour
 
     public void RetryStage()
     {
+        if (GameSceneManager.IsLoading)
+            return;
+
         Time.timeScale = 1f;
         if (StageManager.Instance != null)
             StageManager.Instance.StopRun();
         if (UpgradeManager.Instance != null)
             UpgradeManager.Instance.StopRun();
         GameSceneManager.SceneChanged += ReinitializeRetriedStage;
-        GameSceneManager.LoadScene(stageSceneName);
+        GameSceneManager.LoadSceneAsync(stageSceneName);
     }
 
     private static void ReinitializeRetriedStage(Scene scene, LoadSceneMode mode)
@@ -406,12 +453,15 @@ public sealed class GameEndScreenController : MonoBehaviour
 
     public void ReturnToLobby()
     {
+        if (GameSceneManager.IsLoading)
+            return;
+
         Time.timeScale = 1f;
         if (StageManager.Instance != null)
             StageManager.Instance.StopRun();
         if (UpgradeManager.Instance != null)
             UpgradeManager.Instance.StopRun();
         LobbyController.OpenStageSelectOnEntry = true;
-        GameSceneManager.LoadScene(lobbySceneName);
+        GameSceneManager.LoadSceneAsync(lobbySceneName);
     }
 }

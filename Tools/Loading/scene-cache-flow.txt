@@ -1,0 +1,6 @@
+Scene cache runtime verification
+PASS: all four scenes resident, gameplay dormant during loading
+PASS: fade in/out intermediate samples 39/63, shared duration 0.8
+PASS: retry reused the same player; second game-over UI opened
+PASS: lobby return and stage re-entry reused the same scene/player
+COMPLETE

@@ -24,9 +24,15 @@ public class BulletMove : MonoBehaviour
         rb.linearVelocity = direction.normalized * bulletInfo.speed;
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public void MoveInDirection(Vector2 direction)
     {
-        Vector2 hitPoint = other.ClosestPoint(transform.position);
+        if (rb == null || bulletInfo == null) return;
+        rb.linearVelocity = direction.normalized * bulletInfo.speed;
+    }
+
+    public virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy")) return;
 
         if (target != null && other.CompareTag(target.tag))
         {
@@ -34,11 +40,6 @@ public class BulletMove : MonoBehaviour
             {
                 other.GetComponent<PlayerCombat>().TakeDamage(bulletInfo.damage);
             }
-            else if (other.CompareTag("Enemy"))
-            {
-                other.GetComponent<EnemyCombat>().TakeDamage(bulletInfo.damage, hitPoint);
-            }
-            
             pooledObject.DestroyObj();
         }
     }

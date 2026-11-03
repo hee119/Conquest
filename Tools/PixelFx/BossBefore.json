@@ -1,0 +1,287 @@
+[
+  {
+    "path": "Assets/Resources/Prefabs/Boss/OctopusKing.prefab",
+    "parts": [
+      {
+        "obj": "OctopusKing",
+        "type": "Transform",
+        "info": "pos=(0.00, 0.00, 0.00) scale=(3.00, 3.00, 3.00)"
+      },
+      {
+        "obj": "OctopusKing",
+        "type": "SpriteRenderer",
+        "info": "sprite=OctopusKingMove_00 (UnityEngine.Sprite) order=0"
+      },
+      {
+        "obj": "OctopusKing",
+        "type": "BoxCollider2D",
+        "info": "bounds=Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00) trigger=False"
+      },
+      {
+        "obj": "OctopusKing",
+        "type": "EnemyCombat",
+        "info": "{\"isDead\":false,\"isBurn\":false,\"hitParticle\":{\"instanceID\":0},\"hitStateName\":\"Hit\",\"hitMaxWait\":1.0,\"enemyInfo\":{\"instanceID\":0},\"enemyMove\":{\"instanceID\":0}}"
+      },
+      {
+        "obj": "OctopusKing",
+        "type": "PooledObject",
+        "info": "{}"
+      },
+      {
+        "obj": "OctopusKing",
+        "type": "NavMeshAgent",
+        "info": ""
+      },
+      {
+        "obj": "OctopusKing",
+        "type": "Rigidbody2D",
+        "info": ""
+      },
+      {
+        "obj": "OctopusKing",
+        "type": "Animator",
+        "info": "controller=OctopusKing (UnityEngine.AnimatorController)"
+      },
+      {
+        "obj": "OctopusKing",
+        "type": "EnemyMove",
+        "info": "{\"target\":{\"instanceID\":0},\"agent\":{\"instanceID\":0},\"moveSpeed\":0.30000001192092898,\"stoppingDistance\":0.0,\"isSlowDown\":false,\"slowCount\":0,\"pathUpdateInterval\":0.3499999940395355,\"targetMoveThreshold\":0.10000000149011612,\"knockbackCooldown\":0.30000001192092898,\"knockbackPower\":5.0,\"knockbackDuration\":0.15000000596046449}"
+      },
+      {
+        "obj": "OctopusKing",
+        "type": "OctopusKing",
+        "info": "{\"waterSpawnPoint\":{\"instanceID\":82460},\"rotationSpeed\":200,\"rotationCount\":3,\"waterStreamObjectId\":1000,\"bulletSpawnCount\":6,\"bulletSpawnInterval\":0.20000000298023225,\"bulletId\":601,\"waterShotAnimation\":{\"instanceID\":-250900},\"waterShotReleaseDelay\":0.22499999403953553,\"groundAttackSkillId\":1001,\"groundAttackAnimTrigger\":\"GroundCrack\",\"groundAttackImpactDelay\":0.3333333432674408,\"waterBombSpawnPoints\":[{\"instanceID\":82446},{\"instanceID\":82448},{\"instanceID\":82450},{\"instanceID\":82452},{\"instanceID\":82454},{\"instanceID\":82456},{\"instanceID\":82458}],\"waterBombCount\":5,\"waterBombSpawnInterval\":0.20000000298023225,\"waterBombSpawnRadius\":4.0,\"waterBombTargetOffsetRange\":20.0,\"waterBombArcHeight\":3.0,\"waterBombFlightDuration\":1.5,\"waterBombWarningId\":1002,\"waterBombId\":602,\"waterBombImpactRadius\":2.0,\"waterBombDamage\":5,\"playerLayer\":{\"serializedVersion\":\"2\",\"m_Bits\":128},\"animator\":{\"instanceID\":0},\"patternInterval\":6.0}"
+      },
+      {
+        "obj": "OctopusKing",
+        "type": "EnemyInfo",
+        "info": "{\"id\":150,\"name\":\"\",\"hp\":2000.0,\"hpRegenRate\":0,\"speed\":0.30000001192092898,\"damage\":10,\"defense\":5,\"dropExpOrbId\":302,\"explosionDamage\":0,\"explosionRange\":0}"
+      },
+      {
+        "obj": "OctopusKing",
+        "type": "BossHealthSource",
+        "info": "{}"
+      },
+      {
+        "obj": "Ice Hit ",
+        "type": "Transform",
+        "info": "pos=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00)"
+      },
+      {
+        "obj": "Ice Hit ",
+        "type": "ParticleSystem",
+        "info": ""
+      },
+      {
+        "obj": "Ice Hit ",
+        "type": "ParticleSystemRenderer",
+        "info": ""
+      },
+      {
+        "obj": "Sparks",
+        "type": "Transform",
+        "info": "pos=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00)"
+      },
+      {
+        "obj": "Sparks",
+        "type": "ParticleSystem",
+        "info": ""
+      },
+      {
+        "obj": "Sparks",
+        "type": "ParticleSystemRenderer",
+        "info": ""
+      },
+      {
+        "obj": "Shockwave",
+        "type": "Transform",
+        "info": "pos=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00)"
+      },
+      {
+        "obj": "Shockwave",
+        "type": "ParticleSystem",
+        "info": ""
+      },
+      {
+        "obj": "Shockwave",
+        "type": "ParticleSystemRenderer",
+        "info": ""
+      },
+      {
+        "obj": "Flash",
+        "type": "Transform",
+        "info": "pos=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00)"
+      },
+      {
+        "obj": "Flash",
+        "type": "ParticleSystem",
+        "info": ""
+      },
+      {
+        "obj": "Flash",
+        "type": "ParticleSystemRenderer",
+        "info": ""
+      },
+      {
+        "obj": "BulletSpawnPos",
+        "type": "Transform",
+        "info": "pos=(-0.05, 0.07, 0.00) scale=(1.00, 1.00, 1.00)"
+      },
+      {
+        "obj": "BulletSpawnPos (1)",
+        "type": "Transform",
+        "info": "pos=(-0.24, 0.25, 0.00) scale=(1.00, 1.00, 1.00)"
+      },
+      {
+        "obj": "BulletSpawnPos (2)",
+        "type": "Transform",
+        "info": "pos=(0.18, 0.07, 0.00) scale=(1.00, 1.00, 1.00)"
+      },
+      {
+        "obj": "BulletSpawnPos (3)",
+        "type": "Transform",
+        "info": "pos=(-0.05, -0.20, 0.00) scale=(1.00, 1.00, 1.00)"
+      },
+      {
+        "obj": "BulletSpawnPos (4)",
+        "type": "Transform",
+        "info": "pos=(0.22, 0.25, 0.00) scale=(1.00, 1.00, 1.00)"
+      },
+      {
+        "obj": "BulletSpawnPos (5)",
+        "type": "Transform",
+        "info": "pos=(-0.12, 0.31, 0.00) scale=(1.00, 1.00, 1.00)"
+      },
+      {
+        "obj": "BulletSpawnPos (6)",
+        "type": "Transform",
+        "info": "pos=(0.13, -0.11, 0.00) scale=(1.00, 1.00, 1.00)"
+      },
+      {
+        "obj": "BulletSpawnPos (7)",
+        "type": "Transform",
+        "info": "pos=(0.07, 0.07, 0.00) scale=(1.00, 1.00, 1.00)"
+      }
+    ]
+  },
+  {
+    "path": "Assets/Resources/Prefabs/Bullet/WaterCannon.prefab",
+    "parts": [
+      {
+        "obj": "WaterCannon",
+        "type": "Transform",
+        "info": "pos=(-7.50, 1.13, 0.00) scale=(1.00, 1.00, 1.00)"
+      },
+      {
+        "obj": "WaterCannon",
+        "type": "SpriteRenderer",
+        "info": "sprite=Circle (UnityEngine.Sprite) order=0"
+      },
+      {
+        "obj": "WaterCannon",
+        "type": "BulletInfo",
+        "info": "{\"id\":601,\"damage\":5,\"range\":5.0,\"speed\":2}"
+      },
+      {
+        "obj": "WaterCannon",
+        "type": "PooledObject",
+        "info": "{}"
+      },
+      {
+        "obj": "WaterCannon",
+        "type": "Rigidbody2D",
+        "info": ""
+      },
+      {
+        "obj": "WaterCannon",
+        "type": "CircleCollider2D",
+        "info": "bounds=Center: (-7.50, 1.13, 0.00), Extents: (0.00, 0.00, 0.00) trigger=True"
+      },
+      {
+        "obj": "WaterCannon",
+        "type": "PredictionBulletMove",
+        "info": "{\"target\":{\"instanceID\":0},\"predictTime\":0.20000000298023225}"
+      }
+    ]
+  },
+  {
+    "path": "Assets/Resources/Prefabs/Bullet/WaterBamb.prefab",
+    "parts": [
+      {
+        "obj": "WaterBamb",
+        "type": "Transform",
+        "info": "pos=(-7.50, 1.13, 0.00) scale=(2.00, 2.00, 2.00)"
+      },
+      {
+        "obj": "WaterBamb",
+        "type": "SpriteRenderer",
+        "info": "sprite=Circle (UnityEngine.Sprite) order=0"
+      },
+      {
+        "obj": "WaterBamb",
+        "type": "BulletInfo",
+        "info": "{\"id\":602,\"damage\":5,\"range\":5.0,\"speed\":2}"
+      },
+      {
+        "obj": "WaterBamb",
+        "type": "PooledObject",
+        "info": "{}"
+      },
+      {
+        "obj": "WaterBamb",
+        "type": "Rigidbody2D",
+        "info": ""
+      },
+      {
+        "obj": "WaterBamb",
+        "type": "CircleCollider2D",
+        "info": "bounds=Center: (-7.50, 1.13, 0.00), Extents: (0.00, 0.00, 0.00) trigger=True"
+      },
+      {
+        "obj": "WaterBamb",
+        "type": "PredictionBulletMove",
+        "info": "{\"target\":{\"instanceID\":0},\"predictTime\":0.20000000298023225}"
+      }
+    ]
+  },
+  {
+    "path": "Assets/Resources/Prefabs/BossPattern/GroundCrack.prefab",
+    "parts": [
+      {
+        "obj": "GroundCrack",
+        "type": "Transform",
+        "info": "pos=(-10.58, -31.49, 0.00) scale=(1.00, 1.00, 1.00)"
+      },
+      {
+        "obj": "GroundCrack",
+        "type": "SpriteRenderer",
+        "info": "sprite=GroundCrack_0 (UnityEngine.Sprite) order=10"
+      },
+      {
+        "obj": "GroundCrack",
+        "type": "Animator",
+        "info": "controller=GroundCrack_0 (UnityEngine.AnimatorController)"
+      },
+      {
+        "obj": "GroundCrack",
+        "type": "BossPatternInfo",
+        "info": "{\"id\":1001,\"name\":\"갈라짐\",\"damage\":5}"
+      },
+      {
+        "obj": "GroundCrack",
+        "type": "PooledObject",
+        "info": "{}"
+      },
+      {
+        "obj": "GroundCrack",
+        "type": "BoxCollider2D",
+        "info": "bounds=Center: (-10.58, -31.49, 0.00), Extents: (0.00, 0.00, 0.00) trigger=True"
+      },
+      {
+        "obj": "GroundCrack",
+        "type": "GroundCrack",
+        "info": "{}"
+      }
+    ]
+  }
+]

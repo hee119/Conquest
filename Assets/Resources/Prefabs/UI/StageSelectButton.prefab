@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 7583886178135489900}
   - component: {fileID: 2858762493474829245}
   - component: {fileID: 7870810898203161060}
+  - component: {fileID: 6561001127757454977}
   m_Layer: 5
   m_Name: StageSelectButton
   m_TagString: Untagged
@@ -178,8 +179,8 @@ MonoBehaviour:
   m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.94, b: 0.78, a: 1}
-    m_PressedColor: {r: 0.78, g: 0.72, b: 0.62, a: 1}
+    m_HighlightedColor: {r: 0.96, g: 0.96, b: 0.96, a: 1}
+    m_PressedColor: {r: 0.784, g: 0.784, b: 0.784, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.6, g: 0.6, b: 0.6, a: 0.5}
     m_ColorMultiplier: 1
@@ -212,6 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552b5cccc9c4645ada7e037b1f363af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hover
+  hoverOutline: {fileID: 0}
 --- !u!114 &2858762493474829245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,4 +241,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b201d0419a904d709c9b16cde20d568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StagePlanetButton
-  borderHighlight: {fileID: 2858762493474829245}
+  planetImage: {fileID: 0}
+  hoverOutlineMaterial: {fileID: 0}
+  selectionGlowMaterial: {fileID: 0}
+--- !u!114 &6561001127757454977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7192868923776012181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 265c182c81e23406cb8af397a80b5cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UiSoundEmitter
+  suppressDefaultClick: 0

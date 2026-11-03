@@ -1,0 +1,1202 @@
+fileFormatVersion: 2
+guid: c97aab6c97a314233b4eced78b543756
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2336559728152779748
+    second: hydro-pump_0
+  - first:
+      213: -3631870618615847291
+    second: hydro-pump_1
+  - first:
+      213: -1473809253107990400
+    second: hydro-pump_2
+  - first:
+      213: 5771017792019762314
+    second: hydro-pump_3
+  - first:
+      213: -4929570354887889865
+    second: hydro-pump_4
+  - first:
+      213: 1263962139263957312
+    second: hydro-pump_5
+  - first:
+      213: 6431987547560493334
+    second: hydro-pump_6
+  - first:
+      213: 8823837779556348875
+    second: hydro-pump_7
+  - first:
+      213: 5976941116000473214
+    second: hydro-pump_8
+  - first:
+      213: -6680794671988001467
+    second: hydro-pump_9
+  - first:
+      213: 2644530450929993099
+    second: hydro-pump_10
+  - first:
+      213: -6882474854367703353
+    second: hydro-pump_11
+  - first:
+      213: -2762300082590886710
+    second: hydro-pump_12
+  - first:
+      213: -8402979242845000860
+    second: hydro-pump_13
+  - first:
+      213: 5531060249632915238
+    second: hydro-pump_14
+  - first:
+      213: 3303280913122724254
+    second: hydro-pump_15
+  - first:
+      213: 4519686014636531137
+    second: hydro-pump_16
+  - first:
+      213: 7722786778004080950
+    second: hydro-pump_17
+  - first:
+      213: -4398702431895278329
+    second: hydro-pump_18
+  - first:
+      213: 7051597734466295444
+    second: hydro-pump_19
+  - first:
+      213: 6172953977427346550
+    second: hydro-pump_20
+  - first:
+      213: -3385473193487190265
+    second: hydro-pump_21
+  - first:
+      213: -5926638455304973671
+    second: hydro-pump_22
+  - first:
+      213: -3044867517403607331
+    second: hydro-pump_23
+  - first:
+      213: -3439594135698517263
+    second: hydro-pump_24
+  - first:
+      213: -2207983465472335350
+    second: hydro-pump_25
+  - first:
+      213: 5819155635364967185
+    second: hydro-pump_26
+  - first:
+      213: 1879398285198570137
+    second: hydro-pump_27
+  - first:
+      213: 5349997709440407628
+    second: hydro-pump_28
+  - first:
+      213: 202453900558749180
+    second: hydro-pump_29
+  - first:
+      213: -462609986579755029
+    second: hydro-pump_30
+  - first:
+      213: -135863367831516425
+    second: hydro-pump_31
+  - first:
+      213: 573747152406990489
+    second: hydro-pump_32
+  - first:
+      213: 4356569740403197129
+    second: hydro-pump_33
+  - first:
+      213: 3009837933533798644
+    second: hydro-pump_34
+  - first:
+      213: 4862972845502161359
+    second: hydro-pump_35
+  - first:
+      213: 4014933707302134574
+    second: hydro-pump_36
+  - first:
+      213: 740612220039099262
+    second: hydro-pump_37
+  - first:
+      213: 6628818638765120934
+    second: hydro-pump_38
+  - first:
+      213: 3711026718919549164
+    second: hydro-pump_39
+  - first:
+      213: -8703889107630609889
+    second: hydro-pump_40
+  - first:
+      213: -7626728813683305493
+    second: hydro-pump_41
+  - first:
+      213: 8730616342492269877
+    second: hydro-pump_42
+  - first:
+      213: -2505102281336067662
+    second: hydro-pump_43
+  - first:
+      213: -2985973636626977046
+    second: hydro-pump_44
+  - first:
+      213: -5681864481642491221
+    second: hydro-pump_45
+  - first:
+      213: -565562492762175765
+    second: hydro-pump_46
+  - first:
+      213: 3562059825036256151
+    second: hydro-pump_47
+  - first:
+      213: 2636087483849346005
+    second: hydro-pump_48
+  - first:
+      213: 6223466752434196154
+    second: hydro-pump_49
+  - first:
+      213: -7436384132903148251
+    second: hydro-pump_50
+  - first:
+      213: -4998304796874597661
+    second: hydro-pump_51
+  - first:
+      213: -84688232148246416
+    second: hydro-pump_52
+  - first:
+      213: 6645477677389007428
+    second: hydro-pump_53
+  - first:
+      213: -7079930951332780342
+    second: hydro-pump_54
+  - first:
+      213: 8813042416228676202
+    second: hydro-pump_55
+  - first:
+      213: 6696687974955901592
+    second: hydro-pump_56
+  - first:
+      213: -4786388641003294142
+    second: hydro-pump_57
+  - first:
+      213: -586535885846220594
+    second: hydro-pump_58
+  - first:
+      213: 7791155994096371094
+    second: hydro-pump_59
+  - first:
+      213: -2425503258157544502
+    second: hydro-pump_60
+  - first:
+      213: -3968255798935942345
+    second: hydro-pump_61
+  - first:
+      213: 2306899403331357460
+    second: hydro-pump_62
+  - first:
+      213: -551163623512280239
+    second: hydro-pump_63
+  - first:
+      213: 8970498157304372673
+    second: hydro-pump_64
+  - first:
+      213: 5047611836171557615
+    second: hydro-pump_65
+  - first:
+      213: 912941174804099049
+    second: hydro-pump_66
+  - first:
+      213: -4475859761578911123
+    second: hydro-pump_67
+  - first:
+      213: 2268775174437282425
+    second: hydro-pump_68
+  - first:
+      213: 5657187911026245574
+    second: hydro-pump_69
+  - first:
+      213: -8644931962546868194
+    second: hydro-pump_70
+  - first:
+      213: 5700081189569289666
+    second: hydro-pump_71
+  - first:
+      213: -8207938732741632230
+    second: hydro-pump_72
+  - first:
+      213: 8734522023425142446
+    second: hydro-pump_73
+  - first:
+      213: -7817463079901562409
+    second: hydro-pump_74
+  - first:
+      213: -2533139480194084672
+    second: hydro-pump_75
+  - first:
+      213: 655009569590991762
+    second: hydro-pump_76
+  - first:
+      213: 67960844982152407
+    second: hydro-pump_77
+  - first:
+      213: -3806846607975086134
+    second: hydro-pump_78
+  - first:
+      213: -8611819114500755927
+    second: hydro-pump_79
+  - first:
+      213: -3811665170617905967
+    second: hydro-pump_80
+  - first:
+      213: -4534788328516701885
+    second: hydro-pump_81
+  - first:
+      213: -5118139076536850967
+    second: hydro-pump_82
+  - first:
+      213: -5088095131679071756
+    second: hydro-pump_83
+  - first:
+      213: -2690380367417734919
+    second: hydro-pump_84
+  - first:
+      213: -6404434906873426209
+    second: hydro-pump_85
+  - first:
+      213: 2261602046054442885
+    second: hydro-pump_86
+  - first:
+      213: 8102796783849920529
+    second: hydro-pump_87
+  - first:
+      213: 3061760619242166534
+    second: hydro-pump_88
+  - first:
+      213: 6304441207287670399
+    second: hydro-pump_89
+  - first:
+      213: 5448289567939751630
+    second: hydro-pump_90
+  - first:
+      213: -5199097363468473095
+    second: hydro-pump_91
+  - first:
+      213: -3042469303395222917
+    second: hydro-pump_92
+  - first:
+      213: 5850287451864519636
+    second: hydro-pump_93
+  - first:
+      213: -1489822194668020148
+    second: hydro-pump_94
+  - first:
+      213: 5307992322158868528
+    second: hydro-pump_95
+  - first:
+      213: -3777181431579632022
+    second: hydro-pump_96
+  - first:
+      213: -1458001143804609180
+    second: hydro-pump_97
+  - first:
+      213: 410484639907395870
+    second: hydro-pump_98
+  - first:
+      213: 8400895642220259984
+    second: hydro-pump_99
+  - first:
+      213: 5350332286404091877
+    second: hydro-pump_100
+  - first:
+      213: -1981626029804038414
+    second: hydro-pump_101
+  - first:
+      213: -3084731920050793715
+    second: hydro-pump_102
+  - first:
+      213: -2778189676853676425
+    second: hydro-pump_103
+  - first:
+      213: -7205754303447185587
+    second: hydro-pump_104
+  - first:
+      213: -6494078052572357544
+    second: hydro-pump_105
+  - first:
+      213: -8992903436598466035
+    second: hydro-pump_106
+  - first:
+      213: -661712591974544039
+    second: hydro-pump_107
+  - first:
+      213: -7283912276543272693
+    second: hydro-pump_108
+  - first:
+      213: 5856946718471151847
+    second: hydro-pump_109
+  - first:
+      213: 9094670283493219593
+    second: hydro-pump_110
+  - first:
+      213: -3637006465641647475
+    second: hydro-pump_111
+  - first:
+      213: -5851127810230402034
+    second: hydro-pump_112
+  - first:
+      213: -1681288541206704792
+    second: hydro-pump_113
+  - first:
+      213: 122074305764055483
+    second: hydro-pump_114
+  - first:
+      213: 4700738463971180995
+    second: hydro-pump_115
+  - first:
+      213: 4427054749443726936
+    second: hydro-pump_116
+  - first:
+      213: 4072216787753793573
+    second: hydro-pump_117
+  - first:
+      213: 202292136693324698
+    second: hydro-pump_118
+  - first:
+      213: 1270643554329253862
+    second: hydro-pump_119
+  - first:
+      213: 3510833146696893639
+    second: hydro-pump_120
+  - first:
+      213: 1582620840314954441
+    second: hydro-pump_121
+  - first:
+      213: -6867910720538575739
+    second: hydro-pump_122
+  - first:
+      213: 3408671558276213543
+    second: hydro-pump_123
+  - first:
+      213: 8207091342353914829
+    second: hydro-pump_124
+  - first:
+      213: 1039571081167843843
+    second: hydro-pump_125
+  - first:
+      213: 1358552730678184263
+    second: hydro-pump_126
+  - first:
+      213: -449069158527431164
+    second: hydro-pump_127
+  - first:
+      213: -730173338614916987
+    second: hydro-pump_128
+  - first:
+      213: -4430290344767471196
+    second: hydro-pump_129
+  - first:
+      213: 4968322352357926896
+    second: hydro-pump_130
+  - first:
+      213: 5495678806757879519
+    second: hydro-pump_131
+  - first:
+      213: 8403294956951682938
+    second: hydro-pump_132
+  - first:
+      213: 2818505598244373905
+    second: hydro-pump_133
+  - first:
+      213: 1613818264952868603
+    second: hydro-pump_134
+  - first:
+      213: -5443800684266593250
+    second: hydro-pump_135
+  - first:
+      213: -6855402665187366123
+    second: hydro-pump_136
+  - first:
+      213: 6665794867199414891
+    second: hydro-pump_137
+  - first:
+      213: -3178823387917335672
+    second: hydro-pump_138
+  - first:
+      213: -1387715736569180135
+    second: hydro-pump_139
+  - first:
+      213: -8721077859680840936
+    second: hydro-pump_140
+  - first:
+      213: -9137226266421762033
+    second: hydro-pump_141
+  - first:
+      213: -7829851556303837186
+    second: hydro-pump_142
+  - first:
+      213: 951980859563012066
+    second: hydro-pump_143
+  - first:
+      213: -3128213492385707810
+    second: hydro-pump_144
+  - first:
+      213: -7365241257437284355
+    second: hydro-pump_145
+  - first:
+      213: -3822678077231707697
+    second: hydro-pump_146
+  - first:
+      213: 4982432713484622173
+    second: hydro-pump_147
+  - first:
+      213: 3156473004483189509
+    second: hydro-pump_148
+  - first:
+      213: 1427801443071791355
+    second: hydro-pump_149
+  - first:
+      213: -894592931184964533
+    second: hydro-pump_150
+  - first:
+      213: 6659700519078388571
+    second: hydro-pump_151
+  - first:
+      213: -4039755339890573486
+    second: hydro-pump_152
+  - first:
+      213: -6513815565933999417
+    second: hydro-pump_153
+  - first:
+      213: -2354789416197763912
+    second: hydro-pump_154
+  - first:
+      213: -2822495385151214737
+    second: hydro-pump_155
+  - first:
+      213: 3557766593159815749
+    second: hydro-pump_156
+  - first:
+      213: 8613244292139573242
+    second: hydro-pump_157
+  - first:
+      213: -9192884479161790440
+    second: hydro-pump_158
+  - first:
+      213: 7574391858489839094
+    second: hydro-pump_159
+  - first:
+      213: -6350462961299946990
+    second: hydro-pump_160
+  - first:
+      213: -3709583839305112670
+    second: hydro-pump_161
+  - first:
+      213: 3799422892958459446
+    second: hydro-pump_162
+  - first:
+      213: 4698299017061609036
+    second: hydro-pump_163
+  - first:
+      213: 7943942124111598156
+    second: hydro-pump_164
+  - first:
+      213: -4604625924371751954
+    second: hydro-pump_165
+  - first:
+      213: 2638859622866618165
+    second: hydro-pump_166
+  - first:
+      213: 8988392769615585982
+    second: hydro-pump_167
+  - first:
+      213: -479776593724513581
+    second: hydro-pump_168
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hydro-pump_000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75ad9fe47306a4542a8a593a4ad5698f
+      internalID: 431521938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_001
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 720
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb652ee4d7d5b432b843318b9c3fbe63
+      internalID: 464328340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_002
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 720
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 942251b201244422a9eb9f70fbd1ec3d
+      internalID: -1496815488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_003
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 720
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aea6b506a556449ca128009e657b5be
+      internalID: -1649188306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_004
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b6a97e29c1642fdbdf76fbebe105a2
+      internalID: 2078511934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_005
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 576
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d050de3a57f36496094575a8697b0379
+      internalID: -946960742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_006
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 576
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fab0a68ef43ae4078af6c9bcafc6ab07
+      internalID: 57082750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_007
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 576
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82a56cf02de78427f8004f8f3c006d3b
+      internalID: -270468166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_008
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 243038ecc34764f07be28a0b0c14c686
+      internalID: -1584679035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_009
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 432
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f06b84449a32467b9528b98eee06001
+      internalID: 1512086300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_010
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 432
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5244d8a26e348d0b8c5783acc31c29
+      internalID: 570108625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_011
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 432
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69d0afaa9adb448b18db755bf694e786
+      internalID: -1512915923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_012
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dee490c4f23d4b37a2970b30ef6f9bb
+      internalID: -1698392691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_013
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 288
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa0fb25152594c779ef337a5fdeb6dd
+      internalID: 1947229768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_014
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 288
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aec9c6423ca047a8bb27b372e5e770f
+      internalID: 2062792407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_015
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 288
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30312bf51f5664895bcf6b1eeb4c0169
+      internalID: -1666010159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_016
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f613c60aaabe40d9adf889e16a1c804
+      internalID: -1854097455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_017
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 144
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b9d8a65719824b60bc7b2c7223571fe
+      internalID: 1148319632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_018
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 144
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3cf0d3d6c598467bafaed9a448d3854
+      internalID: 1519127474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_019
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 144
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb817bc3bbf0748e4ad0206711649025
+      internalID: 1234092673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_020
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 184d236afa6e5420e9cb2fd16274b89a
+      internalID: -732844942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_021
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1b458e3e26ce4648b763ff1200d9f47
+      internalID: -1149708497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_022
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee5a32ceb01434c2c8d3b40b6f3f63f6
+      internalID: 1267091591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydro-pump_023
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 320
+        height: 144
+      alignment: 9
+      pivot: {x: 0.0875, y: 0.5138889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ba5c8d916bdc4b1592bc90c10acdfd5
+      internalID: 2021839667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 599a0bdf99adf4a4d950a0740c863286
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      hydro-pump_000: 431521938
+      hydro-pump_001: 464328340
+      hydro-pump_002: -1496815488
+      hydro-pump_003: -1649188306
+      hydro-pump_004: 2078511934
+      hydro-pump_005: -946960742
+      hydro-pump_006: 57082750
+      hydro-pump_007: -270468166
+      hydro-pump_008: -1584679035
+      hydro-pump_009: 1512086300
+      hydro-pump_010: 570108625
+      hydro-pump_011: -1512915923
+      hydro-pump_012: -1698392691
+      hydro-pump_013: 1947229768
+      hydro-pump_014: 2062792407
+      hydro-pump_015: -1666010159
+      hydro-pump_016: -1854097455
+      hydro-pump_017: 1148319632
+      hydro-pump_018: 1519127474
+      hydro-pump_019: 1234092673
+      hydro-pump_020: -732844942
+      hydro-pump_021: -1149708497
+      hydro-pump_022: 1267091591
+      hydro-pump_023: 2021839667
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

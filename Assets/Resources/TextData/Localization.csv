@@ -47,7 +47,7 @@ upgread_des_PowerBoost,공격력 {0}% 증가,Attack Power +{0}%,攻撃力 +{0}%
 upgread_des_Vitality,체력 {0}% 증가,HP +{0}%,HP +{0}%
 upgread_des_QuickCast,스킬 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
 upgread_des_RapidCycle,패시브 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
-upgread_des_IronWall,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
+upgread_des_IronWall,방어력 {0} 증가,Defense +{0},防御力 +{0}
 character_skill_range_desc,기본 공격 범위 {0}% 증가,Basic attack range +{0}%,基本攻撃範囲 +{0}%
 character_skill_count_sword_desc,검격 {1}회 추가,Add {1} slash attacks,斬撃を{1}回追加
 character_skill_chain_desc,최대 {4} 거리의 적 {3}명에게 연쇄 공격,Chain to {3} enemies within {4} range,距離{4}以内の敵{3}体に連鎖
@@ -162,16 +162,16 @@ upgread_des_Vitality_2,체력 {0}% 증가,HP +{0}%,HP +{0}%
 upgread_des_Vitality_3,체력 {0}% 증가,HP +{0}%,HP +{0}%
 upgread_des_Vitality_4,체력 {0}% 증가,HP +{0}%,HP +{0}%
 upgread_des_Vitality_5,체력 {0}% 증가,HP +{0}%,HP +{0}%
-upgread_des_QuickCast_1,스킬 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
-upgread_des_QuickCast_2,스킬 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
-upgread_des_QuickCast_3,스킬 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
-upgread_des_QuickCast_4,스킬 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
-upgread_des_QuickCast_5,스킬 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
-upgread_des_RapidCycle_1,패시브 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
-upgread_des_RapidCycle_2,패시브 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
-upgread_des_RapidCycle_3,패시브 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
-upgread_des_RapidCycle_4,패시브 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
-upgread_des_RapidCycle_5,패시브 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
+upgread_des_QuickCast_1,기본 공격 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
+upgread_des_QuickCast_2,기본 공격 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
+upgread_des_QuickCast_3,기본 공격 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
+upgread_des_QuickCast_4,기본 공격 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
+upgread_des_QuickCast_5,기본 공격 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
+upgread_des_RapidCycle_1,증강 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
+upgread_des_RapidCycle_2,증강 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
+upgread_des_RapidCycle_3,증강 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
+upgread_des_RapidCycle_4,증강 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
+upgread_des_RapidCycle_5,증강 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
 upgread_des_IronWall_1,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
 upgread_des_IronWall_2,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
 upgread_des_IronWall_3,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
@@ -195,7 +195,7 @@ setting_screen_borderless,테두리 없는 창,Borderless Windowed,ボーダー�
 setting_language_english,영어,English,英語
 setting_language_korean,한국어,Korean,韓国語
 setting_language_japanese,일본어,Japanese,日本語
-game_title,행성 개척자,Planetary Pioneer,惑星開拓者
+game_title,Planetary Pioneer,Planetary Pioneer,Planetary Pioneer
 lobby_stage_select,스테이지 선택,Stage Select,ステージ選択
 lobby_character_select,캐릭터 선택,Character Select,キャラクター選択
 lobby_quit,나가기,Quit,終了
@@ -204,10 +204,10 @@ lobby_stage_1,스테이지 1,Stage 1,ステージ1
 lobby_character_swordman,검사,Swordsman,剣士
 setting_exit,닫기,Close,閉じる
 cutscene_skip,스킵,Skip,スキップ
-cutscene_caption_earth,"지구는 황폐해졌고, 인류는 생존의 위기에 놓였다. 새로운 보금자리를 찾기 위해 개척자들이 우주로 향한다.","Earth has been devastated, and humanity faces a fight for survival. Pioneers head into space in search of a new home.",地球は荒廃し、人類は生存の危機に直面している。新たな住まいを求め、開拓者たちは宇宙へ向かう。
-cutscene_caption_mission,"개척자들의 임무는 인류가 살아갈 수 있는 행성을 찾고, 이주에 필요한 자원과 환경을 조사하는 것이다.",The pioneers' mission is to find a planet where humanity can live and survey the resources and environment needed for migration.,開拓者たちの任務は、人類が暮らせる惑星を探し、移住に必要な資源と環境を調査することだ。
-cutscene_caption_discovery,기나긴 항해 끝에 마침내 희망의 행성을 발견했다. 하지만 그곳에는 정체불명의 생명체들이 앞길을 막아섰다.,"After a long voyage, we finally discovered a planet of hope. But unknown lifeforms stood in our way.",長い航海の末、ついに希望の惑星を発見した。しかし、そこには正体不明の生命体が立ちはだかった。
-cutscene_caption_conquest,마침내 행성의 위협을 제거했다. 그러나 임무는 끝나지 않았다. 인류에게 가장 적합한 행성을 찾기 위한 여정은 계속된다.,"At last, we eliminated the planet's threat. But the mission is not over. The journey to find the planet best suited for humanity continues.",ついに惑星の脅威を排除した。しかし、任務はまだ終わっていない。人類に最も適した惑星を探す旅は続く。
+cutscene_caption_earth,새로운 보금자리를 찾기 위해 개척자들이 우주로 향한다.,"Earth has been devastated, and humanity faces a fight for survival. \nPioneers head into space in search of a new home.",地球は荒廃し、人類は生存の危機に直面している。\n新たな住まいを求め、開拓者たちは宇宙へ向かう。
+cutscene_caption_mission,개척자들의 임무는 인간이 살기 적합한 행성을 찾고 위협요소를 제거하는것이다.,The pioneers' mission is to find a planet where humanity can live\n and survey the resources and environment needed for migration.,開拓者たちの任務は、人類が暮らせる惑星を探し、\n移住に必要な資源と環境を調査することだ。
+cutscene_caption_discovery,기나긴 항해 끝에 희망의 행성을 발견했다. 지금부터 위험 요소를 제거하겠다.,"After a long voyage, we finally discovered a planet of hope.\n But unknown lifeforms stood in our way.",長い航海の末、ついに希望の惑星を発見した。\nしかし、そこには正体不明の生命体が立ちはだかった。
+cutscene_caption_conquest,마침내 행성의 위협을 제거했다. 그러나 임무는 끝나지 않았다. 인류에게 가장 적합한 행성을 찾기 위한 여정은 계속된다.,"At last, we eliminated the planet's threat. But the mission is not over.\n The journey to find the planet best suited for humanity continues.",ついに惑星の脅威を排除した。しかし、任務はまだ終わっていない。\n人類に最も適した惑星を探す旅は続く。
 debug_camera_lens,렌즈: {0},Lens: {0},レンズ: {0}
 debug_skill_upgrade,스킬 강화,Skill Upgrade,スキル強化
 debug_spawn_id,스폰 ID,Spawn ID,スポーンID
@@ -217,8 +217,8 @@ end_lobby,로비로 돌아가기,Return to Lobby,ロビーに戻る
 end_play_again,다시 플레이,Play Again,もう一度プレイ
 end_retry,재도전,Retry,リトライ
 end_stage_select,스테이지 선택,Stage Select,ステージ選択
-gameover_message,이번 도전은 여기까지입니다.,This run has come to an end.,今回の挑戦はここまでです。
-gameover_title,패배하였습니다.,Defeated,敗北しました。
+gameover_message,이번 도전은 여기까지,This challenge ends here,今回の挑戦はここまで
+gameover_title,패배,Defeated,敗北
 lobby_character_choose,선택하기,Select,選択する
 lobby_character_info,캐릭터 정보,Character Info,キャラクター情報
 lobby_character_locked,잠김,Locked,ロック中
@@ -237,3 +237,4 @@ setting_ui_scale_vitals,HP · 대시바 크기,HP & dash bars,HP・ダッシュ�
 setting_ui_scale_experience,경험치바 크기,Experience bar,経験値バー
 setting_ui_scale_hint,화면 밖으로 나가는 항목은 현재 크기를 유지합니다.,Elements that would leave the screen keep their current size.,画面外にはみ出す要素は現在のサイズを維持します。
 setting_ui_scale_percent,{0}%,{0}%,{0}%
+stage_selected_number,스테이지 {0},STAGE {0},ステージ {0}

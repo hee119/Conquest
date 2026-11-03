@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: -7031049320459269606}
   - component: {fileID: 7115658254923622402}
   - component: {fileID: 79239086328230691}
-  - component: {fileID: 5149760970550755715}
   - component: {fileID: 2996686744030071390}
   - component: {fileID: 3115694483785516357}
+  - component: {fileID: 1046469380911860156}
   m_Layer: 8
   m_Name: Crap
   m_TagString: Enemy
@@ -160,8 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3faa7af64e2d9be419f35587af21c46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCombat
-  maxHp: 5
-  hp: 0
   isDead: 0
   isBurn: 0
   hitParticle: {fileID: 7463187114909424339}
@@ -253,28 +251,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!95 &5149760970550755715
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4125709159630829647}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7b337e564c2944acd92554c0c3cdb475, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2996686744030071390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,6 +286,24 @@ MonoBehaviour:
   dropExpOrbId: 0
   explosionDamage: 0
   explosionRange: 0
+--- !u!114 &1046469380911860156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4125709159630829647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2669f65a90eb1434dbae4fa5fe89d5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrabSpriteAnimation
+  animationData: {fileID: 11400000, guid: 90fc403e640834cfa87f21758190d9ab, type: 2}
+  attackFrames: []
+  moveFrames: []
+  hitFrames: []
+  sequences: []
+  defaultState: 
 --- !u!1001 &4725686229233743157
 PrefabInstance:
   m_ObjectHideFlags: 0

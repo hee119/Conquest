@@ -1,0 +1,5 @@
+UI localization runtime verification
+PASS ko: quit dialog, live-created text, numbered stage, fusion translation, unchanged game title
+PASS en: quit dialog, live-created text, numbered stage, fusion translation, unchanged game title
+PASS jp: quit dialog, live-created text, numbered stage, fusion translation, unchanged game title
+COMPLETE; language preference restored

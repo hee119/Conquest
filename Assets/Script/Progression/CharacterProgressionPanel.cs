@@ -14,10 +14,12 @@ public sealed class CharacterProgressionPanel : MonoBehaviour
 
     private void OnEnable()
     {
+        LayoutUpgradeCost();
+        LayoutActionButtons();
+        UiSoundEvents.UseDedicatedClick(upgradeButton);
         CharacterProgression.Changed += Refresh;
         localization = LocalizationManager.Instance;
         if (localization != null) localization.OnLanguageChanged += Refresh;
-        if (upgradeButton != null) upgradeButton.onClick.AddListener(Upgrade);
         Refresh();
     }
 
@@ -25,11 +27,73 @@ public sealed class CharacterProgressionPanel : MonoBehaviour
     {
         CharacterProgression.Changed -= Refresh;
         if (localization != null) localization.OnLanguageChanged -= Refresh;
-        if (upgradeButton != null) upgradeButton.onClick.RemoveListener(Upgrade);
     }
 
     public void SetCharacter(int id) { characterId = id; Refresh(); }
     public bool IsUpgradeButton(UnityEngine.UI.Button button) => button == upgradeButton;
+
+    private void LayoutActionButtons()
+    {
+        if (upgradeButton == null) return;
+        var parent = upgradeButton.transform.parent as RectTransform;
+        if (parent == null) return;
+        var select = parent.Find("SelectButton") as RectTransform;
+        var enhance = upgradeButton.transform as RectTransform;
+        if (select == null || enhance == null) return;
+        float half = Mathf.Max(100f, (parent.rect.width - 60f) * 0.5f);
+        void Place(RectTransform rect, float x)
+        {
+            rect.anchorMin = rect.anchorMax = new Vector2(0.5f, 0f);
+            rect.pivot = new Vector2(0.5f, 0f);
+            rect.anchoredPosition = new Vector2(x, 15f);
+            rect.sizeDelta = new Vector2(half / Mathf.Max(0.01f, Mathf.Abs(rect.localScale.x)),
+                78f / Mathf.Max(0.01f, Mathf.Abs(rect.localScale.y)));
+        }
+        Place(select, -half * 0.5f);
+        Place(enhance, half * 0.5f);
+        // Only the left button draws the shared center divider.
+        var duplicate = enhance.Find("White Border 2");
+        if (duplicate != null) duplicate.gameObject.SetActive(false);
+        var label = select.GetComponentInChildren<TMP_Text>(true);
+        if (label != null)
+        {
+            label.enableAutoSizing = true;
+            label.fontSizeMin = 14f;
+            label.fontSizeMax = 24f;
+        }
+    }
+
+    private void LayoutUpgradeCost()
+    {
+        if (upgradeButton == null || buttonText == null || costText == null) return;
+        var title = buttonText.rectTransform;
+        title.anchorMin = new Vector2(0f, 0.5f);
+        title.anchorMax = new Vector2(1f, 0.9f);
+        title.pivot = new Vector2(0.5f, 0.5f);
+        title.offsetMin = new Vector2(6f, 0f);
+        title.offsetMax = new Vector2(-6f, 0f);
+        buttonText.margin = Vector4.zero;
+        buttonText.alignment = TextAlignmentOptions.Center;
+        buttonText.enableAutoSizing = true;
+        buttonText.fontSizeMin = 16f;
+        buttonText.fontSizeMax = 22f;
+
+        costText.transform.SetParent(upgradeButton.transform, false);
+        var cost = costText.rectTransform;
+        cost.anchorMin = new Vector2(0f, 0.1f);
+        cost.anchorMax = new Vector2(1f, 0.5f);
+        cost.pivot = new Vector2(0.5f, 0.5f);
+        cost.offsetMin = new Vector2(6f, 0f);
+        cost.offsetMax = new Vector2(-6f, 0f);
+        cost.localScale = Vector3.one;
+        costText.margin = Vector4.zero;
+        costText.alignment = TextAlignmentOptions.Center;
+        costText.enableAutoSizing = true;
+        costText.fontSizeMin = 11f;
+        costText.fontSizeMax = 15f;
+        costText.textWrappingMode = TextWrappingModes.NoWrap;
+        costText.raycastTarget = false;
+    }
 
     public void Refresh()
     {
@@ -46,10 +110,18 @@ public sealed class CharacterProgressionPanel : MonoBehaviour
             bonusText.fontSizeMax = 22;
             bonusText.text = Describe(CharacterProgression.Bonuses(characterId, c.level));
         }
-        if (costText != null) costText.text = maxed ? Copy("최대 강화 완료", "Fully enhanced", "最大強化済み") : Copy(
-            $"골드 {CharacterProgression.State.gold:N0} / {config.GoldCost(c.level):N0}    파편 {c.fragments} / {config.FragmentCost(c.level)}",
-            $"Gold {CharacterProgression.State.gold:N0} / {config.GoldCost(c.level):N0}    Shards {c.fragments} / {config.FragmentCost(c.level)}",
-            $"ゴールド {CharacterProgression.State.gold:N0} / {config.GoldCost(c.level):N0}    欠片 {c.fragments} / {config.FragmentCost(c.level)}");
+        if (costText != null)
+        {
+            string Cost(string label, int owned, int required)
+            {
+                string value = $"{label} {required:N0}";
+                return owned < required ? $"<color=#FF4545>{value}</color>" : value;
+            }
+            costText.richText = true;
+            costText.text = maxed ? Copy("최대 강화 완료", "Fully enhanced", "最大強化済み") :
+                Cost(Copy("증표", "Tokens", "証"), c.fragments, config.FragmentCost(c.level)) +
+                "  +  " + Cost(Copy("골드", "Gold", "ゴールド"), CharacterProgression.State.gold, config.GoldCost(c.level));
+        }
         if (statusText != null)
         {
             statusText.enableAutoSizing = true;
@@ -58,7 +130,7 @@ public sealed class CharacterProgressionPanel : MonoBehaviour
             statusText.text = maxed ? string.Empty : Copy("다음 강화: ", "Next: ", "次の強化: ") +
                 Describe(CharacterProgression.Bonuses(characterId, c.level + 1, false));
         }
-        if (buttonText != null) buttonText.text = maxed ? Copy("강화 완료", "MAX", "強化済み") : Copy("강화하기", "Enhance", "強化する");
+        if (buttonText != null) buttonText.text = maxed ? Copy("완료", "MAX", "完了") : Copy("강화", "Enhance", "強化");
         if (upgradeButton != null) upgradeButton.interactable = CharacterProgression.CanUpgrade(characterId);
     }
 
@@ -85,7 +157,7 @@ public sealed class CharacterProgressionPanel : MonoBehaviour
     public void Upgrade()
     {
         if (!CharacterProgression.TryUpgrade(characterId)) { Refresh(); return; }
-        SoundManager.Instance?.PlayOneShotIgnoringPause(SoundIds.UpgradeSelect);
+        UiSoundEvents.Request(UiSoundCue.Upgrade);
         if (UpgradeManager.Instance != null) UpgradeManager.Instance.RefreshPermanentStats();
         Refresh();
     }

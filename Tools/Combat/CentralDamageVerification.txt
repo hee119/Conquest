@@ -1,0 +1,2 @@
+PASS base 10 + attack 5 * 0.5 = 12.5
+PASS critical chance 100%, x2 = 25

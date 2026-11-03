@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>UpgradeAppeared 증강 관련 동작과 상태를 관리한다.</summary>
 public class UpgradeAppeared : MonoBehaviour
 {
     [SerializeField] private float turnSecond;
@@ -13,11 +14,13 @@ public class UpgradeAppeared : MonoBehaviour
 
     private Vector3 defaultScale;
 
+    /// <summary>필요한 컴포넌트와 초기 상태를 준비한다.</summary>
     private void Awake()
     {
         defaultScale = transform.localScale;
     }
 
+    /// <summary>활성화될 때 필요한 이벤트와 동작을 시작한다.</summary>
     private void OnEnable()
     {
         if (raycastGraphic != null)
@@ -26,6 +29,7 @@ public class UpgradeAppeared : MonoBehaviour
         StartCoroutine(StartTurn());
     }
 
+    /// <summary>StartTurn 동작을 처리한다.</summary>
     IEnumerator StartTurn()
     {
         float count = 0;
@@ -60,6 +64,7 @@ public class UpgradeAppeared : MonoBehaviour
         StartCoroutine(BigScale());
     }
 
+    /// <summary>BigScale 동작을 처리한다.</summary>
     IEnumerator BigScale()
     {
         Vector3 peakScale = defaultScale * bigScale;

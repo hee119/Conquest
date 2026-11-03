@@ -27,6 +27,7 @@ public class SkillSpawner : MonoBehaviour
     private PointerEventData uiPointer;
     private EventSystem uiEventSystem;
     private readonly List<RaycastResult> uiHits = new List<RaycastResult>();
+    private Coroutine movementLockCoroutine;
 
     public void Awake()
     {
@@ -143,11 +144,34 @@ public class SkillSpawner : MonoBehaviour
     {
         if(canMove > 0)
         {
+            // The cached timer owns basic-attack release, rather than a fixed clip event.
+            if (movementLockCoroutine != null) return;
             playerMove.StopMove(1);
             EndBasicAttackFacing();
         }
         else
+        {
+            if (playerMove.IsDashing) return;
+            CancelBasicAttackMovementLock();
+            if (DataManager.Instance == null ||
+                !DataManager.Instance.skillDatasDic.TryGetValue(skillId1, out var skill) ||
+                skill.movementLockTime <= 0f) return;
             playerMove.StopMove(0);
+            movementLockCoroutine = StartCoroutine(ReleaseMovement(skill.movementLockTime));
+        }
+    }
+
+    private IEnumerator ReleaseMovement(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        movementLockCoroutine = null;
+        playerMove.StopMove(1);
+    }
+
+    public void CancelBasicAttackMovementLock()
+    {
+        if (movementLockCoroutine != null) StopCoroutine(movementLockCoroutine);
+        movementLockCoroutine = null;
     }
 
     public void SkillSpawn(int skillId)
@@ -156,7 +180,7 @@ public class SkillSpawner : MonoBehaviour
         bool isBasicAttack = skillId == skillId1;
         int characterId = CharacterManager.Instance != null
             ? CharacterManager.Instance.currentCharacter
-            : 0;
+            : GetComponent<PlayerInfo>().id;
         BasicAttackModifiers modifiers = isBasicAttack && UpgradeManager.Instance != null
             ? UpgradeManager.Instance.GetBasicAttackModifiers(characterId)
             : isBasicAttack ? CharacterProgression.BasicAttackBonus(characterId) : BasicAttackModifiers.Default;
@@ -198,14 +222,10 @@ public class SkillSpawner : MonoBehaviour
             MageProjectile projectile = skillPrefab.GetComponent<MageProjectile>();
             if (projectile != null)
             {
-                PlayerData player = DataManager.Instance.playerDatasDic[characterId];
-                int damage = Mathf.Max(1, player.damage);
-                if (Random.value * 100f < player.criticalChance)
-                    damage = Mathf.Max(1, Mathf.RoundToInt(damage * player.criticalDamage));
-
+                float damage = skill.skillDamage;
                 projectile.Launch(spawnPos, spawnDirection, skill.projectileSpeed,
                     skill.projectileLifetime * modifiers.rangeMultiplier,
-                    Mathf.Max(1, Mathf.RoundToInt(damage * modifiers.damageMultiplier)),
+                    damage * modifiers.damageMultiplier,
                     modifiers.pierceCount, modifiers.chainCount, modifiers.chainRange);
                 // The projectile owns its lifetime and pool return. A second timer
                 // could return this object after it has already been reused.
@@ -220,7 +240,8 @@ public class SkillSpawner : MonoBehaviour
                     skillPrefab.GetComponent<BasicAttackInstanceState>();
                 if (state == null)
                     state = skillPrefab.AddComponent<BasicAttackInstanceState>();
-                state.Apply(modifiers);
+                float damage = skill.skillDamage;
+                state.Apply(modifiers, damage);
             }
 
             ParticleSystemRenderer[] particleRenderers =
@@ -279,6 +300,8 @@ public class SkillSpawner : MonoBehaviour
 
     private void OnDisable()
     {
+        if (movementLockCoroutine != null && playerMove != null) playerMove.StopMove(1);
+        CancelBasicAttackMovementLock();
         isBasicAttackFacingLocked = false;
     }
 }

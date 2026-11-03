@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>화상 상태와 지속 피해를 관리한다.</summary>
 public class Burn : DotDamage
 {
     private List<EnemyCombat> enemyCombatList = new();
 
+    /// <summary>TargetBurn 동작을 처리한다.</summary>
     public void TargetBurn(GameObject target)
     {
         Debug.Log(
@@ -81,6 +83,7 @@ public class Burn : DotDamage
         }
     }
 
+    /// <summary>BurnCoroutine 동작을 처리한다.</summary>
     private IEnumerator BurnCoroutine()
     {
         if (enemyCombat == null)
@@ -107,6 +110,7 @@ public class Burn : DotDamage
             // Dot 애니메이션 딱 1번 재생 후 종료
             if (enemyCombat.isDead)
             {
+                /// <summary>PlayDotAnimation 동작을 처리한다.</summary>
                 yield return PlayDotAnimation();
 
                 pooledObject.DestroyObj();
@@ -117,6 +121,7 @@ public class Burn : DotDamage
         {
             // 이미 죽어있는 적이면
             // Dot 1번만 재생하고 종료
+            /// <summary>PlayDotAnimation 동작을 처리한다.</summary>
             yield return PlayDotAnimation();
 
             pooledObject.DestroyObj();
@@ -149,6 +154,7 @@ public class Burn : DotDamage
             {
                 if (playedCount == 0)
                 {
+                    /// <summary>PlayDotAnimation 동작을 처리한다.</summary>
                     yield return PlayDotAnimation();
                 }
 
@@ -159,6 +165,7 @@ public class Burn : DotDamage
             // Dot 애니메이션
             // -------------------------------------------------
 
+            /// <summary>PlayDotAnimation 동작을 처리한다.</summary>
             yield return PlayDotAnimation();
 
             playedCount++;
@@ -200,6 +207,7 @@ public class Burn : DotDamage
         pooledObject.DestroyObj();
     }
 
+    /// <summary>GetBurnValues 동작의 가능 여부를 확인하고 처리한다.</summary>
     private bool TryGetBurnValues(out int dotCount, out float damage)
     {
         dotCount = 0;
@@ -225,6 +233,7 @@ public class Burn : DotDamage
     // Burn 데미지
     // =========================================================
 
+    /// <summary>DealBurnDamage 동작을 처리한다.</summary>
     private void DealBurnDamage(float damage)
     {
         if (enemyCombat == null)
@@ -240,52 +249,6 @@ public class Burn : DotDamage
             return;
 
         // =====================================
-        // 현재 캐릭터 스탯
-        // =====================================
-
-        int characterId =
-            CharacterManager.Instance.currentCharacter;
-
-        PlayerData playerData =
-            DataManager.Instance.playerDatasDic[characterId];
-
-        int playerDamage =
-            playerData.damage;
-
-        int critChance =
-            playerData.criticalChance;
-
-        float critDamage =
-            playerData.criticalDamage;
-
-        // =====================================
-        // 공격력 적용
-        // =====================================
-
-        int finalDamage =
-            (int)(
-                damage *
-                (1f + playerDamage / 100f)
-            );
-
-        // =====================================
-        // 크리티컬 판정
-        // DOT 1틱마다 한 번 판정
-        // =====================================
-
-        bool isCritical =
-            Random.Range(0, 100) < critChance;
-
-        if (isCritical)
-        {
-            finalDamage =
-                (int)(
-                    finalDamage *
-                    (2f + critDamage / 100f)
-                );
-        }
-
-        // =====================================
         // 피격 위치
         // =====================================
 
@@ -294,8 +257,7 @@ public class Burn : DotDamage
                 transform.position
             );
 
-        enemyCombat.TakeDamage(
-            finalDamage,
+        enemyCombat.TakeDamage(id, damage,
             hitPoint
         );
     }
@@ -304,6 +266,7 @@ public class Burn : DotDamage
     // Dot 애니메이션
     // =========================================================
 
+    /// <summary>PlayDotAnimation 동작을 처리한다.</summary>
     private IEnumerator PlayDotAnimation()
     {
         if (animator == null)
@@ -318,6 +281,7 @@ public class Burn : DotDamage
         yield return null;
 
         // Dot 상태 진입 대기
+        /// <summary>WaitUntil 동작을 처리한다.</summary>
         yield return new WaitUntil(() =>
         {
             if (animator == null)
@@ -330,6 +294,7 @@ public class Burn : DotDamage
         });
 
         // Dot 애니메이션 종료 대기
+        /// <summary>WaitUntil 동작을 처리한다.</summary>
         yield return new WaitUntil(() =>
         {
             if (animator == null)
@@ -343,6 +308,7 @@ public class Burn : DotDamage
         });
     }
 
+    /// <summary>다른 콜라이더가 진입했을 때 적중 효과를 처리한다.</summary>
     protected override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Wall"))
@@ -351,6 +317,7 @@ public class Burn : DotDamage
         }
     }
 
+    /// <summary>비활성화될 때 이벤트와 진행 중인 동작을 정리한다.</summary>
     protected override void OnDisable()
     {
         // Burn 걸려있던 적들의 isBurn 해제

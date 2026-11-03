@@ -1,0 +1,1 @@
+Assets/GameAssets/SPUM/Sample/Materials/EffectMat.mat

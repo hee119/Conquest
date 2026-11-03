@@ -1,0 +1,937 @@
+fileFormatVersion: 2
+guid: 4fa5fd944e5284583acdd900c4ca4f6a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4017034892065125076
+    second: OctopusUncrownedWaterAttack_0
+  - first:
+      213: -1028154260385742447
+    second: OctopusUncrownedWaterAttack_1
+  - first:
+      213: 5136646447309448924
+    second: OctopusUncrownedWaterAttack_2
+  - first:
+      213: -2866162934133062644
+    second: OctopusUncrownedWaterAttack_3
+  - first:
+      213: 4333663829662752323
+    second: OctopusUncrownedWaterAttack_4
+  - first:
+      213: 8510996047864568089
+    second: OctopusUncrownedWaterAttack_5
+  - first:
+      213: -4724818066937170432
+    second: OctopusUncrownedWaterAttack_6
+  - first:
+      213: 914341648465796670
+    second: OctopusUncrownedWaterAttack_7
+  - first:
+      213: -564077053012379280
+    second: OctopusUncrownedWaterAttack_8
+  - first:
+      213: -1105571456294881826
+    second: OctopusUncrownedWaterAttack_9
+  - first:
+      213: -8083620639157407462
+    second: OctopusUncrownedWaterAttack_10
+  - first:
+      213: -522120184327155126
+    second: OctopusUncrownedWaterAttack_11
+  - first:
+      213: -7813649025352907785
+    second: OctopusUncrownedWaterAttack_12
+  - first:
+      213: 5666025670673096444
+    second: OctopusUncrownedWaterAttack_13
+  - first:
+      213: 6792379355792743225
+    second: OctopusUncrownedWaterAttack_14
+  - first:
+      213: -2153755683292679189
+    second: OctopusUncrownedWaterAttack_15
+  - first:
+      213: -3662365848991211907
+    second: OctopusUncrownedWaterAttack_16
+  - first:
+      213: -5237733861455330365
+    second: OctopusUncrownedWaterAttack_17
+  - first:
+      213: -7996634043942914159
+    second: OctopusUncrownedWaterAttack_18
+  - first:
+      213: -5927428761342628512
+    second: OctopusUncrownedWaterAttack_19
+  - first:
+      213: 6082575590668590186
+    second: OctopusUncrownedWaterAttack_20
+  - first:
+      213: 8998347493876197768
+    second: OctopusUncrownedWaterAttack_21
+  - first:
+      213: -4631102712094835109
+    second: OctopusUncrownedWaterAttack_22
+  - first:
+      213: -5143124631909994263
+    second: OctopusUncrownedWaterAttack_23
+  - first:
+      213: -2165452547970219435
+    second: OctopusUncrownedWaterAttack_24
+  - first:
+      213: -7388020651748616659
+    second: OctopusUncrownedWaterAttack_25
+  - first:
+      213: -3298374714216129859
+    second: OctopusUncrownedWaterAttack_26
+  - first:
+      213: 1989229696243242682
+    second: OctopusUncrownedWaterAttack_27
+  - first:
+      213: 7681935585819243874
+    second: OctopusUncrownedWaterAttack_28
+  - first:
+      213: -6110732595181872522
+    second: OctopusUncrownedWaterAttack_29
+  - first:
+      213: -6230163279681562641
+    second: OctopusUncrownedWaterAttack_30
+  - first:
+      213: -2147442594013343346
+    second: OctopusUncrownedWaterAttack_31
+  - first:
+      213: -4817113580637794533
+    second: OctopusUncrownedWaterAttack_32
+  - first:
+      213: 9068854715318461080
+    second: OctopusUncrownedWaterAttack_33
+  - first:
+      213: 1172972634759164404
+    second: OctopusUncrownedWaterAttack_34
+  - first:
+      213: -7265715620875894816
+    second: OctopusUncrownedWaterAttack_35
+  - first:
+      213: 8979926730583120703
+    second: OctopusUncrownedWaterAttack_36
+  - first:
+      213: 843407621306156483
+    second: OctopusUncrownedWaterAttack_37
+  - first:
+      213: -567587435065720614
+    second: OctopusUncrownedWaterAttack_38
+  - first:
+      213: 5691505316791463988
+    second: OctopusUncrownedWaterAttack_39
+  - first:
+      213: 4633615807443302935
+    second: OctopusUncrownedWaterAttack_40
+  - first:
+      213: -2469843470625157134
+    second: OctopusUncrownedWaterAttack_41
+  - first:
+      213: 8902926053608090582
+    second: OctopusUncrownedWaterAttack_42
+  - first:
+      213: 6509938238594427898
+    second: OctopusUncrownedWaterAttack_43
+  - first:
+      213: -4476536095530109696
+    second: OctopusUncrownedWaterAttack_44
+  - first:
+      213: -8000781346993916656
+    second: OctopusUncrownedWaterAttack_45
+  - first:
+      213: -9220667374200649241
+    second: OctopusUncrownedWaterAttack_46
+  - first:
+      213: -4726577376537259078
+    second: OctopusUncrownedWaterAttack_47
+  - first:
+      213: 2180011288479192119
+    second: OctopusUncrownedWaterAttack_48
+  - first:
+      213: -9014488267931291689
+    second: OctopusUncrownedWaterAttack_49
+  - first:
+      213: 8539722061713713116
+    second: OctopusUncrownedWaterAttack_50
+  - first:
+      213: -1978085999255783444
+    second: OctopusUncrownedWaterAttack_51
+  - first:
+      213: 2527091652817815430
+    second: OctopusUncrownedWaterAttack_52
+  - first:
+      213: 3742624369427292672
+    second: OctopusUncrownedWaterAttack_53
+  - first:
+      213: 6227025624397431378
+    second: OctopusUncrownedWaterAttack_54
+  - first:
+      213: -375554513734400839
+    second: OctopusUncrownedWaterAttack_55
+  - first:
+      213: -5444719629530229706
+    second: OctopusUncrownedWaterAttack_56
+  - first:
+      213: -174319041082399003
+    second: OctopusUncrownedWaterAttack_57
+  - first:
+      213: 7701102285022026062
+    second: OctopusUncrownedWaterAttack_58
+  - first:
+      213: -1200633763069845132
+    second: OctopusUncrownedWaterAttack_59
+  - first:
+      213: -8657429323729523134
+    second: OctopusUncrownedWaterAttack_60
+  - first:
+      213: 1989419912422925421
+    second: OctopusUncrownedWaterAttack_61
+  - first:
+      213: 4250568735255458580
+    second: OctopusUncrownedWaterAttack_62
+  - first:
+      213: -1665702909288032722
+    second: OctopusUncrownedWaterAttack_63
+  - first:
+      213: 854385883830899861
+    second: OctopusUncrownedWaterAttack_64
+  - first:
+      213: -4101726410526263352
+    second: OctopusUncrownedWaterAttack_65
+  - first:
+      213: -6894943721241835101
+    second: OctopusUncrownedWaterAttack_66
+  - first:
+      213: -4930733967651464972
+    second: OctopusUncrownedWaterAttack_67
+  - first:
+      213: 5731022547473615720
+    second: OctopusUncrownedWaterAttack_68
+  - first:
+      213: -7962480572107728968
+    second: OctopusUncrownedWaterAttack_69
+  - first:
+      213: -7273690945563107379
+    second: OctopusUncrownedWaterAttack_70
+  - first:
+      213: 981723616167324109
+    second: OctopusUncrownedWaterAttack_71
+  - first:
+      213: -6947070898816641071
+    second: OctopusUncrownedWaterAttack_72
+  - first:
+      213: -6941392648939123932
+    second: OctopusUncrownedWaterAttack_73
+  - first:
+      213: -2360195516207177988
+    second: OctopusUncrownedWaterAttack_74
+  - first:
+      213: 216078096094060719
+    second: OctopusUncrownedWaterAttack_75
+  - first:
+      213: -8859098351404858861
+    second: OctopusUncrownedWaterAttack_76
+  - first:
+      213: 8823138244884421781
+    second: OctopusUncrownedWaterAttack_77
+  - first:
+      213: -9000100116176601282
+    second: OctopusUncrownedWaterAttack_78
+  - first:
+      213: -2768258702017670532
+    second: OctopusUncrownedWaterAttack_79
+  - first:
+      213: 8357419498062230017
+    second: OctopusUncrownedWaterAttack_80
+  - first:
+      213: -324265088747362817
+    second: OctopusUncrownedWaterAttack_81
+  - first:
+      213: -4590778417249610024
+    second: OctopusUncrownedWaterAttack_82
+  - first:
+      213: 8792281807822744626
+    second: OctopusUncrownedWaterAttack_83
+  - first:
+      213: 5135343864937294190
+    second: OctopusUncrownedWaterAttack_84
+  - first:
+      213: 1374930518021521523
+    second: OctopusUncrownedWaterAttack_85
+  - first:
+      213: 8851938987426247980
+    second: OctopusUncrownedWaterAttack_86
+  - first:
+      213: 7302754787992893427
+    second: OctopusUncrownedWaterAttack_87
+  - first:
+      213: 2454384312702929240
+    second: OctopusUncrownedWaterAttack_88
+  - first:
+      213: 8887563361437148329
+    second: OctopusUncrownedWaterAttack_89
+  - first:
+      213: -4195233135724299104
+    second: OctopusUncrownedWaterAttack_90
+  - first:
+      213: 3534037445746967348
+    second: OctopusUncrownedWaterAttack_91
+  - first:
+      213: -3377459349675355919
+    second: OctopusUncrownedWaterAttack_92
+  - first:
+      213: -6721503209925391507
+    second: OctopusUncrownedWaterAttack_93
+  - first:
+      213: -7080842510304665227
+    second: OctopusUncrownedWaterAttack_94
+  - first:
+      213: 8142166740376956938
+    second: OctopusUncrownedWaterAttack_95
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 209.80391
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 502
+        width: 251
+        height: 250
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a11b1088bd531df80800000000000000
+      internalID: -8083620639157407462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_11
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 502
+        width: 251
+        height: 250
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a425e1b657e01c8f0800000000000000
+      internalID: -522120184327155126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_12
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 502
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.504, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f343442c97509390800000000000000
+      internalID: -7813649025352907785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_13
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 502
+        width: 251
+        height: 250
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfed6bcd354c1ae40800000000000000
+      internalID: 5666025670673096444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_14
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 502
+        width: 251
+        height: 250
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93b19b95901634e50800000000000000
+      internalID: 6792379355792743225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 251
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45816734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be37c5cfd925c12e0800000000000000
+      internalID: -2153755683292679189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_16
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 251
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45816734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7e5b551aa9ac2dc0800000000000000
+      internalID: -3662365848991211907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_17
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 251
+        width: 250
+        height: 251
+      alignment: 9
+      pivot: {x: 0.504, y: 0.45816734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c38befbdc4df47b0800000000000000
+      internalID: -5237733861455330365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_18
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 251
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45816734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 197bcfb74bf360190800000000000000
+      internalID: -7996634043942914159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_19
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 251
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45816734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06d2db842fa8dbda0800000000000000
+      internalID: -5927428761342628512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45816734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6c5349d546a96450800000000000000
+      internalID: 6082575590668590186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_21
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 0
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45816734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8896402de5d80ec70800000000000000
+      internalID: 8998347493876197768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_22
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 0
+        width: 250
+        height: 251
+      alignment: 9
+      pivot: {x: 0.504, y: 0.45816734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5e3d37be940bbfb0800000000000000
+      internalID: -4631102712094835109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_23
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 0
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45816734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e0717f8563ff98b0800000000000000
+      internalID: -5143124631909994263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_24
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 0
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45816734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55245447164c2f1e0800000000000000
+      internalID: -2165452547970219435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_03
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 1003
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45816734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fa4e8d48f78a469281031dae40b3cfb
+      internalID: 1887949714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_04
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 1003
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45816734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7891856d0a5f44c6bb35182ae588fd7d
+      internalID: -783509526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_05
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 752
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45816734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b6c08da262504891b4e88dce6e5fa16
+      internalID: -1447764140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_06
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 752
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45816734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb5c6c31b58614399bdd1b79d6a1c744
+      internalID: 1754309389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_07
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 752
+        width: 250
+        height: 251
+      alignment: 9
+      pivot: {x: 0.504, y: 0.45816734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f9f71153be8440594306c446ccb30f
+      internalID: 394543253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_08
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 752
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45816734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6979dc66de5e8434faf1c7537dd9234b
+      internalID: -1654981041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusUncrownedWaterAttack_09
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 752
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.45816734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bcbd7ee96b6d4c90befa397352616db
+      internalID: 718309713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: cad0b877bbecf416db801d5096151652
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      OctopusUncrownedWaterAttack_03: 1887949714
+      OctopusUncrownedWaterAttack_04: -783509526
+      OctopusUncrownedWaterAttack_05: -1447764140
+      OctopusUncrownedWaterAttack_06: 1754309389
+      OctopusUncrownedWaterAttack_07: 394543253
+      OctopusUncrownedWaterAttack_08: -1654981041
+      OctopusUncrownedWaterAttack_09: 718309713
+      OctopusUncrownedWaterAttack_10: -8083620639157407462
+      OctopusUncrownedWaterAttack_11: -522120184327155126
+      OctopusUncrownedWaterAttack_12: -7813649025352907785
+      OctopusUncrownedWaterAttack_13: 5666025670673096444
+      OctopusUncrownedWaterAttack_14: 6792379355792743225
+      OctopusUncrownedWaterAttack_15: -2153755683292679189
+      OctopusUncrownedWaterAttack_16: -3662365848991211907
+      OctopusUncrownedWaterAttack_17: -5237733861455330365
+      OctopusUncrownedWaterAttack_18: -7996634043942914159
+      OctopusUncrownedWaterAttack_19: -5927428761342628512
+      OctopusUncrownedWaterAttack_20: 6082575590668590186
+      OctopusUncrownedWaterAttack_21: 8998347493876197768
+      OctopusUncrownedWaterAttack_22: -4631102712094835109
+      OctopusUncrownedWaterAttack_23: -5143124631909994263
+      OctopusUncrownedWaterAttack_24: -2165452547970219435
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

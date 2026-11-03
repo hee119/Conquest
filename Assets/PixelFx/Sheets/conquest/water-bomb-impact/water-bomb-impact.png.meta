@@ -1,0 +1,1563 @@
+fileFormatVersion: 2
+guid: 42129b19a34bb47cd9b8aa0e15cb829e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8449820308947138775
+    second: water-bomb-impact_0
+  - first:
+      213: -3549274124528174270
+    second: water-bomb-impact_1
+  - first:
+      213: 543892013581929387
+    second: water-bomb-impact_2
+  - first:
+      213: -6760311160754336690
+    second: water-bomb-impact_3
+  - first:
+      213: 8652730255276498674
+    second: water-bomb-impact_4
+  - first:
+      213: 6559757572088467665
+    second: water-bomb-impact_5
+  - first:
+      213: 2162107670648880956
+    second: water-bomb-impact_6
+  - first:
+      213: 2230277013748105110
+    second: water-bomb-impact_7
+  - first:
+      213: 966615105579795685
+    second: water-bomb-impact_8
+  - first:
+      213: 329437888100164889
+    second: water-bomb-impact_9
+  - first:
+      213: 8952335350060414320
+    second: water-bomb-impact_10
+  - first:
+      213: 4591058047900624972
+    second: water-bomb-impact_11
+  - first:
+      213: 8715481630159682805
+    second: water-bomb-impact_12
+  - first:
+      213: -8569288971488780380
+    second: water-bomb-impact_13
+  - first:
+      213: 4974023747822496502
+    second: water-bomb-impact_14
+  - first:
+      213: 8878213863716972761
+    second: water-bomb-impact_15
+  - first:
+      213: 1763904436057364845
+    second: water-bomb-impact_16
+  - first:
+      213: -2139862830150864583
+    second: water-bomb-impact_17
+  - first:
+      213: -5627155861740372115
+    second: water-bomb-impact_18
+  - first:
+      213: 1080302437637713971
+    second: water-bomb-impact_19
+  - first:
+      213: 2732523435356778094
+    second: water-bomb-impact_20
+  - first:
+      213: 6515177588583288088
+    second: water-bomb-impact_21
+  - first:
+      213: -1977833788068547179
+    second: water-bomb-impact_22
+  - first:
+      213: 3749508418954660055
+    second: water-bomb-impact_23
+  - first:
+      213: -4237496819727247343
+    second: water-bomb-impact_24
+  - first:
+      213: 5316132508756782087
+    second: water-bomb-impact_25
+  - first:
+      213: -6244825246445542246
+    second: water-bomb-impact_26
+  - first:
+      213: 1189170271858956269
+    second: water-bomb-impact_27
+  - first:
+      213: -8753586519048574172
+    second: water-bomb-impact_28
+  - first:
+      213: -6514209929470688012
+    second: water-bomb-impact_29
+  - first:
+      213: -1087475481129487465
+    second: water-bomb-impact_30
+  - first:
+      213: -7421472823123778169
+    second: water-bomb-impact_31
+  - first:
+      213: -1261506940532424208
+    second: water-bomb-impact_32
+  - first:
+      213: 3715345917042306610
+    second: water-bomb-impact_33
+  - first:
+      213: 3503951455709692363
+    second: water-bomb-impact_34
+  - first:
+      213: -8822944887508437561
+    second: water-bomb-impact_35
+  - first:
+      213: 7967122146314324862
+    second: water-bomb-impact_36
+  - first:
+      213: 7841522093369878213
+    second: water-bomb-impact_37
+  - first:
+      213: -6911745281751342893
+    second: water-bomb-impact_38
+  - first:
+      213: 6388973175746536524
+    second: water-bomb-impact_39
+  - first:
+      213: 2820304478405348459
+    second: water-bomb-impact_40
+  - first:
+      213: 382470757712950637
+    second: water-bomb-impact_41
+  - first:
+      213: 6200686157933108582
+    second: water-bomb-impact_42
+  - first:
+      213: 1269770887152698932
+    second: water-bomb-impact_43
+  - first:
+      213: 8532317666827788637
+    second: water-bomb-impact_44
+  - first:
+      213: 8313956701146741683
+    second: water-bomb-impact_45
+  - first:
+      213: -2595524059867653605
+    second: water-bomb-impact_46
+  - first:
+      213: -844307471794357881
+    second: water-bomb-impact_47
+  - first:
+      213: 5846679038021390020
+    second: water-bomb-impact_48
+  - first:
+      213: 2714354486138328734
+    second: water-bomb-impact_49
+  - first:
+      213: -6099419220230679497
+    second: water-bomb-impact_50
+  - first:
+      213: 1405477478447504404
+    second: water-bomb-impact_51
+  - first:
+      213: -5891593506313950950
+    second: water-bomb-impact_52
+  - first:
+      213: 562538554616847997
+    second: water-bomb-impact_53
+  - first:
+      213: -1826159685524194296
+    second: water-bomb-impact_54
+  - first:
+      213: -745235809274573574
+    second: water-bomb-impact_55
+  - first:
+      213: 5241029231624250330
+    second: water-bomb-impact_56
+  - first:
+      213: 8625696429404434860
+    second: water-bomb-impact_57
+  - first:
+      213: 4681943852553265846
+    second: water-bomb-impact_58
+  - first:
+      213: 3710778664591317056
+    second: water-bomb-impact_59
+  - first:
+      213: 3479828996972526655
+    second: water-bomb-impact_60
+  - first:
+      213: 6696892602438330656
+    second: water-bomb-impact_61
+  - first:
+      213: -2827431369083700776
+    second: water-bomb-impact_62
+  - first:
+      213: 1419675462188371864
+    second: water-bomb-impact_63
+  - first:
+      213: -8696179198822207343
+    second: water-bomb-impact_64
+  - first:
+      213: -6449102640709294070
+    second: water-bomb-impact_65
+  - first:
+      213: -320892703235115679
+    second: water-bomb-impact_66
+  - first:
+      213: -2758333261959670110
+    second: water-bomb-impact_67
+  - first:
+      213: 6594180246295512135
+    second: water-bomb-impact_68
+  - first:
+      213: -6344462963028374757
+    second: water-bomb-impact_69
+  - first:
+      213: -1285378190777368078
+    second: water-bomb-impact_70
+  - first:
+      213: 1508637938719756193
+    second: water-bomb-impact_71
+  - first:
+      213: 6172336723576687533
+    second: water-bomb-impact_72
+  - first:
+      213: 6572784869458773985
+    second: water-bomb-impact_73
+  - first:
+      213: -8433507632771955160
+    second: water-bomb-impact_74
+  - first:
+      213: -2590388438771855726
+    second: water-bomb-impact_75
+  - first:
+      213: -6849570551358012627
+    second: water-bomb-impact_76
+  - first:
+      213: 1683658115306962970
+    second: water-bomb-impact_77
+  - first:
+      213: 1525526717913092979
+    second: water-bomb-impact_78
+  - first:
+      213: 2528330582522044486
+    second: water-bomb-impact_79
+  - first:
+      213: 166877305152409314
+    second: water-bomb-impact_80
+  - first:
+      213: -4316471766228046417
+    second: water-bomb-impact_81
+  - first:
+      213: -1573919876824692767
+    second: water-bomb-impact_82
+  - first:
+      213: 6731422862830454700
+    second: water-bomb-impact_83
+  - first:
+      213: -1708009154396881895
+    second: water-bomb-impact_84
+  - first:
+      213: -8250903540540230116
+    second: water-bomb-impact_85
+  - first:
+      213: -4456437184156795291
+    second: water-bomb-impact_86
+  - first:
+      213: 4907290113915955368
+    second: water-bomb-impact_87
+  - first:
+      213: -6541143853005325466
+    second: water-bomb-impact_88
+  - first:
+      213: 5735587104810380246
+    second: water-bomb-impact_89
+  - first:
+      213: -8295236374768649613
+    second: water-bomb-impact_90
+  - first:
+      213: -1889841748510837070
+    second: water-bomb-impact_91
+  - first:
+      213: 3967432918169944886
+    second: water-bomb-impact_92
+  - first:
+      213: -9065557539076121788
+    second: water-bomb-impact_93
+  - first:
+      213: -7373116242037156302
+    second: water-bomb-impact_94
+  - first:
+      213: 3049334724815044212
+    second: water-bomb-impact_95
+  - first:
+      213: -5096573333983747097
+    second: water-bomb-impact_96
+  - first:
+      213: -1028876075509246820
+    second: water-bomb-impact_97
+  - first:
+      213: -5094287037648383861
+    second: water-bomb-impact_98
+  - first:
+      213: 2027858602550220486
+    second: water-bomb-impact_99
+  - first:
+      213: -7951165198894133318
+    second: water-bomb-impact_100
+  - first:
+      213: -8903274330204085250
+    second: water-bomb-impact_101
+  - first:
+      213: 4714172682320402721
+    second: water-bomb-impact_102
+  - first:
+      213: -1421701045834359248
+    second: water-bomb-impact_103
+  - first:
+      213: 3859027566630397740
+    second: water-bomb-impact_104
+  - first:
+      213: 5834313514430924403
+    second: water-bomb-impact_105
+  - first:
+      213: -829770307791106590
+    second: water-bomb-impact_106
+  - first:
+      213: 527534629572382307
+    second: water-bomb-impact_107
+  - first:
+      213: 4720164074737026168
+    second: water-bomb-impact_108
+  - first:
+      213: -762256483433323198
+    second: water-bomb-impact_109
+  - first:
+      213: 8833804668893542649
+    second: water-bomb-impact_110
+  - first:
+      213: -7792130479719422084
+    second: water-bomb-impact_111
+  - first:
+      213: -747649788342585495
+    second: water-bomb-impact_112
+  - first:
+      213: 675761145541127367
+    second: water-bomb-impact_113
+  - first:
+      213: -4197253650138371340
+    second: water-bomb-impact_114
+  - first:
+      213: -9074825911004562266
+    second: water-bomb-impact_115
+  - first:
+      213: 5862477665525455037
+    second: water-bomb-impact_116
+  - first:
+      213: -3077681911139202447
+    second: water-bomb-impact_117
+  - first:
+      213: 6613138595297100835
+    second: water-bomb-impact_118
+  - first:
+      213: 89521931579341552
+    second: water-bomb-impact_119
+  - first:
+      213: -1254927151457145823
+    second: water-bomb-impact_120
+  - first:
+      213: 8604003760261065877
+    second: water-bomb-impact_121
+  - first:
+      213: 6435087586431183506
+    second: water-bomb-impact_122
+  - first:
+      213: 865567064172548542
+    second: water-bomb-impact_123
+  - first:
+      213: -1732632277059553451
+    second: water-bomb-impact_124
+  - first:
+      213: -2006125197366260480
+    second: water-bomb-impact_125
+  - first:
+      213: 7051847111238931817
+    second: water-bomb-impact_126
+  - first:
+      213: -3627983402078460157
+    second: water-bomb-impact_127
+  - first:
+      213: 639192739013265243
+    second: water-bomb-impact_128
+  - first:
+      213: 246585013508695589
+    second: water-bomb-impact_129
+  - first:
+      213: 670588991695302412
+    second: water-bomb-impact_130
+  - first:
+      213: -1371835419656723681
+    second: water-bomb-impact_131
+  - first:
+      213: -2675605151394137809
+    second: water-bomb-impact_132
+  - first:
+      213: 1340406292956162220
+    second: water-bomb-impact_133
+  - first:
+      213: -6958896321355914151
+    second: water-bomb-impact_134
+  - first:
+      213: 4493045561281302459
+    second: water-bomb-impact_135
+  - first:
+      213: -3793657025256892189
+    second: water-bomb-impact_136
+  - first:
+      213: -2306613467727897691
+    second: water-bomb-impact_137
+  - first:
+      213: 99642685051974281
+    second: water-bomb-impact_138
+  - first:
+      213: -7137623244544409367
+    second: water-bomb-impact_139
+  - first:
+      213: 36901541039503226
+    second: water-bomb-impact_140
+  - first:
+      213: 572658734626786058
+    second: water-bomb-impact_141
+  - first:
+      213: -3904153208366583866
+    second: water-bomb-impact_142
+  - first:
+      213: 7723154058585282420
+    second: water-bomb-impact_143
+  - first:
+      213: 230621895260427663
+    second: water-bomb-impact_144
+  - first:
+      213: -62722540738000880
+    second: water-bomb-impact_145
+  - first:
+      213: 6908275128578376170
+    second: water-bomb-impact_146
+  - first:
+      213: 2036828672217573706
+    second: water-bomb-impact_147
+  - first:
+      213: 4302115549880454282
+    second: water-bomb-impact_148
+  - first:
+      213: -5550765257591140795
+    second: water-bomb-impact_149
+  - first:
+      213: 5478993947430068954
+    second: water-bomb-impact_150
+  - first:
+      213: -8010043974876187520
+    second: water-bomb-impact_151
+  - first:
+      213: 3477137093882673978
+    second: water-bomb-impact_152
+  - first:
+      213: -4702581201243642994
+    second: water-bomb-impact_153
+  - first:
+      213: 6707085472763781223
+    second: water-bomb-impact_154
+  - first:
+      213: 9163260921637514785
+    second: water-bomb-impact_155
+  - first:
+      213: 5409735303131190681
+    second: water-bomb-impact_156
+  - first:
+      213: 156689122275425251
+    second: water-bomb-impact_157
+  - first:
+      213: 6008433574845550706
+    second: water-bomb-impact_158
+  - first:
+      213: 3177733449845251834
+    second: water-bomb-impact_159
+  - first:
+      213: -7455317611368217391
+    second: water-bomb-impact_160
+  - first:
+      213: 3982744169693110853
+    second: water-bomb-impact_161
+  - first:
+      213: -8313489012671472206
+    second: water-bomb-impact_162
+  - first:
+      213: 8745531654067513649
+    second: water-bomb-impact_163
+  - first:
+      213: 7163811300870246246
+    second: water-bomb-impact_164
+  - first:
+      213: 8856802076531173298
+    second: water-bomb-impact_165
+  - first:
+      213: 5658109869604277687
+    second: water-bomb-impact_166
+  - first:
+      213: 4017184654483222073
+    second: water-bomb-impact_167
+  - first:
+      213: -3981977764181784192
+    second: water-bomb-impact_168
+  - first:
+      213: 5957941819470164601
+    second: water-bomb-impact_169
+  - first:
+      213: -7949802752234027419
+    second: water-bomb-impact_170
+  - first:
+      213: 3702581932471077282
+    second: water-bomb-impact_171
+  - first:
+      213: -8868758417222910887
+    second: water-bomb-impact_172
+  - first:
+      213: 3483242636679351239
+    second: water-bomb-impact_173
+  - first:
+      213: -1137631665762482993
+    second: water-bomb-impact_174
+  - first:
+      213: -3498157957581306858
+    second: water-bomb-impact_175
+  - first:
+      213: -7059747312513530900
+    second: water-bomb-impact_176
+  - first:
+      213: -2329430484128251188
+    second: water-bomb-impact_177
+  - first:
+      213: -6203697475077340350
+    second: water-bomb-impact_178
+  - first:
+      213: 3230401883954548593
+    second: water-bomb-impact_179
+  - first:
+      213: -7139590796103886880
+    second: water-bomb-impact_180
+  - first:
+      213: 6361565032522756004
+    second: water-bomb-impact_181
+  - first:
+      213: 4457907313988226426
+    second: water-bomb-impact_182
+  - first:
+      213: 9174714363992884978
+    second: water-bomb-impact_183
+  - first:
+      213: 3589711865079467624
+    second: water-bomb-impact_184
+  - first:
+      213: -6757979841418279672
+    second: water-bomb-impact_185
+  - first:
+      213: -1752887163045857934
+    second: water-bomb-impact_186
+  - first:
+      213: 1758693881381941284
+    second: water-bomb-impact_187
+  - first:
+      213: -3380916532474741271
+    second: water-bomb-impact_188
+  - first:
+      213: -560136372480355144
+    second: water-bomb-impact_189
+  - first:
+      213: 3358844817967007313
+    second: water-bomb-impact_190
+  - first:
+      213: 8360980465354425891
+    second: water-bomb-impact_191
+  - first:
+      213: 6906700851387045356
+    second: water-bomb-impact_192
+  - first:
+      213: 4684811253263582056
+    second: water-bomb-impact_193
+  - first:
+      213: -843911135544421395
+    second: water-bomb-impact_194
+  - first:
+      213: 2604952230486334344
+    second: water-bomb-impact_195
+  - first:
+      213: -8205592448277772918
+    second: water-bomb-impact_196
+  - first:
+      213: 4678270097837506982
+    second: water-bomb-impact_197
+  - first:
+      213: -700728429047366130
+    second: water-bomb-impact_198
+  - first:
+      213: -591890323482105694
+    second: water-bomb-impact_199
+  - first:
+      213: 3159914419344845260
+    second: water-bomb-impact_200
+  - first:
+      213: -6043758602494578735
+    second: water-bomb-impact_201
+  - first:
+      213: 476129052918760341
+    second: water-bomb-impact_202
+  - first:
+      213: -8205138632849224410
+    second: water-bomb-impact_203
+  - first:
+      213: -3009926884864800946
+    second: water-bomb-impact_204
+  - first:
+      213: 4826199897546547249
+    second: water-bomb-impact_205
+  - first:
+      213: -8370079291831075014
+    second: water-bomb-impact_206
+  - first:
+      213: 5683953501051990301
+    second: water-bomb-impact_207
+  - first:
+      213: -7859824564715533722
+    second: water-bomb-impact_208
+  - first:
+      213: -7880894510537488039
+    second: water-bomb-impact_209
+  - first:
+      213: 45917745406890474
+    second: water-bomb-impact_210
+  - first:
+      213: -5796709468813746657
+    second: water-bomb-impact_211
+  - first:
+      213: 32552244836415030
+    second: water-bomb-impact_212
+  - first:
+      213: -8480684301430071626
+    second: water-bomb-impact_213
+  - first:
+      213: -3106874836719481616
+    second: water-bomb-impact_214
+  - first:
+      213: 8009141327612038775
+    second: water-bomb-impact_215
+  - first:
+      213: 4275360620498563716
+    second: water-bomb-impact_216
+  - first:
+      213: -6458099006682768430
+    second: water-bomb-impact_217
+  - first:
+      213: -47321880220741820
+    second: water-bomb-impact_218
+  - first:
+      213: 4815433472761394326
+    second: water-bomb-impact_219
+  - first:
+      213: 4846723081276906379
+    second: water-bomb-impact_220
+  - first:
+      213: -6482074242025964420
+    second: water-bomb-impact_221
+  - first:
+      213: 1383844770242908966
+    second: water-bomb-impact_222
+  - first:
+      213: 1246022107216066782
+    second: water-bomb-impact_223
+  - first:
+      213: -388560502811940421
+    second: water-bomb-impact_224
+  - first:
+      213: 4792327889835546649
+    second: water-bomb-impact_225
+  - first:
+      213: 721913194677765084
+    second: water-bomb-impact_226
+  - first:
+      213: 4788055473329695216
+    second: water-bomb-impact_227
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: water-bomb-impact_000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf5fd3632691d44eda12ed0ff6b4bf1a
+      internalID: -2054224661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_001
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 960
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c813934440e4f888bf23665fa7708c
+      internalID: 1514013595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_002
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 960
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0883d1cf386e4bcc8663c16d559a277
+      internalID: 120798328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_003
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 960
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7dbc5802f3f24843ae10dd529d73182
+      internalID: -1970313239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_004
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 960
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a543cbbd88ef4151865c4f4342973a7
+      internalID: -1360403709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_005
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 960
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8377e82d3d4e1487fb26fb142205662a
+      internalID: -855289646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_006
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d3845195dfd4e66aa6fc95d6da43c3
+      internalID: 1809815371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_007
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 768
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b3387e0a9c074368a156ea678551efa
+      internalID: 1680148165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_008
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 768
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c32e045f598439dabd289fbc810d08
+      internalID: 1296827605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_009
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 768
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b848f3c41e86d4ba8adc9843ca4943cd
+      internalID: -491505526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_010
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 768
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cf71cabc1e014287bcf9e1dd8b359ee
+      internalID: 334602600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_011
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 768
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f4c2be1f961c45a189505ad593162d4
+      internalID: -857501975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_012
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0305595685f403994e8dbd80b9ce2a
+      internalID: -1109433457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_013
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 576
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aefd5101e0fb947c7a5dad6b8145b129
+      internalID: -1302371577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_014
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 576
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5a8e61867a6843a698b65381d345143
+      internalID: 1012241611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_015
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 576
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a03299ec57a48413f806581b8428d208
+      internalID: -607397380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_016
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 576
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 643f7fb0684784b9e8e4bb001b2c9870
+      internalID: 1210313503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_017
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 576
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e8b8ccb05294f0cabcde1eba978b46
+      internalID: 1868680791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_018
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f54d1829866a422e947a395ab322a02
+      internalID: -1176212053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_019
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 384
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d349dbb4ec6c44a9cb78975d32dc2e59
+      internalID: -630394168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_020
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 384
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a2380a6b3d54422942fe75474610dd
+      internalID: 525182536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_021
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 384
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a744c29deb0a496ea91e6ea74657793
+      internalID: 1571476166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_022
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 384
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f551e7364cced489a83946cd791afa07
+      internalID: 1970120506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_023
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 384
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ac62ef9298e0412db5764e3fbbd67ce
+      internalID: 1355149954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_024
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 760b79f2eb61f4bc49bd71a66e3184e2
+      internalID: 703184183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_025
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 192
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c76aa8e8a0549358e31d2da9d2e05f
+      internalID: -1168871067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_026
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 192
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f7e8db2356124b14b39e2450541b64f
+      internalID: -1769729939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_027
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 192
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 893edfb007c004d26b8f163d771f9dd8
+      internalID: 229013617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_028
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 192
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d643d104083574b779176f40254bcce7
+      internalID: -1294550744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_029
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 192
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d274cc27d807c4956be5f638357ae29a
+      internalID: 698761353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_030
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a614adf6aa21d4d29b120b0c640539e9
+      internalID: -647127909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-bomb-impact_031
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 240
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 315f9204d099d46f19619179264c1cc2
+      internalID: -1534318939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4be74bb297f414465be82a62ae394e04
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      water-bomb-impact_000: -2054224661
+      water-bomb-impact_001: 1514013595
+      water-bomb-impact_002: 120798328
+      water-bomb-impact_003: -1970313239
+      water-bomb-impact_004: -1360403709
+      water-bomb-impact_005: -855289646
+      water-bomb-impact_006: 1809815371
+      water-bomb-impact_007: 1680148165
+      water-bomb-impact_008: 1296827605
+      water-bomb-impact_009: -491505526
+      water-bomb-impact_010: 334602600
+      water-bomb-impact_011: -857501975
+      water-bomb-impact_012: -1109433457
+      water-bomb-impact_013: -1302371577
+      water-bomb-impact_014: 1012241611
+      water-bomb-impact_015: -607397380
+      water-bomb-impact_016: 1210313503
+      water-bomb-impact_017: 1868680791
+      water-bomb-impact_018: -1176212053
+      water-bomb-impact_019: -630394168
+      water-bomb-impact_020: 525182536
+      water-bomb-impact_021: 1571476166
+      water-bomb-impact_022: 1970120506
+      water-bomb-impact_023: 1355149954
+      water-bomb-impact_024: 703184183
+      water-bomb-impact_025: -1168871067
+      water-bomb-impact_026: -1769729939
+      water-bomb-impact_027: 229013617
+      water-bomb-impact_028: -1294550744
+      water-bomb-impact_029: 698761353
+      water-bomb-impact_030: -647127909
+      water-bomb-impact_031: -1534318939
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

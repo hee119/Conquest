@@ -1,0 +1,5 @@
+Slime boss sprite states verification
+PASS open, hold, lower and return to move
+PASS slide preparation timing and transition into loop
+PASS lethal hit interrupts slide
+COMPLETE

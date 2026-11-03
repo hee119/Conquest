@@ -1,0 +1,12 @@
+player-idle-trimmed_1 baseline verified; error=0px
+player-attack (1) (1)_0 baseline verified; error=3.576279E-06px
+Player-dash (1)_0 baseline verified; error=0px
+MageIdle_0 baseline verified; error=0px
+MageCastAttack_0 baseline verified; error=0px
+MageDash_0 baseline verified; error=0px
+cb5787d7-5267-40e1-b819-542961eea023_0 baseline verified; error=0px
+OctopusKingSpin_04 baseline verified; error=0px
+OctopusKingGroundAttack_02 baseline verified; error=0px
+OctopusKingWaterShot_00 baseline verified; error=0px
+SlimeHit_06 baseline verified; error=0px
+SlimeKingHit_06 baseline verified; error=0px

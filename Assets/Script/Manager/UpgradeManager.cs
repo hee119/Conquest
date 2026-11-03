@@ -29,14 +29,16 @@ public struct BasicAttackModifiers
     };
 }
 
+/// <summary>기본 공격의 연쇄 피해를 주변 적에게 적용한다.</summary>
 public static class BasicAttackChainUtility
 {
+    /// <summary>전달받은 증강 효과를 적용한다.</summary>
     public static void Apply(
         Vector2 origin,
         EnemyCombat primaryTarget,
-        int damage,
+        float damage,
         int chainCount,
-        float chainRange)
+        float chainRange, int sourceId = 0)
     {
         if (chainCount <= 0 || chainRange <= 0f || damage <= 0)
             return;
@@ -52,7 +54,7 @@ public static class BasicAttackChainUtility
             .Take(chainCount);
 
         foreach (EnemyCombat enemy in targets)
-            enemy.TakeDamage(damage, enemy.transform.position);
+            enemy.TakeDamage(sourceId, damage, enemy.transform.position);
     }
 }
 
@@ -60,10 +62,11 @@ public static class BasicAttackChainUtility
 public sealed class BasicAttackInstanceState : MonoBehaviour
 {
     private Vector3 baseScale;
-    private int baseDamage;
+    private float baseDamage;
     private SkillInfo skillInfo;
     private bool initialized;
 
+    /// <summary>실행에 필요한 초기 상태와 참조를 준비한다.</summary>
     private void Initialize()
     {
         if (initialized)
@@ -75,16 +78,15 @@ public sealed class BasicAttackInstanceState : MonoBehaviour
         baseDamage = skillInfo != null ? skillInfo.skillDamage : 0;
     }
 
-    public void Apply(BasicAttackModifiers modifiers)
+    /// <summary>전달받은 증강 효과를 적용한다.</summary>
+    public void Apply(BasicAttackModifiers modifiers, float? attackDamage = null)
     {
         Initialize();
         transform.localScale = baseScale * modifiers.rangeMultiplier;
 
         if (skillInfo != null)
         {
-            skillInfo.skillDamage = Mathf.Max(
-                1,
-                Mathf.RoundToInt(baseDamage * modifiers.damageMultiplier));
+            skillInfo.skillDamage = Mathf.Max(0f, (attackDamage ?? baseDamage) * modifiers.damageMultiplier);
         }
 
         BasicAttackChainRelay relay = GetComponent<BasicAttackChainRelay>();
@@ -97,6 +99,7 @@ public sealed class BasicAttackInstanceState : MonoBehaviour
             modifiers.chainRange);
     }
 
+    /// <summary>비활성화될 때 이벤트와 진행 중인 동작을 정리한다.</summary>
     private void OnDisable()
     {
         if (!initialized)
@@ -108,14 +111,16 @@ public sealed class BasicAttackInstanceState : MonoBehaviour
     }
 }
 
+/// <summary>기본 공격 적중 시 연쇄 공격을 전달한다.</summary>
 public sealed class BasicAttackChainRelay : MonoBehaviour
 {
     private readonly HashSet<int> triggeredTargets = new HashSet<int>();
-    private int damage;
+    private float damage;
     private int chainCount;
     private float chainRange;
 
-    public void Configure(int hitDamage, int count, float range)
+    /// <summary>Configure 동작을 처리한다.</summary>
+    public void Configure(float hitDamage, int count, float range)
     {
         damage = hitDamage;
         chainCount = Mathf.Max(0, count);
@@ -124,8 +129,10 @@ public sealed class BasicAttackChainRelay : MonoBehaviour
         enabled = chainCount > 0 && chainRange > 0f && damage > 0;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    /// <summary>다른 콜라이더가 진입했을 때 적중 효과를 처리한다.</summary>
+    public void HandleEnemyContact(Collider2D other)
     {
+        if (!isActiveAndEnabled || other == null) return;
         EnemyCombat primary = other.GetComponentInParent<EnemyCombat>();
         if (primary == null || !triggeredTargets.Add(primary.GetInstanceID()))
             return;
@@ -135,13 +142,17 @@ public sealed class BasicAttackChainRelay : MonoBehaviour
             primary,
             damage,
             chainCount,
-            chainRange);
+            chainRange,
+            GetComponent<SkillInfo>()?.skillId ?? 0);
     }
 }
 
+/// <summary>증강의 획득, 효과, 레벨 및 쿨타임을 관리한다.</summary>
 public class UpgradeManager : MonoBehaviour
 {
     public static UpgradeManager Instance;
+    public static event Action<UpgradeManager> InstanceChanged;
+    public event Action UpgradesChanged;
     public List<int> skillUpgrades = new List<int>();
     public List<int> statUpgrades = new List<int>();
     public List<int> characterSkillUpgrades = new List<int>();
@@ -159,6 +170,7 @@ public class UpgradeManager : MonoBehaviour
     private UpgradeCooldownHud upgradeCooldownHud;
 
     private GameObject player;
+    private PlayerInfo playerInfo;
     BoxCollider2D playerCollider;
 
     public Image[] skillUpgradeIcons;
@@ -225,7 +237,7 @@ public class UpgradeManager : MonoBehaviour
     {
         public int criticalChance;
         public float criticalDamage;
-        public int damage;
+        public float damage;
         public int hp;
         public int defense;
         public int hpRegenRate;
@@ -234,6 +246,7 @@ public class UpgradeManager : MonoBehaviour
 
     private readonly Dictionary<int, PlayerStatOrigin> originalPlayerStats = new Dictionary<int, PlayerStatOrigin>();
     private readonly Dictionary<SkillData, float> originalSkillCoolTimes = new Dictionary<SkillData, float>();
+    private readonly Dictionary<SkillData, float> originalMovementLockTimes = new Dictionary<SkillData, float>();
     private readonly Dictionary<int, float[]> originalPassiveCoolTimes = new Dictionary<int, float[]>();
 
     // 현재 적용 중인 보너스 (%)
@@ -246,11 +259,13 @@ public class UpgradeManager : MonoBehaviour
     private float passiveCooldownBonus;
     private AudioSource snailGroundLoopSource;
 
+    /// <summary>비활성화될 때 이벤트와 진행 중인 동작을 정리한다.</summary>
     private void OnDisable()
     {
         StopSnailGroundLoop();
     }
 
+    /// <summary>필요한 컴포넌트와 초기 상태를 준비한다.</summary>
     public void Awake()
     {
         if (Instance == null)
@@ -258,25 +273,37 @@ public class UpgradeManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this);
         }
+        /// <summary>if 동작을 처리한다.</summary>
         else if (Instance != this)
         {
             // Rebind references to controls and skills from the reloaded scene.
             Instance.upgradesInfo = upgradesInfo;
             Instance.skillUpgradeIcons = skillUpgradeIcons;
             Instance.statUpgradeIcons = statUpgradeIcons;
-            UpgradeHudRendering.IsolateCollectedIcons(skillUpgradeIcons, statUpgradeIcons);
             Instance.detectUpgrade = detectUpgrade;
             Instance.orbit = orbit;
+            InstanceChanged?.Invoke(Instance);
             Destroy(gameObject);
             return;
         }
 
         player = GameObject.FindGameObjectWithTag("Player");
         playerCollider = player.GetComponent<BoxCollider2D>();
+        playerInfo = player.GetComponent<PlayerInfo>();
         EnsureUpgradeCooldownHud();
-        UpgradeHudRendering.IsolateCollectedIcons(skillUpgradeIcons, statUpgradeIcons);
+        InstanceChanged?.Invoke(this);
     }
 
+    /// <summary>오브젝트가 제거될 때 사용한 자원을 정리한다.</summary>
+    private void OnDestroy()
+    {
+        if (Instance != this)
+            return;
+        Instance = null;
+        InstanceChanged?.Invoke(null);
+    }
+
+    /// <summary>새 게임을 시작할 수 있도록 증강 상태를 초기화한다.</summary>
     public void ResetForNewRun()
     {
         StopRun();
@@ -313,8 +340,10 @@ public class UpgradeManager : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
         playerCollider = player != null ? player.GetComponent<BoxCollider2D>() : null;
+        UpgradesChanged?.Invoke();
     }
 
+    /// <summary>StopRun 동작을 처리한다.</summary>
     public void StopRun()
     {
         StopSnailGroundLoop();
@@ -330,6 +359,7 @@ public class UpgradeManager : MonoBehaviour
             upgradeCooldownHud.ClearAll();
     }
 
+    /// <summary>ClearCollectedUpgradeIcons 동작을 처리한다.</summary>
     private static void ClearCollectedUpgradeIcons(Image[] icons)
     {
         if (icons == null)
@@ -340,12 +370,15 @@ public class UpgradeManager : MonoBehaviour
             if (icon == null)
                 continue;
 
+            icon.sprite = null;
+
             CollectedUpgradeIconUI view = icon.GetComponent<CollectedUpgradeIconUI>();
             if (view != null)
                 view.Clear();
         }
     }
 
+    /// <summary>UpgradesInit 동작을 처리한다.</summary>
     public void UpgradesInit()
     {
         foreach (var pair in DataManager.Instance.upgradeDatasDic)
@@ -410,9 +443,11 @@ public class UpgradeManager : MonoBehaviour
 
         SnapshotOriginalStats();
         ApplyPlayerStats();
+        RefreshBasicAttackTimings();
     }
 
     // 원본 스탯 저장 + 보너스 초기화
+    /// <summary>SnapshotOriginalStats 동작을 처리한다.</summary>
     private void SnapshotOriginalStats()
     {
         var dm = DataManager.Instance;
@@ -437,10 +472,10 @@ public class UpgradeManager : MonoBehaviour
             };
         }
 
-        originalSkillCoolTimes.Clear();
         foreach (SkillData skill in dm.skillDatasDic.Values)
         {
-            originalSkillCoolTimes[skill] = skill.skillCoolTime;
+            if (!originalSkillCoolTimes.ContainsKey(skill)) originalSkillCoolTimes[skill] = skill.skillCoolTime;
+            if (!originalMovementLockTimes.ContainsKey(skill)) originalMovementLockTimes[skill] = skill.movementLockTime;
         }
 
         originalPassiveCoolTimes.Clear();
@@ -466,6 +501,7 @@ public class UpgradeManager : MonoBehaviour
     // =========================================================
 
     // id로 upgradeDatasDic(스킬) → statUpgradeDatasDic(스탯) 순서로 찾아서 UI용 데이터로 반환
+    /// <summary>GetView 동작의 가능 여부를 확인하고 처리한다.</summary>
     private bool TryGetView(int id, out UpgradeView v)
     {
         var dm = DataManager.Instance;
@@ -523,6 +559,7 @@ public class UpgradeManager : MonoBehaviour
 
     // DesId stays the base key. Optional _1 ... _5 entries in the localization
     // sheet describe the next upgrade; older data still uses its original text.
+    /// <summary>UpgradeDescriptionKey 관련 값을 조회한다.</summary>
     private static string GetUpgradeDescriptionKey(string baseKey, int ownedLevel, string firstDescription = null)
     {
         string levelKey = baseKey + "_" + (Mathf.Clamp(ownedLevel, 0, 4) + 1);
@@ -533,6 +570,7 @@ public class UpgradeManager : MonoBehaviour
     }
 
     // 스킬/스탯 상관없이 현재 UpgradeLevel 반환
+    /// <summary>Level 관련 값을 조회한다.</summary>
     private int GetLevel(int id)
     {
         var dm = DataManager.Instance;
@@ -550,6 +588,7 @@ public class UpgradeManager : MonoBehaviour
     }
 
     // 카드 슬롯 하나에 업그레이드 정보를 채움
+    /// <summary>ApplyToSlot 동작을 처리한다.</summary>
     private void ApplyToSlot(int slot, int id)
     {
         if (slot < 0 || slot >= upgradesInfo.Count || upgradesInfo[slot] == null)
@@ -598,6 +637,7 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
+    /// <summary>DescriptionArguments 관련 값을 조회한다.</summary>
     public object[] GetDescriptionArguments(int id)
     {
         var dm = DataManager.Instance;
@@ -612,13 +652,13 @@ public class UpgradeManager : MonoBehaviour
             {
                 case "Burn":
                 case "Mold":
-                    primaryValue = ValueAt(skill.debuffChance, level);
+                    primaryValue = ValueAt(skill.debuffChance, level) - (level > 0 ? ValueAt(skill.debuffChance, level - 1) : 0);
                     break;
                 case "Snail":
                     primaryValue = Mathf.RoundToInt((1f - ValueAt(skill.slow, level)) * 100f);
                     break;
                 default:
-                    primaryValue = ValueAt(skill.count, level);
+                    primaryValue = ValueAt(skill.count, level) - (level > 0 ? ValueAt(skill.count, level - 1) : 0);
                     break;
             }
 
@@ -633,24 +673,26 @@ public class UpgradeManager : MonoBehaviour
 
         if (dm.statUpgradeDatasDic.TryGetValue(id, out var stat))
         {
-            // 카드에는 현재 보유 레벨이 아니라 이번 선택으로 적용될 단계의 값을 표시한다.
+            // 누적 효과의 다음 값에서 현재 값을 빼 이번 선택의 증가량만 표시한다.
             int statLevel = Mathf.Clamp(stat.upgradeLevel, 0, 4);
-            float value = stat.function switch
+            float[] values = stat.function switch
             {
-                "CriticalInstinct" => ValueAt(stat.critChance, statLevel),
-                "CriticalForce" => ValueAt(stat.critDamage, statLevel),
-                "PowerBoost" => ValueAt(stat.attackPower, statLevel),
-                "Vitality" => ValueAt(stat.maxHp, statLevel),
-                "QuickCast" => ValueAt(stat.skillCooldown, statLevel),
-                "RapidCycle" => ValueAt(stat.passiveCooldown, statLevel),
-                "IronWall" => ValueAt(stat.defense, statLevel),
-                _ => 0f
+                "CriticalInstinct" => stat.critChance,
+                "CriticalForce" => stat.critDamage,
+                "PowerBoost" => stat.attackPower,
+                "Vitality" => stat.maxHp,
+                "QuickCast" => stat.skillCooldown,
+                "RapidCycle" => stat.passiveCooldown,
+                "IronWall" => stat.defense,
+                _ => null
             };
+            float value = ValueAt(values, statLevel) - (statLevel > 0 ? ValueAt(values, statLevel - 1) : 0f);
             return new object[] { value % 1f == 0f ? (object)(int)value : value };
         }
 
         if (dm.characterSkillUpgradeDatasDic.TryGetValue(id, out var characterSkill))
         {
+            // These arrays already store per-level additions (SumThrough), not totals.
             int nextLevel = Mathf.Clamp(
                 characterSkill.upgradeLevel,
                 0,
@@ -669,16 +711,19 @@ public class UpgradeManager : MonoBehaviour
         return System.Array.Empty<object>();
     }
 
+    /// <summary>ValueAt 동작을 처리한다.</summary>
     private static int ValueAt(int[] values, int index)
     {
         return values != null && values.Length > 0 ? values[Mathf.Min(index, values.Length - 1)] : 0;
     }
 
+    /// <summary>ValueAt 동작을 처리한다.</summary>
     private static float ValueAt(float[] values, int index)
     {
         return values != null && values.Length > 0 ? values[Mathf.Min(index, values.Length - 1)] : 0f;
     }
 
+    /// <summary>ValueAt 동작을 처리한다.</summary>
     private static string ValueAt(string[] values, int index)
     {
         return values != null && values.Length > 0
@@ -690,6 +735,7 @@ public class UpgradeManager : MonoBehaviour
     // 리뉴얼
     // =========================================================
 
+    /// <summary>UpgradeListRenewal 동작을 처리한다.</summary>
     public void UpgradeListRenewal()
     {
         upgrades = upgrades.OrderBy(x => Random.value).ToList();
@@ -757,6 +803,7 @@ public class UpgradeManager : MonoBehaviour
         upgradeRenewal?.Invoke();
     }
 
+    /// <summary>MoveUnownedToRenewable 동작을 처리한다.</summary>
     private void MoveUnownedToRenewable(string type, List<int> owned)
     {
         var unowned = upgrades
@@ -780,6 +827,7 @@ public class UpgradeManager : MonoBehaviour
     // 업그레이드 선택
     // =========================================================
 
+    /// <summary>CombineUpgrades 동작의 가능 여부를 확인하고 처리한다.</summary>
     public bool TryCombineUpgrades(int first, int second, out int result)
     {
         if (!UpgradeFusionRules.CanCombine(this, first, second, out result) ||
@@ -806,6 +854,7 @@ public class UpgradeManager : MonoBehaviour
         return true;
     }
 
+    /// <summary>ConsumeCombinationMaterial 동작을 처리한다.</summary>
     private void ConsumeCombinationMaterial(int id)
     {
         if (upgradeCor.TryGetValue(id, out IEnumerator routine))
@@ -835,6 +884,7 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
+    /// <summary>SkillUpgradesAdd 동작을 처리한다.</summary>
     public void SkillUpgradesAdd(int id)
     {
         if (!skillUpgrades.Contains(id))
@@ -856,9 +906,11 @@ public class UpgradeManager : MonoBehaviour
 
         upgradeActions[id](id);
         EnsureUpgradeCooldownHud()?.Track(id);
+        UpgradesChanged?.Invoke();
         upgradeSelect?.Invoke();
     }
 
+    /// <summary>StatUpgradesAdd 동작을 처리한다.</summary>
     public void StatUpgradesAdd(int id)
     {
         if (!statUpgrades.Contains(id))
@@ -885,9 +937,11 @@ public class UpgradeManager : MonoBehaviour
         }
 
         upgradeActions[id](id);
+        UpgradesChanged?.Invoke();
         upgradeSelect?.Invoke();
     }
 
+    /// <summary>IsEligibleForCurrentCharacter 동작을 처리한다.</summary>
     private bool IsEligibleForCurrentCharacter(int id)
     {
         if (DataManager.Instance.upgradeDatasDic.ContainsKey(id) ||
@@ -907,6 +961,7 @@ public class UpgradeManager : MonoBehaviour
                (currentCharacterId > 0 && data.characterId == currentCharacterId);
     }
 
+    /// <summary>CharacterSkillUpgradesAdd 동작을 처리한다.</summary>
     public void CharacterSkillUpgradesAdd(int id)
     {
         if (!DataManager.Instance.characterSkillUpgradeDatasDic.TryGetValue(
@@ -923,9 +978,11 @@ public class UpgradeManager : MonoBehaviour
         if (data.upgradeLevel >= GetCharacterSkillMaxLevel(data))
             upgrades.Remove(id);
 
+        UpgradesChanged?.Invoke();
         upgradeSelect?.Invoke();
     }
 
+    /// <summary>BasicAttackModifiers 관련 값을 조회한다.</summary>
     public BasicAttackModifiers GetBasicAttackModifiers(int characterId)
     {
         BasicAttackModifiers result = CharacterProgression.BasicAttackBonus(characterId);
@@ -954,6 +1011,7 @@ public class UpgradeManager : MonoBehaviour
         return result;
     }
 
+    /// <summary>CharacterSkillMaxLevel 관련 값을 조회한다.</summary>
     private static int GetCharacterSkillMaxLevel(CharacterSkillUpgradeData data)
     {
         return Mathf.Max(
@@ -967,6 +1025,7 @@ public class UpgradeManager : MonoBehaviour
             data.descriptions?.Length ?? 0);
     }
 
+    /// <summary>SumThrough 동작을 처리한다.</summary>
     private static int SumThrough(int[] values, int level)
     {
         if (values == null || values.Length == 0)
@@ -979,6 +1038,7 @@ public class UpgradeManager : MonoBehaviour
         return sum;
     }
 
+    /// <summary>SumThrough 동작을 처리한다.</summary>
     private static float SumThrough(float[] values, int level)
     {
         if (values == null || values.Length == 0)
@@ -991,6 +1051,7 @@ public class UpgradeManager : MonoBehaviour
         return sum;
     }
 
+    /// <summary>MaxThrough 동작을 처리한다.</summary>
     private static float MaxThrough(float[] values, int level)
     {
         if (values == null || values.Length == 0)
@@ -1007,6 +1068,7 @@ public class UpgradeManager : MonoBehaviour
     // 스킬 코루틴
     // =========================================================
 
+    /// <summary>StartSkillCoroutine 동작을 처리한다.</summary>
     public void StartSkillCoroutine(int id, IEnumerator coroutine)
     {
         if (upgradeCor.TryGetValue(id, out IEnumerator oldCoroutine))
@@ -1021,6 +1083,7 @@ public class UpgradeManager : MonoBehaviour
         StartCoroutine(newCoroutine);
     }
 
+    /// <summary>화면에 표시할 해당 증강의 레벨을 반환한다.</summary>
     public int GetUpgradeDisplayLevel(int id)
     {
         if (DataManager.Instance == null)
@@ -1040,6 +1103,7 @@ public class UpgradeManager : MonoBehaviour
         return 0;
     }
 
+    /// <summary>증강의 쿨타임을 시작하고 표시 정보를 갱신한다.</summary>
     public void BeginUpgradeCooldown(int id, float duration)
     {
         duration = Mathf.Max(0f, duration);
@@ -1048,6 +1112,7 @@ public class UpgradeManager : MonoBehaviour
         EnsureUpgradeCooldownHud()?.Track(id);
     }
 
+    /// <summary>증강의 남은 쿨타임과 전체 시간을 조회한다.</summary>
     public bool TryGetUpgradeCooldown(int id, out float remaining, out float duration)
     {
         remaining = 0f;
@@ -1061,6 +1126,7 @@ public class UpgradeManager : MonoBehaviour
         return remaining > 0f && duration > 0f;
     }
 
+    /// <summary>IsPersistentUpgrade 동작을 처리한다.</summary>
     public bool IsPersistentUpgrade(int id)
     {
         if (DataManager.Instance == null ||
@@ -1074,6 +1140,7 @@ public class UpgradeManager : MonoBehaviour
         return data.coolTime[level] <= 0f;
     }
 
+    /// <summary>UpgradeIcon 관련 값을 조회한다.</summary>
     public Sprite GetUpgradeIcon(int id)
     {
         if (DataManager.Instance == null)
@@ -1087,6 +1154,7 @@ public class UpgradeManager : MonoBehaviour
             : null;
     }
 
+    /// <summary>EnsureUpgradeCooldownHud 동작을 처리한다.</summary>
     private UpgradeCooldownHud EnsureUpgradeCooldownHud()
     {
         if (upgradeCooldownHud == null)
@@ -1098,6 +1166,7 @@ public class UpgradeManager : MonoBehaviour
         return upgradeCooldownHud;
     }
 
+    /// <summary>Lightning 동작을 처리한다.</summary>
     public void Lightning(int id)
     {
         if (upgradeCor.ContainsKey(id))
@@ -1106,6 +1175,7 @@ public class UpgradeManager : MonoBehaviour
         StartSkillCoroutine(id, detectUpgrade.DetectUpgradeCor(id));
     }
 
+    /// <summary>Fireball 동작을 처리한다.</summary>
     public void Fireball(int id)
     {
         if (upgradeCor.ContainsKey(id))
@@ -1114,6 +1184,7 @@ public class UpgradeManager : MonoBehaviour
         StartSkillCoroutine(id, detectUpgrade.DetectUpgradeCor(id));
     }
 
+    /// <summary>Burn 동작을 처리한다.</summary>
     public void Burn(int id)
     {
         if (upgradeCor.ContainsKey(id))
@@ -1122,6 +1193,7 @@ public class UpgradeManager : MonoBehaviour
         StartSkillCoroutine(id, BurnCor(id));
     }
 
+    /// <summary>Poison 동작을 처리한다.</summary>
     public void Poison(int id)
     {
         if (upgradeCor.ContainsKey(id))
@@ -1130,6 +1202,7 @@ public class UpgradeManager : MonoBehaviour
         StartSkillCoroutine(id, detectUpgrade.DetectUpgradeCor(id));
     }
 
+    /// <summary>Snail 동작을 처리한다.</summary>
     public void Snail(int id)
     {
         if (upgradeCor.ContainsKey(id))
@@ -1139,18 +1212,21 @@ public class UpgradeManager : MonoBehaviour
         StartSkillCoroutine(id, SnailCor(id));
     }
 
+    /// <summary>StartSnailGroundLoop 동작을 처리한다.</summary>
     private void StartSnailGroundLoop()
     {
         if (snailGroundLoopSource == null || !snailGroundLoopSource.isPlaying)
             snailGroundLoopSource = SoundManager.Instance?.Play(SoundIds.SnailGroundLoop, loop: true);
     }
 
+    /// <summary>StopSnailGroundLoop 동작을 처리한다.</summary>
     private void StopSnailGroundLoop()
     {
         SoundManager.Instance?.Stop(snailGroundLoopSource);
         snailGroundLoopSource = null;
     }
 
+    /// <summary>BeginShurikenSpinSound 동작을 처리한다.</summary>
     private void BeginShurikenSpinSound(int id)
     {
         activeShurikenSpinIds.Add(id);
@@ -1162,6 +1238,7 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
+    /// <summary>StopShurikenSpinSound 동작을 처리한다.</summary>
     private void StopShurikenSpinSound(int id)
     {
         activeShurikenSpinIds.Remove(id);
@@ -1172,6 +1249,7 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
+    /// <summary>StopAllShurikenSpinSounds 동작을 처리한다.</summary>
     private void StopAllShurikenSpinSounds()
     {
         activeShurikenSpinIds.Clear();
@@ -1179,6 +1257,7 @@ public class UpgradeManager : MonoBehaviour
         shurikenSpinSoundSource = null;
     }
 
+    /// <summary>Shuriken 동작을 처리한다.</summary>
     public void Shuriken(int id)
     {
         if (upgradeCor.ContainsKey(id))
@@ -1187,6 +1266,7 @@ public class UpgradeManager : MonoBehaviour
         StartSkillCoroutine(id, ShurikenCor(id));
     }
 
+    /// <summary>Missile 동작을 처리한다.</summary>
     public void Missile(int id)
     {
         if (upgradeCor.ContainsKey(id))
@@ -1195,6 +1275,7 @@ public class UpgradeManager : MonoBehaviour
         StartSkillCoroutine(id, MissileCor(id));
     }
 
+    /// <summary>Mold 동작을 처리한다.</summary>
     public void Mold(int id)
     {
         if (upgradeCor.ContainsKey(id))
@@ -1203,36 +1284,43 @@ public class UpgradeManager : MonoBehaviour
         StartSkillCoroutine(id, MoldCor(id));
     }
 
+    /// <summary>FireStorm 동작을 처리한다.</summary>
     public void FireStorm(int id)
     {
         Fireball(id);
     }
 
+    /// <summary>SporeWarhead 동작을 처리한다.</summary>
     public void SporeWarhead(int id)
     {
         Missile(id);
     }
 
+    /// <summary>LightningShuriken 동작을 처리한다.</summary>
     public void LightningShuriken(int id)
     {
         Shuriken(id);
     }
 
+    /// <summary>Heatwave 동작을 처리한다.</summary>
     public void Heatwave(int id)
     {
         Fireball(id);
     }
 
+    /// <summary>LavaField 동작을 처리한다.</summary>
     public void LavaField(int id)
     {
         Snail(id);
     }
 
+    /// <summary>RottingSpore 동작을 처리한다.</summary>
     public void RottingSpore(int id)
     {
         Mold(id);
     }
 
+    /// <summary>BurnCor 동작을 처리한다.</summary>
     private IEnumerator BurnCor(int id)
     {
         int level =
@@ -1250,6 +1338,7 @@ public class UpgradeManager : MonoBehaviour
         yield return null;
     }
 
+    /// <summary>SnailCor 동작을 처리한다.</summary>
     private IEnumerator SnailCor(int id)
     {
         while (true)
@@ -1264,18 +1353,14 @@ public class UpgradeManager : MonoBehaviour
                 playerCollider.bounds.center
             );
 
-            Debug.Log(
-                DataManager.Instance
-                    .upgradeDatasDic[id]
-                    .coolTime[level]
-            );
-
             float cooldown = DataManager.Instance.upgradeDatasDic[id].coolTime[level];
             BeginUpgradeCooldown(id, cooldown);
+            /// <summary>WaitForSeconds 동작을 처리한다.</summary>
             yield return new WaitForSeconds(cooldown);
         }
     }
 
+    /// <summary>ShurikenCor 동작을 처리한다.</summary>
     private IEnumerator ShurikenCor(int id)
     {
         while (true)
@@ -1299,6 +1384,7 @@ public class UpgradeManager : MonoBehaviour
             }
 
             BeginShurikenSpinSound(id);
+            /// <summary>StartCoroutine 동작을 처리한다.</summary>
             yield return StartCoroutine(
                 orbit.RotateOrbits(id)
             );
@@ -1306,10 +1392,12 @@ public class UpgradeManager : MonoBehaviour
 
             float cooldown = DataManager.Instance.upgradeDatasDic[id].coolTime[level];
             BeginUpgradeCooldown(id, cooldown);
+            /// <summary>WaitForSeconds 동작을 처리한다.</summary>
             yield return new WaitForSeconds(cooldown);
         }
     }
 
+    /// <summary>MissileCor 동작을 처리한다.</summary>
     private IEnumerator MissileCor(int id)
     {
         while (true)
@@ -1330,6 +1418,7 @@ public class UpgradeManager : MonoBehaviour
                     .detectionRange[level];
 
             // 적이 나타날 때까지 대기
+            /// <summary>WaitUntil 동작을 처리한다.</summary>
             yield return new WaitUntil(() =>
                 detectUpgrade.HasEnemyInRange(detectionRange)
             );
@@ -1383,6 +1472,7 @@ public class UpgradeManager : MonoBehaviour
                     true
                 );
 
+                /// <summary>WaitForSeconds 동작을 처리한다.</summary>
                 yield return new WaitForSeconds(0.1f);
             }
 
@@ -1392,10 +1482,12 @@ public class UpgradeManager : MonoBehaviour
                     .coolTime[level];
 
             BeginUpgradeCooldown(id, coolTime);
+            /// <summary>WaitForSeconds 동작을 처리한다.</summary>
             yield return new WaitForSeconds(coolTime);
         }
     }
 
+    /// <summary>MoldCor 동작을 처리한다.</summary>
     private IEnumerator MoldCor(int id)
     {
         int level =
@@ -1419,6 +1511,7 @@ public class UpgradeManager : MonoBehaviour
     // =========================================================
 
     // 플레이어 스탯(치명타 확률/피해, 공격력, 체력, 방어력)을 원본 기준으로 재계산해서 덮어씀
+    /// <summary>기준 능력치와 증강 보너스로 플레이어 능력치를 다시 계산한다.</summary>
     private void ApplyPlayerStats()
     {
         foreach (var pair in DataManager.Instance.playerDatasDic)
@@ -1431,23 +1524,44 @@ public class UpgradeManager : MonoBehaviour
             var permanent = CharacterProgression.Bonuses(pair.Key, CharacterProgression.Level(pair.Key));
             p.criticalChance = Mathf.Clamp((int)((origin.criticalChance + permanent.criticalChance) * (1f + critChanceBonus / 100f)), 0, 100);
             p.criticalDamage = (origin.criticalDamage + permanent.criticalDamage) * (1f + critDamageBonus / 100f);
-            p.damage = (int)((origin.damage + CharacterProgression.AttackBonus(pair.Key)) * (1f + attackPowerBonus / 100f));
+            p.damage = origin.damage + CharacterProgression.AttackBonus(pair.Key) + attackPowerBonus;
             p.hp = Mathf.RoundToInt((origin.hp + permanent.hp) * (1f + maxHpBonus / 100f));
-            p.defense = (int)((origin.defense + permanent.defense) * (1f + defenseBonus / 100f));
+            p.defense = Mathf.RoundToInt(origin.defense + permanent.defense + defenseBonus);
             p.hpRegenRate = origin.hpRegenRate + permanent.hpRegenRate;
             p.speed = origin.speed + permanent.speed;
         }
     }
 
+    /// <summary>RefreshPermanentStats 동작을 처리한다.</summary>
     public void RefreshPermanentStats()
     {
         if (DataManager.Instance != null && originalPlayerStats.Count > 0)
             ApplyPlayerStats();
+        RefreshBasicAttackTimings();
+    }
+
+    /// <summary>RefreshBasicAttackTimings 동작을 처리한다.</summary>
+    private void RefreshBasicAttackTimings()
+    {
+        if (DataManager.Instance == null) return;
+        foreach (var skill in DataManager.Instance.skillDatasDic.Values)
+        {
+            int characterId = skill.skillId == 200 ? 1 : skill.skillId == 201 ? 2 : 0;
+            if (characterId == 0 || !originalSkillCoolTimes.TryGetValue(skill, out float originalCooldown) ||
+                !originalMovementLockTimes.TryGetValue(skill, out float originalLock)) continue;
+            skill.basicAttackCooldown = Mathf.Max(0.01f,
+                skill.skillCoolTime / CharacterProgression.BasicAttackSpeed(characterId));
+            float ratio = originalCooldown > 0f ? skill.basicAttackCooldown / originalCooldown : 1f;
+            skill.movementLockTime = Mathf.Max(0f, originalLock * ratio);
+            skill.basicAttackAnimationSpeed = originalCooldown > 0f
+                ? originalCooldown / skill.basicAttackCooldown : 1f;
+        }
     }
 
     public bool HasPlayerStatBaseline => originalPlayerStats.Count > 0;
 
     // 스킬 쿨타임을 원본 기준으로 재계산해서 덮어씀
+    /// <summary>스킬의 원래 쿨타임에 감소 보너스를 적용한다.</summary>
     private void ApplySkillCoolTimes()
     {
         foreach (SkillData skill in DataManager.Instance.skillDatasDic.Values)
@@ -1457,9 +1571,11 @@ public class UpgradeManager : MonoBehaviour
 
             skill.skillCoolTime = origin * (1f - skillCooldownBonus / 100f);
         }
+        RefreshBasicAttackTimings();
     }
 
     // Passive 업그레이드 쿨타임을 원본 기준으로 재계산해서 덮어씀
+    /// <summary>증강의 원래 쿨타임에 감소 보너스를 적용한다.</summary>
     private void ApplyPassiveCoolTimes()
     {
         foreach (var pair in DataManager.Instance.upgradeDatasDic)
@@ -1477,6 +1593,7 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
+    /// <summary>CriticalInstinct 동작을 처리한다.</summary>
     public void CriticalInstinct(int id)
     {
         var data = DataManager.Instance.statUpgradeDatasDic[id];
@@ -1485,6 +1602,7 @@ public class UpgradeManager : MonoBehaviour
         ApplyPlayerStats();
     }
 
+    /// <summary>CriticalForce 동작을 처리한다.</summary>
     public void CriticalForce(int id)
     {
         var data = DataManager.Instance.statUpgradeDatasDic[id];
@@ -1493,6 +1611,7 @@ public class UpgradeManager : MonoBehaviour
         ApplyPlayerStats();
     }
 
+    /// <summary>PowerBoost 동작을 처리한다.</summary>
     public void PowerBoost(int id)
     {
         var data = DataManager.Instance.statUpgradeDatasDic[id];
@@ -1501,6 +1620,7 @@ public class UpgradeManager : MonoBehaviour
         ApplyPlayerStats();
     }
 
+    /// <summary>Vitality 동작을 처리한다.</summary>
     public void Vitality(int id)
     {
         var data = DataManager.Instance.statUpgradeDatasDic[id];
@@ -1537,6 +1657,7 @@ public class UpgradeManager : MonoBehaviour
         playerCombat.UpdateHpUI();
     }
 
+    /// <summary>QuickCast 동작을 처리한다.</summary>
     public void QuickCast(int id)
     {
         var data = DataManager.Instance.statUpgradeDatasDic[id];
@@ -1546,6 +1667,7 @@ public class UpgradeManager : MonoBehaviour
         ApplySkillCoolTimes();
     }
 
+    /// <summary>RapidCycle 동작을 처리한다.</summary>
     public void RapidCycle(int id)
     {
         var data = DataManager.Instance.statUpgradeDatasDic[id];
@@ -1555,6 +1677,7 @@ public class UpgradeManager : MonoBehaviour
         ApplyPassiveCoolTimes();
     }
 
+    /// <summary>IronWall 동작을 처리한다.</summary>
     public void IronWall(int id)
     {
         var data = DataManager.Instance.statUpgradeDatasDic[id];
@@ -1563,6 +1686,7 @@ public class UpgradeManager : MonoBehaviour
         ApplyPlayerStats();
     }
     
+    /// <summary>BonusesAndApply 관련 상태를 설정한다.</summary>
     private void SetBonusesAndApply(
         float critChance, float critDamage, float attackPower,
         float maxHp, float defense, float skillCd, float passiveCd)
@@ -1604,6 +1728,7 @@ public class UpgradeManager : MonoBehaviour
         }
     }
     
+    /// <summary>SkillAnimationSpeed 관련 값을 조회한다.</summary>
     public float GetSkillAnimationSpeed(int skillId)
     {
         if (!DataManager.Instance.skillDatasDic.TryGetValue(skillId, out SkillData skill))
@@ -1619,12 +1744,42 @@ public class UpgradeManager : MonoBehaviour
     }
 }
 
+/// <summary>획득한 증강의 아이콘과 레벨을 표시한다.</summary>
 public sealed class CollectedUpgradeIconUI : MonoBehaviour
 {
     private TextMeshProUGUI levelText;
     private int upgradeId;
     private int displayedLevel = -1;
+    private UpgradeManager subscribedManager;
 
+    /// <summary>활성화될 때 필요한 이벤트와 동작을 시작한다.</summary>
+    private void OnEnable()
+    {
+        UpgradeManager.InstanceChanged += BindManager;
+        BindManager(UpgradeManager.Instance);
+    }
+
+    /// <summary>비활성화될 때 이벤트와 진행 중인 동작을 정리한다.</summary>
+    private void OnDisable()
+    {
+        UpgradeManager.InstanceChanged -= BindManager;
+        if (subscribedManager != null)
+            subscribedManager.UpgradesChanged -= RefreshVisuals;
+        subscribedManager = null;
+    }
+
+    /// <summary>BindManager 동작을 처리한다.</summary>
+    private void BindManager(UpgradeManager manager)
+    {
+        if (subscribedManager != null)
+            subscribedManager.UpgradesChanged -= RefreshVisuals;
+        subscribedManager = manager;
+        if (subscribedManager != null)
+            subscribedManager.UpgradesChanged += RefreshVisuals;
+        RefreshVisuals();
+    }
+
+    /// <summary>Attach 동작을 처리한다.</summary>
     public static CollectedUpgradeIconUI Attach(UnityEngine.UI.Image target, int id)
     {
         if (target == null)
@@ -1635,22 +1790,27 @@ public sealed class CollectedUpgradeIconUI : MonoBehaviour
             view = target.gameObject.AddComponent<CollectedUpgradeIconUI>();
 
         view.BuildIfNeeded(target);
+        UpgradeHudRendering.ApplyCollectedIconStyle(target, id);
         view.Bind(id);
         return view;
     }
 
+    /// <summary>BuildIfNeeded 동작을 처리한다.</summary>
     private void BuildIfNeeded(UnityEngine.UI.Image target)
     {
         target.preserveAspect = true;
 
-        RemoveOldCooldownChild("CooldownFill");
         RemoveOldCooldownChild("CooldownText");
+        RemoveOldCooldownChild("CooldownFill");
 
         if (levelText == null)
             levelText = CreateText("LevelText", 19f, TextAlignmentOptions.BottomRight,
+                /// <summary>Vector2 동작을 처리한다.</summary>
                 new Vector2(0f, 0f), new Vector2(1f, 0.38f), new Vector2(4f, 1f), new Vector2(-5f, -1f));
+        levelText.transform.SetAsLastSibling();
     }
 
+    /// <summary>Text 항목을 생성한다.</summary>
     private TextMeshProUGUI CreateText(
         string objectName,
         float fontSize,
@@ -1679,6 +1839,7 @@ public sealed class CollectedUpgradeIconUI : MonoBehaviour
         return text;
     }
 
+    /// <summary>표시할 대상이나 증강 정보를 연결한다.</summary>
     public void Bind(int id)
     {
         upgradeId = id;
@@ -1686,6 +1847,7 @@ public sealed class CollectedUpgradeIconUI : MonoBehaviour
         RefreshVisuals();
     }
 
+    /// <summary>현재 연결된 표시 상태를 초기화한다.</summary>
     public void Clear()
     {
         upgradeId = 0;
@@ -1694,14 +1856,10 @@ public sealed class CollectedUpgradeIconUI : MonoBehaviour
             levelText.text = string.Empty;
     }
 
-    private void Update()
-    {
-        RefreshVisuals();
-    }
-
+    /// <summary>현재 증강 상태에 맞게 시각 표시를 갱신한다.</summary>
     private void RefreshVisuals()
     {
-        if (upgradeId <= 0 || UpgradeManager.Instance == null)
+        if (levelText == null || upgradeId <= 0 || UpgradeManager.Instance == null)
             return;
 
         int level = UpgradeManager.Instance.GetUpgradeDisplayLevel(upgradeId);
@@ -1711,6 +1869,7 @@ public sealed class CollectedUpgradeIconUI : MonoBehaviour
         levelText.text = $"Lv.{level}";
     }
 
+    /// <summary>RemoveOldCooldownChild 동작을 처리한다.</summary>
     private void RemoveOldCooldownChild(string childName)
     {
         Transform child = transform.Find(childName);

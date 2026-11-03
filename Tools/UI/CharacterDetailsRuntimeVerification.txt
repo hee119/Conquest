@@ -1,0 +1,14 @@
+PASS: Base and enhanced stats match CSV
+PASS: Stat popup reflects current enhancement
+PASS: Stats labels localized in ko
+PASS: Stats labels localized in en
+PASS: Stats labels localized in jp
+PASS: Attack playback controls selected character 1
+PASS: Attack frames advance 1
+PASS: Idle restored after attack 1
+PASS: Attack playback controls selected character 2
+PASS: Attack frames advance 2
+PASS: Idle restored after attack 2
+PASS: Changing character cancels playback
+PASS: Closing panel restores idle
+COMPLETE

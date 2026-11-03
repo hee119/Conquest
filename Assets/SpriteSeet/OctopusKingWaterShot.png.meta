@@ -1,0 +1,802 @@
+fileFormatVersion: 2
+guid: 67d442a4e9bcc4240bd1de1835265404
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1887220388052474515
+    second: OctopusKingWaterShot_0
+  - first:
+      213: 2051287457546308826
+    second: OctopusKingWaterShot_1
+  - first:
+      213: -4393526655820324045
+    second: OctopusKingWaterShot_2
+  - first:
+      213: -6575376324072571584
+    second: OctopusKingWaterShot_3
+  - first:
+      213: -8610772991168527462
+    second: OctopusKingWaterShot_4
+  - first:
+      213: 3808249768581064551
+    second: OctopusKingWaterShot_5
+  - first:
+      213: 7413988569343041581
+    second: OctopusKingWaterShot_6
+  - first:
+      213: -8704885259324141853
+    second: OctopusKingWaterShot_7
+  - first:
+      213: -1105673391983354516
+    second: OctopusKingWaterShot_8
+  - first:
+      213: 9183418461748895020
+    second: OctopusKingWaterShot_9
+  - first:
+      213: 8734039597018471702
+    second: OctopusKingWaterShot_10
+  - first:
+      213: 1389277990983645294
+    second: OctopusKingWaterShot_11
+  - first:
+      213: -2790459318472938853
+    second: OctopusKingWaterShot_12
+  - first:
+      213: -6455005335804438774
+    second: OctopusKingWaterShot_13
+  - first:
+      213: -7259828149209763912
+    second: OctopusKingWaterShot_14
+  - first:
+      213: 5276679067798649841
+    second: OctopusKingWaterShot_15
+  - first:
+      213: 5504992778862480273
+    second: OctopusKingWaterShot_16
+  - first:
+      213: -3273913653415133722
+    second: OctopusKingWaterShot_17
+  - first:
+      213: 285572616772694717
+    second: OctopusKingWaterShot_18
+  - first:
+      213: -6064274494122381596
+    second: OctopusKingWaterShot_19
+  - first:
+      213: -4679504129037151181
+    second: OctopusKingWaterShot_20
+  - first:
+      213: 2777860201539315802
+    second: OctopusKingWaterShot_21
+  - first:
+      213: 3887753085385110733
+    second: OctopusKingWaterShot_22
+  - first:
+      213: 7729061153903613720
+    second: OctopusKingWaterShot_23
+  - first:
+      213: 7410897529695776732
+    second: OctopusKingWaterShot_24
+  - first:
+      213: -6771953138152438442
+    second: OctopusKingWaterShot_25
+  - first:
+      213: 8858662762602171554
+    second: OctopusKingWaterShot_26
+  - first:
+      213: -4850110875168377746
+    second: OctopusKingWaterShot_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 115.29412
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 534
+        width: 251
+        height: 218
+      alignment: 9
+      pivot: {x: 0.5099602, y: 0.48129416}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61d5b721dba853970800000000000000
+      internalID: 8734039597018471702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_11
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 534
+        width: 251
+        height: 218
+      alignment: 9
+      pivot: {x: 0.4880478, y: 0.5172941}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6839dad8f4b74310800000000000000
+      internalID: 1389277990983645294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_12
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 534
+        width: 250
+        height: 218
+      alignment: 9
+      pivot: {x: 0.496, y: 0.5132941}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9aed3ac80c4649d0800000000000000
+      internalID: -2790459318472938853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_13
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 534
+        width: 251
+        height: 218
+      alignment: 9
+      pivot: {x: 0.49203187, y: 0.50529414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a071020e8d63b66a0800000000000000
+      internalID: -6455005335804438774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_14
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 534
+        width: 251
+        height: 218
+      alignment: 9
+      pivot: {x: 0.5079681, y: 0.5252941}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bf68f333c8ef3b90800000000000000
+      internalID: -7259828149209763912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 298
+        width: 251
+        height: 204
+      alignment: 9
+      pivot: {x: 0.51593626, y: 0.3598547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fbb0e5b7a78a3940800000000000000
+      internalID: 5276679067798649841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_16
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 301
+        width: 251
+        height: 201
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.3598547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19b403304c9a56c40800000000000000
+      internalID: 5504992778862480273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_17
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 251
+        width: 250
+        height: 251
+      alignment: 9
+      pivot: {x: 0.498, y: 0.3598547}
+      border: {x: 0, y: 50, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6edb3eec0e8b092d0800000000000000
+      internalID: -3273913653415133722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_18
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 251
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.5079681, y: 0.3598547}
+      border: {x: 0, y: 45, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db2b05c28ce86f300800000000000000
+      internalID: 285572616772694717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_19
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 296
+        width: 251
+        height: 206
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.3598547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eeaf5d3a7e57dba0800000000000000
+      internalID: -6064274494122381596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 251
+        height: 188
+      alignment: 9
+      pivot: {x: 0.51593626, y: 0.6188189}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33454c7a9cf0f0fb0800000000000000
+      internalID: -4679504129037151181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_21
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 61
+        width: 251
+        height: 190
+      alignment: 9
+      pivot: {x: 0.49402392, y: 0.61483485}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a582274b221fc8620800000000000000
+      internalID: 2777860201539315802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_22
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 61
+        width: 250
+        height: 190
+      alignment: 9
+      pivot: {x: 0.492, y: 0.6068667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc4fecc35d214f530800000000000000
+      internalID: 3887753085385110733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_23
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 61
+        width: 251
+        height: 190
+      alignment: 9
+      pivot: {x: 0.5059761, y: 0.6188189}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81712bd4b24234b60800000000000000
+      internalID: 7729061153903613720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_24
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 61
+        width: 251
+        height: 190
+      alignment: 9
+      pivot: {x: 0.51195216, y: 0.6068667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdf2654e90cc8d660800000000000000
+      internalID: 7410897529695776732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1012
+        width: 251
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5079681, y: 0.3917272}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c7e32a020e514ce293640575972bac5
+      internalID: 1894123920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_01
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 1013
+        width: 251
+        height: 241
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.3917272}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 145e5a05ffef143cda7b0352e0619732
+      internalID: 510340469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_02
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 1018
+        width: 250
+        height: 236
+      alignment: 9
+      pivot: {x: 0.496, y: 0.38375908}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ed5144442d6640f4a61cc945b319bb3
+      internalID: 997756136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_03
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 1015
+        width: 251
+        height: 239
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.38375908}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbda9acdc3f774d95b0b683657d229d5
+      internalID: -399991948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_04
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 1015
+        width: 251
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5079681, y: 0.3917272}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c7328de8e6149ceaa208549409ad8d
+      internalID: 1360794437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_05
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 775
+        width: 251
+        height: 228
+      alignment: 9
+      pivot: {x: 0.5079681, y: 0.43156785}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d5f922e61cd24f10822c918dc597893
+      internalID: -1317414200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_06
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 775
+        width: 251
+        height: 250
+      alignment: 9
+      pivot: {x: 0.50199205, y: 0.43953598}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb2a1ed2ca9394ce2aba08e585ab167c
+      internalID: -1692578907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_07
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 777
+        width: 250
+        height: 226
+      alignment: 9
+      pivot: {x: 0.506, y: 0.43953598}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e1f40bce1ad4b2a875208c06ba3bfa
+      internalID: 1637863998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_08
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 779
+        width: 251
+        height: 224
+      alignment: 9
+      pivot: {x: 0.49402392, y: 0.4355519}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98e036fc13645482bbe3ec4640bef4c7
+      internalID: 695692039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OctopusKingWaterShot_09
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 779
+        width: 251
+        height: 224
+      alignment: 9
+      pivot: {x: 0.50398403, y: 0.43953598}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 351bd7ffdba094f3199fe9b9d73a7a89
+      internalID: -964917494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f0536c663d32b498097a47f5d299f75c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      OctopusKingWaterShot_00: 1894123920
+      OctopusKingWaterShot_01: 510340469
+      OctopusKingWaterShot_02: 997756136
+      OctopusKingWaterShot_03: -399991948
+      OctopusKingWaterShot_04: 1360794437
+      OctopusKingWaterShot_05: -1317414200
+      OctopusKingWaterShot_06: -1692578907
+      OctopusKingWaterShot_07: 1637863998
+      OctopusKingWaterShot_08: 695692039
+      OctopusKingWaterShot_09: -964917494
+      OctopusKingWaterShot_10: 8734039597018471702
+      OctopusKingWaterShot_11: 1389277990983645294
+      OctopusKingWaterShot_12: -2790459318472938853
+      OctopusKingWaterShot_13: -6455005335804438774
+      OctopusKingWaterShot_14: -7259828149209763912
+      OctopusKingWaterShot_15: 5276679067798649841
+      OctopusKingWaterShot_16: 5504992778862480273
+      OctopusKingWaterShot_17: -3273913653415133722
+      OctopusKingWaterShot_18: 285572616772694717
+      OctopusKingWaterShot_19: -6064274494122381596
+      OctopusKingWaterShot_20: -4679504129037151181
+      OctopusKingWaterShot_21: 2777860201539315802
+      OctopusKingWaterShot_22: 3887753085385110733
+      OctopusKingWaterShot_23: 7729061153903613720
+      OctopusKingWaterShot_24: 7410897529695776732
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

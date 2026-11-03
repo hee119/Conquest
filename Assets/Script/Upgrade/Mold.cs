@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>Mold 증강 관련 동작과 상태를 관리한다.</summary>
 public class Mold : MonoBehaviour
 {
     public Animator animator;
@@ -17,6 +18,7 @@ public class Mold : MonoBehaviour
 
     Coroutine targetMoldCor;
 
+    /// <summary>필요한 컴포넌트와 초기 상태를 준비한다.</summary>
     public void Awake()
     {
         spriteRenderer =
@@ -32,6 +34,7 @@ public class Mold : MonoBehaviour
             upgradeInfo.id;
     }
 
+    /// <summary>활성화될 때 필요한 이벤트와 동작을 시작한다.</summary>
     private void OnEnable()
     {
         if (animator != null)
@@ -49,6 +52,7 @@ public class Mold : MonoBehaviour
         }
     }
 
+    /// <summary>TargetMushroom 동작을 처리한다.</summary>
     public void TargetMushroom(GameObject target)
     {
         targetMoldCor =
@@ -57,6 +61,7 @@ public class Mold : MonoBehaviour
             );
     }
 
+    /// <summary>TargetMoldCor 동작을 처리한다.</summary>
     public virtual IEnumerator TargetMoldCor()
     {
         animator.enabled = false;
@@ -70,6 +75,7 @@ public class Mold : MonoBehaviour
 
         while (i < sprites.Count)
         {
+            /// <summary>WaitForSeconds 동작을 처리한다.</summary>
             yield return new WaitForSeconds(3f);
 
             UnityEngine.Debug.Log(
@@ -92,6 +98,7 @@ public class Mold : MonoBehaviour
         animator.SetTrigger("Boom");
     }
 
+    /// <summary>Boom 동작을 처리한다.</summary>
     public virtual void Boom()
     {
         SoundManager.Instance?.Play(SoundIds.MoldPop);
@@ -116,60 +123,11 @@ public class Mold : MonoBehaviour
             upgradeData.damage[level];
 
         // =====================================
-        // 현재 캐릭터 스탯
-        // =====================================
-
-        int characterId =
-            CharacterManager.Instance.currentCharacter;
-
-        PlayerData playerData =
-            DataManager.Instance
-                .playerDatasDic[characterId];
-
-        int playerDamage =
-            playerData.damage;
-
-        int critChance =
-            playerData.criticalChance;
-
-        float critDamage =
-            playerData.criticalDamage;
-
-        // =====================================
-        // 공격력 적용
-        // =====================================
-
-        damage =
-            (int)(
-                damage *
-                (1f + playerDamage / 100f)
-            );
-
-        // =====================================
-        // 크리티컬 판정
-        // 폭발 전체에 한 번만 판정
-        // =====================================
-
-        bool isCritical =
-            UnityEngine.Random.Range(
-                0,
-                100
-            ) < critChance;
-
-        if (isCritical)
-        {
-            damage =
-                (int)(
-                    damage *
-                    (2f + critDamage / 100f)
-                );
-        }
-
-        // =====================================
         // Enemy 탐색
         // =====================================
 
         ContactFilter2D filter =
+            /// <summary>ContactFilter2D 동작을 처리한다.</summary>
             new ContactFilter2D();
 
         filter.SetLayerMask(
@@ -207,8 +165,7 @@ public class Mold : MonoBehaviour
                     transform.position
                 );
 
-            enemy.TakeDamage(
-                damage,
+            enemy.TakeDamage(id, damage,
                 hitPoint
             );
         }
@@ -216,6 +173,7 @@ public class Mold : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    /// <summary>비활성화될 때 이벤트와 진행 중인 동작을 정리한다.</summary>
     private void OnDisable()
     {
         if (targetMoldCor != null)

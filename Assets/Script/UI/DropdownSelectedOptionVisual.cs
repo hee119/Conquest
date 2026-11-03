@@ -30,43 +30,16 @@ public sealed class DropdownSelectedOptionVisual : MonoBehaviour,
         Apply(option.isOn, false);
     }
 
+    private void Start()
+    {
+        // TMP finishes copying and initializing the item after OnEnable.
+        // Reapply once so the initially selected row keeps readable text.
+        Apply(option.isOn, isHovered);
+    }
+
     private void OnDisable()
     {
         option.onValueChanged.RemoveListener(OnSelectionChanged);
-    }
-
-    private void LateUpdate()
-    {
-        if (transform.GetSiblingIndex() == 1)
-            MoveBlockerBehindSettings();
-    }
-
-    private void MoveBlockerBehindSettings()
-    {
-        TMP_Dropdown dropdown = GetComponentInParent<TMP_Dropdown>();
-
-        if (dropdown == null)
-            return;
-
-        Canvas rootCanvas = dropdown.GetComponentInParent<Canvas>()?.rootCanvas;
-        Canvas listCanvas = transform.parent.parent.parent.GetComponent<Canvas>();
-
-        if (rootCanvas == null || listCanvas == null)
-            return;
-
-        foreach (Transform child in rootCanvas.transform)
-        {
-            if (child.name != "Blocker")
-                continue;
-
-            Canvas blockerCanvas = child.GetComponent<Canvas>();
-
-            if (blockerCanvas != null &&
-                blockerCanvas.sortingOrder == listCanvas.sortingOrder - 1)
-            {
-                blockerCanvas.sortingOrder = rootCanvas.sortingOrder - 1;
-            }
-        }
     }
 
     private void OnSelectionChanged(bool selected)
@@ -82,7 +55,10 @@ public sealed class DropdownSelectedOptionVisual : MonoBehaviour,
                 : hovered ? HoverBackgroundColor : Color.clear;
 
         if (label != null)
+        {
+            label.outlineWidth = 0f;
             label.color = selected ? Color.black : Color.white;
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)

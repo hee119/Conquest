@@ -217,6 +217,8 @@ GameObject:
   - component: {fileID: 2757486022964455859}
   - component: {fileID: 1846674287643472588}
   - component: {fileID: 65275383849581827}
+  - component: {fileID: 1610797970007282144}
+  - component: {fileID: 589589998502274684}
   m_Layer: 5
   m_Name: SelectAugment
   m_TagString: Untagged
@@ -337,6 +339,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1610797970007282144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4390589116456501414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 552b5cccc9c4645ada7e037b1f363af1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptionHover
+  hoverOutline: {fileID: 4987877417766892876}
+--- !u!114 &589589998502274684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4390589116456501414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 265c182c81e23406cb8af397a80b5cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UiSoundEmitter
+  suppressDefaultClick: 0
 --- !u!1 &4776421485338539005
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,7 +438,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5141962371673101744
 RectTransform:
   m_ObjectHideFlags: 0

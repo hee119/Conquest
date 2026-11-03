@@ -1,0 +1,6 @@
+Direct Stage1 and prepared-scene retry verification
+PASS retry 1 icons/EXP/death/movement/cooldown reset; animation-event attack 200 spawned
+PASS retry 2 icons/EXP/death/movement/cooldown reset; animation-event attack 200 spawned
+PASS retry 3 icons/EXP/death/movement/cooldown reset; animation-event attack 201 spawned
+COMPLETE
+PASS attack without Loading character manager: animation event spawned

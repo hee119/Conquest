@@ -1,0 +1,112 @@
+Octopus, crab and projectiles isolated rendering comparison
+variant 0: scene=Lobby, camera=(0.00, 0.00, 0.00), ortho=5, sorting=CustomAxis/(0.00, 1.00, 0.00)
+sorting variant=0
+asset=Enemy/Octopus ice=False
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=3 delta=1 setPass=3
+count=5 batches=3 delta=1 setPass=3
+count=10 batches=3 delta=1 setPass=3
+sorting variant=0
+asset=Enemy/Crap ice=False
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=3 delta=1 setPass=3
+count=5 batches=3 delta=1 setPass=3
+count=10 batches=3 delta=1 setPass=3
+sorting variant=0
+asset=Boss/OctopusKing ice=False
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=3 delta=1 setPass=3
+count=5 batches=3 delta=1 setPass=3
+count=10 batches=3 delta=1 setPass=3
+sorting variant=0
+asset=Bullet/WaterCannon ice=False
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=3 delta=1 setPass=3
+count=5 batches=7 delta=5 setPass=3
+count=10 batches=12 delta=10 setPass=3
+sorting variant=0
+asset=Bullet/WaterCannon 1 ice=False
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=3 delta=1 setPass=3
+count=5 batches=7 delta=5 setPass=3
+count=10 batches=12 delta=10 setPass=3
+sorting variant=0
+asset=Bullet/WaterBamb ice=False
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=3 delta=1 setPass=3
+count=5 batches=7 delta=5 setPass=3
+count=10 batches=12 delta=10 setPass=3
+sorting variant=0
+asset=Enemy/Octopus ice=True
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=6 delta=4 setPass=6
+count=5 batches=6 delta=4 setPass=6
+count=10 batches=6 delta=4 setPass=6
+sorting variant=0
+asset=Enemy/Crap ice=True
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=6 delta=4 setPass=6
+count=5 batches=6 delta=4 setPass=6
+count=10 batches=6 delta=4 setPass=6
+sorting variant=0
+asset=Boss/OctopusKing ice=True
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=6 delta=4 setPass=6
+count=5 batches=6 delta=4 setPass=6
+count=10 batches=6 delta=4 setPass=6
+variant 1: scene=Stage1, camera=(0.00, -0.14, -30.00), ortho=10, sorting=CustomAxis/(0.00, 1.00, 0.00)
+sorting variant=1
+asset=Enemy/Octopus ice=False
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=3 delta=1 setPass=3
+count=5 batches=3 delta=1 setPass=3
+count=10 batches=3 delta=1 setPass=4
+sorting variant=1
+asset=Enemy/Crap ice=False
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=3 delta=1 setPass=3
+count=5 batches=3 delta=1 setPass=3
+count=10 batches=3 delta=1 setPass=3
+sorting variant=1
+asset=Boss/OctopusKing ice=False
+count=0 batches=2 delta=0 setPass=3
+count=1 batches=3 delta=1 setPass=3
+count=5 batches=3 delta=1 setPass=3
+count=10 batches=3 delta=1 setPass=3
+sorting variant=1
+asset=Bullet/WaterCannon ice=False
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=3 delta=1 setPass=4
+count=5 batches=7 delta=5 setPass=3
+count=10 batches=12 delta=10 setPass=3
+sorting variant=1
+asset=Bullet/WaterCannon 1 ice=False
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=3 delta=1 setPass=3
+count=5 batches=7 delta=5 setPass=4
+count=10 batches=12 delta=10 setPass=3
+sorting variant=1
+asset=Bullet/WaterBamb ice=False
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=3 delta=1 setPass=3
+count=5 batches=7 delta=5 setPass=3
+count=10 batches=12 delta=10 setPass=4
+sorting variant=1
+asset=Enemy/Octopus ice=True
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=6 delta=4 setPass=6
+count=5 batches=6 delta=4 setPass=6
+count=10 batches=6 delta=4 setPass=6
+sorting variant=1
+asset=Enemy/Crap ice=True
+count=0 batches=2 delta=0 setPass=3
+count=1 batches=6 delta=4 setPass=6
+count=5 batches=6 delta=4 setPass=6
+count=10 batches=6 delta=4 setPass=6
+sorting variant=1
+asset=Boss/OctopusKing ice=True
+count=0 batches=2 delta=0 setPass=2
+count=1 batches=6 delta=4 setPass=7
+count=5 batches=6 delta=4 setPass=6
+count=10 batches=6 delta=4 setPass=6
+COMPLETE

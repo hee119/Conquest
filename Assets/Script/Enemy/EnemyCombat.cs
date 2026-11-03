@@ -6,7 +6,8 @@ using Random = UnityEngine.Random;
 
 public class EnemyCombat : MonoBehaviour, ICombat
 {
-    protected Animator anim;
+    protected EnemySpriteAnimation anim;
+    protected Animator bossAnimator;
 
     public float maxHp { get; set; }
     public float hp {get; set;}
@@ -33,9 +34,14 @@ public class EnemyCombat : MonoBehaviour, ICombat
 
     public event Action hpUpdate;
 
+    protected virtual bool PlayHitOnNonLethalDamage => true;
+
+    protected virtual void PrepareDeathAnimation() { }
+
     public void Awake()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponent<EnemySpriteAnimation>();
+        bossAnimator = GetComponent<Animator>();
         pooledObject = GetComponent<PooledObject>();
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
 
@@ -44,15 +50,43 @@ public class EnemyCombat : MonoBehaviour, ICombat
         bodyCollider = GetComponent<Collider2D>();
     }
 
-    public void TakeDamage(float damage, Vector2 hitPoint)
+    public static int CurrentCharacterId => CharacterManager.Instance != null
+        ? CharacterManager.Instance.currentCharacter
+        : GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerInfo>()?.id ?? 1;
+
+    public static float CalculateDamage(float baseDamage, PlayerData stats, out bool critical)
     {
-        if (!isDead &&
-            !isDying &&
-            gameObject.activeInHierarchy)
+        float damage = Mathf.Max(0f, baseDamage) + Mathf.Max(0f, stats.damage);
+        critical = Random.Range(0, 100) < stats.criticalChance;
+        return critical ? damage * stats.criticalDamage : damage;
+    }
+
+    public int LastDamageSourceId { get; private set; }
+
+    public void TakeDamage(int upgradeId, float damage, Vector2 hitPoint)
+    {
+        if (isDead || isDying || !gameObject.activeInHierarchy) return;
+        int characterId = CurrentCharacterId;
+        if (DataManager.Instance == null ||
+            !DataManager.Instance.playerDatasDic.TryGetValue(characterId, out var stats)) return;
+        LastDamageSourceId = upgradeId;
+        float finalDamage = CalculateDamage(damage, stats, out bool critical);
+        ApplyDamage(finalDamage, hitPoint, critical);
+    }
+
+    // Enemy explosions do not use the player's attack or critical stats.
+    public void TakeRawDamage(float damage, Vector2 hitPoint) => ApplyDamage(damage, hitPoint, false);
+
+    private void ApplyDamage(float damage, Vector2 hitPoint, bool critical)
+    {
+        if (!isDead && !isDying && !isInvincible && gameObject.activeInHierarchy)
         {
+            damage *= 1f - Mathf.Clamp(enemyInfo != null ? enemyInfo.defense : 0f, 0f, 100f) / 100f;
+            if (damage <= 0f) return;
             StartCoroutine(InvincibleCor());
 
             hp -= damage;
+            DamageNumberDisplay.Show(hitPoint, damage, critical);
             hpUpdate?.Invoke();
 
             if (SoundManager.Instance != null)
@@ -61,16 +95,21 @@ public class EnemyCombat : MonoBehaviour, ICombat
             if (hitParticle != null)
                 hitParticle.Play();
 
-            bool hasHit = HasAnimatorParameter("Hit");
+            if (hp <= 0)
+                PrepareDeathAnimation();
+
+            bool hasHit = HasAnimatorParameter("Hit") &&
+                (hp <= 0 || PlayHitOnNonLethalDamage);
 
             if (hasHit)
             {
-                anim.SetTrigger("Hit");
+                if (anim != null) anim.Hit();
+                else if (bossAnimator != null) bossAnimator.SetTrigger("Hit");
             }
 
             HitFlash();
 
-            if (GameManager.Instance.burnChance > 0 && !isBurn)
+            if (GameManager.Instance != null && GameManager.Instance.burnChance > 0 && !isBurn)
             {
                 int ran = Random.Range(0, 100);
 
@@ -85,7 +124,7 @@ public class EnemyCombat : MonoBehaviour, ICombat
                 }
             }
 
-            if (GameManager.Instance.moldChance > 0)
+            if (GameManager.Instance != null && GameManager.Instance.moldChance > 0)
             {
                 int ran = Random.Range(0, 100);
 
@@ -153,31 +192,29 @@ public class EnemyCombat : MonoBehaviour, ICombat
         isDying = true;
 
         float t = 0f;
-
-        while (
-            t < 0.3f &&
-            !anim.GetCurrentAnimatorStateInfo(0).IsName(hitStateName)
-        )
+        if (anim != null)
         {
-            t += Time.deltaTime;
-            yield return null;
-        }
-
-        t = 0f;
-
-        while (t < hitMaxWait)
-        {
-            AnimatorStateInfo info =
-                anim.GetCurrentAnimatorStateInfo(0);
-
-            if (!info.IsName(hitStateName) ||
-                info.normalizedTime >= 1f)
+            while (anim.IsPlaying("Hit") && t < hitMaxWait)
             {
-                break;
+                t += Time.deltaTime;
+                yield return null;
             }
-
-            t += Time.deltaTime;
-            yield return null;
+        }
+        else if (bossAnimator != null)
+        {
+            while (t < 0.3f && !bossAnimator.GetCurrentAnimatorStateInfo(0).IsName(hitStateName))
+            {
+                t += Time.deltaTime;
+                yield return null;
+            }
+            t = 0f;
+            while (t < hitMaxWait)
+            {
+                var info = bossAnimator.GetCurrentAnimatorStateInfo(0);
+                if (!info.IsName(hitStateName) || info.normalizedTime >= 1f) break;
+                t += Time.deltaTime;
+                yield return null;
+            }
         }
 
         Die();
@@ -266,45 +303,67 @@ public class EnemyCombat : MonoBehaviour, ICombat
         isInvincible = false;
     }
 
+    /// <summary>공격 정보를 읽어 몬스터 쪽에서 피해·치명타·관통 소모를 처리한다.</summary>
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (
-            other.CompareTag("Skill") &&
-            !isInvincible &&
-            !isDead &&
-            !isDying &&
-            gameObject.activeInHierarchy
-        )
+        if (other == null || !gameObject.activeInHierarchy) return;
+        var bullet = other.GetComponentInParent<BulletMove>();
+        if (bullet != null && bullet.target != null && bullet.target.CompareTag("Enemy"))
         {
-            Collider2D myCollider = GetComponent<Collider2D>();
-
-            Vector2 hitPoint =
-                myCollider.ClosestPoint(other.transform.position);
-
-            SkillInfo skillInfo =
-                other.gameObject.GetComponent<SkillInfo>();
-
-            if (skillInfo != null)
-            {
-                TakeDamage(
-                    skillInfo.skillDamage,
-                    hitPoint
-                );
-            }
+            var info = bullet.GetComponent<BulletInfo>();
+            if (info != null) TakeDamage(info.id, info.damage, bodyCollider != null ? bodyCollider.ClosestPoint(other.transform.position) : transform.position);
+            bullet.GetComponent<PooledObject>()?.DestroyObj();
+            return;
         }
+        Vector2 point = bodyCollider != null ? bodyCollider.ClosestPoint(other.transform.position) : transform.position;
+        if (other.CompareTag("Skill"))
+        {
+            var skill = other.GetComponentInParent<SkillInfo>();
+            if (skill == null) return;
+            var projectile = skill.GetComponent<MageProjectile>();
+            if (projectile != null && !projectile.TryRegisterEnemyHit(this)) return;
+            if (!isInvincible && !isDead && !isDying)
+                TakeDamage(skill.skillId, skill.skillDamage, point);
+            if (projectile != null) projectile.HandleEnemyContact(this);
+            else skill.GetComponent<BasicAttackChainRelay>()?.HandleEnemyContact(bodyCollider);
+            return;
+        }
+        if (!other.CompareTag("Upgrade")) return;
+        var source = other.GetComponentInParent<UpgradeInfo>();
+        if (source == null) return;
+        var floor = source.GetComponent<Flooring>();
+        if (floor != null) { if (!isDead && !isDying) floor.HandleEnemyContact(bodyCollider); return; }
+        var lava = source.GetComponent<LavaField>();
+        if (lava != null) { if (!isDead && !isDying) lava.HandleEnemyContact(bodyCollider); return; }
+        var poison = source.GetComponent<Poison>();
+        if (poison != null) { if (!isDead && !isDying) poison.HandleEnemyContact(bodyCollider); return; }
+        // DOT, mushrooms and targeted lightning apply damage on their own timed ticks.
+        if (source.GetComponent<DotDamage>() != null || source.GetComponent<Mold>() != null ||
+            source.GetComponent<Lightning>() != null) return;
+        var fireStorm = source.GetComponent<FireStorm>();
+        if (fireStorm != null && fireStorm.removeFromTarget == gameObject) return;
+        if (!isInvincible && !isDead && !isDying && DataManager.Instance != null &&
+            DataManager.Instance.upgradeDatasDic.TryGetValue(source.id, out var data) &&
+            data.damage != null && data.damage.Length > 0)
+            TakeDamage(source.id, data.damage[Mathf.Clamp(data.UpgradeLevel, 0, data.damage.Length - 1)], point);
+        source.GetComponent<Chain>()?.HandleEnemyContact(bodyCollider);
+        // Consumption still occurs on invincible enemies; persistent orbiting effects remain.
+        source.GetComponent<HomingProjectile>()?.HandleEnemyContact(bodyCollider);
+    }
+
+    /// <summary>장판을 벗어나면 해당 장판의 감속 중첩을 해제한다.</summary>
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other == null || !other.CompareTag("Upgrade")) return;
+        other.GetComponentInParent<Flooring>()?.HandleEnemyExit(bodyCollider);
     }
 
     protected bool HasAnimatorParameter(string paramName)
     {
-        if (anim == null)
-            return false;
-
-        foreach (AnimatorControllerParameter param in anim.parameters)
-        {
-            if (param.name == paramName)
-                return true;
-        }
-
+        if (anim != null) return anim.HasState(paramName);
+        if (bossAnimator == null) return false;
+        foreach (var parameter in bossAnimator.parameters)
+            if (parameter.name == paramName) return true;
         return false;
     }
 }

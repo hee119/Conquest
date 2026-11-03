@@ -1,0 +1,3 @@
+Game end shared canvas check
+PASS visible game over overlay, buttons raycastable, only two Stage1 canvases
+COMPLETE

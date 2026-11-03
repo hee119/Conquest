@@ -1,0 +1,4 @@
+Dropdown size 1:1 scale verification
+PASS 50 -> 100 percent: dropdown=2.000 slider=2.000 popup=2.000; settings row wired
+PASS Korean menu glyphs use GowunBatang without replacement squares
+COMPLETE

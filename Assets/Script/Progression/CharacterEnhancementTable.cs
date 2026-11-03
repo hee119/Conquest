@@ -80,6 +80,16 @@ public static class CharacterEnhancementTable
         curves = Parse(asset != null ? asset.text : string.Empty);
     }
 
+    public static bool TryGetStats(int id, int level, out CharacterEnhancementBonus stats)
+    {
+        EnsureLoaded();
+        stats = default;
+        if (!curves.TryGetValue(id, out var steps) || !steps.TryGetValue(0, out stats)) return false;
+        foreach (var step in steps)
+            if (step.Key > 0 && step.Key <= Mathf.Clamp(level, 0, 5)) stats.Add(step.Value);
+        return true;
+    }
+
     public static Dictionary<int, SortedDictionary<int, CharacterEnhancementBonus>> Parse(string csv)
     {
         var result = new Dictionary<int, SortedDictionary<int, CharacterEnhancementBonus>>();
@@ -119,7 +129,8 @@ public static class CharacterEnhancementTable
                 continue;
             }
             var steps = new SortedDictionary<int, CharacterEnhancementBonus>();
-            steps.Add(0, new CharacterEnhancementBonus { pierce = (int)values[7][0], attackRange = values[8][0], attackSpeed = values[9][0] });
+            steps.Add(0, new CharacterEnhancementBonus { hp=values[0][0], attack=(int)values[3][0],
+                pierce = (int)values[7][0], attackRange = values[8][0], attackSpeed = values[9][0] });
             for (int n = 1; n < count; n++) steps.Add(n, new CharacterEnhancementBonus {
                 hp = values[0][n] - values[0][n - 1],
                 hpRegenRate = (int)(values[1][n] - values[1][n - 1]),

@@ -1,0 +1,10 @@
+PASS: base sword cooldown = 0.75
+PASS: base sword lock = 0.7
+PASS: 20% cooldown reduction = 0.6
+PASS: proportional lock reduction = 0.56
+PASS: cached animation speed = 1.25
+PASS: repeated refresh does not compound = 0.56
+PASS: zero mage lock preserved = 0
+PASS: permanent attack speed combines with cooldown reduction = 0.3
+PASS: permanent speed scales movement lock once = 0.28
+PASS: reading cached timing does not recalculate = 0.28

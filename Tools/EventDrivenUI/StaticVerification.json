@@ -1,0 +1,22 @@
+{
+  "playerScriptsWithoutFrameCallbacks": true,
+  "soundManagerWithoutFindObjectsByType": true,
+  "playerManagerWithoutFrameInputPolling": true,
+  "fullSourceFiles": [
+    "Assets/Script/Manager/SoundManager.cs",
+    "Assets/GameAssets/SPUM/Sample/Script/PlayerManager.cs",
+    "Assets/GameAssets/SPUM/Sample/Script/PlayerObj.cs",
+    "Assets/Script/UI/UiSoundEvents.cs",
+    "Assets/Script/UI/UiSoundEmitter.cs",
+    "Assets/Script/UI/StagePlanetMenu.cs",
+    "Assets/Script/Progression/CharacterProgressionPanel.cs",
+    "Assets/Script/UI/PersistentTMPDropdownList.cs",
+    "Assets/Script/UI/DropdownDismissOnClick.cs",
+    "Assets/Script/UI/UpgradeHover.cs",
+    "Assets/Script/UI/LobbyController.cs",
+    "Assets/Script/UI/SliderPlusMinus.cs",
+    "Assets/Script/Upgrade/SelectUpgrade.cs",
+    "Assets/Script/Player/PlayerMove.cs"
+  ],
+  "playerMoveWithoutMousePolling": true
+}

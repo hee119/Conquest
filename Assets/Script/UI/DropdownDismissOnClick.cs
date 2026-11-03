@@ -7,13 +7,15 @@ using UnityEngine.EventSystems;
 public sealed class DropdownDismissOnClick : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
 {
     private TMP_Dropdown dropdown;
-    private RectTransform dropdownRect;
+    private SharedCanvasDropdown shared;
+    private bool Expanded => shared != null ? shared.IsExpanded : dropdown.IsExpanded;
+    private void Close() { if (shared != null) shared.Hide(); else dropdown.Hide(); }
     private bool wasExpandedOnPointerDown;
 
     private void Awake()
     {
         dropdown = GetComponent<TMP_Dropdown>();
-        dropdownRect = transform as RectTransform;
+        shared = GetComponent<SharedCanvasDropdown>();
     }
 
     private void OnEnable()
@@ -28,12 +30,12 @@ public sealed class DropdownDismissOnClick : MonoBehaviour, IPointerDownHandler,
 
     private void OnOptionSelected(int index)
     {
-        SoundManager.Instance?.PlayUiConfirm();
+        UiSoundEvents.Request(UiSoundCue.Confirm);
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        wasExpandedOnPointerDown = dropdown.IsExpanded;
+        wasExpandedOnPointerDown = Expanded;
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -41,43 +43,13 @@ public sealed class DropdownDismissOnClick : MonoBehaviour, IPointerDownHandler,
         if (eventData.button != PointerEventData.InputButton.Left)
             return;
 
-        if (!wasExpandedOnPointerDown && dropdown.IsExpanded)
-            SoundManager.Instance?.PlayUiClick();
+        if (!wasExpandedOnPointerDown && Expanded)
+            UiSoundEvents.Request(UiSoundCue.Click);
 
-        if (wasExpandedOnPointerDown && dropdown.IsExpanded)
-            dropdown.Hide();
+        if (wasExpandedOnPointerDown && Expanded)
+            Close();
 
         wasExpandedOnPointerDown = false;
     }
 
-    private void LateUpdate()
-    {
-        if (!dropdown.IsExpanded || !Input.GetMouseButtonDown(0))
-            return;
-
-        Vector2 pointer = Input.mousePosition;
-
-        // The opening button is handled on pointer click, after pointer down.
-        if (Contains(dropdownRect, pointer))
-            return;
-
-        Transform list = dropdown.template != null
-            ? dropdown.template.parent.Find("Dropdown List")
-            : null;
-
-        if (list is RectTransform listRect && Contains(listRect, pointer))
-            return;
-
-        dropdown.Hide();
-    }
-
-    private static bool Contains(RectTransform rect, Vector2 pointer)
-    {
-        Canvas canvas = rect.GetComponentInParent<Canvas>();
-        Camera camera = canvas != null && canvas.renderMode != RenderMode.ScreenSpaceOverlay
-            ? canvas.worldCamera
-            : null;
-
-        return RectTransformUtility.RectangleContainsScreenPoint(rect, pointer, camera);
-    }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>Chain 증강 관련 동작과 상태를 관리한다.</summary>
 public class Chain : DetectUpgrade
 {
     public UpgradeInfo upgradeInfo;
@@ -9,6 +10,7 @@ public class Chain : DetectUpgrade
 
     [SerializeField] private float chainAttackInterval = 0.15f;
 
+    /// <summary>필요한 컴포넌트와 초기 상태를 준비한다.</summary>
     protected override void Awake()
     {
         if (player == null)
@@ -20,7 +22,8 @@ public class Chain : DetectUpgrade
         pooledObject = GetComponent<PooledObject>();
     }
     
-    public void OnTriggerEnter2D(Collider2D collision)
+    /// <summary>다른 콜라이더가 진입했을 때 적중 효과를 처리한다.</summary>
+    public void HandleEnemyContact(Collider2D collision)
 {
     Debug.Log(
         $"[Chain 진단] OnTriggerEnter2D 호출 | 대상={collision.gameObject.name} | " +
@@ -50,6 +53,7 @@ public class Chain : DetectUpgrade
     }
 }
 
+/// <summary>ChainAttack 동작을 처리한다.</summary>
 private IEnumerator ChainAttack(List<GameObject> target)
 {
     Debug.Log($"[Chain 진단] ChainAttack 코루틴 시작 | target.Count={target.Count}");
@@ -125,12 +129,14 @@ private IEnumerator ChainAttack(List<GameObject> target)
 
         previousPosition = currentPosition;
 
+        /// <summary>WaitForSeconds 동작을 처리한다.</summary>
         yield return new WaitForSeconds(chainAttackInterval);
     }
 
     Debug.Log("[Chain 진단] ChainAttack 코루틴 종료");
 }
 
+    /// <summary>비활성화될 때 이벤트와 진행 중인 동작을 정리한다.</summary>
     protected virtual void OnDisable()
     {
         StopAllCoroutines();

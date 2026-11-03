@@ -96,7 +96,9 @@ public sealed class ResolutionDropdown : MonoBehaviour
         index = Mathf.Clamp(index, 0, CommonResolutions.Length - 1);
         Vector2Int resolution = CommonResolutions[index];
         SaveResolution(index);
-        Screen.SetResolution(resolution.x, resolution.y, Screen.fullScreenMode);
+        // Mode changes are applied at the end of the frame. Use the requested
+        // mode so a quick resolution change cannot cancel a pending mode switch.
+        Screen.SetResolution(resolution.x, resolution.y, ScreenModeDropdown.PreferredMode);
     }
 
     private void SaveResolution(int index)

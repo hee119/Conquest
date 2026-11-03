@@ -21,6 +21,7 @@ public sealed class SfxAudioSourceVolume : MonoBehaviour
         }
 
         manager.SfxVolumeChanged += ApplyVolume;
+        audioSource.outputAudioMixerGroup = manager.SfxOutputGroup;
         ApplyVolume(manager.SfxVolume);
     }
 

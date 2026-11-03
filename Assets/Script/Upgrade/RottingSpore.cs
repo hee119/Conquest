@@ -2,17 +2,20 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>RottingSpore 증강 관련 동작과 상태를 관리한다.</summary>
 public class RottingSpore : MonoBehaviour
 {
     public Collider2D col;
     public int poisonId;
     public Sprite poisonSprite;
 
+    /// <summary>필요한 컴포넌트와 초기 상태를 준비한다.</summary>
     public void Awake()
     {
         col = GetComponent<Collider2D>();
     }
 
+    /// <summary>PoisonMoldBoom 동작을 처리한다.</summary>
     public void PoisonMoldBoom()
     {
         UnityEngine.Debug.Log($"[RottingSpore] PoisonMoldBoom 호출됨 / poisonId={poisonId}");

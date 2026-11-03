@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>증강 효과가 대상으로 삼을 적을 탐색한다.</summary>
 public class DetectUpgrade : MonoBehaviour
 {
     [SerializeField]
@@ -19,6 +20,7 @@ public class DetectUpgrade : MonoBehaviour
         public float detectionRange;
     }
 
+    /// <summary>필요한 컴포넌트와 초기 상태를 준비한다.</summary>
     protected virtual void Awake()
     {
         if (player == null)
@@ -34,6 +36,7 @@ public class DetectUpgrade : MonoBehaviour
         pooledObject = GetComponent<PooledObject>();
     }
 
+    /// <summary>DetectUpgradeCor 동작을 처리한다.</summary>
     public virtual IEnumerator DetectUpgradeCor(int id, bool chain = false, GameObject target = null)
     {
         if (UpgradeManager.Instance.upgradeCor.TryGetValue(id, out IEnumerator cor))
@@ -100,6 +103,7 @@ public class DetectUpgrade : MonoBehaviour
             }
 
             UpgradeManager.Instance.BeginUpgradeCooldown(id, data.coolTime);
+            /// <summary>WaitForSeconds 동작을 처리한다.</summary>
             yield return new WaitForSeconds(data.coolTime);
         }
     }
@@ -108,6 +112,7 @@ public class DetectUpgrade : MonoBehaviour
     // 업그레이드 데이터
     // =========================================
 
+    /// <summary>UpgradeData 관련 값을 조회한다.</summary>
     protected virtual UpgradeData GetUpgradeData(int id, bool chain)
     {
         int level =
@@ -129,6 +134,7 @@ public class DetectUpgrade : MonoBehaviour
     // 플레이어 기준 적 탐색
     // =========================================
 
+    /// <summary>DetectEnemies 동작을 처리한다.</summary>
     public virtual List<Collider2D> DetectEnemies(float detectionRange)
     {
         int enemyLayer =
@@ -149,6 +155,7 @@ public class DetectUpgrade : MonoBehaviour
     // 연쇄 번개용
     // =========================================
 
+    /// <summary>DetectEnemiesFromPosition 동작을 처리한다.</summary>
     protected virtual List<Collider2D> DetectEnemiesFromPosition(Vector3 position, float range)
     {
         int enemyLayer =
@@ -168,6 +175,7 @@ public class DetectUpgrade : MonoBehaviour
     // 플레이어 기준 가장 가까운 적
     // =========================================
 
+    /// <summary>FindClosestEnemy 동작을 처리한다.</summary>
     public virtual Transform FindClosestEnemy(List<Collider2D> enemies)
     {
         Transform closestEnemy = null;
@@ -206,6 +214,7 @@ public class DetectUpgrade : MonoBehaviour
     // 연쇄 번개용
     // =========================================
 
+    /// <summary>FindClosestEnemyFromPosition 동작을 처리한다.</summary>
     protected virtual Transform FindClosestEnemyFromPosition(List<Collider2D> enemies, Vector3 position)
     {
         Transform closestEnemy = null;
@@ -248,6 +257,7 @@ public class DetectUpgrade : MonoBehaviour
     // 공격
     // =========================================
 
+    /// <summary>Attack 동작을 처리한다.</summary>
     public virtual void Attack(int id, Vector3 targetPos, GameObject target = null, bool isChain = false, Vector3? startPosition = null, bool destroyAfter = true)
     {
         Vector3 spawnPos = startPosition ?? player.transform.position;
@@ -276,6 +286,7 @@ public class DetectUpgrade : MonoBehaviour
     // 범위 표시
     // =========================================
 
+    /// <summary>DrawGizmosSelected 이벤트가 발생했을 때 필요한 처리를 수행한다.</summary>
     protected virtual void OnDrawGizmosSelected()
     {
         if (player == null)
@@ -291,9 +302,11 @@ public class DetectUpgrade : MonoBehaviour
     // 범위 내 적 존재 여부
     // =========================================
 
+    /// <summary>HasEnemyInRange 동작을 처리한다.</summary>
     public virtual bool HasEnemyInRange(
         float detectionRange)
     {
+        /// <summary>DetectEnemies 동작을 처리한다.</summary>
         return DetectEnemies(
             detectionRange
         ).Count > 0;
@@ -303,6 +316,7 @@ public class DetectUpgrade : MonoBehaviour
     // 연쇄 공격 대상 리스트
     // =========================================
 
+    /// <summary>ChainAttackList 관련 값을 조회한다.</summary>
     public List<GameObject> GetChainAttackList(int id, GameObject target = null)
     {
         UpgradeData data = GetUpgradeData(id, true);

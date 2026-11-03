@@ -1,0 +1,5 @@
+Assets/SpriteSeet/SlimeKingMove.png: 25 sprites, Point, no mipmaps, uncompressed, alpha from PNG.
+Assets/SpriteSeet/SlimeKingHit.png: 25 sprites, Point, no mipmaps, uncompressed, alpha from PNG.
+Assets/Animation/SlimeKingMove.anim: original frame timing preserved, length=1.444444
+Assets/Animation/SlimeKingHit.anim: original frame timing preserved, length=0.4
+SlimeKing prefab: crowned Move loop + terminal Hit. Regular slime assets unchanged.

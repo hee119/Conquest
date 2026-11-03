@@ -1,0 +1,50 @@
+[
+  {
+    "name": "hydro-pump",
+    "frames": 24,
+    "seconds": 1.00766659,
+    "loop": true,
+    "ppu": 100.0,
+    "sampled": true
+  },
+  {
+    "name": "water-cannon",
+    "frames": 24,
+    "seconds": 1.00766659,
+    "loop": true,
+    "ppu": 100.0,
+    "sampled": true
+  },
+  {
+    "name": "radial-stone-eruption",
+    "frames": 54,
+    "seconds": 2.26766825,
+    "loop": false,
+    "ppu": 100.0,
+    "sampled": true
+  },
+  {
+    "name": "water-bomb",
+    "frames": 24,
+    "seconds": 1.00766659,
+    "loop": true,
+    "ppu": 100.0,
+    "sampled": true
+  },
+  {
+    "name": "water-cannon-impact",
+    "frames": 23,
+    "seconds": 0.965666652,
+    "loop": false,
+    "ppu": 100.0,
+    "sampled": true
+  },
+  {
+    "name": "water-bomb-impact",
+    "frames": 32,
+    "seconds": 1.343667,
+    "loop": false,
+    "ppu": 100.0,
+    "sampled": true
+  }
+]

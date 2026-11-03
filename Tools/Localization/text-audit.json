@@ -1,0 +1,1929 @@
+[
+  {
+    "asset": "Assets/Scenes/Loading.unity",
+    "path": "Loading Canvas/Loading Experience Bar/Loading Progress",
+    "text": "0.00%",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Loading.unity",
+    "path": "Loading Canvas/Loading Tip",
+    "text": "골드와 요원 파편을 모아 요원을 강화 시킬 수 있습니다.",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Loading.unity",
+    "path": "Loading Canvas/Touch To Start",
+    "text": "터치하여 시작",
+    "key": "loading_touch_to_start",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/CutSceen.unity",
+    "path": "Canvas/SkipText",
+    "text": "스킵",
+    "key": "cutscene_skip",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "Button",
+      "LocalizedText",
+      "LocalizedFont",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/CutSceen.unity",
+    "path": "Canvas/CaptionPanel/Caption Text",
+    "text": "cutscene_caption_earth",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "Outline",
+      "TextMeshProUGUI",
+      "TextAnimator_TMP",
+      "TypewriterComponent",
+      "LocalizedFont"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/MainMenu/Game Title",
+    "text": "행성 개척자",
+    "key": "game_title",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/MainMenu/SeletOptions/StageSelect/Text (TMP)",
+    "text": "스테이지 선택",
+    "key": "lobby_stage_select",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter",
+      "LobbyButtonTextAnchor"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/MainMenu/SeletOptions/CharacterSelect/Text (TMP)",
+    "text": "캐릭터 선택",
+    "key": "lobby_character_select",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter",
+      "LobbyButtonTextAnchor"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/MainMenu/SeletOptions/Setting/Text (TMP)",
+    "text": "설정\n",
+    "key": "setting_title",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/MainMenu/SeletOptions/Quit/Text (TMP)",
+    "text": "나가기",
+    "key": "lobby_quit",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/StagePanel/Game Title",
+    "text": "스테이지",
+    "key": "stage_panel_title",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/StagePanel/Selected Stage Label",
+    "text": "STAGE 06",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/StagePanel/Play Selected Stage/Text (TMP)",
+    "text": "시작",
+    "key": "lobby_play_stage",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter",
+      "LocalizedText"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/LeftRoster/Swordman/Text (TMP)",
+    "text": "검사",
+    "key": "lobby_character_swordman",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter",
+      "LocalizedText"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/LeftRoster/Mage/Text (TMP)",
+    "text": "마법사",
+    "key": "lobby_character_mage",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter",
+      "LocalizedText"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/LeftRoster/LockedSlot3/Locked Label",
+    "text": "잠김",
+    "key": "lobby_character_locked",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter",
+      "LocalizedText"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/LeftRoster/LockedSlot4/Locked Label",
+    "text": "잠김",
+    "key": "lobby_character_locked",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter",
+      "LocalizedText"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/RightDetails/DetailsHeading",
+    "text": "캐릭터 정보",
+    "key": "lobby_character_info",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/RightDetails/CharacterName",
+    "text": "검사",
+    "key": "lobby_character_swordman",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/RightDetails/CharacterDescription",
+    "text": "검으로 가까운 적을 베는 근접 캐릭터입니다.",
+    "key": "lobby_character_swordman_desc",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/RightDetails/SelectButton/Select Label",
+    "text": "선택하기",
+    "key": "lobby_character_choose",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter",
+      "LocalizedText"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/RightDetails/EnhanceButton/Select Label",
+    "text": "강화하기",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/RightDetails/CharacterEnhancement/Level",
+    "text": "강화 +0 / 10",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/RightDetails/CharacterEnhancement/Bonus",
+    "text": "최대 체력 +0% · 공격력 +0%p",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/RightDetails/CharacterEnhancement/Cost",
+    "text": "골드 0 / 200    파편 0 / 3",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/RightDetails/CharacterEnhancement/Next",
+    "text": "다음 강화: 체력 +5% · 공격력 +2%p",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/RightDetails/Preview Basic Attack/Label",
+    "text": "평타 재생",
+    "key": "character_preview_attack",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/RightDetails/Summary Stats/Stat Row 0/Label",
+    "text": "HP",
+    "key": "character_stat_hp",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/RightDetails/Summary Stats/Stat Row 0/Value",
+    "text": "<b>200</b>  <color=#75F58A>+10</color>",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/RightDetails/Summary Stats/Stat Row 1/Label",
+    "text": "공격력",
+    "key": "character_stat_attack",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/RightDetails/Summary Stats/Stat Row 1/Value",
+    "text": "<b>5</b>  <color=#75F58A>+2</color>",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/RightDetails/Summary Stats/Stat Row 2/Label",
+    "text": "공격 쿨타임",
+    "key": "character_stat_cooldown",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/RightDetails/Summary Stats/Stat Row 2/Value",
+    "text": "<b>0.75초</b>",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/Panel Title",
+    "text": "캐릭터 선택",
+    "key": "lobby_character_select",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter",
+      "CharacterTitleAlignment"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Lobby Navigation/CharacterPanel/GoldWallet",
+    "text": "골드 0",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ProgressionWalletView"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/OptionsSelectButtons/Option/Text (TMP)",
+    "text": "Graphic",
+    "key": "setting_tab_graphic",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/OptionsSelectButtons/Option (1)/Text (TMP)",
+    "text": "Sound",
+    "key": "setting_tab_sound",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/OptionsSelectButtons/Option (2)/Text (TMP)",
+    "text": "Language",
+    "key": "setting_tab_language",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Graphic/Options/Screen",
+    "text": "Screen",
+    "key": "setting_screen",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LayoutElement",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Graphic/Options/Dropdown/Label",
+    "text": "Full Screen",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Graphic/Options/Dropdown/Template/Viewport/Content/Item/Item Label",
+    "text": "Option A",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Graphic/Options (1)/Resolution",
+    "text": "Resolution",
+    "key": "setting_resolution",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LayoutElement",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Graphic/Options (1)/Dropdown (1)/Label",
+    "text": "1280 × 720",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Graphic/Options (1)/Dropdown (1)/Template/Viewport/Content/Item/Item Label",
+    "text": "Option A",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Graphic/Options (2)/Iuminosity",
+    "text": "Iuminosity",
+    "key": "setting_brightness",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LayoutElement",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Graphic/Options (2)/Slider/100%",
+    "text": "100%",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Graphic/Options (2)/Slider/Value Step Buttons/Minus/Label",
+    "text": "-",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Graphic/Options (2)/Slider/Value Step Buttons/Plus/Label",
+    "text": "+",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Graphic/Options (2)/Slider/Value Step Buttons/Minus/Label",
+    "text": "-",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Graphic/Options (2)/Slider/Value Step Buttons/Plus/Label",
+    "text": "+",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options/BgmSound",
+    "text": "Bgm",
+    "key": "setting_bgm",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LayoutElement",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options/Slider/100%",
+    "text": "100%",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options/Slider/Value Step Buttons/Minus/Label",
+    "text": "-",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options/Slider/Value Step Buttons/Plus/Label",
+    "text": "+",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options/Slider/Value Step Buttons/Minus/Label",
+    "text": "-",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options/Slider/Value Step Buttons/Plus/Label",
+    "text": "+",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options (1)/SfxSound",
+    "text": "Sfx",
+    "key": "setting_sfx",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LayoutElement",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options (1)/Slider/100%",
+    "text": "100%",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options (1)/Slider/Value Step Buttons/Minus/Label",
+    "text": "-",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options (1)/Slider/Value Step Buttons/Plus/Label",
+    "text": "+",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options (1)/Slider/Value Step Buttons/Minus/Label",
+    "text": "-",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options (1)/Slider/Value Step Buttons/Plus/Label",
+    "text": "+",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options (2)/MasterSound",
+    "text": "Master",
+    "key": "setting_master_volume",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LayoutElement",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options (2)/Slider/100%",
+    "text": "100%",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options (2)/Slider/Value Step Buttons/Minus/Label",
+    "text": "-",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options (2)/Slider/Value Step Buttons/Plus/Label",
+    "text": "+",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options (2)/Slider/Value Step Buttons/Minus/Label",
+    "text": "-",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options (2)/Slider/Value Step Buttons/Plus/Label",
+    "text": "+",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Language/Options/Text (TMP)",
+    "text": "Language Setting",
+    "key": "setting_language_title",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LayoutElement",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Language/Options/Dropdown/Label",
+    "text": "English",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Options/Language/Options/Dropdown/Template/Viewport/Content/Item/Item Label",
+    "text": "Option A",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Lobby.unity",
+    "path": "Lobby Canvas/Setting/Settings/Safe Area/Title",
+    "text": "Setting",
+    "key": "setting_title",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/UpgradeUI/UpgradesMom/Panel/Safe Area/Upgrades/Upgrade/HoverVisualRoot/Name",
+    "text": "Name\n",
+    "key": "",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/UpgradeUI/UpgradesMom/Panel/Safe Area/Upgrades/Upgrade/HoverVisualRoot/Panel/Text (TMP)",
+    "text": "Description",
+    "key": "",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/UpgradeUI/UpgradesMom/Panel/Safe Area/Upgrades/Upgrade (1)/HoverVisualRoot/Name",
+    "text": "Name\n",
+    "key": "",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/UpgradeUI/UpgradesMom/Panel/Safe Area/Upgrades/Upgrade (1)/HoverVisualRoot/Panel/Text (TMP)",
+    "text": "Description",
+    "key": "",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/UpgradeUI/UpgradesMom/Panel/Safe Area/Upgrades/Upgrade (2)/HoverVisualRoot/Name",
+    "text": "Name\n",
+    "key": "",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/UpgradeUI/UpgradesMom/Panel/Safe Area/Upgrades/Upgrade (2)/HoverVisualRoot/Panel/Text (TMP)",
+    "text": "Description",
+    "key": "",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/UpgradeUI/UpgradesMom/Panel/Safe Area/UpgradeCombine/Combine",
+    "text": "Combine",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/UpgradeUI/UpgradesMom/UpgradeCombine/UpgradeCombine/Safe Area/Upgrades/UpgradeCombine/HoverVisualRoot/Name",
+    "text": "",
+    "key": "",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/UpgradeUI/UpgradesMom/UpgradeCombine/UpgradeCombine/Safe Area/Upgrades/UpgradeCombine/HoverVisualRoot/Panel/Text (TMP)",
+    "text": "",
+    "key": "",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/UpgradeUI/UpgradesMom/UpgradeCombine/UpgradeCombine/Safe Area/Upgrades/UpgradeCombine (1)/HoverVisualRoot/Name",
+    "text": "",
+    "key": "",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/UpgradeUI/UpgradesMom/UpgradeCombine/UpgradeCombine/Safe Area/Upgrades/UpgradeCombine (1)/HoverVisualRoot/Panel/Text (TMP)",
+    "text": "",
+    "key": "",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/UpgradeUI/UpgradesMom/UpgradeCombine/UpgradeCombine/Safe Area/SelectConfirm/FusionLabel",
+    "text": "합성하기",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/UpgradeUI/UpgradesMom/UpgradeCombine/UpgradeCombine/Safe Area/Exit/Text (TMP)",
+    "text": "닫기",
+    "key": "setting_exit",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/UpgradeUI/UpgradesMom/UpgradeCombine/UpgradeCombine/Safe Area/FusionStatus",
+    "text": "합성할 만렙 증강 두 개를 선택하세요",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/UpgradeUI/UpgradesMom/UpgradeCombine/UpgradeCombine/Safe Area/FusionConfirm/FusionLabel",
+    "text": "확인하기",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/OptionsSelectButtons/Option/Text (TMP)",
+    "text": "Graphic",
+    "key": "setting_tab_graphic",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/OptionsSelectButtons/Option (1)/Text (TMP)",
+    "text": "Sound",
+    "key": "setting_tab_sound",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/OptionsSelectButtons/Option (2)/Text (TMP)",
+    "text": "Language",
+    "key": "setting_tab_language",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Graphic/Options/Screen",
+    "text": "Screen",
+    "key": "setting_screen",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LayoutElement",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Graphic/Options/Dropdown/Label",
+    "text": "Full Screen",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Graphic/Options/Dropdown/Template/Viewport/Content/Item/Item Label",
+    "text": "Option A",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Graphic/Options (1)/Resolution",
+    "text": "Resolution",
+    "key": "setting_resolution",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LayoutElement",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Graphic/Options (1)/Dropdown (1)/Label",
+    "text": "1280 × 720",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Graphic/Options (1)/Dropdown (1)/Template/Viewport/Content/Item/Item Label",
+    "text": "Option A",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Graphic/Options (2)/Iuminosity",
+    "text": "Iuminosity",
+    "key": "setting_brightness",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LayoutElement",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Graphic/Options (2)/Slider/100%",
+    "text": "100%",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Graphic/Options (2)/Slider/Value Step Buttons/Minus/Label",
+    "text": "-",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Graphic/Options (2)/Slider/Value Step Buttons/Plus/Label",
+    "text": "+",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Graphic/Options (2)/Slider/Value Step Buttons/Minus/Label",
+    "text": "-",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Graphic/Options (2)/Slider/Value Step Buttons/Plus/Label",
+    "text": "+",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Sound/Options/BgmSound",
+    "text": "Bgm",
+    "key": "setting_bgm",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LayoutElement",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Sound/Options/Slider/100%",
+    "text": "100%",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Sound/Options/Slider/Value Step Buttons/Minus/Label",
+    "text": "-",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Sound/Options/Slider/Value Step Buttons/Plus/Label",
+    "text": "+",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Sound/Options/Slider/Value Step Buttons/Minus/Label",
+    "text": "-",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Sound/Options/Slider/Value Step Buttons/Plus/Label",
+    "text": "+",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Sound/Options (1)/SfxSound",
+    "text": "Sfx",
+    "key": "setting_sfx",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LayoutElement",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Sound/Options (1)/Slider/100%",
+    "text": "100%",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Sound/Options (1)/Slider/Value Step Buttons/Minus/Label",
+    "text": "-",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Sound/Options (1)/Slider/Value Step Buttons/Plus/Label",
+    "text": "+",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Sound/Options (1)/Slider/Value Step Buttons/Minus/Label",
+    "text": "-",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Sound/Options (1)/Slider/Value Step Buttons/Plus/Label",
+    "text": "+",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Sound/Options (2)/MasterSound",
+    "text": "Master",
+    "key": "setting_master_volume",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LayoutElement",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Sound/Options (2)/Slider/100%",
+    "text": "100%",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Sound/Options (2)/Slider/Value Step Buttons/Minus/Label",
+    "text": "-",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Sound/Options (2)/Slider/Value Step Buttons/Plus/Label",
+    "text": "+",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Sound/Options (2)/Slider/Value Step Buttons/Minus/Label",
+    "text": "-",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Sound/Options (2)/Slider/Value Step Buttons/Plus/Label",
+    "text": "+",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Language/Options/Text (TMP)",
+    "text": "Language Setting",
+    "key": "setting_language_title",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LayoutElement",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Language/Options/Dropdown/Label",
+    "text": "English",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Options/Language/Options/Dropdown/Template/Viewport/Content/Item/Item Label",
+    "text": "Option A",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Safe Area/Title",
+    "text": "Setting",
+    "key": "setting_title",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Setting/Settings/Quit/Text (TMP)",
+    "text": "나가기",
+    "key": "lobby_quit",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Debug/Safe Area/SkillUpgrade/Text (TMP)",
+    "text": "SkillUpgrade",
+    "key": "debug_skill_upgrade",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Debug/Safe Area/SpawnId/Text (TMP)",
+    "text": "SpawnId\n",
+    "key": "debug_spawn_id",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Debug/Safe Area/WaveSkip/Text (TMP)",
+    "text": "WaveSkip",
+    "key": "setting_wave_skip",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Debug/Safe Area/Camera Lens Value",
+    "text": "Camera Z: 0.00",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/Debug/Safe Area/SpawnIdCountInput/Text (TMP)",
+    "text": "1​",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/GameEndCanvas/EndOverlay/EndPanel/Title",
+    "text": "패배하였습니다.",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/GameEndCanvas/EndOverlay/EndPanel/Message",
+    "text": "",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/GameEndCanvas/EndOverlay/EndPanel/GameOverRetryButton/Text (TMP)",
+    "text": "재도전",
+    "key": "end_retry",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/GameEndCanvas/EndOverlay/EndPanel/GameOverStageButton/Text (TMP)",
+    "text": "스테이지 선택",
+    "key": "end_stage_select",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/GameEndCanvas/EndOverlay/EndPanel/RunRewards/GoldCard/Gold",
+    "text": "×300",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/GameEndCanvas/EndOverlay/EndPanel/RunRewards/GoldCard/ItemName",
+    "text": "골드",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/GameEndCanvas/EndOverlay/EndPanel/RunRewards/GoldCard/GoldIcon/Glyph",
+    "text": "G",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/GameEndCanvas/EndOverlay/EndPanel/RunRewards/FragmentCard/Fragments",
+    "text": "×6",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/GameEndCanvas/EndOverlay/EndPanel/RunRewards/FragmentCard/ItemName",
+    "text": "캐릭터 파편",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/GameEndCanvas/DemoClearOverlay/EndPanel/Title",
+    "text": "데모 클리어",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "TextAnimator_TMP",
+      "TypewriterComponent",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/GameEndCanvas/DemoClearOverlay/EndPanel/Message",
+    "text": "제 게임을 즐겨주셔서 감사합니다.",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "TextAnimator_TMP",
+      "TypewriterComponent",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/GameEndCanvas/DemoClearOverlay/EndPanel/DemoClearReplayButton/Text (TMP)",
+    "text": "다시 플레이",
+    "key": "end_play_again",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/GameEndCanvas/DemoClearOverlay/EndPanel/DemoClearStageButton/Text (TMP)",
+    "text": "스테이지 선택",
+    "key": "end_stage_select",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/GameEndCanvas/DemoClearOverlay/EndPanel/RunRewards/GoldCard/Gold",
+    "text": "×300",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/GameEndCanvas/DemoClearOverlay/EndPanel/RunRewards/GoldCard/ItemName",
+    "text": "골드",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/GameEndCanvas/DemoClearOverlay/EndPanel/RunRewards/GoldCard/GoldIcon/Glyph",
+    "text": "G",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/GameEndCanvas/DemoClearOverlay/EndPanel/RunRewards/FragmentCard/Fragments",
+    "text": "×6",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Scenes/Stage1.unity",
+    "path": "UI................/GameEndCanvas/DemoClearOverlay/EndPanel/RunRewards/FragmentCard/ItemName",
+    "text": "캐릭터 파편",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Resources/Prefabs/UI/Dropdown.prefab",
+    "path": "Dropdown/Label",
+    "text": "Full Screen",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Resources/Prefabs/UI/Dropdown.prefab",
+    "path": "Dropdown/Template/Viewport/Content/Item/Item Label",
+    "text": "Option A",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Resources/Prefabs/UI/Option.prefab",
+    "path": "Option/Text (TMP)",
+    "text": "Graphic",
+    "key": "setting_tab_graphic",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Resources/Prefabs/UI/Slider.prefab",
+    "path": "Slider/100%",
+    "text": "100%",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Resources/Prefabs/UI/Slider.prefab",
+    "path": "Slider/Value Step Buttons/Minus/Label",
+    "text": "-",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Resources/Prefabs/UI/Slider.prefab",
+    "path": "Slider/Value Step Buttons/Plus/Label",
+    "text": "+",
+    "key": null,
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI"
+    ]
+  },
+  {
+    "asset": "Assets/Resources/Prefabs/UI/UpgradeCombine.prefab",
+    "path": "UpgradeCombine/HoverVisualRoot/Name",
+    "text": "",
+    "key": "",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Resources/Prefabs/UI/UpgradeCombine.prefab",
+    "path": "UpgradeCombine/HoverVisualRoot/Panel/Text (TMP)",
+    "text": "",
+    "key": "",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Resources/Prefabs/Upgrade/Upgrade.prefab",
+    "path": "Upgrade/HoverVisualRoot/Name",
+    "text": "Name\n",
+    "key": "",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  },
+  {
+    "asset": "Assets/Resources/Prefabs/Upgrade/Upgrade.prefab",
+    "path": "Upgrade/HoverVisualRoot/Panel/Text (TMP)",
+    "text": "Description",
+    "key": "",
+    "components": [
+      "RectTransform",
+      "CanvasRenderer",
+      "TextMeshProUGUI",
+      "LocalizedText",
+      "ContentSizeFitter"
+    ]
+  }
+]

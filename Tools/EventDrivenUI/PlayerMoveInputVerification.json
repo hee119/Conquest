@@ -1,0 +1,16 @@
+{
+  "rightClickStartsDash": true,
+  "dashUsesMoveDirection": true,
+  "dashConsumesEnergy": true,
+  "holdingMouseDoesNotRepeat": true,
+  "dashEnds": true,
+  "energyRecovers": true,
+  "nextPressStartsAnotherDash": true,
+  "disabledPlayerIgnoresMouse": true,
+  "reenableHasOneSubscription": true,
+  "pausedClickDoesNotSpendEnergy": true,
+  "idleDashUsesFacingDirection": true,
+  "destroyedPlayerHasNoCallbackError": true,
+  "errors": [],
+  "completed": true
+}

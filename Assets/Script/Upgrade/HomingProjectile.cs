@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
+/// <summary>HomingProjectile 증강 관련 동작과 상태를 관리한다.</summary>
 public abstract class HomingProjectile : MonoBehaviour
 {
     protected int id;
@@ -16,6 +17,7 @@ public abstract class HomingProjectile : MonoBehaviour
     // 현재 타겟
     protected GameObject target;
 
+    /// <summary>필요한 컴포넌트와 초기 상태를 준비한다.</summary>
     protected virtual void Awake()
     {
         upgradeInfo = GetComponent<UpgradeInfo>();
@@ -43,6 +45,7 @@ public abstract class HomingProjectile : MonoBehaviour
         {
             renderers[0].sortingLayerName = "Upgrade";
         }
+        /// <summary>if 동작을 처리한다.</summary>
         else if (renderers.Length > 1)
         {
             SortingGroup sortingGroup = GetComponent<SortingGroup>();
@@ -55,6 +58,7 @@ public abstract class HomingProjectile : MonoBehaviour
         collider.isTrigger = true;
     }
 
+    /// <summary>활성화될 때 필요한 이벤트와 동작을 시작한다.</summary>
     protected virtual void OnEnable()
     {
         if (DataManager.Instance != null &&
@@ -76,6 +80,7 @@ public abstract class HomingProjectile : MonoBehaviour
         target = null;
     }
 
+    /// <summary>Target 관련 상태를 설정한다.</summary>
     public virtual void SetTarget(GameObject target)
     {
         if (target == null)
@@ -93,6 +98,7 @@ public abstract class HomingProjectile : MonoBehaviour
     }
 
     // 기존에 위치를 직접 받는 것도 필요하면 유지
+    /// <summary>Target 관련 상태를 설정한다.</summary>
     public virtual void SetTarget(Vector3 targetPosition)
     {
         Vector2 direction =
@@ -102,6 +108,7 @@ public abstract class HomingProjectile : MonoBehaviour
         MoveToDirection(direction);
     }
 
+    /// <summary>MoveToDirection 동작을 처리한다.</summary>
     protected virtual void MoveToDirection(
         Vector2 direction
     )
@@ -120,6 +127,7 @@ public abstract class HomingProjectile : MonoBehaviour
             moveDirection * speed;
     }
 
+    /// <summary>RotateToDirection 동작을 처리한다.</summary>
     protected void RotateToDirection()
     {
         float angle =
@@ -136,6 +144,7 @@ public abstract class HomingProjectile : MonoBehaviour
             );
     }
 
+    /// <summary>Damage 관련 값을 조회한다.</summary>
     protected float GetDamage()
     {
         int level =
@@ -148,7 +157,8 @@ public abstract class HomingProjectile : MonoBehaviour
             .damage[level];
     }
 
-    protected virtual void OnTriggerEnter2D(
+    /// <summary>다른 콜라이더가 진입했을 때 적중 효과를 처리한다.</summary>
+    public virtual void HandleEnemyContact(
         Collider2D other
     )
     {
@@ -172,59 +182,7 @@ public abstract class HomingProjectile : MonoBehaviour
                     transform.position
                 );
 
-            // =====================================
-            // 현재 캐릭터 스탯
-            // =====================================
-
-            int characterId =
-                CharacterManager.Instance.currentCharacter;
-
-            PlayerData playerData =
-                DataManager.Instance.playerDatasDic[characterId];
-
-            int playerDamage =
-                playerData.damage;
-
-            int critChance =
-                playerData.criticalChance;
-
-            float critDamage =
-                playerData.criticalDamage;
-
-            // =====================================
-            // 데미지 계산
-            // =====================================
-
-            float damage =
-                GetDamage();
-
-            // 공격력 적용
-            damage =
-                (int)(
-                    damage *
-                    (1f + playerDamage / 100f)
-                );
-
-            // =====================================
-            // 크리티컬 판정
-            // =====================================
-
-            bool isCritical =
-                Random.Range(0, 100) < critChance;
-
-            if (isCritical)
-            {
-                damage =
-                    (int)(
-                        damage *
-                        (2f + critDamage / 100f)
-                    );
-            }
-
-            enemyCombat.TakeDamage(
-                damage,
-                hitPoint
-            );
+            float damage = GetDamage();
 
             // =====================================
             // HP 감소
@@ -242,6 +200,13 @@ public abstract class HomingProjectile : MonoBehaviour
         }
     }
 
+    /// <summary>벽에 닿은 투사체만 반환하며 적중 판정은 몬스터가 처리한다.</summary>
+    protected void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Wall")) pooledObject.DestroyObj();
+    }
+
+    /// <summary>비활성화될 때 이벤트와 진행 중인 동작을 정리한다.</summary>
     protected virtual void OnDisable()
     {
         rb.linearVelocity =

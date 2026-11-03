@@ -1,0 +1,37 @@
+{
+  "sprites": [
+    "hit-spark_000:-1703211164",
+    "hit-spark_001:-219773302",
+    "hit-spark_002:-690041660",
+    "hit-spark_003:1837687131",
+    "hit-spark_004:-1403998258",
+    "hit-spark_005:-955610956",
+    "hit-spark_006:305429775",
+    "hit-spark_007:-138665709",
+    "hit-spark_008:593173630",
+    "hit-spark_009:-1115584510",
+    "hit-spark_010:2042058581",
+    "hit-spark_011:1739952099",
+    "hit-spark_012:-1504076973",
+    "hit-spark_013:765920366",
+    "hit-spark_014:1406681379",
+    "hit-spark_015:-1868502023"
+  ],
+  "clipLength": 0.5283333,
+  "fps": 30,
+  "pipeline": "UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset",
+  "prefab": "Assets/PixelFx/Sheets/impacts/hit-spark/hit-spark.prefab",
+  "checks": "Point, no mipmaps, no compression, 16 valid animation frames, sampled playback binding",
+  "spriteIdsPreservedOnReimport": true,
+  "upstream": {
+    "repository": "https://github.com/patch-gg/pixelfx",
+    "commit": "a84159688af3ca37a4be05a0d422b94451b2e24e",
+    "version": "0.3.0",
+    "excluded": [
+      "gallery (including Patch Pixel font)",
+      ".claude-plugin",
+      ".github",
+      "package-lock.json"
+    ]
+  }
+}

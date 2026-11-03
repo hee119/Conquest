@@ -1,0 +1,2 @@
+Serialized audit: 82 buttons; yellow/missing hover=0; white gold=3
+Pointer probes: normal/faint alpha, repeated enter, exit, disabled button, panel disable, outline and disabled group checked

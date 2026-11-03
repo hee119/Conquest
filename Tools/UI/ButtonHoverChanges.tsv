@@ -1,0 +1,38 @@
+Assets/Resources/Prefabs/UI/UpgradeCombine.prefab	Add hover	UpgradeCombine/SelectAugment
+Assets/Resources/Prefabs/UI/StageSelectButton.prefab	Neutral tint	StageSelectButton
+Assets/Scenes/CutSceen.unity	Neutral tint	Canvas/SkipText
+Assets/Scenes/Lobby.unity	Neutral tint	Lobby Canvas/Lobby Navigation/StagePanel/StageGrid/Close
+Assets/Scenes/Lobby.unity	Neutral tint	Lobby Canvas/Lobby Navigation/StagePanel/Play Selected Stage
+Assets/Scenes/Lobby.unity	Add hover	Lobby Canvas/Lobby Navigation/StagePanel/Play Selected Stage
+Assets/Scenes/Lobby.unity	Add hover	Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/RightDetails/SelectButton
+Assets/Scenes/Lobby.unity	Add hover	Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/RightDetails/EnhanceButton
+Assets/Scenes/Lobby.unity	Neutral tint	Lobby Canvas/Lobby Navigation/CharacterPanel/Recessed Panel/Close
+Assets/Scenes/Lobby.unity	Add hover	Lobby Canvas/Setting/Settings/Safe Area/Options/Graphic/Options (2)/Slider/Value Step Buttons/Minus
+Assets/Scenes/Lobby.unity	Add hover	Lobby Canvas/Setting/Settings/Safe Area/Options/Graphic/Options (2)/Slider/Value Step Buttons/Plus
+Assets/Scenes/Lobby.unity	Add hover	Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options/Slider/Value Step Buttons/Minus
+Assets/Scenes/Lobby.unity	Add hover	Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options/Slider/Value Step Buttons/Plus
+Assets/Scenes/Lobby.unity	Add hover	Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options (1)/Slider/Value Step Buttons/Minus
+Assets/Scenes/Lobby.unity	Add hover	Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options (1)/Slider/Value Step Buttons/Plus
+Assets/Scenes/Lobby.unity	Add hover	Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options (2)/Slider/Value Step Buttons/Minus
+Assets/Scenes/Lobby.unity	Add hover	Lobby Canvas/Setting/Settings/Safe Area/Options/Sound/Options (2)/Slider/Value Step Buttons/Plus
+Assets/Scenes/Lobby.unity	Add hover	Lobby Canvas/Setting/Settings/Close
+Assets/Scenes/Lobby.unity	White gold	Lobby Canvas/Lobby Navigation/GoldWallet
+Assets/Scenes/Stage1.unity	Add hover	UI................/UpgradeUI/UpgradesMom/Panel/Safe Area/UpgradeCombine
+Assets/Scenes/Stage1.unity	Add hover	UI................/UpgradeUI/UpgradesMom/UpgradeCombine/UpgradeCombine/Safe Area/SelectConfirm
+Assets/Scenes/Stage1.unity	Add hover	UI................/UpgradeUI/UpgradesMom/UpgradeCombine/UpgradeCombine/Safe Area/Exit
+Assets/Scenes/Stage1.unity	Add hover	UI................/UpgradeUI/UpgradesMom/UpgradeCombine/UpgradeCombine/Safe Area/FusionConfirm
+Assets/Scenes/Stage1.unity	Add hover	UI................/Setting/Safe Area/SettingButton
+Assets/Scenes/Stage1.unity	Add hover	UI................/Setting/Settings/Safe Area/Options/Graphic/Options (2)/Slider/Value Step Buttons/Minus
+Assets/Scenes/Stage1.unity	Add hover	UI................/Setting/Settings/Safe Area/Options/Graphic/Options (2)/Slider/Value Step Buttons/Plus
+Assets/Scenes/Stage1.unity	Add hover	UI................/Setting/Settings/Safe Area/Options/Sound/Options/Slider/Value Step Buttons/Minus
+Assets/Scenes/Stage1.unity	Add hover	UI................/Setting/Settings/Safe Area/Options/Sound/Options/Slider/Value Step Buttons/Plus
+Assets/Scenes/Stage1.unity	Add hover	UI................/Setting/Settings/Safe Area/Options/Sound/Options (1)/Slider/Value Step Buttons/Minus
+Assets/Scenes/Stage1.unity	Add hover	UI................/Setting/Settings/Safe Area/Options/Sound/Options (1)/Slider/Value Step Buttons/Plus
+Assets/Scenes/Stage1.unity	Add hover	UI................/Setting/Settings/Safe Area/Options/Sound/Options (2)/Slider/Value Step Buttons/Minus
+Assets/Scenes/Stage1.unity	Add hover	UI................/Setting/Settings/Safe Area/Options/Sound/Options (2)/Slider/Value Step Buttons/Plus
+Assets/Scenes/Stage1.unity	Add hover	UI................/Setting/Settings/Close
+Assets/Scenes/Stage1.unity	Add hover	UI................/Debug/Safe Area/SkillUpgrade
+Assets/Scenes/Stage1.unity	Add hover	UI................/Debug/Safe Area/SpawnId
+Assets/Scenes/Stage1.unity	Add hover	UI................/Debug/Safe Area/WaveSkip
+Assets/Scenes/Stage1.unity	White gold	UI................/GameEndCanvas/EndOverlay/EndPanel/RunRewards/GoldCard/Gold
+Assets/Scenes/Stage1.unity	White gold	UI................/GameEndCanvas/DemoClearOverlay/EndPanel/RunRewards/GoldCard/Gold

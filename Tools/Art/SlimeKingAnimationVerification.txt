@@ -1,0 +1,2 @@
+PASS: king nonlethal hit stays in Move; lethal hit enters crowned Hit while still active; collisions and movement stop; regular slime still plays Hit on nonlethal damage.
+PASS: death clip completes before pool release; pooled reuse restores alive state, crowned Move and colliders.

@@ -1,0 +1,5 @@
+PASS: Normal octopus attack aligned to first Move frame's opaque foot baseline.
+Asset: Assets/SpriteSeet/OctopusWaterShotAligned.png
+Move baseline: -0.4529412 world units; attack before: 0
+Attack pivot Y offset: +77 pixels (artwork moves down).
+Frames: 25; animation keys: 25. Only pivot Y changed; X, scale, artwork, timing and sprite IDs preserved.

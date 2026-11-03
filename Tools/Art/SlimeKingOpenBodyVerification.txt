@@ -1,0 +1,1 @@
+PASS: Raise before spawning; Hold loops; real first wave spawns 2 minions at the front opening; Lower after spawn phase; returns to Move; lethal Hit transition preserved. Full 25-frame sheet assigned, alpha retained.

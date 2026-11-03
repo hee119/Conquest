@@ -12,19 +12,50 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
     private UpgradeManager manager;
     private RectTransform root;
     private CanvasGroup canvasGroup;
-    private RectTransform dynamicOverlay;
+    [SerializeField] private RectTransform dynamicOverlay;
     private bool layoutDirty;
+    private UpgradeManager subscribedManager;
 
+    /// <summary>활성화될 때 필요한 이벤트와 동작을 시작한다.</summary>
+    private void OnEnable()
+    {
+        UpgradeManager.InstanceChanged += BindManager;
+        BindManager(manager != null ? manager : UpgradeManager.Instance);
+    }
+
+    /// <summary>비활성화될 때 이벤트와 진행 중인 동작을 정리한다.</summary>
+    private void OnDisable()
+    {
+        UpgradeManager.InstanceChanged -= BindManager;
+        if (subscribedManager != null)
+            subscribedManager.UpgradesChanged -= SynchronizeInventory;
+        subscribedManager = null;
+    }
+
+    /// <summary>BindManager 동작을 처리한다.</summary>
+    private void BindManager(UpgradeManager owner)
+    {
+        if (subscribedManager != null)
+            subscribedManager.UpgradesChanged -= SynchronizeInventory;
+        manager = owner;
+        subscribedManager = isActiveAndEnabled ? owner : null;
+        if (subscribedManager != null)
+            subscribedManager.UpgradesChanged += SynchronizeInventory;
+        SynchronizeInventory();
+    }
+
+    /// <summary>RectTransformDimensionsChange 이벤트가 발생했을 때 필요한 처리를 수행한다.</summary>
     private void OnRectTransformDimensionsChange() => layoutDirty = true;
 
+    /// <summary>FindInScene 동작을 처리한다.</summary>
     public static UpgradeCooldownHud FindInScene()
     {
         return FindFirstObjectByType<UpgradeCooldownHud>(FindObjectsInactive.Include);
     }
 
+    /// <summary>실행에 필요한 초기 상태와 참조를 준비한다.</summary>
     public void Initialize(UpgradeManager owner)
     {
-        manager = owner;
         root = transform as RectTransform;
         canvasGroup = GetComponent<CanvasGroup>();
         if (root == null)
@@ -32,8 +63,11 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         if (canvasGroup == null)
             Debug.LogError("[UpgradeCooldownHud] 씬 오브젝트에 CanvasGroup이 필요합니다.", this);
         EnsureRoot();
+        if (manager != owner || subscribedManager != (isActiveAndEnabled ? owner : null))
+            BindManager(owner);
     }
 
+    /// <summary>Track 동작을 처리한다.</summary>
     public void Track(int upgradeId)
     {
         if (upgradeId <= 0)
@@ -50,10 +84,11 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
             layoutDirty = true;
         }
 
-        entry.SetIcon(manager.GetUpgradeIcon(upgradeId));
+        MatchCollectedIcon(upgradeId, entry);
         RefreshEntry(upgradeId, entry);
     }
 
+    /// <summary>ClearAll 동작을 처리한다.</summary>
     public void ClearAll()
     {
         foreach (CooldownEntry entry in entries.Values)
@@ -69,48 +104,15 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         SetVisible(false);
     }
 
+    /// <summary>프레임마다 갱신이 필요한 상태를 처리한다.</summary>
     private void Update()
     {
-        if (manager == null)
-            manager = UpgradeManager.Instance;
-
-        if (manager == null)
+        if (manager == null || root == null)
             return;
 
-        EnsureRoot();
-        if (root == null)
-            return;
-
-        // 조합으로 기존 스킬이 제거되거나 씬이 다시 로드된 경우에도 목록을 자동 동기화한다.
-        for (int i = 0; i < manager.skillUpgrades.Count; i++)
-        {
-            int id = manager.skillUpgrades[i];
-            if (!entries.ContainsKey(id))
-                Track(id);
-        }
-
-        List<int> removed = null;
+        // Cooldown time changes continuously; inventory synchronization is event-driven.
         foreach (KeyValuePair<int, CooldownEntry> pair in entries)
-        {
-            if (!manager.skillUpgrades.Contains(pair.Key))
-            {
-                if (pair.Value.Root != null)
-                    Destroy(pair.Value.Root);
-                if (pair.Value.DynamicRoot != null)
-                    Destroy(pair.Value.DynamicRoot.gameObject);
-                layoutDirty = true;
-                (removed ??= new List<int>()).Add(pair.Key);
-                continue;
-            }
-
             RefreshEntry(pair.Key, pair.Value);
-        }
-
-        if (removed != null)
-        {
-            foreach (int id in removed)
-                entries.Remove(id);
-        }
 
         bool hasVisibleEntry = false;
         foreach (CooldownEntry entry in entries.Values)
@@ -125,6 +127,46 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         SetVisible(hasVisibleEntry);
     }
 
+    /// <summary>SynchronizeInventory 동작을 처리한다.</summary>
+    private void SynchronizeInventory()
+    {
+        if (manager == null)
+        {
+            ClearAll();
+            return;
+        }
+        EnsureRoot();
+        if (root == null)
+            return;
+
+        for (int i = 0; i < manager.skillUpgrades.Count; i++)
+        {
+            int id = manager.skillUpgrades[i];
+            Track(id);
+        }
+
+        List<int> removed = null;
+        foreach (KeyValuePair<int, CooldownEntry> pair in entries)
+        {
+            if (!manager.skillUpgrades.Contains(pair.Key))
+            {
+                if (pair.Value.Root != null)
+                    Destroy(pair.Value.Root);
+                if (pair.Value.DynamicRoot != null)
+                    Destroy(pair.Value.DynamicRoot.gameObject);
+                layoutDirty = true;
+                (removed ??= new List<int>()).Add(pair.Key);
+            }
+        }
+
+        if (removed != null)
+        {
+            foreach (int id in removed)
+                entries.Remove(id);
+        }
+    }
+
+    /// <summary>다른 갱신이 끝난 뒤 표시와 배치를 정리한다.</summary>
     private void LateUpdate()
     {
         if (!layoutDirty || root == null)
@@ -150,6 +192,7 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         layoutDirty = false;
     }
 
+    /// <summary>EntryVisible 관련 상태를 설정한다.</summary>
     private void SetEntryVisible(CooldownEntry entry, bool visible)
     {
         if (entry.Root.activeSelf == visible)
@@ -159,6 +202,7 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         layoutDirty = true;
     }
 
+    /// <summary>RefreshEntry 동작을 처리한다.</summary>
     private void RefreshEntry(int upgradeId, CooldownEntry entry)
     {
         if (entry.Root == null)
@@ -192,31 +236,31 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         entry.SetRemainingTime(remaining);
     }
 
+    /// <summary>MatchCollectedIcon 동작을 처리한다.</summary>
+    private void MatchCollectedIcon(int upgradeId, CooldownEntry entry)
+    {
+        int index = manager.skillUpgrades.IndexOf(upgradeId);
+        var icons = manager.skillUpgradeIcons;
+        var source = icons != null && index >= 0 && index < icons.Length ? icons[index] : null;
+        entry.SetIcon(source != null ? source.sprite : manager.GetUpgradeIcon(upgradeId));
+        if (source == null) return;
+        entry.Icon.material = source.material;
+        entry.Icon.color = source.color;
+        entry.Icon.preserveAspect = source.preserveAspect;
+    }
+
+    /// <summary>EnsureRoot 동작을 처리한다.</summary>
     private void EnsureRoot()
     {
         if (root == null)
             root = transform as RectTransform;
         if (canvasGroup == null)
             canvasGroup = GetComponent<CanvasGroup>();
-        if (root == null || dynamicOverlay != null)
-            return;
-
-        UpgradeHudRendering.EnsureCanvas(root);
-        GameObject overlay = new GameObject("Dynamic Cooldown Overlay",
-            typeof(RectTransform), typeof(LayoutElement));
-        overlay.layer = gameObject.layer;
-        dynamicOverlay = (RectTransform)overlay.transform;
-        dynamicOverlay.SetParent(root, false);
-        dynamicOverlay.anchorMin = Vector2.zero;
-        dynamicOverlay.anchorMax = Vector2.one;
-        dynamicOverlay.pivot = root.pivot;
-        dynamicOverlay.offsetMin = Vector2.zero;
-        dynamicOverlay.offsetMax = Vector2.zero;
-        overlay.GetComponent<LayoutElement>().ignoreLayout = true;
-        UpgradeHudRendering.EnsureCanvas(dynamicOverlay);
-        layoutDirty = true;
+        if (dynamicOverlay == null && root != null)
+            dynamicOverlay = root.Find("Dynamic Cooldown Overlay") as RectTransform;
     }
 
+    /// <summary>Visible 관련 상태를 설정한다.</summary>
     private void SetVisible(bool visible)
     {
         if (canvasGroup == null)
@@ -231,6 +275,7 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         canvasGroup.blocksRaycasts = false;
     }
 
+    /// <summary>Entry 항목을 생성한다.</summary>
     private CooldownEntry CreateEntry(int upgradeId)
     {
         GameObject entryObject = new GameObject(
@@ -247,7 +292,7 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         entryRect.sizeDelta = new Vector2(EntrySize, EntrySize);
 
         UnityEngine.UI.Image background = entryObject.GetComponent<UnityEngine.UI.Image>();
-        background.color = new Color(0f, 0f, 0f, 0.82f);
+        background.color = Color.black;
         background.raycastTarget = false;
 
         Outline outline = entryObject.GetComponent<Outline>();
@@ -262,6 +307,7 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         UnityEngine.UI.Image icon = CreateImage("Icon", entryRect, new Vector2(5f, 5f), new Vector2(-5f, -5f));
         icon.preserveAspect = true;
         icon.color = Color.white;
+        UpgradeHudRendering.ApplyCollectedIconStyle(icon, upgradeId);
 
         GameObject dynamicObject = new GameObject($"Cooldown_{upgradeId}_Dynamic", typeof(RectTransform));
         dynamicObject.layer = root.gameObject.layer;
@@ -271,7 +317,7 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         dynamicOverlay.SetAsLastSibling();
 
         UnityEngine.UI.Image shade = CreateImage("CooldownShade", dynamicRect, new Vector2(5f, 5f), new Vector2(-5f, -5f));
-        shade.color = new Color(0f, 0f, 0f, 0.72f);
+        shade.color = new Color(0f, 0f, 0f, 0.8f);
         shade.type = UnityEngine.UI.Image.Type.Filled;
         shade.fillMethod = UnityEngine.UI.Image.FillMethod.Radial360;
         shade.fillOrigin = (int)UnityEngine.UI.Image.Origin360.Top;
@@ -287,10 +333,11 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
             shade,
             timeText,
             levelText);
-        entry.SetIcon(manager.GetUpgradeIcon(upgradeId));
+        MatchCollectedIcon(upgradeId, entry);
         return entry;
     }
 
+    /// <summary>Image 항목을 생성한다.</summary>
     private static UnityEngine.UI.Image CreateImage(
         string name,
         RectTransform parent,
@@ -316,6 +363,7 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         return image;
     }
 
+    /// <summary>Text 항목을 생성한다.</summary>
     private static TextMeshProUGUI CreateText(RectTransform parent)
     {
         GameObject textObject = new GameObject(
@@ -343,6 +391,7 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         return text;
     }
 
+    /// <summary>LevelText 항목을 생성한다.</summary>
     private static TextMeshProUGUI CreateLevelText(RectTransform parent)
     {
         GameObject textObject = new GameObject(
@@ -371,6 +420,7 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         return text;
     }
 
+    /// <summary>CooldownEntry 증강 관련 동작과 상태를 관리한다.</summary>
     private sealed class CooldownEntry
     {
         public readonly GameObject Root;
@@ -383,6 +433,7 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         private int displayedTime = -1;
         private bool decimalTime;
 
+        /// <summary>CooldownEntry 동작을 처리한다.</summary>
         public CooldownEntry(
             GameObject rootObject,
             RectTransform dynamicRoot,
@@ -399,6 +450,7 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
             LevelText = levelText;
         }
 
+        /// <summary>Icon 관련 상태를 설정한다.</summary>
         public void SetIcon(Sprite sprite)
         {
             if (Icon.sprite != sprite)
@@ -407,6 +459,7 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
                 CooldownShade.sprite = sprite;
         }
 
+        /// <summary>Level 관련 상태를 설정한다.</summary>
         public void SetLevel(int level)
         {
             if (displayedLevel == level)
@@ -416,6 +469,7 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
             LevelText.text = level > 0 ? $"Lv.{level}" : string.Empty;
         }
 
+        /// <summary>RemainingTime 관련 상태를 설정한다.</summary>
         public void SetRemainingTime(float remaining)
         {
             bool useDecimal = remaining <= 2f;
@@ -428,6 +482,7 @@ public sealed class UpgradeCooldownHud : MonoBehaviour
         }
     }
 
+    /// <summary>Active 관련 상태를 설정한다.</summary>
     private static void SetActive(GameObject target, bool active)
     {
         if (target.activeSelf != active)

@@ -1,0 +1,1 @@
+Normal octopus: uncrowned Move (21 frames, 12fps), WaterAttack (22 frames, 24fps), release delay 0.375s. Existing Attack trigger and return to Run preserved; normal body width/foot height normalized. Boss assets unchanged.

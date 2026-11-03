@@ -1,0 +1,45 @@
+if(!UnityEditor.EditorApplication.isPlaying)throw new System.Exception("Runtime check required.");
+UnityEngine.Time.timeScale=0f;
+var flags=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
+var active=(System.Collections.Generic.HashSet<PooledObject>)typeof(PoolManager).GetField("activeObjects",flags).GetValue(PoolManager.Instance);
+var before=new System.Collections.Generic.HashSet<PooledObject>(active);
+var prefab=UnityEngine.Resources.Load<UnityEngine.GameObject>("Prefabs/Boss/OctopusKing");
+int id=prefab.GetComponent<EnemyInfo>().id;
+var obj=PoolManager.Instance.Spawn(id,UnityEngine.Vector2.zero);
+var boss=obj.GetComponent<OctopusKing>();boss.StopAllCoroutines();
+obj.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=false;
+obj.GetComponent<EnemyMove>().enabled=false;
+var combat=obj.GetComponent<EnemyCombat>();
+var animator=obj.GetComponent<UnityEngine.Animator>();animator.cullingMode=UnityEngine.AnimatorCullingMode.AlwaysAnimate;
+animator.Rebind();animator.Update(0f);
+try{
+    var method=typeof(OctopusKing).GetMethod("GroundCrackAttackCor",flags);
+    var routine=(System.Collections.IEnumerator)method.Invoke(boss,null);
+    if(!routine.MoveNext()||!(routine.Current is UnityEngine.WaitForSeconds))throw new System.Exception("Impact delay missing.");
+    animator.Update(0f);animator.Update(.001f);
+    if(!animator.GetCurrentAnimatorStateInfo(0).IsName("GroundCrack"))throw new System.Exception("Ground animation did not start.");
+    foreach(var pooled in active)if(!before.Contains(pooled)&&pooled.gameObject!=obj)throw new System.Exception("Ground attack spawned before impact pose.");
+    animator.Update(boss.groundAttackImpactDelay);
+    var sprite=obj.GetComponent<UnityEngine.SpriteRenderer>().sprite;
+    if(sprite==null||!sprite.name.EndsWith("_06"))throw new System.Exception("Impact not aligned to first stomp: "+sprite);
+    if(!routine.MoveNext())throw new System.Exception("Ground attack not emitted.");
+    int attacks=0;
+    foreach(var pooled in active)if(!before.Contains(pooled)&&pooled.GetComponent<GroundCrack>()!=null)attacks++;
+    if(attacks!=1)throw new System.Exception("Expected one existing ground-attack effect, got "+attacks);
+    var clip=UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.AnimationClip>("Assets/Animation/OctopusKingGroundAttack.anim");
+    animator.Update(clip.length+.01f);animator.Update(0f);
+    if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Move"))throw new System.Exception("Ground attack did not return to Move.");
+    animator.SetBool("SpinWater",true);animator.SetTrigger("GroundCrack");animator.Update(0f);animator.Update(.001f);
+    if(!animator.GetCurrentAnimatorStateInfo(0).IsName("GroundCrack"))throw new System.Exception("Ground trigger cannot interrupt other boss animation.");
+    animator.Update(clip.length+.01f);animator.Update(0f);
+    if(!animator.GetCurrentAnimatorStateInfo(0).IsName("SpinWater"))throw new System.Exception("Ground attack did not resume ongoing water-spin animation.");
+    int oldCount=active.Count;
+    var interrupted=(System.Collections.IEnumerator)method.Invoke(boss,null);interrupted.MoveNext();combat.hp=0;
+    if(interrupted.MoveNext()||active.Count!=oldCount)throw new System.Exception("Dead boss still emitted delayed attack.");
+    var report="PASS: crack-free GroundCrack animation plays; first impact cell 06 at 0.333s; no premature attack; one existing ground effect emitted; returns to Move; resumes ongoing SpinWater; lethal interruption suppresses delayed attack.\n";
+    System.IO.File.WriteAllText("Tools/Art/OctopusKingGroundAttackVerification.txt",report);return report;
+}finally{
+    boss.StopAllCoroutines();combat.StopAllCoroutines();
+    foreach(var pooled in new System.Collections.Generic.List<PooledObject>(active))if(pooled!=null&&!before.Contains(pooled))pooled.DestroyObj();
+    UnityEngine.Time.timeScale=1f;
+}

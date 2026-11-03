@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(EnemyFacing))]
 public class SlimeKing : SplitEnemy
 {
     [Header("공통")]
@@ -24,6 +25,9 @@ public class SlimeKing : SplitEnemy
     public float openDuration = 3f;
     public float minionSpawnInterval = 0.8f;
     public int minionsPerWave = 2;
+    public AnimationClip openBodyRaiseClip;
+    public AnimationClip openBodyHoldClip;
+    public AnimationClip openBodyLowerClip;
 
     [Header("패턴2 - 점프 내려찍기")]
     public int warningId;                   // 워닝 사인 풀 id
@@ -45,6 +49,10 @@ public class SlimeKing : SplitEnemy
     public float slideOvershoot = 3f;
     public float slideDamageMul = 1f;
     public float slideRecovery = 0.8f;
+    public AnimationClip slidePrepareClip;
+    public AnimationClip slideStartClip;
+    public AnimationClip slideLoopClip;
+    public AnimationClip slideEndClip;
     public LayerMask obstacleMask;          // 벽 레이어 (비워두면 벽 체크 안 함)
 
     NavMeshAgent agent;
@@ -56,6 +64,27 @@ public class SlimeKing : SplitEnemy
     Vector3 airbornePos;
     bool inPattern;
     bool isAirborne;
+
+    protected override bool PlayHitOnNonLethalDamage => false;
+
+    protected override void PrepareDeathAnimation()
+    {
+        // Attack routines must not move or rescale the dying boss while Hit plays.
+        StopAllCoroutines();
+        ReleaseAllWarnings();
+        if (isAirborne)
+        {
+            transform.position = airbornePos;
+            isAirborne = false;
+        }
+        if (inPattern)
+        {
+            transform.localScale = baseScale;
+            inPattern = false;
+        }
+        SetColliders(false);
+        SetAI(false);
+    }
 
     // ───────────── 생명주기 ─────────────
 
@@ -70,6 +99,13 @@ public class SlimeKing : SplitEnemy
         baseScale = transform.localScale;
         inPattern = false;
         isAirborne = false;
+
+        // Pooled split generations must start in Move, never the previous death pose.
+        if (bossAnimator != null && bossAnimator.runtimeAnimatorController != null)
+        {
+            bossAnimator.Rebind();
+            bossAnimator.Update(0f);
+        }
 
         StartCoroutine(PatternLoop());
     }
@@ -174,7 +210,22 @@ public class SlimeKing : SplitEnemy
     // 패턴1: 몸을 열어 작은 슬라임 생성
     IEnumerator OpenBodyPattern()
     {
-        yield return ScaleTo(new Vector3(baseScale.x * 1.15f, baseScale.y * 0.8f, 1f), 0.3f);
+        bool hasOpenAnimation = bossAnimator != null && openBodyRaiseClip != null &&
+            openBodyHoldClip != null && openBodyLowerClip != null &&
+            bossAnimator.HasState(0, Animator.StringToHash("Base Layer.OpenBodyRaise")) &&
+            bossAnimator.HasState(0, Animator.StringToHash("Base Layer.OpenBodyHold")) &&
+            bossAnimator.HasState(0, Animator.StringToHash("Base Layer.OpenBodyLower"));
+
+        if (hasOpenAnimation)
+        {
+            bossAnimator.Play("Base Layer.OpenBodyRaise", 0, 0f);
+            yield return new WaitForSeconds(openBodyRaiseClip.length);
+            bossAnimator.Play("Base Layer.OpenBodyHold", 0, 0f);
+        }
+        else
+        {
+            yield return ScaleTo(new Vector3(baseScale.x * 1.15f, baseScale.y * 0.8f, 1f), 0.3f);
+        }
 
         float elapsed = 0f;
         float timer = minionSpawnInterval;      // 열자마자 첫 웨이브
@@ -187,14 +238,35 @@ public class SlimeKing : SplitEnemy
                 timer = 0f;
                 for (int i = 0; i < minionsPerWave; i++)
                 {
-                    Vector3 pos = transform.position + (Vector3)(Random.insideUnitCircle.normalized * baseScale.x * 0.8f);
+                    Vector3 offset;
+                    if (hasOpenAnimation)
+                    {
+                        // Emerge from the visible opening at the front of the body.
+                        float side = minionsPerWave <= 1 ? 0f :
+                            Mathf.Lerp(-0.25f, 0.25f, i / (float)(minionsPerWave - 1));
+                        offset = new Vector3(side * baseScale.x, -0.8f * baseScale.y, 0f);
+                    }
+                    else
+                    {
+                        offset = (Vector3)(Random.insideUnitCircle.normalized * baseScale.x * 0.8f);
+                    }
+                    Vector3 pos = transform.position + offset;
                     PoolManager.Instance.Spawn(minionId, pos);
                 }
             }
             yield return null;
         }
 
-        yield return ScaleTo(baseScale, 0.2f);
+        if (hasOpenAnimation)
+        {
+            bossAnimator.Play("Base Layer.OpenBodyLower", 0, 0f);
+            yield return new WaitForSeconds(openBodyLowerClip.length);
+            bossAnimator.Play("Base Layer.Move", 0, 0f);
+        }
+        else
+        {
+            yield return ScaleTo(baseScale, 0.2f);
+        }
     }
 
     // 패턴2: 점프 후 워닝 사인 → 플레이어 위치 연속 내려찍기
@@ -241,11 +313,30 @@ public class SlimeKing : SplitEnemy
     IEnumerator SlidePattern()
     {
         float s = baseScale.x;
+        bool hasSlideAnimation = bossAnimator != null && slidePrepareClip != null &&
+            slideStartClip != null && slideLoopClip != null && slideEndClip != null &&
+            bossAnimator.HasState(0, Animator.StringToHash("Base Layer.SlidePrepare")) &&
+            bossAnimator.HasState(0, Animator.StringToHash("Base Layer.SlideStart")) &&
+            bossAnimator.HasState(0, Animator.StringToHash("Base Layer.SlideLoop")) &&
+            bossAnimator.HasState(0, Animator.StringToHash("Base Layer.SlideEnd"));
 
-        yield return ScaleTo(new Vector3(baseScale.x * 1.2f, baseScale.y * 0.8f, 1f), slideWindup);
+        if (hasSlideAnimation)
+        {
+            bossAnimator.SetFloat("SlidePrepareSpeed", slidePrepareClip.length / Mathf.Max(0.01f, slideWindup));
+            bossAnimator.Play("Base Layer.SlidePrepare", 0, 0f);
+            yield return new WaitForSeconds(Mathf.Max(0.01f, slideWindup));
+        }
+        else
+        {
+            yield return ScaleTo(new Vector3(baseScale.x * 1.2f, baseScale.y * 0.8f, 1f), slideWindup);
+        }
 
         Transform player = GetPlayer();
-        if (player == null) yield break;
+        if (player == null)
+        {
+            if (hasSlideAnimation) bossAnimator.Play("Base Layer.Move", 0, 0f);
+            yield break;
+        }
 
         Vector3 start = transform.position;
         Vector2 dir = (Vector2)(player.position - start);
@@ -254,9 +345,10 @@ public class SlimeKing : SplitEnemy
 
         float travelled = 0f;
         bool hit = false;
+        if (hasSlideAnimation) bossAnimator.Play("Base Layer.SlideStart", 0, 0f);
         while (travelled < dist)
         {
-            float step = slideSpeed * Time.deltaTime;
+            float step = Mathf.Min(slideSpeed * Time.deltaTime, dist - travelled);
 
             if (obstacleMask.value != 0)
             {
@@ -271,8 +363,21 @@ public class SlimeKing : SplitEnemy
             yield return null;
         }
 
-        yield return ScaleTo(baseScale, 0.15f);
-        yield return new WaitForSeconds(slideRecovery);
+        if (hasSlideAnimation)
+        {
+            // SlideStart transitions to the afterimage loop. Only actual movement
+            // completion (or a wall) may leave that loop and play the ending.
+            bossAnimator.Play("Base Layer.SlideEnd", 0, 0f);
+            yield return new WaitForSeconds(slideEndClip.length);
+            bossAnimator.Play("Base Layer.Move", 0, 0f);
+            if (slideRecovery > slideEndClip.length)
+                yield return new WaitForSeconds(slideRecovery - slideEndClip.length);
+        }
+        else
+        {
+            yield return ScaleTo(baseScale, 0.15f);
+            yield return new WaitForSeconds(slideRecovery);
+        }
     }
 
     // ───────────── 유틸 ─────────────

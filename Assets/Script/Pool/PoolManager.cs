@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -22,6 +23,48 @@ public class PoolManager : MonoBehaviour
 
     private GameObject player;
     private Transform stagingParent;
+    private readonly Dictionary<int, int> warmCounts = new();
+    private readonly HashSet<GameObject> monsterPrefabs = new();
+    private readonly HashSet<GameObject> bossPrefabs = new();
+    public bool IsPrewarmed { get; private set; }
+    public int PrewarmedObjectCount { get; private set; }
+
+    public int GetInactiveCount(int id) => _pools.TryGetValue(id, out var pool) ? pool.CountInactive : 0;
+
+    public IEnumerator Prewarm(Action<float> progress)
+    {
+        if (IsPrewarmed) { progress?.Invoke(1f); yield break; }
+        int total = 0;
+        foreach (int count in warmCounts.Values) total += count;
+        int done = 0;
+        var frameBudget = System.Diagnostics.Stopwatch.StartNew();
+        progress?.Invoke(0f);
+        foreach (var entry in warmCounts)
+        {
+            var held = new List<PooledObject>(entry.Value);
+            try
+            {
+                for (int i = 0; i < entry.Value; i++)
+                {
+                    held.Add(GetPooledObject(entry.Key));
+                    done++;
+                    progress?.Invoke(total == 0 ? 1f : (float)done / total);
+                    if (done % 10 == 0 || frameBudget.Elapsed.TotalMilliseconds >= 3.0)
+                    {
+                        yield return null;
+                        frameBudget.Restart();
+                    }
+                }
+            }
+            finally
+            {
+                foreach (var obj in held) if (obj != null) obj.DestroyObj();
+            }
+        }
+        PrewarmedObjectCount = done;
+        IsPrewarmed = true;
+        progress?.Invoke(1f);
+    }
 
     public void Awake()
     {
@@ -47,6 +90,9 @@ public class PoolManager : MonoBehaviour
         prefabs.AddRange(Resources.LoadAll<GameObject>("Prefabs/Item"));
 
         
+
+        monsterPrefabs.UnionWith(Resources.LoadAll<GameObject>("Prefabs/Enemy"));
+        bossPrefabs.UnionWith(Resources.LoadAll<GameObject>("Prefabs/Boss"));
 
         for (int i = 0; i < prefabs.Count; i++)
         {
@@ -78,7 +124,7 @@ public class PoolManager : MonoBehaviour
         foreach (PooledObject pooledObject in pendingReparents)
         {
             if (pooledObject != null && !pooledObject.IsSpawned)
-                pooledObject.transform.SetParent(transform, false);
+                pooledObject.transform.SetParent(pooledObject.PoolParent, false);
         }
         pendingReparents.Clear();
     }
@@ -138,29 +184,37 @@ public class PoolManager : MonoBehaviour
         }
         
         prefabsDic.Add(id, prefab);
+        Transform home = new GameObject(prefab.name + "Mom").transform;
+        home.SetParent(transform, false);
+        int warmCount = bossPrefabs.Contains(prefab) ? 0
+            : monsterPrefabs.Contains(prefab) || expInfo != null ? 200
+            : bulletInfo != null ? 100
+            : upgradeInfo != null ? (prefab.name == "Snail" ? 10 : 5)
+            : skillInfo != null ? 5 : 0;
+        warmCounts.Add(id, warmCount);
         ObjectPool<PooledObject> pool = null;
 
         pool = new ObjectPool<PooledObject>(
-            () => CreatePool(prefab, pool),
+            () => CreatePool(prefab, pool, home),
             OnGet,
             OnRelease,
             OnDestroyPool,
             collectionCheck: false,
             defaultCapacity: 10,
-            maxSize: enemyInfo != null ? enemyPoolMaxSize : maxSize
+            maxSize: Mathf.Max(warmCount, enemyInfo != null ? enemyPoolMaxSize : maxSize)
         );
 
         _pools.Add(id, pool);
     }
 
-    private PooledObject CreatePool(GameObject prefab, IObjectPool<PooledObject> pool)
+    private PooledObject CreatePool(GameObject prefab, IObjectPool<PooledObject> pool, Transform home)
     {
         // Keep the prefab inactive in the hierarchy until its pool is assigned.
         // Otherwise OnEnable runs once during Instantiate, before Spawn can set
         // the position or the upgrade level.
         if (stagingParent == null)
         {
-            GameObject staging = new GameObject(prefab.name + "Mom");
+            GameObject staging = new GameObject("Pool Staging");
             staging.transform.SetParent(transform, false);
             staging.SetActive(false);
             stagingParent = staging.transform;
@@ -168,12 +222,12 @@ public class PoolManager : MonoBehaviour
 
         GameObject instance = Instantiate(prefab, stagingParent);
         instance.SetActive(false);
-        instance.transform.SetParent(transform, false);
+        instance.transform.SetParent(home, false);
         PooledObject pooledObject = instance.GetComponent<PooledObject>();
         
         if(pooledObject == null) Debug.LogWarning("pooled object is null");
         
-        pooledObject.SetManagedPool(pool);
+        pooledObject.SetManagedPool(pool, home);
         pooledObject.gameObject.SetActive(false);
         return pooledObject;
     }
@@ -186,7 +240,7 @@ public class PoolManager : MonoBehaviour
             return;
 
         if (pendingReparents.Remove(pooledObject))
-            pooledObject.transform.SetParent(transform, false);
+            pooledObject.transform.SetParent(pooledObject.PoolParent, false);
         pooledObject.MarkSpawned();
         activeObjects.Add(pooledObject);
     }
@@ -211,7 +265,7 @@ public class PoolManager : MonoBehaviour
         }
         else
         {
-            pooledObject.transform.SetParent(transform, false);
+            pooledObject.transform.SetParent(pooledObject.PoolParent, false);
         }
     }
 
@@ -229,7 +283,7 @@ public class PoolManager : MonoBehaviour
         foreach (PooledObject pooledObject in snapshot)
         {
             if (pooledObject != null)
-                pooledObject.transform.SetParent(transform, true);
+                pooledObject.transform.SetParent(pooledObject.PoolParent, true);
         }
 
         foreach (PooledObject pooledObject in snapshot)
@@ -294,7 +348,6 @@ public class PoolManager : MonoBehaviour
         obj.gameObject.SetActive(
             true
         );
-
 
         return obj.gameObject;
     }

@@ -41,6 +41,75 @@ public class DataManager : MonoBehaviour
     public ImageInfo[] skillUpgradeIcons;
     public ImageInfo[] statUpgradeIcons;
 
+    // 데이터 변경 테스트 메뉴
+    [System.Serializable]
+public class CharacterStatInput
+{
+    public string characterName = "";
+
+    [Header("Combat Stats")]
+    public float hp = -1f;
+    public float hpRegenRate = -1f;
+    public float speed = -1f;
+    public float damage = -1f;
+    public float defense = -1f;
+
+    [Header("Critical Stats")]
+    public float criticalDamage = -1f;
+    public float criticalChance = -1f;
+}
+
+[Header("Character Stats Test")]
+[SerializeField] private int testCharacterId;
+[SerializeField] private CharacterStatInput testStats = new CharacterStatInput();
+
+[ContextMenu("Character Stats/Apply Custom Stats")]
+public void ApplyCustomCharacterStats()
+{
+    if (!playerDatasDic.TryGetValue(testCharacterId, out PlayerData player))
+    {
+        UnityEngine.Debug.LogWarning(
+            $"Character ID {testCharacterId} was not found."
+        );
+        return;
+    }
+
+    if (!string.IsNullOrWhiteSpace(testStats.characterName))
+        player.name = testStats.characterName;
+
+    if (testStats.hp >= 0f)
+        player.hp = Mathf.RoundToInt(testStats.hp);
+
+    if (testStats.hpRegenRate >= 0f)
+        player.hpRegenRate = Mathf.RoundToInt(testStats.hpRegenRate);
+
+    if (testStats.speed >= 0f)
+        player.speed = testStats.speed;
+
+    if (testStats.damage >= 0f)
+        player.damage = testStats.damage;
+
+    if (testStats.defense >= 0f)
+        player.defense = Mathf.RoundToInt(testStats.defense);
+
+    if (testStats.criticalDamage >= 0f)
+        player.criticalDamage = testStats.criticalDamage;
+
+    if (testStats.criticalChance >= 0f)
+        player.criticalChance = Mathf.RoundToInt(testStats.criticalChance);
+
+    UnityEngine.Debug.Log(
+        $"Character Stats Updated: {player.name}\n" +
+        $"HP: {player.hp}\n" +
+        $"HP Regen: {player.hpRegenRate}\n" +
+        $"Speed: {player.speed}\n" +
+        $"Damage: {player.damage}\n" +
+        $"Defense: {player.defense}\n" +
+        $"Critical Damage: {player.criticalDamage}\n" +
+        $"Critical Chance: {player.criticalChance}\n" +
+        $"Attack Damage Addition: {player.damage * 0.5f}"
+    );
+}
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -265,7 +334,7 @@ public class DataManager : MonoBehaviour
                 !int.TryParse(data[2].Split(',')[0].Trim(), out int hp) ||
                 !int.TryParse(data[3].Split(',')[0].Trim(), out int hpRegenRate) ||
                 !float.TryParse(data[4].Split(',')[0].Trim(), out float speed) ||
-                !int.TryParse(data[5].Split(',')[0].Trim(), out int damage) ||
+                !float.TryParse(data[5].Split(',')[0].Trim(), out float damage) ||
                 !int.TryParse(data[6].Split(',')[0].Trim(), out int defense) ||
                 !float.TryParse(data[7].Split(',')[0].Trim(), out float criticalDamage) ||
                 !int.TryParse(data[8].Split(',')[0].Trim(), out int criticalChance))
@@ -282,6 +351,7 @@ public class DataManager : MonoBehaviour
                 hpRegenRate = hpRegenRate,
                 speed = speed,
                 damage = damage,
+                baseDamage = damage,
                 defense = defense,
                 criticalDamage = criticalDamage,
                 criticalChance = criticalChance
@@ -505,6 +575,8 @@ public class DataManager : MonoBehaviour
                     System.Globalization.CultureInfo.InvariantCulture, out skillDataTemp.spawnOffset);
 
             skillDatasDic[skillDataTemp.skillId] = skillDataTemp;
+            skillDataTemp.basicAttackCooldown = skillDataTemp.skillCoolTime;
+            skillDataTemp.basicAttackAnimationSpeed = 1f;
         }
         
         GameObject[] skillPrefabs =
@@ -537,7 +609,7 @@ public class DataManager : MonoBehaviour
             skillInfo.skillName = data.skillName;
             skillInfo.skillHp = data.skillHp;
             skillInfo.skillCoolTime = data.skillCoolTime;
-            skillInfo.skillDamage = (int)data.skillDamage;
+            skillInfo.skillDamage = data.skillDamage;
             skillInfo.skillCritDamage = (int)data.skillCritDamage;
             skillInfo.lifetime = data.lifetime;
             skillInfo.movementLockTime = data.movementLockTime;
@@ -1215,11 +1287,11 @@ public class PlayerData
     public int hp;
     public int hpRegenRate;
     public float speed;
-    public int damage;
+    public float damage;
+    public float baseDamage;
     public int defense;
     public float criticalDamage;
     public int criticalChance;
-
 }
 
 [System.Serializable]
@@ -1239,6 +1311,8 @@ public class EnemyData
 
 public class SkillData
 {
+    public float basicAttackCooldown;
+    public float basicAttackAnimationSpeed = 1f;
     public int skillId;
     public string skillName;
     public int skillHp;

@@ -1,0 +1,1090 @@
+fileFormatVersion: 2
+guid: 1e1c9b589b63841a58f5d18e89d64302
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6921046279846957442
+    second: SlimeKingMove_0
+  - first:
+      213: -1837747251899407863
+    second: SlimeKingMove_1
+  - first:
+      213: 9134024025563800712
+    second: SlimeKingMove_2
+  - first:
+      213: -4334729979308285812
+    second: SlimeKingMove_3
+  - first:
+      213: 6987233104652569210
+    second: SlimeKingMove_4
+  - first:
+      213: -4151738858287058436
+    second: SlimeKingMove_5
+  - first:
+      213: -7923940924867928100
+    second: SlimeKingMove_6
+  - first:
+      213: 7166314223015347963
+    second: SlimeKingMove_7
+  - first:
+      213: 1202728179409898112
+    second: SlimeKingMove_8
+  - first:
+      213: -9024307734023876366
+    second: SlimeKingMove_9
+  - first:
+      213: -3974651148505822507
+    second: SlimeKingMove_10
+  - first:
+      213: -8094862488350260293
+    second: SlimeKingMove_11
+  - first:
+      213: 4449359580208294432
+    second: SlimeKingMove_12
+  - first:
+      213: 4096823326710584060
+    second: SlimeKingMove_13
+  - first:
+      213: 6709736404872104961
+    second: SlimeKingMove_14
+  - first:
+      213: -1541577119772734650
+    second: SlimeKingMove_15
+  - first:
+      213: 991790370722481195
+    second: SlimeKingMove_16
+  - first:
+      213: -2572845458122070594
+    second: SlimeKingMove_17
+  - first:
+      213: -4180101346713272874
+    second: SlimeKingMove_18
+  - first:
+      213: 5968811958563819742
+    second: SlimeKingMove_19
+  - first:
+      213: -1199356571749833381
+    second: SlimeKingMove_20
+  - first:
+      213: 7628540141098863547
+    second: SlimeKingMove_21
+  - first:
+      213: -2906895406551948606
+    second: SlimeKingMove_22
+  - first:
+      213: -40806957461097332
+    second: SlimeKingMove_23
+  - first:
+      213: -6354354962560544884
+    second: SlimeKingMove_24
+  - first:
+      213: 4086036344198359938
+    second: SlimeKingMove_25
+  - first:
+      213: 2719954167286185184
+    second: SlimeKingMove_26
+  - first:
+      213: 7574962389773049243
+    second: SlimeKingMove_27
+  - first:
+      213: -4141997223988992373
+    second: SlimeKingMove_28
+  - first:
+      213: -4025435728323036159
+    second: SlimeKingMove_29
+  - first:
+      213: 4148866711491191540
+    second: SlimeKingMove_30
+  - first:
+      213: 5342281230143382970
+    second: SlimeKingMove_31
+  - first:
+      213: 753174943706387143
+    second: SlimeKingMove_32
+  - first:
+      213: 1026468868641283719
+    second: SlimeKingMove_33
+  - first:
+      213: -1976668762729986140
+    second: SlimeKingMove_34
+  - first:
+      213: 8880911767722400806
+    second: SlimeKingMove_35
+  - first:
+      213: 5676845153921294499
+    second: SlimeKingMove_36
+  - first:
+      213: 4166190068232295717
+    second: SlimeKingMove_37
+  - first:
+      213: 2317438677941013321
+    second: SlimeKingMove_38
+  - first:
+      213: -7302551111095485628
+    second: SlimeKingMove_39
+  - first:
+      213: 5707212264552048753
+    second: SlimeKingMove_40
+  - first:
+      213: -3092600369369027605
+    second: SlimeKingMove_41
+  - first:
+      213: -5054206910107477021
+    second: SlimeKingMove_42
+  - first:
+      213: 776902896352696486
+    second: SlimeKingMove_43
+  - first:
+      213: -5255281539088815088
+    second: SlimeKingMove_44
+  - first:
+      213: -4306697163518048588
+    second: SlimeKingMove_45
+  - first:
+      213: -3140523692921361734
+    second: SlimeKingMove_46
+  - first:
+      213: -8870209943715415818
+    second: SlimeKingMove_47
+  - first:
+      213: 2521129309169645810
+    second: SlimeKingMove_48
+  - first:
+      213: 3284645429738875836
+    second: SlimeKingMove_49
+  - first:
+      213: 3510757252840055463
+    second: SlimeKingMove_50
+  - first:
+      213: -6944290179068165246
+    second: SlimeKingMove_51
+  - first:
+      213: 6230836547084826697
+    second: SlimeKingMove_52
+  - first:
+      213: -4028252606651224527
+    second: SlimeKingMove_53
+  - first:
+      213: 2678130906652338065
+    second: SlimeKingMove_54
+  - first:
+      213: -1749439255765542598
+    second: SlimeKingMove_55
+  - first:
+      213: 7625996062474061596
+    second: SlimeKingMove_56
+  - first:
+      213: -5885916391581560167
+    second: SlimeKingMove_57
+  - first:
+      213: 8548902979375378931
+    second: SlimeKingMove_58
+  - first:
+      213: -7154362087044901998
+    second: SlimeKingMove_59
+  - first:
+      213: -8902348570112264507
+    second: SlimeKingMove_60
+  - first:
+      213: 8285011196114425114
+    second: SlimeKingMove_61
+  - first:
+      213: 3765050411175357071
+    second: SlimeKingMove_62
+  - first:
+      213: 4719060517196268682
+    second: SlimeKingMove_63
+  - first:
+      213: -7987534408628272712
+    second: SlimeKingMove_64
+  - first:
+      213: -5537262037562389483
+    second: SlimeKingMove_65
+  - first:
+      213: -584176712252059703
+    second: SlimeKingMove_66
+  - first:
+      213: -2635780324908179089
+    second: SlimeKingMove_67
+  - first:
+      213: 6057545391515129418
+    second: SlimeKingMove_68
+  - first:
+      213: 2282643620836318333
+    second: SlimeKingMove_69
+  - first:
+      213: 7314450366065826920
+    second: SlimeKingMove_70
+  - first:
+      213: -8134511865788688164
+    second: SlimeKingMove_71
+  - first:
+      213: -910986829512428658
+    second: SlimeKingMove_72
+  - first:
+      213: 3893072754676691035
+    second: SlimeKingMove_73
+  - first:
+      213: 3835761481019199965
+    second: SlimeKingMove_74
+  - first:
+      213: -3415392074486038580
+    second: SlimeKingMove_75
+  - first:
+      213: -4691490636804798097
+    second: SlimeKingMove_76
+  - first:
+      213: -1718551538144584121
+    second: SlimeKingMove_77
+  - first:
+      213: -7869887007747534593
+    second: SlimeKingMove_78
+  - first:
+      213: -1104305707047959252
+    second: SlimeKingMove_79
+  - first:
+      213: -7544707927478809219
+    second: SlimeKingMove_80
+  - first:
+      213: -2586692597814566176
+    second: SlimeKingMove_81
+  - first:
+      213: 4416593907083515441
+    second: SlimeKingMove_82
+  - first:
+      213: 1274386778774885872
+    second: SlimeKingMove_83
+  - first:
+      213: -3091042952925488308
+    second: SlimeKingMove_84
+  - first:
+      213: 6890696288660294132
+    second: SlimeKingMove_85
+  - first:
+      213: 6158341903620020606
+    second: SlimeKingMove_86
+  - first:
+      213: 518777219555656185
+    second: SlimeKingMove_87
+  - first:
+      213: -5555346485428652343
+    second: SlimeKingMove_88
+  - first:
+      213: -9026564614586928973
+    second: SlimeKingMove_89
+  - first:
+      213: 7021492091312229488
+    second: SlimeKingMove_90
+  - first:
+      213: 227771588845548705
+    second: SlimeKingMove_91
+  - first:
+      213: -3379146188149940486
+    second: SlimeKingMove_92
+  - first:
+      213: 2964184171376091143
+    second: SlimeKingMove_93
+  - first:
+      213: -7485738774889217496
+    second: SlimeKingMove_94
+  - first:
+      213: -3816268626494931227
+    second: SlimeKingMove_95
+  - first:
+      213: 5911416138776568273
+    second: SlimeKingMove_96
+  - first:
+      213: -5589676032185216375
+    second: SlimeKingMove_97
+  - first:
+      213: 1495375447066359412
+    second: SlimeKingMove_98
+  - first:
+      213: -8752620188383547848
+    second: SlimeKingMove_99
+  - first:
+      213: 7214722979869657791
+    second: SlimeKingMove_100
+  - first:
+      213: 1092674542945465234
+    second: SlimeKingMove_101
+  - first:
+      213: -6399293472470218140
+    second: SlimeKingMove_102
+  - first:
+      213: -9019702876960028870
+    second: SlimeKingMove_103
+  - first:
+      213: -2614985867660609355
+    second: SlimeKingMove_104
+  - first:
+      213: -6025862808340353664
+    second: SlimeKingMove_105
+  - first:
+      213: 9132088363602132213
+    second: SlimeKingMove_106
+  - first:
+      213: 7170620664144662161
+    second: SlimeKingMove_107
+  - first:
+      213: -114276947278728132
+    second: SlimeKingMove_108
+  - first:
+      213: 4526727212565682544
+    second: SlimeKingMove_109
+  - first:
+      213: -4810046714508560351
+    second: SlimeKingMove_110
+  - first:
+      213: -5393926317467895373
+    second: SlimeKingMove_111
+  - first:
+      213: -1715485333906981593
+    second: SlimeKingMove_112
+  - first:
+      213: -1187941712972379430
+    second: SlimeKingMove_113
+  - first:
+      213: -5969702471536618317
+    second: SlimeKingMove_114
+  - first:
+      213: -5521923918179145373
+    second: SlimeKingMove_115
+  - first:
+      213: -3270777817109884573
+    second: SlimeKingMove_116
+  - first:
+      213: 4289247891829047642
+    second: SlimeKingMove_117
+  - first:
+      213: -5768225266085320711
+    second: SlimeKingMove_118
+  - first:
+      213: 4607052201717902363
+    second: SlimeKingMove_119
+  - first:
+      213: 1402237311025885145
+    second: SlimeKingMove_120
+  - first:
+      213: -2069929330307096986
+    second: SlimeKingMove_121
+  - first:
+      213: -6535731355696485803
+    second: SlimeKingMove_122
+  - first:
+      213: -7719155915221248689
+    second: SlimeKingMove_123
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 75
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SlimeKingMove_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 502
+        width: 251
+        height: 250
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da463bc6d337d8c0800000000000000
+      internalID: -3974651148505822507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_11
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 502
+        width: 251
+        height: 250
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb38f3c847549af80800000000000000
+      internalID: -8094862488350260293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_12
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 502
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02aeb48e6fc4fbd30800000000000000
+      internalID: 4449359580208294432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_13
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 502
+        width: 251
+        height: 250
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf25e181c17dad830800000000000000
+      internalID: 4096823326710584060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_14
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 502
+        width: 251
+        height: 250
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10c88e4e5b5cd1d50800000000000000
+      internalID: 6709736404872104961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 251
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64b8316f6c73b9ae0800000000000000
+      internalID: -1541577119772734650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_16
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 251
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b240192661c83cd00800000000000000
+      internalID: 991790370722481195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_17
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 251
+        width: 250
+        height: 251
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb528a6ffaa6b4cd0800000000000000
+      internalID: -2572845458122070594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_18
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 251
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ddf508e8fb4df5c0800000000000000
+      internalID: -4180101346713272874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_19
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 251
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed0dc492ada75d250800000000000000
+      internalID: 5968811958563819742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5522dd6d870b5fe0800000000000000
+      internalID: -1199356571749833381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_21
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 0
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbb810137d40ed960800000000000000
+      internalID: 7628540141098863547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_22
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 0
+        width: 250
+        height: 251
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c2a1457702a8a7d0800000000000000
+      internalID: -2906895406551948606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_23
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 0
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c84ba24d9460f6ff0800000000000000
+      internalID: -40806957461097332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_24
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 0
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8f86df04dbc0d7a0800000000000000
+      internalID: -6354354962560544884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1003
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78954259577f644bfb35af1606cf5735
+      internalID: -1485891531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_01
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 1003
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b24a35162af4f4cbf907144149c5f0fe
+      internalID: -2023869526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_02
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 1003
+        width: 250
+        height: 251
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c485d3c4d1b154ed387f9e88176d2480
+      internalID: -133115129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_03
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 1003
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a952885ff123648debae78ecd8260832
+      internalID: 286732390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_04
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 1003
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edc2170e24a904132b4dc58f2993c3dd
+      internalID: 1694838364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_05
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 752
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4301196792d41c28ca68eab1edcb32
+      internalID: -1321452085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_06
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 752
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2183fdbc5acf74a598d4c0a303438e59
+      internalID: -272036942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_07
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 752
+        width: 250
+        height: 251
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 809f192f97b664e228d224c304517fd4
+      internalID: -1203473517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_08
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 752
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aa0deec6f50d4b5084daa48be9e7ddb
+      internalID: -182386620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeKingMove_09
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 752
+        width: 251
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49800798, y: 0.49800798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 450338b54e8a0478097792a98e95bc82
+      internalID: -731762664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8f46c174cfe65407a9da6c61715c31fa
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SlimeKingMove_00: -1485891531
+      SlimeKingMove_01: -2023869526
+      SlimeKingMove_02: -133115129
+      SlimeKingMove_03: 286732390
+      SlimeKingMove_04: 1694838364
+      SlimeKingMove_05: -1321452085
+      SlimeKingMove_06: -272036942
+      SlimeKingMove_07: -1203473517
+      SlimeKingMove_08: -182386620
+      SlimeKingMove_09: -731762664
+      SlimeKingMove_10: -3974651148505822507
+      SlimeKingMove_11: -8094862488350260293
+      SlimeKingMove_12: 4449359580208294432
+      SlimeKingMove_13: 4096823326710584060
+      SlimeKingMove_14: 6709736404872104961
+      SlimeKingMove_15: -1541577119772734650
+      SlimeKingMove_16: 991790370722481195
+      SlimeKingMove_17: -2572845458122070594
+      SlimeKingMove_18: -4180101346713272874
+      SlimeKingMove_19: 5968811958563819742
+      SlimeKingMove_20: -1199356571749833381
+      SlimeKingMove_21: 7628540141098863547
+      SlimeKingMove_22: -2906895406551948606
+      SlimeKingMove_23: -40806957461097332
+      SlimeKingMove_24: -6354354962560544884
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,3 @@
+Custom ScriptableObject animation data verification
+PASS custom SO arrays play and advance Move, Attack, Hit
+COMPLETE

@@ -1,0 +1,510 @@
+Assets/Animation/214_20260830172036_0 1.controller
+Assets/Animation/Invisible.anim
+Assets/Animation/MoldBoom.anim
+Assets/Animation/Mushroom 1.anim
+Assets/Animation/OctopusAttack.anim
+Assets/Animation/OctopusRun.anim
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Animation/AC Player.controller
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Animation/AM Player E.anim
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Animation/AM Player Idle.anim
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Animation/AM Player Move.anim
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Animation/AM Player N.anim
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Animation/AM Player S.anim
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Animation/AM Player W.anim
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Material/MT FX Rune Glow.mat
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Material/MT Tileset.mat
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Bush 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Bush 02.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Bush 03.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Bush 04.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Bush 05.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Bush 06.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Flower 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 02.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 03.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 04.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 05.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 06.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 07.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 08.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 09.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 10.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 11.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 12.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 13.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 14.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 15.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Player/PF Player.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Altar 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Barrel 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Brick 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Brick 02.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Brick 03.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Chest 01 Open.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Chest 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Crate 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Crate 02.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Gravestone 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Gravestone 02.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Gravestone 03.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Pillar 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Pillar 02.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Pot 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Pot 02.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Pot 03.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Road Sign 01 E.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Road Sign 01 W.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Rune Pillar Broken.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Rune Pillar X2.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Rune Pillar X3.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone 02.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone 03.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone 04.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone 05.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone 06.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone 07.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone Bench 01 E.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone Bench 01 S.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone Bench 01 W.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone Coffin 01 H.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone Coffin 01 V.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone Cube 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone Lantern 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Well 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Gate 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Gate 02.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs E 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs E 02.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs S 01 L.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs S 01 M.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs S 01 R.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs S 02 L.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs S 02 M.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs S 02 R.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs W 01.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs W 02.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Scene/SC All Props.unity
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Scene/SC Demo.unity
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Texture/TX Player.png
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Texture/TX Struct.png
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Texture/TX Tileset Stone Ground.png
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Texture/TX Tileset Wall.png
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 11.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 12.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 13.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 14.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 15.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 7.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 8.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 9.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 0.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 1.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 10.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 11.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 12.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 14.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 15.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 2.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 3.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 4.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 5.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 6.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 7.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 8.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 9.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Pavement 0.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Pavement 1.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Pavement 2.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Pavement 3.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Pavement 4.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Pavement 5.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_34.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_35.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_36.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_37.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_38.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_39.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_42.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_43.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_44.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_45.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_46.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_47.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_50.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_51.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_52.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_53.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_54.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_55.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_58.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_59.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_60.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_62.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_63.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_0.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_1.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_10.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_11.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_12.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_13.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_14.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_15.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_16.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_17.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_18.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_19.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_2.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_20.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_21.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_22.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_23.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_24.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_25.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_26.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_27.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_28.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_29.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_3.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_30.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_31.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_32.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_33.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_34.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_35.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_36.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_37.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_38.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_39.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_4.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_40.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_41.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_42.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_43.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_44.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_45.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_46.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_47.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_48.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_49.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_5.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_6.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_7.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_8.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_9.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall.prefab
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Shadow Tileset Wall 1.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Shadow Tileset Wall 2.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Shadow Tileset Wall 3.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Shadow Tileset Wall 4.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_0.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_1.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_10.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_11.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_12.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_13.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_14.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_15.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_16.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_17.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_18.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_19.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_2.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_20.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_21.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_22.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_23.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_24.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_25.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_26.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_27.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_28.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_29.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_3.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_30.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_31.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_32.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_33.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_34.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_35.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_36.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_37.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_38.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_39.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_4.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_40.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_41.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_42.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_43.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_44.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_45.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_46.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_47.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_48.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_49.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_5.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_50.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_51.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_52.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_53.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_54.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_55.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_56.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_57.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_58.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_59.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_6.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_60.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_7.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_8.asset
+Assets/GameAssets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_9.asset
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Basic/Basic.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Basic/Shockwave 1.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Basic/Shockwave 2.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Basic/Shockwave 3.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Basic/Shockwave 5.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Basic/Shockwave.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Basic/Spark 2.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Basic/Spark.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Shadow/Flash.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Shadow/Impact 1.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/1.2/Shadow/Impact.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Basic Hit/Basic Crit 2.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Basic Hit/Basic Flash.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Basic Hit/Basic Hit.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Basic Hit/Basic Shockwave 2.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Basic Hit/Basic Shockwave.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Fire Hit/Fire Flash B.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Fire Hit/Fire Flash.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Fire Hit/Fire Hit B.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Fire Hit/Fire Hit.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Fire Hit/Fire Shockwave 2.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Fire Hit/Fire Shockwave.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Fire Hit/Fire Smoke.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Fire Hit/Fire Spark.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Floor/Floor.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Floor/Texture/Albedo.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Floor/Texture/Height.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Ice Hit/Ice Smoke.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Lightning Hit (Blue)/Lightning HitB.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Lightning Hit (Blue)/Lightning ShockwaveB.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Lightning Hit (Blue)/Lightning SparkB.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Lightning Hit (Blue)/Lightning TrailB.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Love Hit/Love Flash.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Love Hit/Love Hit.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Love Hit/Love Shockwave.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Love Hit/Love Spark.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Magic Hit/Magic Flash.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Magic Hit/Magic Hit.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Magic Hit/Magic Shockwave.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Magic Hit/Magic Simbol 2.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Materials/Magic Hit/Magic Simbol.mat
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Prefab/1.2/Basic Hit 8  (NEW).prefab
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Prefab/1.2/Shadow Hit (NEW).prefab
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Prefab/Basic Hit .prefab
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Prefab/Basic Hit 2.prefab
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Prefab/Basic Hit 7.prefab
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Prefab/Fire Hit .prefab
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Prefab/Lightning Hit Blue.prefab
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Prefab/Love Hit .prefab
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Prefab/Magic Hit 2.prefab
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Scene Demo/HIT EFFECTS FREE Scene Demo.unity
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Scene Demo/SampleScene_Profiles/PP Volumen Profile.asset
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Basic/Impact 2.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Basic/Impact.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Basic/Point.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Basic/Shockwave.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Basic/Spark 1.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Basic/Spark 2.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Basic/Spark 3.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Basic/Spark 6.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Basic/Spark.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Shadow/Impact (3).png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Shadow/Impact (4).png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1.2/Shadow/Impact (5).png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Crit.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Crit_.tiff
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Crit_2.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Fire_.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Ice Hit.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Love.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Love1.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Particle 2.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Particle.png
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Shockwave 1.tiff
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Shockwave.tiff
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Smoke.tiff
+Assets/GameAssets/Matthew Guz/Hits Effects FREE/Textures/1-Sparks.tiff
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Audio/WAV/Sergi/SFX_Vefects_Electric_Impact_02_One_Shot_01.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Audio/WAV/Sergi/SFX_Vefects_Hit_03_One_Shot.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Audio/WAV/Sergi/SFX_Vefects_Hit_04_One_Shot.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Audio/WAV/Sergi/SFX_Vefects_Hit_05_Loop_02.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Audio/WAV/Sergi/SFX_Vefects_Lighting_Projectile_01_Loop_01.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Audio/WAV/Sergi/SFX_Vefects_Lighting_Projectile_02_Loop.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Audio/WAV/Sergi/SFX_Vefects_Radial_Charge_Skill_Ready_One_Shot_01.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Audio/WAV/Sergi/SFX_Vefects_Radial_Spilky_Hit_One_Shot_02.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Lite Vefects Combat Flipbook VFX.unity
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Scene/Materials/M_Sky.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Scene/Materials/M_Vefects_Grid_01.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Scene/Meshes/SM_VFX_Background_Plate_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Combat Flipbook VFX URP/Demo/Scene/Settings/PostProProfileCombat.asset
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Blood_Drops.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Blood_Inner_Cloud.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Charge_01.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Charge_02.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Dust_Directional_04.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Dust_Directional_05.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Fire_Burst_02.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Fire_Dust_01.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Flame_01.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Impact_01.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Lightning_05.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Lightning_08.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Muzzle_Smoke_01.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Poison_Burst_01.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Shrapnel_03.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Materials/Lite_M_VFX_Water_Ground_Splash_01.mat
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Meshes/SM_plate.fbx
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite VFX.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Blood_Cloud_Base_Blur_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Blood_Cloud_Blur_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Blood_Drops_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Charge_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Charge_02.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Dust_Directional_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Dust_Directional_Small_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Fire_Burst_Charge_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Fire_Loop_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Flame_Burst_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Impact_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Lightning_05.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Lightning_08.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Muzzle_Smoke_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Poison_Burst_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Shrapnel_03.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Prefabs/Lite_VFX_Water_Ground_Splash_01.prefab
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_2x2_RGBC_drops.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_2x3_RC_shrapnel_08.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_3x3_RBC_lightingImpact_01.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_3x3_RC_splash09.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_3x3_RGBC_fireSwirl_01.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_3x4_dustDir_04.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_3x4_RBC_fireSwirl_01.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_3x4_RBC_lighting_03.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_3x4_RBC_loopingSmoke_01.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_3x4_RGBC_splash03.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_3x4_RGBC_splash07.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_4x3_RBC_dust_03.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_4x4_RGBC_fireFlames_01.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_4x5_RGBC_dustDir_041.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_4x5_RGBC_fireBurst_03.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/_ Lite/Textures/Lite_FB_4x5_RGBC_fireSwirl_02.tga
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Charge_01.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Dust_Puff_01.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Fire_Big_Loop.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Fire_Burst_01.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Fire_Charge_01.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Impact_01.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Lightning_01.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Liquid_Hit_02.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Liquid_Puff_01.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Poison_Puff_03.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Audio/WAV/Vefects_SFX_Shrapnel_02.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Flipbook VFX URP/Demo/Scene/Vefects_Flipbook_VFX_Overview.unity
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Audio/WAV/Sergi/SFX_Vefects_Dust_Loop_02.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Audio/WAV/Sergi/SFX_Vefects_Impact_Sparks_02.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Audio/WAV/Sergi/SFX_Vefects_Projectile_Burst_03.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Audio/WAV/Sergi/SFX_Vefects_Projectile_Burst_Impact_03.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Audio/WAV/Sergi/SFX_Vefects_Projectile_Burst_Loop_03.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Audio/WAV/Sergi/SFX_Vefects_Respawn_02.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Audio/WAV/Sergi/SFX_Vefects_Sword_Slash_02.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Audio/WAV/Sergi/SFX_Vefects_Vanish_02.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Audio/WAV/Sergi/SFX_Vefects_Vapor_Loop_02.wav
+Assets/GameAssets/Vefects/Flipbook VFX Bundle Lite URP/Pixel Craft VFX URP/Demo/Scenes/Vefects Pixel Craft VFX Lite.unity
+Assets/Materials/Hit 4.mat
+Assets/Materials/PlanetSelectedOutlineUI.mat
+Assets/Materials/PlanetSilhouetteUI.mat
+Assets/Materials/WaringSign.mat
+Assets/Sprite/219_20260903141313.png
+Assets/Sprite/230_20260908110607.png
+Assets/Sprite/230_20260908110656.png
+Assets/Sprite/230_20260908110705.png
+Assets/Sprite/230_20260908110720.png
+Assets/Sprite/230_20260908110735.png
+Assets/Sprite/230_20260908110749.png
+Assets/Sprite/230_20260908110802.png
+Assets/Sprite/230_20260913220830.png
+Assets/Sprite/234_20260906160412.png
+Assets/Sprite/234_20260906160438.png
+Assets/Sprite/ba1f419f-0d49-4eb7-8265-4fdce1360e20.png
+Assets/Sprite/Burn-Photoroom.png
+Assets/Sprite/CharacterSkillUpgradeIcons/MagicUpgrade.png
+Assets/Sprite/CharacterSkillUpgradeIcons/SlashUpgrade.png
+Assets/Sprite/ChatGPT Image 2026년 9월 15일 오전 11_39_13-Photoroom.png
+Assets/Sprite/ChatGPT Image 2026년 9월 21일 오전 09_01_01-Photoroom.png
+Assets/Sprite/ChatGPT Image 2026년 9월 21일 오전 09_01_20-Photoroom.png
+Assets/Sprite/ChatGPT Image 2026년 9월 21일 오후 03_30_23.png
+Assets/Sprite/ChatGPT Image 2026년 8월 21일 오후 09_22_56 (1).png
+Assets/Sprite/Codex 이미지 2026년 9월 28일 오후 02_06_28.png
+Assets/Sprite/FireBall-Photoroom.png
+Assets/Sprite/HudUpgradeIcons/Burn.png
+Assets/Sprite/HudUpgradeIcons/FireBall.png
+Assets/Sprite/HudUpgradeIcons/FireStorm.png
+Assets/Sprite/HudUpgradeIcons/Heatwave.png
+Assets/Sprite/HudUpgradeIcons/LavaField.png
+Assets/Sprite/HudUpgradeIcons/Lightning.png
+Assets/Sprite/HudUpgradeIcons/LightningShuriken.png
+Assets/Sprite/HudUpgradeIcons/Missile.png
+Assets/Sprite/HudUpgradeIcons/Mold.png
+Assets/Sprite/HudUpgradeIcons/Poison.png
+Assets/Sprite/HudUpgradeIcons/RottingSpore.png
+Assets/Sprite/HudUpgradeIcons/Shuriken.png
+Assets/Sprite/HudUpgradeIcons/Snail.png
+Assets/Sprite/HudUpgradeIcons/SporeWarhead.png
+Assets/Sprite/IllustratedUpgradeIcons/FireLightningBurnStorm.png
+Assets/Sprite/IllustratedUpgradeIcons/LightningShurikenCard.png
+Assets/Sprite/IllustratedUpgradeIcons/MoldCard.png
+Assets/Sprite/IllustratedUpgradeIcons/MoldPoisonAuraCard.png
+Assets/Sprite/IllustratedUpgradeIcons/PoisonCard.png
+Assets/Sprite/IllustratedUpgradeIcons/ShurikenCard.png
+Assets/Sprite/IllustratedUpgradeIcons/SnailCard.png
+Assets/Sprite/images-Photoroom.png
+Assets/Sprite/IMG_6246-Photoroom.png
+Assets/Sprite/Item/Concepts/FirstAidKit_Concept.png
+Assets/Sprite/Item/Concepts/Magnet_Concept.png
+Assets/Sprite/lavacrab.png
+Assets/Sprite/Lit-Photoroom.png
+Assets/Sprite/Mold-Photoroom.png
+Assets/Sprite/Octopus-Pixel.png
+Assets/Sprite/Poi-Photoroom.png
+Assets/Sprite/Snail-Photoroom.png
+Assets/Sprite/sprite_0 2.png
+Assets/Sprite/sprite_0 3.png
+Assets/Sprite/sprite_0.png
+Assets/Sprite/sprite_1 1.png
+Assets/Sprite/sprite_1 3.png
+Assets/Sprite/sprite_1.png
+Assets/Sprite/sprite_2 2.png
+Assets/Sprite/sprite_2 3.png
+Assets/Sprite/sprite_2.png
+Assets/Sprite/sprite_3 2.png
+Assets/Sprite/sprite_3 3.png
+Assets/Sprite/sprite_3.png
+Assets/Sprite/sprite_4 2.png
+Assets/Sprite/sprite_4 3.png
+Assets/Sprite/sprite_4.png
+Assets/Sprite/sprite_5 2.png
+Assets/Sprite/sprite_5 3.png
+Assets/Sprite/sprite_5.png
+Assets/Sprite/sprite_6.png
+Assets/Sprite/Su-Photoroom.png
+Assets/SpriteSeet/MageCastClean.png
+Assets/SpriteSeet/OctopusAttack.png
+Assets/SpriteSeet/OctopusRun.png
+Assets/SpriteSeet/player-dash-right-v1.png
+Assets/SpriteSeet/player-dash-right-v2.png
+Assets/SpriteSeet/player-dash-right-v3.png
+Assets/Temp/stage-planets-play.png

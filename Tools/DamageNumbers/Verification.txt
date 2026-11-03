@@ -1,0 +1,4 @@
+Damage number runtime verification
+PASS enemy hits generate white Bounce/Simple and red Pop with correct values
+PASS both animations expire and pooled popup is reused
+COMPLETE

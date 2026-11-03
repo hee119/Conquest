@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 04b05398b121b40fd9097cbb17766fda
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7358522173547286567
+    second: PlanetaryPioneerLogo_transparent_0
+  - first:
+      213: 5662918655690471002
+    second: PlanetaryPioneerLogo_transparent_1
+  - first:
+      213: -8683447111767051514
+    second: PlanetaryPioneerLogo_transparent_2
+  - first:
+      213: -6340555718006867989
+    second: PlanetaryPioneerLogo_transparent_3
+  - first:
+      213: 1958055017462182801
+    second: PlanetaryPioneerLogo_transparent_4
+  - first:
+      213: -6084094113512725951
+    second: PlanetaryPioneerLogo_transparent_5
+  - first:
+      213: 8778811501318181758
+    second: PlanetaryPioneerLogo_transparent_6
+  - first:
+      213: 6635116657076896370
+    second: PlanetaryPioneerLogo_transparent_7
+  - first:
+      213: -4255601895686993561
+    second: PlanetaryPioneerLogo_transparent_8
+  - first:
+      213: -2966907962880559120
+    second: PlanetaryPioneerLogo_transparent_9
+  - first:
+      213: -4042965019514255803
+    second: PlanetaryPioneerLogo_transparent_10
+  - first:
+      213: 25057033515593576
+    second: PlanetaryPioneerLogo_transparent_11
+  - first:
+      213: -7677668273025006377
+    second: PlanetaryPioneerLogo_transparent_12
+  - first:
+      213: -4961651374263465454
+    second: PlanetaryPioneerLogo_transparent_13
+  - first:
+      213: -4299708551817872782
+    second: PlanetaryPioneerLogo_transparent_14
+  - first:
+      213: 6452019811051863103
+    second: PlanetaryPioneerLogo_transparent_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PlanetaryPioneerLogo_transparent_0
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 531
+        width: 236
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dfe0edf11741e990800000000000000
+      internalID: -7358522173547286567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetaryPioneerLogo_transparent_1
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 533
+        width: 123
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a56fc50938ab69e40800000000000000
+      internalID: 5662918655690471002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetaryPioneerLogo_transparent_2
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 530
+        width: 158
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 603bb35dbd23e7780800000000000000
+      internalID: -8683447111767051514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetaryPioneerLogo_transparent_3
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 531
+        width: 150
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be7f0ad0b22d108a0800000000000000
+      internalID: -6340555718006867989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetaryPioneerLogo_transparent_4
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 531
+        width: 126
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19331860aa86c2b10800000000000000
+      internalID: 1958055017462182801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetaryPioneerLogo_transparent_5
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 531
+        width: 130
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 142670083a4f09ba0800000000000000
+      internalID: -6084094113512725951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetaryPioneerLogo_transparent_6
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 531
+        width: 151
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e731f2e5c8a94d970800000000000000
+      internalID: 8778811501318181758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetaryPioneerLogo_transparent_7
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 531
+        width: 161
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 272885cf17ba41c50800000000000000
+      internalID: 6635116657076896370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetaryPioneerLogo_transparent_8
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 531
+        width: 160
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 769091e7f9011f4c0800000000000000
+      internalID: -4255601895686993561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetaryPioneerLogo_transparent_9
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 319
+        width: 227
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f7f9375dec63d6d0800000000000000
+      internalID: -2966907962880559120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetaryPioneerLogo_transparent_10
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 321
+        width: 88
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 546c58c3cb084e7c0800000000000000
+      internalID: -4042965019514255803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetaryPioneerLogo_transparent_11
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 324
+        width: 128
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86f62dd3d35095000800000000000000
+      internalID: 25057033515593576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetaryPioneerLogo_transparent_12
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 319
+        width: 160
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d4ce0b3261737590800000000000000
+      internalID: -7677668273025006377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetaryPioneerLogo_transparent_13
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 319
+        width: 133
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21a82b1fc5ca42bb0800000000000000
+      internalID: -4961651374263465454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetaryPioneerLogo_transparent_14
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 321
+        width: 142
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27abf2b5add5454c0800000000000000
+      internalID: -4299708551817872782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetaryPioneerLogo_transparent_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 319
+        width: 293
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3c778975dd2a8950800000000000000
+      internalID: 6452019811051863103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PlanetaryPioneerLogo_transparent_0: -7358522173547286567
+      PlanetaryPioneerLogo_transparent_1: 5662918655690471002
+      PlanetaryPioneerLogo_transparent_10: -4042965019514255803
+      PlanetaryPioneerLogo_transparent_11: 25057033515593576
+      PlanetaryPioneerLogo_transparent_12: -7677668273025006377
+      PlanetaryPioneerLogo_transparent_13: -4961651374263465454
+      PlanetaryPioneerLogo_transparent_14: -4299708551817872782
+      PlanetaryPioneerLogo_transparent_15: 6452019811051863103
+      PlanetaryPioneerLogo_transparent_2: -8683447111767051514
+      PlanetaryPioneerLogo_transparent_3: -6340555718006867989
+      PlanetaryPioneerLogo_transparent_4: 1958055017462182801
+      PlanetaryPioneerLogo_transparent_5: -6084094113512725951
+      PlanetaryPioneerLogo_transparent_6: 8778811501318181758
+      PlanetaryPioneerLogo_transparent_7: 6635116657076896370
+      PlanetaryPioneerLogo_transparent_8: -4255601895686993561
+      PlanetaryPioneerLogo_transparent_9: -2966907962880559120
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

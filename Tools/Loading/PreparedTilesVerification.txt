@@ -1,0 +1,4 @@
+Loading terrain verification
+PASS during loading: ground=1952, decorations=1, gameplay inactive
+PASS stage entry: prepared ground and decorations reused unchanged
+COMPLETE

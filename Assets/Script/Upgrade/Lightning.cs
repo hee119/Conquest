@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>Lightning 증강 관련 동작과 상태를 관리한다.</summary>
 public class Lightning : DetectUpgrade
 {
     [SerializeField] protected LineRenderer lineRenderer;
@@ -13,6 +14,7 @@ public class Lightning : DetectUpgrade
 
     protected override float ChainAttackInterval => strikeDuration;
 
+    /// <summary>필요한 컴포넌트와 초기 상태를 준비한다.</summary>
     protected override void Awake()
     {
         base.Awake();
@@ -20,12 +22,14 @@ public class Lightning : DetectUpgrade
         lineRenderer = GetComponent<LineRenderer>();
     }
 
+    /// <summary>활성화될 때 필요한 이벤트와 동작을 시작한다.</summary>
     protected virtual void OnEnable()
     {
         strikeRunning = false;
         ClearLine();
     }
 
+    /// <summary>비활성화될 때 이벤트와 진행 중인 동작을 정리한다.</summary>
     protected virtual void OnDisable()
     {
         StopAllCoroutines();
@@ -33,6 +37,7 @@ public class Lightning : DetectUpgrade
         ClearLine();
     }
 
+    /// <summary>Attack 동작을 처리한다.</summary>
     public override void Attack(
         int id,
         Vector3 targetPos,
@@ -49,6 +54,7 @@ public class Lightning : DetectUpgrade
             isChain ? startPosition : null, destroyAfter));
     }
 
+    /// <summary>Strike 동작을 처리한다.</summary>
     private IEnumerator Strike(
         Vector3 targetPos,
         GameObject target,
@@ -107,31 +113,30 @@ public class Lightning : DetectUpgrade
         }
     }
 
+    /// <summary>IsValidTarget 동작을 처리한다.</summary>
     private static bool IsValidTarget(EnemyCombat enemy, PooledObject targetPool, uint version)
     {
         return enemy != null && !enemy.isDead && enemy.gameObject.activeInHierarchy &&
             (targetPool == null || targetPool.SpawnVersion == version);
     }
 
+    /// <summary>GetDamage 동작의 가능 여부를 확인하고 처리한다.</summary>
     private bool TryGetDamage(out float damage)
     {
         damage = 0f;
-        if (DataManager.Instance == null || CharacterManager.Instance == null ||
-            !DataManager.Instance.upgradeDatasDic.TryGetValue(id, out var data) ||
-            !DataManager.Instance.playerDatasDic.TryGetValue(
-                CharacterManager.Instance.currentCharacter, out PlayerData playerData))
+        if (DataManager.Instance == null ||
+            !DataManager.Instance.upgradeDatasDic.TryGetValue(id, out var data))
             return false;
 
         int level = data.UpgradeLevel;
         if (data.damage == null || level < 0 || level >= data.damage.Length)
             return false;
 
-        damage = (int)(data.damage[level] * (1f + playerData.damage / 100f));
-        if (Random.Range(0, 100) < playerData.criticalChance)
-            damage = (int)(damage * (2f + playerData.criticalDamage / 100f));
+        damage = data.damage[level];
         return true;
     }
 
+    /// <summary>DealDamage 동작을 처리한다.</summary>
     private void DealDamage(EnemyCombat enemy, float damage)
     {
         Collider2D targetCollider = enemy.GetComponent<Collider2D>();
@@ -140,9 +145,10 @@ public class Lightning : DetectUpgrade
 
         Vector2 hitPoint = targetCollider.ClosestPoint(transform.position);
         SoundManager.Instance?.Play(SoundIds.LightningStrike, enemy: enemy);
-        enemy.TakeDamage(damage, hitPoint);
+        enemy.TakeDamage(id, damage, hitPoint);
     }
 
+    /// <summary>ClearLine 동작을 처리한다.</summary>
     private void ClearLine()
     {
         if (lineRenderer == null)

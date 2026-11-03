@@ -1,8 +1,10 @@
 using UnityEngine;
 
 // A soft white bloom with fine radial rays, drawn directly as UI geometry.
+/// <summary>UpgradeFusionBurst 증강 관련 동작과 상태를 관리한다.</summary>
 public sealed class UpgradeFusionBurst : UnityEngine.UI.MaskableGraphic
 {
+    /// <summary>PopulateMesh 이벤트가 발생했을 때 필요한 처리를 수행한다.</summary>
     protected override void OnPopulateMesh(UnityEngine.UI.VertexHelper mesh)
     {
         mesh.Clear();

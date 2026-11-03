@@ -1,0 +1,10 @@
+[
+  {
+    "source": "Assets/Resources/Prefabs/Upgrade/Missile.prefab",
+    "target": "Assets/GameAssets/SPUM/Sample/Materials/EffectMat.mat"
+  },
+  {
+    "source": "Assets/Resources/Prefabs/Upgrade/SporeWarhead.prefab",
+    "target": "Assets/GameAssets/SPUM/Sample/Materials/EffectMat.mat"
+  }
+]

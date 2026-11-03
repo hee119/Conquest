@@ -1,0 +1,3 @@
+Cooldown background check
+PASS background opaque black and shade black with 30 percent alpha
+COMPLETE

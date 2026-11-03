@@ -10,7 +10,7 @@ public sealed class MageProjectile : MonoBehaviour
     private float speed;
     private float launchLifetime;
     private float remainingLifetime;
-    private int damage;
+    private float damage;
     private int remainingPierces;
     private int chainCount;
     private float chainRange;
@@ -31,7 +31,7 @@ public sealed class MageProjectile : MonoBehaviour
     }
 
     public void Launch(Vector2 position, Vector2 travelDirection,
-        float travelSpeed, float lifetime, int hitDamage,
+        float travelSpeed, float lifetime, float hitDamage,
         int pierceCount = 0, int chainedTargets = 0, float chainedRange = 0f,
         EnemyCombat target = null, IEnumerable<int> visitedTargets = null)
     {
@@ -58,7 +58,9 @@ public sealed class MageProjectile : MonoBehaviour
                 chainedEnemies.Add(targetId);
         }
         if (skillInfo != null)
+        {
             skillInfo.skillDamage = damage;
+        }
         if (trail != null)
         {
             trail.emitting = false;
@@ -113,19 +115,18 @@ public sealed class MageProjectile : MonoBehaviour
             ReturnToPool();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    /// <summary>몬스터의 적중 판정에서 이미 맞힌 대상인지 확인한다.</summary>
+    public bool TryRegisterEnemyHit(EnemyCombat enemy)
     {
-        if (!isFlying)
-            return;
-
-        EnemyCombat enemy = other.GetComponentInParent<EnemyCombat>();
-        if (enemy == null)
-            return;
-
+        if (!isFlying || enemy == null) return false;
         int enemyId = enemy.GetInstanceID();
-        if (chainedEnemies.Contains(enemyId) || !hitEnemies.Add(enemyId))
-            return;
+        return !chainedEnemies.Contains(enemyId) && hitEnemies.Add(enemyId);
+    }
 
+    /// <summary>피해 판정 후 연쇄를 생성하고 관통 횟수를 소비한다.</summary>
+    public void HandleEnemyContact(EnemyCombat enemy)
+    {
+        int enemyId = enemy.GetInstanceID();
         chainedEnemies.Add(enemyId);
 
         if (!chainTriggered && chainCount > 0 && chainRange > 0f)
