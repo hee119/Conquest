@@ -28,32 +28,12 @@ public class SliderPlusMinus : MonoBehaviour
         suppressNextClick = false;
         slider = GetComponent<Slider>();
         if (Application.isPlaying) SliderInputBounds.Attach(slider);
-        CreateButtons();
+        InitializeAuthoredButtons();
         lastPlayingState = Application.isPlaying;
         SetButtonsInteractable(lastPlayingState);
     }
 
-#if UNITY_EDITOR
-    private void OnValidate()
-    {
-        if (Application.isPlaying)
-            return;
 
-        UnityEditor.EditorApplication.delayCall -= EnsureEditorPreview;
-        UnityEditor.EditorApplication.delayCall += EnsureEditorPreview;
-    }
-
-    private void EnsureEditorPreview()
-    {
-        if (this == null || Application.isPlaying || !gameObject.scene.IsValid())
-            return;
-
-        slider = GetComponent<Slider>();
-        CreateButtons();
-        SetButtonsInteractable(false);
-        UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(gameObject.scene);
-    }
-#endif
 
     private void Update()
     {
@@ -93,7 +73,7 @@ public class SliderPlusMinus : MonoBehaviour
         onValueChanged?.Invoke();
     }
 
-    private void ClickPlus()
+    public void ClickPlus()
     {
         if (ConsumeSuppressedClick())
             return;
@@ -101,7 +81,7 @@ public class SliderPlusMinus : MonoBehaviour
         Plus();
     }
 
-    private void ClickMinus()
+    public void ClickMinus()
     {
         if (ConsumeSuppressedClick())
             return;
@@ -123,124 +103,18 @@ public class SliderPlusMinus : MonoBehaviour
         suppressNextClick = true;
     }
 
-    private void CreateButtons()
+    private void InitializeAuthoredButtons()
     {
-        Transform existingGroup = transform.Find(ButtonGroupName);
-        RectTransform group;
-        if (existingGroup != null)
+        var group = transform.Find(ButtonGroupName);
+        if (group == null) return;
+        foreach (var button in group.GetComponentsInChildren<Button>(true))
         {
-            group = (RectTransform)existingGroup;
+            var hold = button.GetComponent<SliderStepHold>();
+            if (hold != null)
+                hold.Initialize(this, button.name == "Minus" ? Minus : Plus, holdDelay, holdRepeatInterval);
+            if (Application.isPlaying) UiSoundEvents.Register(button);
         }
-        else
-        {
-            var groupObject = new GameObject(ButtonGroupName, typeof(RectTransform));
-            group = (RectTransform)groupObject.transform;
-            group.SetParent(transform, false);
-        }
-
-        // Older scene data can contain two groups with the same name. Only
-        // the group wired below may receive clicks; an unwired copy covers it.
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            Transform child = transform.GetChild(i);
-            if (child != group && child.name == ButtonGroupName)
-                child.gameObject.SetActive(false);
-        }
-        group.gameObject.SetActive(true);
-
-        group.anchorMin = new Vector2(1f, 0.5f);
-        group.anchorMax = new Vector2(1f, 0.5f);
-        group.pivot = new Vector2(0f, 0.5f);
-        group.anchoredPosition = new Vector2(132f, 0f);
-        group.sizeDelta = new Vector2(78f, 38f);
-
-        ConfigureButton(group, "Minus", "-", 0f, ClickMinus, Minus);
-        ConfigureButton(group, "Plus", "+", 40f, ClickPlus, Plus);
     }
-
-    
-    private void ConfigureButton(
-        RectTransform parent,
-        string objectName,
-        string label,
-        float x,
-        UnityAction clickAction,
-        UnityAction repeatAction)
-    {
-        Transform existingButton = parent.Find(objectName);
-
-        GameObject buttonObject = existingButton != null
-            ? existingButton.gameObject
-            : new GameObject(
-                objectName,
-                typeof(RectTransform),
-                typeof(CanvasRenderer),
-                typeof(Image),
-                typeof(Button));
-
-        var buttonRect = (RectTransform)buttonObject.transform;
-
-        if (existingButton == null)
-            buttonRect.SetParent(parent, false);
-
-        buttonRect.anchorMin = new Vector2(0f, 0.5f);
-        buttonRect.anchorMax = new Vector2(0f, 0.5f);
-        buttonRect.pivot = new Vector2(0f, 0.5f);
-        buttonRect.anchoredPosition = new Vector2(x, 0f);
-        buttonRect.sizeDelta = new Vector2(36f, 36f);
-
-        Image background = buttonObject.GetComponent<Image>();
-
-        Button button = buttonObject.GetComponent<Button>();
-        button.targetGraphic = background;
-        button.interactable = Application.isPlaying;
-        button.onClick.RemoveListener(clickAction);
-        button.onClick.AddListener(clickAction);
-
-        if (Application.isPlaying)
-            UiSoundEvents.Register(button);
-
-        if (buttonObject.GetComponent<OptionHover>() == null)
-            buttonObject.AddComponent<OptionHover>();
-
-        SliderStepHold hold = buttonObject.GetComponent<SliderStepHold>();
-
-        if (hold == null)
-            hold = buttonObject.AddComponent<SliderStepHold>();
-
-        hold.Initialize(
-            this,
-            repeatAction,
-            holdDelay,
-            holdRepeatInterval);
-
-        Transform existingLabel = buttonRect.Find("Label");
-
-        GameObject textObject = existingLabel != null
-            ? existingLabel.gameObject
-            : new GameObject(
-                "Label",
-                typeof(RectTransform),
-                typeof(CanvasRenderer),
-                typeof(TextMeshProUGUI));
-
-        var textRect = (RectTransform)textObject.transform;
-
-        if (existingLabel == null)
-            textRect.SetParent(buttonRect, false);
-
-        textRect.anchorMin = Vector2.zero;
-        textRect.anchorMax = Vector2.one;
-        textRect.offsetMin = Vector2.zero;
-        textRect.offsetMax = Vector2.zero;
-
-        TextMeshProUGUI text = textObject.GetComponent<TextMeshProUGUI>();
-        text.text = label;
-        text.fontSize = 25f;
-        text.alignment = TextAlignmentOptions.Center;
-        text.raycastTarget = false;
-    }
-
 
     private void SetButtonsInteractable(bool interactable)
     {

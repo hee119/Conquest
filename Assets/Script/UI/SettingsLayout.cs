@@ -13,7 +13,7 @@ public sealed class SettingsLayout : MonoBehaviour
 
     private void OnEnable()
     {
-        Canvas.willRenderCanvases += Rebuild;
+        // Scene-authored layout is authoritative; do not reposition it on open.
         dirty = true;
     }
 
@@ -140,24 +140,16 @@ public sealed class SettingsLayout : MonoBehaviour
         var minus = buttons.Find("Minus") as RectTransform;
         var plus = buttons.Find("Plus") as RectTransform;
         if (minus == null || plus == null) return;
-        float groupScale = Mathf.Max(0.01f, row.InverseTransformVector(buttons.TransformVector(Vector3.right)).magnitude);
-        var position = minus.anchoredPosition; position.x = 0f; minus.anchoredPosition = position;
-        position = plus.anchoredPosition;
-        position.x = minus.rect.width * minus.localScale.x + 8f / groupScale;
-        plus.anchoredPosition = position;
-        buttons.sizeDelta = new Vector2(position.x + plus.rect.width * plus.localScale.x,
-            Mathf.Max(minus.rect.height * minus.localScale.y, plus.rect.height * plus.localScale.y));
         Rect barBounds = BoundsInRow(row, bar);
+        Rect plusBounds = BoundsInRow(row, plus);
         Rect valueBounds = BoundsInRow(row, value);
-        MoveInRow(row, value, barBounds.xMax + 20f - valueBounds.xMin);
-        valueBounds = BoundsInRow(row, value);
-        Rect buttonBounds = BoundsInRow(row, buttons);
-        MoveInRow(row, buttons, valueBounds.xMax + 12f - buttonBounds.xMin);
-        buttonBounds = BoundsInRow(row, buttons);
+        MoveInRow(row, value, plusBounds.xMax + 12f - valueBounds.xMin);
         var layout = row.GetComponent<UnityEngine.UI.HorizontalLayoutGroup>();
         if (layout != null && row.childCount > 0 && row.GetChild(0) is RectTransform label)
         {
-            float controlWidth = buttonBounds.xMax - barBounds.xMin;
+            Rect minusBounds = BoundsInRow(row, minus);
+            valueBounds = BoundsInRow(row, value);
+            float controlWidth = valueBounds.xMax - minusBounds.xMin;
             float remaining = row.rect.width - BoundsInRow(row, label).width - controlWidth;
             layout.spacing = Mathf.Clamp(remaining, 24f, 347f);
             UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(row);

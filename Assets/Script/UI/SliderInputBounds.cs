@@ -25,8 +25,12 @@ public sealed class SliderInputBounds : MonoBehaviour, ICanvasRaycastFilter
     {
         if (slider == null || track == null || stepButtons == null) Cache();
         // Step buttons retain their own click/hold handlers.
-        if (stepButtons != null && stepButtons.gameObject.activeInHierarchy &&
-            RectTransformUtility.RectangleContainsScreenPoint(stepButtons, screenPoint, eventCamera)) return true;
+        if (stepButtons != null && stepButtons.gameObject.activeInHierarchy)
+        {
+            foreach (Transform child in stepButtons)
+                if (child is RectTransform button && button.gameObject.activeInHierarchy &&
+                    RectTransformUtility.RectangleContainsScreenPoint(button, screenPoint, eventCamera)) return true;
+        }
         if (slider.handleRect != null &&
             RectTransformUtility.RectangleContainsScreenPoint(slider.handleRect, screenPoint, eventCamera)) return true;
         if (track == null) return false;

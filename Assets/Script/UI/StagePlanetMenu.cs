@@ -18,6 +18,11 @@ public sealed class StagePlanetMenu : MonoBehaviour
     private int selectedIndex;
     private Material runtimeGlowMaterial;
     private Color originalOutlineColor;
+    private static readonly string[] StageLabelKeys =
+    {
+        "stage_planet_01", "stage_planet_02", "stage_planet_03",
+        "stage_planet_04", "stage_planet_05", "stage_planet_06"
+    };
 
     /// <summary>선택 행성의 강조 효과를 준비한다.</summary>
     private void Awake()
@@ -88,8 +93,15 @@ public sealed class StagePlanetMenu : MonoBehaviour
             {
                 var label = planetLabels[i];
                 if (label == null) continue;
+                if (planets != null && i < planets.Length && planets[i] != null)
+                    planets[i].SetLabel(label);
                 var localized = label.GetComponent<LocalizedText>();
-                if (localized != null) localized.SetArguments((i + 1).ToString("00"));
+                if (localized != null && i < StageLabelKeys.Length)
+                {
+                    localized.key = StageLabelKeys[i];
+                    localized.SetArguments();
+                    localized.ForceUpdateText();
+                }
             }
         Select(0);
         if (scrollRect != null)

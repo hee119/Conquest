@@ -7,6 +7,12 @@ upgrade_confirm,확인하기,Confirm,確認する
 upgrade_select_materials,합성할 만렙 증강 두 개를 선택하세요,Select two compatible max-level upgrades,最大レベルの増強を2つ選択してください
 upgrade_name_placeholder,증강,Augment,増強
 upgrade_description_placeholder,증강 설명,Augment description,増強の説明
-stage_settings_exit,나가기,Exit to lobby,ロビーへ戻る
+stage_settings_exit,로비로 가기,Return to lobby,ロビーへ戻る
 reward_gold_name,골드,Gold,ゴールド
 reward_token_name,개척자의 증표,Pioneer Tokens,開拓者の証
+stage_settings_quit_game,나가기,Quit game,ゲーム終了
+
+character_stat_hp,체력,HP,体力
+character_stat_attack,공격력,Attack,攻撃力
+character_stat_cooldown,공격 쿨타임,Attack cooldown,攻撃クールタイム
+character_stat_seconds,초,s,秒

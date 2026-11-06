@@ -11,8 +11,6 @@ public sealed class SettingsPause : MonoBehaviour
         if (!Application.isPlaying)
             return;
 
-        if (GetComponent<SettingsLayout>() == null)
-            gameObject.AddComponent<SettingsLayout>();
         previousTimeScale = Time.timeScale;
         Time.timeScale = 0f;
         pauseApplied = true;

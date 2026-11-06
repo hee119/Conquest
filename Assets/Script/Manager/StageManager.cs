@@ -514,6 +514,7 @@ public class StageManager : MonoBehaviour
         }
 
 
+        ScatterGroundTiles(minCell, maxCell);
         PlaceDecorationTiles(minCell, maxCell);
         preparedTerrain = backgroundTilemap;
         preparedMinCell = minCell;
@@ -543,6 +544,29 @@ public class StageManager : MonoBehaviour
         );
     }
 
+
+    private void ScatterGroundTiles(Vector3Int minCell, Vector3Int maxCell)
+    {
+        // Redistribute the existing grass/flower mix over the whole prepared map.
+        // Keep the same tile counts and leave the obstacle (tree) tilemap alone.
+        var cells = new List<Vector3Int>();
+        var groundTiles = new List<TileBase>();
+        for (int x = minCell.x; x <= maxCell.x; x++)
+            for (int y = minCell.y; y <= maxCell.y; y++)
+            {
+                var cell = new Vector3Int(x, y, 0);
+                var tile = backgroundTilemap.GetTile(cell);
+                if (tile == null) continue;
+                cells.Add(cell);
+                groundTiles.Add(tile);
+            }
+        for (int i = groundTiles.Count - 1; i > 0; i--)
+        {
+            int other = Random.Range(0, i + 1);
+            (groundTiles[i], groundTiles[other]) = (groundTiles[other], groundTiles[i]);
+        }
+        backgroundTilemap.SetTiles(cells.ToArray(), groundTiles.ToArray());
+    }
 
     private void PlaceDecorationTiles(Vector3Int minCell, Vector3Int maxCell)
     {
@@ -596,6 +620,12 @@ public class StageManager : MonoBehaviour
         }
         decorationTilemapPath = GetTilemapPath(decorationTilemap);
         generatedDecorationTilemap = decorationTilemap;
+        // Authored small stones participate in the random scatter too.
+        // Tiles outside this configured set (including trees) remain untouched.
+        foreach (var cell in decorationTilemap.cellBounds.allPositionsWithin)
+            if (choices.Contains(decorationTilemap.GetTile(cell)))
+                decorationTilemap.SetTile(cell, null);
+
 
         float spacing = Mathf.Max(0f, decorationMinimumSpacing);
         float bucketSize = Mathf.Max(0.01f, spacing);

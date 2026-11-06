@@ -686,7 +686,9 @@ public class UpgradeManager : MonoBehaviour
                 "IronWall" => stat.defense,
                 _ => null
             };
-            float value = ValueAt(values, statLevel) - (statLevel > 0 ? ValueAt(values, statLevel - 1) : 0f);
+            float value = stat.function == "CriticalForce"
+                ? ValueAt(values, statLevel)
+                : ValueAt(values, statLevel) - (statLevel > 0 ? ValueAt(values, statLevel - 1) : 0f);
             return new object[] { value % 1f == 0f ? (object)(int)value : value };
         }
 
@@ -1522,8 +1524,10 @@ public class UpgradeManager : MonoBehaviour
             PlayerData p = pair.Value;
 
             var permanent = CharacterProgression.Bonuses(pair.Key, CharacterProgression.Level(pair.Key));
-            p.criticalChance = Mathf.Clamp((int)((origin.criticalChance + permanent.criticalChance) * (1f + critChanceBonus / 100f)), 0, 100);
-            p.criticalDamage = (origin.criticalDamage + permanent.criticalDamage) * (1f + critDamageBonus / 100f);
+            // 치명타 확률 보너스는 기존 확률에 퍼센트포인트로 더한다.
+            p.criticalChance = Mathf.Clamp(Mathf.RoundToInt(origin.criticalChance + permanent.criticalChance + critChanceBonus), 0, 100);
+            // 증강 데이터의 2는 치명타 피해 2배를 뜻한다. 영구 강화 보너스는 유지한다.
+            p.criticalDamage = (critDamageBonus > 0f ? critDamageBonus : origin.criticalDamage) + permanent.criticalDamage;
             p.damage = origin.damage + CharacterProgression.AttackBonus(pair.Key) + attackPowerBonus;
             p.hp = Mathf.RoundToInt((origin.hp + permanent.hp) * (1f + maxHpBonus / 100f));
             p.defense = Mathf.RoundToInt(origin.defense + permanent.defense + defenseBonus);

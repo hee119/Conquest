@@ -51,13 +51,17 @@ public sealed class DropdownSelectedOptionVisual : MonoBehaviour,
     {
         if (background != null)
             background.color = selected
-                ? Color.white
+                ? new Color(0.7f, 0.7f, 0.7f, 1f)
                 : hovered ? HoverBackgroundColor : Color.clear;
 
         if (label != null)
         {
             label.outlineWidth = 0f;
-            label.color = selected ? Color.black : Color.white;
+            Color textColor = selected ? Color.black : Color.white;
+            label.color = textColor;
+            // SDF antialiasing also samples the outline color at the glyph edge.
+            // Keep that edge the same color as the face when the row is inverted.
+            label.outlineColor = textColor;
         }
     }
 

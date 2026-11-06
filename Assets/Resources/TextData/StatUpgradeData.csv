@@ -5,4 +5,4 @@ Id,NameId,Type,Function,CritChance,CritDamage,AttackPower,MaxHp,SkillCooldown,Pa
 703,upgread_name_Vitality,Stat,Vitality,,,,"10, 20, 30, 40, 50",,,,upgread_des_Vitality,,,0
 704,upgread_name_QuickCast,Stat,QuickCast,,,,,"10, 20, 30, 40, 50",,,upgread_des_QuickCast,,,0
 705,upgread_name_RapidCycle,Stat,RapidCycle,,,,,,"10, 15, 20, 25, 30",,upgread_des_RapidCycle,,,0
-706,upgread_name_IronWall,Stat,IronWall,,,,,,,"10, 15, 20, 25, 30",upgread_des_IronWall,,,0
+706,upgread_name_IronWall,Stat,IronWall,,,,,,,"10, 20, 30, 40, 50",upgread_des_IronWall,,,0

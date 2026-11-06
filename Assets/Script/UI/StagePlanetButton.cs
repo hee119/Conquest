@@ -7,6 +7,7 @@ public sealed class StagePlanetButton : MonoBehaviour, IPointerEnterHandler, IPo
     [SerializeField] private UnityEngine.UI.Image planetImage;
     [SerializeField] private Material hoverOutlineMaterial;
     [SerializeField] private Material selectionGlowMaterial;
+    [SerializeField] private TMPro.TMP_Text stageLabel;
 
     private bool selected;
     private bool hovered;
@@ -28,6 +29,8 @@ public sealed class StagePlanetButton : MonoBehaviour, IPointerEnterHandler, IPo
         baseScale = transform.localScale;
         if (planetImage == null)
             planetImage = transform.Find("Planet")?.GetComponent<UnityEngine.UI.Image>();
+        if (stageLabel == null)
+            stageLabel = GetComponentInChildren<TMPro.TMP_Text>(true);
     }
 
     private void OnEnable()
@@ -38,6 +41,8 @@ public sealed class StagePlanetButton : MonoBehaviour, IPointerEnterHandler, IPo
     private void OnDisable()
     {
         hovered = false;
+        if (stageLabel != null)
+            stageLabel.enabled = selected;
         if (planetImage != null)
             planetImage.material = null;
     }
@@ -45,6 +50,12 @@ public sealed class StagePlanetButton : MonoBehaviour, IPointerEnterHandler, IPo
     public void SetSelected(bool value)
     {
         selected = value;
+        RefreshVisual();
+    }
+
+    public void SetLabel(TMPro.TMP_Text label)
+    {
+        stageLabel = label;
         RefreshVisual();
     }
 
@@ -76,6 +87,9 @@ public sealed class StagePlanetButton : MonoBehaviour, IPointerEnterHandler, IPo
     private void RefreshVisual()
     {
         EnsureInitialized();
+
+        if (stageLabel != null)
+            stageLabel.enabled = selected || hovered;
 
         if (planetImage != null)
             planetImage.material = selected ? selectionGlowMaterial : hovered ? hoverOutlineMaterial : null;

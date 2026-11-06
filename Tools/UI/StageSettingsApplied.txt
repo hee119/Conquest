@@ -1,0 +1,1 @@
+Saved Stage1 using Lobby settings visuals; 7 existing row prefab instances retained; 4 scene references remapped. Graphic/Sound/Language retained. Footer: ReturnToLobby and QuitConfirmationDialog.Show, one Inspector event each. Close: one self-toggle event; no Lobby scene references.

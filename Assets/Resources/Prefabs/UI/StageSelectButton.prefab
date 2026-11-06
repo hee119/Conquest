@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.96, g: 0.96, b: 0.96, a: 1}
-    m_PressedColor: {r: 0.784, g: 0.784, b: 0.784, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.5}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.6, g: 0.6, b: 0.6, a: 0.5}
     m_ColorMultiplier: 1
@@ -244,6 +244,7 @@ MonoBehaviour:
   planetImage: {fileID: 0}
   hoverOutlineMaterial: {fileID: 0}
   selectionGlowMaterial: {fileID: 0}
+  stageLabel: {fileID: 0}
 --- !u!114 &6561001127757454977
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,1 @@
+25 imported frames; maximum foot-baseline difference from Move=1.384287E-07 world units. Boss 150 summoned in Stage1; game remains running.

@@ -14,20 +14,9 @@ public sealed class SettingsOptionRowLayout : MonoBehaviour
 
     private bool applying;
 
-    private void OnEnable()
-    {
-        if (Application.isPlaying)
-            ApplyLayout();
-    }
+    // Layout is authored in the scene/prefab, not rewritten on activation.
+    public void RefreshLayout() { }
 
-    private void OnTransformChildrenChanged()
-    {
-        if (Application.isPlaying)
-            ApplyLayout();
-    }
-
-    public void RefreshLayout() => ApplyLayout();
-    
     private void ApplyLayout()
     {
         if (!Application.isPlaying || applying)

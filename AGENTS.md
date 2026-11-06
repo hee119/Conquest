@@ -1,13 +1,11 @@
-# Project working instructions
+## Bug Prevention and Regression Prevention
 
-## Unity button events
-
-- Connect button actions directly through the Button component's Inspector **On Click()** persistent events, saved in the scene or prefab. This is the user's explicit preference.
-- Do not implement button activation by polling mouse position, checking pointer bounds, or checking mouse clicks in Update/LateUpdate.
-- For authored buttons, do not replace visible Inspector wiring with runtime `onClick.AddListener` registrations. Expose a suitable public handler and wire it in the Inspector through Unity Editor APIs.
-- When changing a button, verify its On Click() target and method, and avoid duplicate invocation from old polling code or runtime listeners.
-- Pointer enter/exit handling for visual hover effects is separate from button activation and may remain when needed.
-
-## Running Unity sessions
-
-- Do not stop or restart an active game to perform edits unless the user explicitly authorizes it. Preserve the running session and use a separate editing workflow where possible; explain any limitation before taking an action that would interrupt play.
+- Never allow a previously reported and resolved issue to happen again.
+- Before implementing any changes, review previously reported bugs, their root causes, and their fixes.
+- Treat previously reported issues as permanent regression-prevention requirements.
+- When modifying code, preserve existing working functionality and avoid introducing regressions.
+- Check related scripts, components, references, dependencies, and execution order before making changes.
+- After implementing a fix, verify that the original issue is resolved and that related functionality still works.
+- Do not reintroduce previously removed code, incorrect logic, or known problematic implementations.
+- If a previous fix is incomplete or could cause the same issue again, address the underlying root cause rather than applying another temporary workaround.
+- If verification is not possible, explicitly state what remains unverified. Never claim that an issue is fixed without sufficient verification.

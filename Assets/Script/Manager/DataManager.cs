@@ -413,7 +413,7 @@ public void ApplyCustomCharacterStats()
             data[1];
 
         enemyData.hp =
-            int.Parse(data[2]);
+            float.Parse(data[2], System.Globalization.CultureInfo.InvariantCulture);
 
         enemyData.hpRegenRate =
             int.Parse(data[3]);
