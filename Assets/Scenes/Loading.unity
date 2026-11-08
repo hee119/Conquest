@@ -307,11 +307,11 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.5}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.117
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2239,12 +2239,6 @@ MonoBehaviour:
   completedDisplayDuration: 1
   progressSmoothTime: 0.25
   tipInterval: 4
-  tips:
-  - "\uACE8\uB4DC\uC640 \uC694\uC6D0 \uD30C\uD3B8\uC744 \uBAA8\uC544 \uC694\uC6D0\uC744
-    \uAC15\uD654 \uC2DC\uD0AC \uC218 \uC788\uC2B5\uB2C8\uB2E4."
-  - "\uC99D\uAC15\uC758 \uB808\uBCA8\uC774 5 \uC774\uACE0 \uD569\uC131 \uAC00\uB2A5\uD55C
-    \uC99D\uAC15\uC774 \uC788\uB2E4\uBA74 \uD569\uC131 \uBC84\uD2BC\uC774 \uD65C\uC131\uD654
-    \uB429\uB2C8\uB2E4."
   nextScene: CutSceen
 --- !u!4 &1773232582
 Transform:

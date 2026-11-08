@@ -1,0 +1,129 @@
+# 버그 및 작업 기록
+
+작업 전 이 파일에서 관련 버그와 수정 조건을 확인한다. 기존 수정 사항을 되돌려 같은 버그가 재발할 변경이라면 다른 구현 방법을 택한다. 작업 후에는 변경 내용, 원인, 확인 결과와 미확인 사항을 기록한다.
+
+## 데이터 및 로컬라이제이션
+
+- 보스 패턴 데이터에서 ID 1003/1004 누락으로 `KeyNotFoundException`이 발생했다. 해당 데이터를 유지하고, 딕셔너리 조회와 CSV 파싱을 안전하게 처리한다.
+- 로비 팁과 `loading_touch_to_start`는 로컬라이제이션 키를 통해 표시한다. 키가 그대로 화면에 나타나지 않도록 데이터와 연결을 확인한다.
+- 원본 로컬라이제이션은 Google Sheet의 `Setting`/`Master` 탭이다. 변경은 원본 시트에 반영하고 Stage 씬의 `GetData > Data Download`로 `Assets/Resources/TextData/Localization.csv`를 갱신한다. 별도 `LocalizationExtra.csv`를 런타임에 합치는 방식으로 되돌리지 않는다.
+
+## UI
+
+- 업그레이드 카드 세 칸의 데이터와 UI 참조가 각각 올바르게 연결되어야 한다. 카드 내용이 빈 상태로 나타나지 않도록 확인한다.
+- 일반 버튼을 누르는 동안 색을 바꾸는 효과는 알파 50%로 처리한다. 드롭다운과 슬라이더에는 누름 색상 전환을 적용하지 않는다.
+- Stage 씬의 언어 드롭다운은 `SharedCanvasDropdown`의 `popupRoot`가 비어 있을 때 기본 TMP 드롭다운 팝업을 열고 닫아야 한다. `DropdownListOccluder`도 공유 팝업이 실제로 있을 때만 공유 팝업 경로를 사용한다.
+- 로비 능력치 행 뒤의 파란 이미지 배경은 비활성화 상태를 유지한다.
+- Stage 씬의 `Return To Lobby` 버튼은 Hover 스크립트의 흰색 머티리얼 효과가 나타나지 않도록 한다.
+- 패배 문구에 불필요한 볼드 스타일을 다시 적용하지 않는다.
+
+## 2026-11-07 작업
+
+- Stage 언어 드롭다운의 공유 팝업 참조가 비어 있는 경우 TMP 기본 `Show`/`Hide`로 동작하도록 수정했다.
+- 드롭다운과 슬라이더의 색상 전환을 껐다. 로비 능력치 행 배경 이미지와 Stage `Return To Lobby`의 Hover 효과를 껐다.
+- Unity `Editor.log` 최근 500줄에서 관련 C# 컴파일 오류는 발견되지 않았다. 실제 Play 모드 조작 결과는 아직 확인되지 않았다.
+
+## 2026-11-07 로컬라이제이션 번역 수정
+
+- Google Sheet `Localization`의 `upgreadDes` 탭에서 한국어 원문을 기준으로 영어·일본어 오역을 수정했다.
+- 137~141행 `기본 공격 쿨타임`: Skill Cooldown → Basic Attack Cooldown, スキルクールダウン → 基本攻撃のクールダウン.
+- 142~146행 `증강 쿨타임`: Passive Cooldown → Augment Cooldown, パッシブクールダウン → 増強のクールダウン.
+- 11행 및 92~96행의 포자탄두 일본어 번역에 섞인 한국어 `변경`을 `変更`으로 수정했다.
+- 시트의 수정 셀을 다시 읽어 값과 `{0}` 자리표시자를 확인했다. 로컬 `Localization.csv`는 이번 작업에서 갱신하지 않았다. Stage 씬의 `GetData > Data Download`로 원본 시트 내용을 가져와야 한다.
+- 재발 방지: `기본 공격`과 `스킬`, `증강`과 `패시브`를 같은 의미로 번역하지 않는다. 등급별 `_1`~`_5` 행도 원문을 개별 확인한다.
+
+## 2026-11-07 설정 + 버튼 호버 제거
+
+- 설정 슬라이더의 `Plus` 버튼에서 `OptionHover` 컴포넌트를 비활성화하고 Button의 Highlighted/Selected 색상을 Normal 색상과 같게 했다. 대상: Lobby/Stage1 씬 및 Slider/Settings Slider Row 프리팹의 Plus 버튼 9개.
+- 원인: 포인터 진입 시 `OptionHover`가 배경 알파를 바꾸고 Button 색상 전환이 강조 색을 적용했다.
+- 클릭 중 알파 50% 설정과 클릭 동작은 유지했다. 텍스트 기반으로 설정을 확인했으며 Unity Play 모드의 실제 표시 결과는 아직 확인되지 않았다.
+
+## 2026-11-07 설정 − 버튼 호버 제거
+
+- `Plus`와 짝인 설정 슬라이더 `Minus` 버튼 9개도 동일하게 `OptionHover`를 비활성화하고 Button의 Highlighted/Selected 색상을 Normal 색상으로 맞췄다. Lobby/Stage1 씬과 Slider/Settings Slider Row 프리팹에 적용했다.
+- 클릭 중 50% 투명도와 클릭 동작 설정은 유지했다. 파일의 대상 개수는 확인했으며 Play 모드 시각 확인은 아직 하지 않았다.
+- 재발 방지: 슬라이더 증감 버튼의 시각 효과를 변경할 때 Plus와 Minus를 함께 확인한다.
+
+## 2026-11-07 Stage 드롭다운 목록 복구
+
+- 원인: Stage1의 언어, 화면 모드, 해상도 SharedCanvasDropdown 3개 모두 m_Template, popupRoot, locker 참조가 비어 있었다. 기존 popupRoot null 처리만으로는 TMP 목록을 생성할 수 없었다.
+- 수정: Stage1 씬에 이미 배치된 각 Settings Dropdown Popup의 Template과 Blocker를 해당 드롭다운에 다시 연결했다. 로비와 다른 UI는 변경하지 않았다.
+- 확인: 저장한 Stage1 씬을 다시 열어 3개 드롭다운의 Template/Popup/Blocker 및 선택 항목 템플릿 참조를 확인했다. 언어 드롭다운 Show() 호출로 팝업이 열리고 옵션 3개가 생성되는 것을 확인했다. 실제 Play 모드 마우스 클릭은 현재 열려 있는 Loading 씬의 미저장 변경을 보존하기 위해 수행하지 않았다.
+- 재발 방지: Stage 설정 드롭다운에서 공유 팝업을 분리하거나 프리팹을 교체할 때 세 참조를 함께 확인한다.
+
+
+## 2026-11-07 Stage 설정 하단 버튼 효과 변경
+
+- 요청에 따라 Stage1 설정창의 Return To Lobby와 Quit Game 버튼은 클릭 중 색상 전환을 사용하지 않는다. 기존 일반 버튼의 누름 알파 50% 규칙에서 이 두 버튼만 예외로 둔다.
+- 원인: 두 버튼의 Button ColorTint가 눌림 상태에서 알파 50%를 적용했고, Return To Lobby의 Hover 컴포넌트는 비활성화되어 있었다.
+- 수정: 두 버튼의 Button Transition을 None으로 설정하고 Return To Lobby의 Hover를 다시 활성화했다. Quit Game의 Hover는 활성 상태를 유지했다. 클릭 이벤트 연결은 유지했다.
+- 확인: 저장한 Stage1 씬을 다시 열어 두 버튼의 Transition=None, Hover 활성화, 기존 클릭 리스너 각 1개를 확인했다. Hover 진입 시 Glow2 머티리얼, 이탈 시 Default UI Material 복귀를 확인했다. 실제 Play 모드 마우스 입력은 확인하지 않았다.
+
+
+## 2026-11-07 증강 합성 및 아이콘 선택창
+
+- 원본 `UpgradeData` 시트의 `UpgradeDatasOne`에는 400~407 스킬 조합이 있으나 `Master!A2`의 QUERY가 `CombinationList`/`Result` 열에서 숫자와 쉼표 구분 문자열을 섞어 처리해 일부 조합을 빈칸으로 내보냈다. `Master!A2`를 FILTER 기반 결합 수식으로 변경했다. Fireball(401)+Burn(402)→Heatwave(503)를 포함한 8개 조합 행을 확인했다.
+- Stage1 씬의 `GetUpgradeData` GetData 컴포넌트로 `UpgradeData.csv`를 다시 다운로드했다. 공개 CSV 반영 지연이 있었으나 최종 공개본과 로컬 CSV 모두 8개 조합 행을 포함한다.
+- `GetData.cs`는 다운로드한 UpgradeData의 유효 조합 행 수가 기존 파일보다 적으면 덮어쓰지 않고 경고하도록 했다. 공개본 갱신 지연으로 조합이 다시 사라지는 일을 막는다.
+- 합성 선택창은 보유 스킬 아이콘을 모두 표시하고 만렙 전 아이콘은 알파 50%로 보여준다. 클릭 선택은 만렙 스킬에만 허용한다. Stage1의 선택창 배경을 어둡게 바꿔 흰 아이콘을 읽을 수 있게 했다.
+- Unity `recompile`: 오류 0, 경고 0. FireBall ImageInfo의 스프라이트 자산 존재와 로컬 CSV의 401/402 조합 복원을 확인했다. Play 모드에서 합성 클릭과 아이콘 렌더링은 아직 직접 확인하지 못했다.
+- 재발 방지: 시트 원본 탭뿐 아니라 Master 출력과 Stage GetData 다운로드 CSV까지 조합 열을 대조한다. 합성 선택창을 바꿀 때 보유 스킬 아이콘 표시와 만렙 선택 제한을 함께 확인한다.
+
+## 2026-11-08 로비 설정 탭 선택 발광
+
+- 현상: Stage 설정 탭은 선택 시 Glow2가 보이지만 Lobby 설정 탭은 선택 후 빛남이 보이지 않았다.
+- 확인: 두 씬의 OptionSelect는 같은 Glow2 머티리얼과 선택 상태를 사용하며 Bloom 프로필 및 카메라 후처리도 같다. Lobby Canvas의 Plane Distance는 100으로 Lobby 카메라 Far Clip 100과 일치했고, Stage Screen Canvas의 Plane Distance는 1이었다.
+- 수정: Lobby Canvas의 Plane Distance를 1로 바꿔 카메라 클립 범위 안에 배치했다. 실행 중 로비 캔버스에도 같은 값을 적용했다.
+- 검증: Lobby 탭의 화면 좌표는 거리 100과 1에서 모두 (710,815)로 동일했다. 저장된 씬 값과 선택 탭 Glow2 참조를 확인했다. 현재 Play 모드 활성 씬이 Stage1이므로 Lobby 화면의 발광은 직접 확인하지 못했다.
+- 재발 방지: Screen Space Camera 캔버스 거리가 카메라 Far Clip과 같지 않도록 확인한다.
+
+
+## 2026-11-08 PowerBoost 카드 설명 불일치 조사
+
+- 현상: 기본 로컬라이제이션은 '공격력 {0} 증가'인데 Stage 강화 카드에는 '5% 증가'가 표시된다.
+- 원인: UpgradeManager.GetUpgradeDescriptionKey가 기본 키보다 다음 단계 키(upgread_des_PowerBoost_1~_5)를 우선 사용한다. Localization.csv의 해당 단계별 문구에는 %가 들어 있고, upgread_intro_PowerBoost에도 %가 있다.
+- 확인: 실행 중 PowerBoost ID 702, 보유 레벨 1에서 키 upgread_des_PowerBoost_2와 인자 5가 선택되어 '공격력 5% 증가'가 나왔다. 기본 키로는 '공격력 5 증가'가 나온다. StatUpgradeData.csv의 누적 수치는 5,10,15,20,25이며 ApplyPlayerStats는 공격력 보너스를 원래 피해량에 더한다.
+- 변경: 조사만 수행했고 데이터와 코드는 수정하지 않았다. 후속 수정 시 단계별 및 소개 문구의 단위를 실제 고정 수치 증가와 맞춰야 한다.
+
+
+## 2026-11-08 적 재소환 피격 파티클 및 증강 중 웨이브 스킵
+
+- 적을 풀에서 다시 활성화할 때 이전 피격 파티클을 중지하고 남은 입자를 지운다. 기존 피해 처리에서 피격 파티클을 재생한다.
+- 웨이브 스킵 요청은 증강 선택 화면이 열려 있을 때 무시한다. 웨이브 대기 중 이미 받은 요청도 화면이 닫힌 뒤 처리한다.
+- Stage1의 WaveSkip 연결이 GoNextWave를 호출하는 경로와 적 풀의 활성화 경로를 코드에서 확인했다. Play 모드 확인은 별도로 필요하다.
+
+## Fast Script Reload 시작 대화상자 오류
+
+- 원인: 자동 새로고침 경고의 기본 버튼 문구가 66자로 Unity 대화상자의 64자 미만 제한을 넘었다.
+- 수정: 버튼 세 개의 문구를 줄였다. 상세 설명과 기존 선택지별 처리 순서는 유지했다.
+- 확인: 변경된 버튼 문구가 모두 64자 미만이고 선택지별 처리 코드가 그대로인지 확인했다. Unity에서 대화상자를 다시 여는 검증은 별도로 필요하다.
+
+## 2026-11-08 로비 설정 선택 탭 발광 보정
+
+- 현상: Stage 설정에서는 선택 탭 주변에 Bloom 발광이 보이지만 Lobby 설정에서는 Glow2 머티리얼이 선택 이미지에 적용되어도 발광이 거의 보이지 않았다.
+- 수정: 추가 윤곽선/자식 이미지 방식은 철회했다. 기존 Glow 셰이더의 색 출력을 유지하면서 일반 알파 합성과 어두운 내부 색 억제를 적용한 OptionGlow 셰이더 및 LobbyOptionGlow 머티리얼을 만들고, Lobby 설정의 Graphic/Sound/Language 선택 머티리얼에 연결했다. OptionSelect 코드는 원래대로 유지했다.
+- 검증: Lobby Play 화면에서 Graphic 선택 시 흰 테두리 주위 Bloom 광륜과 검은 버튼 내부를 확인했다. Language로 선택 변경 시 기존 Graphic 머티리얼이 Default UI Material로 돌아가고 Language에 LobbyOptionGlow가 적용됨을 확인했다. 씬을 재로드해 세 탭 모두 머티리얼 참조가 저장된 것도 확인했다.
+
+## 2026-11-08 로비 설정 발광 비교 이미지 수정
+
+- 사용자가 제공한 비교 이미지의 왼쪽이 Stage, 오른쪽이 Lobby다. 이전 작업은 방향을 거꾸로 해석해 버튼 내부를 어둡게 만들어 Stage와 다르게 보였다.
+- OptionGlow 셰이더의 내부 색 억제(pow 3)를 제거했다. 선택 버튼의 원래 이미지 색을 발광 강도로 출력하므로 Stage 비교 이미지처럼 내부가 회색으로 밝아지고 테두리 주변에 Bloom이 생긴다. 추가 윤곽선 오브젝트는 사용하지 않는다.
+- Lobby Play 화면에서 Graphic 선택 상태의 밝은 내부와 Bloom 광륜을 다시 캡처해 확인했다. 다른 탭의 선택 전환 로직과 OptionSelect 코드는 변경하지 않았다.
+
+## 2026-11-08 Stage 사운드 슬라이더 버튼 배치
+
+- 원인: 사운드 슬라이더의 증감 버튼은 슬라이더 오른쪽에 모여 있었고 그래픽 슬라이더는 양쪽 끝에 배치되어 있었다.
+- 수정: 열려 있는 Stage1의 사운드 슬라이더 세 행에 있는 버튼 묶음과 증감 버튼 RectTransform을 그래픽 슬라이더와 동일하게 맞췄다.
+- 확인: 사운드의 버튼 묶음 9개 모두 그래픽 슬라이더와 위치, 앵커, 피벗, 크기가 일치한다. 기존 미저장 씬 변경을 보존하기 위해 씬은 저장하지 않았고 Play 모드 클릭은 확인하지 않았다.
+
+## 2026-11-08 Stage 설정 슬라이더 핸들 영역
+
+- 설정의 그래픽 및 사운드 슬라이더 네 개의 Handle Slide Area가 서로 다른 왼쪽 여백을 사용했다.
+- 열린 Stage1에서 네 영역의 Left를 15.14, Right를 -4.579999, Top과 Bottom을 0으로 맞췄다.
+- 네 영역의 값을 Unity에서 확인했다. 기존 미저장 변경이 있어 씬 저장과 Play 모드 동작 확인은 하지 않았다.
+
+## 2026-11-08 로비 설정 슬라이더 핸들 영역
+
+- 로비 설정 슬라이더 네 개의 Handle Slide Area가 Stage와 다른 왼쪽 여백을 사용했다.
+- Lobby 씬의 네 영역을 Left 15.14, Right -4.579999, Top과 Bottom 0으로 맞춰 저장했다.
+- Lobby 씬을 다시 열어 네 영역의 저장된 값을 확인했다. Stage1의 기존 미저장 변경은 유지했다. Play 모드 동작은 확인하지 않았다.

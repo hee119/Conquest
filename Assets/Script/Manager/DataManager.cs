@@ -1109,21 +1109,34 @@ public void ApplyCustomCharacterStats()
     
     public void GetBossPatternData()
     {
-        bossPatternData = Resources.Load<TextAsset>("TextData/PatternData").text;
-        
+        TextAsset patternCsv = Resources.Load<TextAsset>("TextData/PatternData");
+        if (patternCsv == null)
+        {
+            Debug.LogError("[DataManager] Missing Resources/TextData/PatternData.csv");
+            return;
+        }
+        bossPatternData = patternCsv.text;
+        bossPatternDatasDic.Clear();
         string[] lines = bossPatternData.Split('\n');
 
         for (int i = 1; i < lines.Length; i++)
         {
-            string[] bossPatternData = lines[i].Split(",");
-            
-            BossPatternData bossPatternDataTemp = new BossPatternData();
-            
-            bossPatternDataTemp.id = int.Parse(bossPatternData[0]);
-            bossPatternDataTemp.name = bossPatternData[1];
-            bossPatternDataTemp.damage = int.Parse(bossPatternData[2]);
-            
-            bossPatternDatasDic.Add(bossPatternDataTemp.id, bossPatternDataTemp);
+            if (string.IsNullOrWhiteSpace(lines[i])) continue;
+            string[] columns = lines[i].Split(',');
+            if (columns.Length < 3 ||
+                !int.TryParse(columns[0].Trim(), out int id) ||
+                !int.TryParse(columns[2].Trim(), out int damage))
+            {
+                Debug.LogWarning($"[DataManager] Invalid boss pattern CSV row {i + 1}: {lines[i]}");
+                continue;
+            }
+
+            bossPatternDatasDic[id] = new BossPatternData
+            {
+                id = id,
+                name = columns[1].Trim(),
+                damage = damage
+            };
         }
         
         GameObject[] bossPatternPrefab = Resources.LoadAll<GameObject>("Prefabs/BossPattern");
@@ -1133,8 +1146,15 @@ public void ApplyCustomCharacterStats()
             BossPatternInfo patternData = prefab.GetComponent<BossPatternInfo>();
             if (patternData != null)
             {
-                patternData.name = bossPatternDatasDic[patternData.id].name;
-                patternData.damage = bossPatternDatasDic[patternData.id].damage;
+                if (bossPatternDatasDic.TryGetValue(patternData.id, out BossPatternData entry))
+                {
+                    patternData.name = entry.name;
+                    patternData.damage = entry.damage;
+                }
+                else
+                {
+                    Debug.LogWarning($"[DataManager] Boss pattern data missing for prefab {prefab.name} (id {patternData.id}). Keeping prefab values.", prefab);
+                }
             }
         }
     }

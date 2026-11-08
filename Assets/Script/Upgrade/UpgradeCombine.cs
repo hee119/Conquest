@@ -18,11 +18,17 @@ public class UpgradeCombine : MonoBehaviour
     {
         var manager = UpgradeManager.Instance;
         var data = DataManager.Instance;
-        var eligible = manager != null
-            ? manager.skillUpgrades.FindAll(id => UpgradeFusionRules.IsMaxed(manager, id))
+        var owned = manager != null
+            ? new List<int>(manager.skillUpgrades)
             : new List<int>();
+        owned.Sort((a, b) =>
+        {
+            int maxedOrder = UpgradeFusionRules.IsMaxed(manager, b).CompareTo(
+                UpgradeFusionRules.IsMaxed(manager, a));
+            return maxedOrder != 0 ? maxedOrder : a.CompareTo(b);
+        });
         int count = manager != null && data != null
-            ? Mathf.Min(upgrades.Count, eligible.Count) : 0;
+            ? Mathf.Min(upgrades.Count, owned.Count) : 0;
 
         for (int i = 0; i < upgrades.Count; i++)
         {
@@ -34,7 +40,7 @@ public class UpgradeCombine : MonoBehaviour
             icon.upgradeImageSet = upgradeImageSet;
             if (i < count)
             {
-                icon.id = eligible[i];
+                icon.id = owned[i];
                 Sprite sprite = null;
                 data.skillUpgradeIconDic.TryGetValue(icon.id, out sprite);
                 if (sprite == null && data.upgradeDatasDic.TryGetValue(icon.id, out var upgrade))
@@ -42,6 +48,8 @@ public class UpgradeCombine : MonoBehaviour
                 if (icon.image != null)
                 {
                     icon.image.sprite = sprite;
+                    icon.image.color = new Color(1f, 1f, 1f,
+                        UpgradeFusionRules.IsMaxed(manager, icon.id) ? 1f : 0.5f);
                     icon.image.raycastTarget = true;
                 }
             }

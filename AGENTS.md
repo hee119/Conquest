@@ -9,3 +9,6 @@
 - Do not reintroduce previously removed code, incorrect logic, or known problematic implementations.
 - If a previous fix is incomplete or could cause the same issue again, address the underlying root cause rather than applying another temporary workaround.
 - If verification is not possible, explicitly state what remains unverified. Never claim that an issue is fixed without sufficient verification.
+
+- Before changing project code or UI, read root read.md and preserve its regression requirements.
+- After each task, record the change, cause, and verification in root read.md. If a proposed change would recreate a recorded bug, use another approach.

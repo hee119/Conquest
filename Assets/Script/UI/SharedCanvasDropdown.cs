@@ -14,7 +14,8 @@ public sealed class SharedCanvasDropdown : TMP_Dropdown
     private Toggle itemTemplate;
     private float rowHeight;
     private float popupHeight;
-    public new bool IsExpanded => popupRoot != null && popupRoot.gameObject.activeSelf;
+    public new bool IsExpanded => popupRoot != null ? popupRoot.gameObject.activeSelf : base.IsExpanded;
+    public bool UsesSharedPopup => popupRoot != null;
 
     protected override void Awake()
     {
@@ -35,6 +36,7 @@ public sealed class SharedCanvasDropdown : TMP_Dropdown
 
     public new void Show()
     {
+        if (popupRoot == null) { base.Show(); return; }
         if (!IsActive() || !IsInteractable() || IsExpanded || popupRoot == null ||
             template == null || itemTemplate == null || options.Count == 0) return;
         var content = (RectTransform)itemTemplate.transform.parent;
@@ -78,6 +80,7 @@ public sealed class SharedCanvasDropdown : TMP_Dropdown
     public new void Hide()
     {
         if (popupRoot != null) popupRoot.gameObject.SetActive(false);
+        else base.Hide();
     }
 
     private void SelectOption(int index)

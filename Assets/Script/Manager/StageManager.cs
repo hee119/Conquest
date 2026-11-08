@@ -332,8 +332,16 @@ public class StageManager : MonoBehaviour
     }
 
 
+    private static bool IsUpgradeChoiceOpen =>
+        LevelManager.Instance != null &&
+        LevelManager.Instance.upgradeUI != null &&
+        LevelManager.Instance.upgradeUI.activeInHierarchy;
+
     public void GoNextWave()
     {
+        if (IsUpgradeChoiceOpen)
+            return;
+
         if (!canSkipToNextWave)
         {
             Debug.Log(
@@ -1174,12 +1182,10 @@ public class StageManager : MonoBehaviour
                 {
                     float timer = 0f;
 
-                    while (
-                        timer < spawnInterval &&
-                        !requestNextWave
-                    )
+                    while (IsUpgradeChoiceOpen || (timer < spawnInterval && !requestNextWave))
                     {
-                        timer += Time.deltaTime;
+                        if (!IsUpgradeChoiceOpen)
+                            timer += Time.deltaTime;
                         yield return null;
                     }
                 }

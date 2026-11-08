@@ -15,12 +15,6 @@ public class StartupLoading : MonoBehaviour
     [SerializeField, Min(0f)] private float completedDisplayDuration = 1f;
     [SerializeField, Min(0.05f)] private float progressSmoothTime = 0.25f;
     [SerializeField, Min(1f)] private float tipInterval = 4f;
-    [SerializeField, TextArea(2, 3)] private string[] tips =
-    {
-        "골드와 개척자의 증표를 모아 개척자를 강화할 수 있습니다.",
-        "증강의 레벨이 5 이고 합성 가능한 증강이 있다면 합성 버튼이 활성화 됩니다.",
-        "현재는 표창과 곰팡이 증강이 가장 좋습니다."
-    };
     [SerializeField] private string nextScene = "CutSceen";
     private Coroutine tipCoroutine;
     private Coroutine blinkCoroutine;
@@ -49,7 +43,7 @@ public class StartupLoading : MonoBehaviour
         if (touchToStartText != null) touchToStartText.gameObject.SetActive(false);
         targetProgress = displayedProgress = progressVelocity = 0f;
         RenderProgress(0f);
-        if (tipText != null && tips != null && tips.Length > 0)
+        if (tipText != null && TipKeys.Length > 0)
             tipCoroutine = StartCoroutine(RotateTips());
     }
 
@@ -71,15 +65,12 @@ public class StartupLoading : MonoBehaviour
 
     private IEnumerator RotateTips()
     {
-        int count = Mathf.Max(tips.Length, TipKeys.Length);
+        int count = TipKeys.Length;
         int index = Random.Range(0, count);
         do
         {
-            string key = index < TipKeys.Length ? TipKeys[index] : null;
-            tipText.text = key != null && LocalizationManager.Instance != null &&
-                LocalizationManager.Instance.HasTranslation(key)
-                ? LocalizationManager.Instance.GetTranslation(key)
-                : index < tips.Length ? tips[index] : "현재는 표창과 곰팡이 증강이 가장 좋습니다.";
+            string key = TipKeys[index];
+            tipText.text = LocalizationManager.Instance != null ? LocalizationManager.Instance.GetTranslation(key) : key;
             yield return new WaitForSecondsRealtime(Mathf.Max(1f, tipInterval));
             index = (index + 1) % count;
         } while (count > 1);

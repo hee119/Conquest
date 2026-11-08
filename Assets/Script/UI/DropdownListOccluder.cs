@@ -49,7 +49,7 @@ public sealed class DropdownListOccluder : MonoBehaviour, IPointerClickHandler, 
             return;
 
         var shared = GetComponent<SharedCanvasDropdown>();
-        if (shared != null)
+        if (shared != null && shared.UsesSharedPopup)
         {
             if (shared.IsExpanded) FitBelowDropdown(shared.template);
             return;

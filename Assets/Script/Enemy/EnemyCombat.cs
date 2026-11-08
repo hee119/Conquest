@@ -162,6 +162,9 @@ public class EnemyCombat : MonoBehaviour, ICombat
 
     protected virtual void OnEnable()
     {
+        if (hitParticle != null)
+            hitParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+
         isDead = false;
         isDying = false;
         isInvincible = false;

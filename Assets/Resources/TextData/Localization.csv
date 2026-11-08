@@ -36,14 +36,14 @@ upgread_des_Shurlken,표창 {0}개 추가,Add {0} Shuriken,手裏剣を{0}個追
 upgread_des_Missile,미사일 {0}개 추가,Add {0} Missiles,ミサイルを{0}個追加
 upgread_des_Mold,곰팡이 확률 {0}% 증가,Increase Mold Chance by {0}%,カビ発生確率{0}%増加
 upgread_des_FireStorm,파이어볼을 화염 뇌우로 변경,Change Fireball to Firestorm,ファイアボールを炎の嵐に変更
-upgread_des_SporeWarhead,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に 변경
+upgread_des_SporeWarhead,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に変更
 upgread_des_LightningShuriken,표창이 뇌전 표창으로 변경,Change Shuriken to Lightning Shuriken,手裏剣を雷電手裏剣に変更
 upgread_des_Heatwave,파이어볼을 폭염으로 변경,Change Fireball to Heatwave,ファイアボールを熱波に変更
 upgread_des_LavaField,달팽이를 용암지대로 변경,Change Snail to Lava Field,スネイルを溶岩地帯に変更
 upgread_des_RottingSpore,곰팡이를 부패포자로 변경,Change Mold to Rotting Spore,カビを腐敗胞子に変更
 upgread_des_CriticalInstinct,치명타 확률 {0}% 증가,Critical Chance +{0}%,クリティカル率 +{0}%
 upgread_des_CriticalForce,치명타 데미지 {0}% 증가,Critical Damage +{0}%,クリティカルダメージ +{0}%
-upgread_des_PowerBoost,공격력 {0}% 증가,Attack Power +{0}%,攻撃力 +{0}%
+upgread_des_PowerBoost,공격력 {0} 증가,Attack Power +{0},攻撃力 +{0}
 upgread_des_Vitality,체력 {0}% 증가,HP +{0}%,HP +{0}%
 upgread_des_QuickCast,스킬 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
 upgread_des_RapidCycle,패시브 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
@@ -117,11 +117,11 @@ upgread_des_FireStorm_2,파이어볼을 화염 뇌우로 변경,Change Fireball 
 upgread_des_FireStorm_3,파이어볼을 화염 뇌우로 변경,Change Fireball to Firestorm,ファイアボールを炎の嵐に変更
 upgread_des_FireStorm_4,파이어볼을 화염 뇌우로 변경,Change Fireball to Firestorm,ファイアボールを炎の嵐に変更
 upgread_des_FireStorm_5,파이어볼을 화염 뇌우로 변경,Change Fireball to Firestorm,ファイアボールを炎の嵐に変更
-upgread_des_SporeWarhead_1,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に 변경
-upgread_des_SporeWarhead_2,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に 변경
-upgread_des_SporeWarhead_3,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に 변경
-upgread_des_SporeWarhead_4,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に 변경
-upgread_des_SporeWarhead_5,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に 변경
+upgread_des_SporeWarhead_1,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に変更
+upgread_des_SporeWarhead_2,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に変更
+upgread_des_SporeWarhead_3,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に変更
+upgread_des_SporeWarhead_4,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に変更
+upgread_des_SporeWarhead_5,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に変更
 upgread_des_LightningShuriken_1,표창이 뇌전 표창으로 변경,Change Shuriken to Lightning Shuriken,手裏剣を雷電手裏剣に変更
 upgread_des_LightningShuriken_2,표창이 뇌전 표창으로 변경,Change Shuriken to Lightning Shuriken,手裏剣を雷電手裏剣に変更
 upgread_des_LightningShuriken_3,표창이 뇌전 표창으로 변경,Change Shuriken to Lightning Shuriken,手裏剣を雷電手裏剣に変更
@@ -162,16 +162,16 @@ upgread_des_Vitality_2,체력 {0}% 증가,HP +{0}%,HP +{0}%
 upgread_des_Vitality_3,체력 {0}% 증가,HP +{0}%,HP +{0}%
 upgread_des_Vitality_4,체력 {0}% 증가,HP +{0}%,HP +{0}%
 upgread_des_Vitality_5,체력 {0}% 증가,HP +{0}%,HP +{0}%
-upgread_des_QuickCast_1,기본 공격 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
-upgread_des_QuickCast_2,기본 공격 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
-upgread_des_QuickCast_3,기본 공격 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
-upgread_des_QuickCast_4,기본 공격 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
-upgread_des_QuickCast_5,기본 공격 쿨타임 {0}% 단축,Skill Cooldown -{0}%,スキルクールダウン -{0}%
-upgread_des_RapidCycle_1,증강 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
-upgread_des_RapidCycle_2,증강 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
-upgread_des_RapidCycle_3,증강 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
-upgread_des_RapidCycle_4,증강 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
-upgread_des_RapidCycle_5,증강 주기 {0}% 단축,Passive Cooldown -{0}%,パッシブクールダウン -{0}%
+upgread_des_QuickCast_1,기본 공격 쿨타임 {0}% 단축,Basic Attack Cooldown -{0}%,基本攻撃のクールダウン -{0}%
+upgread_des_QuickCast_2,기본 공격 쿨타임 {0}% 단축,Basic Attack Cooldown -{0}%,基本攻撃のクールダウン -{0}%
+upgread_des_QuickCast_3,기본 공격 쿨타임 {0}% 단축,Basic Attack Cooldown -{0}%,基本攻撃のクールダウン -{0}%
+upgread_des_QuickCast_4,기본 공격 쿨타임 {0}% 단축,Basic Attack Cooldown -{0}%,基本攻撃のクールダウン -{0}%
+upgread_des_QuickCast_5,기본 공격 쿨타임 {0}% 단축,Basic Attack Cooldown -{0}%,基本攻撃のクールダウン -{0}%
+upgread_des_RapidCycle_1,증강 쿨타임 {0}% 단축,Augment Cooldown -{0}%,増強のクールダウン -{0}%
+upgread_des_RapidCycle_2,증강 쿨타임 {0}% 단축,Augment Cooldown -{0}%,増強のクールダウン -{0}%
+upgread_des_RapidCycle_3,증강 쿨타임 {0}% 단축,Augment Cooldown -{0}%,増強のクールダウン -{0}%
+upgread_des_RapidCycle_4,증강 쿨타임 {0}% 단축,Augment Cooldown -{0}%,増強のクールダウン -{0}%
+upgread_des_RapidCycle_5,증강 쿨타임 {0}% 단축,Augment Cooldown -{0}%,増強のクールダウン -{0}%
 upgread_des_IronWall_1,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
 upgread_des_IronWall_2,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
 upgread_des_IronWall_3,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
@@ -196,7 +196,7 @@ setting_language_english,영어,English,英語
 setting_language_korean,한국어,Korean,韓国語
 setting_language_japanese,일본어,Japanese,日本語
 game_title,Planetary Pioneer,Planetary Pioneer,Planetary Pioneer
-lobby_stage_select,스테이지 선택,Stage Select,ステージ選択
+lobby_stage_select,행성 선택,Planet Select,惑星の選択
 lobby_character_select,캐릭터 선택,Character Select,キャラクター選択
 lobby_quit,나가기,Quit,終了
 lobby_back,돌아가기,Back,戻る
@@ -237,9 +237,24 @@ setting_ui_scale_vitals,HP · 대시바 크기,HP & dash bars,HP・ダッシュ�
 setting_ui_scale_experience,경험치바 크기,Experience bar,経験値バー
 setting_ui_scale_hint,화면 밖으로 나가는 항목은 현재 크기를 유지합니다.,Elements that would leave the screen keep their current size.,画面外にはみ出す要素は現在のサイズを維持します。
 setting_ui_scale_percent,{0}%,{0}%,{0}%
-stage_planet_01,Kepler-22 b,Kepler-22 b,Kepler-22 b
-stage_planet_02,55 Cancri e,55 Cancri e,55 Cancri e
-stage_planet_03,OGLE-2005-BLG-390L b,OGLE-2005-BLG-390L b,OGLE-2005-BLG-390L b
-stage_planet_04,Kepler-186 f,Kepler-186 f,Kepler-186 f
-stage_planet_05,TOI-700 d,TOI-700 d,TOI-700 d
-stage_planet_06,Kepler-452 b,Kepler-452 b,Kepler-452 b
+stage_selected_number,스테이지 {0},STAGE {0},ステージ {0}
+quit_confirmation_question,정말로 나가시겠습니까?,Are you sure you want to quit?,ゲームを終了しますか？
+ui_yes,예,Yes,はい
+ui_no,아니요,No,いいえ
+character_enhance_action,강화하기,Enhance,強化する
+upgrade_confirm,확인하기,Confirm,確認する
+upgrade_select_materials,합성할 만렙 증강 두 개를 선택하세요,Select two compatible max-level upgrades,最大レベルの増強を2つ選択してください
+upgrade_name_placeholder,증강,Augment,増強
+upgrade_description_placeholder,증강 설명,Augment description,増強の説明
+stage_settings_exit,로비로 가기,Return to lobby,ロビーへ戻る
+reward_gold_name,골드,Gold,ゴールド
+reward_token_name,개척자의 증표,Pioneer Tokens,開拓者の証
+stage_settings_quit_game,나가기,Quit game,ゲーム終了
+character_stat_hp,체력,HP,体力
+character_stat_attack,공격력,Attack,攻撃力
+character_stat_cooldown,공격 쿨타임,Attack cooldown,攻撃クールタイム
+character_stat_seconds,초,s,秒
+loading_tip_agents,골드와 개척자의 증표를 모아 개척자를 강화할 수 있습니다.,Collect Gold and Pioneer Tokens to upgrade your pioneer.,ゴールドと開拓者の証を集めて開拓者を強化できます。
+loading_tip_fusion,증강의 레벨이 5이고 합성 가능한 증강이 있다면 합성 버튼이 활성화됩니다.,The Combine button activates when you have a level 5 augment and a compatible augment.,増強がレベル5になり合成可能な増強があると合成ボタンが有効になります。
+loading_tip_recommended_augments,증강끼리 합성하여 더욱 강력해지세요,Combine Augments to become even stronger,増強を合成して、さらに強くなりましょう
+loading_touch_to_start,터치하여 시작,Touch to Start,タッチして開始

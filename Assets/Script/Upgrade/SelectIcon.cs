@@ -11,7 +11,8 @@ public class SelectIcon : MonoBehaviour, IPointerClickHandler
     /// <summary>PointerClick 이벤트가 발생했을 때 필요한 처리를 수행한다.</summary>
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData.button != PointerEventData.InputButton.Left || upgradeImageSet == null)
+        if (eventData.button != PointerEventData.InputButton.Left || upgradeImageSet == null ||
+            !UpgradeFusionRules.IsMaxed(UpgradeManager.Instance, id))
             return;
         if (upgradeImageSet.SetUpgrade(id))
         {

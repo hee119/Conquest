@@ -70,14 +70,6 @@ public class LocalizationManager : MonoBehaviour
         // 줄바꿈 형식 처리
         content = content.Replace("\r\n", "\n").Replace("\r", "\n");
 
-        // Keep project UI additions when the downloaded Master cache is refreshed.
-        TextAsset extra = Resources.Load<TextAsset>("TextData/LocalizationExtra");
-        if (extra != null)
-        {
-            string additions = extra.text.Replace("\r\n", "\n").Replace("\r", "\n");
-            int headerEnd = additions.IndexOf('\n');
-            if (headerEnd >= 0) content += "\n" + additions.Substring(headerEnd + 1);
-        }
 
         string[] lines = content.Split(
             new[] { '\n' },

@@ -16,3 +16,7 @@ character_stat_hp,체력,HP,体力
 character_stat_attack,공격력,Attack,攻撃力
 character_stat_cooldown,공격 쿨타임,Attack cooldown,攻撃クールタイム
 character_stat_seconds,초,s,秒
+loading_tip_agents,골드와 개척자의 증표를 모아 개척자를 강화할 수 있습니다.,Collect Gold and Pioneer Tokens to upgrade your pioneer.,ゴールドと開拓者の証を集めて開拓者を強化できます。
+loading_tip_fusion,증강의 레벨이 5이고 합성 가능한 증강이 있다면 합성 버튼이 활성화됩니다.,The Combine button activates when you have a level 5 augment and a compatible augment.,増強がレベル5になり合成可能な増強があると合成ボタンが有効になります。
+loading_tip_recommended_augments,현재는 표창과 곰팡이 증강이 가장 좋습니다.,Shuriken and Mold are currently the strongest augments.,現在は手裏剣とカビの増強がおすすめです。
+loading_touch_to_start,터치하여 시작,Touch to Start,タッチして開始
