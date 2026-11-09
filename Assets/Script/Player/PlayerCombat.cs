@@ -88,7 +88,7 @@ public class PlayerCombat : MonoBehaviour, ICombat
         yield return new WaitUntil(() => DataManager.Instance != null &&
             UpgradeManager.Instance != null && UpgradeManager.Instance.HasPlayerStatBaseline);
         UpgradeManager.Instance.RefreshPermanentStats();
-        int id = CharacterManager.Instance != null ? CharacterManager.Instance.currentCharacter : _playerInfo.id;
+        int id = CharacterManager.Instance != null ? CharacterManager.Instance.currentCharacterId : _playerInfo.id;
         if (DataManager.Instance.playerDatasDic.TryGetValue(id, out var data))
         {
             _playerInfo.hp = data.hp;
@@ -173,7 +173,7 @@ public class PlayerCombat : MonoBehaviour, ICombat
         float rate =
             DataManager.Instance
                 .playerDatasDic[
-                    CharacterManager.Instance.currentCharacter
+                    CharacterManager.Instance.currentCharacterId
                 ]
                 .hpRegenRate;
 
@@ -224,7 +224,7 @@ public class PlayerCombat : MonoBehaviour, ICombat
         float defense =
             DataManager.Instance
                 .playerDatasDic[
-                    CharacterManager.Instance.currentCharacter
+                    CharacterManager.Instance.currentCharacterId
                 ]
                 .defense;
 

@@ -22,7 +22,7 @@ public sealed class SelectedCharacterSetup : MonoBehaviour
 
     public void ApplySelectedCharacter()
     {
-        int id = CharacterManager.Instance != null ? CharacterManager.Instance.currentCharacter : 1;
+        int id = CharacterManager.Instance != null ? CharacterManager.Instance.currentCharacterId : 1;
         if (DataManager.Instance == null ||
             !DataManager.Instance.playerDatasDic.TryGetValue(id, out PlayerData data))
             return;

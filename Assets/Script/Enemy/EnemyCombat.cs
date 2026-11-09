@@ -51,7 +51,7 @@ public class EnemyCombat : MonoBehaviour, ICombat
     }
 
     public static int CurrentCharacterId => CharacterManager.Instance != null
-        ? CharacterManager.Instance.currentCharacter
+        ? CharacterManager.Instance.currentCharacterId
         : GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerInfo>()?.id ?? 1;
 
     public static float CalculateDamage(float baseDamage, PlayerData stats, out bool critical)

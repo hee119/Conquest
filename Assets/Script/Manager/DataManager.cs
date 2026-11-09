@@ -34,6 +34,7 @@ public class DataManager : MonoBehaviour
     public Dictionary <int, BossPatternData> bossPatternDatasDic = new();
     public Dictionary<int, PickupSpawnData> pickupSpawnDatas = new();
     public Dictionary<int, SortedDictionary<int, int>> waveGoldDatas = new();
+    public Dictionary<int, int> BadgeDatas = new();
     public Dictionary <int, Sprite> upgradeImagesDic = new();
     public Dictionary <int, Sprite> skillUpgradeIconDic = new();
     public Dictionary <int, Sprite> statUpgradeIconDic = new();
@@ -168,6 +169,20 @@ public void ApplyCustomCharacterStats()
             if (rewards.Count > 0) waveGoldDatas[stage] = rewards;
         }
     }
+    
+    public async void GetWaveBadgeDatas()
+    {
+        BadgeDatas.Clear();
+        if (stageInfos == null) return;
+        
+        await Awaitable.WaitForSecondsAsync(0.001f);
+        
+        for (int i = 0; i < stageInfos[GameManager.Instance.currentStage].badgeCount.Count; i++)
+        {
+            BadgeDatas.Add(i, stageInfos[GameManager.Instance.currentStage].badgeCount[i]);
+        }
+        
+    }
 
     public bool TryGetWaveGold(int stage, int reachedWave, out int gold)
     {
@@ -236,6 +251,7 @@ public void ApplyCustomCharacterStats()
         stageDataText = textAsset.text;
         stageInfos = ParseStageData(stageDataText);
         GetWaveGoldDatas();
+        GetWaveBadgeDatas();
     }
 
     private static StageInfo[] ParseStageData(string csv)
@@ -253,7 +269,7 @@ public void ApplyCustomCharacterStats()
                 continue;
 
             string[] row = ParseCsvLine(lines[i]);
-            if (row.Length < 8 ||
+            if (row.Length < 11 ||
                 !int.TryParse(row[0], integer, culture, out int stage) || stage < 0 ||
                 !int.TryParse(row[1], integer, culture, out int enemyId) ||
                 !int.TryParse(row[2], integer, culture, out int waveCount) ||
@@ -261,7 +277,8 @@ public void ApplyCustomCharacterStats()
                 !int.TryParse(row[4], integer, culture, out int enemyPerSpawn) ||
                 !TryParseStageFloat(row[5], out float enemySpawnMultiplier) ||
                 !TryParseStageFloat(row[6], out float waveIncreaseInterval) ||
-                string.IsNullOrWhiteSpace(row[7]))
+                string.IsNullOrWhiteSpace(row[7]) ||
+            !int.TryParse(row[10], out int badgeCount))
             {
                 Debug.LogWarning($"[StageData] {i + 1}행의 필수 값이 비어 있거나 잘못되어 해당 행을 건너뜁니다: {lines[i]}");
                 continue;
@@ -281,6 +298,7 @@ public void ApplyCustomCharacterStats()
             info.enemySpawnMultiplier.Add(enemySpawnMultiplier);
             info.waveIncreaseInterval.Add(waveIncreaseInterval);
             info.type.Add(row[7].Trim());
+            info.badgeCount.Add(badgeCount);
             var goldValues = new List<int>();
             if (row.Length > 9 && !string.IsNullOrWhiteSpace(row[9]))
                 foreach (string value in row[9].Split(','))
@@ -1297,6 +1315,7 @@ public class StageInfo
     public List<float> enemySpawnMultiplier = new List<float>();
     public List<float> waveIncreaseInterval = new List<float>();
     public List<string> type = new List<string>();
+    public List<int> badgeCount = new List<int>();
 }
 
 [System.Serializable]

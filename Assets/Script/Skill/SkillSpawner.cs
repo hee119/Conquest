@@ -179,7 +179,7 @@ public class SkillSpawner : MonoBehaviour
         float offset = 1f;
         bool isBasicAttack = skillId == skillId1;
         int characterId = CharacterManager.Instance != null
-            ? CharacterManager.Instance.currentCharacter
+            ? CharacterManager.Instance.currentCharacterId
             : GetComponent<PlayerInfo>().id;
         BasicAttackModifiers modifiers = isBasicAttack && UpgradeManager.Instance != null
             ? UpgradeManager.Instance.GetBasicAttackModifiers(characterId)

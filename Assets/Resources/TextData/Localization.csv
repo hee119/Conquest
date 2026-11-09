@@ -117,27 +117,27 @@ upgread_des_FireStorm_2,파이어볼을 화염 뇌우로 변경,Change Fireball 
 upgread_des_FireStorm_3,파이어볼을 화염 뇌우로 변경,Change Fireball to Firestorm,ファイアボールを炎の嵐に変更
 upgread_des_FireStorm_4,파이어볼을 화염 뇌우로 변경,Change Fireball to Firestorm,ファイアボールを炎の嵐に変更
 upgread_des_FireStorm_5,파이어볼을 화염 뇌우로 변경,Change Fireball to Firestorm,ファイアボールを炎の嵐に変更
-upgread_des_SporeWarhead_1,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に変更
+upgread_des_SporeWarhead_1,미사일이 곰팡이를 단 채로 소환됩니다.,Missiles spawn with mold attached.,ミサイルがカビをまとった状態で生成されます。
 upgread_des_SporeWarhead_2,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に変更
 upgread_des_SporeWarhead_3,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に変更
 upgread_des_SporeWarhead_4,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に変更
 upgread_des_SporeWarhead_5,미사일을 포자탄두로 변경,Change Missile to Spore Warhead,ミサイルを胞子弾頭に変更
-upgread_des_LightningShuriken_1,표창이 뇌전 표창으로 변경,Change Shuriken to Lightning Shuriken,手裏剣を雷電手裏剣に変更
+upgread_des_LightningShuriken_1,표창이 뇌전 표창으로 변경,Change Shuriken to Lightning Shuriken,ファイアボールが敵に命中すると、周囲の敵に拡散します。
 upgread_des_LightningShuriken_2,표창이 뇌전 표창으로 변경,Change Shuriken to Lightning Shuriken,手裏剣を雷電手裏剣に変更
 upgread_des_LightningShuriken_3,표창이 뇌전 표창으로 변경,Change Shuriken to Lightning Shuriken,手裏剣を雷電手裏剣に変更
 upgread_des_LightningShuriken_4,표창이 뇌전 표창으로 변경,Change Shuriken to Lightning Shuriken,手裏剣を雷電手裏剣に変更
 upgread_des_LightningShuriken_5,표창이 뇌전 표창으로 변경,Change Shuriken to Lightning Shuriken,手裏剣を雷電手裏剣に変更
-upgread_des_Heatwave_1,파이어볼을 폭염으로 변경,Change Fireball to Heatwave,ファイアボールを熱波に変更
+upgread_des_Heatwave_1,파이어볼이 적을 피격했을때 주변으로 퍼집니다.,Fireballs spread to nearby enemies upon hitting an enemy.,ファイアボールを熱波に変更
 upgread_des_Heatwave_2,파이어볼을 폭염으로 변경,Change Fireball to Heatwave,ファイアボールを熱波に変更
 upgread_des_Heatwave_3,파이어볼을 폭염으로 변경,Change Fireball to Heatwave,ファイアボールを熱波に変更
 upgread_des_Heatwave_4,파이어볼을 폭염으로 변경,Change Fireball to Heatwave,ファイアボールを熱波に変更
 upgread_des_Heatwave_5,파이어볼을 폭염으로 변경,Change Fireball to Heatwave,ファイアボールを熱波に変更
-upgread_des_LavaField_1,달팽이를 용암지대로 변경,Change Snail to Lava Field,スネイルを溶岩地帯に変更
+upgread_des_LavaField_1,달팽이 장판이 적에게 화상을 입히는 용암으로 변경됩니다.,Snail fields transform into lava that burns enemies.,カタツムリの設置エリアが、敵に火傷を与える溶岩に変化します。
 upgread_des_LavaField_2,달팽이를 용암지대로 변경,Change Snail to Lava Field,スネイルを溶岩地帯に変更
 upgread_des_LavaField_3,달팽이를 용암지대로 변경,Change Snail to Lava Field,スネイルを溶岩地帯に変更
 upgread_des_LavaField_4,달팽이를 용암지대로 변경,Change Snail to Lava Field,スネイルを溶岩地帯に変更
 upgread_des_LavaField_5,달팽이를 용암지대로 변경,Change Snail to Lava Field,スネイルを溶岩地帯に変更
-upgread_des_RottingSpore_1,곰팡이를 부패포자로 변경,Change Mold to Rotting Spore,カビを腐敗胞子に変更
+upgread_des_RottingSpore_1,곰팡이가 터질 시 주변 적에게 독을 흩뿌립니다.,"When mold bursts, it spreads poison to nearby enemies.",カビが破裂すると、周囲の敵に毒をまき散らします。
 upgread_des_RottingSpore_2,곰팡이를 부패포자로 변경,Change Mold to Rotting Spore,カビを腐敗胞子に変更
 upgread_des_RottingSpore_3,곰팡이를 부패포자로 변경,Change Mold to Rotting Spore,カビを腐敗胞子に変更
 upgread_des_RottingSpore_4,곰팡이를 부패포자로 변경,Change Mold to Rotting Spore,カビを腐敗胞子に変更
@@ -147,11 +147,11 @@ upgread_des_CriticalInstinct_2,치명타 확률 {0}% 증가,Critical Chance +{0}
 upgread_des_CriticalInstinct_3,치명타 확률 {0}% 증가,Critical Chance +{0}%,クリティカル率 +{0}%
 upgread_des_CriticalInstinct_4,치명타 확률 {0}% 증가,Critical Chance +{0}%,クリティカル率 +{0}%
 upgread_des_CriticalInstinct_5,치명타 확률 {0}% 증가,Critical Chance +{0}%,クリティカル率 +{0}%
-upgread_des_CriticalForce_1,치명타 배율 {0} 증가,Critical Damage Multiplier +{0},クリティカルダメージ倍率 +{0}
-upgread_des_CriticalForce_2,치명타 배율 {0} 증가,Critical Damage Multiplier +{0},クリティカルダメージ倍率 +{0}
-upgread_des_CriticalForce_3,치명타 배율 {0} 증가,Critical Damage Multiplier +{0},クリティカルダメージ倍率 +{0}
-upgread_des_CriticalForce_4,치명타 배율 {0} 증가,Critical Damage Multiplier +{0},クリティカルダメージ倍率 +{0}
-upgread_des_CriticalForce_5,치명타 배율 {0} 증가,Critical Damage Multiplier +{0},クリティカルダメージ倍率 +{0}
+upgread_des_CriticalForce_1,치명타 배율 {0} 로 변경,Critical Damage Multiplier changes to {0},クリティカルダメージ倍率が{0}倍に変更されます。
+upgread_des_CriticalForce_2,치명타 배율 {0} 로 변경,Critical Damage Multiplier changes to {0},クリティカルダメージ倍率が{0}倍に変更されます。
+upgread_des_CriticalForce_3,치명타 배율 {0} 로 변경,Critical Damage Multiplier changes to {0},クリティカルダメージ倍率が{0}倍に変更されます。
+upgread_des_CriticalForce_4,치명타 배율 {0} 로 변경,Critical Damage Multiplier changes to {0},クリティカルダメージ倍率が{0}倍に変更されます。
+upgread_des_CriticalForce_5,치명타 배율 {0} 로 변경,Critical Damage Multiplier changes to {0},クリティカルダメージ倍率が{0}倍に変更されます。
 upgread_des_PowerBoost_1,공격력 {0} 증가,Attack Power +{0},攻撃力 +{0}
 upgread_des_PowerBoost_2,공격력 {0} 증가,Attack Power +{0},攻撃力 +{0}
 upgread_des_PowerBoost_3,공격력 {0} 증가,Attack Power +{0},攻撃力 +{0}
@@ -204,10 +204,10 @@ lobby_stage_1,스테이지 1,Stage 1,ステージ1
 lobby_character_swordman,검사,Swordsman,剣士
 setting_exit,닫기,Close,閉じる
 cutscene_skip,스킵,Skip,スキップ
-cutscene_caption_earth,새로운 보금자리를 찾기 위해 개척자들이 우주로 향한다.,"Earth has been devastated, and humanity faces a fight for survival. \nPioneers head into space in search of a new home.",地球は荒廃し、人類は生存の危機に直面している。\n新たな住まいを求め、開拓者たちは宇宙へ向かう。
-cutscene_caption_mission,개척자들의 임무는 인간이 살기 적합한 행성을 찾고 위협요소를 제거하는것이다.,The pioneers' mission is to find a planet where humanity can live\n and survey the resources and environment needed for migration.,開拓者たちの任務は、人類が暮らせる惑星を探し、\n移住に必要な資源と環境を調査することだ。
-cutscene_caption_discovery,기나긴 항해 끝에 희망의 행성을 발견했다. 지금부터 위험 요소를 제거하겠다.,"After a long voyage, we finally discovered a planet of hope.\n But unknown lifeforms stood in our way.",長い航海の末、ついに希望の惑星を発見した。\nしかし、そこには正体不明の生命体が立ちはだかった。
-cutscene_caption_conquest,마침내 행성의 위협을 제거했다. 그러나 임무는 끝나지 않았다. 인류에게 가장 적합한 행성을 찾기 위한 여정은 계속된다.,"At last, we eliminated the planet's threat. But the mission is not over.\n The journey to find the planet best suited for humanity continues.",ついに惑星の脅威を排除した。しかし、任務はまだ終わっていない。\n人類に最も適した惑星を探す旅は続く。
+cutscene_caption_earth,새로운 보금자리를 개척하기 위해 개척자들이 우주로 향한다.,Pioneers venture into space to discover a new home.,新たな居住地を開拓するため、開拓者たちは宇宙へと旅立つ。
+cutscene_caption_mission,개척자들의 임무는 인간이 살기 적합한 행성을 찾고 위협요소를 제거하는것이다.,Their mission is to find a planet suitable for human life and eliminate any threats.,開拓者たちの任務は、人類が暮らすのに適した惑星を探し、脅威を排除することだ。
+cutscene_caption_discovery,기나긴 항해 끝에 희망의 행성을 발견했다. 지금부터 위험 요소를 제거하겠다.,"After a long journey, we have discovered a planet of hope. We will now eliminate all threats.",長い航海の末、希望の惑星を発見した。これより、危険要素を排除する。
+cutscene_caption_conquest,마침내 행성의 위협을 제거했다. 그러나 임무는 끝나지 않았다. 인류에게 가장 적합한 행성을 찾기 위한 여정은 계속된다.,The threats on this planet have finally been eliminated. But our mission is not over. The journey to find the perfect planet for humanity continues.,ついに、この惑星の脅威を排除した。しかし、任務はまだ終わっていない。人類に最も適した惑星を探す旅は続いていく。
 debug_camera_lens,렌즈: {0},Lens: {0},レンズ: {0}
 debug_skill_upgrade,스킬 강화,Skill Upgrade,スキル強化
 debug_spawn_id,스폰 ID,Spawn ID,スポーンID

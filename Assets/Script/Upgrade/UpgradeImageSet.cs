@@ -9,6 +9,12 @@ public class UpgradeImageSet : MonoBehaviour, IPointerClickHandler
     public UpgradeCombineResult result;
     public UpgradeImageSet selected;
     public UpgradeCombine collection;
+    public GameObject text;
+
+    public void OnEnable()
+    {
+        text.SetActive(true);
+    }
 
     /// <summary>PointerClick 이벤트가 발생했을 때 필요한 처리를 수행한다.</summary>
     public void OnPointerClick(PointerEventData eventData)
@@ -43,6 +49,7 @@ public class UpgradeImageSet : MonoBehaviour, IPointerClickHandler
             return false;
 
         id = upgradeId;
+        text.SetActive(false);
         GetComponent<UpgradeUiInfo>().ShowUpgrade(data);
         UpgradeCombineStart();
         SelectionChanged?.Invoke();

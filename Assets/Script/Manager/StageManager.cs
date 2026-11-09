@@ -27,6 +27,8 @@ public class StageManager : MonoBehaviour
     private Tilemap preparedTerrain;
     private Vector3Int preparedMinCell, preparedMaxCell;
 
+    public int waveRow;
+
     // Called on the inactive scene component: generate scenery without Awake,
     // spawning enemies, starting a run, or activating scene roots.
     public void PrepareTilesForLoading()
@@ -958,6 +960,8 @@ public class StageManager : MonoBehaviour
 
     public IEnumerator StageStartCol()
     {
+        waveRow = 0;
+        
         yield return new WaitUntil(
             () => DataManager.Instance != null
         );
@@ -1224,7 +1228,7 @@ public class StageManager : MonoBehaviour
                 }
             }
 
-
+            waveRow++;
             monsterCount = 0;
 
 

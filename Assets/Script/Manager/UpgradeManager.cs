@@ -1011,7 +1011,7 @@ public void ResetForNewRun()
             return false;
 
         int currentCharacterId = CharacterManager.Instance != null
-            ? CharacterManager.Instance.currentCharacter
+            ? CharacterManager.Instance.currentCharacterId
             : 0;
 
         return data.characterId <= 0 ||
@@ -1686,7 +1686,7 @@ public void ResetForNewRun()
         maxHpBonus = data.maxHp[data.UpgradeLevel];
 
         // 현재 캐릭터 기준으로 증가량 계산 (모든 캐릭터에 반복 적용되던 문제 방지)
-        int character = CharacterManager.Instance.currentCharacter;
+        int character = CharacterManager.Instance.currentCharacterId;
         int oldHp = 0;
         bool hasCharacter =
             DataManager.Instance.playerDatasDic.TryGetValue(character, out PlayerData current);
@@ -1764,7 +1764,7 @@ public void ResetForNewRun()
         skillCooldownBonus = skillCd;
         passiveCooldownBonus = passiveCd;
 
-        int character = CharacterManager.Instance.currentCharacter;
+        int character = CharacterManager.Instance.currentCharacterId;
         bool has = DataManager.Instance.playerDatasDic.TryGetValue(character, out PlayerData cur);
         int oldHp = has ? cur.hp : 0;
 

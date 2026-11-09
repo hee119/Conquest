@@ -112,7 +112,7 @@ public class CodexPlaytestAgent : MonoBehaviour
         if (DataManager.Instance == null || CharacterManager.Instance == null || player == null)
             return;
 
-        if (!DataManager.Instance.playerDatasDic.TryGetValue(CharacterManager.Instance.currentCharacter, out PlayerData data))
+        if (!DataManager.Instance.playerDatasDic.TryGetValue(CharacterManager.Instance.currentCharacterId, out PlayerData data))
             return;
 
         PlayerInfo info = player.GetComponent<PlayerInfo>();

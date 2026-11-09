@@ -66,7 +66,7 @@ public sealed class CharacterProgressionSave
         {
             runId = activeRunId, victory = victory, characterId = recipientId,
             gold = Math.Max(0, runUsesWaveGold ? cumulativeRunGold : victory ? settings.victoryGold : settings.defeatGold),
-            fragments = Math.Max(0, victory ? settings.victoryFragments : settings.defeatFragments)
+            fragments = DataManager.Instance.BadgeDatas[StageManager.Instance.waveRow]
         };
         gold = (int)Math.Min(int.MaxValue, (long)gold + reward.gold);
         recipient.fragments = (int)Math.Min(int.MaxValue, (long)recipient.fragments + reward.fragments);
@@ -153,7 +153,7 @@ public static class CharacterProgression
             return State.lastReward;
         var owned = Settings.characters.Where(d => d != null && State.Character(d.id)?.owned == true).ToArray();
         if (owned.Length == 0) return null;
-        int recipient = owned[UnityEngine.Random.Range(0, owned.Length)].id;
+        int recipient = CharacterManager.Instance.currentCharacterId;
         if (!State.TryGrantReward(Settings, victory, recipient, out var reward)) return null;
         Save();
         return reward;

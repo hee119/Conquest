@@ -141,7 +141,7 @@ public sealed class LobbyController : MonoBehaviour
         PlayerPrefs.Save();
 
         if (CharacterManager.Instance != null)
-            CharacterManager.Instance.currentCharacter = characterId;
+            CharacterManager.Instance.currentCharacterId = characterId;
         UpdateCharacterPreview();
     }
 
