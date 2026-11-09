@@ -14,6 +14,7 @@ public sealed class SettingsPause : MonoBehaviour
         previousTimeScale = Time.timeScale;
         Time.timeScale = 0f;
         pauseApplied = true;
+
         soundManager = SoundManager.Instance;
         if (soundManager != null)
             soundManager.BeginSettingsAudio();
@@ -26,8 +27,10 @@ public sealed class SettingsPause : MonoBehaviour
 
         Time.timeScale = previousTimeScale;
         pauseApplied = false;
+
         if (soundManager != null)
             soundManager.EndSettingsAudio();
+
         soundManager = null;
         PlayerPrefs.Save();
     }

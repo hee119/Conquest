@@ -137,7 +137,7 @@ public class UpgradeHover : MonoBehaviour,
         if (isHovering && !hoverBlocked)
         {
             MoveUp();
-            ScaleUp();
+            ScaleUp(targetScale);
         }
 
         // -----------------------------------------------------
@@ -261,10 +261,10 @@ public class UpgradeHover : MonoBehaviour,
     // =========================================================
 
     /// <summary>ScaleUp 동작을 처리한다.</summary>
-    private void ScaleUp()
+    public void ScaleUp(float _targetScale)
     {
         Vector3 targetScaleValue =
-            defaultScale * targetScale;
+            defaultScale * _targetScale;
 
 
         visualRect.localScale =

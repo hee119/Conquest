@@ -98,13 +98,16 @@ public class EnemyCombat : MonoBehaviour, ICombat
             if (hp <= 0)
                 PrepareDeathAnimation();
 
-            bool hasHit = HasAnimatorParameter("Hit") &&
-                (hp <= 0 || PlayHitOnNonLethalDamage);
-
-            if (hasHit)
+            bool hasHit = false;
+            if (hp <= 0 || PlayHitOnNonLethalDamage)
             {
-                if (anim != null) anim.Hit();
-                else if (bossAnimator != null) bossAnimator.SetTrigger("Hit");
+                if (anim != null)
+                    hasHit = (hp > 0 && anim.IsPlaying("Hit")) || anim.Hit();
+                else if (HasAnimatorParameter("Hit"))
+                {
+                    bossAnimator.SetTrigger("Hit");
+                    hasHit = true;
+                }
             }
 
             HitFlash();
@@ -363,7 +366,6 @@ public class EnemyCombat : MonoBehaviour, ICombat
 
     protected bool HasAnimatorParameter(string paramName)
     {
-        if (anim != null) return anim.HasState(paramName);
         if (bossAnimator == null) return false;
         foreach (var parameter in bossAnimator.parameters)
             if (parameter.name == paramName) return true;

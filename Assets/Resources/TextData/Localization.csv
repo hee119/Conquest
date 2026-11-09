@@ -65,11 +65,11 @@ character_skill_magic_desc_4,마법 탄환의 관통력이 {2} 증가합니다.,
 character_skill_magic_desc_5,마법 탄환의 관통력이 추가로 {2} 증가합니다.,Magic bolt pierce increases by another {2}.,魔法弾の貫通力がさらに{2}増加します。
 upgread_intro_CriticalInstinct,치명타 확률은 공격이 치명타가 될 확률입니다. 이번 획득으로 {0}% 증가합니다.,Critical chance is the chance for an attack to critically hit. This upgrade adds {0}%.,クリティカル率は攻撃がクリティカルになる確率です。今回の獲得で{0}%増加します。
 upgread_intro_CriticalForce,치명타 피해는 치명타 적중 시 추가되는 피해량입니다. 이번 획득으로 {0}% 증가합니다.,Critical damage is the extra damage dealt on a critical hit. This upgrade adds {0}%.,クリティカルダメージはクリティカル時に追加されるダメージです。今回の獲得で{0}%増加します。
-upgread_intro_PowerBoost,공격력은 모든 공격의 기본 피해량을 높입니다. 이번 획득으로 {0}% 증가합니다.,Attack power increases the base damage of all attacks. This upgrade adds {0}%.,攻撃力はすべての攻撃の基本ダメージを高めます。今回の獲得で{0}%増加します。
+upgread_intro_PowerBoost,공격력은 모든 공격의 기본 피해량을 높입니다. 이번 획득으로 공격력이 {0} 증가합니다.,Attack power increases the base damage of all attacks. This upgrade adds {0} attack power.,攻撃力はすべての攻撃の基本ダメージを高めます。今回の獲得で攻撃力が{0}増加します。
 upgread_intro_Vitality,최대 체력은 플레이어가 버틸 수 있는 총 체력입니다. 이번 획득으로 {0}% 증가합니다.,Max HP is the total damage the player can withstand. This upgrade adds {0}%.,最大HPはプレイヤーが耐えられる総体力です。今回の獲得で{0}%増加します。
 upgread_intro_QuickCast,스킬 쿨타임은 액티브 스킬의 재사용 대기시간입니다. 이번 획득으로 {0}% 단축됩니다.,Skill cooldown is the wait before an active skill can be used again. This upgrade reduces it by {0}%.,スキルクールダウンはアクティブスキルの再使用待機時間です。今回の獲得で{0}%短縮します。
 upgread_intro_RapidCycle,패시브 주기는 패시브 효과가 다시 발동하기까지의 간격입니다. 이번 획득으로 {0}% 단축됩니다.,Passive cooldown is the interval before a passive effect triggers again. This upgrade reduces it by {0}%.,パッシブ周期はパッシブ効果が再発動するまでの間隔です。今回の獲得で{0}%短縮します。
-upgread_intro_IronWall,방어력은 적에게 받는 피해를 줄여줍니다. 이번 획득으로 {0}% 증가합니다.,Defense reduces damage taken from enemies. This upgrade adds {0}%.,防御力は敵から受けるダメージを軽減します。今回の獲得で{0}%増加します。
+upgread_intro_IronWall,방어력은 적에게 받는 피해를 줄여줍니다. 이번 획득으로 방어력이 {0} 증가합니다.,Defense reduces damage taken from enemies. This upgrade adds {0} defense.,防御力は敵から受けるダメージを軽減します。今回の獲得で防御力が{0}増加します。
 upgread_intro_Snail,일정 시간마다 플레이어 주변에 적의 이동 속도를 낮추는 달팽이 장판을 생성합니다.,Periodically creates a snail field around the player that slows enemies.,一定時間ごとにプレイヤーの周囲に、敵の移動速度を低下させるカタツムリフィールドを生成します。
 upgread_intro_Mold,공격 시 일정 확률로 적에게 곰팡이를 심어 피해를 줍니다.,Attacks have a chance to infect enemies with damaging mold.,攻撃時に一定確率で敵にカビを付着させ、ダメージを与えます。
 upgread_des_Lightning_1,번개 {0}개 추가,Add {0} Lightning,ライトニングを{0}個追加
@@ -147,16 +147,16 @@ upgread_des_CriticalInstinct_2,치명타 확률 {0}% 증가,Critical Chance +{0}
 upgread_des_CriticalInstinct_3,치명타 확률 {0}% 증가,Critical Chance +{0}%,クリティカル率 +{0}%
 upgread_des_CriticalInstinct_4,치명타 확률 {0}% 증가,Critical Chance +{0}%,クリティカル率 +{0}%
 upgread_des_CriticalInstinct_5,치명타 확률 {0}% 증가,Critical Chance +{0}%,クリティカル率 +{0}%
-upgread_des_CriticalForce_1,치명타 데미지 {0}% 증가,Critical Damage +{0}%,クリティカルダメージ +{0}%
-upgread_des_CriticalForce_2,치명타 데미지 {0}% 증가,Critical Damage +{0}%,クリティカルダメージ +{0}%
-upgread_des_CriticalForce_3,치명타 데미지 {0}% 증가,Critical Damage +{0}%,クリティカルダメージ +{0}%
-upgread_des_CriticalForce_4,치명타 데미지 {0}% 증가,Critical Damage +{0}%,クリティカルダメージ +{0}%
-upgread_des_CriticalForce_5,치명타 데미지 {0}% 증가,Critical Damage +{0}%,クリティカルダメージ +{0}%
-upgread_des_PowerBoost_1,공격력 {0}% 증가,Attack Power +{0}%,攻撃力 +{0}%
-upgread_des_PowerBoost_2,공격력 {0}% 증가,Attack Power +{0}%,攻撃力 +{0}%
-upgread_des_PowerBoost_3,공격력 {0}% 증가,Attack Power +{0}%,攻撃力 +{0}%
-upgread_des_PowerBoost_4,공격력 {0}% 증가,Attack Power +{0}%,攻撃力 +{0}%
-upgread_des_PowerBoost_5,공격력 {0}% 증가,Attack Power +{0}%,攻撃力 +{0}%
+upgread_des_CriticalForce_1,치명타 배율 {0} 증가,Critical Damage Multiplier +{0},クリティカルダメージ倍率 +{0}
+upgread_des_CriticalForce_2,치명타 배율 {0} 증가,Critical Damage Multiplier +{0},クリティカルダメージ倍率 +{0}
+upgread_des_CriticalForce_3,치명타 배율 {0} 증가,Critical Damage Multiplier +{0},クリティカルダメージ倍率 +{0}
+upgread_des_CriticalForce_4,치명타 배율 {0} 증가,Critical Damage Multiplier +{0},クリティカルダメージ倍率 +{0}
+upgread_des_CriticalForce_5,치명타 배율 {0} 증가,Critical Damage Multiplier +{0},クリティカルダメージ倍率 +{0}
+upgread_des_PowerBoost_1,공격력 {0} 증가,Attack Power +{0},攻撃力 +{0}
+upgread_des_PowerBoost_2,공격력 {0} 증가,Attack Power +{0},攻撃力 +{0}
+upgread_des_PowerBoost_3,공격력 {0} 증가,Attack Power +{0},攻撃力 +{0}
+upgread_des_PowerBoost_4,공격력 {0} 증가,Attack Power +{0},攻撃力 +{0}
+upgread_des_PowerBoost_5,공격력 {0} 증가,Attack Power +{0},攻撃力 +{0}
 upgread_des_Vitality_1,체력 {0}% 증가,HP +{0}%,HP +{0}%
 upgread_des_Vitality_2,체력 {0}% 증가,HP +{0}%,HP +{0}%
 upgread_des_Vitality_3,체력 {0}% 증가,HP +{0}%,HP +{0}%
@@ -172,11 +172,11 @@ upgread_des_RapidCycle_2,증강 쿨타임 {0}% 단축,Augment Cooldown -{0}%,増
 upgread_des_RapidCycle_3,증강 쿨타임 {0}% 단축,Augment Cooldown -{0}%,増強のクールダウン -{0}%
 upgread_des_RapidCycle_4,증강 쿨타임 {0}% 단축,Augment Cooldown -{0}%,増強のクールダウン -{0}%
 upgread_des_RapidCycle_5,증강 쿨타임 {0}% 단축,Augment Cooldown -{0}%,増強のクールダウン -{0}%
-upgread_des_IronWall_1,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
-upgread_des_IronWall_2,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
-upgread_des_IronWall_3,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
-upgread_des_IronWall_4,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
-upgread_des_IronWall_5,방어력 {0}% 증가,Defense +{0}%,防御力 +{0}%
+upgread_des_IronWall_1,방어력 {0} 증가,Defense +{0},防御力 +{0}
+upgread_des_IronWall_2,방어력 {0} 증가,Defense +{0},防御力 +{0}
+upgread_des_IronWall_3,방어력 {0} 증가,Defense +{0},防御力 +{0}
+upgread_des_IronWall_4,방어력 {0} 증가,Defense +{0},防御力 +{0}
+upgread_des_IronWall_5,방어력 {0} 증가,Defense +{0},防御力 +{0}
 setting_title,설정,Settings,設定
 setting_language_title,언어 설정,Language Settings,言語設定
 setting_tab_graphic,그래픽,Graphic,グラフィック

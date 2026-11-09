@@ -21,47 +21,26 @@ public sealed class ResolutionDropdown : MonoBehaviour
 
     [SerializeField] private TMP_Dropdown dropdown;
 
-    private void Awake()
+    private void OnEnable()
     {
         CacheDropdown();
         if (dropdown == null)
             return;
 
         EnsureOptions();
-        int width = PlayerPrefs.GetInt(WidthPreference, 0);
-        int height = PlayerPrefs.GetInt(HeightPreference, 0);
-        int selectedIndex = width > 0 && height > 0
-            ? FindClosestResolution(width, height)
-            : Mathf.Clamp(dropdown.value, 0, CommonResolutions.Length - 1);
+        GetPreferredResolution(out int width, out int height);
+        int selectedIndex = FindClosestResolution(width, height);
 
         dropdown.SetValueWithoutNotify(selectedIndex);
         dropdown.RefreshShownValue();
-        SaveResolution(selectedIndex);
-        UpdateInteractable();
-    }
-
-    private void OnEnable()
-    {
-        CacheDropdown();
-        if (dropdown != null)
-            dropdown.onValueChanged.AddListener(OnResolutionChanged);
-    }
-
-    private void Start()
-    {
-        ApplyResolution(dropdown.value);
-        UpdateInteractable();
+        dropdown.interactable = true;
+        dropdown.onValueChanged.AddListener(OnResolutionChanged);
     }
 
     private void OnDisable()
     {
         if (dropdown != null)
             dropdown.onValueChanged.RemoveListener(OnResolutionChanged);
-    }
-
-    internal void OnScreenModeChanged()
-    {
-        UpdateInteractable();
     }
 
     internal static void GetPreferredResolution(out int width, out int height)
@@ -98,7 +77,7 @@ public sealed class ResolutionDropdown : MonoBehaviour
         SaveResolution(index);
         // Mode changes are applied at the end of the frame. Use the requested
         // mode so a quick resolution change cannot cancel a pending mode switch.
-        Screen.SetResolution(resolution.x, resolution.y, ScreenModeDropdown.PreferredMode);
+        ScreenModeDropdown.ApplyResolution(resolution.x, resolution.y, ScreenModeDropdown.PreferredMode);
     }
 
     private void SaveResolution(int index)
@@ -126,14 +105,5 @@ public sealed class ResolutionDropdown : MonoBehaviour
         }
 
         return closestIndex;
-    }
-
-    private void UpdateInteractable()
-    {
-        if (dropdown == null)
-            return;
-
-        // 해상도 목록은 화면 모드와 관계없이 열 수 있어야 한다.
-        dropdown.interactable = true;
     }
 }

@@ -8,21 +8,35 @@ using System.Runtime.InteropServices;
 public sealed class ScreenModeDropdown : MonoBehaviour
 {
     private const string ModePreference = "Settings.ScreenMode";
+    private static FullScreenMode? requestedMode;
+    private static int requestFrame;
+    private static float requestDeadline;
 
     [SerializeField] private TMP_Dropdown dropdown;
-    private ResolutionDropdown resolutionDropdown;
 
-    internal static FullScreenMode PreferredMode => GetFullScreenMode(
-        PlayerPrefs.GetInt(ModePreference, GetModeIndex(Screen.fullScreenMode)));
-
-    private void Awake()
+    internal static FullScreenMode PreferredMode
     {
-        if (dropdown == null)
-            dropdown = GetComponent<TMP_Dropdown>();
+        get
+        {
+            int modeIndex = ReadModeIndex();
+            return requestedMode ?? (Application.isEditor ? GetFullScreenMode(modeIndex) : Screen.fullScreenMode);
+        }
+    }
 
-        int modeIndex = PlayerPrefs.GetInt(ModePreference, GetModeIndex(Screen.fullScreenMode));
-        ApplyMode(modeIndex, true);
-        NotifyResolutionDropdown();
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void RestoreDisplaySettings()
+    {
+        requestedMode = null;
+        if (!PlayerPrefs.HasKey(ModePreference) && !PlayerPrefs.HasKey(ResolutionDropdown.WidthPreference))
+            return;
+
+        int modeIndex = PlayerPrefs.GetInt(ModePreference, Screen.fullScreen ? 0 : 1);
+        FullScreenMode mode = GetFullScreenMode(modeIndex);
+#if UNITY_WEBGL && !UNITY_EDITOR
+        if (mode != FullScreenMode.Windowed)
+            return;
+#endif
+        RequestMode(mode);
     }
 
     private void OnEnable()
@@ -31,7 +45,10 @@ public sealed class ScreenModeDropdown : MonoBehaviour
             dropdown = GetComponent<TMP_Dropdown>();
 
         if (dropdown != null)
+        {
             dropdown.onValueChanged.AddListener(OnModeChanged);
+            RefreshMode();
+        }
     }
 
     private void OnDisable()
@@ -42,73 +59,79 @@ public sealed class ScreenModeDropdown : MonoBehaviour
 
     private void OnModeChanged(int modeIndex)
     {
-        ApplyMode(modeIndex, false);
-        NotifyResolutionDropdown();
-    }
-
-    private void ApplyMode(int modeIndex, bool initializing)
-    {
         if (dropdown == null || dropdown.options.Count == 0)
             return;
 
         modeIndex = Mathf.Clamp(modeIndex, 0, Mathf.Min(dropdown.options.Count, 3) - 1);
         FullScreenMode mode = GetFullScreenMode(modeIndex);
-        ResolutionDropdown.GetPreferredResolution(out int width, out int height);
-        if (modeIndex == 2 && Application.platform != RuntimePlatform.WebGLPlayer)
-        {
-            width = Screen.currentResolution.width;
-            height = Screen.currentResolution.height;
-        }
 
 #if UNITY_WEBGL && !UNITY_EDITOR
         // Browser fullscreen requests must run directly inside the user's input event.
-        if (!initializing)
-            TerraformerWebGLFullscreen.Set(mode != FullScreenMode.Windowed);
+        TerraformerWebGLFullscreen.Set(mode != FullScreenMode.Windowed);
 #endif
-        Screen.SetResolution(width, height, mode);
+        SaveModeIndex(modeIndex);
+        RequestMode(mode);
+        RefreshMode();
+    }
+
+    private static void RequestMode(FullScreenMode mode)
+    {
+        requestedMode = mode;
+        requestFrame = Time.frameCount;
+        requestDeadline = Time.realtimeSinceStartup + 1f;
+        ResolutionDropdown.GetPreferredResolution(out int width, out int height);
+        ApplyResolution(width, height, mode);
+    }
+
+    private void Update() => RefreshMode();
+
+    private void RefreshMode()
+    {
+        int modeIndex = ReadModeIndex();
+        if (dropdown != null && dropdown.value != modeIndex)
+            dropdown.SetValueWithoutNotify(modeIndex);
+    }
+
+    private static int ReadModeIndex()
+    {
+        bool fullscreen = Screen.fullScreen;
+        int savedIndex = Mathf.Clamp(PlayerPrefs.GetInt(ModePreference, fullscreen ? 0 : 1), 0, 2);
+
+        // Unity applies requests after the current frame, and the OS can animate the transition.
+        if (requestedMode.HasValue && Time.frameCount != requestFrame &&
+            (Screen.fullScreenMode == requestedMode.Value || Time.realtimeSinceStartup >= requestDeadline))
+            requestedMode = null;
+
+        if (requestedMode.HasValue || Application.isEditor)
+            return savedIndex;
+
+        int modeIndex = fullscreen ? (savedIndex == 2 ? 2 : 0) : 1;
+        if (modeIndex != savedIndex)
+            SaveModeIndex(modeIndex);
+        return modeIndex;
+    }
+
+    private static void SaveModeIndex(int modeIndex)
+    {
         PlayerPrefs.SetInt(ModePreference, modeIndex);
         PlayerPrefs.Save();
-        dropdown.SetValueWithoutNotify(modeIndex);
-        dropdown.RefreshShownValue();
     }
 
-    private void NotifyResolutionDropdown()
+    internal static void ApplyResolution(int width, int height, FullScreenMode mode)
     {
-        if (resolutionDropdown == null)
-            resolutionDropdown = FindFirstObjectByType<ResolutionDropdown>();
-
-        resolutionDropdown?.OnScreenModeChanged();
-    }
-
-    private static FullScreenMode GetFullScreenMode(int modeIndex)
-    {
-        switch (modeIndex)
+        if (mode == FullScreenMode.FullScreenWindow && Application.platform != RuntimePlatform.WebGLPlayer)
         {
-            case 0:
-                if (Application.platform == RuntimePlatform.WindowsPlayer)
-                    return FullScreenMode.ExclusiveFullScreen;
-
-                if (Application.platform == RuntimePlatform.OSXPlayer)
-                    return FullScreenMode.MaximizedWindow;
-
-                return FullScreenMode.FullScreenWindow;
-            case 1:
-                return FullScreenMode.Windowed;
-            default:
-                return FullScreenMode.FullScreenWindow;
+            // Keep the selected vertical resolution and match the display aspect to avoid bars.
+            DisplayInfo display = Screen.mainWindowDisplayInfo;
+            if (display.width > 0 && display.height > 0)
+                width = Mathf.Max(1, Mathf.RoundToInt(height * ((float)display.width / display.height)));
         }
+
+        Screen.SetResolution(width, height, mode);
     }
 
-    private static int GetModeIndex(FullScreenMode mode)
-    {
-        if (mode == FullScreenMode.Windowed)
-            return 1;
-
-        if (mode == FullScreenMode.FullScreenWindow)
-            return 2;
-
-        return 0;
-    }
+    private static FullScreenMode GetFullScreenMode(int modeIndex) =>
+        modeIndex == 1 ? FullScreenMode.Windowed : FullScreenMode.FullScreenWindow;
 
 #if UNITY_WEBGL && !UNITY_EDITOR
     private static class TerraformerWebGLFullscreen

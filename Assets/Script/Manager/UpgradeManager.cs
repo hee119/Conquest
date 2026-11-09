@@ -304,44 +304,99 @@ public class UpgradeManager : MonoBehaviour
     }
 
     /// <summary>새 게임을 시작할 수 있도록 증강 상태를 초기화한다.</summary>
-    public void ResetForNewRun()
+    
+[ContextMenu("Reset Upgrades For New Run")]
+public void ResetForNewRun()
+{
+    if (DataManager.Instance == null)
     {
-        StopRun();
-        ResetBonusesToOriginal();
-
-        skillUpgrades.Clear();
-        statUpgrades.Clear();
-        characterSkillUpgrades.Clear();
-        renewableUpgrades.Clear();
-        maxLevelUpgrades.Clear();
-        upgrades.Clear();
-        skillUpgradeCount = 0;
-        statUpgradeCount = 0;
-        isFirstUpgrade = true;
-
-        foreach (var data in DataManager.Instance.upgradeDatasDic.Values)
-        {
-            data.upgradeLevel = 0;
-            if (data.tier <= 0)
-                upgrades.Add(data.id);
-        }
-        foreach (var data in DataManager.Instance.statUpgradeDatasDic.Values)
-        {
-            data.upgradeLevel = 0;
-            if (data.tier <= 0)
-                upgrades.Add(data.id);
-        }
-        foreach (var data in DataManager.Instance.characterSkillUpgradeDatasDic.Values)
-        {
-            data.upgradeLevel = 0;
-            if (data.tier <= 0)
-                upgrades.Add(data.id);
-        }
-
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerCollider = player != null ? player.GetComponent<BoxCollider2D>() : null;
-        UpgradesChanged?.Invoke();
+        Debug.LogWarning("[UpgradeManager] DataManager가 준비되지 않아 초기화할 수 없습니다.");
+        return;
     }
+
+    // 1. 실행 중인 증강과 쿨타임 정리
+    StopRun();
+
+    // 2. 능력치 보너스를 원래 상태로 복원
+    if (originalPlayerStats.Count > 0)
+    {
+        ResetBonusesToOriginal();
+    }
+    else
+    {
+        Debug.LogWarning("[UpgradeManager] 원본 스탯이 없어 UpgradesInit 확인이 필요합니다.");
+    }
+
+    // 3. 보유 증강 및 상태 초기화
+    skillUpgrades.Clear();
+    statUpgrades.Clear();
+    characterSkillUpgrades.Clear();
+    renewableUpgrades.Clear();
+    maxLevelUpgrades.Clear();
+    upgrades.Clear();
+
+    skillUpgradeCount = 0;
+    statUpgradeCount = 0;
+    isFirstUpgrade = true;
+
+    // 4. 모든 증강 레벨 초기화
+    foreach (var data in DataManager.Instance.upgradeDatasDic.Values)
+    {
+        data.upgradeLevel = 0;
+
+        if (data.tier <= 0)
+            upgrades.Add(data.id);
+    }
+
+    foreach (var data in DataManager.Instance.statUpgradeDatasDic.Values)
+    {
+        data.upgradeLevel = 0;
+
+        if (data.tier <= 0)
+            upgrades.Add(data.id);
+    }
+
+    foreach (var data in DataManager.Instance.characterSkillUpgradeDatasDic.Values)
+    {
+        data.upgradeLevel = 0;
+
+        if (data.tier <= 0)
+            upgrades.Add(data.id);
+    }
+
+    // 5. 이전 증강의 전투 상태 제거
+    if (GameManager.Instance != null)
+    {
+        GameManager.Instance.burnChance = 0;
+        GameManager.Instance.moldChance = 0;
+    }
+
+    // 6. 현재 씬의 플레이어 다시 연결
+    player = GameObject.FindGameObjectWithTag("Player");
+
+    playerInfo = player != null
+        ? player.GetComponent<PlayerInfo>()
+        : null;
+
+    playerCollider = player != null
+        ? player.GetComponent<BoxCollider2D>()
+        : null;
+
+    // 7. 현재 씬의 쿨타임 HUD 다시 연결
+    upgradeCooldownHud = UpgradeCooldownHud.FindInScene();
+
+    if (upgradeCooldownHud != null)
+    {
+        upgradeCooldownHud.Initialize(this);
+        upgradeCooldownHud.ClearAll();
+    }
+
+    // 8. UI에 초기화 알림
+    UpgradesChanged?.Invoke();
+
+    Debug.Log("[UpgradeManager] 증강 초기화 완료");
+}
+
 
     /// <summary>StopRun 동작을 처리한다.</summary>
     public void StopRun()

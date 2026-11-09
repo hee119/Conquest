@@ -36,6 +36,8 @@ MonoBehaviour:
   - {fileID: 3612424795087935449, guid: 725db11643f5446a4947da4c83ab2991, type: 3}
   - {fileID: -6283793592964156423, guid: 725db11643f5446a4947da4c83ab2991, type: 3}
   - {fileID: 2148578341019746946, guid: 725db11643f5446a4947da4c83ab2991, type: 3}
+  - {fileID: 647088098727119384, guid: 725db11643f5446a4947da4c83ab2991, type: 3}
+  framesPerSecond: 12
   sequences:
   - state: Move
     frames:

@@ -304,7 +304,12 @@ public class PlayerMove : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         // Disabling PlayerInput cancels actions after the player becomes inactive.
-        if (!isActiveAndEnabled) return;
+        if (!isActiveAndEnabled)
+            return;
+
+        if (TryGetComponent<PlayerCombat>(out var combat) && combat.isDead)
+            return;
+        
         MoveDir = context.ReadValue<Vector2>();
 
         if (isDashing)
@@ -330,7 +335,7 @@ public class PlayerMove : MonoBehaviour
             playerRb.linearVelocity = Vector2.zero;
         }
         
-        if(context.canceled)
+        if(context.canceled) 
         {
             Debug.Log("cancel");
             SetIdleDelayed();
@@ -382,6 +387,9 @@ public class PlayerMove : MonoBehaviour
     
     private void SetIdleDelayed()
     {
+        if (TryGetComponent<PlayerCombat>(out var combat) && combat.isDead)
+            return;
+        
         if (isActiveAndEnabled && idleCor == null)
             idleCor = StartCoroutine(IdleDelayCor());
     }

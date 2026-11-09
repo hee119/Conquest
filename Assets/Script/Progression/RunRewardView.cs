@@ -22,17 +22,49 @@ public sealed class RunRewardView : MonoBehaviour
 
     private void Awake() => CacheLayout();
 
+    
+    
     private void CacheLayout()
     {
-        if (cardPositions != null || rewardCards == null) return;
+        if (rewardCards == null || rewardCards.Length == 0)
+            return;
+
+        // 배열이 정상적인 크기로 준비된 경우에만 재사용
+        if (cardPositions != null &&
+            cardScales != null &&
+            cardPositions.Length == rewardCards.Length &&
+            cardScales.Length == rewardCards.Length)
+            return;
+
+        // 배열 크기가 다르면 다시 생성
         cardPositions = new Vector2[rewardCards.Length];
         cardScales = new Vector3[rewardCards.Length];
+
         for (int i = 0; i < rewardCards.Length; i++)
         {
+            if (rewardCards[i] == null)
+            {
+                Debug.LogError(
+                    $"[RunRewardView] Reward Card {i} 참조 누락",
+                    this
+                );
+                continue;
+            }
+
             cardPositions[i] = rewardCards[i].anchoredPosition;
             cardScales[i] = rewardCards[i].localScale;
         }
+
+        Debug.Log(
+            $"[RunRewardView] 캐시 재생성 완료 | " +
+            $"Cards={rewardCards.Length}, " +
+            $"Positions={cardPositions.Length}, " +
+            $"Scales={cardScales.Length}",
+            this
+        );
     }
+
+
 
     private void OnEnable()
     {
@@ -48,21 +80,80 @@ public sealed class RunRewardView : MonoBehaviour
     }
     public void Bind(RunReward value) { reward = value; Refresh(); ResetPresentation(); }
 
+    
     private void ResetPresentation()
     {
+        Debug.Log(
+            $"[RunRewardView][Reset START] Object={name} | " +
+            $"Active={gameObject.activeInHierarchy}",
+            this
+        );
+
         reveal?.Kill();
         reveal = null;
+
         CacheLayout();
-        if (cardPositions == null || rewardCardGroups == null) return;
+
+        Debug.Log(
+            $"[RunRewardView][ARRAY STATUS]\n" +
+            $"Cards = {rewardCards?.Length ?? -1}\n" +
+            $"Groups = {rewardCardGroups?.Length ?? -1}\n" +
+            $"Positions = {cardPositions?.Length ?? -1}\n" +
+            $"Scales = {cardScales?.Length ?? -1}",
+            this
+        );
+
+        if (cardPositions == null || rewardCardGroups == null)
+        {
+            Debug.LogError(
+                "[RunRewardView] 배열이 NULL이어서 초기화 중단",
+                this
+            );
+            return;
+        }
+
         for (int i = 0; i < rewardCards.Length; i++)
         {
+            Debug.Log(
+                $"[RunRewardView][INDEX CHECK] i={i} | " +
+                $"Card={i < rewardCards.Length} | " +
+                $"Group={i < rewardCardGroups.Length} | " +
+                $"Position={i < cardPositions.Length} | " +
+                $"Scale={i < cardScales.Length}",
+                this
+            );
+
+            if (i >= rewardCardGroups.Length ||
+                i >= cardPositions.Length ||
+                i >= cardScales.Length)
+            {
+                Debug.LogError(
+                    $"[RunRewardView] 배열 범위 초과! Index={i}",
+                    this
+                );
+                return;
+            }
+
+            if (rewardCards[i] == null || rewardCardGroups[i] == null)
+            {
+                Debug.LogError(
+                    $"[RunRewardView] 참조 누락! Index={i}",
+                    this
+                );
+                continue;
+            }
+
             rewardCards[i].anchoredPosition = cardPositions[i];
             rewardCards[i].localScale = cardScales[i];
+
             rewardCardGroups[i].alpha = 0f;
             rewardCardGroups[i].interactable = false;
             rewardCardGroups[i].blocksRaycasts = false;
         }
+
+        Debug.Log("[RunRewardView] Reset 완료", this);
     }
+
 
     public void PlayReveal()
     {

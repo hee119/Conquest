@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 3781658931129801994}
   - component: {fileID: 1712175357192004655}
   - component: {fileID: 1962189558998811617}
+  - component: {fileID: 7589561018262371594}
   m_Layer: 5
   m_Name: Dropdown (1)
   m_TagString: Untagged
@@ -381,6 +382,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e709f360d54da5adebb084bc1a540a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DropdownListOccluder
+--- !u!114 &7589561018262371594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5486557887340379295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6188482514186546867
 GameObject:
   m_ObjectHideFlags: 0

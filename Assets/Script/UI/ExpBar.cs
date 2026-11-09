@@ -206,6 +206,15 @@ public class ExpBar : MonoBehaviour
 
     public void ExpUpdate()
     {
+        if (!loadingMode &&
+            LevelManager.Instance != null &&
+            LevelManager.Instance.currentLevel == 0 &&
+            LevelManager.Instance.currentExp == 0)
+        {
+            ResetForNewRun();
+            return;
+        }
+        
         float currentExp =
             LevelManager.Instance.currentExp;
 
@@ -2239,4 +2248,58 @@ public class ExpBar : MonoBehaviour
             visible &&
             fillEndGlowIntensity > 0.001f;
     }
+    
+    
+    public void ResetForNewRun()
+    {
+        if (loadingMode)
+            return;
+
+        if (expSlider == null)
+            expSlider = GetComponent<Slider>();
+
+        // 진행 중인 경험치 애니메이션 종료
+        if (expUpdate != null)
+        {
+            StopCoroutine(expUpdate);
+            expUpdate = null;
+        }
+
+        if (expInit != null)
+        {
+            StopCoroutine(expInit);
+            expInit = null;
+        }
+
+        if (levelUpRimGlowUpdate != null)
+        {
+            StopCoroutine(levelUpRimGlowUpdate);
+            levelUpRimGlowUpdate = null;
+        }
+
+        if (gainFrameGlowUpdate != null)
+        {
+            StopCoroutine(gainFrameGlowUpdate);
+            gainFrameGlowUpdate = null;
+        }
+
+        // 경험치 애니메이션 상태 초기화
+        targetValue = 0f;
+        previousTargetValue = 0f;
+        velocity = 0f;
+        pendingLevelUp = false;
+
+        // 슬라이더 즉시 초기화
+        if (expSlider != null)
+            expSlider.SetValueWithoutNotify(0f);
+
+        // 글로우 제거
+        SetFillCapGlowVisible(false);
+        SetLevelUpRimGlowAlpha(0f);
+        SetGainFrameGlowAlpha(0f);
+
+        // Fill 크기 및 위치 갱신
+        UpdateFillTextureLayout();
+    }
+
 }
