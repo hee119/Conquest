@@ -797,7 +797,7 @@ MonoBehaviour:
   targetYValue: 1
   upSpeed: 3
   downSpeed: 3
-  targetScale: 1.6
+  targetScale: 1.1
 --- !u!210 &4908020804257359159
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -983,8 +983,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 37
+  m_fontSizeBase: 37
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

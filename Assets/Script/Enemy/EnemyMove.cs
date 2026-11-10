@@ -27,6 +27,8 @@ public class EnemyMove : MonoBehaviour
     private float nextPathUpdateTime;
     private Vector3 lastDestinationTargetPosition;
     private bool hasDestinationTargetPosition;
+    private int bossPushFrame = -1;
+    private bool resumeAgentAfterBossPush;
 
     protected virtual void Awake()
     {
@@ -106,11 +108,65 @@ public class EnemyMove : MonoBehaviour
 
     protected virtual void OnDisable()
     {
+        EndBossPush();
         if (knockbackCoroutine != null)
         {
             StopCoroutine(knockbackCoroutine);
             knockbackCoroutine = null;
         }
+    }
+
+    internal void PushFromBoss(Vector3 step)
+    {
+        if (bossPushFrame < 0 && isActiveAndEnabled && agent != null && agent.enabled && agent.isOnNavMesh)
+        {
+            if (knockbackCoroutine != null)
+            {
+                StopCoroutine(knockbackCoroutine);
+                knockbackCoroutine = null;
+                canKnockback = true;
+            }
+            // Prevent avoidance from moving the visible object while it is being pushed.
+            resumeAgentAfterBossPush = true;
+            agent.enabled = false;
+        }
+        bossPushFrame = Time.frameCount;
+
+        Vector3 position = transform.position;
+        if (resumeAgentAfterBossPush && NavMesh.Raycast(position, position + step, out var hit, agent.areaMask))
+        {
+            Vector3 tangent = Vector3.ProjectOnPlane(step, hit.normal);
+            if (tangent.sqrMagnitude < step.sqrMagnitude * 0.25f)
+            {
+                tangent = Vector3.Cross(Vector3.forward, step);
+                if (NavMesh.Raycast(position, position + tangent, out _, agent.areaMask))
+                    tangent = -tangent;
+            }
+            if (NavMesh.Raycast(position, position + tangent, out _, agent.areaMask))
+                return;
+            step = tangent;
+        }
+        transform.position = position + step;
+    }
+
+    private void LateUpdate()
+    {
+        // BossBodyObstacle runs later. Wait until the previous frame had no push.
+        if (bossPushFrame >= 0 && Time.frameCount > bossPushFrame + 1)
+            EndBossPush();
+    }
+
+    private void EndBossPush()
+    {
+        if (bossPushFrame < 0) return;
+        if (resumeAgentAfterBossPush && agent != null)
+        {
+            agent.enabled = true;
+            hasDestinationTargetPosition = false;
+            nextPathUpdateTime = 0f;
+        }
+        resumeAgentAfterBossPush = false;
+        bossPushFrame = -1;
     }
 
     public void OnTriggerEnter2D(Collider2D other)

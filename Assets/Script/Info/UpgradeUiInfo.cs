@@ -13,7 +13,7 @@ public class UpgradeUiInfo : MonoBehaviour
     
     public Image upgradeImage;
 
-    public void ShowUpgrade(UpgradeData data)
+    public void ShowUpgrade(UpgradeData data, bool showFirstDescription = false)
     {
         // Copy every stat so the card owns a complete selection snapshot.
         upgradeData = JsonUtility.FromJson<UpgradeData>(JsonUtility.ToJson(data));
@@ -39,7 +39,9 @@ public class UpgradeUiInfo : MonoBehaviour
         {
             upgradeDesLo.isTextInit = true;
             upgradeDesLo.gameObject.SetActive(true);
-            upgradeDesLo.key = data.description;
+            // This card shows an already acquired upgrade.
+            upgradeDesLo.key = UpgradeManager.GetUpgradeDescriptionKey(
+                data.description, showFirstDescription ? 0 : data.upgradeLevel - 1);
             if (UpgradeManager.Instance != null)
                 upgradeDesLo.SetArguments(UpgradeManager.Instance.GetDescriptionArguments(data.id));
             upgradeDesLo.ForceUpdateText();

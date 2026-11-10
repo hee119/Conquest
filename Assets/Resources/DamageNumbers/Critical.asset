@@ -16,7 +16,7 @@ MonoBehaviour:
   colours:
   - {r: 1, g: 0, b: 0, a: 1}
   sizes: []
-  font: {fileID: 0}
+  font: {fileID: 11400000, guid: 6876867369c9a443e8f2d30741ffec26, type: 2}
   bold: 0
   italic: 0
   underline: 0

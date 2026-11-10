@@ -170,18 +170,33 @@ public void ApplyCustomCharacterStats()
         }
     }
     
-    public async void GetWaveBadgeDatas()
+    private Coroutine waveBadgeLoadRoutine;
+
+    public void GetWaveBadgeDatas()
     {
-        BadgeDatas.Clear();
-        if (stageInfos == null) return;
-        
-        await Awaitable.WaitForSecondsAsync(0.001f);
-        
-        for (int i = 0; i < stageInfos[GameManager.Instance.currentStage].badgeCount.Count; i++)
+        if (waveBadgeLoadRoutine != null)
+            StopCoroutine(waveBadgeLoadRoutine);
+        waveBadgeLoadRoutine = StartCoroutine(LoadWaveBadgeDatas());
+    }
+
+    private IEnumerator LoadWaveBadgeDatas()
+    {
+        while (GameManager.Instance == null || stageInfos == null)
+            yield return null;
+
+        int stage = GameManager.Instance.currentStage;
+        if (stage < 0 || stage >= stageInfos.Length || stageInfos[stage] == null ||
+            stageInfos[stage].badgeCount == null)
         {
-            BadgeDatas.Add(i, stageInfos[GameManager.Instance.currentStage].badgeCount[i]);
+            Debug.LogWarning($"[StageData] 스테이지 {stage}의 증표 데이터를 찾을 수 없습니다.");
+            BadgeDatas.Clear();
+            yield break;
         }
-        
+
+        BadgeDatas.Clear();
+        var badges = stageInfos[stage].badgeCount;
+        for (int i = 0; i < badges.Count; i++)
+            BadgeDatas.Add(i, badges[i]);
     }
 
     public bool TryGetWaveGold(int stage, int reachedWave, out int gold)

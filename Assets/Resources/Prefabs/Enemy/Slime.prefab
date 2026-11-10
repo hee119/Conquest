@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: -5204337359457001001}
   - component: {fileID: 1473741278265170918}
   - component: {fileID: 5092722824820702611}
+  - component: {fileID: 7808385690984663212}
   m_Layer: 8
   m_Name: Slime
   m_TagString: Enemy
@@ -315,6 +316,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlimeSpriteAnimation
   animationData: {fileID: 11400000, guid: 55b22c5a6c1ea4602bbfaac32cb4ae2a, type: 2}
+--- !u!114 &7808385690984663212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4125709159630829647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a7c43b5208004bceb076b08d6e41543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyFacing
+  body: {fileID: 0}
+  facesRightByDefault: 1
 --- !u!1001 &1596700093920007851
 PrefabInstance:
   m_ObjectHideFlags: 0

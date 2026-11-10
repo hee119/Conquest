@@ -563,8 +563,6 @@ public void ResetForNewRun()
 
         if (dm.upgradeDatasDic.TryGetValue(id, out var u))
         {
-            bool showFirstSkillDescription = u.upgradeLevel <= 0 &&
-                                             (u.function == "Snail" || u.function == "Mold");
             v = new UpgradeView
             {
                 id = u.id,
@@ -572,10 +570,7 @@ public void ResetForNewRun()
                 sprite = u.sprite,
                 type = u.type,
                 upgradeLevel = u.upgradeLevel,
-                description = GetUpgradeDescriptionKey(
-                    u.description,
-                    u.upgradeLevel,
-                    showFirstSkillDescription ? "upgread_intro_" + u.function : null)
+                description = GetUpgradeDescriptionKey(u.description, u.upgradeLevel)
             };
             return true;
         }
@@ -612,16 +607,14 @@ public void ResetForNewRun()
         return false;
     }
 
-    // DesId stays the base key. Optional _1 ... _5 entries in the localization
-    // sheet describe the next upgrade; older data still uses its original text.
-    /// <summary>UpgradeDescriptionKey 관련 값을 조회한다.</summary>
-    private static string GetUpgradeDescriptionKey(string baseKey, int ownedLevel, string firstDescription = null)
+    // DesId stores the base key. The suffix distinguishes acquisition from upgrades.
+    internal static string GetUpgradeDescriptionKey(string baseKey, int ownedLevel)
     {
-        string levelKey = baseKey + "_" + (Mathf.Clamp(ownedLevel, 0, 4) + 1);
+        string levelKey = baseKey + (ownedLevel <= 0 ? "_1" : "_2");
         if (LocalizationManager.Instance != null && LocalizationManager.Instance.HasTranslation(levelKey))
             return levelKey;
 
-        return !string.IsNullOrEmpty(firstDescription) ? firstDescription : baseKey;
+        return baseKey;
     }
 
     // 스킬/스탯 상관없이 현재 UpgradeLevel 반환

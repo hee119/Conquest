@@ -8,7 +8,7 @@ public sealed class SoundManager : MonoBehaviour
     private const string MasterVolumeKey = "Audio.MasterVolume";
     private const string BgmVolumeKey = "Audio.BgmVolume";
     private const string SfxVolumeKey = "Audio.SfxVolume";
-    private const float SettingsBgmVolumeScale = 0.2f;
+    private const float UpgradeSelectionBgmVolumeScale = 0.2f;
 
     private float bgmVolumeScale = 1f;
     private int settingsOpenCount;
@@ -230,7 +230,7 @@ public sealed class SoundManager : MonoBehaviour
         bool selectionOrSettingsOpen = settingsOpenCount > 0 || upgradeSelectionOpen;
         bgmSource.ignoreListenerPause = selectionOrSettingsOpen;
         bgmSource.volume = BgmVolume * bgmVolumeScale *
-            (selectionOrSettingsOpen ? SettingsBgmVolumeScale : 1f);
+            (upgradeSelectionOpen ? UpgradeSelectionBgmVolumeScale : 1f);
     }
 
     public void SetSfxVolume(float volume)

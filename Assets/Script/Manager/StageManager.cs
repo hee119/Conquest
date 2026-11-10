@@ -151,6 +151,9 @@ public class StageManager : MonoBehaviour
         currentStage =
             GameManager.Instance.currentStage;
 
+        if (DataManager.Instance != null)
+            DataManager.Instance.GetWaveBadgeDatas();
+
         if (DataManager.Instance != null && DataManager.Instance.TryGetWaveGold(currentStage, 0, out int initialGold))
             CharacterProgression.RecordWaveGold(initialGold);
 

@@ -225,9 +225,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -5211555
-  m_SortingLayer: 7
-  m_SortingOrder: 1
+  m_SortingLayerID: -172119849
+  m_SortingLayer: 4
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1156604623, guid: ffc700107eb754c71803ea4a9946ca6d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -283,7 +283,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.2, y: 1}
+  m_Size: {x: 2.2, y: 1.4}
   m_EdgeRadius: 0
 --- !u!114 &-8184704702133321677
 MonoBehaviour:
@@ -984,11 +984,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 1.1, y: 0.5, z: 0.5}
+  m_Extents: {x: 1.05, y: 0.00001, z: 0.65}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -0.07}
   m_TimeToStationary: 0.5
 --- !u!1 &8215313587248114127
 GameObject:
@@ -1114,6 +1114,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 'Ice Hit '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7275548786892498063, guid: 5bc9a0bf98f67d240a936bf476ba2082,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

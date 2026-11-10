@@ -240,7 +240,7 @@ public sealed class UpgradeFusionController : MonoBehaviour
             }
             committed = true;
             second.gameObject.SetActive(false);
-            first.GetComponent<UpgradeUiInfo>().ShowUpgrade(DataManager.Instance.upgradeDatasDic[pendingResult]);
+            first.GetComponent<UpgradeUiInfo>().ShowUpgrade(DataManager.Instance.upgradeDatasDic[pendingResult], true);
         }
         float reveal = Mathf.Clamp01((elapsed - impact) / revealDuration);
         first.transform.localPosition = center;

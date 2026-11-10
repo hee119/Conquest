@@ -56,6 +56,7 @@ public class SlimeKing : SplitEnemy
     public LayerMask obstacleMask;          // 벽 레이어 (비워두면 벽 체크 안 함)
 
     NavMeshAgent agent;
+    BossBodyObstacle bodyObstacle;
     Collider2D[] cols;
     Transform playerTf;
     readonly List<GameObject> warnings = new List<GameObject>();
@@ -93,6 +94,8 @@ public class SlimeKing : SplitEnemy
         base.OnEnable();    // SplitEnemy: 스케일 1로 초기화
 
         if (agent == null) agent = GetComponent<NavMeshAgent>();
+        if (bodyObstacle == null) bodyObstacle = GetComponent<BossBodyObstacle>();
+        bodyObstacle?.SetSkillBodyActive(true);
         if (cols == null || cols.Length == 0) cols = GetComponents<Collider2D>();
 
         splitCount = maxSplitCount;     // 풀 재사용 시 분열 횟수 복구 (분열 자식은 스폰 후 덮어씀)
@@ -115,6 +118,7 @@ public class SlimeKing : SplitEnemy
         base.OnDisable();   // 스탯 초기화 유지
 
         ReleaseAllWarnings();
+        bodyObstacle?.SetSkillBodyActive(false);
         inPattern = false;
         isAirborne = false;
         SetColliders(true);
@@ -125,6 +129,7 @@ public class SlimeKing : SplitEnemy
     public override void Die()
     {
         StopAllCoroutines();
+        bodyObstacle?.SetSkillBodyActive(false);
         ReleaseAllWarnings();
 
         if (isAirborne) { transform.position = airbornePos; isAirborne = false; }
@@ -192,6 +197,7 @@ public class SlimeKing : SplitEnemy
 
             baseScale = transform.localScale;
             inPattern = true;
+            bodyObstacle?.SetSkillBodyActive(true);
             SetAI(false);
 
             switch (next)
@@ -210,6 +216,11 @@ public class SlimeKing : SplitEnemy
     // 패턴1: 몸을 열어 작은 슬라임 생성
     IEnumerator OpenBodyPattern()
     {
+        bodyObstacle?.SetSummoning(true);
+        Rigidbody2D bossBody = GetComponent<Rigidbody2D>();
+        if (bossBody != null)
+            bossBody.linearVelocity = Vector2.zero;
+
         bool hasOpenAnimation = bossAnimator != null && openBodyRaiseClip != null &&
             openBodyHoldClip != null && openBodyLowerClip != null &&
             bossAnimator.HasState(0, Animator.StringToHash("Base Layer.OpenBodyRaise")) &&
@@ -267,6 +278,8 @@ public class SlimeKing : SplitEnemy
         {
             yield return ScaleTo(baseScale, 0.2f);
         }
+
+        bodyObstacle?.SetSummoning(false);
     }
 
     // 패턴2: 점프 후 워닝 사인 → 플레이어 위치 연속 내려찍기

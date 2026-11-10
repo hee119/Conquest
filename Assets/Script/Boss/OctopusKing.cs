@@ -103,6 +103,8 @@ public class OctopusKing : MonoBehaviour
     private IEnumerator RunAttack(IEnumerator attack)
     {
         attacking = true;
+        var bodyObstacle = GetComponent<BossBodyObstacle>();
+        bodyObstacle?.SetSkillBodyActive(true);
         bool stopped = agent != null && agent.enabled && agent.isOnNavMesh && agent.isStopped;
         if (agent != null && agent.enabled && agent.isOnNavMesh) agent.isStopped = true;
         try { yield return attack; }
@@ -112,6 +114,7 @@ public class OctopusKing : MonoBehaviour
             StopBeam();
             SetSpinning(false);
             attacking = false;
+            bodyObstacle?.SetSkillBodyActive(false);
             if (agent != null && agent.enabled && agent.isOnNavMesh && Alive) agent.isStopped = stopped;
         }
     }
