@@ -13,7 +13,7 @@ public sealed class CharacterSummaryStats : MonoBehaviour
 
     private void OnEnable()
     {
-        RefreshLayout();
+        HideIconTiles();
         CharacterProgression.Changed += Refresh;
         LocalizationManager.InstanceChanged += BindLanguage;
         BindLanguage(LocalizationManager.Instance);
@@ -24,39 +24,14 @@ public sealed class CharacterSummaryStats : MonoBehaviour
         LocalizationManager.InstanceChanged -= BindLanguage;
         BindLanguage(null);
     }
-    private void Start() => RefreshLayout();
-    private void RefreshLayout()
-    {
-        RefreshIconLayout();
-    }
-    private void RefreshIconLayout()
+    private void HideIconTiles()
     {
         foreach (Transform row in transform)
         {
-            var tile = row.Find("Icon Tile") as RectTransform;
-            var label = row.Find("Label") as RectTransform;
-            var value = row.Find("Value") as RectTransform;
-            var rect = row as RectTransform;
-            if (label == null || value == null || rect == null) continue;
+            var tile = row.Find("Icon Tile");
             if (tile != null) tile.gameObject.SetActive(false);
-            foreach (var text in row.GetComponentsInChildren<TMP_Text>(true))
-            {
-                text.enableAutoSizing = true;
-                text.fontSizeMin = 11f;
-                text.fontSizeMax = 18f;
-            }
-            float left = rect.rect.xMin + 13f;
-            label.pivot = new Vector2(0f, 0.5f);
-            Vector3 position = label.localPosition; position.x = left; label.localPosition = position;
-            value.pivot = new Vector2(1f, 0.5f);
-            position = value.localPosition; position.x = rect.rect.xMax - 13f; value.localPosition = position;
-            value.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 225f);
-            float available = position.x - value.rect.width * Mathf.Abs(value.localScale.x) - left - 12f;
-            label.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal,
-                Mathf.Max(80f, available / Mathf.Max(0.01f, Mathf.Abs(label.localScale.x))));
         }
     }
-
     private void BindLanguage(LocalizationManager manager)
     {
         if (localization != null) localization.OnLanguageChanged -= Refresh;
@@ -98,10 +73,15 @@ public sealed class CharacterSummaryStats : MonoBehaviour
         }
         if (hpValue != null) hpValue.text = Value(current.hp, next.hp);
         if (attackValue != null) attackValue.text = Value(current.attack, next.attack);
-        string seconds = localization != null ? localization.GetTranslation("character_stat_seconds") : "초";
         float basicCooldown = BaseCooldown(characterId);
-        if (cooldownValue != null) cooldownValue.text = Value(
-            basicCooldown / Mathf.Max(.1f, current.attackSpeed),
-            basicCooldown / Mathf.Max(.1f, next.attackSpeed), seconds);
+        if (cooldownValue != null)
+        {
+            if (basicCooldown > 0f)
+                cooldownValue.text = Value(
+                    1f / Mathf.Max(.01f, basicCooldown / Mathf.Max(.1f, current.attackSpeed)),
+                    1f / Mathf.Max(.01f, basicCooldown / Mathf.Max(.1f, next.attackSpeed)));
+            else
+                cooldownValue.text = "—";
+        }
     }
 }

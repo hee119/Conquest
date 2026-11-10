@@ -889,7 +889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -37.49951, y: -138.84}
+  m_AnchoredPosition: {x: -37.49945, y: -138.84}
   m_SizeDelta: {x: -95, y: -316.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &48451690
@@ -14727,15 +14727,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5776151711440031716, guid: e1b8c2c1c44f64d2cae42bc3f3534fb3,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 5776151711440031716, guid: e1b8c2c1c44f64d2cae42bc3f3534fb3,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1b8c2c1c44f64d2cae42bc3f3534fb3, type: 3}
 --- !u!224 &398861755 stripped
 RectTransform:

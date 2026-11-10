@@ -14,8 +14,6 @@ public sealed class CharacterProgressionPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        LayoutUpgradeCost();
-        LayoutActionButtons();
         UiSoundEvents.UseDedicatedClick(upgradeButton);
         CharacterProgression.Changed += Refresh;
         localization = LocalizationManager.Instance;
@@ -32,69 +30,6 @@ public sealed class CharacterProgressionPanel : MonoBehaviour
     public void SetCharacter(int id) { characterId = id; Refresh(); }
     public bool IsUpgradeButton(UnityEngine.UI.Button button) => button == upgradeButton;
 
-    private void LayoutActionButtons()
-    {
-        if (upgradeButton == null) return;
-        var parent = upgradeButton.transform.parent as RectTransform;
-        if (parent == null) return;
-        var select = parent.Find("SelectButton") as RectTransform;
-        var enhance = upgradeButton.transform as RectTransform;
-        if (select == null || enhance == null) return;
-        float half = Mathf.Max(100f, (parent.rect.width - 60f) * 0.5f);
-        void Place(RectTransform rect, float x)
-        {
-            rect.anchorMin = rect.anchorMax = new Vector2(0.5f, 0f);
-            rect.pivot = new Vector2(0.5f, 0f);
-            rect.anchoredPosition = new Vector2(x, 15f);
-            rect.sizeDelta = new Vector2(half / Mathf.Max(0.01f, Mathf.Abs(rect.localScale.x)),
-                78f / Mathf.Max(0.01f, Mathf.Abs(rect.localScale.y)));
-        }
-        Place(select, -half * 0.5f);
-        Place(enhance, half * 0.5f);
-        // Only the left button draws the shared center divider.
-        var duplicate = enhance.Find("White Border 2");
-        if (duplicate != null) duplicate.gameObject.SetActive(false);
-        var label = select.GetComponentInChildren<TMP_Text>(true);
-        if (label != null)
-        {
-            label.enableAutoSizing = true;
-            label.fontSizeMin = 14f;
-            label.fontSizeMax = 24f;
-        }
-    }
-
-    private void LayoutUpgradeCost()
-    {
-        if (upgradeButton == null || buttonText == null || costText == null) return;
-        var title = buttonText.rectTransform;
-        title.anchorMin = new Vector2(0f, 0.5f);
-        title.anchorMax = new Vector2(1f, 0.9f);
-        title.pivot = new Vector2(0.5f, 0.5f);
-        title.offsetMin = new Vector2(6f, 0f);
-        title.offsetMax = new Vector2(-6f, 0f);
-        buttonText.margin = Vector4.zero;
-        buttonText.alignment = TextAlignmentOptions.Center;
-        buttonText.enableAutoSizing = true;
-        buttonText.fontSizeMin = 16f;
-        buttonText.fontSizeMax = 22f;
-
-        costText.transform.SetParent(upgradeButton.transform, false);
-        var cost = costText.rectTransform;
-        cost.anchorMin = new Vector2(0f, 0.1f);
-        cost.anchorMax = new Vector2(1f, 0.5f);
-        cost.pivot = new Vector2(0.5f, 0.5f);
-        cost.offsetMin = new Vector2(6f, 0f);
-        cost.offsetMax = new Vector2(-6f, 0f);
-        cost.localScale = Vector3.one;
-        costText.margin = Vector4.zero;
-        costText.alignment = TextAlignmentOptions.Center;
-        costText.enableAutoSizing = true;
-        costText.fontSizeMin = 11f;
-        costText.fontSizeMax = 15f;
-        costText.textWrappingMode = TextWrappingModes.NoWrap;
-        costText.raycastTarget = false;
-    }
-
     public void Refresh()
     {
         var c = CharacterProgression.State.Character(characterId);
@@ -105,9 +40,6 @@ public sealed class CharacterProgressionPanel : MonoBehaviour
         if (levelText != null) levelText.text = Copy("강화", "Enhancement", "強化") + $"  +{c.level} / {config.maxLevel}";
         if (bonusText != null)
         {
-            bonusText.enableAutoSizing = true;
-            bonusText.fontSizeMin = 13;
-            bonusText.fontSizeMax = 22;
             bonusText.text = Describe(CharacterProgression.Bonuses(characterId, c.level));
         }
         if (costText != null)
@@ -124,9 +56,6 @@ public sealed class CharacterProgressionPanel : MonoBehaviour
         }
         if (statusText != null)
         {
-            statusText.enableAutoSizing = true;
-            statusText.fontSizeMin = 12;
-            statusText.fontSizeMax = 19;
             statusText.text = maxed ? string.Empty : Copy("다음 강화: ", "Next: ", "次の強化: ") +
                 Describe(CharacterProgression.Bonuses(characterId, c.level + 1, false));
         }

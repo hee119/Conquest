@@ -21,6 +21,7 @@ public sealed class LobbyController : MonoBehaviour
 
     private int previewCharacterId = 1;
     private bool started;
+    private bool characterPanelWasOpen;
     private AudioSource lobbyMusicSource;
     private AudioClip lobbyMusicClip;
     [SerializeField] private QuitConfirmationDialog quitDialog;
@@ -45,12 +46,27 @@ public sealed class LobbyController : MonoBehaviour
                 lobbyMusicClip = lobbyMusicSource.clip;
         }
 
-        previewCharacterId = PlayerPrefs.GetInt("SelectedCharacter", 1) == 2 ? 2 : 1;
+        previewCharacterId = GetSelectedCharacterId();
         UpdateCharacterPreview();
     }
 
+    private void Update()
+    {
+        bool isOpen = characterPanel != null && characterPanel.activeInHierarchy;
+        if (isOpen && !characterPanelWasOpen)
+        {
+            previewCharacterId = GetSelectedCharacterId();
+            UpdateCharacterPreview();
+        }
+        characterPanelWasOpen = isOpen;
+    }
+
+    private static int GetSelectedCharacterId() =>
+        PlayerPrefs.GetInt("SelectedCharacter", 1) == 2 ? 2 : 1;
+
     private void OnDisable()
     {
+        characterPanelWasOpen = false;
         if (quitDialog != null) quitDialog.Hide();
         // A new scene may already have replaced the shared BGM source's clip.
         if (lobbyMusicSource != null && lobbyMusicSource.clip == lobbyMusicClip &&
@@ -96,7 +112,7 @@ public sealed class LobbyController : MonoBehaviour
     private void PreviewCharacter(int characterId)
     {
         previewCharacterId = characterId;
-        SelectCharacter(characterId);
+        UpdateCharacterPreview();
     }
 
     private void UpdateCharacterPreview()

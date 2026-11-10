@@ -1,4 +1,25 @@
 ﻿<Solution>
+  <Project Path="Unity.Pipeline.csproj" />
+  <Project Path="FastScriptReload.Editor.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Unity.Pipeline.Editor.csproj" />
+  <Project Path="Unity.Pipeline.Tests.Editor.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="Febucci.TextAnimatorForUnity.Runtime.csproj" />
+  <Project Path="Assembly-CSharp-firstpass.csproj" />
+  <Project Path="Unity.Pipeline.IlInterpreter.csproj" />
+  <Project Path="Unity.Pipeline.Tests.Runtime.csproj" />
+  <Project Path="Febucci.TextAnimatorForUnity.TMP.Runtime.csproj" />
+  <Project Path="Febucci.TextAnimatorForUnity.Input.Runtime.csproj" />
+  <Project Path="Febucci.Attributes.Runtime.csproj" />
+  <Project Path="FastScriptReload.Runtime.csproj" />
+  <Project Path="Assembly-CSharp-Editor-firstpass.csproj" />
+  <Project Path="Febucci.TextAnimator.Demo.Runtime.csproj" />
+  <Project Path="Febucci.TextAnimatorForUnity.UITk.Runtime.csproj" />
+  <Project Path="Sirenix.OdinInspector.Modules.UnityMathematics.csproj" />
+  <Project Path="Conquest.PolygonFill.Runtime.csproj" />
+  <Project Path="Unity.Pipeline.Attributes.csproj" />
+  <Project Path="Febucci.TextAnimator.Demo.CurvesAndPlaybacks.Runtime.csproj" />
+  <Project Path="Conquest.PolygonFill.Editor.csproj" />
+  <Project Path="Unity.Pipeline.CodeGen.csproj" />
 </Solution>
