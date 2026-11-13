@@ -6,6 +6,49 @@ using Random = UnityEngine.Random;
 
 public class EnemyCombat : MonoBehaviour, ICombat
 {
+    private static readonly HashSet<EnemyCombat> activeEnemies = new HashSet<EnemyCombat>();
+
+    public static bool HasLivingEnemies
+    {
+        get
+        {
+            foreach (EnemyCombat enemy in activeEnemies)
+                if (enemy != null && enemy.gameObject.activeInHierarchy && !enemy.isDead)
+                    return true;
+            return false;
+        }
+    }
+
+    public static int LivingEnemyCount
+    {
+        get
+        {
+            int count = 0;
+            foreach (EnemyCombat enemy in activeEnemies)
+                if (enemy != null && enemy.gameObject.activeInHierarchy && !enemy.isDead)
+                    count++;
+            return count;
+        }
+    }
+
+    public static int CountLivingEnemiesById(Dictionary<int, int> counts)
+    {
+        counts.Clear();
+        int total = 0;
+        foreach (EnemyCombat enemy in activeEnemies)
+        {
+            if (enemy == null || !enemy.gameObject.activeInHierarchy || enemy.isDead) continue;
+            if (BossHealthSource.IsRegisteredBoss(enemy)) continue;
+            if (!enemy.IsWaveAutoSpawned) continue;
+            total++;
+            if (enemy.enemyInfo == null) continue;
+            int id = enemy.enemyInfo.id;
+            counts.TryGetValue(id, out int count);
+            counts[id] = count + 1;
+        }
+        return total;
+    }
+
     protected EnemySpriteAnimation anim;
     protected Animator bossAnimator;
 
@@ -13,6 +56,7 @@ public class EnemyCombat : MonoBehaviour, ICombat
     public float hp {get; set;}
 
     public bool isDead = false;
+    public bool IsWaveAutoSpawned { get; set; }
     public bool isBurn = false;
 
     protected bool isInvincible = false;
@@ -165,6 +209,8 @@ public class EnemyCombat : MonoBehaviour, ICombat
 
     protected virtual void OnEnable()
     {
+        activeEnemies.Add(this);
+        IsWaveAutoSpawned = false;
         if (hitParticle != null)
             hitParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
 
@@ -184,6 +230,11 @@ public class EnemyCombat : MonoBehaviour, ICombat
                     spriteRenderer.color = Color.white;
             }
         }
+    }
+
+    protected virtual void OnDisable()
+    {
+        activeEnemies.Remove(this);
     }
 
     public void ResetHealth(float maximum)
@@ -241,13 +292,14 @@ public class EnemyCombat : MonoBehaviour, ICombat
         if (isDead)
             return;
 
+        bool isStageBoss = BossHealthSource.IsRegisteredBoss(this);
         isDead = true;
         isDying = false;
 
-        PoolManager.Instance.Spawn(
-            enemyInfo.dropExpOrbId,
-            transform.position
-        );
+        // Only the registered stage boss grants the level reward; its normal
+        // split enemies retain their existing experience drops.
+        if (!isStageBoss)
+            PoolManager.Instance.Spawn(enemyInfo.dropExpOrbId, transform.position);
 
         for (int i = transform.childCount - 1; i >= 0; i--)
         {

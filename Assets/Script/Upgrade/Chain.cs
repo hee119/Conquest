@@ -32,7 +32,9 @@ public class Chain : DetectUpgrade
 
     if (collision.CompareTag("Enemy"))
     {
-        List<GameObject> target = GetChainAttackList(chainId, collision.gameObject);
+        // The projectile's upgrade determines the chain limits; chainId selects
+        // the separate lightning prefab and its damage data.
+        List<GameObject> target = GetChainAttackList(upgradeInfo.id, collision.gameObject);
 
         Debug.Log($"[Chain 진단] 반환된 target 리스트 개수={target.Count}");
         for (int i = 0; i < target.Count; i++)

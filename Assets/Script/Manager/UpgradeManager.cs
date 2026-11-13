@@ -734,9 +734,17 @@ public void ResetForNewRun()
                 "IronWall" => stat.defense,
                 _ => null
             };
-            float value = stat.function == "CriticalForce"
-                ? ValueAt(values, statLevel)
-                : ValueAt(values, statLevel) - (statLevel > 0 ? ValueAt(values, statLevel - 1) : 0f);
+            float previousValue = statLevel > 0 ? ValueAt(values, statLevel - 1) : 0f;
+            if (stat.function == "CriticalForce" && statLevel == 0)
+            {
+                int characterId = EnemyCombat.CurrentCharacterId;
+                if (originalPlayerStats.TryGetValue(characterId, out PlayerStatOrigin origin))
+                    previousValue = origin.criticalDamage;
+                else if (dm.playerDatasDic.TryGetValue(characterId, out PlayerData player))
+                    previousValue = player.criticalDamage -
+                        CharacterProgression.Bonuses(characterId, CharacterProgression.Level(characterId)).criticalDamage;
+            }
+            float value = ValueAt(values, statLevel) - previousValue;
             return new object[] { value % 1f == 0f ? (object)(int)value : value };
         }
 

@@ -11,6 +11,15 @@ public sealed class BossHealthSource : MonoBehaviour
 
     private EnemyCombat combat;
 
+    public static bool IsRegisteredBoss(EnemyCombat enemy)
+    {
+        if (enemy == null) return false;
+        foreach (BossHealthSource source in activeBosses)
+            if (source != null && source.isActiveAndEnabled && source.combat == enemy)
+                return true;
+        return false;
+    }
+
     public static EnemyCombat CurrentCombat
     {
         get

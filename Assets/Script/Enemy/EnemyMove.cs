@@ -29,6 +29,13 @@ public class EnemyMove : MonoBehaviour
     private bool hasDestinationTargetPosition;
     private int bossPushFrame = -1;
     private bool resumeAgentAfterBossPush;
+    private const float SeparationInterval = 0.15f;
+    private const float SeparationSpeed = 0.8f;
+    private readonly Collider2D[] nearbyEnemies = new Collider2D[32];
+    private ContactFilter2D enemyFilter;
+    private EnemyCombat ownCombat;
+    private bool isBoss;
+    private float nextSeparationTime;
 
     protected virtual void Awake()
     {
@@ -37,6 +44,11 @@ public class EnemyMove : MonoBehaviour
 
         if (agent == null)
             agent = GetComponent<NavMeshAgent>();
+
+        ownCombat = GetComponent<EnemyCombat>();
+        isBoss = GetComponent<BossBodyObstacle>() != null;
+        enemyFilter = new ContactFilter2D { useTriggers = false };
+        enemyFilter.SetLayerMask(LayerMask.GetMask("Enemy"));
 
         if (agent != null)
         {
@@ -54,6 +66,7 @@ public class EnemyMove : MonoBehaviour
         canKnockback = true;
         nextPathUpdateTime = 0f;
         hasDestinationTargetPosition = false;
+        nextSeparationTime = Time.time + Random.Range(0f, SeparationInterval);
 
         if (agent != null && agent.enabled && agent.isOnNavMesh)
             agent.isStopped = false;
@@ -154,6 +167,55 @@ public class EnemyMove : MonoBehaviour
         // BossBodyObstacle runs later. Wait until the previous frame had no push.
         if (bossPushFrame >= 0 && Time.frameCount > bossPushFrame + 1)
             EndBossPush();
+
+        SeparateOverlappingEnemies();
+    }
+
+    private void SeparateOverlappingEnemies()
+    {
+        if (isBoss || Time.timeScale <= 0f || Time.time < nextSeparationTime ||
+            bossPushFrame >= 0 || knockbackCoroutine != null ||
+            (ownCombat != null && ownCombat.isDead) || agent == null ||
+            !agent.enabled || !agent.isOnNavMesh || agent.isStopped)
+            return;
+
+        nextSeparationTime = Time.time + SeparationInterval;
+        float radius = Mathf.Max(0.5f, agent.radius * 2f);
+        Vector2 origin = transform.position;
+        int count = Physics2D.OverlapCircle(origin, radius, enemyFilter, nearbyEnemies);
+        Vector2 push = Vector2.zero;
+        for (int i = 0; i < count; i++)
+        {
+            Collider2D otherCollider = nearbyEnemies[i];
+            if (otherCollider == null) continue;
+            EnemyMove other = otherCollider.GetComponentInParent<EnemyMove>();
+            if (other == null || other == this || other.isBoss ||
+                (other.ownCombat != null && other.ownCombat.isDead)) continue;
+
+            Vector2 delta = origin - (Vector2)other.transform.position;
+            float distance = delta.magnitude;
+            if (distance >= radius) continue;
+            if (distance < 0.001f)
+            {
+                int a = GetInstanceID();
+                int b = other.GetInstanceID();
+                float angle = ((Mathf.Min(a, b) ^ Mathf.Max(a, b)) & 1023) * (Mathf.PI * 2f / 1024f);
+                delta = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * (a < b ? 1f : -1f);
+                distance = 0f;
+            }
+            else delta /= distance;
+            push += delta * (1f - distance / radius);
+        }
+
+        if (push.sqrMagnitude < 0.000001f) return;
+        Vector3 step = (Vector3)(Vector2.ClampMagnitude(push, 1f) * (SeparationSpeed * SeparationInterval));
+        if (NavMesh.Raycast(transform.position, transform.position + step, out NavMeshHit hit, agent.areaMask))
+        {
+            step = Vector3.ProjectOnPlane(step, hit.normal);
+            if (step.sqrMagnitude < 0.000001f ||
+                NavMesh.Raycast(transform.position, transform.position + step, out _, agent.areaMask)) return;
+        }
+        agent.Move(step);
     }
 
     private void EndBossPush()

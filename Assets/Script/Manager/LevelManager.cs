@@ -26,6 +26,8 @@ public class LevelManager : MonoBehaviour
     private int minuteLevel;
 
     private float minuteTimer;
+    private int pendingBossLevels;
+    public bool HasPendingBossLevel => pendingBossLevels > 0;
 
     public int RequiredExp => levelDatas != null && currentLevel >= 0 &&
         currentLevel < levelDatas.Length ? levelDatas[currentLevel] : 0;
@@ -61,6 +63,12 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
+        if (pendingBossLevels > 0 && RequiredExp > 0 && upgradeUI != null &&
+            !upgradeUI.activeSelf && Time.timeScale > 0f)
+        {
+            pendingBossLevels--;
+            ApplyLevelUp();
+        }
         // A large EXP pickup can pay for several levels. Present one upgrade
         // choice at a time, then spend the remaining EXP after that UI closes.
         if (CanLevelUp)
@@ -100,6 +108,7 @@ public class LevelManager : MonoBehaviour
     {
         currentLevel = 0;
         currentExp = 0;
+        pendingBossLevels = 0;
         minuteExp = 0;
         minuteLevel = 0;
         minuteTimer = 0f;
@@ -135,6 +144,17 @@ public class LevelManager : MonoBehaviour
             return;
 
         currentExp -= RequiredExp; // 초과분 보존 (currentLevel++ 전에 계산)
+        ApplyLevelUp();
+    }
+
+    public void GrantBossLevel()
+    {
+        if (RequiredExp > 0)
+            pendingBossLevels++;
+    }
+
+    private void ApplyLevelUp()
+    {
         currentLevel++;
         minuteLevel++;
 

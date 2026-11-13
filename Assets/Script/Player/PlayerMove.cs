@@ -171,10 +171,16 @@ public class PlayerMove : MonoBehaviour
         do
         {
             yield return PhysicsStep;
+            // Contacts can remove one velocity axis while the input stays held.
+            // Restore the requested movement before the next physics step so
+            // sliding past a tree resumes both axes without another key event.
+            if (!isDashing && canMove && MoveDir.sqrMagnitude > 0f)
+                playerRb.linearVelocity = MoveDir * speed;
             KeepInsideTilemapBounds();
             PlayFootstepForMovement();
         }
-        while (isDashing || playerRb.linearVelocity.sqrMagnitude > 0f);
+        while (isDashing || (canMove && MoveDir.sqrMagnitude > 0f) ||
+               playerRb.linearVelocity.sqrMagnitude > 0f);
         movementCoroutine = null;
         footstepTimeRemaining = 0f;
     }
@@ -304,7 +310,7 @@ public class PlayerMove : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         // Disabling PlayerInput cancels actions after the player becomes inactive.
-        if (!isActiveAndEnabled)
+        if (!gameObject.activeInHierarchy || !isActiveAndEnabled)
             return;
 
         if (TryGetComponent<PlayerCombat>(out var combat) && combat.isDead)
@@ -387,11 +393,13 @@ public class PlayerMove : MonoBehaviour
     
     private void SetIdleDelayed()
     {
+        if (!gameObject.activeInHierarchy || !isActiveAndEnabled || idleCor != null)
+            return;
+
         if (TryGetComponent<PlayerCombat>(out var combat) && combat.isDead)
             return;
-        
-        if (isActiveAndEnabled && idleCor == null)
-            idleCor = StartCoroutine(IdleDelayCor());
+
+        idleCor = StartCoroutine(IdleDelayCor());
     }
 
     private IEnumerator IdleDelayCor()

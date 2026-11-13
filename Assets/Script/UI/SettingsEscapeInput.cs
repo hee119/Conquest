@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public sealed class SettingsEscapeInput : MonoBehaviour
 {
     private InputAction escapeAction;
-    private SettingsPause settings;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void Initialize()
@@ -21,38 +20,33 @@ public sealed class SettingsEscapeInput : MonoBehaviour
         escapeAction = new InputAction("Settings", InputActionType.Button, "<Keyboard>/escape");
         escapeAction.performed += ToggleSettings;
         escapeAction.Enable();
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        FindSettings();
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) => FindSettings();
-
-    private void FindSettings()
+    private static SettingsPause FindSettings()
     {
-        settings = null;
         var scene = SceneManager.GetActiveScene();
         foreach (var root in scene.GetRootGameObjects())
         {
-            settings = root.GetComponentInChildren<SettingsPause>(true);
-            if (settings != null)
-                return;
+            foreach (var settings in root.GetComponentsInChildren<SettingsPause>(true))
+            {
+                var parent = settings.transform.parent;
+                if (parent == null || parent.gameObject.activeInHierarchy)
+                    return settings;
+            }
         }
+        return null;
     }
 
     private void ToggleSettings(InputAction.CallbackContext context)
     {
-        if (settings == null)
-            FindSettings();
-        if (settings == null || (settings.transform.parent != null &&
-            !settings.transform.parent.gameObject.activeInHierarchy))
-            return;
-
-        settings.gameObject.SetActive(!settings.gameObject.activeSelf);
+        // Prepared scenes can become active without raising sceneLoaded again.
+        var settings = FindSettings();
+        if (settings != null)
+            settings.gameObject.SetActive(!settings.gameObject.activeSelf);
     }
 
     private void OnDestroy()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
         if (escapeAction == null) return;
         escapeAction.performed -= ToggleSettings;
         escapeAction.Dispose();

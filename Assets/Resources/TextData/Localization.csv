@@ -30,20 +30,20 @@ character_skill_magic_name,마법탄 강화,Magic Bolt Upgrade,魔法弾強化
 character_skill_range_desc,기본 공격 범위 +{0}%,Basic attack range +{0}%,基本攻撃範囲 +{0}%
 character_skill_count_sword_desc,검격 +{1},slash attacks +{1},斬撃攻撃 +{1}
 character_skill_chain_desc,적 {3}명에게 연쇄 공격,Chain to {3} enemies,敵{3}体に連鎖
-character_skill_count_mage_desc,마법 탄환 +{1},magic bolts +{1},魔法弾丸+{1}
-character_skill_pierce_desc,마법 탄환 관통 +{2},Magic Bullet Penetration +{2},魔法弾の貫通 +{2}
+character_skill_count_mage_desc,마법 탄환 +{1},Magic Bolt +{1},魔法弾丸+{1}
+character_skill_pierce_desc,마법 탄환 관통 +{2},Magic Bolt Penetration +{2},魔法弾の貫通 +{2}
 character_skill_slash_desc_1,기본 공격 범위 +{0}%,Basic attack range +{0}%,基本攻撃範囲 +{0}%
 character_skill_slash_desc_2,기본 공격 범위 +{0}%,Basic attack range +{0}%,基本攻撃範囲 +{0}%
 character_skill_slash_desc_3,검격 +{1} ,slash attacks +{1},斬撃攻撃 +{1}
 character_skill_slash_desc_4,검격 +{1} ,slash attacks +{1},斬撃攻撃 +{1}
 character_skill_slash_desc_5,검격 +{1} ,slash attacks +{1},斬撃攻撃 +{1}
-character_skill_magic_desc_1,마법 탄환 +{1},magic bolts +{1},魔法弾丸+{1}
-character_skill_magic_desc_2,마법 탄환 +{1},magic bolts +{1},魔法弾丸+{1}
-character_skill_magic_desc_3,적 {3}명에게 연쇄 공격,적 {3}명에게 연쇄 공격,敵{3}体に連鎖
-character_skill_magic_desc_4,마법 탄환 관통 +{2},Magic bolt pierce increases by {2}.,魔法弾の貫通力が{2}増加します。
-character_skill_magic_desc_5,마법 탄환 관통 +{2},Magic Bullet Penetration +{2},魔法弾の貫通 +{2}
-upgread_des_Lightning_1,일정 시간마다 주변 적에게 하늘에서 낙뢰를 떨어뜨립니다.,Magic Bullet Penetration +{2},魔法弾の貫通 +{2}
-upgread_des_Lightning_2,번개 +{0}개,Lightning +{0},ライトニング +{0}個
+character_skill_magic_desc_1,마법 탄환 +{1},Magic Bolt +{1},魔法弾丸+{1}
+character_skill_magic_desc_2,마법 탄환 +{1},Magic Bolt +{1},魔法弾丸+{1}
+character_skill_magic_desc_3,적 {3}명에게 연쇄 공격,Chain attacks to {3} enemies,敵{3}体に連鎖
+character_skill_magic_desc_4,마법 탄환 관통 +{2},Magic Bolt Penetration +{2},魔法弾の貫通 +{2}
+character_skill_magic_desc_5,마법 탄환 관통 +{2},Magic Bolt Penetration +{2},魔法弾の貫通 +{2}
+upgread_des_Lightning_1,일정 시간마다 주변 적에게 하늘에서 낙뢰를 떨어뜨립니다.,It drops lightning from the sky on nearby enemies at regular intervals.,一定時間ごとに周囲の敵に空から雷撃を落とします。
+upgread_des_Lightning_2,낙뢰 +{0}개,Lightning +{0},雷撃 +{0}個
 upgread_des_Fireball_1,일정 시간마다 주변 적에게 파이어볼을 발사합니다.,Periodically fires a fireball at nearby enemies.,一定時間ごとに周囲の敵にファイアボールを発射します。
 upgread_des_Fireball_2,파이어볼 +{0}개,Fireball +{0},ファイアボール +{0}個
 upgread_des_Burn_1,적을 공격하면 일정 확률로 화상 효과를 적용합니다.,Attacks have a chance to burn enemies.,敵を攻撃すると、一定確率で火傷を付与します。
@@ -56,7 +56,7 @@ upgread_des_Shurlken_1,일정 시간마다 플레이어 주변을 도는 표창�
 upgread_des_Shurlken_2,표창 +{0}개,Shuriken +{0},手裏剣 +{0}個
 upgread_des_Missile_1,일정 시간마다 주변 적에게 미사일을 연속으로 발사합니다.,Periodically fires a volley of missiles at nearby enemies.,一定時間ごとに周囲の敵にミサイルを連続発射します。
 upgread_des_Missile_2,미사일 +{0}개,Missile +{0},ミサイル +{0}個
-upgread_des_Mold_1,적을 공격하면 일정 확률로 주변 적에게 달라붙는 곰팡이가 생깁니다. 곰팡이는 자라나다 터지며 피해를 줍니다.,"Attacks have a chance to create mold that attaches to nearby enemies. It grows and bursts, dealing damage.",敵を攻撃すると、一定確率で周囲の敵に付着するカビが発生します。カビは成長して破裂し、ダメージを与えます。
+upgread_des_Mold_1,적을 공격하면 일정 확률로 주변 적에게 달라붙는 곰팡이가 생깁니다. 곰팡이는 자라나다 터지며 피해를 줍니다.,Attacks may grow mold on nearby enemies. It bursts to deal damage.,敵を攻撃すると、一定確率で周囲の敵に付着するカビが発生します。カビは成長して破裂し、ダメージを与えます。
 upgread_des_Mold_2,곰팡이 확률 +{0}%,Increase Mold Chance +{0}%,真菌の確率が増加 +{0}％
 upgread_des_FireStorm_1,파이어볼이 적에게 적중하면 주변으로 퍼져 나갑니다.,Fireballs spread outward when they hit an enemy.,ファイアボールが敵に命中すると周囲に広がります。
 upgread_des_FireStorm_2,파이어볼을 화염 뇌우로 변경,Change Fireball to Firestorm,ファイアボールを炎の嵐に変更
@@ -67,23 +67,23 @@ upgread_des_LightningShuriken_2,표창이 뇌전 표창으로 변경,Change Shur
 upgread_des_Heatwave_1,파이어볼이 적에게 적중하면 폭발합니다.,Fireballs explode when they hit an enemy.,ファイアボールが敵に命中すると爆発します。
 upgread_des_Heatwave_2,파이어볼을 폭염으로 변경,Change Fireball to Heatwave,ファイアボールを熱波に変更
 upgread_des_LavaField_1,장판에 닿은 적에게 화상 효과를 적용합니다.,fields burn enemies that touch them.,カタツムリのエリアに触れた敵に火傷を付与します。
-upgread_des_LavaField_2,달팽이를 용암지대로 변경,Change Snail to Lava Field,溶岩地帯に変更
+upgread_des_LavaField_2,달팽이를 용암지대로 변경,Change Snail to Lava Field,カタツムリを溶岩地帯に変更
 upgread_des_RottingSpore_1,곰팡이가 터지면 적에게 독 효과를 적용합니다.,Bursting mold poisons enemies.,カビが破裂すると敵に毒を付与します。
 upgread_des_RottingSpore_2,곰팡이를 부패포자로 변경,Change Mold to Rotting Spore,カビを腐敗胞子に変更
-upgread_des_CriticalInstinct_1,치명타 확률은 공격이 치명타가 될 확률입니다. 이번 획득으로 {0}% 증가합니다.,Critical chance is the chance for an attack to critically hit. This upgrade adds {0}%.,クリティカル率は攻撃がクリティカルになる確率です。今回の獲得で{0}%増加します。
+upgread_des_CriticalInstinct_1,치명타 확률은 공격이 치명타가 될 확률입니다. 이번 획득으로 {0}% 증가합니다.,Critical chance is the chance to critically hit. Gain {0}%.,クリティカル率は攻撃がクリティカルになる確率です。今回の獲得で{0}%増加します。
 upgread_des_CriticalInstinct_2,치명타 확률 +{0}%,Critical Chance +{0}%,クリティカル率 +{0}%
-upgread_des_CriticalForce_1,치명타 배율은 치명타 적중 시 추가되는 피해량의 배율입니다. 이번 획득으로 {0} 증가합니다.,The Critical Hit Multiplier is the multiplier for the additional damage dealt upon a critical hit. It increases by {0} with this acquisition.,クリティカル倍率は、クリティカルヒット時に追加されるダメージの倍率です。今回の獲得で{0}増加します。
+upgread_des_CriticalForce_1,치명타 적중 시 가하는 피해의 배율이 증가합니다. 이번 획득으로 {0} 증가합니다.,The damage multiplier on critical hits increases. Increases by {0} with this acquisition.,クリティカルヒット時のダメージの倍率が増加します。今回の獲得で{0}増加します。
 upgread_des_CriticalForce_2,치명타 배율 +{0},Critical Damage Multiplier +{0},クリティカル倍率 +{0}
-upgread_des_PowerBoost_1,이번 획득으로 공격력이 {0} 증가합니다.,Attack power increases the damage of all attacks. This upgrade adds {0} attack power.,攻撃力は全ての攻撃のダメージを増加させます。このアップグレードは{0}の攻撃力を追加します。
+upgread_des_PowerBoost_1,이번 획득으로 공격력이 {0} 증가합니다.,Attack power boosts all attack damage. Gain {0} attack power.,攻撃力は全ての攻撃のダメージを増加させます。このアップグレードは{0}の攻撃力を追加します。
 upgread_des_PowerBoost_2,공격력 +{0},Attack Power +{0},攻撃力 +{0}
 upgread_des_Vitality_1,이번 획득으로 최대체력이 {0}% 증가합니다,This acquisition increases your maximum HP by {0}%.,今回の獲得で最大体力が{0}%増加します
-upgread_des_Vitality_2,최대체력 +{0}%,HP +{0}%,体力 +{0}%
-upgread_des_QuickCast_1,공격 속도가 이번 획득으로 {0}% 증가됩니다.,Attack speed increases by {0}% with this acquisition.,攻撃速度が今回の獲得で{0}%増加します。
+upgread_des_Vitality_2,최대체력 +{0}%,Max HP +{0}%,最大体力 +{0}%
+upgread_des_QuickCast_1,공격속도가 이번 획득으로 {0}% 증가됩니다.,Attack speed increases by {0}% with this acquisition.,攻撃速度が今回の獲得で{0}%増加します。
 upgread_des_QuickCast_2,공격속도 +{0}%,Attack Speed +{0}%,攻撃速度+{0}％
-upgread_des_RapidCycle_1,증강 쿨타임은 증강 효과가 다시 발동하기까지의 시간입니다. 이번 획득으로 {0}% 단축됩니다.,The augment cooldown is the time until the augment effect activates again. This acquisition reduces it by {0}%.,増強クールタイムは増強効果が再発動するまでの時間です。今回の獲得で{0}%短縮されます。
-upgread_des_RapidCycle_2,증강 쿨타임 -{0}%,Augment Cooldown -{0}%,攻撃速度の減少 -{0}%
-upgread_des_IronWall_1,방어력은 적에게 받는 피해를 퍼센트 연산으로 줄여줍니다. 이번 획득으로 방어력이 {0} 증가합니다.,Defense reduces damage taken from enemies by a percentage. Defense increases by {0} with this acquisition.,防御力は敵に受けるダメージをパーセント演算で減らします。今回の獲得で防御力が{0}増加します。
-upgread_des_IronWall_2,방어력 {0} 증가,Defense +{0},防御力 +{0}
+upgread_des_RapidCycle_1,증강 쿨타임은 증강 효과가 다시 발동하기까지의 시간입니다. 이번 획득으로 {0}% 단축됩니다.,Augment cooldown is time between activations. Reduce it by {0}%.,増強クールタイムは増強効果が再発動するまでの時間です。今回の獲得で{0}%短縮されます。
+upgread_des_RapidCycle_2,증강 쿨타임 -{0}%,Augment Cooldown -{0}%,増強クールタイム -{0}%
+upgread_des_IronWall_1,방어력은 적에게 받는 피해를 퍼센트 연산으로 줄여줍니다. 이번 획득으로 방어력이 {0} 증가합니다.,Defense reduces damage taken by a percentage. Gain {0} defense.,防御力は敵に受けるダメージをパーセント演算で減らします。今回の獲得で防御力が{0}増加します。
+upgread_des_IronWall_2,방어력 +{0} ,Defense +{0},防御力 +{0}
 setting_title,설정,Settings,設定
 setting_language_title,언어 설정,Language Settings,言語設定
 setting_tab_graphic,그래픽,Graphic,グラフィック
@@ -112,9 +112,9 @@ lobby_character_swordman,검사,Swordsman,剣士
 setting_exit,닫기,Close,閉じる
 cutscene_skip,스킵,Skip,スキップ
 cutscene_caption_earth,새로운 보금자리를 개척하기 위해 개척자들이 우주로 향한다.,Pioneers venture into space to discover a new home.,新たな居住地を開拓するため、開拓者たちは宇宙へと旅立つ。
-cutscene_caption_mission,개척자들의 임무는 인간이 살기 적합한 행성을 찾고 위협요소를 제거하는것이다.,Their mission is to find a planet suitable for human life and eliminate any threats.,開拓者たちの任務は、人類が暮らすのに適した惑星を探し、脅威を排除することだ。
-cutscene_caption_discovery,기나긴 항해 끝에 희망의 행성을 발견했다. 지금부터 위험 요소를 제거하겠다.,"After a long journey, we have discovered a planet of hope. We will now eliminate all threats.",長い航海の末、希望の惑星を発見した。これより、危険要素を排除する。
-cutscene_caption_conquest,마침내 행성의 위협을 제거했다. 그러나 임무는 끝나지 않았다. 인류에게 가장 적합한 행성을 찾기 위한 여정은 계속된다.,The threats on this planet have finally been eliminated. But our mission is not over. The journey to find the perfect planet for humanity continues.,ついに、この惑星の脅威を排除した。しかし、任務はまだ終わっていない。人類に最も適した惑星を探す旅は続いていく。
+cutscene_caption_mission,개척자들의 임무는 인간이 살기 적합한 행성을 찾고 위협요소를 제거하는것이다.,Their mission: find a habitable planet and eliminate threats.,開拓者たちの任務は、人類が暮らすのに適した惑星を探し、脅威を排除することだ。
+cutscene_caption_discovery,기나긴 항해 끝에 희망의 행성을 발견했다. 지금부터 위험 요소를 제거하겠다.,"After a long journey, we found a hopeful planet. Eliminate threats.",長い航海の末、希望の惑星を発見した。これより、危険要素を排除する。
+cutscene_caption_conquest,마침내 행성의 위협을 제거했다. 그러나 임무는 끝나지 않았다. 인류에게 가장 적합한 행성을 찾기 위한 여정은 계속된다.,"The threats are gone, but the search for a perfect planet goes on.",ついに、この惑星の脅威を排除した。しかし、任務はまだ終わっていない。人類に最も適した惑星を探す旅は続いていく。
 debug_camera_lens,렌즈: {0},Lens: {0},レンズ: {0}
 debug_skill_upgrade,스킬 강화,Skill Upgrade,スキル強化
 debug_spawn_id,스폰 ID,Spawn ID,スポーンID
@@ -159,10 +159,10 @@ reward_token_name,개척자의 증표,Pioneer Tokens,開拓者の証
 stage_settings_quit_game,게임종료,Quit game,ゲーム終了
 character_stat_hp,체력,HP,体力
 character_stat_attack,공격력,Attack,攻撃力
-character_stat_cooldown,공격속도,Attack Speed,攻撃速度
+character_stat_cooldown,초당공격횟수,Attacks per second,毎秒攻撃回数
 character_stat_seconds,초,s,秒
 loading_tip_agents,골드와 개척자의 증표를 모아 개척자를 강화할 수 있습니다.,Collect Gold and Pioneer Tokens to upgrade your pioneer.,ゴールドと開拓者の証を集めて開拓者を強化できます。
-loading_tip_fusion,증강의 레벨이 5이고 합성 가능한 증강이 있다면 합성 버튼이 활성화됩니다.,The Combine button activates when you have a level 5 augment and a compatible augment.,増強がレベル5になり合成可能な増強があると合成ボタンが有効になります。
+loading_tip_fusion,증강의 레벨이 5이고 합성 가능한 증강이 있다면 합성 버튼이 활성화됩니다.,Combine unlocks with a level 5 augment and a compatible augment.,増強がレベル5になり合成可能な増強があると合成ボタンが有効になります。
 loading_tip_recommended_augments,증강끼리 합성하여 더욱 강력해지세요,Combine Augments to become even stronger,増強を合成して、さらに強くなりましょう
 loading_touch_to_start,터치하여 시작,Touch to Start,タッチして開始
 stage_planet_01,Kepler-452 b,Kepler-452 b,Kepler-452 b

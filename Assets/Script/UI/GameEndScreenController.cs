@@ -154,8 +154,9 @@ public sealed class GameEndScreenController : MonoBehaviour
         messageText = panel.Find("Message")?.GetComponent<TMP_Text>();
         clearTitleTypewriter = titleText != null ? titleText.GetComponent<TypewriterComponent>() : null;
         clearMessageTypewriter = messageText != null ? messageText.GetComponent<TypewriterComponent>() : null;
-        retryButton = panel.Find("DemoClearReplayButton")?.GetComponent<Button>();
-        lobbyButton = panel.Find("DemoClearStageButton")?.GetComponent<Button>();
+        Transform buttonRow = panel.Find("GameObject") ?? panel;
+        retryButton = buttonRow.Find("DemoClearReplayButton")?.GetComponent<Button>();
+        lobbyButton = buttonRow.Find("DemoClearStageButton")?.GetComponent<Button>();
         retryButtonText = retryButton != null
             ? retryButton.GetComponentInChildren<TMP_Text>(true)
             : null;

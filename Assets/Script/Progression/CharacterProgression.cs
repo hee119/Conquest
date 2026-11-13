@@ -62,11 +62,15 @@ public sealed class CharacterProgressionSave
         var recipient = Character(recipientId);
         if (recipient == null || !recipient.owned)
             return false;
+        int fragments = 0;
+        if (DataManager.Instance != null && StageManager.Instance != null)
+            DataManager.Instance.BadgeDatas.TryGetValue(StageManager.Instance.waveRow, out fragments);
+
         reward = new RunReward
         {
             runId = activeRunId, victory = victory, characterId = recipientId,
             gold = Math.Max(0, runUsesWaveGold ? cumulativeRunGold : victory ? settings.victoryGold : settings.defeatGold),
-            fragments = DataManager.Instance.BadgeDatas[StageManager.Instance.waveRow]
+            fragments = fragments
         };
         gold = (int)Math.Min(int.MaxValue, (long)gold + reward.gold);
         recipient.fragments = (int)Math.Min(int.MaxValue, (long)recipient.fragments + reward.fragments);

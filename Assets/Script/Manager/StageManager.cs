@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using NavMeshPlus.Components;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
@@ -72,16 +73,24 @@ public class StageManager : MonoBehaviour
     [SerializeField]
     private float minSpawnDistance = 5f;
 
-    [SerializeField]
-    private int spawnBatchSize = 10;
+    [SerializeField, Range(0f, 1f)]
+    private float forwardSpawnChance = 0.75f;
 
-    private int currentWave;
+    [SerializeField, Min(0.01f)]
+    private float spawnViewportMargin = 0.06f;
+
+    private PlayerMove playerMovement;
+
+    [SerializeField, Min(1)]
+    private int maxLivingEnemies = 120;
+
+    [SerializeField, Min(0.05f)]
+    private float enemyRefillInterval = 0.25f;
+
     private int reachedRewardWave;
     private bool canSkipToNextWave = false;
     private bool requestNextWave = false;
 
-    private Dictionary<int, int> currentEnemyPerSpawn =
-        new Dictionary<int, int>();
     private Coroutine stageRoutine;
     private Coroutine healthPickupRoutine;
     private Coroutine magnetPickupRoutine;
@@ -120,6 +129,7 @@ public class StageManager : MonoBehaviour
         if (playerObject != null)
         {
             player = playerObject.transform;
+            playerMovement = playerObject.GetComponent<PlayerMove>();
         }
     }
 
@@ -181,6 +191,7 @@ public class StageManager : MonoBehaviour
         if (playerObject != null)
         {
             player = playerObject.transform;
+            playerMovement = playerObject.GetComponent<PlayerMove>();
         }
 
 
@@ -205,12 +216,9 @@ public class StageManager : MonoBehaviour
 
 
         monsterCount = 0;
-        currentWave = 0;
 
         canSkipToNextWave = false;
         requestNextWave = false;
-
-        InitializeEnemySpawnCounts();
 
         FillCameraArea();
         ConfigureCameraBounds();
@@ -361,67 +369,6 @@ public class StageManager : MonoBehaviour
         Debug.Log(
             "[Next Wave] 다음 웨이브 진행 요청"
         );
-    }
-
-
-    private void InitializeEnemySpawnCounts()
-    {
-        currentEnemyPerSpawn.Clear();
-
-        if (DataManager.Instance == null)
-        {
-            return;
-        }
-
-        StageInfo[] stageInfos =
-            DataManager.Instance.stageInfos;
-
-        if (stageInfos == null)
-        {
-            Debug.LogWarning(
-                "DataManager.stageInfos가 null입니다."
-            );
-
-            return;
-        }
-
-        if (currentStage < 0 ||
-            currentStage >= stageInfos.Length)
-        {
-            Debug.LogWarning(
-                $"존재하지 않는 Stage입니다. currentStage = {currentStage}"
-            );
-
-            return;
-        }
-
-        StageInfo stageInfo =
-            stageInfos[currentStage];
-
-        if (stageInfo == null)
-        {
-            Debug.LogWarning(
-                $"StageInfo가 null입니다. currentStage = {currentStage}"
-            );
-
-            return;
-        }
-
-        for (int i = 0;
-             i < stageInfo.enemyId.Count;
-             i++)
-        {
-            int enemyId =
-                stageInfo.enemyId[i];
-
-            if (!currentEnemyPerSpawn.ContainsKey(enemyId))
-            {
-                currentEnemyPerSpawn.Add(
-                    enemyId,
-                    stageInfo.enemyPerSpawn[i]
-                );
-            }
-        }
     }
 
 
@@ -907,7 +854,7 @@ public class StageManager : MonoBehaviour
 
 
     
-    private Transform GetSafeSpawnPoint()
+    private bool TryGetSpawnPosition(out Vector3 position)
     {
         if (player == null)
         {
@@ -915,7 +862,54 @@ public class StageManager : MonoBehaviour
                 GameObject.FindGameObjectWithTag("Player");
 
             if (playerObject != null)
+            {
                 player = playerObject.transform;
+                playerMovement = playerObject.GetComponent<PlayerMove>();
+            }
+        }
+
+        if (player != null && camera != null && camera.orthographic && backgroundTilemap != null)
+        {
+            Vector2 direction = playerMovement != null ? playerMovement.MoveDir : Vector2.zero;
+            for (int attempt = 0; attempt < 12; attempt++)
+            {
+                int side = Random.Range(0, 4); // top, bottom, right, left
+                if (direction.sqrMagnitude > 0.001f && Random.value < forwardSpawnChance)
+                    side = Mathf.Abs(direction.y) >= Mathf.Abs(direction.x)
+                        ? (direction.y > 0f ? 0 : 1)
+                        : (direction.x > 0f ? 2 : 3);
+
+                float along = Random.Range(0f, 1f);
+                float margin = Mathf.Max(0.01f, spawnViewportMargin);
+                Vector3 viewport = side == 0 ? new Vector3(along, 1f + margin, 0f)
+                    : side == 1 ? new Vector3(along, -margin, 0f)
+                    : side == 2 ? new Vector3(1f + margin, along, 0f)
+                    : new Vector3(-margin, along, 0f);
+                viewport.z = Mathf.Abs(camera.transform.position.z - player.position.z);
+                Vector3 candidate = camera.ViewportToWorldPoint(viewport);
+                candidate.z = player.position.z;
+                if (!backgroundTilemap.HasTile(backgroundTilemap.WorldToCell(candidate)) ||
+                    ((Vector2)(candidate - player.position)).sqrMagnitude < minSpawnDistance * minSpawnDistance)
+                    continue;
+
+                // Avoid obstacles and unwalkable cells on the 2D navigation surface.
+                if (navMeshSurface != null)
+                {
+                    if (!NavMesh.SamplePosition(candidate, out NavMeshHit hit, 0.75f, NavMesh.AllAreas))
+                        continue;
+                    candidate = hit.position;
+                    candidate.z = player.position.z;
+                    Vector3 sampledViewport = camera.WorldToViewportPoint(candidate);
+                    if (sampledViewport.x >= 0f && sampledViewport.x <= 1f &&
+                        sampledViewport.y >= 0f && sampledViewport.y <= 1f)
+                        continue;
+                    if (((Vector2)(candidate - player.position)).sqrMagnitude < minSpawnDistance * minSpawnDistance)
+                        continue;
+                }
+
+                position = candidate;
+                return true;
+            }
         }
 
         Transform randomSafePoint = null;
@@ -930,7 +924,10 @@ public class StageManager : MonoBehaviour
                 continue;
 
             if (player == null)
-                return spawnPoint;
+            {
+                position = spawnPoint.position;
+                return true;
+            }
 
             float sqrDistance =
                 (player.position - spawnPoint.position).sqrMagnitude;
@@ -954,9 +951,9 @@ public class StageManager : MonoBehaviour
             }
         }
 
-        return randomSafePoint != null
-            ? randomSafePoint
-            : farthestPoint;
+        Transform fallback = randomSafePoint != null ? randomSafePoint : farthestPoint;
+        position = fallback != null ? fallback.position : Vector3.zero;
+        return fallback != null;
     }
 
 
@@ -1025,213 +1022,240 @@ public class StageManager : MonoBehaviour
             string enemyType =
                 stageInfo.type[i];
 
-            int waveCount =
-                stageInfo.waveCount[i];
+            waveRow = i;
+            float spawnInterval = stageInfo.spawnInterval[i];
+            int enemyPerSpawn = stageInfo.enemyPerSpawn[i];
+            reachedRewardWave++;
+            if (DataManager.Instance != null && DataManager.Instance.TryGetWaveGold(currentStage, reachedRewardWave, out int waveGold))
+                CharacterProgression.RecordWaveGold(waveGold);
 
-            float spawnInterval =
-                stageInfo.spawnInterval[i];
-
-            float increaseInterval =
-                stageInfo.waveIncreaseInterval[i];
-
-            float spawnMultiplier =
-                stageInfo.enemySpawnMultiplier[i];
-
-            int enemyPerSpawn =
-                currentEnemyPerSpawn[enemyId];
-
+            if (SoundManager.Instance != null)
+                SoundManager.Instance.Play(SoundIds.EnemyWaveStart);
 
             Debug.Log(
-                $"[Enemy Start] " +
+                $"[Wave Start] " +
                 $"enemyId={enemyId} / " +
-                $"type={enemyType} / " +
-                $"waveCount={waveCount} / " +
-                $"enemyPerSpawn={enemyPerSpawn}"
+                $"wave={reachedRewardWave}/{stageInfo.enemyId.Count} / " +
+                $"spawnCount={enemyPerSpawn}"
             );
 
 
-            currentWave = 0;
+            GameObject boss = null;
+            SlimeKing.SplitEncounter splitEncounter = null;
 
 
-            for (int j = 0;
-                 j < waveCount;
-                 j++)
+            // ============================
+            // 보스 스폰
+            // ============================
+
+            if (enemyType == "Boss")
             {
-                currentWave++;
-                reachedRewardWave++;
-                if (DataManager.Instance != null && DataManager.Instance.TryGetWaveGold(currentStage, reachedRewardWave, out int waveGold))
-                    CharacterProgression.RecordWaveGold(waveGold);
-
-                if (SoundManager.Instance != null)
-                    SoundManager.Instance.Play(SoundIds.EnemyWaveStart);
-
-                Debug.Log(
-                    $"[Wave Start] " +
-                    $"enemyId={enemyId} / " +
-                    $"wave={currentWave}/{waveCount} / " +
-                    $"spawnCount={enemyPerSpawn}"
-                );
-
-
-                GameObject boss = null;
-
-
-                // ============================
-                // 보스 스폰
-                // ============================
-
-                if (enemyType == "Boss")
+                if (bossSpawnPoint == null)
                 {
-                    if (bossSpawnPoint == null)
-                    {
-                        Debug.LogWarning(
-                            "BossSpawnPoint가 없습니다."
-                        );
-
-                        continue;
-                    }
-
-                    GameObject spawnedBoss =
-                        PoolManager.Instance.Spawn(
-                            enemyId,
-                            bossSpawnPoint.position
-                        );
-
-                    if (spawnedBoss != null)
-                    {
-                        boss = spawnedBoss;
-                        spawnedBoss.GetComponent<BossHealthSource>()?.RegisterBoss();
-                        monsterCount++;
-
-                        Debug.Log(
-                            $"[Boss Spawn] " +
-                            $"enemyId={enemyId} / " +
-                            $"position={bossSpawnPoint.position}"
-                        );
-                    }
-                }
-
-                // ============================
-                // 일반 몬스터 스폰
-                // ============================
-
-                else
-                {
-                    for (int k = 0;
-                         k < enemyPerSpawn;
-                         k++)
-                    {
-                        Transform spawnPoint =
-                            GetSafeSpawnPoint();
-
-                        if (spawnPoint == null)
-                        {
-                            Debug.LogWarning(
-                                "사용할 수 있는 몬스터 스폰포인트가 없습니다."
-                            );
-
-                            continue;
-                        }
-
-                        GameObject spawnedEnemy =
-                            PoolManager.Instance.Spawn(
-                                enemyId,
-                                spawnPoint.position
-                            );
-
-                        if (spawnedEnemy == null)
-                        {
-                            Debug.LogWarning(
-                                $"Spawn 실패: enemyId={enemyId}"
-                            );
-
-                            continue;
-                        }
-
-                        monsterCount++;
-
-                        // Smooth initial spawn spikes without changing wave totals.
-                        if (spawnBatchSize > 0 && (k + 1) % spawnBatchSize == 0)
-                            yield return null;
-                    }
-                }
-
-
-                // 보스 죽을 때까지 대기
-                if (enemyType == "Boss")
-                {
-                    if (boss != null)
-                    {
-                        yield return new WaitUntil(
-                            () =>
-                                boss == null ||
-                                !boss.activeInHierarchy
-                        );
-
-                        bossDefeated = true;
-                    }
-                }
-
-
-                canSkipToNextWave = true;
-                requestNextWave = false;
-
-
-                Debug.Log(
-                    $"[Wave Wait] " +
-                    $"자동 진행 대기 중 / " +
-                    $"enemyId={enemyId} / " +
-                    $"wave={currentWave}/{waveCount}"
-                );
-
-
-                if (spawnInterval > 0)
-                {
-                    float timer = 0f;
-
-                    while (IsUpgradeChoiceOpen || (timer < spawnInterval && !requestNextWave))
-                    {
-                        if (!IsUpgradeChoiceOpen)
-                            timer += Time.deltaTime;
-                        yield return null;
-                    }
-                }
-
-
-                canSkipToNextWave = false;
-                requestNextWave = false;
-
-
-                int increaseWave =
-                    Mathf.RoundToInt(
-                        increaseInterval
+                    Debug.LogWarning(
+                        "BossSpawnPoint가 없습니다."
                     );
 
+                    continue;
+                }
 
-                // 일반 몬스터만 소환 수 증가
-                if (enemyType != "Boss" &&
-                    increaseWave > 0 &&
-                    currentWave % increaseWave == 0)
+                GameObject spawnedBoss =
+                    PoolManager.Instance.Spawn(
+                        enemyId,
+                        bossSpawnPoint.position
+                    );
+
+                if (spawnedBoss != null)
                 {
-                    enemyPerSpawn =
-                        Mathf.FloorToInt(
-                            enemyPerSpawn *
-                            spawnMultiplier
-                        );
-
-                    currentEnemyPerSpawn[enemyId] =
-                        enemyPerSpawn;
-
+                    boss = spawnedBoss;
+                    spawnedBoss.GetComponent<BossHealthSource>()?.RegisterBoss();
+                    if (spawnedBoss.TryGetComponent(out SlimeKing slimeBoss))
+                        splitEncounter = slimeBoss.StartSplitEncounter();
+                    monsterCount++;
 
                     Debug.Log(
-                        $"[Spawn Increase] " +
+                        $"[Boss Spawn] " +
                         $"enemyId={enemyId} / " +
-                        $"다음 웨이브 소환수={enemyPerSpawn}"
+                        $"position={bossSpawnPoint.position}"
                     );
                 }
             }
 
-            waveRow++;
+            // ============================
+            // 일반 몬스터 스폰
+            // ============================
+
+            int regularWave = i;
+            if (enemyType == "Boss")
+            {
+                regularWave = i - 1;
+                while (regularWave >= 0 && stageInfo.type[regularWave] == "Boss")
+                    regularWave--;
+            }
+
+            if (enemyType != "Boss" || (boss != null && regularWave >= 0))
+            {
+                // Counts represent percentages; legacy data uses them as weights.
+                bool isBossWave = enemyType == "Boss";
+                bool hasBossMinions = isBossWave && stageInfo.bossWaveEnemyIds[i] > 0;
+                var groups = hasBossMinions
+                    ? new List<WaveEnemyGroup> { new WaveEnemyGroup(stageInfo.bossWaveEnemyIds[i], 100) }
+                    : stageInfo.enemyGroups[regularWave];
+                float totalWeight = 0f;
+                foreach (WaveEnemyGroup group in groups)
+                    totalWeight += group.count;
+
+                int requested = hasBossMinions ? stageInfo.bossWavePopulations[i] : stageInfo.enemyPopulation[regularWave] > 0
+                    ? stageInfo.enemyPopulation[regularWave] : Mathf.CeilToInt(totalWeight);
+                int population = Mathf.Min(Mathf.Max(1, requested), Mathf.Max(1, maxLivingEnemies));
+                var quotas = new int[groups.Count];
+                var fractions = new float[groups.Count];
+                int assigned = 0;
+                for (int g = 0; g < groups.Count; g++)
+                {
+                    float exact = population * groups[g].count / totalWeight;
+                    quotas[g] = Mathf.FloorToInt(exact);
+                    fractions[g] = exact - quotas[g];
+                    assigned += quotas[g];
+                }
+                while (assigned < population)
+                {
+                    int best = 0;
+                    for (int g = 1; g < fractions.Length; g++)
+                        if (fractions[g] > fractions[best]) best = g;
+                    quotas[best]++;
+                    fractions[best] = -1f;
+                    assigned++;
+                }
+
+                float duration = Mathf.Max(0.1f, spawnInterval);
+                float elapsed = 0f;
+                float nextRefill = 0f;
+                float refillInterval = stageInfo.enemyRefillIntervals[i] > 0f
+                    ? stageInfo.enemyRefillIntervals[i] : Mathf.Max(0.05f, enemyRefillInterval);
+                var livingById = new Dictionary<int, int>();
+                canSkipToNextWave = !isBossWave;
+                requestNextWave = false;
+
+                while (IsUpgradeChoiceOpen || (isBossWave
+                    ? splitEncounter != null ? splitEncounter.HasLivingMembers : boss != null && boss.activeInHierarchy
+                    : elapsed < duration && !requestNextWave))
+                {
+                    if (IsUpgradeChoiceOpen || Time.timeScale <= 0f)
+                    {
+                        yield return null;
+                        continue;
+                    }
+
+                    float step = isBossWave ? Time.deltaTime : Mathf.Min(Time.deltaTime, duration - elapsed);
+                    elapsed += step;
+                    nextRefill -= step;
+                    if (nextRefill > 0f)
+                    {
+                        yield return null;
+                        continue;
+                    }
+                    nextRefill = refillInterval;
+                    int living = EnemyCombat.CountLivingEnemiesById(livingById);
+                    if (hasBossMinions)
+                    {
+                        livingById.TryGetValue(stageInfo.bossWaveEnemyIds[i], out living);
+                    }
+                    int available = Mathf.Max(0, population - living);
+                    if (available > 0)
+                    {
+                        int selectedIndex = -1;
+                        float lowestFill = float.PositiveInfinity;
+                        for (int g = 0; g < groups.Count; g++)
+                        {
+                            livingById.TryGetValue(groups[g].enemyId, out int existing);
+                            if (quotas[g] <= 0 || existing >= quotas[g]) continue;
+                            float fill = (float)existing / quotas[g];
+                            if (fill < lowestFill) { lowestFill = fill; selectedIndex = g; }
+                        }
+                        if (selectedIndex >= 0 && PoolManager.Instance != null &&
+                            TryGetSpawnPosition(out Vector3 spawnPosition))
+                        {
+                            GameObject spawned = PoolManager.Instance.Spawn(groups[selectedIndex].enemyId, spawnPosition);
+                            if (spawned != null)
+                            {
+                                EnemyCombat spawnedCombat = spawned.GetComponent<EnemyCombat>();
+                                if (spawnedCombat != null) spawnedCombat.IsWaveAutoSpawned = true;
+                                monsterCount++;
+                            }
+                        }
+                    }
+                    yield return null;
+                }
+                canSkipToNextWave = false;
+                requestNextWave = false;
+            }
+
+
+            // 보스 죽을 때까지 대기
+            if (enemyType == "Boss")
+            {
+                if (boss != null)
+                {
+                    EnemyCombat defeatedBoss = boss.GetComponent<EnemyCombat>();
+                    yield return new WaitUntil(
+                        () =>
+                            splitEncounter != null ? !splitEncounter.HasLivingMembers :
+                            boss == null || (defeatedBoss != null && defeatedBoss.isDead)
+                    );
+
+                    if (boss == null)
+                    {
+                        Debug.LogWarning("[Boss] 보스가 처치 전에 사라져 웨이브를 종료합니다.");
+                        yield break;
+                    }
+                    bool defeated = splitEncounter != null ? splitEncounter.WasCleared :
+                        defeatedBoss != null && defeatedBoss.isDead;
+                    if (!defeated)
+                    {
+                        Debug.LogWarning("[Boss] 보스전이 처치 전에 중단되어 웨이브를 종료합니다.");
+                        yield break;
+                    }
+                    if (i == stageInfo.enemyId.Count - 1)
+                        bossDefeated = defeated;
+                    if (defeated && LevelManager.Instance != null)
+                    {
+                        LevelManager.Instance.GrantBossLevel();
+                        yield return new WaitUntil(() => LevelManager.Instance == null ||
+                            (!LevelManager.Instance.HasPendingBossLevel && !IsUpgradeChoiceOpen));
+                    }
+                }
+            }
+
+
+            canSkipToNextWave = true;
+            requestNextWave = false;
+
+
+            Debug.Log(
+                $"[Wave Wait] " +
+                $"자동 진행 대기 중 / " +
+                $"enemyId={enemyId} / " +
+                $"wave={reachedRewardWave}/{stageInfo.enemyId.Count}"
+            );
+
+
+            if (enemyType == "Boss" && spawnInterval > 0)
+            {
+                float timer = 0f;
+
+                while (IsUpgradeChoiceOpen || (timer < spawnInterval && !requestNextWave))
+                {
+                    if (!IsUpgradeChoiceOpen)
+                        timer += Time.deltaTime;
+                    yield return null;
+                }
+            }
+
+
+            canSkipToNextWave = false;
+            requestNextWave = false;
+
             monsterCount = 0;
 
 

@@ -154,18 +154,9 @@ public void ApplyCustomCharacterStats()
         {
             var info = stageInfos[stage];
             if (info == null) continue;
-            int waveOffset = 0;
             var rewards = new SortedDictionary<int, int>();
-            for (int row = 0; row < info.waveCount.Count; row++)
-            {
-                if (row < info.waveCumulativeGold.Count)
-                {
-                    var values = info.waveCumulativeGold[row];
-                    for (int wave = 0; wave < values.Length && wave < info.waveCount[row]; wave++)
-                        rewards[waveOffset + wave + 1] = values[wave];
-                }
-                waveOffset += info.waveCount[row];
-            }
+            for (int row = 0; row < info.waveCumulativeGold.Count; row++)
+                rewards[row + 1] = info.waveCumulativeGold[row];
             if (rewards.Count > 0) waveGoldDatas[stage] = rewards;
         }
     }
@@ -195,8 +186,12 @@ public void ApplyCustomCharacterStats()
 
         BadgeDatas.Clear();
         var badges = stageInfos[stage].badgeCount;
+        long cumulativeBadges = 0;
         for (int i = 0; i < badges.Count; i++)
-            BadgeDatas.Add(i, badges[i]);
+        {
+            cumulativeBadges += badges[i];
+            BadgeDatas.Add(i, (int)System.Math.Min(int.MaxValue, cumulativeBadges));
+        }
     }
 
     public bool TryGetWaveGold(int stage, int reachedWave, out int gold)
@@ -278,55 +273,149 @@ public void ApplyCustomCharacterStats()
         const System.Globalization.NumberStyles integer = System.Globalization.NumberStyles.Integer;
         int maxStage = 0;
 
+        string[] header = ParseCsvLine(lines[0]);
+        int populationColumn = System.Array.FindIndex(header, value => value.Trim() == "유지할 적 수");
+        int refillColumn = System.Array.FindIndex(header, value => value.Trim() == "적 소환 간격(초)");
+        int bossEnemyColumn = System.Array.FindIndex(header, value => value.Trim() == "보스 웨이브 적 id");
+        int bossPopulationColumn = System.Array.FindIndex(header, value => value.Trim() == "보스 웨이브 유지 수");
+        bool hasPopulation = (header.Length == 10 || (header.Length == 11 && refillColumn == 10) ||
+            (header.Length == 13 && refillColumn == 10 && bossEnemyColumn == 11 && bossPopulationColumn == 12)) &&
+            (populationColumn == 6 || populationColumn == 9);
+        int goldColumn = hasPopulation && populationColumn == 6 ? 8 : 7;
+        int badgeColumn = hasPopulation && populationColumn == 6 ? 9 : 8;
+        if (header.Length < 9 || (!hasPopulation && (header.Length - 9) % 2 != 0) || header[1].Trim() != "웨이브")
+        {
+            Debug.LogError("[StageData] 웨이브별 CSV 헤더가 필요합니다.");
+            return System.Array.Empty<StageInfo>();
+        }
+
         for (int i = 1; i < lines.Length; i++)
         {
             if (string.IsNullOrWhiteSpace(lines[i]))
                 continue;
 
             string[] row = ParseCsvLine(lines[i]);
-            if (row.Length < 11 ||
-                !int.TryParse(row[0], integer, culture, out int stage) || stage < 0 ||
-                !int.TryParse(row[1], integer, culture, out int enemyId) ||
-                !int.TryParse(row[2], integer, culture, out int waveCount) ||
-                !TryParseStageFloat(row[3], out float spawnInterval) ||
-                !int.TryParse(row[4], integer, culture, out int enemyPerSpawn) ||
-                !TryParseStageFloat(row[5], out float enemySpawnMultiplier) ||
-                !TryParseStageFloat(row[6], out float waveIncreaseInterval) ||
-                string.IsNullOrWhiteSpace(row[7]) ||
-            !int.TryParse(row[10], out int badgeCount))
+            if (row.Length < 9 ||
+                !int.TryParse(row[0], integer, culture, out int stageId) || stageId < 1 ||
+                !int.TryParse(row[1], integer, culture, out int wave) ||
+                !TryParseStageFloat(row[3], out float wait) || wait < 0 ||
+                (row[5].Trim() != "Nomal" && row[5].Trim() != "Normal" && row[5].Trim() != "Boss") ||
+                row.Length <= badgeColumn ||
+                !int.TryParse(row[goldColumn], integer, culture, out int gold) || gold < 0 ||
+                !int.TryParse(row[badgeColumn], integer, culture, out int badges) || badges < 0 ||
+                wave != (stages.TryGetValue(stageId, out var existing) ? existing.enemyId.Count + 1 : 1))
             {
-                Debug.LogWarning($"[StageData] {i + 1}행의 필수 값이 비어 있거나 잘못되어 해당 행을 건너뜁니다: {lines[i]}");
-                continue;
+                Debug.LogError($"[StageData] {i + 1}행의 웨이브 데이터 또는 순서가 잘못되었습니다.");
+                return System.Array.Empty<StageInfo>();
             }
 
-            if (!stages.TryGetValue(stage, out StageInfo info))
+            string[] ids = row[2].Split(',');
+            string[] counts = row[4].Split(new[] { ',', ':' });
+            var groups = new List<WaveEnemyGroup>();
+            if (ids.Length != counts.Length || (row[5].Trim() == "Boss" &&
+                ids.Length != 1 && !(hasPopulation && bossEnemyColumn >= 0 && ids.Length == 2)))
             {
-                info = new StageInfo();
-                stages.Add(stage, info);
+                Debug.LogError($"[StageData] {i + 1}행의 적 ID와 소환 수 개수가 다릅니다.");
+                return System.Array.Empty<StageInfo>();
             }
-
-            maxStage = Mathf.Max(maxStage, stage);
-            info.enemyId.Add(enemyId);
-            info.waveCount.Add(waveCount);
-            info.spawnInterval.Add(spawnInterval);
-            info.enemyPerSpawn.Add(enemyPerSpawn);
-            info.enemySpawnMultiplier.Add(enemySpawnMultiplier);
-            info.waveIncreaseInterval.Add(waveIncreaseInterval);
-            info.type.Add(row[7].Trim());
-            info.badgeCount.Add(badgeCount);
-            var goldValues = new List<int>();
-            if (row.Length > 9 && !string.IsNullOrWhiteSpace(row[9]))
-                foreach (string value in row[9].Split(','))
+            for (int groupIndex = 0; groupIndex < ids.Length; groupIndex++)
+            {
+                if (!int.TryParse(ids[groupIndex], integer, culture, out int id) || id <= 0 ||
+                    !int.TryParse(counts[groupIndex], integer, culture, out int quantity) ||
+                    (hasPopulation ? quantity < 0 : quantity <= 0))
                 {
-                    if (!int.TryParse(value.Trim(), integer, culture, out int gold) || gold < 0)
-                    {
-                        Debug.LogWarning($"[StageData] {i + 1}행의 누적 골드 목록이 잘못되어 해당 행의 골드 설정을 건너뜁니다.");
-                        goldValues.Clear();
-                        break;
-                    }
-                    goldValues.Add(gold);
+                    Debug.LogError($"[StageData] {i + 1}행의 적 ID 또는 비율이 올바르지 않습니다.");
+                    return System.Array.Empty<StageInfo>();
                 }
-            info.waveCumulativeGold.Add(goldValues.ToArray());
+                groups.Add(new WaveEnemyGroup(id, quantity));
+            }
+            for (int col = hasPopulation ? header.Length : 9; col < header.Length; col += 2)
+            {
+                string idText = col < row.Length ? row[col] : "";
+                string countText = col + 1 < row.Length ? row[col + 1] : "";
+                bool hasId = !string.IsNullOrWhiteSpace(idText);
+                bool hasCount = !string.IsNullOrWhiteSpace(countText);
+                if (hasId != hasCount || (hasId &&
+                    (row[5].Trim() == "Boss" ||
+                     !int.TryParse(idText, integer, culture, out _) ||
+                     !int.TryParse(countText, integer, culture, out _))))
+                {
+                    Debug.LogError($"[StageData] {i + 1}행의 추가 적 ID와 수량이 올바르지 않습니다.");
+                    return System.Array.Empty<StageInfo>();
+                }
+                if (!hasId) continue;
+                int extraId = int.Parse(idText, integer, culture);
+                int extraCount = int.Parse(countText, integer, culture);
+                if (extraId <= 0 || extraCount <= 0)
+                {
+                    Debug.LogError($"[StageData] {i + 1}행의 추가 적 ID와 수량은 양수여야 합니다.");
+                    return System.Array.Empty<StageInfo>();
+                }
+                groups.Add(new WaveEnemyGroup(extraId, extraCount));
+            }
+
+            int population = 0;
+            float refillSeconds = 0f;
+            int bossEnemy = 0;
+            int bossPopulation = 0;
+            if (hasPopulation)
+            {
+                if (row.Length <= populationColumn || !int.TryParse(row[populationColumn], integer, culture, out population) || population < 1)
+                {
+                    Debug.LogError($"[StageData] {i + 1}행의 유지할 적 수가 올바르지 않습니다.");
+                    return System.Array.Empty<StageInfo>();
+                }
+                if (refillColumn >= 0 &&
+                    (row.Length <= refillColumn || !TryParseStageFloat(row[refillColumn], out refillSeconds) || refillSeconds < 0.05f))
+                {
+                    Debug.LogError($"[StageData] {i + 1}행의 적 소환 간격은 0.05초 이상이어야 합니다.");
+                    return System.Array.Empty<StageInfo>();
+                }
+                int percentageSum = 0;
+                foreach (WaveEnemyGroup group in groups) percentageSum += group.count;
+                if (row[5].Trim() != "Boss" && percentageSum != 100)
+                {
+                    Debug.LogError($"[StageData] {i + 1}행의 적 비율 합은 100이어야 합니다.");
+                    return System.Array.Empty<StageInfo>();
+                }
+                if (bossEnemyColumn >= 0)
+                {
+                    string bossIdText = row.Length > bossEnemyColumn ? row[bossEnemyColumn] : "";
+                    string bossCountText = row.Length > bossPopulationColumn ? row[bossPopulationColumn] : "";
+                    bool hasId = !string.IsNullOrWhiteSpace(bossIdText);
+                    bool hasCount = !string.IsNullOrWhiteSpace(bossCountText);
+                    if (hasId != hasCount || (hasId &&
+                        (row[5].Trim() != "Boss" ||
+                         !int.TryParse(bossIdText, integer, culture, out bossEnemy) || bossEnemy <= 0 ||
+                         !int.TryParse(bossCountText, integer, culture, out bossPopulation) || bossPopulation <= 0)))
+                    {
+                        Debug.LogError($"[StageData] {i + 1}행의 보스 웨이브 적 ID 또는 유지 수가 올바르지 않습니다.");
+                        return System.Array.Empty<StageInfo>();
+                    }
+                    if (row[5].Trim() == "Boss" && groups.Count == 2 &&
+                        (!hasId || groups[0].count != 1 || groups[1].count != 100 || groups[1].enemyId != bossEnemy))
+                    {
+                        Debug.LogError($"[StageData] {i + 1}행의 보스와 일반 적 설정이 일치하지 않습니다.");
+                        return System.Array.Empty<StageInfo>();
+                    }
+                }
+            }
+
+            if (!stages.TryGetValue(stageId, out var waveInfo))
+                stages[stageId] = waveInfo = new StageInfo();
+
+            maxStage = Mathf.Max(maxStage, stageId);
+            waveInfo.enemyId.Add(groups[0].enemyId);
+            waveInfo.spawnInterval.Add(wait);
+            waveInfo.enemyPerSpawn.Add(groups[0].count);
+            waveInfo.enemyGroups.Add(groups);
+            waveInfo.enemyPopulation.Add(population);
+            waveInfo.enemyRefillIntervals.Add(refillSeconds);
+            waveInfo.bossWaveEnemyIds.Add(bossEnemy);
+            waveInfo.bossWavePopulations.Add(bossPopulation);
+            waveInfo.type.Add(row[5].Trim());
+            waveInfo.badgeCount.Add(badges);
+            waveInfo.waveCumulativeGold.Add(gold);
         }
 
         var result = new StageInfo[maxStage + 1];
@@ -657,7 +746,7 @@ public void ApplyCustomCharacterStats()
     {
         levelDataText = Resources.Load<TextAsset>("TextData/LevelData").text;
         
-        int[] result = Array.ConvertAll(levelDataText.Split('\n').Skip(1).ToArray(), int.Parse);
+        int[] result = levelDataText.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Skip(1).Select(int.Parse).ToArray();
         
         levelDatas = result;
     }
@@ -1323,14 +1412,23 @@ internal static string[] ParseCsvLine(string line)
 public class StageInfo
 {
     public List<int> enemyId = new List<int>();
-    public List<int> waveCount = new List<int>();
-    public List<int[]> waveCumulativeGold = new List<int[]>();
+    public List<int> waveCumulativeGold = new List<int>();
     public List<float> spawnInterval = new List<float>();
     public List<int> enemyPerSpawn = new List<int>();
-    public List<float> enemySpawnMultiplier = new List<float>();
-    public List<float> waveIncreaseInterval = new List<float>();
+    public List<List<WaveEnemyGroup>> enemyGroups = new List<List<WaveEnemyGroup>>();
+    public List<int> enemyPopulation = new List<int>();
+    public List<float> enemyRefillIntervals = new List<float>();
+    public List<int> bossWaveEnemyIds = new List<int>();
+    public List<int> bossWavePopulations = new List<int>();
     public List<string> type = new List<string>();
     public List<int> badgeCount = new List<int>();
+}
+
+public readonly struct WaveEnemyGroup
+{
+    public readonly int enemyId;
+    public readonly int count;
+    public WaveEnemyGroup(int enemyId, int count) { this.enemyId = enemyId; this.count = count; }
 }
 
 [System.Serializable]

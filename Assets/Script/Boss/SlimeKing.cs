@@ -1,11 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(EnemyFacing))]
 public class SlimeKing : SplitEnemy
 {
+    public sealed class SplitEncounter
+    {
+        private readonly HashSet<SlimeKing> members = new HashSet<SlimeKing>();
+        private bool interrupted;
+        public bool HasLivingMembers => members.Count > 0;
+        public bool WasCleared => members.Count == 0 && !interrupted;
+        internal void Add(SlimeKing member) => members.Add(member);
+        internal void Remove(SlimeKing member)
+        {
+            if (members.Remove(member) && !member.isDead) interrupted = true;
+        }
+    }
+
+    private SplitEncounter splitEncounter;
+
+    public SplitEncounter StartSplitEncounter()
+    {
+        var encounter = new SplitEncounter();
+        AttachSplitEncounter(encounter);
+        return encounter;
+    }
+
+    private void AttachSplitEncounter(SplitEncounter encounter)
+    {
+        splitEncounter = encounter;
+        encounter.Add(this);
+    }
     [Header("공통")]
     public float startDelay = 1.5f;
     public float patternInterval = 2f;
@@ -92,13 +120,14 @@ public class SlimeKing : SplitEnemy
     protected override void OnEnable()
     {
         base.OnEnable();    // SplitEnemy: 스케일 1로 초기화
+        splitEncounter = null;
 
         if (agent == null) agent = GetComponent<NavMeshAgent>();
         if (bodyObstacle == null) bodyObstacle = GetComponent<BossBodyObstacle>();
         bodyObstacle?.SetSkillBodyActive(true);
         if (cols == null || cols.Length == 0) cols = GetComponents<Collider2D>();
 
-        splitCount = maxSplitCount;     // 풀 재사용 시 분열 횟수 복구 (분열 자식은 스폰 후 덮어씀)
+        splitCount = maxSplitCount;     // 풀 재사용 시 복구하고 분열체는 스폰 직후 덮어쓴다.
         baseScale = transform.localScale;
         inPattern = false;
         isAirborne = false;
@@ -113,8 +142,10 @@ public class SlimeKing : SplitEnemy
         StartCoroutine(PatternLoop());
     }
 
-    protected new void OnDisable()
+    protected override void OnDisable()
     {
+        splitEncounter?.Remove(this);
+        splitEncounter = null;
         base.OnDisable();   // 스탯 초기화 유지
 
         ReleaseAllWarnings();
@@ -148,14 +179,19 @@ public class SlimeKing : SplitEnemy
 
         SoundManager.Instance?.Play(SoundIds.SlimeSplit);
 
-        bool toNormal = splitCount <= 1;                // 마지막 분열 → 일반 슬라임
-        int gen = maxSplitCount - splitCount + 1;       // 자식 세대
-        var data = DataManager.Instance.enemyDatasDic[enemyInfo.id];
+        bool toNormal = splitCount <= 1;
+        var children = new List<SlimeKing>(splitSpawnCount);
+        float parentHp = maxHp;
+        float parentSpeed = enemyInfo.speed;
+        int parentDamage = enemyInfo.damage;
+        int parentDefense = enemyInfo.defense;
+        int parentRegen = enemyInfo.hpRegenRate;
+        int parentExplosionDamage = enemyInfo.explosionDamage;
+        int parentExplosionRange = enemyInfo.explosionRange;
 
         for (int i = 0; i < splitSpawnCount; i++)
         {
             Vector3 pos = transform.position + (Vector3)(Random.insideUnitCircle * splitSpread);
-
             if (toNormal)
             {
                 PoolManager.Instance.Spawn(normalSlimeId, pos);
@@ -163,21 +199,35 @@ public class SlimeKing : SplitEnemy
             }
 
             GameObject obj = PoolManager.Instance.Spawn(enemyInfo.id, pos);
-            SlimeKing child = obj.GetComponent<SlimeKing>();
+            if (obj == null || !obj.TryGetComponent(out SlimeKing child)) continue;
+            if (splitEncounter != null) child.AttachSplitEncounter(splitEncounter);
+            children.Add(child);
+        }
 
-            child.enemyInfo.damage = (int)(data.damage / Mathf.Pow(splitDamageDiv, gen));
-            child.enemyInfo.hp = Mathf.Max(1, (int)(data.hp / Mathf.Pow(splitHpDiv, gen)));
+        int childCount = children.Count;
+        for (int i = 0; i < childCount; i++)
+        {
+            SlimeKing child = children[i];
+            child.enemyInfo.hp = parentHp / childCount;
+            child.enemyInfo.damage = DivideStat(parentDamage, childCount, i);
+            child.enemyInfo.defense = DivideStat(parentDefense, childCount, i);
+            child.enemyInfo.hpRegenRate = DivideStat(parentRegen, childCount, i);
+            child.enemyInfo.explosionDamage = DivideStat(parentExplosionDamage, childCount, i);
+            child.enemyInfo.explosionRange = DivideStat(parentExplosionRange, childCount, i);
             child.ResetHealth(child.enemyInfo.hp);
-            child.enemyInfo.speed = Mathf.RoundToInt(data.speed * Mathf.Pow(splitSpeedMul, gen));
+            child.enemyInfo.speed = parentSpeed / childCount;
             child.enemyMove.moveSpeed = child.enemyInfo.speed;
             child.enemyMove.MoveSpeedRenewal();
-
             obj.transform.localScale = new Vector3(
-                transform.localScale.x / splitScaleDiv,
-                transform.localScale.y / splitScaleDiv, 1f);
-
+                transform.localScale.x / splitScaleDiv, transform.localScale.y / splitScaleDiv, 1f);
             child.splitCount = splitCount - 1;
         }
+    }
+
+    private static int DivideStat(int total, int count, int index)
+    {
+        total = Mathf.Max(0, total);
+        return total / count + (index < total % count ? 1 : 0);
     }
 
     // ───────────── 패턴 루프 ─────────────

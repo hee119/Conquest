@@ -6,6 +6,8 @@ public class SplitEnemy : EnemyCombat
     public int splitCount;
     public int splitSpawnCount = 2;
     public float defaultScale = 1f;
+    private int initialSplitCount;
+    private bool hasInitialSplitCount;
 
     protected readonly List<EnemyCombat> spawnedChildren =
         new List<EnemyCombat>();
@@ -81,6 +83,13 @@ public class SplitEnemy : EnemyCombat
     {
         base.OnEnable();
 
+        if (!hasInitialSplitCount)
+        {
+            initialSplitCount = splitCount;
+            hasInitialSplitCount = true;
+        }
+        splitCount = initialSplitCount;
+
         spawnedChildren.Clear();
 
         transform.localScale =
@@ -91,8 +100,9 @@ public class SplitEnemy : EnemyCombat
             );
     }
 
-    protected virtual void OnDisable()
+    protected override void OnDisable()
     {
+        base.OnDisable();
         spawnedChildren.Clear();
 
         var data =
@@ -100,7 +110,11 @@ public class SplitEnemy : EnemyCombat
 
         enemyInfo.damage = data.damage;
         enemyInfo.speed = data.speed;
-        enemyInfo.hp = (int)data.hp;
+        enemyInfo.hp = data.hp;
+        enemyInfo.defense = data.defense;
+        enemyInfo.hpRegenRate = data.hpRegenRate;
+        enemyInfo.explosionDamage = data.explosionDamage;
+        enemyInfo.explosionRange = data.explosionRange;
 
         enemyMove.moveSpeed =
             enemyInfo.speed;
