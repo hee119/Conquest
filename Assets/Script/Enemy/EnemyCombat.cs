@@ -386,6 +386,8 @@ public class EnemyCombat : MonoBehaviour, ICombat
             else skill.GetComponent<BasicAttackChainRelay>()?.HandleEnemyContact(bodyCollider);
             return;
         }
+        var poison = other.GetComponentInParent<Poison>();
+        if (poison != null) { if (!isDead && !isDying) poison.HandleEnemyContact(bodyCollider); return; }
         if (!other.CompareTag("Upgrade")) return;
         var source = other.GetComponentInParent<UpgradeInfo>();
         if (source == null) return;
@@ -393,8 +395,6 @@ public class EnemyCombat : MonoBehaviour, ICombat
         if (floor != null) { if (!isDead && !isDying) floor.HandleEnemyContact(bodyCollider); return; }
         var lava = source.GetComponent<LavaField>();
         if (lava != null) { if (!isDead && !isDying) lava.HandleEnemyContact(bodyCollider); return; }
-        var poison = source.GetComponent<Poison>();
-        if (poison != null) { if (!isDead && !isDying) poison.HandleEnemyContact(bodyCollider); return; }
         // DOT, mushrooms and targeted lightning apply damage on their own timed ticks.
         if (source.GetComponent<DotDamage>() != null || source.GetComponent<Mold>() != null ||
             source.GetComponent<Lightning>() != null) return;

@@ -71,6 +71,12 @@ public class SkillSpawner : MonoBehaviour
 
         if (animationController.canSkillUse1 && skillId == skillId1)
         {
+            if (playerMove != null && playerMove.IsDashing)
+            {
+                playerMove.CancelDashForAttack();
+                MovementLock(0);
+            }
+
             BeginBasicAttackFacing();
             animationController.Skill1(skillId);
         }

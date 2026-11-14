@@ -157,6 +157,19 @@ public class PlayerMove : MonoBehaviour
         dashCoroutine = null;
     }
 
+    public void CancelDashForAttack()
+    {
+        if (!isDashing)
+            return;
+
+        if (dashCoroutine != null)
+            StopCoroutine(dashCoroutine);
+        dashCoroutine = null;
+        isDashing = false;
+        playerRb.linearVelocity = Vector2.zero;
+        animationController.EndDashAnimation(false);
+    }
+
     private void TrackMovement()
     {
         if (movementCoroutine == null && playerRb != null &&

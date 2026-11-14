@@ -1,2 +1,2 @@
 Stage,HealthSpawnIntervalSeconds,HealAmount,MagnetSpawnIntervalSeconds
-1,30,25,90
+1,60,10,90

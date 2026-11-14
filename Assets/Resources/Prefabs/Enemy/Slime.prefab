@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
   target: {fileID: 0}
   agent: {fileID: 0}
-  moveSpeed: 0.5
+  moveSpeed: 1
   stoppingDistance: 0
   isSlowDown: 0
   slowCount: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca527eb14e3584eb8bd8090bdf59db03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeleeEnemyAttack
-  attackCoolTime: 1
+  attackCoolTime: 0.5
 --- !u!114 &3186647244219781705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,11 +283,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyInfo
   id: 106
   name: 
-  hp: 20
+  hp: 43.5
   hpRegenRate: 0
-  speed: 0.5
-  damage: 1
-  defense: 4
+  speed: 1
+  damage: 2
+  defense: 25
   dropExpOrbId: 300
   explosionDamage: 0
   explosionRange: 0

@@ -125,18 +125,36 @@ public sealed class GameEndScreenController : MonoBehaviour
             instance = null;
     }
 
+    private static GameEndScreenController GetOrActivateInstance()
+    {
+        if (instance != null && instance.isActiveAndEnabled)
+            return instance;
+
+        var controller = FindFirstObjectByType<GameEndScreenController>(FindObjectsInactive.Include);
+        if (controller == null)
+        {
+            Debug.LogError("Game end screen controller is missing.");
+            return null;
+        }
+
+        controller.gameObject.SetActive(true);
+        return controller;
+    }
+
     public static void ShowGameOver()
     {
-        if (instance != null)
-            instance.Show("gameover_title", "gameover_message", false);
+        var controller = GetOrActivateInstance();
+        if (controller != null)
+            controller.Show("gameover_title", "gameover_message", false);
     }
 
     public static void ShowDemoClear()
     {
-        if (instance != null)
+        var controller = GetOrActivateInstance();
+        if (controller != null)
         {
-            instance.SelectDemoClearOverlay();
-            instance.Show("demo_clear_title", "demo_clear_message", true);
+            controller.SelectDemoClearOverlay();
+            controller.Show("demo_clear_title", "demo_clear_message", true);
         }
     }
 

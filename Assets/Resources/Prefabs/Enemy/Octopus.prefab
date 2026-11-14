@@ -275,7 +275,7 @@ MonoBehaviour:
   bulletId: 600
   bulleSpawnPos: {fileID: 2751941530656367470}
   attackReleaseDelay: 0.375
-  attackCoolTime: 6
+  attackCoolTime: 3
 --- !u!114 &2890242813744974307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,10 +314,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyInfo
   id: 108
   name: 
-  hp: 10
+  hp: 20
   hpRegenRate: 0
   speed: 1
-  damage: 0
+  damage: 30
   defense: 5
   dropExpOrbId: 300
   explosionDamage: 0
