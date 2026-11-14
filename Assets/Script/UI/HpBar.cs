@@ -156,6 +156,14 @@ public class HpBar : MonoBehaviour
             return;
 
         Transform fillArea = hpSlider.fillRect.parent;
+        // A runtime clone of a boss segment already contains its ghost slider.
+        Transform existingGhost = fillArea.parent.Find("Ghost Fill Area");
+        if (existingGhost != null && existingGhost.TryGetComponent(out Slider existingSlider))
+        {
+            ghostSlider = existingSlider;
+            return;
+        }
+
         GameObject ghostFillArea = Instantiate(fillArea.gameObject, fillArea.parent);
         ghostFillArea.name = "Ghost Fill Area";
         ghostFillArea.transform.SetSiblingIndex(fillArea.GetSiblingIndex());

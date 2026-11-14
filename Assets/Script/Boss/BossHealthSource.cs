@@ -9,6 +9,39 @@ public sealed class BossHealthSource : MonoBehaviour
     private static readonly List<BossHealthSource> activeBosses = new List<BossHealthSource>();
     public static event Action Changed;
 
+    public readonly struct HealthSegment
+    {
+        public readonly EnemyCombat Combat;
+        public readonly float Min;
+        public readonly float Max;
+
+        public HealthSegment(EnemyCombat combat, float min, float max)
+        {
+            Combat = combat;
+            Min = min;
+            Max = max;
+        }
+    }
+
+    private static readonly List<HealthSegment> segments = new List<HealthSegment>();
+    public static IReadOnlyList<HealthSegment> Segments => segments;
+
+    public static void ReplaceHealthSegment(EnemyCombat parent, IReadOnlyList<SlimeKing> children)
+    {
+        int index = segments.FindIndex(segment => segment.Combat == parent);
+        if (index < 0 || children.Count == 0) return;
+
+        HealthSegment previous = segments[index];
+        segments.RemoveAt(index);
+        for (int i = 0; i < children.Count; i++)
+        {
+            float min = Mathf.Lerp(previous.Min, previous.Max, (float)i / children.Count);
+            float max = Mathf.Lerp(previous.Min, previous.Max, (float)(i + 1) / children.Count);
+            segments.Insert(index + i, new HealthSegment(children[i], min, max));
+        }
+        Changed?.Invoke();
+    }
+
     private EnemyCombat combat;
 
     public static bool IsRegisteredBoss(EnemyCombat enemy)
@@ -39,6 +72,7 @@ public sealed class BossHealthSource : MonoBehaviour
     private static void ResetSignals()
     {
         activeBosses.Clear();
+        segments.Clear();
         Changed = null;
     }
 
@@ -57,12 +91,21 @@ public sealed class BossHealthSource : MonoBehaviour
         combat = GetComponent<EnemyCombat>();
         activeBosses.Remove(this);
         activeBosses.Add(this);
+        segments.Clear();
+        segments.Add(new HealthSegment(combat, 0f, 1f));
         Changed?.Invoke();
     }
 
     private void OnDisable()
     {
-        if (activeBosses.Remove(this))
-            Changed?.Invoke();
+        bool removed = activeBosses.Remove(this);
+        for (int i = 0; i < segments.Count; i++)
+        {
+            HealthSegment segment = segments[i];
+            if (segment.Combat != combat) continue;
+            segments[i] = new HealthSegment(null, segment.Min, segment.Max);
+            removed = true;
+        }
+        if (removed) Changed?.Invoke();
     }
 }

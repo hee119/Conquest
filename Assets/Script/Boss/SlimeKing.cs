@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -218,10 +217,13 @@ public class SlimeKing : SplitEnemy
             child.enemyInfo.speed = parentSpeed / childCount;
             child.enemyMove.moveSpeed = child.enemyInfo.speed;
             child.enemyMove.MoveSpeedRenewal();
-            obj.transform.localScale = new Vector3(
+            child.transform.localScale = new Vector3(
                 transform.localScale.x / splitScaleDiv, transform.localScale.y / splitScaleDiv, 1f);
             child.splitCount = splitCount - 1;
         }
+
+        if (splitEncounter != null)
+            BossHealthSource.ReplaceHealthSegment(this, children);
     }
 
     private static int DivideStat(int total, int count, int index)
