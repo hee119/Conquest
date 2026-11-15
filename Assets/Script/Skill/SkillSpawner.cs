@@ -139,11 +139,19 @@ public class SkillSpawner : MonoBehaviour
             SkillUse(skillId);
     }
 
-    public IEnumerator LifeTime(int skillId, GameObject obj)
+    public IEnumerator ReturnAfterEffect(GameObject obj)
     {
-        yield return new WaitForSeconds(DataManager.Instance.skillDatasDic[skillId].lifetime);
-        
-        obj.GetComponent<PooledObject>().DestroyObj();
+        ParticleSystem[] particles = obj.GetComponentsInChildren<ParticleSystem>(true);
+        foreach (ParticleSystem particle in particles)
+            particle.Play(true);
+        if (particles.Length > 0)
+        {
+            yield return null;
+            while (obj.activeInHierarchy && System.Array.Exists(particles, p => p != null && p.IsAlive(true)))
+                yield return null;
+        }
+        if (obj.activeInHierarchy)
+            obj.GetComponent<PooledObject>()?.DestroyObj();
     }
 
     public void MovementLock(int canMove)
@@ -230,7 +238,7 @@ public class SkillSpawner : MonoBehaviour
             {
                 float damage = skill.skillDamage;
                 projectile.Launch(spawnPos, spawnDirection, skill.projectileSpeed,
-                    skill.projectileLifetime * modifiers.rangeMultiplier,
+                    skill.projectileRange * modifiers.rangeMultiplier,
                     damage * modifiers.damageMultiplier,
                     modifiers.pierceCount, modifiers.chainCount, modifiers.chainRange);
                 // The projectile owns its lifetime and pool return. A second timer
@@ -262,7 +270,7 @@ public class SkillSpawner : MonoBehaviour
                 );
             }
 
-            StartCoroutine(LifeTime(skillId, skillPrefab));
+            StartCoroutine(ReturnAfterEffect(skillPrefab));
         }
     }
 

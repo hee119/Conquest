@@ -8,8 +8,8 @@ public sealed class MageProjectile : MonoBehaviour
 
     private Vector2 direction;
     private float speed;
-    private float launchLifetime;
-    private float remainingLifetime;
+    private float launchRange;
+    private float remainingRange;
     private float damage;
     private int remainingPierces;
     private int chainCount;
@@ -31,7 +31,7 @@ public sealed class MageProjectile : MonoBehaviour
     }
 
     public void Launch(Vector2 position, Vector2 travelDirection,
-        float travelSpeed, float lifetime, float hitDamage,
+        float travelSpeed, float range, float hitDamage,
         int pierceCount = 0, int chainedTargets = 0, float chainedRange = 0f,
         EnemyCombat target = null, IEnumerable<int> visitedTargets = null)
     {
@@ -42,8 +42,8 @@ public sealed class MageProjectile : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f,
             Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         speed = travelSpeed;
-        launchLifetime = lifetime;
-        remainingLifetime = lifetime;
+        launchRange = range;
+        remainingRange = range;
         damage = hitDamage;
         remainingPierces = Mathf.Max(0, pierceCount);
         chainCount = Mathf.Max(0, chainedTargets);
@@ -110,8 +110,8 @@ public sealed class MageProjectile : MonoBehaviour
 
         float distance = speed * Time.fixedDeltaTime;
         transform.position += (Vector3)(direction * distance);
-        remainingLifetime -= Time.fixedDeltaTime;
-        if (remainingLifetime <= 0f)
+        remainingRange -= distance;
+        if (remainingRange <= 0f)
             ReturnToPool();
     }
 
@@ -177,7 +177,7 @@ public sealed class MageProjectile : MonoBehaviour
             origin,
             nextDirection,
             speed,
-            launchLifetime,
+            launchRange,
             damage,
             0,
             chainCount - 1,

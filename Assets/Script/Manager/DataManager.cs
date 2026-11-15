@@ -664,7 +664,7 @@ public void ApplyCustomCharacterStats()
         for (int i = 1; i < lines.Length; i++)
         {
             string[] skillData = lines[i].Split(",");
-            if (skillData.Length < 8 || !int.TryParse(skillData[0].Trim(), out int skillId))
+            if (skillData.Length < 7 || !int.TryParse(skillData[0].Trim(), out int skillId))
                 continue;
 
             SkillData skillDataTemp = new SkillData();
@@ -679,21 +679,19 @@ public void ApplyCustomCharacterStats()
             float.TryParse(skillData[5].Trim(), System.Globalization.NumberStyles.Float,
                 System.Globalization.CultureInfo.InvariantCulture, out skillDataTemp.skillCritDamage);
             float.TryParse(skillData[6].Trim(), System.Globalization.NumberStyles.Float,
-                System.Globalization.CultureInfo.InvariantCulture, out skillDataTemp.lifetime);
-            float.TryParse(skillData[7].Trim(), System.Globalization.NumberStyles.Float,
                 System.Globalization.CultureInfo.InvariantCulture, out skillDataTemp.movementLockTime);
 
             // Mage projectile settings are optional columns so existing skills remain compatible.
+            if (skillData.Length > 7)
+                float.TryParse(skillData[7].Trim(), System.Globalization.NumberStyles.Float,
+                    System.Globalization.CultureInfo.InvariantCulture, out skillDataTemp.projectileSpeed);
             if (skillData.Length > 8)
                 float.TryParse(skillData[8].Trim(), System.Globalization.NumberStyles.Float,
-                    System.Globalization.CultureInfo.InvariantCulture, out skillDataTemp.projectileSpeed);
+                    System.Globalization.CultureInfo.InvariantCulture, out skillDataTemp.projectileRange);
             if (skillData.Length > 9)
-                float.TryParse(skillData[9].Trim(), System.Globalization.NumberStyles.Float,
-                    System.Globalization.CultureInfo.InvariantCulture, out skillDataTemp.projectileLifetime);
+                int.TryParse(skillData[9].Trim(), out skillDataTemp.maxProjectiles);
             if (skillData.Length > 10)
-                int.TryParse(skillData[10].Trim(), out skillDataTemp.maxProjectiles);
-            if (skillData.Length > 11)
-                float.TryParse(skillData[11].Trim(), System.Globalization.NumberStyles.Float,
+                float.TryParse(skillData[10].Trim(), System.Globalization.NumberStyles.Float,
                     System.Globalization.CultureInfo.InvariantCulture, out skillDataTemp.spawnOffset);
 
             skillDatasDic[skillDataTemp.skillId] = skillDataTemp;
@@ -733,7 +731,6 @@ public void ApplyCustomCharacterStats()
             skillInfo.skillCoolTime = data.skillCoolTime;
             skillInfo.skillDamage = data.skillDamage;
             skillInfo.skillCritDamage = (int)data.skillCritDamage;
-            skillInfo.lifetime = data.lifetime;
             skillInfo.movementLockTime = data.movementLockTime;
         }
 
@@ -1471,10 +1468,9 @@ public class SkillData
     public float skillCoolTime;
     public float skillDamage;
     public float skillCritDamage;
-    public float lifetime;
     public float movementLockTime;
     public float projectileSpeed;
-    public float projectileLifetime;
+    public float projectileRange;
     public int maxProjectiles;
     public float spawnOffset;
 }
