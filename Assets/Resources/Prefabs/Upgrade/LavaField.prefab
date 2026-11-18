@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 7569438196653016868}
   - component: {fileID: 929310372555151196}
   - component: {fileID: -1668416731754037522}
-  - component: {fileID: -373297750853753420}
   - component: {fileID: -1671886800219482700}
   - component: {fileID: -3105820041375505985}
   - component: {fileID: -2935188180546994564}
+  - component: {fileID: -8760999401671874706}
   m_Layer: 0
   m_Name: LavaField
   m_TagString: Untagged
@@ -142,18 +142,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.9527686, y: 0.9907495}
   m_EdgeRadius: 0
---- !u!114 &-373297750853753420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206114430016736175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b76e65075f614801b5caa75a14b800a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Snail
 --- !u!114 &-1671886800219482700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,3 +179,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec34c9538bc4248ce88478e4571b37da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LavaField
+--- !u!114 &-8760999401671874706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206114430016736175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b76e65075f614801b5caa75a14b800a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snail

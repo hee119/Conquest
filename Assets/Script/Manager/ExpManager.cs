@@ -48,6 +48,7 @@ public class ExpManager : MonoBehaviour
         {
             ExpInfo info = go.GetComponent<ExpInfo>();
             if (info == null || merging.Contains(info)) continue;   // 진행 중인 구슬은 제외
+            if (go.TryGetComponent(out Exp exp) && exp.IsAttracted) continue;
             if (maxId >= 0 && info.id >= maxId) continue;
 
             var key = (GetChunk(go.transform.position), info.id);
@@ -139,7 +140,8 @@ public class ExpManager : MonoBehaviour
     bool AllValid(List<ExpInfo> group, int id)
     {
         foreach (ExpInfo e in group)
-            if (e == null || !e.gameObject.activeInHierarchy || e.id != id)
+            if (e == null || !e.gameObject.activeInHierarchy || e.id != id ||
+                (e.TryGetComponent(out Exp exp) && exp.IsAttracted))
                 return false;
         return true;
     }

@@ -23,6 +23,8 @@ public sealed class SoundManager : MonoBehaviour
     private readonly Dictionary<AudioSource, EnemySoundLifetime> enemyLoopLifetimes = new();
     private readonly List<AudioSource> fadedLoops = new();
     private readonly HashSet<UiSoundEmitter> uiControls = new HashSet<UiSoundEmitter>();
+    private readonly HashSet<EnemyCombat> enemiesHitThisFrame = new HashSet<EnemyCombat>();
+    private int enemyHitFrame = -1;
     private int lastUiClickFrame = -1;
     private int lastUiHoverFrame = -1;
     [SerializeField, LabelText("사운드 목록")]
@@ -288,7 +290,37 @@ public sealed class SoundManager : MonoBehaviour
             return source;
         }
 
+        if (id == SoundIds.EnemyHit && enemy != null)
+            volumeScale *= RegisterEnemyHit(enemy);
+
         return PlayOneShot(entry, volumeScale, false, enemy);
+    }
+
+    private float RegisterEnemyHit(EnemyCombat enemy)
+    {
+        if (enemyHitFrame != Time.frameCount)
+        {
+            enemyHitFrame = Time.frameCount;
+            enemiesHitThisFrame.Clear();
+        }
+
+        if (enemiesHitThisFrame.Add(enemy) && enemiesHitThisFrame.Count == 5)
+        {
+            // Apply the same reduction to voices already started this frame.
+            for (int i = 0; i < oneShotVoices.Count; i++)
+            {
+                OneShotVoice voice = oneShotVoices[i];
+                if (voice.SoundId != SoundIds.EnemyHit || voice.StartedFrame != enemyHitFrame)
+                    continue;
+                voice.VolumeScale *= 0.8f;
+                if (voice.Source != null)
+                    voice.Source.volume = voice.VolumeScale * SfxVolume *
+                        (voice.Lifetime != null ? voice.Lifetime.Gain : 1f);
+                oneShotVoices[i] = voice;
+            }
+        }
+
+        return enemiesHitThisFrame.Count >= 5 ? 0.8f : 1f;
     }
 
     public void PlayOneShotIgnoringPause(int id, float volumeScale = 1f)

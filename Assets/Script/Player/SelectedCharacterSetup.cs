@@ -54,7 +54,15 @@ public sealed class SelectedCharacterSetup : MonoBehaviour
         spriteRenderer.sprite = id == 2 ? mageIdleSprite : swordIdleSprite;
         SkillSpawner skillSpawner = GetComponent<SkillSpawner>();
         if (skillSpawner != null)
+        {
             skillSpawner.skillId1 = id == 2 ? 201 : 200;
+            GameObject characterPrefab = Resources.Load<GameObject>(
+                id == 2 ? "Prefabs/Agent/Mage" : "Prefabs/Agent/Swordman");
+            SkillSpawner prefabSpawner = characterPrefab != null
+                ? characterPrefab.GetComponent<SkillSpawner>() : null;
+            if (prefabSpawner != null)
+                skillSpawner.BasicAttackSpreadAngle = prefabSpawner.BasicAttackSpreadAngle;
+        }
 
         movement.speed = data.speed;
         combat.maxHp = data.hp;

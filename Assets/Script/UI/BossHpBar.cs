@@ -6,52 +6,29 @@ public sealed class BossHpBar : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
     [SerializeField] private HpBar hpBar;
-    private RectTransform screenRoot;
+    private bool layoutCaptured;
+    private Vector2 originalPosition;
+    private Vector2 originalSizeDelta;
+    private float originalWidth;
     private readonly List<HpBar> extraBars = new List<HpBar>();
 
     /// <summary>보스 변경 이벤트를 구독하고 현재 체력바를 연결한다.</summary>
     private void OnEnable()
     {
-        EnsureScreenLayout();
+        CaptureOriginalLayout();
         BossHealthSource.Changed += RefreshBoss;
         RefreshBoss();
     }
 
-    /// <summary>보스 체력바를 화면 좌표계로 옮겨 상단에 배치한다.</summary>
-    private void EnsureScreenLayout()
+    /// <summary>씬에서 설정한 체력바의 크기와 위치를 유지한다.</summary>
+    private void CaptureOriginalLayout()
     {
-        if (panel == null || hpBar == null || screenRoot != null) return;
-        var overlay = new GameObject("Boss Screen HUD", typeof(RectTransform), typeof(Canvas),
-            typeof(UnityEngine.UI.CanvasScaler));
-        overlay.transform.SetParent(transform, false);
-        screenRoot = (RectTransform)overlay.transform;
-        var canvas = overlay.GetComponent<Canvas>();
-        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        canvas.sortingOrder = 100;
-        var scaler = overlay.GetComponent<UnityEngine.UI.CanvasScaler>();
-        scaler.uiScaleMode = UnityEngine.UI.CanvasScaler.ScaleMode.ScaleWithScreenSize;
-        scaler.referenceResolution = new Vector2(1920f, 1080f);
-        scaler.matchWidthOrHeight = 0.5f;
-
-        var rect = (RectTransform)panel.transform;
-        rect.SetParent(screenRoot, false);
-        rect.localScale = Vector3.one;
-        rect.localRotation = Quaternion.identity;
-        rect.anchorMin = new Vector2(0.2f, 1f);
-        rect.anchorMax = new Vector2(0.8f, 1f);
-        rect.pivot = new Vector2(0.5f, 1f);
-        rect.anchoredPosition = new Vector2(0f, -40f);
-        rect.sizeDelta = new Vector2(0f, 60f);
-
-        var bar = (RectTransform)hpBar.transform;
-        bar.localScale = Vector3.one;
-        bar.anchorMin = new Vector2(0f, 0.5f);
-        bar.anchorMax = new Vector2(1f, 0.5f);
-        bar.pivot = new Vector2(0.5f, 0.5f);
-        bar.anchoredPosition = Vector2.zero;
-        bar.sizeDelta = new Vector2(0f, 24f);
-        foreach (var graphic in panel.GetComponentsInChildren<UnityEngine.UI.Graphic>(true))
-            graphic.raycastTarget = false;
+        if (layoutCaptured || hpBar == null) return;
+        var rect = (RectTransform)hpBar.transform;
+        originalPosition = rect.anchoredPosition;
+        originalSizeDelta = rect.sizeDelta;
+        originalWidth = rect.rect.width;
+        layoutCaptured = true;
     }
 
     /// <summary>보스 이벤트 구독과 체력바 연결을 해제한다.</summary>
@@ -86,12 +63,16 @@ public sealed class BossHpBar : MonoBehaviour
             HpBar bar = i == 0 ? hpBar : extraBars[i - 1];
             var segment = segments[i];
             var rect = (RectTransform)bar.transform;
-            rect.anchorMin = new Vector2(segment.Min, 0.5f);
-            rect.anchorMax = new Vector2(segment.Max, 0.5f);
             float left = segment.Min > 0f ? 3f : 0f;
             float right = segment.Max < 1f ? 3f : 0f;
-            rect.offsetMin = new Vector2(left, -12f);
-            rect.offsetMax = new Vector2(-right, 12f);
+            float widthFraction = segment.Max - segment.Min;
+            float pivot = rect.pivot.x;
+            rect.sizeDelta = new Vector2(
+                originalSizeDelta.x - originalWidth * (1f - widthFraction) - left - right,
+                originalSizeDelta.y);
+            rect.anchoredPosition = originalPosition + new Vector2(
+                originalWidth * (segment.Min + widthFraction * pivot - pivot) +
+                left * (1f - pivot) - right * pivot, 0f);
             bar.gameObject.SetActive(true);
             if (!ReferenceEquals(bar.Combat, segment.Combat))
                 bar.BindCombat(segment.Combat);

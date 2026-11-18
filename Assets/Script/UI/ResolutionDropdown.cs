@@ -6,8 +6,8 @@ public sealed class ResolutionDropdown : MonoBehaviour
 {
     internal const string WidthPreference = "Settings.WindowWidth";
     internal const string HeightPreference = "Settings.WindowHeight";
-    internal const int DefaultWidth = 1280;
-    internal const int DefaultHeight = 720;
+    internal const int DefaultWidth = 1920;
+    internal const int DefaultHeight = 1080;
 
     private static readonly Vector2Int[] CommonResolutions =
     {

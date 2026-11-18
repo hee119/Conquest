@@ -9,6 +9,7 @@ public class SelectUpgrade : MonoBehaviour
 {
     [Header("선택")]
     [SerializeField] private Button selectionButton;
+    [SerializeField, Min(1f)] private float selectedScale = 1.05f;
 
     private bool selectionEnabled;
 
@@ -351,7 +352,7 @@ public class SelectUpgrade : MonoBehaviour
         // =====================================================
 
         GetComponent<UpgradeHover>()
-            ?.LockCurrentHover();
+            ?.LockCurrentHover(selectedScale);
 
 
         // =====================================================

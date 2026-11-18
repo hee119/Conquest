@@ -46,13 +46,6 @@ public class UpgradeAppeared : MonoBehaviour
                 float scaleX = Mathf.Cos(angle * Mathf.Deg2Rad);
                 transform.localScale = new Vector3(defaultScale.x * scaleX, defaultScale.y, defaultScale.z);
 
-                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
-                {
-                    transform.localScale = defaultScale;
-                    StartCoroutine(BigScale());
-                    yield break;
-                }
-
                 yield return null;
             }
 

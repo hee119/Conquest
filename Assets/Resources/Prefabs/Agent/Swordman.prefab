@@ -143,7 +143,7 @@ BoxCollider2D:
   m_Offset: {x: -0.027489275, y: -0.5194889}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.55859375}
     oldSize: {x: 3.4133334, y: 3.4133334}
     newSize: {x: 4.266667, y: 4.266667}
     adaptiveTilingThreshold: 0.5
@@ -189,7 +189,7 @@ BoxCollider2D:
   m_Offset: {x: 0.02935189, y: 0.070444494}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.55859375}
     oldSize: {x: 3.4133334, y: 3.4133334}
     newSize: {x: 4.266667, y: 4.266667}
     adaptiveTilingThreshold: 0.5
@@ -350,7 +350,7 @@ MonoBehaviour:
   skillId2: 0
   skillId3: 0
   skillId4: 0
-  basicAttackSpreadAngle: 7
+  basicAttackSpreadAngle: 50
 --- !u!114 &3405139427750937997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,13 +393,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UnitInfo
   id: 1
   name: 
-  hp: 200
-  hpRegenRate: 2
-  speed: 5
+  hp: 90
+  hpRegenRate: 1
+  speed: 4
   damage: 5
   defense: 5
   criticalDamage: 1.5
-  criticalChance: 10
+  criticalChance: 0
 --- !u!114 &7201235708750216182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,7 +493,7 @@ BoxCollider2D:
   m_Offset: {x: -0.027489275, y: -0.5194889}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.55859375}
     oldSize: {x: 3.4133334, y: 3.4133334}
     newSize: {x: 4.266667, y: 4.266667}
     adaptiveTilingThreshold: 0.5

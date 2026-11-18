@@ -9,6 +9,36 @@ public class MissileProjectile : HomingProjectile
 
 
     private Coroutine moveCoroutine;
+    private bool sporeExploding;
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        sporeExploding = false;
+    }
+
+    private new void OnTriggerEnter2D(Collider2D other)
+    {
+        SporeWarhead spore = GetComponent<SporeWarhead>();
+        EnemyCombat enemy = other.GetComponentInParent<EnemyCombat>();
+        if (spore != null && enemy != null && !enemy.isDead && enemy.hp > 0f)
+        {
+            if (sporeExploding)
+                return;
+            sporeExploding = true;
+            if (moveCoroutine != null)
+            {
+                StopCoroutine(moveCoroutine);
+                moveCoroutine = null;
+            }
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+            spore.ExplodeImmediately();
+            return;
+        }
+
+        base.OnTriggerEnter2D(other);
+    }
 
     /// <summary>PlayLaunchSound 동작을 처리한다.</summary>
     private void PlayLaunchSound()

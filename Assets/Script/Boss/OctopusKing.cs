@@ -115,7 +115,20 @@ public class OctopusKing : MonoBehaviour
             SetSpinning(false);
             attacking = false;
             bodyObstacle?.SetSkillBodyActive(false);
-            if (agent != null && agent.enabled && agent.isOnNavMesh && Alive) agent.isStopped = stopped;
+
+            if (agent != null && agent.enabled && agent.isOnNavMesh)
+            {
+                agent.isStopped = true;
+                agent.ResetPath();
+
+                if (Alive)
+                {
+                    agent.isStopped = stopped;
+
+                    if (!stopped)
+                        GetComponent<EnemyMove>()?.RefreshPathAfterAttack();
+                }
+            }
         }
     }
 

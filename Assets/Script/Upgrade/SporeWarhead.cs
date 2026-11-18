@@ -5,6 +5,22 @@ using System.Collections;
 /// <summary>SporeWarhead 증강 관련 동작과 상태를 관리한다.</summary>
 public class SporeWarhead : Mold
 {
+    public void ExplodeImmediately()
+    {
+        StopAllCoroutines();
+        transform.rotation = Quaternion.identity;
+        animator.enabled = true;
+        animator.SetTrigger("Boom");
+    }
+
+    public override void Boom()
+    {
+        PooledObject pooledObject = GetComponent<PooledObject>();
+        base.Boom();
+        if (pooledObject != null)
+            pooledObject.DestroyObj();
+    }
+
     /// <summary>TargetMoldCor 동작을 처리한다.</summary>
     public override IEnumerator TargetMoldCor()
     {

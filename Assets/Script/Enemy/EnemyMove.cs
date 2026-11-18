@@ -35,6 +35,7 @@ public class EnemyMove : MonoBehaviour
     private ContactFilter2D enemyFilter;
     private EnemyCombat ownCombat;
     private bool isBoss;
+    private float nextBossKnockbackTime;
     private float nextSeparationTime;
 
     protected virtual void Awake()
@@ -54,6 +55,8 @@ public class EnemyMove : MonoBehaviour
         {
             agent.updateUpAxis = false;
             agent.updateRotation = false;
+            // Reach the requested velocity within a physics frame instead of drifting.
+            agent.acceleration = 1000f;
             agent.speed = moveSpeed;
         }
     }
@@ -64,6 +67,7 @@ public class EnemyMove : MonoBehaviour
             target = GameObject.FindGameObjectWithTag("Player");
 
         canKnockback = true;
+        nextBossKnockbackTime = 0f;
         nextPathUpdateTime = 0f;
         hasDestinationTargetPosition = false;
         nextSeparationTime = Time.time + Random.Range(0f, SeparationInterval);
@@ -254,6 +258,28 @@ public class EnemyMove : MonoBehaviour
             return;
         }
 
+        if (isBoss)
+        {
+            if (agent.isStopped || !agent.updatePosition || Time.time < nextBossKnockbackTime ||
+                direction.sqrMagnitude < 0.0001f || power <= 0f)
+                return;
+
+            Vector3 position = transform.position;
+            Vector3 destination = position + (Vector3)(direction.normalized * Mathf.Min(0.12f, power * 0.024f));
+            destination = GetComponent<BossBodyObstacle>().ClampToMap(destination);
+            if ((destination - position).sqrMagnitude < 0.000001f ||
+                NavMesh.Raycast(position, destination, out _, agent.areaMask))
+                return;
+
+            if (agent.Warp(destination))
+            {
+                nextBossKnockbackTime = Time.time + Mathf.Max(0.4f, knockbackCooldown);
+                hasDestinationTargetPosition = false;
+                nextPathUpdateTime = 0f;
+            }
+            return;
+        }
+
         canKnockback = false;
 
         if (knockbackCoroutine != null)
@@ -288,5 +314,19 @@ public class EnemyMove : MonoBehaviour
 
         canKnockback = true;
         knockbackCoroutine = null;
+    }
+
+    public void RefreshPathAfterAttack()
+    {
+        hasDestinationTargetPosition = false;
+        nextPathUpdateTime = 0f;
+
+        if (agent == null || !agent.enabled || !agent.isOnNavMesh)
+            return;
+
+        agent.ResetPath();
+
+        if (!agent.isStopped)
+            Move();
     }
 }

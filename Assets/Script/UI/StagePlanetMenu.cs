@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,7 @@ public sealed class StagePlanetMenu : MonoBehaviour
     [SerializeField] private StagePlanetButton[] planets;
     [SerializeField] private UnityEngine.UI.Button playButton;
     [SerializeField] private TMP_Text[] planetLabels;
+    [SerializeField] private TMP_Text developmentNotice;
     [SerializeField] private UnityEngine.UI.ScrollRect scrollRect;
     [SerializeField] private string playableSceneName = "Stage1";
     [SerializeField, Range(0f, 3f)] private float selectedGlowIntensity = 1f;
@@ -17,6 +19,8 @@ public sealed class StagePlanetMenu : MonoBehaviour
     private static readonly int OutlineColorId = Shader.PropertyToID("_OuterOutlineColor");
     private int selectedIndex;
     private Material runtimeGlowMaterial;
+    private Coroutine noticeCoroutine;
+    private Vector2 noticeStartPosition;
     private Color originalOutlineColor;
     private static readonly string[] StageLabelKeys =
     {
@@ -29,6 +33,8 @@ public sealed class StagePlanetMenu : MonoBehaviour
     {
         UiSoundEvents.UseDedicatedClick(playButton);
         ConfigureSelectionGlow();
+        if (developmentNotice != null)
+            noticeStartPosition = developmentNotice.rectTransform.anchoredPosition;
 
 
     }
@@ -70,6 +76,11 @@ public sealed class StagePlanetMenu : MonoBehaviour
             if (planet != null)
                 planet.SetSelectionGlowMaterial(runtimeGlowMaterial);
         SetSelectedGlowIntensity(selectedGlowIntensity);
+    }
+
+    private void OnDisable()
+    {
+        HideNotice();
     }
 
     /// <summary>선택된 행성의 강조 효과 강도를 변경한다.</summary>
@@ -119,7 +130,42 @@ public sealed class StagePlanetMenu : MonoBehaviour
             planets[i].SetSelected(i == selectedIndex);
 
         if (playButton != null)
-            playButton.interactable = selectedIndex == 0;
+            playButton.interactable = true;
+
+        HideNotice();
+    }
+
+    private void HideNotice()
+    {
+        if (noticeCoroutine != null)
+            StopCoroutine(noticeCoroutine);
+        noticeCoroutine = null;
+        if (developmentNotice != null)
+            developmentNotice.gameObject.SetActive(false);
+    }
+
+    private IEnumerator ShowDevelopmentNotice()
+    {
+        RectTransform rect = developmentNotice.rectTransform;
+        rect.anchoredPosition = noticeStartPosition;
+        developmentNotice.alpha = 1f;
+        developmentNotice.gameObject.SetActive(true);
+
+        const float duration = 2f;
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            float progress = Mathf.Clamp01(elapsed / duration);
+            rect.anchoredPosition = noticeStartPosition + Vector2.up * (60f * progress);
+            developmentNotice.alpha = 1f - Mathf.Clamp01((progress - 0.4f) / 0.6f);
+            elapsed += Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        developmentNotice.gameObject.SetActive(false);
+        rect.anchoredPosition = noticeStartPosition;
+        developmentNotice.alpha = 1f;
+        noticeCoroutine = null;
     }
 
     public bool IsStartButton(UnityEngine.UI.Button button) => button == playButton;
@@ -130,7 +176,16 @@ public sealed class StagePlanetMenu : MonoBehaviour
         if (GameSceneManager.IsLoading)
             return;
 
-        if (selectedIndex == 0 && !string.IsNullOrEmpty(playableSceneName))
+        if (selectedIndex > 0)
+        {
+            UiSoundEvents.Request(UiSoundCue.Click);
+            HideNotice();
+            if (developmentNotice != null)
+                noticeCoroutine = StartCoroutine(ShowDevelopmentNotice());
+            return;
+        }
+
+        if (!string.IsNullOrEmpty(playableSceneName))
         {
             UiSoundEvents.Request(UiSoundCue.Confirm);
             // Existing managers survive the lobby, so a returning run needs

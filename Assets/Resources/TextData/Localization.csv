@@ -39,9 +39,9 @@ character_skill_slash_desc_4,검격 +{1} ,slash attacks +{1},斬撃攻撃 +{1}
 character_skill_slash_desc_5,검격 +{1} ,slash attacks +{1},斬撃攻撃 +{1}
 character_skill_magic_desc_1,마법 탄환 +{1},Magic Bolt +{1},魔法弾丸+{1}
 character_skill_magic_desc_2,마법 탄환 +{1},Magic Bolt +{1},魔法弾丸+{1}
-character_skill_magic_desc_3,적 {3}명에게 연쇄 공격,Chain attacks to {3} enemies,敵{3}体に連鎖
+character_skill_magic_desc_3,마법 탄환 관통 +{2},Magic Bolt Penetration +{2},魔法弾の貫通 +{2}
 character_skill_magic_desc_4,마법 탄환 관통 +{2},Magic Bolt Penetration +{2},魔法弾の貫通 +{2}
-character_skill_magic_desc_5,마법 탄환 관통 +{2},Magic Bolt Penetration +{2},魔法弾の貫通 +{2}
+character_skill_magic_desc_5,적 {3}명에게 연쇄 공격,Chain attacks to {3} enemies,敵{3}体に連鎖
 upgread_des_Lightning_1,일정 시간마다 주변 적에게 하늘에서 낙뢰를 떨어뜨립니다.,It drops lightning from the sky on nearby enemies at regular intervals.,一定時間ごとに周囲の敵に空から雷撃を落とします。
 upgread_des_Lightning_2,낙뢰 +{0}개,Lightning +{0},雷撃 +{0}個
 upgread_des_Fireball_1,일정 시간마다 주변 적에게 파이어볼을 발사합니다.,Periodically fires a fireball at nearby enemies.,一定時間ごとに周囲の敵にファイアボールを発射します。

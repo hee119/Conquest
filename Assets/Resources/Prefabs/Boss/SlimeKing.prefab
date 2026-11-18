@@ -152,7 +152,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -224,7 +224,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4125709159630829647}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
   target: {fileID: 0}
   agent: {fileID: 0}
-  moveSpeed: 0.3
+  moveSpeed: 4
   stoppingDistance: 0
   isSlowDown: 0
   slowCount: 0
@@ -280,9 +280,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyInfo
   id: 151
   name: 
-  hp: 5000
-  hpRegenRate: 0
-  speed: 0.3
+  hp: 10
+  hpRegenRate: 15
+  speed: 4
   damage: 10
   defense: 5
   dropExpOrbId: 302
@@ -307,9 +307,10 @@ MonoBehaviour:
   hitMaxWait: 1
   enemyInfo: {fileID: 0}
   enemyMove: {fileID: 0}
-  splitCount: 3
+  splitCount: 0
   splitSpawnCount: 2
   defaultScale: 3
+  isSplit: 0
   startDelay: 1.5
   patternInterval: 2
   hitRadius: 1.2

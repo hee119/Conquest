@@ -98,9 +98,10 @@ public class EnemyCombat : MonoBehaviour, ICombat
         ? CharacterManager.Instance.currentCharacterId
         : GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerInfo>()?.id ?? 1;
 
-    public static float CalculateDamage(float baseDamage, PlayerData stats, out bool critical)
+    public static float CalculateDamage(float baseDamage, PlayerData stats, out bool critical,
+        float? attackPowerOverride = null)
     {
-        float damage = Mathf.Max(0f, baseDamage) + Mathf.Max(0f, stats.damage);
+        float damage = Mathf.Max(0f, baseDamage) + Mathf.Max(0f, attackPowerOverride ?? stats.damage);
         critical = Random.Range(0, 100) < stats.criticalChance;
         return critical ? damage * stats.criticalDamage : damage;
     }
@@ -114,7 +115,11 @@ public class EnemyCombat : MonoBehaviour, ICombat
         if (DataManager.Instance == null ||
             !DataManager.Instance.playerDatasDic.TryGetValue(characterId, out var stats)) return;
         LastDamageSourceId = upgradeId;
-        float finalDamage = CalculateDamage(damage, stats, out bool critical);
+        bool isUpgrade = DataManager.Instance.upgradeDatasDic.ContainsKey(upgradeId);
+        float? attackPowerOverride = isUpgrade
+            ? UpgradeManager.Instance != null ? UpgradeManager.Instance.UpgradeAttackPowerBonus : 0f
+            : (float?)null;
+        float finalDamage = CalculateDamage(damage, stats, out bool critical, attackPowerOverride);
         ApplyDamage(finalDamage, hitPoint, critical);
     }
 

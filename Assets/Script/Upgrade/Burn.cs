@@ -88,12 +88,14 @@ public class Burn : DotDamage
     {
         if (enemyCombat == null)
         {
+            Debug.Log("적의 hp 컴포넌트가 없어요");
             pooledObject.DestroyObj();
             yield break;
         }
 
         if (!TryGetBurnValues(out int dotCount, out float damage))
         {
+            Debug.Log("불에 몇번타는지 또는 데미지가 없어요");
             pooledObject.DestroyObj();
             yield break;
         }
@@ -214,7 +216,7 @@ public class Burn : DotDamage
         damage = 0f;
         if (DataManager.Instance == null ||
             !DataManager.Instance.upgradeDatasDic.TryGetValue(id, out var data) ||
-            data == null || data.upgradeLevel <= 0 ||
+            data == null ||
             data.dotCount == null || data.dotCount.Length == 0 ||
             data.dotDamage == null || data.dotDamage.Length == 0)
         {

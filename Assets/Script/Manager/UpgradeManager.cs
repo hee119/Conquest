@@ -253,6 +253,7 @@ public class UpgradeManager : MonoBehaviour
     private float critChanceBonus;
     private float critDamageBonus;
     private float attackPowerBonus;
+    public float UpgradeAttackPowerBonus => attackPowerBonus;
     private float maxHpBonus;
     private float defenseBonus;
     private float skillCooldownBonus;
@@ -1002,8 +1003,16 @@ public void ResetForNewRun()
     /// <summary>IsEligibleForCurrentCharacter 동작을 처리한다.</summary>
     private bool IsEligibleForCurrentCharacter(int id)
     {
-        if (DataManager.Instance.upgradeDatasDic.ContainsKey(id) ||
-            DataManager.Instance.statUpgradeDatasDic.ContainsKey(id))
+        if (DataManager.Instance.statUpgradeDatasDic.TryGetValue(id, out var stat))
+        {
+            if (stat.function == "CriticalForce")
+                return statUpgrades.Any(ownedId =>
+                    DataManager.Instance.statUpgradeDatasDic.TryGetValue(ownedId, out var owned) &&
+                    owned.function == "CriticalInstinct");
+            return true;
+        }
+
+        if (DataManager.Instance.upgradeDatasDic.ContainsKey(id))
             return true;
 
         if (!DataManager.Instance.characterSkillUpgradeDatasDic.TryGetValue(

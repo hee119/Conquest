@@ -27,9 +27,6 @@ public sealed class ScreenModeDropdown : MonoBehaviour
     private static void RestoreDisplaySettings()
     {
         requestedMode = null;
-        if (!PlayerPrefs.HasKey(ModePreference) && !PlayerPrefs.HasKey(ResolutionDropdown.WidthPreference))
-            return;
-
         int modeIndex = PlayerPrefs.GetInt(ModePreference, Screen.fullScreen ? 0 : 1);
         FullScreenMode mode = GetFullScreenMode(modeIndex);
 #if UNITY_WEBGL && !UNITY_EDITOR

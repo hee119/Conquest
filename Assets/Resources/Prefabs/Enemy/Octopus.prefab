@@ -275,7 +275,7 @@ MonoBehaviour:
   bulletId: 600
   bulleSpawnPos: {fileID: 2751941530656367470}
   attackReleaseDelay: 0.375
-  attackCoolTime: 3
+  attackCoolTime: 7
 --- !u!114 &2890242813744974307
 MonoBehaviour:
   m_ObjectHideFlags: 0

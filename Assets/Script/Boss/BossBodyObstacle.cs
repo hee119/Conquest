@@ -8,10 +8,12 @@ public sealed class BossBodyObstacle : MonoBehaviour
 {
     [SerializeField] private NavMeshObstacle navigationObstacle;
     private const float SeparationSpeed = 6f;
+    private const float BoundaryReturnSpeed = 6f;
     private BoxCollider2D body;
     private BoxCollider2D playerBody;
     private EnemyCombat combat;
     private Rigidbody2D bossRigidbody;
+    private NavMeshAgent agent;
     private RigidbodyType2D previousBodyType;
     private bool skillBodyActive;
     private readonly Collider2D[] overlaps = new Collider2D[256];
@@ -24,6 +26,7 @@ public sealed class BossBodyObstacle : MonoBehaviour
         body = GetComponent<BoxCollider2D>();
         combat = GetComponent<EnemyCombat>();
         bossRigidbody = GetComponent<Rigidbody2D>();
+        agent = GetComponent<NavMeshAgent>();
         filter = new ContactFilter2D { useTriggers = false };
         filter.SetLayerMask(LayerMask.GetMask("Enemy"));
 
@@ -74,8 +77,39 @@ public sealed class BossBodyObstacle : MonoBehaviour
         if (navigationObstacle != null) navigationObstacle.enabled = false;
     }
 
+    private void FixedUpdate()
+    {
+        if (!body.enabled || (combat != null && combat.isDead) ||
+            bossRigidbody == null || bossRigidbody.bodyType != RigidbodyType2D.Dynamic)
+            return;
+
+        Vector2 position = bossRigidbody.position;
+        Vector2 inward = (Vector2)ClampToMap(position) - position;
+        if (inward.sqrMagnitude <= 0.000001f)
+            return;
+
+        Vector2 direction = inward.normalized;
+        float desiredSpeed = Mathf.Min(BoundaryReturnSpeed, inward.magnitude / Time.fixedDeltaTime);
+        float speedChange = desiredSpeed - Vector2.Dot(bossRigidbody.linearVelocity, direction);
+        bossRigidbody.AddForce(direction * (speedChange * bossRigidbody.mass), ForceMode2D.Impulse);
+    }
+
     private void LateUpdate()
     {
+        // Scripted airborne movement intentionally leaves the ground plane.
+        if (body.enabled && (combat == null || !combat.isDead) &&
+            bossRigidbody != null && bossRigidbody.bodyType == RigidbodyType2D.Kinematic &&
+            agent != null && agent.enabled && agent.updatePosition)
+        {
+            Vector3 bounded = ClampToMap(transform.position);
+            if ((bounded - transform.position).sqrMagnitude > 0.000001f)
+            {
+                Vector3 next = Vector3.MoveTowards(transform.position, bounded, BoundaryReturnSpeed * Time.deltaTime);
+                if (!agent.Warp(next))
+                    bossRigidbody.position = next;
+            }
+        }
+
         bool solid = body.enabled && (combat == null || !combat.isDead);
         playerBody.enabled = solid;
         if (!solid)
@@ -123,6 +157,34 @@ public sealed class BossBodyObstacle : MonoBehaviour
             waitingForClearance = false;
             navigationObstacle.enabled = true;
         }
+    }
+
+    // Constrain the whole body, including its offset, to the painted map bounds.
+    public Vector3 ClampToMap(Vector3 position)
+    {
+        var map = StageManager.Instance != null ? StageManager.Instance.backgroundTilemap : null;
+        if (map == null) return position;
+        Bounds bounds = map.localBounds;
+        if (bounds.size.x <= 0f || bounds.size.y <= 0f) return position;
+        if (body == null) body = GetComponent<BoxCollider2D>();
+        if (body == null) return position;
+
+        Transform mapTransform = map.transform;
+        Vector3 centerOffset = mapTransform.InverseTransformVector(transform.TransformVector(body.offset));
+        Vector3 x = mapTransform.InverseTransformVector(transform.TransformVector(Vector3.right * (body.size.x * 0.5f)));
+        Vector3 y = mapTransform.InverseTransformVector(transform.TransformVector(Vector3.up * (body.size.y * 0.5f)));
+        float extentX = Mathf.Abs(x.x) + Mathf.Abs(y.x);
+        float extentY = Mathf.Abs(x.y) + Mathf.Abs(y.y);
+        Vector3 local = mapTransform.InverseTransformPoint(position);
+        float minX = bounds.min.x + 0.02f + extentX - centerOffset.x;
+        float maxX = bounds.max.x - 0.02f - extentX - centerOffset.x;
+        float minY = bounds.min.y + 0.02f + extentY - centerOffset.y;
+        float maxY = bounds.max.y - 0.02f - extentY - centerOffset.y;
+        local.x = minX <= maxX ? Mathf.Clamp(local.x, minX, maxX) : (minX + maxX) * 0.5f;
+        local.y = minY <= maxY ? Mathf.Clamp(local.y, minY, maxY) : (minY + maxY) * 0.5f;
+        Vector3 result = mapTransform.TransformPoint(local);
+        result.z = position.z;
+        return result;
     }
 
     private Bounds GetObstacleBounds()

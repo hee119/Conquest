@@ -33,6 +33,11 @@ public class UpgradeHover : MonoBehaviour,
 
     // 선택 후 현재 커진 상태를 유지하는 용도
     private bool hoverLocked;
+    private float lockedScale;
+    private Vector3 selectedStartScale;
+    private float selectedScaleElapsed;
+    private const float SelectedScaleDuration = 0.2f;
+    private const float HoverScaleDuration = 0.2f;
 
 
     // =========================================================
@@ -121,11 +126,15 @@ public class UpgradeHover : MonoBehaviour,
         // -----------------------------------------------------
         // 선택 후 호버 고정 상태
         //
-        // 이미 커진 상태 그대로 유지
+        // 선택 크기까지 확대하고 위치를 유지
         // -----------------------------------------------------
 
         if (hoverLocked)
         {
+            selectedScaleElapsed += Time.unscaledDeltaTime;
+            float progress = Mathf.Clamp01(selectedScaleElapsed / SelectedScaleDuration);
+            visualRect.localScale = Vector3.Lerp(selectedStartScale, defaultScale * lockedScale,
+                Mathf.SmoothStep(0f, 1f, progress));
             return;
         }
 
@@ -271,7 +280,7 @@ public class UpgradeHover : MonoBehaviour,
             Vector3.MoveTowards(
                 visualRect.localScale,
                 targetScaleValue,
-                upSpeed * Time.unscaledDeltaTime
+                HoverScaleStep(_targetScale)
             );
     }
 
@@ -287,31 +296,39 @@ public class UpgradeHover : MonoBehaviour,
             Vector3.MoveTowards(
                 visualRect.localScale,
                 defaultScale,
-                downSpeed * Time.unscaledDeltaTime
+                HoverScaleStep(targetScale)
             );
     }
 
 
+    private float HoverScaleStep(float scale)
+    {
+        float distance = (defaultScale * (scale - 1f)).magnitude;
+        return Mathf.Max(0.0001f, distance) * Time.unscaledDeltaTime / HoverScaleDuration;
+    }
+
     // =========================================================
     // 선택한 카드용
     //
-    // 현재 호버 상태 그대로 고정
+    // 현재 호버 위치를 유지하며 선택 크기까지 확대
     //
     // 중요:
     // RestoreVisual()을 호출하지 않음
-    // 그래서 현재 커져있는 크기와 위치가 유지됨
+    // 그래서 위치가 유지됨
     // =========================================================
 
     /// <summary>LockCurrentHover 동작을 처리한다.</summary>
-    public void LockCurrentHover()
+    public void LockCurrentHover(float selectedScale)
     {
+        lockedScale = Mathf.Max(1f, selectedScale);
+        selectedStartScale = visualRect != null ? visualRect.localScale : Vector3.one;
+        selectedScaleElapsed = 0f;
         hoverLocked = true;
         hoverBlocked = true;
         isHovering = true;
 
 
-        // 현재 상태 그대로 유지
-        // localScale이나 위치를 건드리지 않음
+        // 위치는 유지하고 선택한 크기까지 확대한다.
 
 
         if (outLine != null)

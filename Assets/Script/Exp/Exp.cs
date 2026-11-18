@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class Exp : MonoBehaviour
@@ -7,11 +8,20 @@ public class Exp : MonoBehaviour
     [SerializeField, Min(0f)] private float attractionSpeed = 14f;
     [SerializeField, Min(0f)] private float magnetSpeed = 30f;
 
+    [Header("추적 가속")]
+    [SerializeField, Min(0f)] private float acceleration = 20f;
+    [SerializeField, Min(0f)] private float distanceAcceleration = 5f;
+
     private ExpInfo expInfo;
     private PooledObject pooledObject;
     private Transform player;
     private bool magnetized;
+    private bool attracted;
     private bool collected;
+
+    private float currentSpeed;
+
+    public bool IsAttracted => attracted || magnetized;
 
     private void Awake()
     {
@@ -23,7 +33,9 @@ public class Exp : MonoBehaviour
     {
         player = null;
         magnetized = false;
+        attracted = false;
         collected = false;
+        currentSpeed = 0f;
     }
 
     public void ActivateMagnet(Transform target)
@@ -46,19 +58,37 @@ public class Exp : MonoBehaviour
         if (player == null)
             return;
 
-        Vector2 offset = (Vector2)player.position - (Vector2)transform.position;
-        if (!magnetized &&
-            (attractionDistance <= 0f || offset.sqrMagnitude > attractionDistance * attractionDistance))
+        Vector2 offset =
+            (Vector2)player.position - (Vector2)transform.position;
+
+        if (!IsAttracted &&
+            (attractionDistance <= 0f ||
+             offset.sqrMagnitude > attractionDistance * attractionDistance))
             return;
 
-        float speed = magnetized ? magnetSpeed : attractionSpeed;
+        attracted = true;
+
+        float baseSpeed = magnetized ? magnetSpeed : attractionSpeed;
+
+        // 최초 추적 속도 설정
+        currentSpeed = Mathf.Max(currentSpeed, baseSpeed);
+
+        // 시간이 지날수록 가속 + 거리가 멀수록 더 빠르게 가속
+        currentSpeed +=
+            (acceleration + offset.magnitude * distanceAcceleration)
+            * Time.deltaTime;
+
         transform.position = Vector2.MoveTowards(
             transform.position,
             player.position,
-            speed * Time.deltaTime);
+            currentSpeed * Time.deltaTime
+        );
 
-        // A fast magnetized orb can reach the player between physics steps.
-        if (magnetized && offset.sqrMagnitude <= 0.04f)
+        // 플레이어에게 충분히 가까워지면 바로 획득
+        Vector2 remaining =
+            (Vector2)player.position - (Vector2)transform.position;
+
+        if (remaining.sqrMagnitude <= 0.04f)
             Collect();
     }
 
@@ -76,8 +106,6 @@ public class Exp : MonoBehaviour
             LevelManager.Instance == null || expInfo == null)
             return;
 
-        // Magnet arrival and trigger callbacks can both collect the same spawn.
-        // Claim it before granting EXP or invoking any level-up/UI callbacks.
         collected = true;
         LevelManager.Instance.AddExp(expInfo.exp);
 

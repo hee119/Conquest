@@ -200,12 +200,12 @@ MonoBehaviour:
     id: 2003
     clip: {fileID: 8300000, guid: d1c7b72ca24341d4ad31eaf0f81b23bc, type: 3}
     volume: 0.45266786
-    maxConcurrentVoices: 10
+    maxConcurrentVoices: 5
     fadeOnEnemyDeath: 0
     enemyDeathFadeSeconds: 0.15
   - name: "\uC801 \uC6E8\uC774\uBE0C \uC2DC\uC791"
     id: 2004
-    clip: {fileID: 8300000, guid: 81e5dbb2e6094333b18fd54ed5997547, type: 3}
+    clip: {fileID: 0}
     volume: 0.12942484
     maxConcurrentVoices: 10
     fadeOnEnemyDeath: 0
@@ -236,7 +236,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: b7d9f541a4c54f2f9e6a18c2a0f4438d, type: 3}
     volume: 0.4085564
     maxConcurrentVoices: 10
-    fadeOnEnemyDeath: 0
+    fadeOnEnemyDeath: 1
     enemyDeathFadeSeconds: 0.15
   - name: "\uB3C5 \uD22C\uC0AC\uCCB4 \uBE44\uD589"
     id: 2009
@@ -249,8 +249,8 @@ MonoBehaviour:
     id: 2010
     clip: {fileID: 8300000, guid: 0827385a75ec4342b4eb020e511d4d52, type: 3}
     volume: 0.37783396
-    maxConcurrentVoices: 10
-    fadeOnEnemyDeath: 0
+    maxConcurrentVoices: 3
+    fadeOnEnemyDeath: 1
     enemyDeathFadeSeconds: 0.15
   - name: "\uD3EC\uC790 \uD3ED\uBC1C"
     id: 2011
@@ -396,7 +396,7 @@ MonoBehaviour:
     id: 2031
     clip: {fileID: 8300000, guid: 038abec12443045f88fc45b162b197d5, type: 3}
     volume: 0.29439566
-    maxConcurrentVoices: 10
+    maxConcurrentVoices: 3
     fadeOnEnemyDeath: 0
     enemyDeathFadeSeconds: 0.15
   - name: "\uBC1C\uAC78\uC74C 5"

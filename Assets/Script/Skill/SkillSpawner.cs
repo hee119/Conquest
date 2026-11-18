@@ -15,11 +15,19 @@ public class SkillSpawner : MonoBehaviour
     [Header("Basic Attack Spread")]
     [SerializeField, Min(0f)] private float basicAttackSpreadAngle = 7f;
 
+    public float BasicAttackSpreadAngle
+    {
+        get => basicAttackSpreadAngle;
+        set => basicAttackSpreadAngle = Mathf.Max(0f, value);
+    }
+
     AnimationController animationController;
     
     PlayerMove playerMove;
 
     private bool isBasicAttackFacingLocked;
+    private bool attackAnimationStarted;
+    private float attackFacingStartTime;
     private float attackFacingSign = 1f;
     private float movementFacingSign = 1f;
     private Vector2 basicAttackDirection = Vector2.right;
@@ -56,10 +64,17 @@ public class SkillSpawner : MonoBehaviour
 
         if (isBasicAttackFacingLocked)
         {
-            if (animationController.IsBasicAttacking)
-                Face(attackFacingSign);
-            else
+            if (playerMove != null && playerMove.IsDashing)
                 EndBasicAttackFacing();
+            else if (animationController.IsBasicAttacking)
+            {
+                attackAnimationStarted = true;
+                Face(attackFacingSign);
+            }
+            else if (attackAnimationStarted || Time.time - attackFacingStartTime > 0.5f)
+                EndBasicAttackFacing();
+            else
+                Face(attackFacingSign);
         }
     }
 
@@ -161,7 +176,6 @@ public class SkillSpawner : MonoBehaviour
             // The cached timer owns basic-attack release, rather than a fixed clip event.
             if (movementLockCoroutine != null) return;
             playerMove.StopMove(1);
-            EndBasicAttackFacing();
         }
         else
         {
@@ -204,9 +218,10 @@ public class SkillSpawner : MonoBehaviour
         Vector2 baseDirection = facingSign > 0f ? Vector2.right : Vector2.left;
         SkillData skill = DataManager.Instance.skillDatasDic[skillId];
         bool isProjectile = skill.projectileSpeed > 0f;
+        if (isBasicAttack)
+            baseDirection = basicAttackDirection;
         if (isProjectile)
         {
-            baseDirection = basicAttackDirection;
             offset = skill.spawnOffset;
             if (SoundManager.Instance != null)
                 SoundManager.Instance.Play(SoundIds.MageAttack);
@@ -218,8 +233,6 @@ public class SkillSpawner : MonoBehaviour
             {
                 Face(attackFacingSign);
                 facingSign = attackFacingSign;
-                if (!isProjectile)
-                    baseDirection = facingSign > 0f ? Vector2.right : Vector2.left;
             }
 
             float spreadAngle = isBasicAttack
@@ -246,7 +259,11 @@ public class SkillSpawner : MonoBehaviour
                 continue;
             }
 
-            skillPrefab.transform.rotation = Quaternion.Euler(0f, 0f, spreadAngle);
+            float facingAngle = facingSign < 0f ? 180f : 0f;
+            float aimAngle = isBasicAttack
+                ? Mathf.Atan2(baseDirection.y, baseDirection.x) * Mathf.Rad2Deg - facingAngle
+                : 0f;
+            skillPrefab.transform.rotation = Quaternion.Euler(0f, 0f, aimAngle + spreadAngle);
 
             if (isBasicAttack)
             {
@@ -278,9 +295,7 @@ public class SkillSpawner : MonoBehaviour
     {
         attackFacingSign = transform.localScale.x < 0f ? -1f : 1f;
         basicAttackDirection = attackFacingSign > 0f ? Vector2.right : Vector2.left;
-        if (DataManager.Instance != null &&
-            DataManager.Instance.skillDatasDic.TryGetValue(skillId1, out SkillData skill) &&
-            skill.projectileSpeed > 0f && Mouse.current != null && Camera.main != null)
+        if (Mouse.current != null && Camera.main != null)
         {
             Camera camera = Camera.main;
             Vector2 pointer = Mouse.current.position.ReadValue();
@@ -293,6 +308,8 @@ public class SkillSpawner : MonoBehaviour
                 attackFacingSign = Mathf.Sign(basicAttackDirection.x);
         }
         isBasicAttackFacingLocked = true;
+        attackAnimationStarted = false;
+        attackFacingStartTime = Time.time;
         Face(attackFacingSign);
     }
 
@@ -302,7 +319,8 @@ public class SkillSpawner : MonoBehaviour
             return;
 
         isBasicAttackFacingLocked = false;
-        Face(movementFacingSign);
+        if (playerMove != null && Mathf.Abs(playerMove.MoveDir.x) > 0.001f)
+            Face(movementFacingSign);
     }
 
     private void Face(float sign)

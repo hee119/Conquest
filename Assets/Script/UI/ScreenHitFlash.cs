@@ -8,7 +8,10 @@ public sealed class ScreenHitFlash : MonoBehaviour
     [SerializeField] private Color hitColor = new Color(1f, 0.04f, 0.02f, 0.38f);
     [SerializeField, Min(0.01f)] private float duration = 0.28f;
 
+    [SerializeField, Min(0f)] private float minimumInterval = 0.3f;
+
     private Coroutine flashCoroutine;
+    private float lastFlashTime = float.NegativeInfinity;
 
     private void Awake()
     {
@@ -30,10 +33,24 @@ public sealed class ScreenHitFlash : MonoBehaviour
         if (overlay == null || !isActiveAndEnabled)
             return;
 
+        if (Time.unscaledTime - lastFlashTime < minimumInterval)
+            return;
+
+        lastFlashTime = Time.unscaledTime;
         if (flashCoroutine != null)
             StopCoroutine(flashCoroutine);
 
         flashCoroutine = StartCoroutine(FlashCoroutine());
+    }
+
+    private void OnDisable()
+    {
+        if (flashCoroutine != null)
+            StopCoroutine(flashCoroutine);
+        flashCoroutine = null;
+        lastFlashTime = float.NegativeInfinity;
+        if (overlay != null)
+            SetAlpha(0f);
     }
 
     private IEnumerator FlashCoroutine()
