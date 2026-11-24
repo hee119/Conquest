@@ -16,6 +16,8 @@ public class OptionSelect : MonoBehaviour
     private Image optionImage;
     
     public bool isSelected = false;
+    
+    public bool isInit = true;
 
     public void Awake()
     {
@@ -24,8 +26,10 @@ public class OptionSelect : MonoBehaviour
 
     public void Start()
     {
-        optionImage.material = null;
-        targetOption.SetActive(false);
+        if (isInit)
+            SelectCancel();
+        else
+            OnClick();
     }
     
     public void SelectCancel()

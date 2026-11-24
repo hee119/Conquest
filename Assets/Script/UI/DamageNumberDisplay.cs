@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 // Reuses the Dynamic Floating Text demo's Pop and Bounce settings on one canvas.
 public sealed class DamageNumberDisplay : MonoBehaviour
@@ -11,7 +13,7 @@ public sealed class DamageNumberDisplay : MonoBehaviour
     private GameObject template;
     private DynamicTextData normalData;
     private DynamicTextData criticalData;
-
+    private PlayerCombat player;
     public static void Show(Vector2 position, float damage, bool critical)
     {
         if (damage <= 0f || !Application.isPlaying) return;
@@ -27,6 +29,12 @@ public sealed class DamageNumberDisplay : MonoBehaviour
         normalData = Resources.Load<DynamicTextData>("DamageNumbers/Normal");
         criticalData = Resources.Load<DynamicTextData>("DamageNumbers/Critical");
         instance = this;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombat>();
+    }
+
+    private void Start()
+    {
+        player.Death += RecycleAll;
     }
 
     private void Spawn(Vector2 position, float damage, bool critical)
@@ -54,6 +62,17 @@ public sealed class DamageNumberDisplay : MonoBehaviour
     }
 
     private void OnDestroy() { if (instance == this) instance = null; }
+    
+    private void RecycleAll()
+    {
+        foreach (var view in GetComponentsInChildren<DamageNumberView>())
+        {
+            if (view.gameObject.activeSelf)
+            {
+                Recycle(view);
+            }
+        }
+    }
 }
 
 public sealed class DamageNumberView : MonoBehaviour

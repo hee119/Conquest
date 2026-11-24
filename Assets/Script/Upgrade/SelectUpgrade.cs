@@ -220,8 +220,8 @@ public class SelectUpgrade : MonoBehaviour
     {
         UnbindUpgradeManager();
         subscribedManager = manager;
-        subscribedManager.upgradeRenewal += LevelIconsInit;
-        subscribedManager.upgradeRenewal += BlinkLevelIcon;
+        subscribedManager.UpgradeRenewal += LevelIconsInit;
+        subscribedManager.UpgradeRenewal += BlinkLevelIcon;
         SetSelectionEnabled(true);
 
         // Renewal can run before a late binding completes. Refresh the card
@@ -239,8 +239,8 @@ public class SelectUpgrade : MonoBehaviour
     {
         if (subscribedManager != null)
         {
-            subscribedManager.upgradeRenewal -= LevelIconsInit;
-            subscribedManager.upgradeRenewal -= BlinkLevelIcon;
+            subscribedManager.UpgradeRenewal -= LevelIconsInit;
+            subscribedManager.UpgradeRenewal -= BlinkLevelIcon;
         }
         subscribedManager = null;
     }

@@ -56,7 +56,7 @@ upgread_des_Shurlken_1,일정 시간마다 플레이어 주변을 도는 표창�
 upgread_des_Shurlken_2,표창 +{0}개,Shuriken +{0},手裏剣 +{0}個
 upgread_des_Missile_1,일정 시간마다 주변 적에게 미사일을 연속으로 발사합니다.,Periodically fires a volley of missiles at nearby enemies.,一定時間ごとに周囲の敵にミサイルを連続発射します。
 upgread_des_Missile_2,미사일 +{0}개,Missile +{0},ミサイル +{0}個
-upgread_des_Mold_1,적을 공격하면 일정 확률로 주변 적에게 달라붙는 곰팡이가 생깁니다. 곰팡이는 자라나다 터지며 피해를 줍니다.,Attacks may grow mold on nearby enemies. It bursts to deal damage.,敵を攻撃すると、一定確率で周囲の敵に付着するカビが発生します。カビは成長して破裂し、ダメージを与えます。
+upgread_des_Mold_1,"공격 시 확률적으로 주변 적에게 곰팡이를 붙이고, 일정 시간 후 또는 적 사망 시 폭발해 피해를 줍니다.","Attacks have a chance to spread mold to nearby enemies, which explodes after a delay or upon death, dealing damage.",攻撃時、一定確率でカビが周囲の敵に付着し、時間経過または敵の死亡時に爆発してダメージを与える。
 upgread_des_Mold_2,곰팡이 확률 +{0}%,Increase Mold Chance +{0}%,真菌の確率が増加 +{0}％
 upgread_des_FireStorm_1,파이어볼이 적에게 적중하면 주변으로 퍼져 나갑니다.,Fireballs spread outward when they hit an enemy.,ファイアボールが敵に命中すると周囲に広がります。
 upgread_des_FireStorm_2,파이어볼을 화염 뇌우로 변경,Change Fireball to Firestorm,ファイアボールを炎の嵐に変更

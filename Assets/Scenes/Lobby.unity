@@ -5330,7 +5330,7 @@ PrefabInstance:
     - target: {fileID: 8644178143294308712, guid: e4e33ec4e768c4776985e9245cd23c89,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1170
+      value: 1169.6436
       objectReference: {fileID: 0}
     - target: {fileID: 8644178143294308712, guid: e4e33ec4e768c4776985e9245cd23c89,
         type: 3}
@@ -6316,7 +6316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &638002738
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9854,7 +9854,7 @@ PrefabInstance:
     - target: {fileID: 8644178143294308712, guid: e4e33ec4e768c4776985e9245cd23c89,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 920.00006
+      value: 919.6436
       objectReference: {fileID: 0}
     - target: {fileID: 8644178143294308712, guid: e4e33ec4e768c4776985e9245cd23c89,
         type: 3}
@@ -14236,7 +14236,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -14297,7 +14297,7 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
-  m_ActiveFontFeatures:
+  m_ActiveFontFeatures: 
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
@@ -16190,9 +16190,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1749203462189623709, guid: e4e33ec4e768c4776985e9245cd23c89,
         type: 3}
+      propertyPath: isInit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749203462189623709, guid: e4e33ec4e768c4776985e9245cd23c89,
+        type: 3}
       propertyPath: outline
       value: 
       objectReference: {fileID: 2100000, guid: 1c4af48620896474698506ab12d1e336, type: 2}
+    - target: {fileID: 1749203462189623709, guid: e4e33ec4e768c4776985e9245cd23c89,
+        type: 3}
+      propertyPath: isSelected
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1749203462189623709, guid: e4e33ec4e768c4776985e9245cd23c89,
         type: 3}
       propertyPath: optionEvent
@@ -16358,7 +16368,7 @@ PrefabInstance:
     - target: {fileID: 8644178143294308712, guid: e4e33ec4e768c4776985e9245cd23c89,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 670.00006
+      value: 669.6436
       objectReference: {fileID: 0}
     - target: {fileID: 8644178143294308712, guid: e4e33ec4e768c4776985e9245cd23c89,
         type: 3}

@@ -54,6 +54,11 @@ public class UpgradeAppeared : MonoBehaviour
 
         transform.localScale = defaultScale;
 
+        // The flip is complete. The bounce uses the card root while hover
+        // animates its separate visual child, so input need not wait for it.
+        if (raycastGraphic != null)
+            raycastGraphic.raycastTarget = true;
+
         StartCoroutine(BigScale());
     }
 
@@ -80,7 +85,5 @@ public class UpgradeAppeared : MonoBehaviour
         }
         transform.localScale = defaultScale;
 
-        if (raycastGraphic != null)
-            raycastGraphic.raycastTarget = true;
     }
 }

@@ -710,14 +710,6 @@ public class ExpBar : MonoBehaviour
         background.type = Image.Type.Simple;
         background.color = Color.black;
         background.preserveAspect = false;
-
-        Outline outline = background.GetComponent<Outline>();
-        if (outline == null)
-            outline = background.gameObject.AddComponent<Outline>();
-
-        outline.effectColor = Color.white;
-        outline.effectDistance = new Vector2(2f, -2f);
-        outline.useGraphicAlpha = true;
     }
 
 

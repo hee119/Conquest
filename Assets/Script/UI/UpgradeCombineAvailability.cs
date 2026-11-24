@@ -20,7 +20,7 @@ public sealed class UpgradeCombineAvailability : MonoBehaviour
     {
         UpgradeManager.InstanceChanged -= BindManager;
         if (subscribedManager != null)
-            subscribedManager.UpgradesChanged -= Refresh;
+            subscribedManager.UpgradeRenewal -= Refresh;
         subscribedManager = null;
     }
 
@@ -28,10 +28,10 @@ public sealed class UpgradeCombineAvailability : MonoBehaviour
     private void BindManager(UpgradeManager manager)
     {
         if (subscribedManager != null)
-            subscribedManager.UpgradesChanged -= Refresh;
+            subscribedManager.UpgradeRenewal -= Refresh;
         subscribedManager = manager;
         if (subscribedManager != null)
-            subscribedManager.UpgradesChanged += Refresh;
+            subscribedManager.UpgradeRenewal += Refresh;
         Refresh();
     }
     /// <summary>현재 데이터를 바탕으로 표시 상태를 갱신한다.</summary>

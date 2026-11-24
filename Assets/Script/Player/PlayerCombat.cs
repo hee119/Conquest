@@ -21,6 +21,7 @@ public class PlayerCombat : MonoBehaviour, ICombat
     private ScreenHitFlash screenHitFlash;
 
     public event Action hpUpdate;
+    public event Action Death;
 
     [Header("체력 재생")]
     public float regenDelay = 5f;
@@ -300,6 +301,7 @@ public class PlayerCombat : MonoBehaviour, ICombat
     {
         isDead = true;
 
+        Death?.Invoke();
         GameEndScreenController.ShowGameOver();
 
         gameObject.SetActive(false);

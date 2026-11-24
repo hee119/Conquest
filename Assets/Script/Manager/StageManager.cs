@@ -1615,6 +1615,18 @@ public class StageManager : MonoBehaviour
                         $"[Boss Defeated] enemyId={enemyId}"
                     );
 
+                    // The stage-one slime boss ends the demo immediately.
+                    // Do not wait for remaining minions or an upgrade choice.
+                    if (currentStage == 1 && enemyId == 151)
+                    {
+                        canSkipToNextWave = false;
+                        requestNextWave = false;
+                        stageRoutine = null;
+                        StopPickupCoroutines();
+                        GameEndScreenController.ShowDemoClear();
+                        yield break;
+                    }
+
                     if (i == stageInfo.enemyId.Count - 1)
                     {
                         bossDefeated = true;

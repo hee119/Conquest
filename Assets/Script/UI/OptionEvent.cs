@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,9 +10,12 @@ public class OptionEvent : MonoBehaviour
     {
         foreach (OptionSelect option in options)
         {
-            option.SelectCancel();
+            if (option != optionSelect)
+            {
+                option.SelectCancel();
+            }
         }
-        
+
         optionSelect.SelectConfirmed();
     }
 }

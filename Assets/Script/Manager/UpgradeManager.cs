@@ -181,7 +181,7 @@ public class UpgradeManager : MonoBehaviour
 
     public bool isFirstUpgrade = true;
 
-    public event Action upgradeRenewal;
+    public event Action UpgradeRenewal;
     public event Action upgradeSelect;
 
     [SerializeField]
@@ -405,6 +405,7 @@ public void ResetForNewRun()
         StopSnailGroundLoop();
         StopAllShurikenSpinSounds();
         StopAllCoroutines();
+        if (orbit != null) orbit.ResetOrbits();
         upgradeCor.Clear();
         upgradeCooldownEnds.Clear();
         upgradeCooldownDurations.Clear();
@@ -859,7 +860,7 @@ public void ResetForNewRun()
             }
         }
 
-        upgradeRenewal?.Invoke();
+        UpgradeRenewal?.Invoke();
     }
 
     /// <summary>MoveUnownedToRenewable 동작을 처리한다.</summary>
@@ -934,13 +935,8 @@ public void ResetForNewRun()
             StopShurikenSpinSound(id);
         if (function == "Burn" && GameManager.Instance != null) GameManager.Instance.burnChance = 0;
         if (function == "Mold" && GameManager.Instance != null) GameManager.Instance.moldChance = 0;
-        if (function == "Shuriken" && orbit != null)
-        {
-            foreach (GameObject projectile in orbit.orbitList)
-                if (projectile != null) projectile.GetComponent<PooledObject>()?.DestroyObj();
-            orbit.orbitList.Clear();
-            orbit.orbitColList.Clear();
-        }
+        if ((function == "Shuriken" || function == "LightningShuriken") && orbit != null)
+            orbit.ResetOrbits();
     }
 
     /// <summary>SkillUpgradesAdd 동작을 처리한다.</summary>
@@ -1442,13 +1438,9 @@ public void ResetForNewRun()
                     .upgradeDatasDic[id]
                     .count[level];
 
-            for (int i = 0; i < count; i++)
-            {
-                if (orbit.orbitList.Count < count)
-                {
-                    orbit.AddOrbit(id);
-                }
-            }
+            orbit.RemoveStaleOrbits();
+            while (orbit.orbitList.Count < count)
+                if (!orbit.AddOrbit(id)) break;
 
             BeginShurikenSpinSound(id);
             /// <summary>StartCoroutine 동작을 처리한다.</summary>

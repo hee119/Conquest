@@ -21,17 +21,50 @@ public class Orbit : MonoBehaviour
 
     private float currentAngle = 0f;
 
+    // Pool returns can happen independently of this component on a retry.
+    private readonly Dictionary<GameObject, uint> orbitVersions = new();
+
+    public void RemoveStaleOrbits()
+    {
+        for (int i = orbitList.Count - 1; i >= 0; i--)
+        {
+            GameObject item = orbitList[i];
+            PooledObject pooled = item != null ? item.GetComponent<PooledObject>() : null;
+            if (pooled != null && pooled.IsSpawned && orbitVersions.TryGetValue(item, out uint version) && version == pooled.SpawnVersion)
+                continue;
+            if (item != null) orbitVersions.Remove(item);
+            orbitList.RemoveAt(i);
+            if (i < orbitColList.Count) orbitColList.RemoveAt(i);
+        }
+    }
+
+    public void ResetOrbits()
+    {
+        RemoveStaleOrbits();
+        foreach (GameObject item in orbitList)
+            if (item != null) item.GetComponent<PooledObject>()?.DestroyObj();
+        orbitList.Clear();
+        orbitColList.Clear();
+        orbitVersions.Clear();
+        currentAngle = 0f;
+    }
+
     // =====================================
     // 표창 추가
     // =====================================
 
     /// <summary>AddOrbit 동작을 처리한다.</summary>
-    public void AddOrbit(int id)
+    public bool AddOrbit(int id)
     {
         GameObject orbit = PoolManager.Instance.Spawn(
             id,
             transform.position
         );
+
+        if (orbit == null) return false;
+        var pooled = orbit.GetComponent<PooledObject>();
+        if (pooled == null) return false;
+        orbitVersions[orbit] = pooled.SpawnVersion;
 
         Debug.Log(
             $"[Orbit] Spawn : {orbit.name} / Active = {orbit.activeInHierarchy}"
@@ -47,6 +80,7 @@ public class Orbit : MonoBehaviour
             col.enabled = true;
 
         SetAlpha(orbit, 0f);
+        return true;
     }
 
     // =====================================
@@ -56,6 +90,7 @@ public class Orbit : MonoBehaviour
     /// <summary>RotateOrbits 동작을 처리한다.</summary>
     public IEnumerator RotateOrbits(int id)
     {
+        RemoveStaleOrbits();
         if (orbitList.Count == 0)
             yield break;
 
@@ -157,6 +192,18 @@ public class Orbit : MonoBehaviour
         while (orbitT < orbitTime)
         {
             orbitT += Time.deltaTime;
+
+            RemoveStaleOrbits();
+
+            // A level can increase while the current orbit is already running.
+            // Add its newly unlocked projectiles without interrupting the cycle.
+            var data = DataManager.Instance.upgradeDatasDic[id];
+            int level = Mathf.Clamp(data.UpgradeLevel, 0, data.count.Length - 1);
+            while (orbitList.Count < data.count[level])
+            {
+                if (!AddOrbit(id)) break;
+                SetAlpha(orbitList[orbitList.Count - 1], 1f);
+            }
 
             if (orbitList.Count > 0)
             {
